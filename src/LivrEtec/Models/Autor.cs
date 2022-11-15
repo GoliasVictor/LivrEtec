@@ -3,17 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Tag : ITag
+    public class Autor : IAutor
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int Cd { get; set; }
+        public int cd { get; set; }
         [Required]
         public string Nome { get; set; }
 
-        public Tag(int cd, string nome)
+        public Autor(){}
+        public Autor(int cd, string nome)
         {
-            this.Cd = cd;
+            this.cd = cd;
             this.Nome = nome;
         }
     }

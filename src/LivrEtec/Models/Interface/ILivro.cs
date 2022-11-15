@@ -3,9 +3,9 @@
     public interface ILivro
     {
         bool Arquivado { get; set; }
-        Autor[] Autores { get; set; }
+        List<Autor> Autores { get; set; }
         int cd { get; set; }
         string Nome { get; set; }
-        Tag[] Tags { get; set; }
+        List<Tag> Tags { get; set; }
     }
 }

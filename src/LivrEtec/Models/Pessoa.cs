@@ -4,6 +4,7 @@ namespace LivrEtec
 {
     public class Pessoa : IPessoa
     {
+        public Pessoa() {}
         public Pessoa(string nome, string telefone)
         {
             Nome = nome;
@@ -21,12 +22,13 @@ namespace LivrEtec
     }
     public class Aluno : Pessoa
     {
+        public Aluno(){}
         public Aluno(string nome, string telefone, string rm) : base(nome, telefone)
         {
             RM = rm;
         }
 
-        [Required,Key]
+        [Required]
         public string RM { get; set; }
     }
 }

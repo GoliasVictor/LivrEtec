@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
@@ -6,13 +7,21 @@ namespace LivrEtec
      
     public class Emprestimo : IEmprestimo
     {
-        public Emprestimo(Aluno aluno, Livro livro, DateTime dataEmprestimo)
+		public Emprestimo(){}
+        public Emprestimo(int cd, Aluno aluno, Livro livro, DateTime dataEmprestimo)
         {
+            Cd = cd;
             Aluno = aluno;
             Livro = livro;
             DataEmprestimo = dataEmprestimo;
         }
-        [Required]
+        
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required, Key]
+        public int Cd { get; set; }
+
+
+		[Required]
         public Aluno Aluno { get; set; }
 
         [Required]
