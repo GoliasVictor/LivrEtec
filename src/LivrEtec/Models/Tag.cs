@@ -9,8 +9,8 @@ namespace LivrEtec
         [Required, Key]
         public int Cd { get; set; }
         [Required]
-        public string Nome { get; set; }
-
+        public string? Nome { get; set; }
+        public List<Livro> Livros {get;set;} =  new();
         public Tag(int cd, string nome)
         {
             this.Cd = cd;

@@ -6,17 +6,16 @@ namespace LivrEtec
 {
 	public class PacaContext : DbContext
 	{
-		public DbSet<Livro> Livros { get; set; }
-		public DbSet<Autor> Autores { get; set; }
-		public DbSet<Tag> Tags { get; set; }
-		public DbSet<Aluno> Alunos { get; set; }
-		public DbSet<Emprestimo> Emprestimos { get; set; }
+		public DbSet<Livro> Livros { get; set; } = null!;
+		public DbSet<Autor> Autores { get; set; } = null!;
+		public DbSet<Tag> Tags { get; set; } = null!;
+		public DbSet<Aluno> Alunos { get; set; }= null!;
+		public DbSet<Emprestimo> Emprestimos { get; set; } = null!;
 
 		public string DbPath { get; }
 
 		public PacaContext()
 		{
-			Database.Migrate();
 
 		}
 

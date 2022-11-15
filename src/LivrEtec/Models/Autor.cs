@@ -9,8 +9,8 @@ namespace LivrEtec
         [Required, Key]
         public int cd { get; set; }
         [Required]
-        public string Nome { get; set; }
-
+        public string? Nome { get; set; }
+        public List<Livro> Livros {get;set;} =  new();
         public Autor(){}
         public Autor(int cd, string nome)
         {

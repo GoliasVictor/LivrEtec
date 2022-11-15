@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LivrEtec.Migrations
 {
     [DbContext(typeof(PacaContext))]
-    [Migration("20221115033425_UpdateDescricao")]
-    partial class UpdateDescricao
+    [Migration("20221115065740_UpdateLivrosAutor")]
+    partial class UpdateLivrosAutor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace LivrEtec.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("AutorLivro", b =>
+                {
+                    b.Property<int>("Autorescd")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Livroscd")
+                        .HasColumnType("int");
+
+                    b.HasKey("Autorescd", "Livroscd");
+
+                    b.HasIndex("Livroscd");
+
+                    b.ToTable("AutorLivro");
+                });
 
             modelBuilder.Entity("LivrEtec.Aluno", b =>
                 {
@@ -51,16 +66,11 @@ namespace LivrEtec.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("Livrocd")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("cd");
-
-                    b.HasIndex("Livrocd");
 
                     b.ToTable("Autores");
                 });
@@ -125,25 +135,43 @@ namespace LivrEtec.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("Livrocd")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Cd");
 
-                    b.HasIndex("Livrocd");
-
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("LivrEtec.Autor", b =>
+            modelBuilder.Entity("LivroTag", b =>
                 {
+                    b.Property<int>("Livroscd")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagsCd")
+                        .HasColumnType("int");
+
+                    b.HasKey("Livroscd", "TagsCd");
+
+                    b.HasIndex("TagsCd");
+
+                    b.ToTable("LivroTag");
+                });
+
+            modelBuilder.Entity("AutorLivro", b =>
+                {
+                    b.HasOne("LivrEtec.Autor", null)
+                        .WithMany()
+                        .HasForeignKey("Autorescd")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LivrEtec.Livro", null)
-                        .WithMany("Autores")
-                        .HasForeignKey("Livrocd");
+                        .WithMany()
+                        .HasForeignKey("Livroscd")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("LivrEtec.Emprestimo", b =>
@@ -165,18 +193,19 @@ namespace LivrEtec.Migrations
                     b.Navigation("Livro");
                 });
 
-            modelBuilder.Entity("LivrEtec.Tag", b =>
+            modelBuilder.Entity("LivroTag", b =>
                 {
                     b.HasOne("LivrEtec.Livro", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("Livrocd");
-                });
+                        .WithMany()
+                        .HasForeignKey("Livroscd")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("LivrEtec.Livro", b =>
-                {
-                    b.Navigation("Autores");
-
-                    b.Navigation("Tags");
+                    b.HasOne("LivrEtec.Tag", null)
+                        .WithMany()
+                        .HasForeignKey("TagsCd")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

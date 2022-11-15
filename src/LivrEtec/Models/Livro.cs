@@ -21,7 +21,7 @@ namespace LivrEtec
         public int cd { get; set; }
 
         [Required]
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public string? Descricao { get; set; } 
         public List<Tag> Tags { get; set; } =  new List<Tag>();
         public List<Autor> Autores { get; set; } =  new List<Autor>();
