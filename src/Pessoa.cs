@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
@@ -10,6 +11,7 @@ namespace LivrEtec
             Telefone = telefone;
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
         public int Cd { get; set; }
 
