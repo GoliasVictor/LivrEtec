@@ -16,7 +16,10 @@ namespace LivrEtec
             this.Cd = cd;
             this.Nome = nome;
         }
-
+        public Tag(int cd)
+        {
+            this.Cd = cd;
+        }
 		public Tag()
 		{
 		}

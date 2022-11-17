@@ -15,10 +15,10 @@ namespace LivrEtec
         public int Cd { get; set; }
 
         [Required]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = null!;
 
         [MaxLength(14)]
-        public string Telefone { get; set; }
+        public string? Telefone { get; set; }
     }
     public class Aluno : Pessoa
     {
@@ -29,6 +29,6 @@ namespace LivrEtec
         }
 
         [Required]
-        public string RM { get; set; }
+        public string RM { get; set; } = null!;
     }
 }

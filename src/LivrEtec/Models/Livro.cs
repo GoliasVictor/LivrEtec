@@ -6,13 +6,13 @@ namespace LivrEtec
     public class Livro : ILivro
     {
         public Livro(){}
-        public Livro(int cd, string nome, string descricao, List<Tag> tags, List<Autor> autores, bool arquivado = false)
+        public Livro(string nome, string descricao, List<Tag>? tags =  default, List<Autor>? autores = default, bool arquivado = false)
         {
-            this.cd = cd;
+            cd =  default;
             Nome = nome;
             Descricao = descricao;
-            Tags = tags;
-            Autores = autores;
+            Tags = tags ?? new() ;
+            Autores = autores ?? new();
             Arquivado = arquivado;
         }
 
@@ -21,10 +21,10 @@ namespace LivrEtec
         public int cd { get; set; }
 
         [Required]
-        public string? Nome { get; set; }
+        public string Nome { get; set; } = null!;
         public string? Descricao { get; set; } 
-        public List<Tag> Tags { get; set; } =  new List<Tag>();
-        public List<Autor> Autores { get; set; } =  new List<Autor>();
+        public List<Tag> Tags { get; set; } = new List<Tag>();
+        public List<Autor> Autores { get; set; } = new List<Autor>();
 
         [Required]
         public bool Arquivado { get; set; }
