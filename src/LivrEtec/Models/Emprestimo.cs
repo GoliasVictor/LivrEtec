@@ -31,6 +31,9 @@ namespace LivrEtec
         public Livro? Livro { get; set; }
 
         [Required]
+        public Funcionario Funcionario;
+
+        [Required]
         public DateTime DataEmprestimo { get; set; }
         public DateTime DataDevolucao { get; set; }
         public DateTime FimDataEmprestimo { get; set; }
@@ -38,6 +41,8 @@ namespace LivrEtec
 
         public bool AtrasoJustificado;
         public string? ExplicaçãoAtraso;
+
+        
 
 
     }
