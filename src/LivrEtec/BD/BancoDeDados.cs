@@ -21,7 +21,7 @@ namespace LivrEtec
 		{
 			//options.EnableSensitiveDataLogging(true);
 			options.LogTo((s => Console.WriteLine(s)), Microsoft.Extensions.Logging.LogLevel.Information);
-			var stringConn = $"server=localhost;database=LivrEtecBD;user=LivrEtecServe;password=LivrEtecSenha";
+			var stringConn = $"server=localhost;database=LivrEtecBD;user=root;password=root";
 			options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
 
 		}

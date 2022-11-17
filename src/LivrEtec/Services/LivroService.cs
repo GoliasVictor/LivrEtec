@@ -22,9 +22,12 @@ public class LivroService : Repositorio
 							  select livro;
 			livros = livPorNome.Union(livPorAutor);
 		}
+
+
 		if(tags is not null)
 			foreach(var tag in tags )
-				livros = livros.Where((livro) => livro.Tags.Any(tag2 => tag == tag2));
+				livros = livros.
+					Where((livro) => livro.Tags.Contains(tag));
 		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",",tags ?? Enumerable.Empty<Tag>())}");
 		return livros;
 	}

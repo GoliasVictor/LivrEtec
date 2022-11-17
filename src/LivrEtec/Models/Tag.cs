@@ -20,7 +20,11 @@ namespace LivrEtec
         {
             this.Cd = cd;
         }
-		public Tag()
+        public Tag(string nome)
+        {
+            this.Nome = nome;
+        }
+        public Tag()
 		{
 		}
 
