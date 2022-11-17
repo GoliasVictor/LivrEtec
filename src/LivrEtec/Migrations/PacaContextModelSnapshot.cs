@@ -49,7 +49,6 @@ namespace LivrEtec.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 

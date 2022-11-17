@@ -19,6 +19,7 @@ namespace LivrEtec
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
+			//options.EnableSensitiveDataLogging(true);
 			options.LogTo((s => Console.WriteLine(s)), Microsoft.Extensions.Logging.LogLevel.Information);
 			var stringConn = $"server=localhost;database=LivrEtecBD;user=LivrEtecServe;password=LivrEtecSenha";
 			options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));

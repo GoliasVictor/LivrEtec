@@ -12,10 +12,14 @@ namespace LivrEtec
         public string Nome { get; set;} = null!;
         public List<Livro> Livros {get;set;} =  new();
         public Autor(){}
-        public Autor(int cd, string nome)
+        public Autor(int cd = default, string nome = null!)
         {
             this.cd = cd;
             this.Nome = nome;
+        }
+        public Autor(int cd )
+        {
+            this.cd = cd;
         }
     }
 }

@@ -15,9 +15,7 @@ namespace LivrEtec
             DataEmprestimo = dataEmprestimo;
         }
 
-		public Emprestimo()
-		{
-		}
+		public Emprestimo() { }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
@@ -25,13 +23,13 @@ namespace LivrEtec
 
 
 		[Required]
-        public Aluno? Aluno { get; set; }
+        public Aluno Aluno { get; set; } = null!;
 
         [Required]
-        public Livro? Livro { get; set; }
+        public Livro Livro { get; set; } = null!; 
 
         [Required]
-        public Funcionario Funcionario;
+        public Funcionario Funcionario = null!;
 
         [Required]
         public DateTime DataEmprestimo { get; set; }

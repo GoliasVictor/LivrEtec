@@ -11,7 +11,7 @@ namespace LivrEtec
         [Required]
         public string? Nome { get; set; }
         public List<Livro> Livros {get;set;} =  new();
-        public Tag(int cd, string nome)
+        public Tag(int cd = default, string nome = null!)
         {
             this.Cd = cd;
             this.Nome = nome;
@@ -23,5 +23,7 @@ namespace LivrEtec
 		public Tag()
 		{
 		}
+
+ 
 	}
 }

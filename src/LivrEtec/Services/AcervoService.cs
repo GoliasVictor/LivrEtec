@@ -1,49 +1,33 @@
 using System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
 
 namespace LivrEtec;
 
-using Pred = Func<Livro, bool>;
-using ExPred = Expression<Func<Livro, bool>>;
 
-public class AcervoService
+public interface IAcervoService
 {
-	public PacaContext BD;
-	public AcervoService(PacaContext bd)
+	PacaContext BD { get;init; }
+	ILogger? Logger { get;init; }
+
+}
+
+public class AcervoService : IAcervoService
+{
+	public PacaContext BD { get;  init;}
+	public ILogger? Logger { get; init;}
+	public LivroService Livros {get;init;}  
+	public AutorService Autores {get;init;}  
+	public AcervoService(){
+		Livros =  new LivroService(this);
+		Autores =  new AutorService(this);
+		
+		BD = null!;
+	}
+	public AcervoService(PacaContext bd, ILogger? logger) : this()
 	{
 		BD = bd;
+		Logger = logger;
 	}
+ 
 
-	public IQueryable<Livro> BuscarLivro(string textoBusca, IEnumerable<Tag> tags = default)
-	{
-
-		IQueryable<Livro> livros = BD.Livros;
-		if (!string.IsNullOrEmpty(textoBusca))
-		{
-			var livPorNome = from livro in BD.Livros
-							 where livro.Nome.Contains(textoBusca)
-							 select livro;
-			var livPorAutor = from autor in BD.Autores
-							  from livro in autor.Livros
-							  where livro.Nome.Contains(textoBusca)
-							  select livro;
-			livros = livPorNome.Union(livPorAutor);
-		}
-		if (tags?.DefaultIfEmpty() != null)
-		{
-			ParameterExpression param = Expression.Parameter(typeof(Livro), "livro");
-			ExPred? predicate = null;
-			foreach(var tag in tags){
-				var invoke =  Expression.Invoke( (ExPred)((livro) => livro.Tags.Any(tag2 => tag == tag2)),param);
-				if(predicate == null)
-					predicate =Expression.Lambda<Pred>(invoke, param) ;
-				else
-				predicate  =  Expression.Lambda<Pred>(Expression.And(predicate.Body, invoke), param);
-			}
-			if(predicate != null)
-				livros = livros.Where(predicate);
-		}
-
-
-		return livros;
-	}
 }

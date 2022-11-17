@@ -8,21 +8,26 @@ using System.Threading.Tasks;
 
 namespace LivrEtec
 {
-    public class Funcionario
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required, Key]
-        public int Id;
-        public string Senha = null!;
-        public string Login = null!;
-        public string Nome = null!;
 
-        public Funcionario(int id, string senha, string login, string nome)
-        {
-            Id = id;
-            Senha = senha;
-            Login = login;
-            Nome = nome;
-        }
-    }
+	public class Funcionario : IFuncionario
+	{
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[Required, Key]
+		public int Id { get; set; }
+		public string Senha { get; set; } = null!;
+		public string Login { get; set; } = null!;
+		public string Nome { get; set; } = null!;
+
+		public Funcionario()
+		{
+		}
+
+		public Funcionario(int id, string senha, string login, string nome)
+		{
+			Id = id;
+			Senha = senha;
+			Login = login;
+			Nome = nome;
+		}
+	}
 }

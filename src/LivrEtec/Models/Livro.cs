@@ -25,7 +25,6 @@ namespace LivrEtec
         public string? Descricao { get; set; } 
         public List<Tag> Tags { get; set; } = new List<Tag>();
         public List<Autor> Autores { get; set; } = new List<Autor>();
-
         [Required]
         public bool Arquivado { get; set; }
     }
