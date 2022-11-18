@@ -8,7 +8,7 @@ namespace LivrEtec
         public Livro(){}
         public Livro(string nome, string descricao, List<Tag>? tags =  default, List<Autor>? autores = default, bool arquivado = false)
         {
-            cd =  default;
+            Id =  default;
             Nome = nome;
             Descricao = descricao;
             Tags = tags ?? new() ;
@@ -18,7 +18,7 @@ namespace LivrEtec
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int cd { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Nome { get; set; } = null!;

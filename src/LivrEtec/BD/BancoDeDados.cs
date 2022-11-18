@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace LivrEtec
 {
@@ -12,16 +13,18 @@ namespace LivrEtec
 		public DbSet<Tag> Tags { get; set; } = null!;
 		public DbSet<Aluno> Alunos { get; set; } = null!;
 		public DbSet<Emprestimo> Emprestimos { get; set; } = null!;
-
-		public PacaContext()
+		public ILoggerFactory? LoggerFactory { get;init; }
+		public PacaContext(ILoggerFactory? loggerFactory = null)
 		{ 
+			LoggerFactory = loggerFactory;
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
 			//options.EnableSensitiveDataLogging(true);
-			options.LogTo((s => Console.WriteLine(s)), Microsoft.Extensions.Logging.LogLevel.Information);
-			var stringConn = $"server=localhost;database=LivrEtecBD;user=root;password=root";
+			if(LoggerFactory != null)
+				options.UseLoggerFactory(LoggerFactory);
+			var stringConn = $"server=localhost;database=LivrEtecBD;user=LivrEtecServe;password=LivrEtecSenha";
 			options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
 
 		}

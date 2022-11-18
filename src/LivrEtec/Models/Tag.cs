@@ -3,22 +3,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Tag : ITag
+    public class Tag : ITag, IComparable<Tag>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int Cd { get; set; }
+        public int Id { get; set; }
         [Required]
         public string? Nome { get; set; }
         public List<Livro> Livros {get;set;} =  new();
-        public Tag(int cd = default, string nome = null!)
+        public Tag(int id = default, string nome = null!)
         {
-            this.Cd = cd;
+            this.Id = id;
             this.Nome = nome;
         }
-        public Tag(int cd)
+        public Tag(int id)
         {
-            this.Cd = cd;
+            this.Id = id;
         }
         public Tag(string nome)
         {
@@ -28,6 +28,10 @@ namespace LivrEtec
 		{
 		}
 
- 
+		public int CompareTo(Tag? other)
+		{
+            _ = other ?? throw new NullReferenceException();
+            return this.Id.CompareTo(other.Id);
+		}
 	}
 }

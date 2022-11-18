@@ -3,23 +3,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Autor : IAutor
+    public class Autor : IAutor, IComparable<Autor>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int cd { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Nome { get; set;} = null!;
         public List<Livro> Livros {get;set;} =  new();
         public Autor(){}
-        public Autor(int cd = default, string nome = null!)
+        public Autor(int id = default, string nome = null!)
         {
-            this.cd = cd;
+            this.Id = id;
             this.Nome = nome;
         }
-        public Autor(int cd )
+        public Autor(int id )
         {
-            this.cd = cd;
+            this.Id = id;
         }
-    }
+
+		public int CompareTo(Autor? other)
+		{
+            _ = other ?? throw new NullReferenceException();
+            return this.Id.CompareTo(other.Id);
+		}
+	}
 }

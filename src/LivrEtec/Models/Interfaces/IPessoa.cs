@@ -2,7 +2,7 @@
 {
     public interface IPessoa
     {
-        int Cd { get; set; }
+        int Id { get; set; }
         string Nome { get; set; }
         string? Telefone { get; set; }
     }

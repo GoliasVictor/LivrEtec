@@ -2,7 +2,7 @@
 {
     public interface IAutor
     {
-        int cd { get; set; }
+        int Id { get; set; }
         string Nome { get; set; }
     }
 }

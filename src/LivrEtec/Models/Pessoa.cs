@@ -14,7 +14,7 @@ namespace LivrEtec
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int Cd { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Nome { get; set; } = null!;

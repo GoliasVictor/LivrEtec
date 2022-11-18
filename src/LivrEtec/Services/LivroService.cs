@@ -32,11 +32,17 @@ public class LivroService : Repositorio
 		return livros;
 	}
 
-	public Livro? Get(int cd) => BD.Livros.Find(cd);
+	public Livro? Get(int id) => BD.Livros.Find(id);
 	public bool Registrar(Livro livro) {
+		if ( string.IsNullOrWhiteSpace(livro.Nome)
+		  || livro.Id < 0
+		  || BD.Livros.Any((outro)=> outro.Id == livro.Id)
+		)
+			return false;
+		
 		BD.Livros.Add(livro);
 		BD.SaveChanges();
-		Logger?.LogInformation($"Livros: Registrado ${livro.cd}");
+		Logger?.LogInformation($"Livros: Registrado ${livro.Id}");
 		return true;
 	}
 

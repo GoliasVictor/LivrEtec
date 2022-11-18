@@ -12,7 +12,7 @@ public class AutorService : Repositorio
 	{
 		BD.Autores.Add(autor);
 		BD.SaveChanges();
-		Logger?.LogInformation($"Autor @{autor.cd} registrado");
+		Logger?.LogInformation($"Autor @{autor.Id} registrado");
 		return true;
 
 	}

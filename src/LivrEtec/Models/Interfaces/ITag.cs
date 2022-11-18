@@ -2,7 +2,7 @@
 {
     public interface ITag
     {
-        int Cd { get; set; }
+        int Id { get; set; }
         string? Nome { get; set; }
     }
 }

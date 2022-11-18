@@ -7,7 +7,7 @@
 			"type": "process",
 			"args": [
 				"build",
-				"${workspaceFolder}/temp-test.csproj",
+				"${workspaceFolder}/src/temp-test/temp-test.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
@@ -19,12 +19,13 @@
 			"type": "process",
 			"args": [
 				"publish",
-				"${workspaceFolder}/temp-test.csproj",
+				"${workspaceFolder}/src/temp-test/temp-test.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
 			"problemMatcher": "$msCompile"
 		},
+		
 		{
 			"label": "watch",
 			"command": "dotnet",
@@ -33,9 +34,31 @@
 				"watch",
 				"run",
 				"--project",
-				"${workspaceFolder}/temp-test.csproj"
+				"${workspaceFolder}/src/temp-test/temp-test.csproj"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "migrar",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"ef",
+				"migrations",
+				"add",
+				"${input:migracao}",
+				"--project ${workspaceFolder}/src/LivrEtec/LivrEtec.csproj"
 			],
 			"problemMatcher": "$msCompile"
 		}
-	]
+	],
+	"inputs": [
+        {
+            "id": "migracao",
+            "description": "O nome da migração",
+            "default": "",
+            "type": "promptString"
+        },
+    ]
+
 }

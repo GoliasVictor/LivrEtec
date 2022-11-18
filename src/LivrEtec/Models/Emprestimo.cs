@@ -7,9 +7,9 @@ namespace LivrEtec
      
     public class Emprestimo : IEmprestimo
     {
-        public Emprestimo(int cd, Aluno aluno, Livro livro, DateTime dataEmprestimo)
+        public Emprestimo(int id, Aluno aluno, Livro livro, DateTime dataEmprestimo)
         {
-            Cd = cd;
+            Id = id;
             Aluno = aluno;
             Livro = livro;
             DataEmprestimo = dataEmprestimo;
@@ -19,7 +19,7 @@ namespace LivrEtec
 
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
-        public int Cd { get; set; }
+        public int Id { get; set; }
 
 
 		[Required]
