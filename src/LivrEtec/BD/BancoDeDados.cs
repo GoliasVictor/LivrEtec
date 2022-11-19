@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-
 namespace LivrEtec
 {
 
@@ -24,9 +23,14 @@ namespace LivrEtec
 			//options.EnableSensitiveDataLogging(true);
 			if(LoggerFactory != null)
 				options.UseLoggerFactory(LoggerFactory);
-			var stringConn = $"server=localhost;database=LivrEtecBD;user=LivrEtecServe;password=LivrEtecSenha";
-			options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
+			
+			var stringConn = $"server=localhost;database=LivrEtecBD;user=root;password=root";
+			try{
+				options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
+			}
+			catch(Exception ex){
+            }
 
-		}
+        }
 	}
 }
