@@ -15,13 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run: 
-        working-directory: "./src"
+        working-directory: "src"
     steps: 
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - name: Setup MySQL 
+      uses: mirromutth/mysql-action@v1.1
+      with: 
+        mysql root password: root 
+        mysql database: LivrEtecBD 
+        mysql user: LivrEtecServe 
+        mysql password: LivrEtecSenha 
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
