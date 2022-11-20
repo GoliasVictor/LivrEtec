@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+
+
 namespace LivrEtec
 {
 
@@ -13,9 +16,12 @@ namespace LivrEtec
 		public DbSet<Aluno> Alunos { get; set; } = null!;
 		public DbSet<Emprestimo> Emprestimos { get; set; } = null!;
 		public ILoggerFactory? LoggerFactory { get;init; }
-		public PacaContext(ILoggerFactory? loggerFactory = null)
+		public IConfiguracao Config;
+		public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null) 
 		{ 
+			Config = config;
 			LoggerFactory = loggerFactory;
+
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -24,14 +30,14 @@ namespace LivrEtec
 			if(LoggerFactory != null)
 				options.UseLoggerFactory(LoggerFactory);
 			
-			var stringConn = $"server=localhost;database=LivrEtecBD;user=root;password=root";
-                options.UseInMemoryDatabase("LivrEtecBD");
-			return;
+			
             try
             {
-				options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
+				options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));
 			}
-			catch(Exception ex){
+			catch{
+                options.UseInMemoryDatabase("LivrEtecBD");
+
             }
 
         }

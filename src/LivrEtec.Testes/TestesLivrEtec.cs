@@ -2,7 +2,8 @@
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
-public class TestesLivrEtec
+
+public class TestesLivro  : IClassFixture<ConfiguradorTestes>
 {
 	PacaContext BD;
 	AcervoService AcervoService;
@@ -15,7 +16,7 @@ public class TestesLivrEtec
 	public static bool EnumerableIgual<T>( IEnumerable<T> A, IEnumerable<T> B){
 		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
 	}
-	public TestesLivrEtec()
+	public TestesLivro(ConfiguradorTestes configurador)
 	{ 	
 
 		Autores =  new Autor[]{
@@ -60,7 +61,7 @@ public class TestesLivrEtec
 		//	lb.AddConsole();
 		//	lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
 		//}));
-		BD = new PacaContext();
+		BD = new PacaContext(configurador.Config);
 
         BD.Database.EnsureDeleted();
         BD.Database.EnsureCreated();
