@@ -1,5 +1,11 @@
 # LivrEtec
 Bom dia, Boa tarde, Boa noite, Gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
+## Ferramentas  
+- **.Net Core**: Como Framework de todo Backend
+- **MySql**: Como provedor do Banco de Dados
+- **Entity Framwork**: ORM para conectar aplicação ao banco
+- **xUnit**: Para Executar Testes Unitarios da Biblioteca 
+- **Figma**: Para desenvolver o Design 
 ## Como Executar
 O projeto atualmente só esta construida a biblioteca de classes que outras partes do projeto futuramente irão usar, então por enquanto é possivel apenas execurtar os testes
 
