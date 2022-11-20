@@ -25,7 +25,10 @@ namespace LivrEtec
 				options.UseLoggerFactory(LoggerFactory);
 			
 			var stringConn = $"server=localhost;database=LivrEtecBD;user=root;password=root";
-			try{
+                options.UseInMemoryDatabase("LivrEtecBD");
+			return;
+            try
+            {
 				options.UseMySql(stringConn, ServerVersion.AutoDetect(stringConn));
 			}
 			catch(Exception ex){
