@@ -11,7 +11,8 @@ on:
 
 jobs:
   build:
-
+    env: 
+      APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/src/appsettings.json'
     runs-on: ubuntu-latest
     defaults:
       run: 
