@@ -5,7 +5,7 @@ public class ConfiguradorTestes
 {
 	public ConfiguracaoTeste Config;
 	public ConfiguradorTestes()
-	{
+	{ 
 		string? AppSettingsJsonPath =  Environment.GetEnvironmentVariable("APP_SETTINGS_JSON_PATH");
 
 		if(AppSettingsJsonPath is null){
@@ -21,8 +21,6 @@ public class ConfiguradorTestes
 			Console.WriteLine("Ocorreu algum erro na configuração");
 			throw new Exception("Ocorreu algum erro na configuração");
 		}
-	
-		
-
+		Config = config;  
 	}
 }

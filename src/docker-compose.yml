@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  app: 
+    container_name: "livretec_testes"
+    image: livretec_testes
+    build:
+      context: .
+      dockerfile: ./Docker/Testes/Dockerfile
+  db:
+    container_name: "livretec_bd"
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: LivrEtecBD    
+      MYSQL_USER: LivrEtecServe
+      MYSQL_PASSWORD: LivrEtecSenha
+    volumes: 
+      - livretec-mysql-volume:/var/lib/mysql
+volumes:
+  livretec-mysql-volume:

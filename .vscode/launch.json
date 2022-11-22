@@ -1,19 +1,17 @@
 {
+	// Use o IntelliSense para saber mais sobre os atributos possíveis.
+	// Focalizar para exibir as descrições dos atributos existentes.
+	// Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
 		{
-			// Use IntelliSense to find out which attributes exist for C# debugging
-			// Use hover for the description of the existing attributes
-			// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
 			"name": ".NET Core Launch (console)",
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
-			// If you have changed target frameworks, make sure to update the program path.
-			"program": "${workspaceFolder}/src/temp-test/bin/Debug/net6.0/temp-test.dll",
+			"program": "${workspaceFolder}/src/LivrEtec.Testes/bin/Debug/net6.0/LivrEtec.Testes.dll",
 			"args": [],
-			"cwd": "${workspaceFolder}/src/temp-test",
-			// For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+			"cwd": "${workspaceFolder}/src/LivrEtec.Testes",
 			"console": "internalConsole",
 			"stopAtEntry": false
 		},
@@ -21,6 +19,15 @@
 			"name": ".NET Core Attach",
 			"type": "coreclr",
 			"request": "attach"
+		},
+		{
+			"name": "Docker .NET Core Launch",
+			"type": "docker",
+			"request": "launch",
+			"preLaunchTask": "docker-run: debug",
+			"netCore": {
+				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
+			}
 		}
 	]
 }
