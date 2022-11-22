@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
 
-public class TestesLivro  : IClassFixture<ConfiguradorTestes>
+public class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
 {
 	PacaContext BD;
 	AcervoService AcervoService;
@@ -115,5 +115,10 @@ public class TestesLivro  : IClassFixture<ConfiguradorTestes>
 		var Valido = AcervoService.Livros.Registrar(livroARegistrar);
 
 		Assert.False(Valido);
+	}
+
+	public void Dispose()
+	{
+		BD.Dispose();
 	}
 }

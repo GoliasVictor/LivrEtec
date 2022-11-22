@@ -7,7 +7,7 @@
 			"type": "process",
 			"args": [
 				"build",
-				"${workspaceFolder}/src/temp-test/temp-test.csproj",
+				"${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
@@ -19,13 +19,12 @@
 			"type": "process",
 			"args": [
 				"publish",
-				"${workspaceFolder}/src/temp-test/temp-test.csproj",
+				"${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
 			"problemMatcher": "$msCompile"
 		},
-		
 		{
 			"label": "watch",
 			"command": "dotnet",
@@ -34,31 +33,65 @@
 				"watch",
 				"run",
 				"--project",
-				"${workspaceFolder}/src/temp-test/temp-test.csproj"
+				"${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
 			],
 			"problemMatcher": "$msCompile"
 		},
 		{
-			"label": "migrar",
-			"command": "dotnet",
-			"type": "process",
-			"args": [
-				"ef",
-				"migrations",
-				"add",
-				"${input:migracao}",
-				"--project ${workspaceFolder}/src/LivrEtec/LivrEtec.csproj"
+			"type": "docker-build",
+			"label": "docker-build: debug",
+			"dependsOn": [
+				"build"
 			],
-			"problemMatcher": "$msCompile"
+			"dockerBuild": {
+				"tag": "livretec:dev",
+				"target": "base",
+				"dockerfile": "${workspaceFolder}/src/LivrEtec.Testes/Dockerfile",
+				"context": "${workspaceFolder}",
+				"pull": true
+			},
+			"netCore": {
+				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
+			}
+		},
+		{
+			"type": "docker-build",
+			"label": "docker-build: release",
+			"dependsOn": [
+				"build"
+			],
+			"dockerBuild": {
+				"tag": "livretec:latest",
+				"dockerfile": "${workspaceFolder}/src/LivrEtec.Testes/Dockerfile",
+				"context": "${workspaceFolder}",
+				"pull": true
+			},
+			"netCore": {
+				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: debug",
+			"dependsOn": [
+				"docker-build: debug"
+			],
+			"dockerRun": {},
+			"netCore": {
+				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj",
+				"enableDebugging": true
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: release",
+			"dependsOn": [
+				"docker-build: release"
+			],
+			"dockerRun": {},
+			"netCore": {
+				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
+			}
 		}
-	],
-	"inputs": [
-        {
-            "id": "migracao",
-            "description": "O nome da migração",
-            "default": "",
-            "type": "promptString"
-        },
-    ]
-
+	]
 }
