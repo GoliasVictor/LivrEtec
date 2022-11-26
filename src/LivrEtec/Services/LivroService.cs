@@ -1,13 +1,16 @@
 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Logging;
+using System.Data.Entity.Infrastructure;
 
 namespace LivrEtec;
 
-public class LivroService : Repositorio
+public class LivroService : Repositorio, ILivroService
 {
 	public LivroService(IAcervoService acervoService) : base(acervoService) { }
 
-	public IQueryable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag> tags = null!)
+	public IQueryable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag>? tags = null)
 	{
 
 		IQueryable<Livro> livros = BD.Livros;
@@ -24,22 +27,31 @@ public class LivroService : Repositorio
 		}
 
 
-		if(tags is not null)
-			foreach(var tag in tags )
+		if (tags is not null)
+			foreach (var tag in tags)
 				livros = livros.
 					Where((livro) => livro.Tags.Contains(tag));
-		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",",tags ?? Enumerable.Empty<Tag>())}");
+		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", tags ?? Enumerable.Empty<Tag>())}");
 		return livros;
 	}
 
-	public Livro? Get(int id) => BD.Livros.Find(id);
-	public bool Registrar(Livro livro) {
-		if ( string.IsNullOrWhiteSpace(livro.Nome)
+	public Livro? Get(int id) {
+		
+		var  livro =  BD.Livros.Find(id);
+		if (livro == null)
+			return livro;
+		BD.Entry(livro).Collection(l => l.Tags).Load();
+        BD.Entry(livro).Collection(l => l.Autores).Load();
+        return livro;
+	}
+	public bool Registrar(Livro livro)
+	{
+		if (string.IsNullOrWhiteSpace(livro.Nome)
 		  || livro.Id < 0
-		  || BD.Livros.Any((outro)=> outro.Id == livro.Id)
+		  || BD.Livros.Any((outro) => outro.Id == livro.Id)
 		)
 			return false;
-		
+
 		BD.Livros.Add(livro);
 		BD.SaveChanges();
 		Logger?.LogInformation($"Livros: Registrado ${livro.Id}");

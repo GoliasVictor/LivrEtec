@@ -5,7 +5,11 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec", "LivrEtec\LivrEtec.csproj", "{290AE602-4DB4-43EA-AA76-8F1BF8F241E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.Testes", "LivrEtec.Testes\LivrEtec.Testes.csproj", "{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.Testes", "LivrEtec.Testes\LivrEtec.Testes.csproj", "{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.Interno.Servidor", "..\LivrEtec.Interno.Servidor\LivrEtec.Interno.Servidor.csproj", "{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.Interno", "..\LivrEtec.Interno\LivrEtec.Interno.csproj", "{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
