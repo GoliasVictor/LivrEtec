@@ -1,4 +1,5 @@
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
@@ -32,26 +33,26 @@ public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
 				Permissoes.Emprestimo.Excluir,
 			})
 		};
+		Cargos = new[] { new Cargo(1,"oi", new() { Permissoes.Livro.Visualizar}) };
 		Usuarios =  new []{
-			new Usuario(1, "Senha", "tavares", "Tavares", gCargo(1)),
-			new Usuario(2, "Senha", "Ze", "Zé", gCargo(2)),
-			new Usuario(3, "Senha", "Atlas", "Atlas", gCargo(3)),
+			new Usuario(1, "", "tavares", "Tavares", gCargo(1)),
+			new Usuario(2, "", "Ze", "Zé", gCargo(1)),
+			new Usuario(3, "", "Atlas", "Atlas", gCargo(1)),
 		};
+		foreach (var perm in Permissoes.TodasPermissoes)
+			perm.Cargos = new List<Cargo>();
 
 		BD = new PacaContext(configurador.Config,LoggerFactory.Create((lb)=> { 
 			lb.AddConsole();
 			lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
 		}));
 
-		//BD = new PacaContext(configurador.Config);
+		BD = new PacaContext(configurador.Config);
         BD.Database.EnsureDeleted();
         BD.Database.EnsureCreated();
 		BD.Permissoes.AddRange(Permissoes.TodasPermissoes);
 		BD.Cargos.AddRange(Cargos);
 		BD.Usuarios.AddRange(Usuarios);
-		BD.SaveChanges();
-		
-
 		BD.SaveChanges();
 		AutorizacaoService =  new AutorizacaoService(BD, null!);
 	}
@@ -77,7 +78,7 @@ public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
 		var permissao =  Permissoes.Cargo.Criar;
 
 		var autorizado = AutorizacaoService.EhAutorizado(usuario, permissao);
-
+		
 		Assert.False(autorizado);
 	}
 

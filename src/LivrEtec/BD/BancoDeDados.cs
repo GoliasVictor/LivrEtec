@@ -9,7 +9,7 @@ namespace LivrEtec
 
 	public class PacaContext : DbContext, IPacaContext
 	{
-		public DbSet<Livro> Livros { get; set; } = null!;
+        public DbSet<Livro> Livros { get; set; } = null!;
 		public DbSet<Autor> Autores { get; set; } = null!;
 		public DbSet<Tag> Tags { get; set; } = null!;
 		public DbSet<Aluno> Alunos { get; set; } = null!;
@@ -31,14 +31,15 @@ namespace LivrEtec
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			//options.EnableSensitiveDataLogging(true);
-			if (LoggerFactory != null)
+			options.EnableSensitiveDataLogging(true);
+
+            if (LoggerFactory != null)
 				options.UseLoggerFactory(LoggerFactory);
-			
-			try
+
+            try
 			{
 				options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));
-			}
+            }
 			catch (Exception ex)
 			{
 				Console.WriteLine("Falha ao usar banco de dados, sera utilizado banco de dados em memoria");
