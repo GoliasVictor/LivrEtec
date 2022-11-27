@@ -14,6 +14,9 @@ namespace LivrEtec
 		public DbSet<Tag> Tags { get; set; } = null!;
 		public DbSet<Aluno> Alunos { get; set; } = null!;
 		public DbSet<Emprestimo> Emprestimos { get; set; } = null!;
+		public DbSet<Usuario> Usuarios { get; set; } = null!;
+		public DbSet<Cargo> Cargos { get; set; } = null!;
+		public DbSet<Permissao> Permissoes { get; set; } = null!;
 		public ILoggerFactory? LoggerFactory { get; init; }
 		public IConfiguracao Config;
 		public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null)
@@ -23,13 +26,15 @@ namespace LivrEtec
 			LoggerFactory = loggerFactory;
 
 		}
-
+		public PacaContext()
+		{
+		}
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
 			//options.EnableSensitiveDataLogging(true);
 			if (LoggerFactory != null)
 				options.UseLoggerFactory(LoggerFactory);
-
+			
 			try
 			{
 				options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));

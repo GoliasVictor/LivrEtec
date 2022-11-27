@@ -9,8 +9,8 @@ public class ConfiguradorTestes
 		string? AppSettingsJsonPath =  Environment.GetEnvironmentVariable("APP_SETTINGS_JSON_PATH");
 
 		if(AppSettingsJsonPath is null){
-			Console.WriteLine("Arquvio de configuração appsettings.json não definido");
-			throw new Exception("Arquvio de configuração appsettings.json não definido");
+			Console.WriteLine("Arquvio de configuração appsettings.json não definido, sera usado ./appsettings.json por padrão");
+			AppSettingsJsonPath = "./appsettings.json";
 		}
 		var config = new ConfigurationBuilder()
 			.AddEnvironmentVariables()

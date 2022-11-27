@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
-
+[Collection("UsaBancoDeDados")]
 public class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
 {
 	PacaContext BD;
@@ -72,7 +72,7 @@ public class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
 		
 
 		BD.SaveChanges();
-		AcervoService =  new AcervoService(BD,null);
+		AcervoService =  new AcervoService(BD, null);
 	}
 	[Fact]
 	public void Registrar_LivroValido()

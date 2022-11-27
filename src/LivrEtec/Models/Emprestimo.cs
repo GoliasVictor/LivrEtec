@@ -29,7 +29,7 @@ namespace LivrEtec
         public Livro Livro { get; set; } = null!; 
 
         [Required]
-        public Funcionario Funcionario = null!;
+        public Usuario Usuario = null!;
 
         [Required]
         public DateTime DataEmprestimo { get; set; }

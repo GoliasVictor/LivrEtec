@@ -19,7 +19,7 @@ public class AcervoService : IAcervoService
 	public ILivroService Livros {get;init;}  
 	public AutorService Autores {get;init;}  
 
-	public AcervoService(PacaContext bd, ILogger<AcervoService> logger) 
+	public AcervoService(PacaContext bd, ILogger<AcervoService>? logger) 
 	{
         BD = bd;
 		Logger = logger;
