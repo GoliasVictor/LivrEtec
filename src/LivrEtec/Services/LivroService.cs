@@ -6,9 +6,9 @@ using System.Data.Entity.Infrastructure;
 
 namespace LivrEtec;
 
-public class LivroService : Repositorio, ILivroService
+public sealed class LivroService : Repositorio, ILivroService
 {
-	public LivroService(IAcervoService acervoService) : base(acervoService) { }
+	public LivroService(AcervoService acervoService) : base(acervoService) { }
 
 	public IQueryable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag>? tags = null)
 	{

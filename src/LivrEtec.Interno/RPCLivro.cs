@@ -2,9 +2,9 @@
 {
     public partial class RPCLivro
     {
-        public static implicit operator RPCLivro?(Livro? model)
+        public static implicit operator RPCLivro(Livro model)
             => model == null
-             ? null : new()
+             ? null! : new()
             {
                 Id = model.Id,
                 Nome = model.Nome,
@@ -14,7 +14,7 @@
             };
         public static implicit operator Livro?(RPCLivro? proto)
             => proto == null
-             ? null : new()
+             ? null! : new()
             {
                 Id = proto.Id,
                 Nome = proto.Nome,

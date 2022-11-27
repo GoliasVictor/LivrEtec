@@ -2,12 +2,12 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec;
 
-public  abstract class Repositorio
+public abstract class Repositorio 
 {
-	protected IAcervoService acervoService;
+	protected AcervoService acervoService;
 	protected PacaContext BD => acervoService.BD;
 	protected ILogger? Logger => acervoService.Logger;
-	public Repositorio(IAcervoService acervoService)
+	public Repositorio(AcervoService acervoService)
 	{
 		this.acervoService = acervoService;
 	}

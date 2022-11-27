@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
+public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
 {
 	PacaContext BD;
 	AcervoService AcervoService;

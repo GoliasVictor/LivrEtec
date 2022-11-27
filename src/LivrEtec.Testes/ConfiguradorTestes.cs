@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 
 namespace LivrEtec.Testes;
-public class ConfiguradorTestes
+public sealed class ConfiguradorTestes
 {
 	public ConfiguracaoTeste Config;
 	public ConfiguradorTestes()

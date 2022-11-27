@@ -3,19 +3,10 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec;
 
-
-public interface IAcervoService
+public sealed class AcervoService : IAcervoService
 {
-	PacaContext BD { get;init; }
-	ILogger? Logger { get;init; }
-	ILivroService Livros { get; init; }
-
-}
-
-public class AcervoService : IAcervoService
-{
-	public PacaContext BD { get;  init;}
-	public ILogger? Logger { get; init;}
+	internal PacaContext BD { get; init;}
+	internal ILogger? Logger { get; init;}
 	public ILivroService Livros {get;init;}  
 	public AutorService Autores {get;init;}  
 

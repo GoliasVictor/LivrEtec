@@ -37,10 +37,10 @@ public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
 			})
 		};
 		Usuarios =  new []{
-			new Usuario(1, "", "tavares", "Tavares", gCargo(IdAdministrador)),
-			new Usuario(2, "", "Ze", "Zé", gCargo(IdAnonimo)),
-			new Usuario(3, "", "Paca", "Paca", gCargo(3)),
-			new Usuario(4, "", "Atlas", "Atlas", gCargo(4)),
+			new Usuario(1, "", "tavares", "Tavares"	, gCargo(IdAdministrador)),
+			new Usuario(2, "", "Ze"		, "Zé"		, gCargo(IdAnonimo)),
+			new Usuario(3, "", "Paca"	, "Paca"	, gCargo(3)),
+			new Usuario(4, "", "Atlas"	, "Atlas"	, gCargo(4)),
 		};
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
