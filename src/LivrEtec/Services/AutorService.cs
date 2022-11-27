@@ -2,9 +2,9 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec;
 
-public class AutorService : Repositorio
+public sealed class AutorService : Repositorio, IAutorService
 {
-	public AutorService(IAcervoService acervoService) : base(acervoService)
+	public AutorService(AcervoService acervoService) : base(acervoService)
 	{
 	}
 

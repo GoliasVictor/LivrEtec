@@ -1,6 +1,6 @@
 namespace LivrEtec
 {
-	public interface IFuncionario
+	public interface IUsuario
 	{
 		int Id { get; set; }
 		string Senha { get; set; }

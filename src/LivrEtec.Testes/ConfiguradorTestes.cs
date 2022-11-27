@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 
 namespace LivrEtec.Testes;
-public class ConfiguradorTestes
+public sealed class ConfiguradorTestes
 {
 	public ConfiguracaoTeste Config;
 	public ConfiguradorTestes()
@@ -9,8 +9,8 @@ public class ConfiguradorTestes
 		string? AppSettingsJsonPath =  Environment.GetEnvironmentVariable("APP_SETTINGS_JSON_PATH");
 
 		if(AppSettingsJsonPath is null){
-			Console.WriteLine("Arquvio de configuração appsettings.json não definido");
-			throw new Exception("Arquvio de configuração appsettings.json não definido");
+			Console.WriteLine("Arquvio de configuração appsettings.json não definido, sera usado ./appsettings.json por padrão");
+			AppSettingsJsonPath = "./appsettings.json";
 		}
 		var config = new ConfigurationBuilder()
 			.AddEnvironmentVariables()

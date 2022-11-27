@@ -5,7 +5,7 @@ namespace LivrEtec
 {
 
      
-    public class Emprestimo : IEmprestimo
+    public sealed class Emprestimo : IEmprestimo
     {
         public Emprestimo(int id, Aluno aluno, Livro livro, DateTime dataEmprestimo)
         {
@@ -29,7 +29,7 @@ namespace LivrEtec
         public Livro Livro { get; set; } = null!; 
 
         [Required]
-        public Funcionario Funcionario = null!;
+        public Usuario Usuario = null!;
 
         [Required]
         public DateTime DataEmprestimo { get; set; }
