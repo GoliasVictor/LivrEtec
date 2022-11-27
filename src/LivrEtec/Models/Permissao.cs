@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec;
-public class Permissao 
+public sealed class Permissao 
 {
 	public Permissao()
 	{

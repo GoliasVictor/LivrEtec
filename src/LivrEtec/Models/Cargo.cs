@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Cargo :  IComparable<Cargo>
+    public sealed class Cargo :  IComparable<Cargo>
     {
 		public Cargo()
 		{

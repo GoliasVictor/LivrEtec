@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 namespace LivrEtec
 {
 
-	public class PacaContext : DbContext, IPacaContext
+	public sealed class PacaContext : DbContext, IPacaContext
 	{
         public DbSet<Livro> Livros { get; set; } = null!;
 		public DbSet<Autor> Autores { get; set; } = null!;

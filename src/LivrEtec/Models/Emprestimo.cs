@@ -5,7 +5,7 @@ namespace LivrEtec
 {
 
      
-    public class Emprestimo : IEmprestimo
+    public sealed class Emprestimo : IEmprestimo
     {
         public Emprestimo(int id, Aluno aluno, Livro livro, DateTime dataEmprestimo)
         {

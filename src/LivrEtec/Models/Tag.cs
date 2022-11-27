@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Tag : ITag, IComparable<Tag>
+    public sealed class Tag : ITag, IComparable<Tag>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]

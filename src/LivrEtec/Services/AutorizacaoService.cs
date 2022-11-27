@@ -1,12 +1,7 @@
 using Microsoft.Extensions.Logging;
 namespace LivrEtec;
-public interface IAutorazaoService {
-	
-	PacaContext BD { init;}
-	ILogger? Logger {  init;} 
-}
 
-public class AutorizacaoService : IAutorazaoService
+public sealed class AutorizacaoService : IAutorizacaoService
 {
 	public PacaContext BD { get;  init;}
 	public ILogger? Logger { get; init;} 
@@ -23,5 +18,11 @@ public class AutorizacaoService : IAutorazaoService
 		}
 		var autorizado = BD.Usuarios.Find(usuario.Id)?.Cargo?.Permissoes?.Contains(permisao);
 		return autorizado ?? false;
+	}
+
+	public void ErroSeNaoAutorizado(Usuario usuario, Permissao permissao)
+	{
+		if(!EhAutorizado(usuario, permissao))
+			throw new NaoAutorizadoException(usuario, permissao);
 	}
 }
