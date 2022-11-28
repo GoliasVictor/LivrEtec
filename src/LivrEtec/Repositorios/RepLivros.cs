@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace LivrEtec;
 
-public sealed class RepLivros : Repositorio, IRepLivro
+public sealed class RepLivros : Repositorio, IRepLivros
 {
 	public RepLivros(AcervoService acervoService) : base(acervoService) { }
 
@@ -35,14 +35,15 @@ public sealed class RepLivros : Repositorio, IRepLivro
 		return livros;
 	}
 
-	public Livro? Get(int id) {
-		
-		var  livro =  BD.Livros.Find(id);
+	public Livro? Get(int id)
+	{
+
+		var livro = BD.Livros.Find(id);
 		if (livro == null)
 			return livro;
 		BD.Entry(livro).Collection(l => l.Tags).Load();
-        BD.Entry(livro).Collection(l => l.Autores).Load();
-        return livro;
+		BD.Entry(livro).Collection(l => l.Autores).Load();
+		return livro;
 	}
 	public bool Registrar(Livro livro)
 	{
@@ -54,8 +55,23 @@ public sealed class RepLivros : Repositorio, IRepLivro
 
 		BD.Livros.Add(livro);
 		BD.SaveChanges();
-		Logger?.LogInformation($"Livros: Registrado ${livro.Id}");
+		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
 		return true;
 	}
-
+	public void Remover(Livro livro)
+	{
+		if(!BD.Livros.Contains(livro))
+			throw new ArgumentException($"Livro {{{livro.Nome}}} já não existe no banco de dados");
+		BD.Livros.Remove(livro);
+		BD.SaveChanges();
+		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} excluido");
+	}
+	public void Editar(Livro livro)
+	{
+		if(!BD.Livros.Contains(livro))
+			throw new ArgumentException($"Livro {{{livro.Nome}}} não existe no banco de dados");
+		BD.Livros.Update(livro);
+		BD.SaveChanges();
+		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
+	}
 }

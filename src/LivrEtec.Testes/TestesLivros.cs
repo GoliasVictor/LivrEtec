@@ -3,22 +3,18 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable
+public sealed class TestesLivro  : TestesBD
 {
-	PacaContext BD;
 	AcervoService AcervoService;
-	Tag[] Tags;
-	Autor[] Autores;
-	Livro[] Livros;
 	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
 	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
-	Tag gLivro(int id) => Tags.First((a)=> a.Id == id); 
+	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
 	public static bool EnumerableIgual<T>( IEnumerable<T> A, IEnumerable<T> B){
 		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
 	}
-	public TestesLivro(ConfiguradorTestes configurador)
+	public TestesLivro(ConfiguradorTestes configurador) : base(configurador)
 	{ 	
-
+		ResetarBanco();
 		Autores =  new Autor[]{
 			new Autor(1, "J. R. R. Tolkien"),
 			new Autor(2, "Friedrich Engels"),
@@ -35,6 +31,7 @@ public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposabl
 		};
 		Livros =  new[]{
 			new Livro {
+				Id = 1,
 				Nome = "Senhor dos Aneis",
 				Arquivado = false,
 				Autores = { gAutor(1) },
@@ -42,13 +39,15 @@ public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposabl
 				Descricao = "Meu precioso"
 			},
 			new Livro {
+				Id = 2,
 				Nome = "O Capital",
 				Arquivado = false,
 				Autores = { gAutor(2), gAutor(3), },
-				Tags = { gTag(3) },
+				Tags = { gTag(3), gTag(2) },
 				Descricao = "É tudo nosso"
 			},
-			new Livro {
+			new Livro { 
+				Id = 3,
 				Nome = "A Revolução dos Bixos",
 				Arquivado = false,
 				Autores = { gAutor(4)},
@@ -56,21 +55,6 @@ public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposabl
 				Descricao = "É tudo nosso"
 			}
 		};
-
-		//BD = new PacaContext(LoggerFactory.Create((lb)=> { 
-		//	lb.AddConsole();
-		//	lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
-		//}));
-		BD = new PacaContext(configurador.Config);
-
-        BD.Database.EnsureDeleted();
-        BD.Database.EnsureCreated();
-		BD.Autores.AddRange(Autores);
-		BD.Tags.AddRange(Tags);
-		BD.Livros.AddRange(Livros);
-		BD.SaveChanges();
-		
-
 		BD.SaveChanges();
 		AcervoService =  new AcervoService(BD, null);
 	}
@@ -116,9 +100,55 @@ public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposabl
 
 		Assert.False(Valido);
 	}
+	[Fact]
+	public void Remover_LivroValido(){
+		var livro =  gLivro(1);
 
-	public void Dispose()
-	{
-		BD.Dispose();
+		AcervoService.Livros.Remover(livro);
+		var Contem =  BD.Livros.Contains(livro); 
+		
+		Assert.False(Contem);
 	}
+	[Fact]
+	public void Remover_LivroInvalido(){
+		var livro =  new Livro(){ Id = 100 };
+
+		Assert.Throws<ArgumentException>(()=>{
+			AcervoService.Livros.Remover(livro);
+		});
+	}
+	[Fact]
+	public void Editar_LivroValido()
+	{
+		var idLivro = 2;
+		var livroEditado =  gLivro(idLivro)!;
+		livroEditado.Nome = "Livro";
+		livroEditado.Arquivado = true;
+		livroEditado.Descricao = "Descrição";
+		livroEditado.Tags =  new(){gTag(1), gTag(2) };
+		livroEditado.Autores = new(){ gAutor(1) };
+
+		AcervoService.Livros.Editar(livroEditado);
+
+		var livroRegistrado = BD.Livros.Find(idLivro)!;
+
+		Assert.Equal(livroEditado.Nome, livroRegistrado.Nome);
+		Assert.Equal( livroEditado.Arquivado, livroRegistrado.Arquivado);
+		Assert.Equal( livroEditado.Descricao, livroRegistrado.Descricao);
+		Assert.True( 
+			EnumerableIgual(livroEditado.Tags, livroRegistrado.Tags)
+		 && EnumerableIgual(livroEditado.Autores, livroRegistrado.Autores)
+		);
+	}
+	[Theory]
+	[InlineData("", new int[]{2}, new int[]{1,2})]
+	[InlineData("Senhor", new int[]{}, new int[]{1})]
+	[InlineData("", new int[]{2,5}, new int[]{})]
+	[InlineData("Senhor", new int[]{2}, new int[]{1})]
+	public void Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
+		
+		var resulutado= AcervoService.Livros.Buscar(textoBusca, textoBusca, arrTag.Select(t=> gTag(t)));
+		var resultadoIgual = EnumerableIgual(idExperados, resulutado.Select((i)=> i.Id));
+		Assert.True(resultadoIgual);
+	}	
 }

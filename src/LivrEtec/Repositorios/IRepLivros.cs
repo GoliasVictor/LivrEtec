@@ -1,9 +1,10 @@
-﻿namespace LivrEtec
+namespace LivrEtec;
+
+public interface IRepLivros
 {
-    public interface IRepLivro
-    {
-        IQueryable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag>? tags = null);
-        Livro? Get(int id);
-        bool Registrar(Livro livro);
-    }
+	IQueryable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag>? tags = null);
+	void Editar(Livro livro);
+	Livro? Get(int id);
+	bool Registrar(Livro livro);
+	void Remover(Livro livro);
 }
