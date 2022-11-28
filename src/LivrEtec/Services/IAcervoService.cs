@@ -4,6 +4,6 @@ namespace LivrEtec;
 
 public interface IAcervoService
 {
-	ILivroService Livros { get; init; }
-	
+	IRepLivro Livros { get; init; }
+
 }

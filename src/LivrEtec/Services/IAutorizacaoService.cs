@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 namespace LivrEtec;
 
-public interface IAutorizacaoService {
-	
-	PacaContext BD { init;}
-	ILogger? Logger {  init;}
-	bool EhAutorizado(Usuario usuario, Permissao permisao);
+public interface IAutorizacaoService
+{
+	bool EhAutorizado(Usuario usuario, Permissao permissao);
+	bool EhAutorizado(int idUsuario, Permissao permissao);
+	void ErroSeNaoAutorizado(Usuario usuario, Permissao permissao);
 }
