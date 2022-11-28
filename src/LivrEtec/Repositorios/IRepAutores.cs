@@ -1,6 +1,6 @@
 namespace LivrEtec;
 
-public interface IAutorService
+public interface IRepAutores
 {
 	bool Registrar(Autor autor);
 	IEnumerable<Autor> Todos();

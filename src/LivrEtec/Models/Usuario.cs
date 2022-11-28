@@ -15,7 +15,9 @@ namespace LivrEtec
 		[Required, Key]
 		public int Id { get; set; }
 		[Required]
+		[DataType(DataType.Password)]
 		public string Senha { get; set; } = null!;
+		
 		[Required]
 		public string Login { get; set; } = null!;
 		[Required]

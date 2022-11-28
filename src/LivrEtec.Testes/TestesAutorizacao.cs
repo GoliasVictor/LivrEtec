@@ -4,22 +4,19 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
+public class TestesAutorizacao  :TestesBD
 {
 	const int IdAdministrador = 1;
 	const int IdAnonimo = 2;
-	PacaContext BD;
-	AutorizacaoService AutorizacaoService;
-	Usuario[] Usuarios;
-	Cargo[] Cargos;
+	IAutorizacaoService AutorizacaoService;
 	Usuario gUsuario(int id) => Usuarios.First((u)=> u.Id == id); 
 	Cargo gCargo(int id) => Cargos.First((c)=> c.Id == id); 
-	public static bool EnumerableIgual<T>( IEnumerable<T> A, IEnumerable<T> B){
-		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
-	}
-	public TestesAutorizacao(ConfiguradorTestes configurador)
+	public TestesAutorizacao(ConfiguradorTestes configurador) : base(configurador)
 	{ 	
-
+        ResetarBanco();
+		foreach (var perm in Permissoes.TodasPermissoes)
+			perm.Cargos = new List<Cargo>();
+		BDPermissoes =  Permissoes.TodasPermissoes;
 		Cargos = new[]{
 			new Cargo(IdAdministrador, "Administrador", Permissoes.TodasPermissoes.ToList()),
             new Cargo(IdAnonimo, "Anonimo", new (){}),
@@ -42,21 +39,9 @@ public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
 			new Usuario(3, "", "Paca"	, "Paca"	, gCargo(3)),
 			new Usuario(4, "", "Atlas"	, "Atlas"	, gCargo(4)),
 		};
-		foreach (var perm in Permissoes.TodasPermissoes)
-			perm.Cargos = new List<Cargo>();
-        BD = new PacaContext(configurador.Config,LoggerFactory.Create((lb)=> { 
-			lb.AddConsole();
-			lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
-		}));
-
-		BD = new PacaContext(configurador.Config);
-        BD.Database.EnsureDeleted();
-        BD.Database.EnsureCreated();
-		BD.Permissoes.AddRange(Permissoes.TodasPermissoes);
-		BD.Cargos.AddRange(Cargos);
-		BD.Usuarios.AddRange(Usuarios);
+	
 		BD.SaveChanges();
-		AutorizacaoService =  new AutorizacaoService(BD, null!);
+		AutorizacaoService =  new AutorizacaoService(BD, loggerFactory.CreateLogger<AutorizacaoService>());
 	}
 	[Theory]
 	[InlineData(IdAdministrador)]
@@ -102,8 +87,24 @@ public class TestesAutorizacao  : IClassFixture<ConfiguradorTestes>, IDisposable
 		});
     }
 
-    public void Dispose()
-	{
-		BD.Dispose();
-	}
+	[Fact]
+    public void ErroSeNaoAutorizado_PermissaoNula()
+    {
+        var usuario = gUsuario(IdAnonimo);
+        Permissao permissao = null!;
+		Assert.Throws<ArgumentNullException>(() => {
+			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		});
+    }
+	[Fact]
+    public void ErroSeNaoAutorizado_PermissaoInvalida()
+    {
+        var usuario = gUsuario(IdAnonimo);
+		const int IdInvalido = 100;
+		Permissao permissao = new Permissao(){ Id = IdInvalido };
+		Assert.Throws<ArgumentException>(() => {
+			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		});
+    }
+
 }

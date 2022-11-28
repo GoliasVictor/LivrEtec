@@ -1,28 +1,32 @@
 using Microsoft.Extensions.Logging;
 namespace LivrEtec;
 
-public sealed class AutorizacaoService : IAutorizacaoService
+public sealed class AutorizacaoService : Service, IAutorizacaoService
 {
-	public PacaContext BD { get;  init;}
-	public ILogger? Logger { get; init;} 
 
 	public AutorizacaoService(PacaContext bd, ILogger<AutorizacaoService> logger) 
+		: base(bd, logger)
 	{
-		BD = bd;
-		Logger = logger;		
 	}
 
-	public bool EhAutorizado(Usuario usuario, Permissao permisao){
-		if(usuario.Cargo == null){
-			BD.Entry(usuario).Reference(u=> u.Cargo).Load();
-		}
-		var autorizado = BD.Usuarios.Find(usuario.Id)?.Cargo?.Permissoes?.Contains(permisao);
+	public bool EhAutorizado(Usuario usuario, Permissao permissao)
+	{
+		return EhAutorizado(usuario.Id, permissao);
+	}
+	public bool EhAutorizado(int idUsuario, Permissao permissao)
+	{
+		if(permissao == null)
+			throw new ArgumentNullException(nameof(permissao));
+		if(!BD.Permissoes.Any((perm)=> perm.Id == permissao.Id))
+			throw new ArgumentException(nameof(permissao));
+			
+		var autorizado = BD.Usuarios.Find(idUsuario)?.Cargo?.Permissoes?.Contains(permissao);
 		return autorizado ?? false;
 	}
 
 	public void ErroSeNaoAutorizado(Usuario usuario, Permissao permissao)
 	{
-		if(!EhAutorizado(usuario, permissao))
+		if (!EhAutorizado(usuario, permissao))
 			throw new NaoAutorizadoException(usuario, permissao);
 	}
 }
