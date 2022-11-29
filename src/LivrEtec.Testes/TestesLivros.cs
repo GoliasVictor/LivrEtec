@@ -83,23 +83,56 @@ public sealed class TestesLivro  : TestesBD
 		 && EnumerableIgual(livroARegistrar.Autores, livroRegistrado.Autores)
 		);
 	}
+	[Fact]
+	public void Registrar_LivroExistente()
+	{
+		var livro  = gLivro(1);
+		
+		Assert.Throws<InvalidOperationException>(()=>{
+			AcervoService.Livros.Registrar(livro);
+		});
+	}
+	[Fact]
+	public void Registrar_idExistente(){
+		var IdLivro = 1;
+		var livro  = new Livro(){ 
+			Id =  IdLivro,
+			Nome = "douglas" 
+		};
 
+		Assert.Throws<InvalidOperationException>(()=>{
+			AcervoService.Livros.Registrar(livro);
+		});
+
+	}
+	[Fact]
+	public void Registrar_LivroNulo()
+	{
+		Livro Livro =  null!;
+
+
+		Assert.Throws<ArgumentNullException>(()=>{
+			AcervoService.Livros.Registrar(Livro);
+		});
+	}
 	[Theory]
 	[InlineData(-1, "nome")]
-	[InlineData(1, "nome")]
 	[InlineData(10, "")]
 	[InlineData(10, null)]
 	public void Registrar_LivroInValido(int id, string nome)
 	{
-		var livroARegistrar  = new Livro{
+		var livro  = new Livro{
 			Id = id,
 			Nome = nome,
 		};
 
-		var Valido = AcervoService.Livros.Registrar(livroARegistrar);
 
-		Assert.False(Valido);
+		Assert.Throws<InvalidDataException>(()=>{
+			AcervoService.Livros.Registrar(livro);
+		});
 	}
+
+
 	[Fact]
 	public void Remover_LivroValido(){
 		var livro =  gLivro(1);
@@ -113,19 +146,19 @@ public sealed class TestesLivro  : TestesBD
 	public void Remover_LivroInvalido(){
 		var livro =  new Livro(){ Id = 100 };
 
-		Assert.Throws<ArgumentException>(()=>{
+		Assert.Throws<InvalidOperationException>(()=>{
 			AcervoService.Livros.Remover(livro);
 		});
 	}
 	[Fact]
-	public void Editar_LivroValido()
+	public void Editar_TudoLivroValido()
 	{
-		var idLivro = 2;
+		var idLivro = 1;
 		var livroEditado =  gLivro(idLivro)!;
 		livroEditado.Nome = "Livro";
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
-		livroEditado.Tags =  new(){gTag(1), gTag(2) };
+		livroEditado.Tags =  new(){gTag(3) };
 		livroEditado.Autores = new(){ gAutor(1) };
 
 		AcervoService.Livros.Editar(livroEditado);
@@ -140,15 +173,43 @@ public sealed class TestesLivro  : TestesBD
 		 && EnumerableIgual(livroEditado.Autores, livroRegistrado.Autores)
 		);
 	}
+
+
+	[Fact]
+	public void Editar_LivroNulo()
+	{
+		Livro livro = null!;
+		
+		Assert.Throws<ArgumentNullException>(()=>{
+			AcervoService.Livros.Editar(livro);
+		});
+	}
+
+	[Fact]
+	public void Editar_LivroTagNula()
+	{
+		var idLivro = 1;
+		
+		var livroEditado =  gLivro(idLivro)!;
+
+		livroEditado.Tags = new List<Tag>(){ null! };
+		Assert.Throws<ArgumentNullException>(()=>{
+			AcervoService.Livros.Editar(livroEditado);
+		});		
+	}
+
 	[Theory]
-	[InlineData("", new int[]{2}, new int[]{1,2})]
-	[InlineData("Senhor", new int[]{}, new int[]{1})]
-	[InlineData("", new int[]{2,5}, new int[]{})]
-	[InlineData("Senhor", new int[]{2}, new int[]{1})]
+	[InlineData(""		, new int[]{}	, new int[]{1,2,3})]
+	[InlineData(null	, null			, new int[]{1,2,3})]
+	[InlineData(""		, new int[]{2,5}, new int[]{})]
+	[InlineData(null	, new int[]{2,5}, new int[]{})]
+	[InlineData("Senhor", new int[]{}	, new int[]{1})]
+	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public void Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado= AcervoService.Livros.Buscar(textoBusca, textoBusca, arrTag.Select(t=> gTag(t)));
+		var resulutado= AcervoService.Livros.Buscar(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
 		var resultadoIgual = EnumerableIgual(idExperados, resulutado.Select((i)=> i.Id));
 		Assert.True(resultadoIgual);
 	}	
+	
 }
