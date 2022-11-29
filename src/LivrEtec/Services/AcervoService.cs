@@ -7,7 +7,7 @@ public sealed class AcervoService : IAcervoService
 {
 	internal PacaContext BD { get; init;}
 	internal ILogger? Logger { get; init;}
-	public IRepLivro Livros {get;init;}  
+	public IRepLivros Livros {get;init;}  
 	public RepAutores Autores {get;init;}  
 
 	public AcervoService(PacaContext bd, ILogger<AcervoService>? logger) 
