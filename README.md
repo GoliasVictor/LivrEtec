@@ -1,3 +1,5 @@
+![](https://repobeats.axiom.co/api/embed/f5cead7dc8f370c3893a9f4a5edfd68b154ec43d.svg)
+
 # LivrEtec
 Bom dia, Boa tarde, Boa noite, Gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
 ## Ferramentas  
