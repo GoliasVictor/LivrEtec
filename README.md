@@ -1,27 +1,28 @@
 ![](https://repobeats.axiom.co/api/embed/f5cead7dc8f370c3893a9f4a5edfd68b154ec43d.svg)
 
 # LivrEtec
-Bom dia, Boa tarde, Boa noite, Gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
-## Ferramentas  
-- **.Net Core**: Como Framework de todo Backend
-- **MySql**: Como provedor do Banco de Dados
-- **Entity Framwork**: ORM para conectar aplicação ao banco
-- **xUnit**: Para Executar Testes Unitarios da Biblioteca 
-- **Figma**: Para desenvolver o Design 
+Bom dia, boa tarde ou boa noite. Esse projeto é um gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
+
+## Ferramentas
+- **.NET Core**: Framework de todo Back-End
+- **MySQL**: Banco de Dados
+- **Entity Framwork**: ORM para conectar a aplicação ao banco
+- **xUnit**: Para Executar Testes Unitarios da Biblioteca
+- **Figma**: Para desenvolver o Design
+
 ## Como Executar
-O projeto atualmente só esta construida a biblioteca de classes que outras partes do projeto futuramente irão usar, então por enquanto é possivel apenas execurtar os testes
+Atualmente só esta construída a biblioteca de classes, que outras partes do projeto futuramente irão usar. Então por enquanto é possivel apenas executar os testes.
 
 ### Executando Testes
+Para executar os testes é preferível que esteja instalado o MySQL, porém, caso não esteja instalado o aplicativo executará usando um banco de dados in-memory.
 
-Para executar os testes é preferivel que esteja instalado o MySql, porem caso não esteja instalado o aplicativo executara usando um Banco de Dados em memoria
 #### CLI
-Primeiramente verifique de estar instalado o .Net 6.0 e o CLI dele, e então execute 
+Primeiramente verifique se está instalado o .NET 6.0 e o CLI dele, e então execute 
 ```bash
 dotnet test
 ```
 #### Visual Studio 
-Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir(View em Ingles) abra o Gerenciador de Destes e aperte em executar.  
+Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir (View em Inglês) abra o Gerenciador de Testes e aperte em executar.  
 
 ## Design 
-O design do projeto está disponivel em https://www.figma.com/community/file/1176031299741420547
-
+O design está disponivel em figma.com/community/file/1176031299741420547
