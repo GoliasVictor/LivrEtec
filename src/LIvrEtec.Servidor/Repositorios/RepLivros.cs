@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Logging;
 using System.Data.Entity.Infrastructure;
 
-namespace LivrEtec;
+namespace LivrEtec.Servidor;
 
 public sealed class RepLivros : Repositorio, IRepLivro
 {

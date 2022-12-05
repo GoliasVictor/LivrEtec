@@ -1,6 +1,3 @@
-
-using Microsoft.Extensions.Logging;
-
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
 public sealed class TestesLivro  : IClassFixture<ConfiguradorTestes>, IDisposable

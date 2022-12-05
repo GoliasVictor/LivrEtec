@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
-namespace LivrEtec;
 using System.Security.Cryptography;
-using System.Text;
+
+namespace LivrEtec.Servidor;
 public sealed class AutenticacaoService : Service, IAutenticacaoService
 {
 

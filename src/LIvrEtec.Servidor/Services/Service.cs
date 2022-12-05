@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace LivrEtec;
+namespace LivrEtec.Servidor;
 
 public abstract class Service {
 	protected Service(PacaContext bd, ILogger? logger)
