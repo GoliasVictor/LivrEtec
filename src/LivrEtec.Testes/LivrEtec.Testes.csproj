@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LIvrEtec.Servidor\LivrEtec.Servidor.csproj" />
+    <ProjectReference Include="..\LivrEtec.Servidor\LivrEtec.Servidor.csproj" />
   </ItemGroup>
 
   <ItemGroup>

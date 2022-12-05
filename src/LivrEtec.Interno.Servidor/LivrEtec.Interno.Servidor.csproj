@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LivrEtec.Interno\LivrEtec.Interno.csproj" />
-    <ProjectReference Include="..\LIvrEtec.Servidor\LivrEtec.Servidor.csproj" />
+    <ProjectReference Include="..\LivrEtec.Servidor\LivrEtec.Servidor.csproj" />
   </ItemGroup>
 
 </Project>
