@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 namespace LivrEtec;
 
 public interface IAutorizacaoService

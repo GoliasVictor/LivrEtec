@@ -3,6 +3,7 @@ WORKDIR /src
 COPY LivrEtec/*.csproj ./LivrEtec/
 COPY LivrEtec.Testes/*.csproj ./LivrEtec.Testes/
 COPY LivrEtec.Interno/*.csproj ./LivrEtec.Interno/
+COPY LivrEtec.Servidor/*.csproj ./LivrEtec.Servidor/
 COPY LivrEtec.Interno.Servidor/*.csproj ./LivrEtec.Interno.Servidor/
 COPY *.sln .
 RUN  dotnet restore

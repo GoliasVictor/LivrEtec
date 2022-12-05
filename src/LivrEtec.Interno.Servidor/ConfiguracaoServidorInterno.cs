@@ -1,5 +1,5 @@
 ﻿namespace LivrEtec.Interno.Servidor;
-class ConfiguracaoServeInterno : IConfiguracao
+class ConfiguracaoServidorInterno : IConfiguracao
 {
     public string? StrConexaoMySQL { get; set; } 
 }

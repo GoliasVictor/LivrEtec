@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace LivrEtec;
+namespace LivrEtec.Servidor;
 
 public sealed class RepAutores : Repositorio, IRepAutores
 {
