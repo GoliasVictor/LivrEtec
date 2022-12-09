@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec", "LivrEtec\LivrEt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.Testes", "LivrEtec.Testes\LivrEtec.Testes.csproj", "{622EB2BB-2E88-4729-BBA4-0223DFF2EB7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.Interno.Servidor", "LivrEtec.Interno.Servidor\LivrEtec.Interno.Servidor.csproj", "{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB.Servidor", "LivrEtec.GIB.Servidor\LivrEtec.GIB.Servidor.csproj", "{AB5E0ACB-C618-4E64-8BB3-A8034B24148E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.Interno", "LivrEtec.Interno\LivrEtec.Interno.csproj", "{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB", "LivrEtec.GIB\LivrEtec.GIB.csproj", "{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.Servidor", "LivrEtec.Servidor\LivrEtec.Servidor.csproj", "{0EEE3126-0F8C-4FB6-9B99-E780D2DAEDDC}"
 EndProject

@@ -1,8 +1,7 @@
 using Grpc.Core;
-using LivrEtec.Interno;
-using LivrEtec.Interno.RPC;
+using LivrEtec.GIB.RPC;
 
-namespace LivrEtec.Interno.Servidor
+namespace LivrEtec.GIB.Servidor
 {
     public sealed class LivroServiceRPC : Livros.LivrosBase
     {
@@ -14,15 +13,15 @@ namespace LivrEtec.Interno.Servidor
             _acervoService = acervoService;
         }
 
-        public override Task<Empty> RegistrarLivro( RPCLivro request, ServerCallContext context)
+        public override Task<Empty> RegistrarLivro(RPC.Livro request, ServerCallContext context)
         {
             if(request is not null)
                 _acervoService.Livros.Registrar(request!);
             return Task.FromResult(new Empty());
         }
-        public override Task<RPCLivro> Get(RPCIdLivro request, ServerCallContext context)
+        public override Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
         {
-            return Task.FromResult((RPCLivro)_acervoService.Livros.Get(request.Id)!);
+            return Task.FromResult((RPC.Livro)_acervoService.Livros.Get(request.Id)!);
         }
     }
 }
