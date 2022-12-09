@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
-namespace LivrEtec
+namespace LivrEtec.Servidor
 {
 	public interface IPacaContext
 	{

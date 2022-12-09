@@ -1,38 +1,38 @@
 syntax = "proto3";
 
-option csharp_namespace = "LivrEtec.Interno.RPC";
+option csharp_namespace = "LivrEtec.GIB.RPC";
 
 package livrEtecRPC;
 
 service Acervo { 
 }
 service Livros {
-    rpc Get(RPCIdLivro) returns (RPCLivro);
-    rpc RegistrarLivro(RPCLivro) returns (Empty);
+    rpc Get(IdLivro) returns (Livro);
+    rpc RegistrarLivro(Livro) returns (Empty);
 }
 
 message Empty {
 
 } 
-message RPCIdLivro {
+message IdLivro {
     int32 Id = 1;
 }
-message RPCLivro {
+message Livro {
     int32 Id =  1;
     string Nome = 2;
     string Descricao = 3;
-    repeated RPCTag Tags = 4;
-    repeated RPCAutor Autores = 5;
+    repeated Tag Tags = 4;
+    repeated Autor Autores = 5;
     bool Arquivado = 6;
 }
 
 
-message RPCTag {
+message Tag {
     int32 Id =  1; 
     string Nome = 2;
 }
 
-message RPCAutor {
+message Autor {
     int32 Id =  1; 
     string Nome = 2;
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LivrEtec.Migrations
+namespace LivrEtec.Servidor.Migrations
 {
     [DbContext(typeof(PacaContext))]
     partial class PacaContextModelSnapshot : ModelSnapshot

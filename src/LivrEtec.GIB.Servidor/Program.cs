@@ -1,5 +1,5 @@
 using LivrEtec; 
-using LivrEtec.Interno.Servidor;
+using LivrEtec.GIB.Servidor;
 using LivrEtec.Servidor;
 using Microsoft.Extensions.Configuration;
 
@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpc();
 
-var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorInterno>();
+var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorGIB>();
 
 builder.Services.AddSingleton<IConfiguracao>(Config);
 builder.Services.AddScoped<PacaContext>();
