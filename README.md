@@ -2,11 +2,13 @@
 
 # LivrEtec
 Bom dia, boa tarde ou boa noite. Esse projeto é um gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
+
 ## Projetos
 Neste repositorio vai existir tres projetos:
 - **GIB** (Gerenciador interno da biblioteca) que será usado pelos funcionarios da biblioteca gerenciarem os livros e emprestimos
 - **APB** (Acervo publico da biblioteca) que será usado pelos proprios alunos para visualizar o acervo de livros contidos na biblioteca. 
 - **Api publica** para professores proporem aos alunos a usarem para testar chamadas HTTP e tambem popular sites feito por alunos.
+
 ## Ferramentas
 - **Docker**: Para isolar os ambientes de teste;
 - **.NET Core**: Plataforma de todo Back-End
@@ -44,8 +46,8 @@ Depois de executar os testes o container do banco de dados ira continuar executa
 O design está disponivel em https://figma.com/community/file/1176031299741420547
 
 ## Como colaborar 
-Toda ajuda é bem vinda, caso queira colaborar, recomendamos que primeiro vaia na wiki e leia um poco a(visão geral da arquitetura dos projetos)[./wiki/Arquitetura-dos-Projetos], para entender como os projetos funcionam, e então vaia nos (Issues)[./issues] e procure qualquer problema que lhe interesse para contribuir, crie um fork do projeto, faça suas modificações e então faça um pull request para o projeto.
-Garanta de antes de fazer o pull request de ter criado os testes para suas novas implementações, e de que esteja passando em todos os testes.
+Toda ajuda é bem vinda, caso queira colaborar. Recomendamos que primeiro vá na (Wiki)[./wiki/Arquitetura-dos-Projetos] e leia um pouco para ter a visão geral do projeto, e então procure nas (Issues)[./issues] qualquer problema que lhe interesse consertar. Se encontrar algum crie um fork do projeto, faça suas modificações e então faça um pull request para o projeto.
+Garanta que antes de fazer o pull request, tenha criado os testes para suas novas implementações, e de que esteja passando em todos os testes.
 
 ## Documentação
 Para mais informações sobre o projeto vaia na [wiki](https://github.com/GoliasVictor/LivrEtec/wiki) onde está documentado o projeto.
