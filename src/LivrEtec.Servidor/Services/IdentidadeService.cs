@@ -1,3 +1,4 @@
+using System.Data.Entity;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor;
@@ -46,4 +47,31 @@ public class IdentidadeService : Service, IIdentidadeService
 			throw new NaoAutenticadoException(Usuario);
 		AutorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
 	}
+	public async Task DefinirUsuarioAsync(int idUsuario)
+	{
+		if (await BD.Usuarios.AnyAsync(u=> u.Id == idUsuario) == false)
+			throw new ArgumentException("Usuario não existe");
+		EstaAutenticado = false;
+		IdUsuario = idUsuario;
+	}
+	public async Task AutenticarUsuarioAsync(string senha)
+	{
+		EstaAutenticado = AutenticacaoService.EhAutentico(IdUsuario, senha);
+		if(EstaAutenticado)
+			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
+	}
+	public async Task<bool> EhAutorizadoAsync(Permissao permissao)
+	{
+		if (!EstaAutenticado)
+			return false;
+		return await AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
+	}
+	public async Task ErroSeNaoAutorizadoAsync(Permissao permissao)
+	{
+		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
+		if (!EstaAutenticado)
+			throw new NaoAutenticadoException(Usuario);
+		await AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
+	}
+
 }
