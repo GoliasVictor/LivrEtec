@@ -8,7 +8,10 @@ service Acervo {
 }
 service Livros {
     rpc Get(IdLivro) returns (Livro);
-    rpc RegistrarLivro(Livro) returns (Empty);
+    rpc Remover(Livro) returns (Empty);
+    rpc Buscar(ParamBusca) returns (EnumLivros);
+    rpc Editar(Livro) returns (Empty);
+    rpc Registrar(Livro) returns (Empty);
 }
 
 message Empty {
@@ -17,6 +20,11 @@ message Empty {
 message IdLivro {
     int32 Id = 1;
 }
+message ParamBusca {
+    string NomeLivro = 1;
+    string NomeAutor = 2;
+    repeated Tag Tags = 3;
+}
 message Livro {
     int32 Id =  1;
     string Nome = 2;
@@ -24,6 +32,10 @@ message Livro {
     repeated Tag Tags = 4;
     repeated Autor Autores = 5;
     bool Arquivado = 6;
+}
+
+message EnumLivros {
+    repeated Livro Livros = 1;
 }
 
 

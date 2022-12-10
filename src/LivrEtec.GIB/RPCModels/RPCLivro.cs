@@ -20,8 +20,8 @@ namespace LivrEtec.GIB.RPC
                 Id = proto.Id,
                 Nome = proto.Nome,
                 Arquivado = proto.Arquivado,
-                Autores = proto.Autores.Cast<LE::Autor>().ToList(),
-                Tags = proto.Tags.Cast<LE::Tag>().ToList() 
+                Autores = proto.Autores.Select((a)=> (LE::Autor)a).ToList(),
+                Tags = proto.Tags.Select((t)=> (LE::Tag)t).ToList() 
             };
     }
 }

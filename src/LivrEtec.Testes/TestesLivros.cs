@@ -1,11 +1,15 @@
 
+using Grpc.Net.Client;
+using LivrEtec.Servidor;
+using LivrEtec.GIB;
 using Microsoft.Extensions.Logging;
+using Grpc.Core.Interceptors;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public sealed class TestesLivro  : TestesBD
+public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 {
-	AcervoService AcervoService;
+	protected abstract T RepLivros { get; }
 	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
 	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
 	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
@@ -56,7 +60,6 @@ public sealed class TestesLivro  : TestesBD
 			}
 		};
 		BD.SaveChanges();
-		AcervoService =  new AcervoService(BD, null);
 	}
 	[Fact]
 	public void Registrar_LivroValido()
@@ -71,7 +74,7 @@ public sealed class TestesLivro  : TestesBD
 			Autores =  { gAutor(1) }
 		};
 
-		AcervoService.Livros.Registrar(livroARegistrar);
+		RepLivros.Registrar(livroARegistrar);
 
 		var livroRegistrado = BD.Livros.Find(idLivro);
 
@@ -89,7 +92,7 @@ public sealed class TestesLivro  : TestesBD
 		var livro  = gLivro(1);
 		
 		Assert.Throws<InvalidOperationException>(()=>{
-			AcervoService.Livros.Registrar(livro);
+			RepLivros.Registrar(livro);
 		});
 	}
 	[Fact]
@@ -101,7 +104,7 @@ public sealed class TestesLivro  : TestesBD
 		};
 
 		Assert.Throws<InvalidOperationException>(()=>{
-			AcervoService.Livros.Registrar(livro);
+			RepLivros.Registrar(livro);
 		});
 
 	}
@@ -112,7 +115,7 @@ public sealed class TestesLivro  : TestesBD
 
 
 		Assert.Throws<ArgumentNullException>(()=>{
-			AcervoService.Livros.Registrar(Livro);
+			RepLivros.Registrar(Livro);
 		});
 	}
 	[Theory]
@@ -128,7 +131,7 @@ public sealed class TestesLivro  : TestesBD
 
 
 		Assert.Throws<InvalidDataException>(()=>{
-			AcervoService.Livros.Registrar(livro);
+			RepLivros.Registrar(livro);
 		});
 	}
 
@@ -137,7 +140,7 @@ public sealed class TestesLivro  : TestesBD
 	public void Remover_LivroValido(){
 		var livro =  gLivro(1);
 
-		AcervoService.Livros.Remover(livro);
+		RepLivros.Remover(livro);
 		var Contem =  BD.Livros.Contains(livro); 
 		
 		Assert.False(Contem);
@@ -147,7 +150,7 @@ public sealed class TestesLivro  : TestesBD
 		var livro =  new Livro(){ Id = 100 };
 
 		Assert.Throws<InvalidOperationException>(()=>{
-			AcervoService.Livros.Remover(livro);
+			RepLivros.Remover(livro);
 		});
 	}
 	[Fact]
@@ -161,7 +164,7 @@ public sealed class TestesLivro  : TestesBD
 		livroEditado.Tags =  new(){gTag(3) };
 		livroEditado.Autores = new(){ gAutor(1) };
 
-		AcervoService.Livros.Editar(livroEditado);
+		RepLivros.Editar(livroEditado);
 
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 
@@ -181,7 +184,7 @@ public sealed class TestesLivro  : TestesBD
 		Livro livro = null!;
 		
 		Assert.Throws<ArgumentNullException>(()=>{
-			AcervoService.Livros.Editar(livro);
+			RepLivros.Editar(livro);
 		});
 	}
 
@@ -194,7 +197,7 @@ public sealed class TestesLivro  : TestesBD
 
 		livroEditado.Tags = new List<Tag>(){ null! };
 		Assert.Throws<ArgumentNullException>(()=>{
-			AcervoService.Livros.Editar(livroEditado);
+			RepLivros.Editar(livroEditado);
 		});		
 	}
 
@@ -207,9 +210,29 @@ public sealed class TestesLivro  : TestesBD
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public void Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado= AcervoService.Livros.Buscar(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
+		var resulutado= RepLivros.Buscar(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
 		var resultadoIgual = EnumerableIgual(idExperados, resulutado.Select((i)=> i.Id));
 		Assert.True(resultadoIgual);
 	}	
 	
+}
+public class TestesLivrosLocal : TestesLivro<RepLivros>
+{
+	AcervoService acervoService;
+	protected override RepLivros RepLivros => (RepLivros)acervoService.Livros;
+	public TestesLivrosLocal(ConfiguradorTestes configurador) : base(configurador)
+	{
+		acervoService = new AcervoService(BD, null);
+	}
+
+}
+public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
+{
+	RepLivroRPC repLivrosRPC;
+	protected override RepLivroRPC RepLivros => repLivrosRPC;
+    public TestesLivrosRPC(ConfiguradorTestes configurador) : base(configurador)
+	{
+        var channel = GrpcChannel.ForAddress("https://localhost:7259");
+        repLivrosRPC = new RepLivroRPC(loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
+    }
 }
