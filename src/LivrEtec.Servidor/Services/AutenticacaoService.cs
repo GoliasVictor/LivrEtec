@@ -15,18 +15,6 @@ public sealed class AutenticacaoService : Service, IAutenticacaoService
         byte[] bytesHash = md5.ComputeHash(bytesSenha);
         return Convert.ToHexString(bytesHash); 
 	}
-
-	public bool EhAutentico(int IdUsuario, string senha)
-	{		
-		_ = senha ?? throw new ArgumentNullException(nameof(senha));
-		var hashSenha = GerarHahSenha(IdUsuario, senha);
-		var usuario = BD.Usuarios.Find(IdUsuario);
-		if(usuario == null)
-			throw new ArgumentException("Usuario invalido");
-		bool autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();
-		return autentico;
-	}
-
 	public async Task<bool> EhAutenticoAsync(int IdUsuario, string senha)
 	{
 		_ = senha ?? throw new ArgumentNullException(nameof(senha));

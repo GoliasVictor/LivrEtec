@@ -21,57 +21,44 @@ public class IdentidadeService : Service, IIdentidadeService
 	public Usuario? Usuario { get; private set; }
 	public bool EstaAutenticado { get; private set; }
 
-	public void DefinirUsuario(int idUsuario)
+	public async Task DefinirUsuarioAsync(int idUsuario)
 	{
-		if (!BD.Usuarios.Any(u=> u.Id == idUsuario))
+		if (BD.Usuarios.Contains(new Usuario(){ Id = idUsuario}) == false)
 			throw new ArgumentException("Usuario não existe");
 		EstaAutenticado = false;
 		IdUsuario = idUsuario;
 	}
-	public void AutenticarUsuario(string senha)
+	public async Task AutenticarUsuario(string senha)
 	{
-		EstaAutenticado = AutenticacaoService.EhAutentico(IdUsuario, senha);
+		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
 		if(EstaAutenticado)
 			Usuario = BD.Usuarios.Find(IdUsuario);
 	}
-	public bool EhAutorizado(Permissao permissao)
+	public Task<bool> EhAutorizado(Permissao permissao)
 	{
 		if (!EstaAutenticado)
-			return false;
-		return AutorizacaoService.EhAutorizado(IdUsuario, permissao);
+			return Task.FromResult(false);
+		return AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
 	}
-	public void ErroSeNaoAutorizado(Permissao permissao)
+ 	public async Task AutenticarUsuarioAsync(string senha)
 	{
-		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
-		if (!EstaAutenticado)
-			throw new NaoAutenticadoException(Usuario);
-		AutorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
-	}
-	public async Task DefinirUsuarioAsync(int idUsuario)
-	{
-		if (await BD.Usuarios.AnyAsync(u=> u.Id == idUsuario) == false)
-			throw new ArgumentException("Usuario não existe");
-		EstaAutenticado = false;
-		IdUsuario = idUsuario;
-	}
-	public async Task AutenticarUsuarioAsync(string senha)
-	{
-		EstaAutenticado = AutenticacaoService.EhAutentico(IdUsuario, senha);
+		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
 		if(EstaAutenticado)
 			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
 	}
-	public async Task<bool> EhAutorizadoAsync(Permissao permissao)
+	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
 	{
 		if (!EstaAutenticado)
-			return false;
-		return await AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
+			return  Task.FromResult(false);
+		return AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
 	}
-	public async Task ErroSeNaoAutorizadoAsync(Permissao permissao)
+	public Task ErroSeNaoAutorizadoAsync(Permissao permissao)
 	{
 		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
 		if (!EstaAutenticado)
 			throw new NaoAutenticadoException(Usuario);
-		await AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
+		return AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
 	}
+
 
 }

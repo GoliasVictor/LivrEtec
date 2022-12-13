@@ -15,7 +15,7 @@ public class TestesIdentidade : TestesBD
 	string gSenha(int id) => Senhas.First((s) => s.Id == id).Senha;
 	string gHash(int id) => Senhas.First((s) => s.Id == id).Hash;
 	Cargo gCargo(int id) => Cargos.First((c)=> c.Id == id); 
-	IdentidadeService CriarIdentidade()
+	IIdentidadeService CriarIdentidade()
 	{
 		return new IdentidadeService(
 			BD,
@@ -52,32 +52,32 @@ public class TestesIdentidade : TestesBD
 	[Theory]
 	[InlineData(IdAdmin)]
 	[InlineData(IdAnonimo)]
-	public void DefinirUsuario_UsuarioValido(int idUsuario)
+	public async Task DefinirUsuario_UsuarioValidoAsync(int idUsuario)
 	{
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
+		await Identidade.DefinirUsuarioAsync(idUsuario);
 		Assert.Equal(Identidade.IdUsuario, idUsuario);
 	}
 
 	[Theory]
 	[InlineData(100)]
 	[InlineData(-2)]
-	public void DefinirUsuario_UsuarioInvalido(int idUsuario)
+	public async Task DefinirUsuario_UsuarioInvalidoAsync(int idUsuario)
 	{
 		var Identidade = CriarIdentidade();
-		Assert.Throws<ArgumentException>(()=>{
-			Identidade.DefinirUsuario(idUsuario);
+		await Assert.ThrowsAsync<ArgumentException>(async ()=>{
+			await Identidade.DefinirUsuarioAsync(idUsuario);
 		});
 	}
 
 	[Fact]
-	public void AutenticarUsuario_SenhaValida()
+	public async Task AutenticarUsuario_SenhaValidaAsync()
 	{
 		var idUsuario = IdAdmin;
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
-
-		Identidade.AutenticarUsuario(gSenha(idUsuario));
+		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.AutenticarUsuarioAsync(gSenha(idUsuario));
+	
 		Assert.True(Identidade.EstaAutenticado);
 		Assert.Equal(Identidade.Usuario, gUsuario(IdAdmin));
 	}
@@ -85,50 +85,50 @@ public class TestesIdentidade : TestesBD
 	[Theory]
 	[InlineData("admin1")]
 	[InlineData("root")]
-	public void AutenticarUsuario_SenhaInvalida(string senha)
+	public async Task AutenticarUsuario_SenhaInvalidaAsync(string senha)
 	{
 		var idUsuario = IdAdmin;
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
-		Identidade.AutenticarUsuario(senha);
+		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.AutenticarUsuarioAsync(senha);
 		Assert.False(Identidade.EstaAutenticado);
 		Assert.NotEqual(Identidade.Usuario, gUsuario(IdAdmin));
 	}
 	[Fact]
-	public void AutenticarUsuario_SenhaNula()
+	public async Task AutenticarUsuario_SenhaNulaAsync()
 	{
 		var idUsuario = IdAdmin;
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
-		Assert.Throws<ArgumentNullException>(()=>{
-			Identidade.AutenticarUsuario(null!);
+		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+			await Identidade.AutenticarUsuarioAsync(null!);
 		});
 	}
 
 	[Theory]
 	[InlineData(IdAdmin  , true )]
 	[InlineData(IdAnonimo, false)]
-	public void EhAutorizado(int idUsuario, bool ExpectativaAutorizado )
+	public async Task EhAutorizadoAsync(int idUsuario, bool ExpectativaAutorizado )
 	{
 		var permissao = Permissoes.Cargo.Criar;
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
-		Identidade.AutenticarUsuario(gSenha(idUsuario));
+		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.AutenticarUsuarioAsync(gSenha(idUsuario));
 
-		var Autorizado = Identidade.EhAutorizado(permissao);
+		var Autorizado = await Identidade.EhAutorizadoAsync(permissao);
 
 		Assert.Equal(Autorizado, ExpectativaAutorizado);
 	}
 
 	[Fact]
-	public void EhAutorizado_NaoAutenticado()
+	public async Task EhAutorizado_NaoAutenticadoAsync()
 	{
 		var permissao = Permissoes.Cargo.Criar;
 		var idUsuario = IdAdmin;
 		var Identidade = CriarIdentidade();
-		Identidade.DefinirUsuario(idUsuario);
+		await Identidade.DefinirUsuarioAsync(idUsuario);
 		
-		bool Autorizado = Identidade.EhAutorizado(permissao);
+		bool Autorizado = await Identidade.EhAutorizadoAsync(permissao);
 
 		Assert.False(Autorizado);
 	}
