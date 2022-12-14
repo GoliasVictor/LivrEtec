@@ -13,15 +13,15 @@ namespace LivrEtec.GIB.Servidor
             _acervoService = acervoService;
         }
 
-        public override Task<Empty> RegistrarLivro(RPC.Livro request, ServerCallContext context)
+        public override async Task<Empty> RegistrarLivro(RPC.Livro request, ServerCallContext context)
         {
             if(request is not null)
-                _acervoService.Livros.Registrar(request!);
-            return Task.FromResult(new Empty());
+                await _acervoService.Livros.RegistrarAsync(request!);
+            return new Empty();
         }
-        public override Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
+        public override async Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
         {
-            return Task.FromResult((RPC.Livro)_acervoService.Livros.Get(request.Id)!);
+            return await _acervoService.Livros.GetAsync(request.Id) ?? null!;
         }
     }
 }

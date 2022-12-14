@@ -31,11 +31,11 @@ public class TestesAutenticacao  : TestesBD
 	[InlineData(1)]
 	[InlineData(2)]
 	[InlineData(3)]
-	public void EhAutentico_Autentico(int idUsuario)
+	public async void EhAutentico_Autentico(int idUsuario)
 	{
 		var senha =  gSenha(idUsuario);
 
-		var autentico = AutenticacaoService.EhAutentico(idUsuario, senha);
+		var autentico = await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
 
 		Assert.True(autentico);
 	}
@@ -44,35 +44,35 @@ public class TestesAutenticacao  : TestesBD
 	[InlineData(1)]
 	[InlineData(2)]
 	[InlineData(3)]
-	public void EhAutentico_NaoAutentico(int idUsuario)
+	public async Task EhAutentico_NaoAutenticoAsync(int idUsuario)
 	{
 		var senha =  "Qualquer senha aleatoria errada";
 
-		var autentico = AutenticacaoService.EhAutentico(idUsuario, senha);
+		var autentico = await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
 
 		Assert.False(autentico);
 	}
 
 	[Fact] 
 	
-	public void EhAutentico_UsuarioInvalido()
+	public async Task EhAutentico_UsuarioInvalidoAsync()
 	{
 		var senha =  "Qualquer senha aleatoria errada";
 		var idUsuario = -10;
 
-		Assert.Throws<ArgumentException>(()=>{
-			AutenticacaoService.EhAutentico(idUsuario, senha);
+		await Assert.ThrowsAsync<ArgumentException>(async ()=>{
+			await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
 		});
 	}
 
 	[Fact]
-	public void EhAutentico_SenhaNula()
+	public async Task EhAutentico_SenhaNulaAsync()
 	{
 		string senha = null!;
 		var idUsuario = 1;
 
-		Assert.Throws<ArgumentNullException>(()=>{
-			AutenticacaoService.EhAutentico(idUsuario, senha);
+		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+			await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
 		});
 	} 
 }

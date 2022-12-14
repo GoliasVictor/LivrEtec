@@ -14,14 +14,12 @@ public sealed class AutenticacaoService : Service, IAutenticacaoService
         byte[] bytesSenha = System.Text.Encoding.ASCII.GetBytes(senha + IdUsuario.ToString());
         byte[] bytesHash = md5.ComputeHash(bytesSenha);
         return Convert.ToHexString(bytesHash); 
-
 	}
-
-	public bool EhAutentico(int IdUsuario, string senha)
-	{		
+	public async Task<bool> EhAutenticoAsync(int IdUsuario, string senha)
+	{
 		_ = senha ?? throw new ArgumentNullException(nameof(senha));
 		var hashSenha = GerarHahSenha(IdUsuario, senha);
-		var usuario = BD.Usuarios.Find(IdUsuario);
+		var usuario = await BD.Usuarios.FindAsync(IdUsuario);
 		if(usuario == null)
 			throw new ArgumentException("Usuario invalido");
 		bool autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();
