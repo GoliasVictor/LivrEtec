@@ -1,5 +1,5 @@
-# Politica se Segurança
+# Política de Segurança
 
-## Reportar vuerabilidade
+## Reportar vulnerabilidade
 
-Caso queira reportar alguma vunerabilidade pode enviar para o email dev.jvsb@gmail.com
+Caso queira reportar alguma vulnerabilidade, envie para o email dev.jvsb@gmail.com.
