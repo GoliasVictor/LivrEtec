@@ -1,47 +1,49 @@
 ![](https://repobeats.axiom.co/api/embed/f5cead7dc8f370c3893a9f4a5edfd68b154ec43d.svg)
 
 # LivrEtec
-Bom dia, boa tarde ou boa noite. Esse projeto é um gerenciador do acervo da biblioteca da escola ETEC Aristóteles Ferreira
+Bom dia, boa tarde ou boa noite. Esse projeto é um gerenciador do acervo da biblioteca da escola ETec Aristóteles Ferreira
 
 ## Projetos
-Neste repositorio vai existir tres projetos:
-- **GIB** (Gerenciador interno da biblioteca) que será usado pelos funcionarios da biblioteca gerenciarem os livros e emprestimos
-- **APB** (Acervo publico da biblioteca) que será usado pelos proprios alunos para visualizar o acervo de livros contidos na biblioteca. 
-- **Api publica** para professores proporem aos alunos a usarem para testar chamadas HTTP e tambem popular sites feito por alunos.
+Neste repositório vai existir três projetos:
+- **GIB** (Gerenciador Interno da Biblioteca) usado pelos funcionários da biblioteca para gerenciar os livros e empréstimos.
+- **APB** (Acervo Público da Biblioteca) usado pelos alunos para visualizar o acervo de livros contidos da biblioteca. 
+- **API pública** para professores proporem aos alunos a usarem, para testar chamadas HTTP e tambem popular sites feito por alunos.
 
 ## Ferramentas
-- **Docker**: Para isolar os ambientes de teste;
-- **.NET Core**: Plataforma de todo Back-End
+- **Docker**: Para isolar os ambientes de teste
+- **.NET Core**: Plataforma de todo o Back-End
 - **MySQL**: Banco de Dados
-- **Entity Framwork**: ORM para conectar a aplicação ao banco
+- **Entity Framework**: ORM para conectar a aplicação ao banco de dados
 - **gRPC**: Como protocolo de comunicação entre o servidor GIB e o cliente 
 - **Blazor Hybrid + MAUI**: Interface do cliente GIB
-- **xUnit**: Para Executar Testes Unitarios da Biblioteca
-- **Figma**: Para desenvolver o Design
+- **xUnit**: Para Executar Testes Unitários das bibliotecas
+- **Figma**: Para prototipar o design
 
 ## Como Executar
-Atualmente só esta construída a biblioteca de classes, que outras partes do projeto futuramente irão usar. Então por enquanto é possivel apenas executar os testes.
+Atualmente só está construída a biblioteca de classes, que futuramente outras partes do projeto irão usar. Então por enquanto só é possivel executar os testes.
 
-### Executando Testes
-Para executar os testes é preferível que esteja instalado o MySQL, porém, caso não esteja instalado o aplicativo executará usando um banco de dados in-memory. 
+### Executando os Testes
+Para executar os testes é preferível que tenha instalado o MySQL, porém, caso não esteja instalado, o aplicativo utilizará um banco de dados In-Memory. 
 
-Caso deseje testar com o MySql, verifique de ou editar o arquivo `.src/LivrEtec.Testes/appsettings.json` ou configurar a variavel de ambiente `APP_SETTINGS_JSON_PATH` para sua respectiva configuração.
+Caso deseje testar com o MySQL, editar o arquivo `.src/LivrEtec.Testes/appsettings.json` ou configurar a variável de ambiente `APP_SETTINGS_JSON_PATH` para sua respectiva configuração.
 
 #### CLI
-Primeiramente verifique se está instalado o .NET 6.0 e o CLI dele, e então execute na pasta `./src/` o seguinte comando
+Primeiramente, verifique se está instalado o .NET 6.0 e sua CLI, então execute na pasta `./src/` o seguinte comando:
 ```bash
 dotnet test
 ```
 #### Visual Studio 
-Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir (View em Inglês) abra o Gerenciador de Testes e aperte em executar.  
+Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir (View em Inglês) abra o Gerenciador de Testes e clique em Executar.
+
 #### Docker
-Caso deseje usar o docker, apenas vaia até a pasta `./src/` e execute o levante os containers com o docker compose com o seguinte comando
+Caso deseje usar o docker, apenas vá até a pasta `./src/` e execute os containers com o docker compose com o seguinte comando:
 ```bash
 docker compose up --build
 ``` 
-O `--build` é para garantir que o container seja executado com o codigo mais recente.
+> O `--build` é para garantir que o container seja executado com o código mais recente.
 
-Depois de executar os testes o container do banco de dados ira continuar executando, caso queria que saia automaticamente apos os testes adiciona `--exit-code-from app` ao comando. 
+> Depois de executar os testes, o container do banco de dados irá continuar executando. Caso queria que saia automaticamente após os testes adicione `--exit-code-from app` ao comando.
+
 ## Design 
 O design está disponivel em https://figma.com/community/file/1176031299741420547
 
@@ -50,5 +52,6 @@ Toda ajuda é bem vinda, caso queira colaborar. Recomendamos que primeiro vá na
 Garanta que antes de fazer o pull request, tenha criado os testes para suas novas implementações, e de que esteja passando em todos os testes.
 
 ## Documentação
-Para mais informações sobre o projeto vaia na [wiki](https://github.com/GoliasVictor/LivrEtec/wiki) onde está documentado o projeto.
+Para mais informações sobre o projeto, vá na [Wiki](https://github.com/GoliasVictor/LivrEtec/wiki) onde está a documentação do projeto.
 
+Seja bem-vindo :)
