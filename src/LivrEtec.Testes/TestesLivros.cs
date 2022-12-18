@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Grpc.Core.Interceptors;
 
 namespace LivrEtec.Testes;
+
 [Collection("UsaBancoDeDados")]
 public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 {
@@ -13,8 +14,8 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
 	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
 	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
-	public static bool EnumerableIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
-		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
+	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
+		Assert.Equal(new HashSet<K>(A),new HashSet<K>(B));
 	}
 	public TestesLivro(ConfiguradorTestes configurador) : base(configurador)
 	{ 	
@@ -73,18 +74,17 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 			Tags =  {gTag(1), gTag(2) },
 			Autores =  { gAutor(1) }
 		};
-
+		
 		await RepLivros.RegistrarAsync(livroARegistrar);
 
-		var livroRegistrado = BD.Livros.Find(idLivro);
+		var livroRegistrado = BD.Livros.Find(idLivro)!;
 
-		Assert.True(
-			livroARegistrar.Nome == livroRegistrado?.Nome
-		 && livroARegistrar.Arquivado == livroRegistrado.Arquivado
-		 && livroARegistrar.Descricao == livroRegistrado.Descricao
-		 && EnumerableIgual(livroARegistrar.Tags, livroRegistrado.Tags)
-		 && EnumerableIgual(livroARegistrar.Autores, livroRegistrado.Autores)
-		);
+		
+		Assert.Equal(livroARegistrar.Nome, livroRegistrado.Nome);
+		Assert.Equal(livroARegistrar.Arquivado, livroRegistrado.Arquivado);
+		Assert.Equal(livroARegistrar.Descricao, livroRegistrado.Descricao);
+		AssertEhIgual(livroARegistrar.Tags, livroRegistrado.Tags);
+		AssertEhIgual(livroARegistrar.Autores, livroRegistrado.Autores);
 	}
 	[Fact]
 	public async Task Registrar_LivroExistenteAsync()
@@ -138,19 +138,19 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 
 	[Fact]
 	public async Task Remover_LivroValidoAsync(){
-		var livro =  gLivro(1);
-
-		await RepLivros.RemoverAsync(livro);
-		var Contem =  BD.Livros.Contains(livro); 
+		var Id =  1;
 		
+		await RepLivros.RemoverAsync(Id); 
+		using var BD2 =  new PacaContext(configuracao,null);
+		var Contem =  BD.Livros.Any( l => l.Id == Id); 
 		Assert.False(Contem);
 	}
 	[Fact]
 	public async Task Remover_LivroInvalidoAsync(){
-		var livro =  new Livro(){ Id = 100 };
-
+		var Id = 100;
+	
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await RepLivros.RemoverAsync(livro);
+			await RepLivros.RemoverAsync(Id);
 		});
 	}
 	[Fact]
@@ -171,10 +171,8 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		Assert.Equal(livroEditado.Nome, livroRegistrado.Nome);
 		Assert.Equal( livroEditado.Arquivado, livroRegistrado.Arquivado);
 		Assert.Equal( livroEditado.Descricao, livroRegistrado.Descricao);
-		Assert.True( 
-			EnumerableIgual(livroEditado.Tags, livroRegistrado.Tags)
-		 && EnumerableIgual(livroEditado.Autores, livroRegistrado.Autores)
-		);
+		AssertEhIgual(livroEditado.Tags, livroRegistrado.Tags);
+		AssertEhIgual(livroEditado.Autores, livroRegistrado.Autores);
 	}
 
 
@@ -211,8 +209,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
 		var resulutado=  RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
-		var resultadoIgual = EnumerableIgual(idExperados, await resulutado.Select((i)=> i.Id).ToArrayAsync());
-		Assert.True(resultadoIgual);
+		AssertEhIgual(idExperados, (await resulutado.ToArrayAsync()).Select((i)=> i.Id));
 	}	
 	
 }
@@ -232,7 +229,7 @@ public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 	protected override RepLivroRPC RepLivros => repLivrosRPC;
     public TestesLivrosRPC(ConfiguradorTestes configurador) : base(configurador)
 	{
-        var channel = GrpcChannel.ForAddress("https://localhost:7259");
+        var channel = GrpcChannel.ForAddress("http://localhost:5259");
         repLivrosRPC = new RepLivroRPC(loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
     }
 }

@@ -2,6 +2,7 @@
 using RPC = LivrEtec.GIB.RPC;
 using Microsoft.Extensions.Logging;
 using LivrEtec.GIB.RPC;
+using Grpc.Core;
 
 namespace LivrEtec.Testes
 {
@@ -15,16 +16,48 @@ namespace LivrEtec.Testes
             _logger = logger;
         }
 
+
+		private static Exception CriarExcecao(RpcException ex)
+		{
+			var Excecao = ex.Trailers.FirstOrDefault(p => p.Key == "Excecao")?.Value;
+			var Mensagem = ex.Trailers.FirstOrDefault(p => p.Key == "Mensagem")?.Value;
+            
+			switch (Excecao)
+			{
+				case nameof(ArgumentNullException):
+					var NomeParametro = ex.Trailers.FirstOrDefault(p => p.Key == "NomeParametro")?.Value;
+					return new ArgumentNullException( Mensagem, ex );
+                case nameof(InvalidDataException):
+                    return new InvalidDataException(Mensagem, ex);
+                case nameof(InvalidOperationException):
+                    return new InvalidOperationException(Mensagem, ex);
+                default:
+                    return ex;
+			}
+		}
+
         public async Task EditarAsync(Livro livro)
         {
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
+            if(livro.Tags.Any((t)=> t is null))
+                throw new ArgumentNullException();
             livro.Tags ??= new List<Tag>();
-            await LivrosClientRPC.EditarAsync(livro);
+            try{
+                await LivrosClientRPC.EditarAsync(livro);
+            }
+            catch(RpcException ex){
+               throw CriarExcecao(ex);
+            }
         }
 
         public async Task<Livro?> GetAsync(int id)
         {
-            return await LivrosClientRPC.GetAsync(new IdLivro() { Id = id });
+            try{
+                return await LivrosClientRPC.GetAsync(new IdLivro() { Id = id });
+            }
+            catch(RpcException ex){
+                throw CriarExcecao(ex); 
+            }
         }
 
         public async Task RegistrarAsync(Livro livro)
@@ -32,13 +65,24 @@ namespace LivrEtec.Testes
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
-            await LivrosClientRPC.RegistrarAsync(livro);
-        }
+            try{
+                await LivrosClientRPC.RegistrarAsync(livro);
+            }
+            catch(RpcException ex){
+                throw CriarExcecao(ex);
+            }
 
-        public async Task RemoverAsync(Livro livro)
+		}
+
+
+		public async Task RemoverAsync(int id)
         {
-            _ = livro ?? throw new ArgumentNullException(nameof(livro));
-            await LivrosClientRPC.RemoverAsync(livro);
+            try{
+                await LivrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
+            }
+            catch(RpcException ex){
+                throw CriarExcecao(ex);
+            }
         }
 
         public async IAsyncEnumerable<Livro> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
@@ -46,7 +90,13 @@ namespace LivrEtec.Testes
             nome ??= "";
             nomeAutor ??= "";
             tags ??= new List<Tag>();
-			EnumLivros enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, Tags = { tags?.Select(t => (RPC::Tag)t) } });
+            EnumLivros enumLivros = default!;
+            try{
+			    enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, Tags = { tags?.Select(t => (RPC::Tag)t) } });
+            }
+            catch(RpcException ex){
+                throw CriarExcecao(ex);
+            }
 			foreach (var livro in enumLivros.Livros)
                 yield return (Livro)livro!;
         }

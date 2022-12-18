@@ -4,12 +4,14 @@ namespace LivrEtec.Testes;
 public abstract class TestesBD : IClassFixture<ConfiguradorTestes>, IDisposable
 {
 	public PacaContext BD;
+	protected ConfiguracaoTeste configuracao;
 	public ILoggerFactory loggerFactory = LoggerFactory.Create((lb)=> { 
 		lb.AddConsole();
 		lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
 	});
 	protected TestesBD(ConfiguradorTestes configurador)
 	{
+		configuracao = configurador.Config;
 		BD = new PacaContext(configurador.Config, loggerFactory);
 	}
 

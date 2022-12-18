@@ -26,7 +26,7 @@ public sealed class PacaContext : DbContext, IPacaContext
 	}
 	protected override void OnConfiguring(DbContextOptionsBuilder options)
 	{
-		options.EnableSensitiveDataLogging(true);
+		//options.EnableSensitiveDataLogging(true);
 
 		if (LoggerFactory != null)
 			options.UseLoggerFactory(LoggerFactory);

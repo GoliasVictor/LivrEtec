@@ -39,6 +39,11 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	{
 		return BD.Livros.ContainsAsync(livro);
 	}
+	private Task<bool> ExisteAsync(int id)
+	{
+		return BD.Livros.AnyAsync((l)=> l.Id == id);
+	}
+
 
 	public async Task<Livro?> GetAsync(int id)
 	{
@@ -62,12 +67,11 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
 	}
 
-	public async Task RemoverAsync(Livro livro)
+	public async Task RemoverAsync(int id)
 	{
-		_= livro ?? throw new ArgumentNullException(nameof(livro));
-		if(await ExisteAsync(livro) == false)
-			throw new InvalidOperationException($"Livro {{{livro.Nome}}} já não existe no banco de dados");
-		BD.Livros.Remove(livro);
+		if(await ExisteAsync(id) == false)
+			throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
+		var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
 		await BD.SaveChangesAsync();
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} excluido");
 	}
@@ -78,6 +82,11 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
 		if( await ExisteAsync(livro) == false)
 			throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
+		BD.AttachRange(livro.Autores);
+		BD.AttachRange(livro.Tags);
+		livro.Autores =  new HashSet<Autor>(livro.Autores).ToList();
+		livro.Tags =  new HashSet<Tag>(livro.Tags).ToList();
+		await BD.SaveChangesAsync();
 		BD.Livros.Update(livro);
 		await  BD.SaveChangesAsync();
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");

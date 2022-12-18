@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": ".NET Core Launch (console)",
+			"name": "Testes",
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
@@ -16,9 +16,15 @@
 			"stopAtEntry": false
 		},
 		{
-			"name": ".NET Core Attach",
+			"name": "GIB Servidor",
 			"type": "coreclr",
-			"request": "attach"
+			"request": "launch",
+			"preLaunchTask": "build",
+			"program": "${workspaceFolder}/src/LivrEtec.GIB.Servidor/bin/Debug/net6.0/LivrEtec.GIB.Servidor.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}/src/LivrEtec.GIB.Servidor",
+			"console": "internalConsole",
+			"stopAtEntry": false
 		},
 		{
 			"name": "Docker .NET Core Launch",
