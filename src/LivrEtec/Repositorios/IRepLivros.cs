@@ -2,9 +2,9 @@ namespace LivrEtec;
 
 public interface IRepLivros
 {
-	IEnumerable<Livro> Buscar(string nome, string nomeAutor, IEnumerable<Tag>? tags = null);
-	void Editar(Livro livro);
-	Livro? Get(int id);
-	void Registrar(Livro livro);
-	void Remover(Livro livro);
+	IAsyncEnumerable<Livro> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags = null);
+	Task EditarAsync(Livro livro);
+	Task<Livro?> GetAsync(int id);
+	Task RegistrarAsync(Livro livro);
+	Task RemoverAsync(Livro livro);
 }

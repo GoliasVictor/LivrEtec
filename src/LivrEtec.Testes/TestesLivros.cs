@@ -13,7 +13,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
 	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
 	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
-	public static bool EnumerableIgual<T>( IEnumerable<T> A, IEnumerable<T> B){
+	public static bool EnumerableIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
 		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
 	}
 	public TestesLivro(ConfiguradorTestes configurador) : base(configurador)
@@ -62,7 +62,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		BD.SaveChanges();
 	}
 	[Fact]
-	public void Registrar_LivroValido()
+	public async Task Registrar_LivroValidoAsync()
 	{
 		var idLivro = 5;
 		var livroARegistrar  = new Livro{
@@ -74,7 +74,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 			Autores =  { gAutor(1) }
 		};
 
-		RepLivros.Registrar(livroARegistrar);
+		await RepLivros.RegistrarAsync(livroARegistrar);
 
 		var livroRegistrado = BD.Livros.Find(idLivro);
 
@@ -87,42 +87,42 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		);
 	}
 	[Fact]
-	public void Registrar_LivroExistente()
+	public async Task Registrar_LivroExistenteAsync()
 	{
 		var livro  = gLivro(1);
 		
-		Assert.Throws<InvalidOperationException>(()=>{
-			RepLivros.Registrar(livro);
+		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
+			await RepLivros.RegistrarAsync(livro);
 		});
 	}
 	[Fact]
-	public void Registrar_idExistente(){
+	public async Task Registrar_idExistenteAsync(){
 		var IdLivro = 1;
 		var livro  = new Livro(){ 
 			Id =  IdLivro,
 			Nome = "douglas" 
 		};
 
-		Assert.Throws<InvalidOperationException>(()=>{
-			RepLivros.Registrar(livro);
+		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
+			await RepLivros.RegistrarAsync(livro);
 		});
 
 	}
 	[Fact]
-	public void Registrar_LivroNulo()
+	public async Task Registrar_LivroNuloAsync()
 	{
 		Livro Livro =  null!;
 
 
-		Assert.Throws<ArgumentNullException>(()=>{
-			RepLivros.Registrar(Livro);
+		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+			await RepLivros.RegistrarAsync(Livro);
 		});
 	}
 	[Theory]
 	[InlineData(-1, "nome")]
 	[InlineData(10, "")]
 	[InlineData(10, null)]
-	public void Registrar_LivroInValido(int id, string nome)
+	public async Task Registrar_LivroInValidoAsync(int id, string nome)
 	{
 		var livro  = new Livro{
 			Id = id,
@@ -130,31 +130,31 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		};
 
 
-		Assert.Throws<InvalidDataException>(()=>{
-			RepLivros.Registrar(livro);
+		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
+			await RepLivros.RegistrarAsync(livro);
 		});
 	}
 
 
 	[Fact]
-	public void Remover_LivroValido(){
+	public async Task Remover_LivroValidoAsync(){
 		var livro =  gLivro(1);
 
-		RepLivros.Remover(livro);
+		await RepLivros.RemoverAsync(livro);
 		var Contem =  BD.Livros.Contains(livro); 
 		
 		Assert.False(Contem);
 	}
 	[Fact]
-	public void Remover_LivroInvalido(){
+	public async Task Remover_LivroInvalidoAsync(){
 		var livro =  new Livro(){ Id = 100 };
 
-		Assert.Throws<InvalidOperationException>(()=>{
-			RepLivros.Remover(livro);
+		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
+			await RepLivros.RemoverAsync(livro);
 		});
 	}
 	[Fact]
-	public void Editar_TudoLivroValido()
+	public async Task Editar_TudoLivroValidoAsync()
 	{
 		var idLivro = 1;
 		var livroEditado =  gLivro(idLivro)!;
@@ -164,7 +164,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		livroEditado.Tags =  new(){gTag(3) };
 		livroEditado.Autores = new(){ gAutor(1) };
 
-		RepLivros.Editar(livroEditado);
+		await RepLivros.EditarAsync(livroEditado);
 
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 
@@ -179,25 +179,25 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 
 
 	[Fact]
-	public void Editar_LivroNulo()
+	public async Task Editar_LivroNuloAsync()
 	{
 		Livro livro = null!;
 		
-		Assert.Throws<ArgumentNullException>(()=>{
-			RepLivros.Editar(livro);
+		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+			await RepLivros.EditarAsync(livro);
 		});
 	}
 
 	[Fact]
-	public void Editar_LivroTagNula()
+	public async Task Editar_LivroTagNulaAsync()
 	{
 		var idLivro = 1;
 		
 		var livroEditado =  gLivro(idLivro)!;
 
 		livroEditado.Tags = new List<Tag>(){ null! };
-		Assert.Throws<ArgumentNullException>(()=>{
-			RepLivros.Editar(livroEditado);
+		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+			await RepLivros.EditarAsync(livroEditado);
 		});		
 	}
 
@@ -208,10 +208,10 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	[InlineData(null	, new int[]{2,5}, new int[]{})]
 	[InlineData("Senhor", new int[]{}	, new int[]{1})]
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
-	public void Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
+	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado= RepLivros.Buscar(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
-		var resultadoIgual = EnumerableIgual(idExperados, resulutado.Select((i)=> i.Id));
+		var resulutado=  RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
+		var resultadoIgual = EnumerableIgual(idExperados, await resulutado.Select((i)=> i.Id).ToArrayAsync());
 		Assert.True(resultadoIgual);
 	}	
 	

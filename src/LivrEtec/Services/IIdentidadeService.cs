@@ -5,9 +5,9 @@ public interface IIdentidadeService
 	int IdUsuario { get; }
 	Usuario? Usuario { get; }
 	bool EstaAutenticado { get; }
+	Task AutenticarUsuarioAsync(string senha);
+	Task DefinirUsuarioAsync(int idUsuario);
+	Task<bool> EhAutorizadoAsync(Permissao permissao);
+	Task ErroSeNaoAutorizadoAsync(Permissao permissao);
 
-	void AutenticarUsuario(string senha);
-	void DefinirUsuario(int idUsuario);
-	bool EhAutorizado(Permissao permissao);
-	void ErroSeNaoAutorizado(Permissao permissao);
 }

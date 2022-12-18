@@ -45,12 +45,12 @@ public class TestesAutorizacao  :TestesBD
 	[InlineData(IdAdministrador)]
 	[InlineData(3)]
 	[InlineData(4)]
-	public void EhAutorizado_Autorizado(int idUsuario)
+	public async void EhAutorizado_Autorizado(int idUsuario)
 	{
 		var usuario = gUsuario(idUsuario);
 		var permissao =  Permissoes.Livro.Visualizar;
 
-		var autorizado = AutorizacaoService.EhAutorizado(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
 
 		Assert.True(autorizado);
 	}
@@ -58,50 +58,50 @@ public class TestesAutorizacao  :TestesBD
 	[InlineData(IdAnonimo)]
 	[InlineData(3)]
 	[InlineData(4)]
-	public void EhAutorizado_NaoAutorizado(int idUsuario)
+	public async void EhAutorizado_NaoAutorizado(int idUsuario)
 	{
 		var usuario = gUsuario(idUsuario);
 		var permissao =  Permissoes.Cargo.Criar;
 
-		var autorizado = AutorizacaoService.EhAutorizado(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
 		
 		Assert.False(autorizado);
 	}
 
     [Fact]
-    public void ErroSeNaoAutorizado_Nada()
+    public async Task ErroSeNaoAutorizado_NadaAsync()
     {
         var usuario = gUsuario(IdAdministrador);
         var permissao = Permissoes.Cargo.Criar;
-        AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+        await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
     }
     [Fact]
-    public void ErroSeNaoAutorizado_NaoAutorizadoException()
+    public async Task ErroSeNaoAutorizado_NaoAutorizadoExceptionAsync()
     {
         var usuario = gUsuario(IdAnonimo);
         var permissao = Permissoes.Cargo.Criar;
-		Assert.Throws<NaoAutorizadoException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<NaoAutorizadoException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 
 	[Fact]
-    public void ErroSeNaoAutorizado_PermissaoNula()
+    public async Task ErroSeNaoAutorizado_PermissaoNulaAsync()
     {
         var usuario = gUsuario(IdAnonimo);
         Permissao permissao = null!;
-		Assert.Throws<ArgumentNullException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<ArgumentNullException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 	[Fact]
-    public void ErroSeNaoAutorizado_PermissaoInvalida()
+    public async Task ErroSeNaoAutorizado_PermissaoInvalidaAsync()
     {
         var usuario = gUsuario(IdAnonimo);
 		const int IdInvalido = 100;
 		Permissao permissao = new Permissao(){ Id = IdInvalido };
-		Assert.Throws<ArgumentException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<ArgumentException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 
