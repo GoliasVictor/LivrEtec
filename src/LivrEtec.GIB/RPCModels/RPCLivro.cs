@@ -10,6 +10,7 @@ namespace LivrEtec.GIB.RPC
                 Id = model.Id,
                 Nome = model.Nome,
                 Arquivado =  model.Arquivado,
+                Descricao = model.Descricao,
                 Autores  = {model.Autores.Select((modelAutor)=> (Autor)modelAutor) },
                 Tags  = {model.Tags.Select( (modelTag)=> (Tag)modelTag )}
             };
@@ -20,6 +21,7 @@ namespace LivrEtec.GIB.RPC
                 Id = proto.Id,
                 Nome = proto.Nome,
                 Arquivado = proto.Arquivado,
+                Descricao = proto.Descricao,
                 Autores = proto.Autores.Select((a)=> (LE::Autor)a).ToList(),
                 Tags = proto.Tags.Select((t)=> (LE::Tag)t).ToList() 
             };

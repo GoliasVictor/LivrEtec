@@ -19,8 +19,8 @@ namespace LivrEtec.Testes
 
 		private static Exception CriarExcecao(RpcException ex)
 		{
-			var Excecao = ex.Trailers.FirstOrDefault(p => p.Key == "Excecao")?.Value;
-			var Mensagem = ex.Trailers.FirstOrDefault(p => p.Key == "Mensagem")?.Value;
+			var Excecao = ex.Trailers.FirstOrDefault(p => p.Key == "excecao")?.Value;
+			var Mensagem = ex.Trailers.FirstOrDefault(p => p.Key == "mensagem")?.Value;
             
 			switch (Excecao)
 			{
@@ -41,7 +41,7 @@ namespace LivrEtec.Testes
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
             if(livro.Tags.Any((t)=> t is null))
                 throw new ArgumentNullException();
-            livro.Tags ??= new List<Tag>();
+            livro.Tags ??= new();
             try{
                 await LivrosClientRPC.EditarAsync(livro);
             }
@@ -63,6 +63,9 @@ namespace LivrEtec.Testes
         public async Task RegistrarAsync(Livro livro)
         {
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
+            livro.Tags ??= new();
+            livro.Autores ??= new();
+            livro.Descricao = "";
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
             try{

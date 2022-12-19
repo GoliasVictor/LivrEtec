@@ -62,6 +62,8 @@ public sealed class RepLivros : Repositorio, IRepLivros
 			throw new InvalidDataException();
 		if (await ExisteAsync(livro))
 			throw new InvalidOperationException($"O livro {{{ livro.Id }}} já existe no sistema");
+		BD.AttachRange(livro.Tags);
+		BD.AttachRange(livro.Autores);
 		BD.Livros.Add(livro); 
 		await BD.SaveChangesAsync();
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
@@ -82,12 +84,10 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
 		if( await ExisteAsync(livro) == false)
 			throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
-		BD.AttachRange(livro.Autores);
-		BD.AttachRange(livro.Tags);
-		livro.Autores =  new HashSet<Autor>(livro.Autores).ToList();
-		livro.Tags =  new HashSet<Tag>(livro.Tags).ToList();
-		await BD.SaveChangesAsync();
-		BD.Livros.Update(livro);
+
+	   	BD.Livros.Attach(livro);
+    	BD.Entry(livro).State = EntityState.Modified;  
+
 		await  BD.SaveChangesAsync();
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
 	}

@@ -14,8 +14,8 @@ namespace LivrEtec.GIB.Servidor
         }
         public Exception GerarRpcException(Exception ex){
             var metadata = new Metadata(){
-                { "Excecao" , ex.GetType().Name },
-                { "Mensagem", ex.Message }
+                { "excecao" , ex.GetType().Name },
+//                { "Mensagem", ex.Message }
             };
             switch (ex)
             {
@@ -23,9 +23,9 @@ namespace LivrEtec.GIB.Servidor
                     return new RpcException(new Status(StatusCode.InvalidArgument, $"Dados invalidos", ex), metadata);
                 case ArgumentNullException ArgumentNull:
                     metadata.Add(nameof(ArgumentNull.ParamName),  ArgumentNull.Message);
-                    return new RpcException(new Status(StatusCode.InvalidArgument, $"{ArgumentNull.ParamName} é nulo", ex), metadata);
+                    return new RpcException(new Status(StatusCode.InvalidArgument, $"{ArgumentNull.ParamName} e nulo", ex), metadata);
                 case InvalidOperationException InvalidOperation:
-                    return new RpcException(new Status(StatusCode.InvalidArgument, "Operação Invalida"), metadata);
+                    return new RpcException(new Status(StatusCode.FailedPrecondition, "Operacao Invalida", ex), metadata);
                 default:
                     return new RpcException(new Status(StatusCode.Internal, "Erro interno", ex));
             }
@@ -53,15 +53,15 @@ namespace LivrEtec.GIB.Servidor
             }
         }
 
-        public override Task<Empty> Remover(RPC.IdLivro request, ServerCallContext context)
+        public override async Task<Empty> Remover(RPC.IdLivro request, ServerCallContext context)
         {
             try {
-                _acervoService.Livros.RemoverAsync(request.Id);
+                await _acervoService.Livros.RemoverAsync(request.Id);
             }
             catch (Exception ex) {
                 throw GerarRpcException(ex);
             }
-            return Task.FromResult(new Empty());
+            return new Empty();
         }
 
         public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)

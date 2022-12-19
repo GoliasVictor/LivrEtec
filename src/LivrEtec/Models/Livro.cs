@@ -23,8 +23,8 @@ namespace LivrEtec
         [Required]
         public string Nome { get; set; } = null!;
         public string? Descricao { get; set; } 
-        public List<Tag> Tags { get; set; } = new List<Tag>();
-        public List<Autor> Autores { get; set; } = new List<Autor>();
+        public List<Tag> Tags { get; set; } = new ();
+        public List<Autor> Autores { get; set; } = new();
         [Required]
         public bool Arquivado { get; set; }
     }

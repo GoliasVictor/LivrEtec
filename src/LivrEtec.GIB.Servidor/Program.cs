@@ -13,11 +13,11 @@ builder.Services.AddGrpc();
 var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorGIB>();
 
 builder.Services.AddSingleton<IConfiguracao>(Config);
-builder.Services.AddScoped<PacaContext>();
+builder.Services.AddTransient<PacaContext>();
 builder.Services.AddLogging(configure => {
     configure.AddConsole();
 });
-builder.Services.AddScoped<IAcervoService, AcervoService>();
+builder.Services.AddTransient<IAcervoService, AcervoService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -78,8 +78,10 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		await RepLivros.RegistrarAsync(livroARegistrar);
 
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
+		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
+		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
 
-		
+		Assert.NotNull(livroRegistrado);
 		Assert.Equal(livroARegistrar.Nome, livroRegistrado.Nome);
 		Assert.Equal(livroARegistrar.Arquivado, livroRegistrado.Arquivado);
 		Assert.Equal(livroARegistrar.Descricao, livroRegistrado.Descricao);
