@@ -28,23 +28,17 @@ public class IdentidadeService : Service, IIdentidadeService
 		EstaAutenticado = false;
 		IdUsuario = idUsuario;
 	}
-	public async Task AutenticarUsuario(string senha)
-	{
-		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
-		if(EstaAutenticado)
-			Usuario = BD.Usuarios.Find(IdUsuario);
-	}
-	public Task<bool> EhAutorizado(Permissao permissao)
-	{
-		if (!EstaAutenticado)
-			return Task.FromResult(false);
-		return AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
-	}
+
  	public async Task AutenticarUsuarioAsync(string senha)
 	{
 		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
-		if(EstaAutenticado)
+		if(EstaAutenticado){
 			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
+			if(Usuario != null){
+				BD.Entry(Usuario).Reference((u)=> u.Cargo).Load();
+				BD.Entry(Usuario.Cargo).Collection((c)=> c.Permissoes).Load();
+			}
+		}
 	}
 	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
 	{

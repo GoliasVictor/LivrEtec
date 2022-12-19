@@ -80,7 +80,6 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 	public async Task EditarAsync(Livro livro)
 	{
-
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
 		if( await ExisteAsync(livro) == false)
 			throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");

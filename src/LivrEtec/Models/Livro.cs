@@ -27,5 +27,6 @@ namespace LivrEtec
         public List<Autor> Autores { get; set; } = new();
         [Required]
         public bool Arquivado { get; set; }
+ 
     }
 }

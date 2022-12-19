@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 
 namespace LivrEtec.Servidor;
-public sealed class PacaContext : DbContext, IPacaContext
+public sealed class PacaContext : DbContext
 {
 	public DbSet<Livro> Livros { get; set; } = null!;
 	public DbSet<Autor> Autores { get; set; } = null!;

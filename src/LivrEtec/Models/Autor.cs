@@ -27,5 +27,18 @@ namespace LivrEtec
             _ = other ?? throw new NullReferenceException();
             return this.Id.CompareTo(other.Id);
 		}
+        public override bool Equals(object? obj)
+		{
+            return obj switch {
+                Autor autor => autor.Id ==  this.Id,
+                _ => base.Equals(obj)
+            };
+		}
+
+        public override int GetHashCode()
+		{
+			return HashCode.Combine(Id);
+		}
+ 
 	}
 }

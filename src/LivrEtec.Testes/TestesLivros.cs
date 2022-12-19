@@ -8,59 +8,58 @@ using Grpc.Core.Interceptors;
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
+public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T : IRepLivros
 {
 	protected abstract T RepLivros { get; }
-	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
-	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
-	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
+	protected BDUtil BDU; 
+
 	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
 		Assert.Equal(new HashSet<K>(A),new HashSet<K>(B));
 	}
-	public TestesLivro(ConfiguradorTestes configurador) : base(configurador)
+	public TestesLivro(ConfiguradorTestes configurador) 
 	{ 	
-		ResetarBanco();
-		Autores =  new Autor[]{
-			new Autor(1, "J. R. R. Tolkien"),
-			new Autor(2, "Friedrich Engels"),
-			new Autor(3, "Karl Marx"),
-			new Autor(4, "George Orwell")
-		};
+		BDU = new  BDUtil(configurador, (bdu)=>{
+			bdu.Autores =  new Autor[]{
+				new Autor(1, "J. R. R. Tolkien"),
+				new Autor(2, "Friedrich Engels"),
+				new Autor(3, "Karl Marx"),
+				new Autor(4, "George Orwell")
+			};
 
-		Tags = new Tag[]{
-			new Tag(1,"Aventura"),
-            new Tag(2,"Fantasia"),
-            new Tag(3,"Politica"),
-            new Tag(4,"Literatura"),
-            new Tag(5,"Sociologia"),
-		};
-		Livros =  new[]{
-			new Livro {
-				Id = 1,
-				Nome = "Senhor dos Aneis",
-				Arquivado = false,
-				Autores = { gAutor(1) },
-				Tags = { gTag(1), gTag(2), gTag(4)},
-				Descricao = "Meu precioso"
-			},
-			new Livro {
-				Id = 2,
-				Nome = "O Capital",
-				Arquivado = false,
-				Autores = { gAutor(2), gAutor(3), },
-				Tags = { gTag(3), gTag(2) },
-				Descricao = "É tudo nosso"
-			},
-			new Livro { 
-				Id = 3,
-				Nome = "A Revolução dos Bixos",
-				Arquivado = false,
-				Autores = { gAutor(4)},
-				Tags = { gTag(5) },
-				Descricao = "É tudo nosso"
-			}
-		};
-		BD.SaveChanges();
+			bdu.Tags = new Tag[]{
+				new Tag(1,"Aventura"),
+				new Tag(2,"Fantasia"),
+				new Tag(3,"Politica"),
+				new Tag(4,"Literatura"),
+				new Tag(5,"Sociologia"),
+			};
+			bdu.Livros =  new[]{
+				new Livro {
+					Id = 1,
+					Nome = "Senhor dos Aneis",
+					Arquivado = false,
+					Autores = { bdu.gAutor(1) },
+					Tags = { bdu.gTag(1), bdu.gTag(2),bdu.gTag(4)},
+					Descricao = "Meu precioso"
+				},
+				new Livro {
+					Id = 2,
+					Nome = "O Capital",
+					Arquivado = false,
+					Autores = { bdu.gAutor(2), bdu.gAutor(3), },
+					Tags = { bdu.gTag(3), bdu.gTag(2) },
+					Descricao = "É tudo nosso"
+				},
+				new Livro { 
+					Id = 3,
+					Nome = "A Revolução dos Bixos",
+					Arquivado = false,
+					Autores = { bdu.gAutor(4)},
+					Tags = { bdu.gTag(5) },
+					Descricao = "É tudo nosso"
+				}
+			};
+		});
 	}
 	[Fact]
 	public async Task Registrar_LivroValidoAsync()
@@ -71,12 +70,12 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 			Nome = "Livro",
 			Arquivado = true,
 			Descricao = "Descrição",
-			Tags =  {gTag(1), gTag(2) },
-			Autores =  { gAutor(1) }
+			Tags =  {BDU.gTag(1), BDU.gTag(2) },
+			Autores =  { BDU.gAutor(1) }
 		};
 		
 		await RepLivros.RegistrarAsync(livroARegistrar);
-
+		using var BD = BDU.CriarContexto();
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
 		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
@@ -91,7 +90,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	[Fact]
 	public async Task Registrar_LivroExistenteAsync()
 	{
-		var livro  = gLivro(1);
+		var livro  = BDU.gLivro(1);
 		
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
 			await RepLivros.RegistrarAsync(livro);
@@ -143,7 +142,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 		var Id =  1;
 		
 		await RepLivros.RemoverAsync(Id); 
-		using var BD2 =  new PacaContext(configuracao,null);
+		using var BD =  BDU.CriarContexto();
 		var Contem =  BD.Livros.Any( l => l.Id == Id); 
 		Assert.False(Contem);
 	}
@@ -159,16 +158,18 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	public async Task Editar_TudoLivroValidoAsync()
 	{
 		var idLivro = 1;
-		var livroEditado =  gLivro(idLivro)!;
+		var livroEditado =  BDU.gLivro(idLivro)!;
 		livroEditado.Nome = "Livro";
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
-		livroEditado.Tags =  new(){gTag(3) };
-		livroEditado.Autores = new(){ gAutor(1) };
+		livroEditado.Tags =  new(){BDU.gTag(3) };
+		livroEditado.Autores = new(){ BDU.gAutor(1) };
+		using var BD =  BDU.CriarContexto();
 
 		await RepLivros.EditarAsync(livroEditado);
-
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
+		BD.Entry(livroRegistrado).Collection(l=> l.Tags).Load();
+		BD.Entry(livroRegistrado).Collection(l=> l.Autores).Load();
 
 		Assert.Equal(livroEditado.Nome, livroRegistrado.Nome);
 		Assert.Equal( livroEditado.Arquivado, livroRegistrado.Arquivado);
@@ -193,7 +194,7 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	{
 		var idLivro = 1;
 		
-		var livroEditado =  gLivro(idLivro)!;
+		var livroEditado =  BDU.gLivro(idLivro)!;
 
 		livroEditado.Tags = new List<Tag>(){ null! };
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
@@ -210,18 +211,24 @@ public abstract class TestesLivro<T> :  TestesBD where T : IRepLivros
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado=  RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
+		var resulutado=  RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> BDU.gTag(t)));
 		AssertEhIgual(idExperados, (await resulutado.ToArrayAsync()).Select((i)=> i.Id));
 	}	
 	
 }
-public class TestesLivrosLocal : TestesLivro<RepLivros>
+public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable 
 {
 	AcervoService acervoService;
+	PacaContext BD;
 	protected override RepLivros RepLivros => (RepLivros)acervoService.Livros;
 	public TestesLivrosLocal(ConfiguradorTestes configurador) : base(configurador)
 	{
+		BD = BDU.CriarContexto();
 		acervoService = new AcervoService(BD, null);
+	}
+	
+	public void Dispose(){
+		BD.Dispose();
 	}
 
 }
@@ -232,6 +239,6 @@ public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
     public TestesLivrosRPC(ConfiguradorTestes configurador) : base(configurador)
 	{
         var channel = GrpcChannel.ForAddress("http://localhost:5259");
-        repLivrosRPC = new RepLivroRPC(loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
+        repLivrosRPC = new RepLivroRPC(configurador.loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
     }
 }

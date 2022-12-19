@@ -1,9 +1,14 @@
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
 public sealed class ConfiguradorTestes
 {
 	public ConfiguracaoTeste Config;
+	public ILoggerFactory loggerFactory = LoggerFactory.Create((lb)=> { 
+		lb.AddConsole();
+		lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
+	});
 	public ConfiguradorTestes()
 	{ 
 		string? AppSettingsJsonPath =  Environment.GetEnvironmentVariable("APP_SETTINGS_JSON_PATH");
