@@ -17,12 +17,13 @@ public sealed class PacaContext : DbContext
 	public DbSet<Permissao> Permissoes { get; set; } = null!;
 	ILoggerFactory? LoggerFactory { get; init; }
 	IConfiguracao Config;
-	public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null)
+	Action<DbContextOptionsBuilder>? _configurarAction;
+	public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null, Action<DbContextOptionsBuilder>? configurarAction = null)
 	{
 		_ = config ?? throw new NullReferenceException("Configuração não definida");
+		_configurarAction =  configurarAction;
 		Config = config;
 		LoggerFactory = loggerFactory;
-
 	}
 	protected override void OnConfiguring(DbContextOptionsBuilder options)
 	{
@@ -41,6 +42,7 @@ public sealed class PacaContext : DbContext
 			Console.WriteLine(ex.Message);
 			options.UseInMemoryDatabase("LivrEtecBD");
 		}
+		_configurarAction?.Invoke(options);
 
 	}
 }

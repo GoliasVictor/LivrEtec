@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes;
@@ -5,13 +6,16 @@ public sealed class BDUtil : IDisposable
 {
 	
 	public PacaContext CriarContexto(){
-		return new PacaContext(_configuradorTestes.Config, _configuradorTestes.loggerFactory);
+		return PacaContextFactory.CreateDbContext();
 	}
+	public PacaContextFactory PacaContextFactory { get; private set; }
+
 	private ConfiguradorTestes _configuradorTestes;
 
-	public BDUtil(ConfiguradorTestes configuradorTestes, Action<BDUtil> Configurar)
+	public BDUtil(ConfiguradorTestes configuradorTestes, Action<BDUtil> Configurar, Action<DbContextOptionsBuilder> configurarContext )
 	{
 		_configuradorTestes = configuradorTestes;	
+		PacaContextFactory = new PacaContextFactory(_configuradorTestes.Config, configurarContext ,  _configuradorTestes.loggerFactory);
 		Configurar(this);
 		ResetarBanco();	
 		using var BD =  CriarContexto();
@@ -28,7 +32,8 @@ public sealed class BDUtil : IDisposable
 		BD.Emprestimos.AddRange(Emprestimos);
 		
 		BD.SaveChanges();
-		BD.Dispose();
+		BD.ChangeTracker.Clear();
+		
 	}
 
 	public Livro[] Livros { get; set; } =  new Livro[0];

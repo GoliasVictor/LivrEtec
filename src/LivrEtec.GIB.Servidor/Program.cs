@@ -11,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
 
 var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorGIB>();
+builder.Services.AddDbContextFactory<PacaContext>(( _ )=>{
 
+});
 builder.Services.AddSingleton<IConfiguracao>(Config);
 builder.Services.AddTransient<PacaContext>();
 builder.Services.AddLogging(configure => {

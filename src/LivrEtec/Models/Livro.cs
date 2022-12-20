@@ -28,5 +28,15 @@ namespace LivrEtec
         [Required]
         public bool Arquivado { get; set; }
  
+        public Livro Clone(){
+            return new Livro(){
+                Id =  Id,
+                Nome = Nome,
+                Arquivado =  Arquivado,
+                Descricao =  Descricao,
+                Autores = Autores.Select(a=>a).ToList(),
+                Tags = Tags.Select(t=>t).ToList(),
+            };
+        }
     }
 }

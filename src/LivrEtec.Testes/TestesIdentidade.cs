@@ -37,7 +37,7 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 				new Usuario(IdAdmin	 , gHash(IdAdmin  ), "tavares", "Tavares" , bdu.gCargo(IdCargoAdmin)),
 				new Usuario(IdAnonimo, gHash(IdAnonimo), "Atlas"  , "Atlas"   , bdu.gCargo(IdCargoAnonimo)),
 			};
-		});
+		}, (_)=>{});
 
 		var BD = BDU.CriarContexto();
 		Identidade = new IdentidadeService(

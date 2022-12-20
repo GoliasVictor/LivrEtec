@@ -70,7 +70,7 @@ namespace LivrEtec.GIB.Servidor
             try{
                 return new EnumLivros() { 
                     Livros = { 
-                        await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags).Select(l=> (RPC.Livro)l).ToArrayAsync() 
+                        (await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags)).Select(l=> (RPC.Livro)l).ToArray()
                     }
                 };
             }

@@ -88,7 +88,7 @@ namespace LivrEtec.Testes
             }
         }
 
-        public async IAsyncEnumerable<Livro> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
+        public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
         {
             nome ??= "";
             nomeAutor ??= "";
@@ -100,8 +100,7 @@ namespace LivrEtec.Testes
             catch(RpcException ex){
                 throw CriarExcecao(ex);
             }
-			foreach (var livro in enumLivros.Livros)
-                yield return (Livro)livro!;
+			return enumLivros.Livros.Select(l=> (Livro)l!);
         }
 
 	}

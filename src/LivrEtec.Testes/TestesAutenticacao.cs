@@ -26,7 +26,7 @@ public class TestesAutenticacao :  IClassFixture<ConfiguradorTestes>, IDisposabl
 				new Usuario(2, gHash(2), "Atlas"	, "Atlas"	, Cargo),
 				new Usuario(3, gHash(3), "Atlas"	, "Atlas"	, Cargo),
 			};
-		}); 
+		}, (_)=>{}); 
 		BD =  BDU.CriarContexto();
 		AutenticacaoService = new AutenticacaoService(BD, configurador.loggerFactory.CreateLogger<AutenticacaoService>());
 	}

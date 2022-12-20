@@ -4,11 +4,12 @@ using LivrEtec.Servidor;
 using LivrEtec.GIB;
 using Microsoft.Extensions.Logging;
 using Grpc.Core.Interceptors;
+using Microsoft.EntityFrameworkCore;
 
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T : IRepLivros
+public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T : IRepLivros  
 {
 	protected abstract T RepLivros { get; }
 	protected BDUtil BDU; 
@@ -59,7 +60,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 					Descricao = "É tudo nosso"
 				}
 			};
-		});
+		},(_)=>{});
 	}
 	[Fact]
 	public async Task Registrar_LivroValidoAsync()
@@ -163,7 +164,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
 		livroEditado.Tags =  new(){BDU.gTag(3) };
-		livroEditado.Autores = new(){ BDU.gAutor(1) };
+		livroEditado.Autores = new(){ BDU.gAutor(2) };
+		var livroEsperado = livroEditado.Clone();
 		using var BD =  BDU.CriarContexto();
 
 		await RepLivros.EditarAsync(livroEditado);
@@ -171,11 +173,11 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		BD.Entry(livroRegistrado).Collection(l=> l.Tags).Load();
 		BD.Entry(livroRegistrado).Collection(l=> l.Autores).Load();
 
-		Assert.Equal(livroEditado.Nome, livroRegistrado.Nome);
-		Assert.Equal( livroEditado.Arquivado, livroRegistrado.Arquivado);
-		Assert.Equal( livroEditado.Descricao, livroRegistrado.Descricao);
-		AssertEhIgual(livroEditado.Tags, livroRegistrado.Tags);
-		AssertEhIgual(livroEditado.Autores, livroRegistrado.Autores);
+		Assert.Equal( livroEsperado.Nome, livroRegistrado.Nome);
+		Assert.Equal( livroEsperado.Arquivado, livroRegistrado.Arquivado);
+		Assert.Equal( livroEsperado.Descricao, livroRegistrado.Descricao);
+		AssertEhIgual(livroEsperado.Autores, livroRegistrado.Autores);
+		AssertEhIgual(livroEsperado.Tags, livroRegistrado.Tags);
 	}
 
 
@@ -211,8 +213,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado=  RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> BDU.gTag(t)));
-		AssertEhIgual(idExperados, (await resulutado.ToArrayAsync()).Select((i)=> i.Id));
+		var resulutado=  await RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> BDU.gTag(t)));
+		AssertEhIgual(idExperados,  resulutado.Select((i)=> i.Id));
 	}	
 	
 }
@@ -220,11 +222,11 @@ public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 {
 	AcervoService acervoService;
 	PacaContext BD;
-	protected override RepLivros RepLivros => (RepLivros)acervoService.Livros;
+	protected override  RepLivros RepLivros => (RepLivros)acervoService.Livros;
 	public TestesLivrosLocal(ConfiguradorTestes configurador) : base(configurador)
 	{
 		BD = BDU.CriarContexto();
-		acervoService = new AcervoService(BD, null);
+		acervoService = new AcervoService(BDU.PacaContextFactory, null);
 	}
 	
 	public void Dispose(){
@@ -232,6 +234,7 @@ public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 	}
 
 }
+[Trait("Category", "Remoto")]
 public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 {
 	RepLivroRPC repLivrosRPC;

@@ -38,7 +38,7 @@ public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>,IDisposable
 				new Usuario(4, "", "Atlas"	, "Atlas"	, bdu.gCargo(4)),
 			};
 	
-		});
+		},(_)=>{});
 		var BD = BDU.CriarContexto(); 
 		AutorizacaoService =  new AutorizacaoService(BD, configurador.loggerFactory.CreateLogger<AutorizacaoService>());
 	}
