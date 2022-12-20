@@ -37,15 +37,15 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", tags ?? Enumerable.Empty<Tag>())}");
 		return await livros.ToListAsync();
 	}
-	private Task<bool> ExisteAsync(Livro livro)
+	private async Task<bool> ExisteAsync(Livro livro)
 	{
 		using var BD = BDFactory.CreateDbContext();
-		return BD.Livros.ContainsAsync(livro);
+		return await BD.Livros.ContainsAsync(livro);
 	}
-	private Task<bool> ExisteAsync(int id)
+	private async Task<bool> ExisteAsync(int id)
 	{
 		using var BD = BDFactory.CreateDbContext();
-		return BD.Livros.AnyAsync((l)=> l.Id == id);
+		return await BD.Livros.AnyAsync((l)=> l.Id == id);
 	}
 
 
@@ -89,13 +89,23 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	{
 		using var BD = BDFactory.CreateDbContext();
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
-	   	
+	   	foreach(var tag in livro.Tags) 
+			if (tag is null)
+				throw new InvalidDataException("tag nula");
 		if( await ExisteAsync(livro) == false)
 			throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
-
-		BD.Livros.Attach(livro);
-    	BD.Entry(livro).State = EntityState.Modified;  
-
+		
+		var livroAntigo = BD.Livros.Include(l=>l.Tags)
+								   .Include(l => l.Autores)
+								   .Single(l => l.Id == livro.Id);
+		livroAntigo.Nome = livro.Nome;
+		livroAntigo.Descricao = livro.Descricao;
+		livroAntigo.Arquivado = livro.Arquivado;
+		livroAntigo.Tags.Clear();
+		livroAntigo.Autores.Clear();
+        await  BD.SaveChangesAsync();
+		livroAntigo.Autores.AddRange(BD.Autores.Where( a=> livro.Autores.Contains(a)));
+        livroAntigo.Tags.AddRange(BD.Tags.Where( t => livro.Tags.Contains(t)));
 		await  BD.SaveChangesAsync();
 		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
 	}

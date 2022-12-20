@@ -143,8 +143,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		var Id =  1;
 		
 		await RepLivros.RemoverAsync(Id); 
-		using var BD =  BDU.CriarContexto();
-		var Contem =  BD.Livros.Any( l => l.Id == Id); 
+		using var BD = BDU.CriarContexto();
+		var Contem = BD.Livros.Any( l => l.Id == Id); 
 		Assert.False(Contem);
 	}
 	[Fact]
@@ -199,7 +199,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		var livroEditado =  BDU.gLivro(idLivro)!;
 
 		livroEditado.Tags = new List<Tag>(){ null! };
-		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
 			await RepLivros.EditarAsync(livroEditado);
 		});		
 	}

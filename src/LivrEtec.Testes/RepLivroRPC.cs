@@ -40,7 +40,8 @@ namespace LivrEtec.Testes
         {
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
             if(livro.Tags.Any((t)=> t is null))
-                throw new ArgumentNullException();
+                throw new InvalidDataException("tag nula");
+
             livro.Tags ??= new();
             try{
                 await LivrosClientRPC.EditarAsync(livro);
