@@ -241,7 +241,7 @@ public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 	protected override RepLivroRPC RepLivros => repLivrosRPC;
     public TestesLivrosRPC(ConfiguradorTestes configurador) : base(configurador)
 	{
-        var channel = GrpcChannel.ForAddress("http://localhost:5259");
+        var channel = GrpcChannel.ForAddress(configurador.Config.UrlGIBAPI);
         repLivrosRPC = new RepLivroRPC(configurador.loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
     }
 }

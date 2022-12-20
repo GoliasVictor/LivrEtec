@@ -1,12 +1,23 @@
 version: "3.9"
 
 services:
-  app: 
+  gib_servidor: 
+    container_name: "livretec_gib_servidor"
+    image: livretec_gib_servidor
+    build:
+      context: .
+      dockerfile: ./Docker/GIB.Servidor/Dockerfile
+    depends_on:
+      - db
+  testes: 
     container_name: "livretec_testes"
     image: livretec_testes
     build:
       context: .
       dockerfile: ./Docker/Testes/Dockerfile
+    depends_on:
+      - db
+      - gib_servidor
   db:
     container_name: "livretec_bd"
     image: mysql
@@ -17,5 +28,7 @@ services:
       MYSQL_PASSWORD: LivrEtecSenha
     volumes: 
       - livretec-mysql-volume:/var/lib/mysql
+    ports:
+      - 42333:3306
 volumes:
   livretec-mysql-volume:

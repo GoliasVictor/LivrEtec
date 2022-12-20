@@ -7,7 +7,7 @@ public sealed class ConfiguradorTestes
 	public ConfiguracaoTeste Config;
 	public ILoggerFactory loggerFactory = LoggerFactory.Create((lb)=> { 
 		lb.AddConsole();
-		lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Information);
+		lb.AddFilter((_,_, logLevel)=> logLevel >= LogLevel.Warning);
 	});
 	public ConfiguradorTestes()
 	{ 
