@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public sealed class Autor : IAutor, IComparable<Autor>
+    public sealed class Autor : IAutor, IComparable<Autor>, IEquatable<Autor?>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
@@ -25,7 +25,34 @@ namespace LivrEtec
 		public int CompareTo(Autor? other)
 		{
             _ = other ?? throw new NullReferenceException();
-            return this.Id.CompareTo(other.Id);
+            return Id.CompareTo(other.Id);
 		}
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Autor);
+        }
+
+        public bool Equals(Autor? other)
+        {
+            return other is not null &&
+                   Id == other.Id &&
+                   Nome == other.Nome;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Nome);
+        }
+
+        public static bool operator ==(Autor? left, Autor? right)
+        {
+            return EqualityComparer<Autor>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Autor? left, Autor? right)
+        {
+            return !(left == right);
+        }
+    }
 }

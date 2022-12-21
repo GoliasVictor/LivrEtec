@@ -1,64 +1,75 @@
-
+using LivrEtec.Servidor;
+using LivrEtec.GIB;
+using Grpc.Core.Interceptors;
+using Microsoft.EntityFrameworkCore;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
-[Collection("UsaBancoDeDados")]
-public sealed class TestesLivro  : TestesBD
-{
-	AcervoService AcervoService;
-	Autor gAutor(int id) => Autores.First((a)=> a.Id == id); 
-	Tag gTag(int id) => Tags.First((a)=> a.Id == id); 
-	Livro gLivro(int id) => Livros.First((l)=> l.Id == id); 
-	public static bool EnumerableIgual<T>( IEnumerable<T> A, IEnumerable<T> B){
-		return Enumerable.SequenceEqual(A.OrderBy((a)=>a),B.OrderBy(b=>b));
-	}
-	public TestesLivro(ConfiguradorTestes configurador) : base(configurador)
-	{ 	
-		ResetarBanco();
-		Autores =  new Autor[]{
-			new Autor(1, "J. R. R. Tolkien"),
-			new Autor(2, "Friedrich Engels"),
-			new Autor(3, "Karl Marx"),
-			new Autor(4, "George Orwell")
-		};
 
-		Tags = new Tag[]{
+[Collection("UsaBancoDeDados")]
+public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
+{
+	protected abstract T RepLivros { get; }
+	protected readonly BDUtil BDU; 
+
+	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
+		Assert.Equal(new HashSet<K>(A),new HashSet<K>(B));
+	}
+    static void AssertLivroIgual(Livro livroEsperado, Livro livroAtual)
+    {
+        Assert.Equal(livroEsperado.Nome, livroAtual.Nome);
+        Assert.Equal(livroEsperado.Arquivado, livroAtual.Arquivado);
+        Assert.Equal(livroEsperado.Descricao, livroAtual.Descricao);
+        AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
+        AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
+    }
+	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output)
+	{
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU.Autores = new Autor[]{
+				new Autor(1, "J. R. R. Tolkien"),
+				new Autor(2, "Friedrich Engels"),
+				new Autor(3, "Karl Marx"),
+				new Autor(4, "George Orwell")
+			};
+
+		BDU.Tags = new Tag[]{
 			new Tag(1,"Aventura"),
-            new Tag(2,"Fantasia"),
-            new Tag(3,"Politica"),
-            new Tag(4,"Literatura"),
-            new Tag(5,"Sociologia"),
+			new Tag(2,"Fantasia"),
+			new Tag(3,"Politica"),
+			new Tag(4,"Literatura"),
+			new Tag(5,"Sociologia"),
 		};
-		Livros =  new[]{
+		BDU.Livros = new[]{
 			new Livro {
 				Id = 1,
 				Nome = "Senhor dos Aneis",
 				Arquivado = false,
-				Autores = { gAutor(1) },
-				Tags = { gTag(1), gTag(2), gTag(4)},
+				Autores = { BDU.gAutor(1) },
+				Tags = { BDU.gTag(1), BDU.gTag(2),BDU.gTag(4)},
 				Descricao = "Meu precioso"
 			},
 			new Livro {
 				Id = 2,
 				Nome = "O Capital",
 				Arquivado = false,
-				Autores = { gAutor(2), gAutor(3), },
-				Tags = { gTag(3), gTag(2) },
+				Autores = { BDU.gAutor(2), BDU.gAutor(3), },
+				Tags = { BDU.gTag(3), BDU.gTag(2) },
 				Descricao = "É tudo nosso"
 			},
-			new Livro { 
+			new Livro {
 				Id = 3,
 				Nome = "A Revolução dos Bixos",
 				Arquivado = false,
-				Autores = { gAutor(4)},
-				Tags = { gTag(5) },
+				Autores = { BDU.gAutor(4)},
+				Tags = { BDU.gTag(5) },
 				Descricao = "É tudo nosso"
 			}
 		};
-		BD.SaveChanges();
-		AcervoService =  new AcervoService(BD, null);
+		BDU.SalvarDados();
 	}
 	[Fact]
-	public void Registrar_LivroValido()
+	public async Task Registrar_LivroValidoAsync()
 	{
 		var idLivro = 5;
 		var livroARegistrar  = new Livro{
@@ -66,29 +77,26 @@ public sealed class TestesLivro  : TestesBD
 			Nome = "Livro",
 			Arquivado = true,
 			Descricao = "Descrição",
-			Tags =  {gTag(1), gTag(2) },
-			Autores =  { gAutor(1) }
+			Tags =  {BDU.gTag(1), BDU.gTag(2) },
+			Autores =  { BDU.gAutor(1) }
 		};
+		
+		await RepLivros.RegistrarAsync(livroARegistrar);
+		using var BD = BDU.CriarContexto();
+		var livroRegistrado = BD.Livros.Find(idLivro)!;
+		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
+		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
 
-		AcervoService.Livros.RegistrarAsync(livroARegistrar);
-
-		var livroRegistrado = BD.Livros.Find(idLivro);
-
-		Assert.True(
-			livroARegistrar.Nome == livroRegistrado?.Nome
-		 && livroARegistrar.Arquivado == livroRegistrado.Arquivado
-		 && livroARegistrar.Descricao == livroRegistrado.Descricao
-		 && EnumerableIgual(livroARegistrar.Tags, livroRegistrado.Tags)
-		 && EnumerableIgual(livroARegistrar.Autores, livroRegistrado.Autores)
-		);
+		Assert.NotNull(livroRegistrado);
+		AssertLivroIgual(livroARegistrar,livroRegistrado);
 	}
 	[Fact]
 	public async Task Registrar_LivroExistenteAsync()
 	{
-		var livro  = gLivro(1);
+		var livro  = BDU.gLivro(1);
 		
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await AcervoService.Livros.RegistrarAsync(livro);
+			await RepLivros.RegistrarAsync(livro);
 		});
 	}
 	[Fact]
@@ -100,7 +108,7 @@ public sealed class TestesLivro  : TestesBD
 		};
 
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await AcervoService.Livros.RegistrarAsync(livro);
+			await RepLivros.RegistrarAsync(livro);
 		});
 
 	}
@@ -111,7 +119,7 @@ public sealed class TestesLivro  : TestesBD
 
 
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await AcervoService.Livros.RegistrarAsync(Livro);
+			await RepLivros.RegistrarAsync(Livro);
 		});
 	}
 	[Theory]
@@ -127,52 +135,48 @@ public sealed class TestesLivro  : TestesBD
 
 
 		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
-			await AcervoService.Livros.RegistrarAsync(livro);
+			await RepLivros.RegistrarAsync(livro);
 		});
 	}
 
 
 	[Fact]
 	public async Task Remover_LivroValidoAsync(){
-		var livro =  gLivro(1);
-
-		await AcervoService.Livros.RemoverAsync(livro);
-		var Contem =  BD.Livros.Contains(livro); 
+		var Id =  1;
 		
+		await RepLivros.RemoverAsync(Id); 
+		using var BD = BDU.CriarContexto();
+		var Contem = BD.Livros.Any( l => l.Id == Id); 
 		Assert.False(Contem);
 	}
 	[Fact]
 	public async Task Remover_LivroInvalidoAsync(){
-		var livro =  new Livro(){ Id = 100 };
-
+		var Id = 100;
+	
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await AcervoService.Livros.RemoverAsync(livro);
+			await RepLivros.RemoverAsync(Id);
 		});
 	}
 	[Fact]
 	public async Task Editar_TudoLivroValidoAsync()
 	{
 		var idLivro = 1;
-		var livroEditado =  gLivro(idLivro)!;
+		var livroEditado = BDU.gLivro(idLivro)!;
 		livroEditado.Nome = "Livro";
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
-		livroEditado.Tags =  new(){gTag(3) };
-		livroEditado.Autores = new(){ gAutor(1) };
+		livroEditado.Tags = new() { BDU.gTag(3) };
+		livroEditado.Autores = new() { BDU.gAutor(2) };
+		var livroEsperado = livroEditado.Clone();
+		using var BD = BDU.CriarContexto();
 
-		await AcervoService.Livros.EditarAsync(livroEditado);
-
+		await RepLivros.EditarAsync(livroEditado);
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
+		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
+		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
 
-		Assert.Equal(livroEditado.Nome, livroRegistrado.Nome);
-		Assert.Equal( livroEditado.Arquivado, livroRegistrado.Arquivado);
-		Assert.Equal( livroEditado.Descricao, livroRegistrado.Descricao);
-		Assert.True( 
-			EnumerableIgual(livroEditado.Tags, livroRegistrado.Tags)
-		 && EnumerableIgual(livroEditado.Autores, livroRegistrado.Autores)
-		);
+		AssertLivroIgual(livroEsperado, livroRegistrado);
 	}
-
 
 	[Fact]
 	public async Task Editar_LivroNuloAsync()
@@ -180,7 +184,7 @@ public sealed class TestesLivro  : TestesBD
 		Livro livro = null!;
 		
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await AcervoService.Livros.EditarAsync(livro);
+			await RepLivros.EditarAsync(livro);
 		});
 	}
 
@@ -189,11 +193,11 @@ public sealed class TestesLivro  : TestesBD
 	{
 		var idLivro = 1;
 		
-		var livroEditado =  gLivro(idLivro)!;
+		var livroEditado =  BDU.gLivro(idLivro)!;
 
 		livroEditado.Tags = new List<Tag>(){ null! };
-		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await AcervoService.Livros.EditarAsync(livroEditado);
+		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
+			await RepLivros.EditarAsync(livroEditado);
 		});		
 	}
 
@@ -206,9 +210,8 @@ public sealed class TestesLivro  : TestesBD
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado=  AcervoService.Livros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> gTag(t)));
-		var resultadoIgual = EnumerableIgual(idExperados, await resulutado.Select((i)=> i.Id).ToArrayAsync());
-		Assert.True(resultadoIgual);
+		var resulutado=  await RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> BDU.gTag(t)));
+		AssertEhIgual(idExperados,  resulutado.Select((i)=> i.Id));
 	}	
 	
 }

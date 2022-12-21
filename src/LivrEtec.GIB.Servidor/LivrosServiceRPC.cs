@@ -13,15 +13,63 @@ namespace LivrEtec.GIB.Servidor
             _acervoService = acervoService;
         }
 
-        public override async Task<Empty> RegistrarLivro(RPC.Livro request, ServerCallContext context)
+
+        public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
+		{
+            try {
+			    await _acervoService.Livros.RegistrarAsync(request!);
+            }
+            catch (Exception ex) {
+                throw ManipuladorException.ExceptionToRpcException(ex);
+            }
+            return new Empty();
+
+		}
+		public override async Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
         {
-            if(request is not null)
-                await _acervoService.Livros.RegistrarAsync(request!);
+            try{
+                return await _acervoService.Livros.GetAsync(request.Id) ?? null!;
+            }
+            catch (Exception ex) {
+                throw ManipuladorException.ExceptionToRpcException(ex);
+            }
+        }
+
+        public override async Task<Empty> Remover(RPC.IdLivro request, ServerCallContext context)
+        {
+            try {
+                await _acervoService.Livros.RemoverAsync(request.Id);
+            }
+            catch (Exception ex) {
+                throw ManipuladorException.ExceptionToRpcException(ex);
+            }
             return new Empty();
         }
-        public override async Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
+
+        public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
-            return await _acervoService.Livros.GetAsync(request.Id) ?? null!;
+            var Tags = request.Tags.Select((t) => (Tag)t);
+            try{
+                return new EnumLivros() { 
+                    Livros = { 
+                        (await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags)).Select(l=> (RPC.Livro)l).ToArray()
+                    }
+                };
+            }
+            catch (Exception ex) {
+                throw ManipuladorException.ExceptionToRpcException(ex);
+            }
+        }
+
+        public override async Task<Empty> Editar(RPC.Livro request, ServerCallContext context)
+        {
+            try{
+                await _acervoService.Livros.EditarAsync(request!);
+            }
+            catch (Exception ex) {
+                throw ManipuladorException.ExceptionToRpcException(ex);
+            }
+            return new Empty();
         }
     }
 }

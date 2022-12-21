@@ -26,7 +26,7 @@ namespace LivrEtec
 		public int CompareTo(Cargo? other)
 		{
             _ = other ?? throw new NullReferenceException();
-            return this.Id.CompareTo(other.Id);
+            return Id.CompareTo(other.Id);
 		}
 	}
 }
