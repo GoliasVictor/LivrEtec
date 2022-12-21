@@ -12,25 +12,7 @@ namespace LivrEtec.GIB.Servidor
             _logger = logger;
             _acervoService = acervoService;
         }
-        public Exception GerarRpcException(Exception ex){
-            var metadata = new Metadata(){
-                { "excecao" , ex.GetType().Name },
-//                { "Mensagem", ex.Message }
-            };
-            switch (ex)
-            {
-                case InvalidDataException InvalidData:
-                    return new RpcException(new Status(StatusCode.InvalidArgument, $"Dados invalidos", ex), metadata);
-                case ArgumentNullException ArgumentNull:
-                    metadata.Add(nameof(ArgumentNull.ParamName),  ArgumentNull.Message);
-                    return new RpcException(new Status(StatusCode.InvalidArgument, $"{ArgumentNull.ParamName} e nulo", ex), metadata);
-                case InvalidOperationException InvalidOperation:
-                    return new RpcException(new Status(StatusCode.FailedPrecondition, "Operacao Invalida", ex), metadata);
-                default:
-                    return new RpcException(new Status(StatusCode.Internal, "Erro interno", ex));
-            }
-        
-        }
+
 
         public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
 		{
@@ -38,7 +20,7 @@ namespace LivrEtec.GIB.Servidor
 			    await _acervoService.Livros.RegistrarAsync(request!);
             }
             catch (Exception ex) {
-                throw GerarRpcException(ex);
+                throw ManipuladorException.ExceptionToRpcException(ex);
             }
             return new Empty();
 
@@ -49,7 +31,7 @@ namespace LivrEtec.GIB.Servidor
                 return await _acervoService.Livros.GetAsync(request.Id) ?? null!;
             }
             catch (Exception ex) {
-                throw GerarRpcException(ex);
+                throw ManipuladorException.ExceptionToRpcException(ex);
             }
         }
 
@@ -59,7 +41,7 @@ namespace LivrEtec.GIB.Servidor
                 await _acervoService.Livros.RemoverAsync(request.Id);
             }
             catch (Exception ex) {
-                throw GerarRpcException(ex);
+                throw ManipuladorException.ExceptionToRpcException(ex);
             }
             return new Empty();
         }
@@ -75,7 +57,7 @@ namespace LivrEtec.GIB.Servidor
                 };
             }
             catch (Exception ex) {
-                throw GerarRpcException(ex);
+                throw ManipuladorException.ExceptionToRpcException(ex);
             }
         }
 
@@ -85,7 +67,7 @@ namespace LivrEtec.GIB.Servidor
                 await _acervoService.Livros.EditarAsync(request!);
             }
             catch (Exception ex) {
-                throw GerarRpcException(ex);
+                throw ManipuladorException.ExceptionToRpcException(ex);
             }
             return new Empty();
         }

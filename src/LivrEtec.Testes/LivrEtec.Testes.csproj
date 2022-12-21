@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LivrEtec.GIB.Servidor\LivrEtec.GIB.Servidor.csproj" />
+    <ProjectReference Include="..\LivrEtec.GIB\LivrEtec.GIB.csproj" />
     <ProjectReference Include="..\LivrEtec.Servidor\LivrEtec.Servidor.csproj" />
   </ItemGroup>
 

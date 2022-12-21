@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using LivrEtec.GIB.RPC;
 using Grpc.Core;
 
-namespace LivrEtec.Testes
+namespace LivrEtec.GIB
 {
     public sealed class RepLivroRPC:  IRepLivros
     {
@@ -15,26 +15,6 @@ namespace LivrEtec.Testes
             LivrosClientRPC = livrosClientRPC;
             _logger = logger;
         }
-
-
-		private static Exception CriarExcecao(RpcException ex)
-		{
-			var Excecao = ex.Trailers.FirstOrDefault(p => p.Key == "excecao")?.Value;
-			var Mensagem = ex.Trailers.FirstOrDefault(p => p.Key == "mensagem")?.Value;
-            
-			switch (Excecao)
-			{
-				case nameof(ArgumentNullException):
-					var NomeParametro = ex.Trailers.FirstOrDefault(p => p.Key == "NomeParametro")?.Value;
-					return new ArgumentNullException( Mensagem, ex );
-                case nameof(InvalidDataException):
-                    return new InvalidDataException(Mensagem, ex);
-                case nameof(InvalidOperationException):
-                    return new InvalidOperationException(Mensagem, ex);
-                default:
-                    return ex;
-			}
-		}
 
         public async Task EditarAsync(Livro livro)
         {
@@ -47,7 +27,7 @@ namespace LivrEtec.Testes
                 await LivrosClientRPC.EditarAsync(livro);
             }
             catch(RpcException ex){
-               throw CriarExcecao(ex);
+               throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
@@ -57,7 +37,7 @@ namespace LivrEtec.Testes
                 return await LivrosClientRPC.GetAsync(new IdLivro() { Id = id });
             }
             catch(RpcException ex){
-                throw CriarExcecao(ex); 
+                throw ManipuladorException.RpcExceptionToException(ex); 
             }
         }
 
@@ -73,7 +53,7 @@ namespace LivrEtec.Testes
                 await LivrosClientRPC.RegistrarAsync(livro);
             }
             catch(RpcException ex){
-                throw CriarExcecao(ex);
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
 
 		}
@@ -85,7 +65,7 @@ namespace LivrEtec.Testes
                 await LivrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
             }
             catch(RpcException ex){
-                throw CriarExcecao(ex);
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
@@ -99,7 +79,7 @@ namespace LivrEtec.Testes
 			    enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, Tags = { tags?.Select(t => (RPC::Tag)t) } });
             }
             catch(RpcException ex){
-                throw CriarExcecao(ex);
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
 			return enumLivros.Livros.Select(l=> (Livro)l!);
         }

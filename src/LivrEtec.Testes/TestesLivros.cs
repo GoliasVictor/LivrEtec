@@ -1,8 +1,5 @@
-
-using Grpc.Net.Client;
 using LivrEtec.Servidor;
 using LivrEtec.GIB;
-using Microsoft.Extensions.Logging;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +14,15 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
 		Assert.Equal(new HashSet<K>(A),new HashSet<K>(B));
 	}
-	public TestesLivro(ConfiguradorTestes configurador) 
+    static void AssertLivroIgual(Livro livroEsperado, Livro livroAtual)
+    {
+        Assert.Equal(livroEsperado.Nome, livroAtual.Nome);
+        Assert.Equal(livroEsperado.Arquivado, livroAtual.Arquivado);
+        Assert.Equal(livroEsperado.Descricao, livroAtual.Descricao);
+        AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
+        AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
+    }
+    public TestesLivro(ConfiguradorTestes configurador) 
 	{ 	
 		BDU = new  BDUtil(configurador, (bdu)=>{
 			bdu.Autores =  new Autor[]{
@@ -82,11 +87,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
 
 		Assert.NotNull(livroRegistrado);
-		Assert.Equal(livroARegistrar.Nome, livroRegistrado.Nome);
-		Assert.Equal(livroARegistrar.Arquivado, livroRegistrado.Arquivado);
-		Assert.Equal(livroARegistrar.Descricao, livroRegistrado.Descricao);
-		AssertEhIgual(livroARegistrar.Tags, livroRegistrado.Tags);
-		AssertEhIgual(livroARegistrar.Autores, livroRegistrado.Autores);
+		AssertLivroIgual(livroARegistrar,livroRegistrado);
 	}
 	[Fact]
 	public async Task Registrar_LivroExistenteAsync()
@@ -159,27 +160,22 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 	public async Task Editar_TudoLivroValidoAsync()
 	{
 		var idLivro = 1;
-		var livroEditado =  BDU.gLivro(idLivro)!;
+		var livroEditado = BDU.gLivro(idLivro)!;
 		livroEditado.Nome = "Livro";
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
-		livroEditado.Tags =  new(){BDU.gTag(3) };
-		livroEditado.Autores = new(){ BDU.gAutor(2) };
+		livroEditado.Tags = new() { BDU.gTag(3) };
+		livroEditado.Autores = new() { BDU.gAutor(2) };
 		var livroEsperado = livroEditado.Clone();
-		using var BD =  BDU.CriarContexto();
+		using var BD = BDU.CriarContexto();
 
 		await RepLivros.EditarAsync(livroEditado);
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
-		BD.Entry(livroRegistrado).Collection(l=> l.Tags).Load();
-		BD.Entry(livroRegistrado).Collection(l=> l.Autores).Load();
+		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
+		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
 
-		Assert.Equal( livroEsperado.Nome, livroRegistrado.Nome);
-		Assert.Equal( livroEsperado.Arquivado, livroRegistrado.Arquivado);
-		Assert.Equal( livroEsperado.Descricao, livroRegistrado.Descricao);
-		AssertEhIgual(livroEsperado.Autores, livroRegistrado.Autores);
-		AssertEhIgual(livroEsperado.Tags, livroRegistrado.Tags);
+		AssertLivroIgual(livroEsperado, livroRegistrado);
 	}
-
 
 	[Fact]
 	public async Task Editar_LivroNuloAsync()
@@ -217,31 +213,4 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
 		AssertEhIgual(idExperados,  resulutado.Select((i)=> i.Id));
 	}	
 	
-}
-public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable 
-{
-	AcervoService acervoService;
-	PacaContext BD;
-	protected override  RepLivros RepLivros => (RepLivros)acervoService.Livros;
-	public TestesLivrosLocal(ConfiguradorTestes configurador) : base(configurador)
-	{
-		BD = BDU.CriarContexto();
-		acervoService = new AcervoService(BDU.PacaContextFactory, null);
-	}
-	
-	public void Dispose(){
-		BD.Dispose();
-	}
-
-}
-[Trait("Category", "Remoto")]
-public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
-{
-	RepLivroRPC repLivrosRPC;
-	protected override RepLivroRPC RepLivros => repLivrosRPC;
-    public TestesLivrosRPC(ConfiguradorTestes configurador) : base(configurador)
-	{
-        var channel = GrpcChannel.ForAddress(configurador.Config.UrlGIBAPI);
-        repLivrosRPC = new RepLivroRPC(configurador.loggerFactory.CreateLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
-    }
 }
