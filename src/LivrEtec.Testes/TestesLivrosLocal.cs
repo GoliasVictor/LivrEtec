@@ -13,7 +13,7 @@ public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 	public TestesLivrosLocal(ConfiguradorTestes configurador, ITestOutputHelper output) : base(configurador, output)
 	{
 		BD = BDU.CriarContexto();
-		acervoService = new AcervoService(BDU.PacaContextFactory, configurador.CreateLoggerFactory(output).CreateLogger<AcervoService>());
+		acervoService = new AcervoService(BDU.CriarContexto(), configurador.CreateLoggerFactory(output).CreateLogger<AcervoService>());
 	}
 
 	public void Dispose()

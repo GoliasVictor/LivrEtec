@@ -6,7 +6,7 @@ namespace LivrEtec.Servidor;
 public abstract class Repositorio 
 {
 	protected AcervoService acervoService;
-	protected IDbContextFactory<PacaContext> BDFactory => acervoService.BDFactory;
+	protected PacaContext BD => acervoService.BD;
 	protected ILogger? Logger => acervoService.Logger;
 	public Repositorio(AcervoService acervoService)
 	{
