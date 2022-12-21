@@ -6,16 +6,16 @@ namespace LivrEtec.Servidor;
 
 public sealed class AcervoService : IAcervoService
 {
-	internal IDbContextFactory<PacaContext> BDFactory { get; init;}
+	internal PacaContext BD { get; init;}
 	internal ILogger? Logger { get; init;}
 	public IRepEmprestimo Emprestimos {get;init;}  
 	public IRepLivros Livros { get;init;}  
 	public IRepPessoas Pessoas {get; init; }  
 	public IRepAutores Autores {get;init;}  
 
-	public AcervoService(IDbContextFactory<PacaContext> bdFactory, ILogger<AcervoService>? logger) 
+	public AcervoService(PacaContext bd, ILogger<AcervoService>? logger) 
 	{
-        BDFactory = bdFactory;
+        BD = bd;
 		Logger = logger;
 
         Livros = new RepLivros(this);
