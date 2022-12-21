@@ -23,6 +23,7 @@ namespace LivrEtec
         [Required]
         public string Nome { get; set; } = null!;
         public string? Descricao { get; set; } 
+        public int Quantidade { get; set; }
         public List<Tag> Tags { get; set; } = new ();
         public List<Autor> Autores { get; set; } = new();
         [Required]
@@ -34,6 +35,7 @@ namespace LivrEtec
                 Nome = Nome,
                 Arquivado =  Arquivado,
                 Descricao =  Descricao,
+                Quantidade = Quantidade,
                 Autores = Autores.Select(a=>a).ToList(),
                 Tags = Tags.Select(t=>t).ToList(),
             };
@@ -50,6 +52,7 @@ namespace LivrEtec
                    Id == other.Id &&
                    Nome == other.Nome &&
                    Descricao == other.Descricao &&
+                   Quantidade ==  other.Quantidade &&
                    EqualityComparer<ISet<Tag>>.Default.Equals(Tags.ToHashSet(), other.Tags.ToHashSet()) &&
                    EqualityComparer<ISet<Autor>>.Default.Equals(Autores.ToHashSet(), other.Autores.ToHashSet()) &&
                    Arquivado == other.Arquivado;
@@ -57,7 +60,7 @@ namespace LivrEtec
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Nome, Descricao, Tags, Autores, Arquivado);
+            return HashCode.Combine(Id, Nome, Descricao, Tags, Autores, Arquivado, Quantidade);
         }
 
         public static bool operator ==(Livro? left, Livro? right)

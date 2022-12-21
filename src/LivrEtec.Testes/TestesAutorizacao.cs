@@ -50,7 +50,8 @@ public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable
 	public async void EhAutorizado_Autorizado(int idUsuario)
 	{
 		var usuario = BDU.gUsuario(idUsuario);
-		var permissao =  Permissoes.Livro.Visualizar;
+		var permissao =  Permissoes.Livro.Visualizar; 
+		
 
 		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
 

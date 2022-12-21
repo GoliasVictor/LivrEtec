@@ -32,6 +32,7 @@ message Livro {
     repeated Tag Tags = 4;
     repeated Autor Autores = 5;
     bool Arquivado = 6;
+    int32 Quantidade = 7;
 }
 
 message EnumLivros {
