@@ -1,10 +1,6 @@
 name: Docker Compose 
 
-on:
-  push:
-    branches: [ "main" , "Desenvolvimento" ]
-  pull_request:
-    branches: [ "main" , "Desenvolvimento" ]
+on: [push, pull_request]
 
 jobs:
   build:
