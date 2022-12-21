@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace LivrEtec;
 [Display()]
 [DebuggerDisplay("{Id}#{Nome}}")]
-public sealed class Permissao : IComparable<Permissao> 
+public sealed class Permissao : IComparable<Permissao>
 {
 	public Permissao()
 	{
@@ -36,13 +36,5 @@ public sealed class Permissao : IComparable<Permissao>
 		return Id.CompareTo(other?.Id);
 	}
 
-	public override bool Equals(object? obj)
-	{
-		return obj switch {	
-			Permissao p2 => this.Id == p2.Id,
-			_ => base.Equals(obj) 
-		};
-	}
- 
  
 }

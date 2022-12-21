@@ -1,46 +1,47 @@
 using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>,IDisposable 
+[Trait("Category", "Local")]
+public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable 
 {
 	const int IdAdministrador = 1;
 	const int IdAnonimo = 2;
 	readonly BDUtil BDU;
 	readonly IAutorizacaoService AutorizacaoService;
-	public TestesAutorizacao(ConfiguradorTestes configurador) 
+	public TestesAutorizacao(ConfiguradorTestes configurador,ITestOutputHelper output) 
 	{ 	
 	
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
-		BDU =  new BDUtil(configurador, (bdu)=>{
-			bdu.BDPermissoes =  Permissoes.TodasPermissoes;
-			bdu.Cargos = new[]{
-				new Cargo(IdAdministrador, "Administrador", Permissoes.TodasPermissoes.ToList()),
-				new Cargo(IdAnonimo, "Anonimo", new (){}),
-				new Cargo(3, "Aluno", new (){
-					Permissoes.Livro.Criar,
-					Permissoes.Livro.Visualizar,
-				}),
-				new Cargo(4, "Aluno Estagiario", new (){
-					Permissoes.Livro.Criar,
-					Permissoes.Livro.Visualizar,
-					Permissoes.Livro.Editar,
-					Permissoes.Livro.Excluir,
-					Permissoes.Emprestimo.Criar,
-					Permissoes.Emprestimo.Excluir,
-				})
-			};
-			bdu.Usuarios =  new []{
-				new Usuario(1, "", "tavares", "Tavares"	, bdu.gCargo(IdAdministrador)),
-				new Usuario(2, "", "Ze"		, "Zé"		, bdu.gCargo(IdAnonimo)),
-				new Usuario(3, "", "Paca"	, "Paca"	, bdu.gCargo(3)),
-				new Usuario(4, "", "Atlas"	, "Atlas"	, bdu.gCargo(4)),
-			};
-	
-		},(_)=>{});
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU.BDPermissoes =  Permissoes.TodasPermissoes;
+		BDU.Cargos = new[]{
+			new Cargo(IdAdministrador, "Administrador", Permissoes.TodasPermissoes.ToList()),
+			new Cargo(IdAnonimo, "Anonimo", new (){}),
+			new Cargo(3, "Aluno", new (){
+				Permissoes.Livro.Criar,
+				Permissoes.Livro.Visualizar,
+			}),
+			new Cargo(4, "Aluno Estagiario", new (){
+				Permissoes.Livro.Criar,
+				Permissoes.Livro.Visualizar,
+				Permissoes.Livro.Editar,
+				Permissoes.Livro.Excluir,
+				Permissoes.Emprestimo.Criar,
+				Permissoes.Emprestimo.Excluir,
+			})
+		};
+		BDU.Usuarios =  new []{
+			new Usuario(1, "", "tavares", "Tavares"	, BDU.gCargo(IdAdministrador)),
+			new Usuario(2, "", "Ze"		, "Zé"		, BDU.gCargo(IdAnonimo)),
+			new Usuario(3, "", "Paca"	, "Paca"	, BDU.gCargo(3)),
+			new Usuario(4, "", "Atlas"	, "Atlas"	, BDU.gCargo(4)),
+		};
+		BDU.SalvarDados();
 		var BD = BDU.CriarContexto(); 
-		AutorizacaoService =  new AutorizacaoService(BD, configurador.loggerFactory.CreateLogger<AutorizacaoService>());
+		AutorizacaoService =  new AutorizacaoService(BD, output.ToLogger<AutorizacaoService>());
 	}
 	[Theory]
 	[InlineData(IdAdministrador)]

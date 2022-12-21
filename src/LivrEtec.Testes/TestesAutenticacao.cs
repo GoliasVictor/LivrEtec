@@ -1,7 +1,10 @@
 using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
+
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public class TestesAutenticacao :  IClassFixture<ConfiguradorTestes>, IDisposable
+[Trait("Category", "Local")]
+public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
 {
 	readonly BDUtil BDU;
 	readonly PacaContext BD;
@@ -9,26 +12,24 @@ public class TestesAutenticacao :  IClassFixture<ConfiguradorTestes>, IDisposabl
 	(int Id, string Senha, string Hash)[] Senhas; 
 	string gSenha(int id) => Senhas.First((s)=> s.Id == id).Senha; 
 	string gHash(int id) => Senhas.First((h)=> h.Id == id).Hash; 
-	public TestesAutenticacao(ConfiguradorTestes configurador)
-	{ 	
+	public TestesAutenticacao(ConfiguradorTestes configurador, ITestOutputHelper output)
+	{
+		
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
 		var Cargo = new Cargo(1, "cargo",new List<Permissao>());
 		Senhas 	= new[]{
 			(1, "Senha"			,"be6b9084a5dcdb09af8f433557a2119c"),
 			(2, "Senha"			, "14621de3463eb7e1b3606d5514bbf800"),
 			(3, "2@oCP06io1#q"	, "7b3608972fed79f056fe915e725f536e")
 		};
-		BDU =  new BDUtil(configurador, (bdu)=>{
-
-		
-			
-			bdu.Usuarios =  new []{
-				new Usuario(1, gHash(1), "tavares", "Tavares"	, Cargo),
-				new Usuario(2, gHash(2), "Atlas"	, "Atlas"	, Cargo),
-				new Usuario(3, gHash(3), "Atlas"	, "Atlas"	, Cargo),
-			};
-		}, (_)=>{}); 
-		BD =  BDU.CriarContexto();
-		AutenticacaoService = new AutenticacaoService(BD, configurador.loggerFactory.CreateLogger<AutenticacaoService>());
+		BDU.Usuarios = new []{
+			new Usuario(1, gHash(1), "tavares", "Tavares"	, Cargo),
+			new Usuario(2, gHash(2), "Atlas"	, "Atlas"	, Cargo),
+			new Usuario(3, gHash(3), "Atlas"	, "Atlas"	, Cargo),
+		};
+		BDU.SalvarDados();
+		BD = BDU.CriarContexto();
+		AutenticacaoService = new AutenticacaoService(BD, output.ToLogger<AutenticacaoService>());
 	}
 	[Theory] 
 	[InlineData(1)]

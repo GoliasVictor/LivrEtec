@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public sealed class Tag : ITag, IComparable<Tag>
+    public sealed class Tag : ITag, IComparable<Tag>, IEquatable<Tag?>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]
@@ -31,20 +31,34 @@ namespace LivrEtec
 		public int CompareTo(Tag? other)
 		{
             _ = other ?? throw new NullReferenceException();
-            return this.Id.CompareTo(other.Id);
+            return Id.CompareTo(other.Id);
 		}
 
-		public override bool Equals(object? obj)
-		{
-            return obj switch {
-                Tag tag => tag.Id ==  this.Id,
-                _ => base.Equals(obj)
-            };
-		}
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Tag);
+        }
 
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(Id);
-		}
-	}
+        public bool Equals(Tag? other)
+        {
+            return other is not null &&
+                   Id == other.Id &&
+                   Nome == other.Nome;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Nome);
+        }
+
+        public static bool operator ==(Tag? left, Tag? right)
+        {
+            return EqualityComparer<Tag>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Tag? left, Tag? right)
+        {
+            return !(left == right);
+        }
+    }
 }

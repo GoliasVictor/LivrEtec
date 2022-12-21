@@ -5,9 +5,9 @@ namespace LivrEtec.Servidor;
 
 public class PacaContextFactory : IDbContextFactory<PacaContext>
 {
-	Action<DbContextOptionsBuilder> _configurarAction;
-	IConfiguracao _config;
-	ILoggerFactory _loggerFactory;
+	readonly Action<DbContextOptionsBuilder> _configurarAction;
+	readonly IConfiguracao _config;
+	readonly ILoggerFactory _loggerFactory;
 	public PacaContextFactory(IConfiguracao config, Action<DbContextOptionsBuilder> configurarAction, ILoggerFactory loggerFactory){
 		_configurarAction = configurarAction;
 		_config = config;

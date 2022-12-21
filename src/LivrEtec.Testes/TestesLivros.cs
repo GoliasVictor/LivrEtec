@@ -2,14 +2,15 @@ using LivrEtec.Servidor;
 using LivrEtec.GIB;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T : IRepLivros  
+public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
 {
 	protected abstract T RepLivros { get; }
-	protected BDUtil BDU; 
+	protected readonly BDUtil BDU; 
 
 	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
 		Assert.Equal(new HashSet<K>(A),new HashSet<K>(B));
@@ -22,50 +23,50 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes> where T
         AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
         AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
     }
-    public TestesLivro(ConfiguradorTestes configurador) 
-	{ 	
-		BDU = new  BDUtil(configurador, (bdu)=>{
-			bdu.Autores =  new Autor[]{
+	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output)
+	{
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU.Autores = new Autor[]{
 				new Autor(1, "J. R. R. Tolkien"),
 				new Autor(2, "Friedrich Engels"),
 				new Autor(3, "Karl Marx"),
 				new Autor(4, "George Orwell")
 			};
 
-			bdu.Tags = new Tag[]{
-				new Tag(1,"Aventura"),
-				new Tag(2,"Fantasia"),
-				new Tag(3,"Politica"),
-				new Tag(4,"Literatura"),
-				new Tag(5,"Sociologia"),
-			};
-			bdu.Livros =  new[]{
-				new Livro {
-					Id = 1,
-					Nome = "Senhor dos Aneis",
-					Arquivado = false,
-					Autores = { bdu.gAutor(1) },
-					Tags = { bdu.gTag(1), bdu.gTag(2),bdu.gTag(4)},
-					Descricao = "Meu precioso"
-				},
-				new Livro {
-					Id = 2,
-					Nome = "O Capital",
-					Arquivado = false,
-					Autores = { bdu.gAutor(2), bdu.gAutor(3), },
-					Tags = { bdu.gTag(3), bdu.gTag(2) },
-					Descricao = "É tudo nosso"
-				},
-				new Livro { 
-					Id = 3,
-					Nome = "A Revolução dos Bixos",
-					Arquivado = false,
-					Autores = { bdu.gAutor(4)},
-					Tags = { bdu.gTag(5) },
-					Descricao = "É tudo nosso"
-				}
-			};
-		},(_)=>{});
+		BDU.Tags = new Tag[]{
+			new Tag(1,"Aventura"),
+			new Tag(2,"Fantasia"),
+			new Tag(3,"Politica"),
+			new Tag(4,"Literatura"),
+			new Tag(5,"Sociologia"),
+		};
+		BDU.Livros = new[]{
+			new Livro {
+				Id = 1,
+				Nome = "Senhor dos Aneis",
+				Arquivado = false,
+				Autores = { BDU.gAutor(1) },
+				Tags = { BDU.gTag(1), BDU.gTag(2),BDU.gTag(4)},
+				Descricao = "Meu precioso"
+			},
+			new Livro {
+				Id = 2,
+				Nome = "O Capital",
+				Arquivado = false,
+				Autores = { BDU.gAutor(2), BDU.gAutor(3), },
+				Tags = { BDU.gTag(3), BDU.gTag(2) },
+				Descricao = "É tudo nosso"
+			},
+			new Livro {
+				Id = 3,
+				Nome = "A Revolução dos Bixos",
+				Arquivado = false,
+				Autores = { BDU.gAutor(4)},
+				Tags = { BDU.gTag(5) },
+				Descricao = "É tudo nosso"
+			}
+		};
+		BDU.SalvarDados();
 	}
 	[Fact]
 	public async Task Registrar_LivroValidoAsync()

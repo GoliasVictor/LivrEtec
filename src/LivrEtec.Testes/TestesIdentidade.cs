@@ -1,10 +1,12 @@
 using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
+[Trait("Category", "Local")]
 public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 {
-	BDUtil BDU;
+	readonly BDUtil BDU;
 	readonly IIdentidadeService Identidade;
 	const int IdCargoAdmin = 1;
 	const int IdCargoAnonimo = 2;
@@ -14,37 +16,35 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 	string gSenha(int id) => Senhas.First((s) => s.Id == id).Senha;
 	string gHash(int id) => Senhas.First((s) => s.Id == id).Hash;
 
-	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B) 
+	static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B) 
 		where K : IComparable<K>  
 	{
 		Assert.Equal(A.OrderBy(a=>a),B.OrderBy(b=>b));
 	}
-	public TestesIdentidade(ConfiguradorTestes configurador)
+	public TestesIdentidade(ConfiguradorTestes configurador, ITestOutputHelper output)
 	{
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
 		Senhas = new[]{
 			(1, "admin"         ,"e00cf25ad42683b3df678c61f42c6bda"),
 			(2, "2@oCP06io1#q"  , "97a290347762986f757e7fe694b43e45")
 		};
-
-		BDU =  new BDUtil(configurador, (bdu)=>{
-			bdu.Cargos = new[]{
-				new Cargo(IdCargoAdmin, "Administrador", Permissoes.TodasPermissoes.ToList()),
-				new Cargo(IdCargoAnonimo, "Anonimo", new (){}),
-			};
-			bdu.Usuarios = new[]{
-				new Usuario(IdAdmin	 , gHash(IdAdmin  ), "tavares", "Tavares" , bdu.gCargo(IdCargoAdmin)),
-				new Usuario(IdAnonimo, gHash(IdAnonimo), "Atlas"  , "Atlas"   , bdu.gCargo(IdCargoAnonimo)),
-			};
-		}, (_)=>{});
-
+		BDU.Cargos = new[]{
+			new Cargo(IdCargoAdmin, "Administrador", Permissoes.TodasPermissoes.ToList()),
+			new Cargo(IdCargoAnonimo, "Anonimo", new (){}),
+		};
+		BDU.Usuarios = new[]{
+			new Usuario(IdAdmin	 , gHash(IdAdmin  ), "tavares", "Tavares" , BDU.gCargo(IdCargoAdmin)),
+			new Usuario(IdAnonimo, gHash(IdAnonimo), "Atlas"  , "Atlas"   , BDU.gCargo(IdCargoAnonimo)),
+		};
+		BDU.SalvarDados();
 		var BD = BDU.CriarContexto();
 		Identidade = new IdentidadeService(
 			BD,
-			configurador.loggerFactory.CreateLogger<IdentidadeService>(),
-			new AutorizacaoService(BD, configurador.loggerFactory.CreateLogger<AutorizacaoService>()),
-			new AutenticacaoService(BD, configurador.loggerFactory.CreateLogger<AutenticacaoService>())
+            output.ToLogger<IdentidadeService>(),
+			new AutorizacaoService(BD, output.ToLogger<AutorizacaoService>()),
+			new AutenticacaoService(BD, output.ToLogger<AutenticacaoService>())
 		);
 	}
 
