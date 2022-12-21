@@ -16,4 +16,4 @@ RUN mv /src/Docker/Testes/appsettings.json /build/appsettings.json
 FROM base AS final
 ENV APP_SETTINGS_JSON_PATH="./appsettings.json"
 COPY --from=build /build .
-ENTRYPOINT ["dotnet", "test", "LivrEtec.Testes.dll"]
+ENTRYPOINT ["dotnet", "test", "LivrEtec.Testes.dll","-v","n"]

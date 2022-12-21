@@ -8,7 +8,8 @@ services:
       context: .
       dockerfile: ./Docker/GIB.Servidor/Dockerfile
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   testes: 
     container_name: "livretec_testes"
     image: livretec_testes
@@ -16,8 +17,11 @@ services:
       context: .
       dockerfile: ./Docker/Testes/Dockerfile
     depends_on:
-      - db
-      - gib_servidor
+      db:
+        condition: service_healthy
+      gib_servidor: 
+        condition: service_started
+
   db:
     container_name: "livretec_bd"
     image: mysql
@@ -30,5 +34,12 @@ services:
       - livretec-mysql-volume:/var/lib/mysql
     ports:
       - 42333:3306
+    healthcheck:
+      test: mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD -e "select 'esta funcionando'" $$MYSQL_DATABASE
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+
 volumes:
   livretec-mysql-volume:
