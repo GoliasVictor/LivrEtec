@@ -35,17 +35,14 @@ namespace LivrEtec
 
         [Required]
         public DateTime DataEmprestimo { get; set; }
-        public DateTime DataDevolucao { get; set; }
+        [Required]
         public DateTime FimDataEmprestimo { get; set; }
+        public DateTime? DataDevolucao { get; set; }
         public string? Comentario { get; set; }
 
-        public bool Fechado;
-        [NotMapped]
-        public bool Aberto {
-            get => !Fechado;
-            set => Fechado = !value;
-        }
-        public bool AtrasoJustificado;
+        public bool Fechado { get; set; }
+
+        public bool? AtrasoJustificado { get; set; }
         public string? ExplicaçãoAtraso;
 
         

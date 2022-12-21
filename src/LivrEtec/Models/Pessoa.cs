@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public class Pessoa : IPessoa
+    public class Pessoa : IPessoa, IEquatable<Pessoa?>
     {
         public Pessoa() {}
         public Pessoa(string nome, string telefone)
@@ -21,16 +21,33 @@ namespace LivrEtec
 
         [MaxLength(14)]
         public string? Telefone { get; set; }
-    }
-    public class Aluno : Pessoa
-    {
-        public Aluno(){}
-        public Aluno(string nome, string telefone, string rm) : base(nome, telefone)
+
+        public override bool Equals(object? obj)
         {
-            RM = rm;
+            return Equals(obj as Pessoa);
         }
 
-        [Required]
-        public string RM { get; set; } = null!;
+        public bool Equals(Pessoa? other)
+        {
+            return other is not null &&
+                   Id == other.Id &&
+                   Nome == other.Nome &&
+                   Telefone == other.Telefone;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Nome, Telefone);
+        }
+
+        public static bool operator ==(Pessoa? left, Pessoa? right)
+        {
+            return EqualityComparer<Pessoa>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Pessoa? left, Pessoa? right)
+        {
+            return !(left == right);
+        }
     }
 }

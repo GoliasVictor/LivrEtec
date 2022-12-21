@@ -16,13 +16,14 @@ namespace LivrEtec.Servidor
         }
         public async Task<int> RegistrarAsync(Emprestimo emprestimo)
         {
+            await BD.Emprestimos.AddAsync(emprestimo);
+            BD.SaveChanges();
+            return emprestimo.Id;
 
-            throw new NotImplementedException();
         }
         public async Task<int> ObterQuantidadeLivrosEmprestadoAsync(int idLivro)
         {
-            var BD = await BDFactory.CreateDbContextAsync();
-            return await BD.Emprestimos.CountAsync((e) => e.Livro.Id == idLivro && e.Aberto);
+            return await BD.Emprestimos.CountAsync((e) => e.Livro.Id == idLivro && !e.Fechado);
         }
     }
 }

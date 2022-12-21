@@ -3,37 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LivrEtec.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor
 {
-    sealed class EmprestimoService : IEmprestimoService
+    public sealed class EmprestimoService : IEmprestimoService
     {
-        private IRelogio relogio;
-        private IAcervoService acervoService;
-        public EmprestimoService(IAcervoService acervoService, IRelogio relogio )
+        readonly IRelogio relogio;
+        readonly IAcervoService acervoService;
+        readonly ILogger? Logger;
+
+        public IIdentidadeService identidadeService { get; set; }
+        public EmprestimoService(IAcervoService acervoService, IIdentidadeService identidadeService, IRelogio relogio, ILogger? logger)
         {
+            this.identidadeService = identidadeService;
             this.acervoService = acervoService;
             this.relogio = relogio;
+            Logger = logger;
         }
 
         public async Task<int> AbrirAsync(int idPessoa, int idLivro)
-        { 
-            var pessoa = await acervoService.Pessoas.ObterAsync(idPessoa);
-            _ = pessoa ?? throw new InvalidOperationException($"Pessoa de id {{{idPessoa}}} não existe.");
-            var livro = await acervoService.Livros.GetAsync(idLivro);
-            _ = livro ?? throw new InvalidOperationException($"Livro de id {{{idPessoa}}} não existe.");
+        {
+            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Criar);
 
-            //var quantidadeLivrosEmprestado = ObterQuantidadeLivrosEmprestado(idLivro, BD);
-            //livro.Quantidade - quantidadeLivrosEmprestado;
-            var Emprestimo = new Emprestimo()
-            {
+            var pessoa = await acervoService.Pessoas.ObterAsync(idPessoa) ?? throw new InvalidOperationException($"Pessoa de id {{{idPessoa}}} não existe.");
+            var livro = await acervoService.Livros.GetAsync(idLivro) ?? throw new InvalidOperationException($"Livro de id {{{idPessoa}}} não existe.");
+
+            var QtEmprestada = await acervoService.Emprestimos.ObterQuantidadeLivrosEmprestadoAsync(idLivro);
+            var LivrosDisponiveis = livro.Quantidade - QtEmprestada;
+            if (LivrosDisponiveis <= 0)
+                throw new LivroEsgotadoException(livro.Id, $"Não é possivel abrir emprestimo, livro {{{livro.Id}}}");
+            
+            var Emprestimo = new Emprestimo() {
                 Pessoa = pessoa,
                 Livro = livro,
-                DataDevolucao = relogio.Agora
+                DataEmprestimo = relogio.Agora,
+                DataDevolucao = relogio.Agora.AddDays(30),
             };
-            return await acervoService.Emprestimos.RegistrarAsync(Emprestimo);
-            
+            var id = await acervoService.Emprestimos.RegistrarAsync(Emprestimo); 
+            Logger?.LogInformation("Emprestimo {{{resultado}}} aberto", id);
+            return id ;
         }
 
         public Task<IEnumerable<Emprestimo>> BuscarAsync(int idPessoa, bool aberto, bool atrasado)

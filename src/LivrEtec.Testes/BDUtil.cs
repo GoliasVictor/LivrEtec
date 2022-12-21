@@ -54,6 +54,7 @@ public sealed class BDUtil : IDisposable
 	public Livro gLivro(int id) => Livros.First((l)=> l.Id == id);
 	public Usuario gUsuario(int id) => Usuarios.First((u) => u.Id == id);
 	public Cargo gCargo(int id) => Cargos.First((c)=> c.Id == id);  
+	public Pessoa gPessoa(int id) => Pessoas.First((c)=> c.Id == id);  
 
 	public void ResetarBanco()
 	{
