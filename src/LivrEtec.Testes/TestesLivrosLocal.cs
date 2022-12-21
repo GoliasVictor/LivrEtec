@@ -1,7 +1,4 @@
-﻿using LivrEtec.Servidor.BD;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.Services;
-
+﻿
 namespace LivrEtec.Testes;
 
 public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable 
