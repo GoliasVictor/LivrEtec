@@ -1,8 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace LivrEtec;
-public sealed class Permissao 
+[Display()]
+[DebuggerDisplay("{Id}#{Nome}}")]
+public sealed class Permissao : IComparable<Permissao>
 {
 	public Permissao()
 	{
@@ -27,4 +30,11 @@ public sealed class Permissao
 	public List<Permissao> PermissoesDependete { get; set; } = new List<Permissao>();
 	[Required]
 	public List<Cargo> Cargos { get; set; } =  null!;
+
+	public int CompareTo(Permissao? other)
+	{
+		return Id.CompareTo(other?.Id);
+	}
+
+ 
 }

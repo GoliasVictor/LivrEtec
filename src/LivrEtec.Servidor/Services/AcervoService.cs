@@ -1,18 +1,19 @@
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor;
 
 public sealed class AcervoService : IAcervoService
 {
-	internal PacaContext BD { get; init;}
+	internal IDbContextFactory<PacaContext> BDFactory { get; init;}
 	internal ILogger? Logger { get; init;}
 	public IRepLivros Livros {get;init;}  
-	public RepAutores Autores {get;init;}  
+	public IRepAutores Autores {get;init;}  
 
-	public AcervoService(PacaContext bd, ILogger<AcervoService>? logger) 
+	public AcervoService(IDbContextFactory<PacaContext> bdFactory, ILogger<AcervoService>? logger) 
 	{
-        BD = bd;
+        BDFactory = bdFactory;
 		Logger = logger;
 
         Livros = new RepLivros(this);

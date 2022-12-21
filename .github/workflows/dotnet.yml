@@ -29,4 +29,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger GitHubActions
+      run: dotnet test --no-build --verbosity normal --logger GitHubActions --filter Category!=Remoto

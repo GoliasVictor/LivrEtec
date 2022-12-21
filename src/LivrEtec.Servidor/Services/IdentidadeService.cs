@@ -1,3 +1,4 @@
+using System.Data.Entity;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor;
@@ -20,30 +21,38 @@ public class IdentidadeService : Service, IIdentidadeService
 	public Usuario? Usuario { get; private set; }
 	public bool EstaAutenticado { get; private set; }
 
-	public void DefinirUsuario(int idUsuario)
+	public async Task DefinirUsuarioAsync(int idUsuario)
 	{
-		if (!BD.Usuarios.Any(u=> u.Id == idUsuario))
+		if (BD.Usuarios.Contains(new Usuario(){ Id = idUsuario}) == false)
 			throw new ArgumentException("Usuario não existe");
 		EstaAutenticado = false;
 		IdUsuario = idUsuario;
 	}
-	public void AutenticarUsuario(string senha)
+
+ 	public async Task AutenticarUsuarioAsync(string senha)
 	{
-		EstaAutenticado = AutenticacaoService.EhAutentico(IdUsuario, senha);
-		if(EstaAutenticado)
-			Usuario = BD.Usuarios.Find(IdUsuario);
+		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
+		if(EstaAutenticado){
+			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
+			if(Usuario != null){
+				BD.Entry(Usuario).Reference((u)=> u.Cargo).Load();
+				BD.Entry(Usuario.Cargo).Collection((c)=> c.Permissoes).Load();
+			}
+		}
 	}
-	public bool EhAutorizado(Permissao permissao)
+	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
 	{
 		if (!EstaAutenticado)
-			return false;
-		return AutorizacaoService.EhAutorizado(IdUsuario, permissao);
+			return  Task.FromResult(false);
+		return AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
 	}
-	public void ErroSeNaoAutorizado(Permissao permissao)
+	public Task ErroSeNaoAutorizadoAsync(Permissao permissao)
 	{
 		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
 		if (!EstaAutenticado)
 			throw new NaoAutenticadoException(Usuario);
-		AutorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
+		return AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
 	}
+
+
 }

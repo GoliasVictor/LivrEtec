@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 
 namespace LivrEtec.Servidor;
-public sealed class PacaContext : DbContext, IPacaContext
+public sealed class PacaContext : DbContext
 {
 	public DbSet<Livro> Livros { get; set; } = null!;
 	public DbSet<Autor> Autores { get; set; } = null!;
@@ -17,16 +17,17 @@ public sealed class PacaContext : DbContext, IPacaContext
 	public DbSet<Permissao> Permissoes { get; set; } = null!;
 	ILoggerFactory? LoggerFactory { get; init; }
 	IConfiguracao Config;
-	public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null)
+	Action<DbContextOptionsBuilder>? _configurarAction;
+	public PacaContext(IConfiguracao config, ILoggerFactory? loggerFactory = null, Action<DbContextOptionsBuilder>? configurarAction = null)
 	{
 		_ = config ?? throw new NullReferenceException("Configuração não definida");
+		_configurarAction =  configurarAction;
 		Config = config;
 		LoggerFactory = loggerFactory;
-
 	}
 	protected override void OnConfiguring(DbContextOptionsBuilder options)
 	{
-		options.EnableSensitiveDataLogging(true);
+		//options.EnableSensitiveDataLogging(true);
 
 		if (LoggerFactory != null)
 			options.UseLoggerFactory(LoggerFactory);
@@ -41,6 +42,7 @@ public sealed class PacaContext : DbContext, IPacaContext
 			Console.WriteLine(ex.Message);
 			options.UseInMemoryDatabase("LivrEtecBD");
 		}
+		_configurarAction?.Invoke(options);
 
 	}
 }

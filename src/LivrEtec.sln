@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB.Servidor", "Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB", "LivrEtec.GIB\LivrEtec.GIB.csproj", "{8EFFCA16-34C0-45C5-858E-27E6B9060B0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.Servidor", "LivrEtec.Servidor\LivrEtec.Servidor.csproj", "{0EEE3126-0F8C-4FB6-9B99-E780D2DAEDDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.Servidor", "LivrEtec.Servidor\LivrEtec.Servidor.csproj", "{0EEE3126-0F8C-4FB6-9B99-E780D2DAEDDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDD92149-96F8-4818-A862-97512E70248A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

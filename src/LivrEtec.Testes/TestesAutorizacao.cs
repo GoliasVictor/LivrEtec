@@ -1,24 +1,26 @@
 using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
-public class TestesAutorizacao  :TestesBD
+[Trait("Category", "Local")]
+public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable 
 {
 	const int IdAdministrador = 1;
 	const int IdAnonimo = 2;
-	IAutorizacaoService AutorizacaoService;
-	Usuario gUsuario(int id) => Usuarios.First((u)=> u.Id == id); 
-	Cargo gCargo(int id) => Cargos.First((c)=> c.Id == id); 
-	public TestesAutorizacao(ConfiguradorTestes configurador) : base(configurador)
+	readonly BDUtil BDU;
+	readonly IAutorizacaoService AutorizacaoService;
+	public TestesAutorizacao(ConfiguradorTestes configurador,ITestOutputHelper output) 
 	{ 	
-        ResetarBanco();
+	
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
-		BDPermissoes =  Permissoes.TodasPermissoes;
-		Cargos = new[]{
+		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU.BDPermissoes =  Permissoes.TodasPermissoes;
+		BDU.Cargos = new[]{
 			new Cargo(IdAdministrador, "Administrador", Permissoes.TodasPermissoes.ToList()),
-            new Cargo(IdAnonimo, "Anonimo", new (){}),
-            new Cargo(3, "Aluno", new (){
+			new Cargo(IdAnonimo, "Anonimo", new (){}),
+			new Cargo(3, "Aluno", new (){
 				Permissoes.Livro.Criar,
 				Permissoes.Livro.Visualizar,
 			}),
@@ -31,26 +33,26 @@ public class TestesAutorizacao  :TestesBD
 				Permissoes.Emprestimo.Excluir,
 			})
 		};
-		Usuarios =  new []{
-			new Usuario(1, "", "tavares", "Tavares"	, gCargo(IdAdministrador)),
-			new Usuario(2, "", "Ze"		, "Zé"		, gCargo(IdAnonimo)),
-			new Usuario(3, "", "Paca"	, "Paca"	, gCargo(3)),
-			new Usuario(4, "", "Atlas"	, "Atlas"	, gCargo(4)),
+		BDU.Usuarios =  new []{
+			new Usuario(1, "", "tavares", "Tavares"	, BDU.gCargo(IdAdministrador)),
+			new Usuario(2, "", "Ze"		, "Zé"		, BDU.gCargo(IdAnonimo)),
+			new Usuario(3, "", "Paca"	, "Paca"	, BDU.gCargo(3)),
+			new Usuario(4, "", "Atlas"	, "Atlas"	, BDU.gCargo(4)),
 		};
-	
-		BD.SaveChanges();
-		AutorizacaoService =  new AutorizacaoService(BD, loggerFactory.CreateLogger<AutorizacaoService>());
+		BDU.SalvarDados();
+		var BD = BDU.CriarContexto(); 
+		AutorizacaoService =  new AutorizacaoService(BD, output.ToLogger<AutorizacaoService>());
 	}
 	[Theory]
 	[InlineData(IdAdministrador)]
 	[InlineData(3)]
 	[InlineData(4)]
-	public void EhAutorizado_Autorizado(int idUsuario)
+	public async void EhAutorizado_Autorizado(int idUsuario)
 	{
-		var usuario = gUsuario(idUsuario);
+		var usuario = BDU.gUsuario(idUsuario);
 		var permissao =  Permissoes.Livro.Visualizar;
 
-		var autorizado = AutorizacaoService.EhAutorizado(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
 
 		Assert.True(autorizado);
 	}
@@ -58,51 +60,55 @@ public class TestesAutorizacao  :TestesBD
 	[InlineData(IdAnonimo)]
 	[InlineData(3)]
 	[InlineData(4)]
-	public void EhAutorizado_NaoAutorizado(int idUsuario)
+	public async void EhAutorizado_NaoAutorizado(int idUsuario)
 	{
-		var usuario = gUsuario(idUsuario);
+		var usuario = BDU.gUsuario(idUsuario);
 		var permissao =  Permissoes.Cargo.Criar;
 
-		var autorizado = AutorizacaoService.EhAutorizado(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
 		
 		Assert.False(autorizado);
 	}
 
     [Fact]
-    public void ErroSeNaoAutorizado_Nada()
+    public async Task ErroSeNaoAutorizado_NadaAsync()
     {
-        var usuario = gUsuario(IdAdministrador);
+        var usuario = BDU.gUsuario(IdAdministrador);
         var permissao = Permissoes.Cargo.Criar;
-        AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+        await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
     }
     [Fact]
-    public void ErroSeNaoAutorizado_NaoAutorizadoException()
+    public async Task ErroSeNaoAutorizado_NaoAutorizadoExceptionAsync()
     {
-        var usuario = gUsuario(IdAnonimo);
+        var usuario = BDU.gUsuario(IdAnonimo);
         var permissao = Permissoes.Cargo.Criar;
-		Assert.Throws<NaoAutorizadoException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<NaoAutorizadoException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 
 	[Fact]
-    public void ErroSeNaoAutorizado_PermissaoNula()
+    public async Task ErroSeNaoAutorizado_PermissaoNulaAsync()
     {
-        var usuario = gUsuario(IdAnonimo);
+        var usuario = BDU.gUsuario(IdAnonimo);
         Permissao permissao = null!;
-		Assert.Throws<ArgumentNullException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<ArgumentNullException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 	[Fact]
-    public void ErroSeNaoAutorizado_PermissaoInvalida()
+    public async Task ErroSeNaoAutorizado_PermissaoInvalidaAsync()
     {
-        var usuario = gUsuario(IdAnonimo);
+        var usuario = BDU.gUsuario(IdAnonimo);
 		const int IdInvalido = 100;
 		Permissao permissao = new Permissao(){ Id = IdInvalido };
-		Assert.Throws<ArgumentException>(() => {
-			AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
+		await Assert.ThrowsAsync<ArgumentException>(async () => {
+			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
 		});
     }
 
+	public void Dispose()
+	{
+		BDU.Dispose();
+	}
 }

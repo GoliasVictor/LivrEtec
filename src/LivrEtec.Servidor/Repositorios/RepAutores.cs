@@ -8,17 +8,18 @@ public sealed class RepAutores : Repositorio, IRepAutores
 	{
 	}
 
-	public bool Registrar(Autor autor)
+	public async Task RegistrarAsync(Autor autor)
 	{
+		using var BD = await BDFactory.CreateDbContextAsync();
 		BD.Autores.Add(autor);
-		BD.SaveChanges();
+		await BD.SaveChangesAsync();
 		Logger?.LogInformation($"Autor @{autor.Id} registrado");
-		return true;
-
 	}
-	public IEnumerable<Autor> Todos()
+
+	public IAsyncEnumerable<Autor> TodosAsync()
 	{
-		var Autores = BD.Autores.AsQueryable();
+		using var BD = BDFactory.CreateDbContext();
+		var Autores = BD.Autores.AsAsyncEnumerable();
 		Logger?.LogInformation("Todos Autores Coletados");
 		return Autores;
 	}
