@@ -23,10 +23,13 @@ public class IdentidadeService : Service, IIdentidadeService
 
 	public async Task DefinirUsuarioAsync(int idUsuario)
 	{
-		if (BD.Usuarios.Contains(new Usuario(){ Id = idUsuario}) == false)
-			throw new ArgumentException("Usuario não existe");
-		EstaAutenticado = false;
-		IdUsuario = idUsuario;
+		await Task.Run(()=>{
+			if (BD.Usuarios.Find(idUsuario) == null)
+				throw new ArgumentException("Usuario não existe");
+			EstaAutenticado = false;
+			IdUsuario = idUsuario;
+		});
+		
 	}
 
  	public async Task AutenticarUsuarioAsync(string senha)

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public sealed class Autor : IAutor, IComparable<Autor>, IEquatable<Autor?>
+    public sealed class Autor : IComparable<Autor>, IEquatable<Autor?>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required, Key]

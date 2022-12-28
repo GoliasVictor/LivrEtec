@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LivrEtec
 {
 
-	public sealed class Usuario : IUsuario
+	public sealed class Usuario 
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Required, Key]

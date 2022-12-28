@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public sealed class Livro : ILivro, IEquatable<Livro?>
+    public sealed class Livro :  IEquatable<Livro?>
     {
         public Livro(){}
         public Livro(string nome, string descricao, List<Tag>? tags =  default, List<Autor>? autores = default, bool arquivado = false)
