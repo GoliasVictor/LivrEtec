@@ -4,10 +4,10 @@ public static partial class Permissoes
     public record CRUD : IGrupoPermissao
 	{
 		public string Nome {get;init; }
-		public readonly Permissao Criar = null!;
-		public readonly Permissao Visualizar = null!;
-		public readonly Permissao Editar = null!;
-		public readonly Permissao Excluir = null!;
+		public readonly Permissao Criar;
+		public readonly Permissao Visualizar;
+		public readonly Permissao Editar;
+		public readonly Permissao Excluir;
 		public List<Permissao> Todas  { get; init; } = new List<Permissao>();
 		public CRUD(string nome,
 			  int idInicial, 

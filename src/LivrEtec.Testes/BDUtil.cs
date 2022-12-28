@@ -55,7 +55,17 @@ public sealed class BDUtil : IDisposable
 	public Usuario gUsuario(int id) => Usuarios.First((u) => u.Id == id);
 	public Cargo gCargo(int id) => Cargos.First((c)=> c.Id == id);  
 	public Pessoa gPessoa(int id) => Pessoas.First((c)=> c.Id == id);  
-
+	public Emprestimo gEmprestimo(int id) => Emprestimos.First((e)=> e.Id == id);  
+	public async Task<Emprestimo> gEmprestimoBanco(int idEmprestimo)
+	{
+		using var BD = CriarContexto();
+		var emprestimoAtual = (await BD.Emprestimos.FindAsync(idEmprestimo))!;
+		BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).Load();
+		BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioCriador).Load();
+		BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioFechador).Load();
+		BD.Entry(emprestimoAtual).Reference((e) => e.Livro).Load();
+		return emprestimoAtual;
+	}
 	public void ResetarBanco()
 	{
 		using var BD = CriarContexto();

@@ -14,6 +14,7 @@ var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<Configu
 builder.Services.AddDbContextFactory<PacaContext>(( _ )=>{
 
 });
+builder.Services.AddSingleton<IRelogio,RelogioSistema>();
 builder.Services.AddSingleton<IConfiguracao>(Config);
 builder.Services.AddTransient<PacaContext>();
 builder.Services.AddLogging(configure => {

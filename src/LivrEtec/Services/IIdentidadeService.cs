@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace LivrEtec;
 
 public interface IIdentidadeService

@@ -14,7 +14,23 @@ namespace LivrEtec
             Livro = livro;
             DataEmprestimo = dataEmprestimo;
         }
-
+        public Emprestimo Clone(){
+            return new Emprestimo(){
+                Id =  Id,
+                Livro = Livro,
+                Pessoa = Pessoa,
+                UsuarioCriador = UsuarioCriador,
+                Fechado = Fechado,
+                DataEmprestimo =  DataEmprestimo,
+                DataFechamento = DataFechamento,
+                FimDataEmprestimo = FimDataEmprestimo,
+                AtrasoJustificado = AtrasoJustificado,
+                Comentario =  Comentario,
+                UsuarioFechador = UsuarioFechador,
+                Devolvido = Devolvido,
+                ExplicacaoAtraso = ExplicacaoAtraso,
+            };
+        }
 		public Emprestimo() { }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,21 +45,21 @@ namespace LivrEtec
         public Livro Livro { get; set; } = null!; 
 
         [Required]
-        public Usuario UsuarioCriador = null!;
+        public Usuario UsuarioCriador {get;set;} = null!;
 
-        public Usuario? UsuarioFechador = null!;
+        public Usuario? UsuarioFechador {get;set;} = null!;
 
         [Required]
         public DateTime DataEmprestimo { get; set; }
         [Required]
         public DateTime FimDataEmprestimo { get; set; }
-        public DateTime? DataDevolucao { get; set; }
+        public DateTime? DataFechamento { get; set; }
         public string? Comentario { get; set; }
 
         public bool Fechado { get; set; }
-
+        public bool? Devolvido { get; set; }
         public bool? AtrasoJustificado { get; set; }
-        public string? ExplicaçãoAtraso;
+        public string? ExplicacaoAtraso {get;set;}
 
         
 

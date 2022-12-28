@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivrEtec.Testes.Doubles
+namespace LivrEtec.Testes
 {
     class RelogioStub : IRelogio
     {

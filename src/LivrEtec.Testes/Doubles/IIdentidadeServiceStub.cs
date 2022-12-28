@@ -5,13 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivrEtec.Testes.Stubs
+namespace LivrEtec.Testes
 {
-    class IIdentidadeServiceStub : IIdentidadeService
+    class IdentidadePermitidaStub : IIdentidadeService
     {
-        public int IdUsuario => 0;
+		public IdentidadePermitidaStub()
+		{
+            Usuario = new Usuario() {  
+                Nome = "Usuario de teste"
+            };
+		}
 
-        public Usuario? Usuario => new Usuario() {  };
+		public IdentidadePermitidaStub(Usuario? usuario)
+		{
+			Usuario = usuario;
+
+		}
+
+		public int IdUsuario => Usuario!.Id;
+
+        public Usuario? Usuario {get;set;} 
 
         public bool EstaAutenticado => true;
 

@@ -9,11 +9,10 @@ namespace LivrEtec
     public interface IEmprestimoService
     {
         Task<int> AbrirAsync(int idPessoa, int idlivro);
-        Task RegistrarDevolucaoAsync(int idEmprestimo);
-        Task RegistrarPerdaAsync(int idEmprestimo, string justificativa);
+        Task<IEnumerable<Emprestimo>> BuscarAsync(ParamBuscaEmprestimo parametros );
         Task ProrrogarAsnc(int idEmprestimo, DateTime novaData);
-        Task<IEnumerable<Emprestimo>> BuscarAsync(int idPessoa, bool aberto, bool atrasado );
-
-    }
+        Task DevolverAsync(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso=null);
+        Task RegistrarPerdaAsync(int idEmprestimo);
+	}
     
 }

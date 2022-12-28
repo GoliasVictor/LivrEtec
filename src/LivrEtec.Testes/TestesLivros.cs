@@ -2,8 +2,7 @@ using LivrEtec.Servidor;
 using LivrEtec.GIB;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
-using Xunit.Abstractions;
-using LivrEtec.Testes.Stubs;
+using Xunit.Abstractions; 
 
 namespace LivrEtec.Testes;
 

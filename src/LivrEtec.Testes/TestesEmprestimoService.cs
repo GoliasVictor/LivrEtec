@@ -1,19 +1,8 @@
-﻿using Xunit;
-using LivrEtec.Servidor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LivrEtec.Testes;
-using Xunit.Abstractions;
-using LivrEtec.Testes.Stubs;
-using LivrEtec.Testes.Doubles;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
-namespace LivrEtec.Servidor.Testes
+﻿using Xunit.Abstractions;  
+namespace LivrEtec.Testes
 {
+
+    [Collection("UsaBancoDeDados")]
     public class TestesEmprestimoService : IClassFixture<ConfiguradorTestes>
     {
         readonly BDUtil BDU;
@@ -21,10 +10,29 @@ namespace LivrEtec.Servidor.Testes
         readonly IRelogio relogio;
         const int ID_PESSOA = 1;
         const int ID_ALUNO = 2 ;
+        const int ID_USUARIO_CRIADOR = 1 ;
+        const int ID_USUARIO_TESTE = 2 ;
         const int ID_LIVRO_DISPONIVEL = 1;
+        const int ID_EMPRESTIMO_ABERTO = 2;
+		const int ID_EMPRESTIMO_FECHADO = 1;
 
-        public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output)
+		public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output)
         {
+			Cargo cargoTeste = new Cargo()
+			{
+				Id = 10,
+				Nome = "Cargo Teste",
+				Permissoes = Permissoes.TodasPermissoes.ToList()
+			};
+			Usuario usuarioTeste = new Usuario()
+			{
+                Id=ID_USUARIO_TESTE,
+				Nome = "Usuario Teste Emprestimo Service",
+				Login = "teste",
+				Senha = "senha",
+				Cargo = cargoTeste
+			};
+        
             BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output))
             {
                 Autores = new Autor[]{
@@ -37,6 +45,19 @@ namespace LivrEtec.Servidor.Testes
                     new Tag(2,"Fantasia"),
                     new Tag(3,"Politica")
                 }
+            };
+            BDU.Cargos = new []{ usuarioTeste.Cargo };
+            foreach (var perm in Permissoes.TodasPermissoes)
+			    perm.Cargos = new List<Cargo>();
+            BDU.Usuarios = new[]{ 
+                new Usuario(){
+                    Id= ID_USUARIO_CRIADOR,
+                    Nome="Usuario criador",
+                    Senha="Senha",
+                    Login="usuario_criador",
+                    Cargo =  cargoTeste,
+                },
+                usuarioTeste 
             };
             BDU.Livros = new[]{
                 new Livro {
@@ -58,7 +79,6 @@ namespace LivrEtec.Servidor.Testes
                     Quantidade = 1
                 }
             };
-
             BDU.Pessoas = new[]
             {
                 new Pessoa(){
@@ -75,94 +95,157 @@ namespace LivrEtec.Servidor.Testes
             };
             BDU.Emprestimos = new[]{
                 new Emprestimo(){
-                    Id= 1,
+                    Id= ID_EMPRESTIMO_FECHADO,
                     Livro = BDU.gLivro(1),
                     Pessoa = BDU.gPessoa(1),
-                    Fechado = false,
+                    UsuarioCriador = BDU.gUsuario(ID_USUARIO_CRIADOR),
+                    UsuarioFechador = BDU.gUsuario(ID_USUARIO_CRIADOR),
+                    Fechado = true,
                     AtrasoJustificado = false,
                     Comentario="",
-                    DataDevolucao=new DateTime(2022,1,1),
-                    FimDataEmprestimo=new DateTime(2022,1,1),
-                    ExplicaçãoAtraso= null,
-                    DataEmprestimo=new DateTime(2022, 1, 1)
+                    DataFechamento=new DateTime(2020,1,10),
+                    FimDataEmprestimo=new DateTime(2020,2,1),
+                    ExplicacaoAtraso= null,
+                    DataEmprestimo=new DateTime(2020, 1, 1)
+                },
+                new Emprestimo(){
+                    Id= ID_EMPRESTIMO_ABERTO,
+                    Livro = BDU.gLivro(3),
+                    Pessoa = BDU.gPessoa(ID_ALUNO),
+                    UsuarioCriador = BDU.gUsuario(ID_USUARIO_CRIADOR),
+                    DataEmprestimo=new DateTime(2020, 1, 1),
+                    FimDataEmprestimo=new DateTime(2020,1,1),
+                    Fechado = false,
+                    Comentario="",
+                    AtrasoJustificado = null,
+                    DataFechamento=null,
+                    ExplicacaoAtraso= null,
                 }
             };
+
             BDU.SalvarDados();
             var BD = BDU.CriarContexto();
-            relogio = new RelogioStub(new DateTime(2020,10,10));
-            var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output));
-            emprestimoService = new EmprestimoService(
-                acervoService, 
-                new IIdentidadeServiceStub(),
-                relogio,
+			var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
+            relogio = new RelogioStub(new DateTime(2022,1,1));
+            var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), relogio);
+			emprestimoService = new EmprestimoService(
+                acervoService,
+				identidadeService,
+				relogio,
                 configurador.CreateLogger<EmprestimoService>(output)
             );
         }
-
-        [Theory]
-        [InlineData(ID_PESSOA)]
-        [InlineData(ID_ALUNO)]
-        public async Task AbrirAsync_ValidoAsync(int idPessoa)
+		private void AssertEmprestimoIgual(Emprestimo esperado, Emprestimo atual)
         {
-            var emprestimoEsperado = new Emprestimo() {
-                Id = 2,
-                Pessoa = BDU.gPessoa(idPessoa),
-                Livro = BDU.gLivro(ID_LIVRO_DISPONIVEL),
-                DataEmprestimo = relogio.Agora,
-                Fechado = false,
-                Comentario = null,
-                DataDevolucao = null,
-                AtrasoJustificado = null,
-                ExplicaçãoAtraso = null,
-                FimDataEmprestimo = relogio.Agora.AddDays(30),
-                
-            };
-            var idEmprestimo = await emprestimoService.AbrirAsync(idPessoa, ID_LIVRO_DISPONIVEL);
-            var BD = BDU.CriarContexto();
-            var emprestimoAtual = (await BD.Emprestimos.FindAsync(idEmprestimo))!;
-            BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.Livro).Load();
-            Assert.NotNull(emprestimoAtual);
-            AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
-            
-        }
-
-        private void AssertEmprestimoIgual(Emprestimo esperado, Emprestimo atual)
-        {
-            Assert.Equal(esperado.Id , atual.Id);
-            Assert.Equal(esperado.Pessoa.Id , atual.Pessoa.Id);
-            Assert.Equal(esperado.Livro.Id , atual.Livro.Id);
-            Assert.Equal(esperado.DataEmprestimo , atual.DataEmprestimo);
-            Assert.Equal(esperado.Fechado , atual.Fechado);
-            Assert.Equal(esperado.Comentario , atual.Comentario);
-            Assert.Equal(esperado.DataDevolucao , atual.DataDevolucao);
-            Assert.Equal(esperado.AtrasoJustificado , atual.AtrasoJustificado);
-            Assert.Equal(esperado.ExplicaçãoAtraso , atual.ExplicaçãoAtraso);
+            Assert.Equal(esperado.AtrasoJustificado, atual.AtrasoJustificado);
+            Assert.Equal(esperado.Comentario, atual.Comentario);
+            Assert.Equal(esperado.DataEmprestimo, atual.DataEmprestimo);
+            Assert.Equal(esperado.DataFechamento, atual.DataFechamento);
+            Assert.Equal(esperado.Devolvido, atual.Devolvido); 
+            Assert.Equal(esperado.ExplicacaoAtraso, atual.ExplicacaoAtraso);
+            Assert.Equal(esperado.Fechado, atual.Fechado);
             Assert.Equal(esperado.FimDataEmprestimo, atual.FimDataEmprestimo); 
+            Assert.Equal(esperado.Id, atual.Id);
+            Assert.Equal(esperado.Livro.Id, atual.Livro.Id);
+            Assert.Equal(esperado.Pessoa.Id, atual.Pessoa.Id);
+            Assert.Equal(esperado.UsuarioCriador.Id, atual.UsuarioCriador?.Id);
+            Assert.Equal(esperado.UsuarioFechador?.Id, atual.UsuarioFechador?.Id);
+        }
+
+        [Fact]
+        public async Task AbrirAsync_Valido()
+		{
+            const int idPessoa = ID_ALUNO;
+			var emprestimoEsperado = new Emprestimo()
+			{
+				Id = 3,
+				Pessoa = BDU.gPessoa(idPessoa),
+				Livro = BDU.gLivro(ID_LIVRO_DISPONIVEL),
+                UsuarioCriador = BDU.gUsuario(ID_USUARIO_TESTE),
+				DataEmprestimo = relogio.Agora,
+				Fechado = false,
+				Comentario = null,
+				DataFechamento = null,
+				AtrasoJustificado = null,
+				ExplicacaoAtraso = null,
+				FimDataEmprestimo = relogio.Agora.AddDays(30),
+			};
+			
+            var idEmprestimo = await emprestimoService.AbrirAsync(idPessoa, ID_LIVRO_DISPONIVEL);
+            Emprestimo emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+			Assert.NotNull(emprestimoAtual);
+			AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
+
+		}
+
+        [Fact]
+        public async Task ProrrogarAsnc_Valido()
+        {
+            var dataEsperada = new DateTime(2022, 3,1);
+            var idEmprestimo = ID_EMPRESTIMO_ABERTO;
+            Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+            emprestimoEsperado.FimDataEmprestimo = dataEsperada;
+
+            await emprestimoService.ProrrogarAsnc(idEmprestimo, dataEsperada);            
+            
+            Emprestimo emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            Assert.NotNull(emprestimoAtual);
+            AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual);
+        }
+
+        
+
+        [Fact]
+        public async void DevolverAsync_SemAtraso()
+        {
+            var idEmprestimo = ID_EMPRESTIMO_ABERTO;
+            var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+            emprestimoEsperado.Devolvido = true;
+            emprestimoEsperado.Fechado = true;
+            emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
+            emprestimoEsperado.DataFechamento = relogio.Agora;
+            
+            await emprestimoService.DevolverAsync(idEmprestimo);
+            
+            var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+
+        }
+
+        [Fact]
+        public async void DevolverAsync_ComAtrasoJustificado()
+        {
+            const int idEmprestimo = ID_EMPRESTIMO_ABERTO;
+			const string ExplicacaoAtraso = "Por motivos de teste.";
+            var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+            emprestimoEsperado.Devolvido = true;
+            emprestimoEsperado.Fechado = true;
+            emprestimoEsperado.AtrasoJustificado = true;
+            emprestimoEsperado.ExplicacaoAtraso = ExplicacaoAtraso;
+            emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
+            emprestimoEsperado.DataFechamento = relogio.Agora;
+
+			await emprestimoService.DevolverAsync(idEmprestimo, AtrasoJustificado:true, ExplicacaoAtraso);
+            
+            var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+
         }
 
         [Fact()]
-        public void BuscarAsync_Resultado()
+        public async Task RegistrarPerdaAsync_ValidaAsync()
         {
-            Assert.True(false, "This test needs an implementation");
-        }
-
-        [Fact()]
-        public void ProrrogarAsnc_Resultado()
-        {
-            Assert.True(false, "This test needs an implementation");
-        }
-
-        [Fact()]
-        public void RegistrarDevolucaoAsync_Resultado()
-        {
-            Assert.True(false, "This test needs an implementation");
-        }
-
-        [Fact()]
-        public void RegistrarPerdaAsync_Resultado()
-        {
-            Assert.True(false, "This test needs an implementation");
+            var idEmprestimo = ID_EMPRESTIMO_ABERTO;
+            var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+            emprestimoEsperado.Devolvido = false;
+            emprestimoEsperado.Fechado=true;
+            emprestimoEsperado.DataFechamento = relogio.Agora;
+            emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
+            
+            await emprestimoService.RegistrarPerdaAsync(idEmprestimo);
+            
+            var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
         }
     }
 }
