@@ -101,5 +101,17 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 		}
 		return new Empty();
 	}
-
+	public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
+	{
+		try
+		{
+            identidadeService?.DefinirContexto(context);
+			await emprestimoService.ExcluirAsync(request.Id);
+		}
+		catch (Exception ex)
+		{
+			throw ManipuladorException.ExceptionToRpcException(ex);
+		}
+		return new Empty();
+	}
 }

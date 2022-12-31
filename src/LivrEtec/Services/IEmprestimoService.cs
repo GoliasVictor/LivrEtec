@@ -13,6 +13,7 @@ namespace LivrEtec
         Task ProrrogarAsnc(int idEmprestimo, DateTime novaData);
         Task DevolverAsync(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso=null);
         Task RegistrarPerdaAsync(int idEmprestimo);
+        Task ExcluirAsync(int idEmprestimo);
 	}
     
 }

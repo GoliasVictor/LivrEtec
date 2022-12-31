@@ -12,6 +12,7 @@ service Emprestimos {
     rpc Prorrogar(Emprestimo.ProrrogarRequest) returns (Empty);
     rpc Devolver(Emprestimo.DevolverRequest) returns (Empty);
     rpc RegistrarPerda(IdEmprestimo) returns (Empty) ;
+    rpc Excluir(IdEmprestimo) returns (Empty) ;
 }
 service Livros {
     rpc Get(IdLivro) returns (Livro);

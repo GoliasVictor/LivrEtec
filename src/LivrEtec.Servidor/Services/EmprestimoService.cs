@@ -86,5 +86,13 @@ namespace LivrEtec.Servidor
             
             Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi devolvido", parametros.IdEmprestimo);
         }
+
+        public async Task ExcluirAsync(int idEmprestimo)
+        {
+            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Excluir);
+            await acervoService.Emprestimos.Excluir(idEmprestimo);
+            
+            Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi excluido", idEmprestimo);
+        }
     }
 }

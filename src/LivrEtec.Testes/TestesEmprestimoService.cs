@@ -227,7 +227,7 @@ namespace LivrEtec.Testes
 
         }
 
-        [Fact()]
+        [Fact]
         public async Task RegistrarPerdaAsync_ValidaAsync()
         {
             var idEmprestimo = ID_EMPRESTIMO_ABERTO;
@@ -241,6 +241,16 @@ namespace LivrEtec.Testes
             
             var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
             AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+        }
+        [Fact]
+        public async Task ExcluirAsync_ValidaAsync()
+        {
+            var idEmprestimo = ID_EMPRESTIMO_ABERTO;
+            
+            await emprestimoService.ExcluirAsync(idEmprestimo);
+            
+            var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            Assert.Null(emprestimoAtual);
         }
     }
 }

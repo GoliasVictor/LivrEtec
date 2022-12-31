@@ -8,5 +8,6 @@
         Task<IEnumerable<Emprestimo>> BuscarAsync(ParamBuscaEmprestimo parametros);
         Task FecharAsync(ParamFecharEmprestimo parametros);
         Task EditarFimData(int idLivro, DateTime NovaData);
+        Task Excluir(int idEmprestimo);
     }
 }

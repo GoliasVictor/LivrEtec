@@ -57,6 +57,13 @@ namespace LivrEtec.Servidor
             BD.Update(emprestimo);
             await BD.SaveChangesAsync();
         }
+        public async Task Excluir(int idEmprestimo)
+        {
+            Emprestimo emprestimo = await ObterAsync(idEmprestimo)
+                ?? throw new InvalidOperationException($"Emprestimo {idEmprestimo} não existe");
+            BD.Remove(emprestimo);
+            await BD.SaveChangesAsync();
+        }
         public async Task FecharAsync(ParamFecharEmprestimo parametros)
 		{			
             Emprestimo emprestimo = await ObterAsync(parametros.IdEmprestimo)

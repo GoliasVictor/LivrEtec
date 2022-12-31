@@ -77,5 +77,17 @@ namespace LivrEtec.GIB
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
 		}
+        public async Task ExcluirAsync(int idEmprestimo)
+		{
+            try{
+                
+                await clientRPC.ExcluirAsync(new IdEmprestimo (){
+                    Id = idEmprestimo,
+                });
+            }
+            catch(RpcException ex){
+                throw ManipuladorException.RpcExceptionToException(ex);
+            }
+		}
 	}
 }
