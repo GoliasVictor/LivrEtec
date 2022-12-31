@@ -4,14 +4,15 @@ namespace LivrEtec.GIB.Servidor;
 // Gambiarra pra fazer funcionar por enquanto
 internal class IdentidadeServiceRPC : IIdentidadeService
 {
-	ServerCallContext context;
+	ServerCallContext? context;
 	public IdentidadeServiceRPC()
 	{
 	}
 	public void DefinirContexto(ServerCallContext context){
 		this.context = context;
 	}
-	public int IdUsuario => int.Parse(context.GetHttpContext().Request.Headers["id"][0]);
+	public int IdUsuario => context != null ? int.Parse(context.GetHttpContext().Request.Headers["id"][0])
+											: throw new InvalidOperationException("contexto indefinido");
 	public Usuario? Usuario => new Usuario{ Id = IdUsuario };
 	public bool EstaAutenticado => true;
 	public Task AutenticarUsuarioAsync(string senha) => Task.CompletedTask; 

@@ -167,7 +167,7 @@ namespace LivrEtec.Testes
 			};
 			
             var idEmprestimo = await emprestimoService.AbrirAsync(idPessoa, ID_LIVRO_DISPONIVEL);
-            Emprestimo emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 			Assert.NotNull(emprestimoAtual);
 			AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
 
@@ -183,9 +183,9 @@ namespace LivrEtec.Testes
 
             await emprestimoService.ProrrogarAsnc(idEmprestimo, dataEsperada);            
             
-            Emprestimo emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+            var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
             Assert.NotNull(emprestimoAtual);
-            AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual);
+            AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
         }
 
         
@@ -203,7 +203,8 @@ namespace LivrEtec.Testes
             await emprestimoService.DevolverAsync(idEmprestimo);
             
             var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
-            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+            Assert.NotNull(emprestimoAtual);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual!);
 
         }
 
@@ -223,7 +224,8 @@ namespace LivrEtec.Testes
 			await emprestimoService.DevolverAsync(idEmprestimo, AtrasoJustificado:true, ExplicacaoAtraso);
             
             var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
-            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+            Assert.NotNull(idEmprestimo);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual!);
 
         }
 
@@ -240,7 +242,8 @@ namespace LivrEtec.Testes
             await emprestimoService.RegistrarPerdaAsync(idEmprestimo);
             
             var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
-            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual);
+            Assert.NotNull(emprestimoAtual);
+            AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual!);
         }
         [Fact]
         public async Task ExcluirAsync_ValidaAsync()
