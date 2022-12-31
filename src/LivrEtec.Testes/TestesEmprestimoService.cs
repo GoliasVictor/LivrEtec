@@ -3,28 +3,29 @@ namespace LivrEtec.Testes
 {
 
     [Collection("UsaBancoDeDados")]
-    public class TestesEmprestimoService : IClassFixture<ConfiguradorTestes>
+    public abstract class TestesEmprestimoService<T> : IClassFixture<ConfiguradorTestes> where T : IEmprestimoService  
     {
-        readonly BDUtil BDU;
-        readonly IEmprestimoService emprestimoService;
-        readonly IRelogio relogio;
-        const int ID_PESSOA = 1;
-        const int ID_ALUNO = 2 ;
-        const int ID_USUARIO_CRIADOR = 1 ;
-        const int ID_USUARIO_TESTE = 2 ;
-        const int ID_LIVRO_DISPONIVEL = 1;
-        const int ID_EMPRESTIMO_ABERTO = 2;
-		const int ID_EMPRESTIMO_FECHADO = 1;
-
-		public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output)
+        protected readonly BDUtil BDU;
+        protected abstract T emprestimoService  { get; init; }
+        protected readonly IRelogio relogio;
+        protected const int ID_PESSOA = 1;
+        protected const int ID_ALUNO = 2 ;
+        protected const int ID_USUARIO_CRIADOR = 1 ;
+        protected const int ID_USUARIO_TESTE = 2 ;
+        protected const int ID_LIVRO_DISPONIVEL = 1;
+        protected const int ID_EMPRESTIMO_ABERTO = 2;
+		protected const int ID_EMPRESTIMO_FECHADO = 1;
+        protected readonly Usuario usuarioTeste;
+		public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output, IRelogio relogio)
         {
+            this.relogio = relogio;
 			Cargo cargoTeste = new Cargo()
 			{
 				Id = 10,
 				Nome = "Cargo Teste",
 				Permissoes = Permissoes.TodasPermissoes.ToList()
 			};
-			Usuario usuarioTeste = new Usuario()
+			usuarioTeste = new Usuario()
 			{
                 Id=ID_USUARIO_TESTE,
 				Nome = "Usuario Teste Emprestimo Service",
@@ -103,18 +104,18 @@ namespace LivrEtec.Testes
                     Fechado = true,
                     AtrasoJustificado = false,
                     Comentario="",
-                    DataFechamento=new DateTime(2020,1,10),
-                    FimDataEmprestimo=new DateTime(2020,2,1),
+                    DataEmprestimo= relogio.Agora.AddMonths(-11),
+                    DataFechamento = relogio.Agora.AddMonths(-11).AddDays(15),
+                    FimDataEmprestimo= relogio.Agora.AddMonths(-10),
                     ExplicacaoAtraso= null,
-                    DataEmprestimo=new DateTime(2020, 1, 1)
                 },
                 new Emprestimo(){
                     Id= ID_EMPRESTIMO_ABERTO,
                     Livro = BDU.gLivro(3),
                     Pessoa = BDU.gPessoa(ID_ALUNO),
                     UsuarioCriador = BDU.gUsuario(ID_USUARIO_CRIADOR),
-                    DataEmprestimo=new DateTime(2020, 1, 1),
-                    FimDataEmprestimo=new DateTime(2020,1,1),
+                    DataEmprestimo= relogio.Agora.AddDays(-15),
+                    FimDataEmprestimo= relogio.Agora.AddDays(15),
                     Fechado = false,
                     Comentario="",
                     AtrasoJustificado = null,
@@ -125,26 +126,20 @@ namespace LivrEtec.Testes
 
             BDU.SalvarDados();
             var BD = BDU.CriarContexto();
-			var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
-            relogio = new RelogioStub(new DateTime(2022,1,1));
-            var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), relogio);
-			emprestimoService = new EmprestimoService(
-                acervoService,
-				identidadeService,
-				relogio,
-                configurador.CreateLogger<EmprestimoService>(output)
-            );
         }
 		private void AssertEmprestimoIgual(Emprestimo esperado, Emprestimo atual)
         {
             Assert.Equal(esperado.AtrasoJustificado, atual.AtrasoJustificado);
             Assert.Equal(esperado.Comentario, atual.Comentario);
-            Assert.Equal(esperado.DataEmprestimo, atual.DataEmprestimo);
-            Assert.Equal(esperado.DataFechamento, atual.DataFechamento);
+            Assert.Equal(esperado.DataEmprestimo, atual.DataEmprestimo , new TimeSpan(1,0,0,0));
+            if(esperado.DataFechamento is not null && atual.DataFechamento is not null )
+                Assert.Equal(esperado.DataFechamento.Value, atual.DataFechamento.Value , new TimeSpan(1,0,0,0));
+            else 
+                Assert.Equal(esperado.DataFechamento, atual.DataFechamento);
             Assert.Equal(esperado.Devolvido, atual.Devolvido); 
             Assert.Equal(esperado.ExplicacaoAtraso, atual.ExplicacaoAtraso);
             Assert.Equal(esperado.Fechado, atual.Fechado);
-            Assert.Equal(esperado.FimDataEmprestimo, atual.FimDataEmprestimo); 
+            Assert.Equal(esperado.FimDataEmprestimo, atual.FimDataEmprestimo, new TimeSpan(1,0,0,0)); 
             Assert.Equal(esperado.Id, atual.Id);
             Assert.Equal(esperado.Livro.Id, atual.Livro.Id);
             Assert.Equal(esperado.Pessoa.Id, atual.Pessoa.Id);

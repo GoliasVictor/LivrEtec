@@ -1,10 +1,17 @@
 syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "LivrEtec.GIB.RPC";
 
 package livrEtecRPC;
 
-service Acervo { 
+service Emprestimos { 
+    rpc Abrir(Emprestimo.AbrirRequest) returns (IdEmprestimo);
+    rpc Buscar(Emprestimo.BuscarRequest) returns (EnumEmprestimos);
+    rpc Prorrogar(Emprestimo.ProrrogarRequest) returns (Empty);
+    rpc Devolver(Emprestimo.DevolverRequest) returns (Empty);
+    rpc RegistrarPerda(IdEmprestimo) returns (Empty) ;
 }
 service Livros {
     rpc Get(IdLivro) returns (Livro);
@@ -48,4 +55,71 @@ message Tag {
 message Autor {
     int32 Id =  1; 
     string Nome = 2;
+}
+message Pessoa {
+    int32 Id = 1;
+    string Nome = 2;
+    string Telefone = 3;
+}
+message Permissao {
+    int32 Id =1;
+    string Nome = 2;
+    string Descricao = 3;
+    repeated Permissao PermissoesDependete = 4;
+}
+message Cargo {
+    int32 Id = 1;
+    string Nome = 2;
+    repeated Permissao Permissoes = 3;
+}
+message Usuario {
+    int32 Id = 1;
+    string Senha = 2;
+    string Login = 3;
+    string Nome = 4;
+    Cargo Cargo = 5;
+}
+message IdEmprestimo { 
+    int32 Id = 1;
+}
+message Emprestimo {
+    int32 Id = 1;
+    Livro Livro = 2;
+    Pessoa Pessoa = 3;
+    Usuario UsuarioCriador = 4;
+    bool Fechado = 5;
+    google.protobuf.Timestamp DataEmprestimo = 7;
+    google.protobuf.Timestamp FimDataEmprestimo =9;
+    optional google.protobuf.BoolValue Devolvido = 6;
+    optional google.protobuf.Timestamp DataFechamento = 8;
+    optional Usuario UsuarioFechador = 12;
+    optional string Comentario = 11;
+    optional google.protobuf.BoolValue AtrasoJustificado = 10;
+    optional string ExplicacaoAtraso = 13;
+
+    
+    message AbrirRequest { 
+        int32 IdLivro = 1;
+        int32 IdPessoa = 2;
+    }
+    message ProrrogarRequest { 
+        int32 idEmprestimo = 1;
+        google.protobuf.Timestamp novaData = 2;
+    }
+    message BuscarRequest {
+        optional int32 IdLivro = 1;
+        optional int32 IdPessoa = 2;
+        optional bool Fechado = 3;
+        optional bool Atrasado = 4;
+    }
+
+	message DevolverRequest {
+		int32 idEmprestimo = 1; 
+        optional bool AtrasoJustificado = 2;
+        optional string ExplicacaoAtraso = 3; 
+    };
+}
+
+message EnumEmprestimos {
+    repeated Emprestimo Emprestimos = 1;
 }

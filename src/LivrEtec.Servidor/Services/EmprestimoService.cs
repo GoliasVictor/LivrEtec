@@ -13,9 +13,9 @@ namespace LivrEtec.Servidor
     {
         readonly IRelogio relogio;
         readonly IAcervoService acervoService;
-        readonly ILogger? Logger;
+        readonly ILogger<EmprestimoService>? Logger;
         readonly IIdentidadeService identidadeService;
-        public EmprestimoService(IAcervoService acervoService, IIdentidadeService identidadeService, IRelogio relogio, ILogger? logger)
+        public EmprestimoService(IAcervoService acervoService, IIdentidadeService identidadeService, IRelogio relogio, ILogger<EmprestimoService>? logger)
         {
             this.identidadeService = identidadeService;
             this.acervoService = acervoService;
