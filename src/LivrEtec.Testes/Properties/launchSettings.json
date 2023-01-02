@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LivrEtec.Testes": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

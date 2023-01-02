@@ -13,8 +13,17 @@ public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 	protected override RepLivroRPC RepLivros => repLivrosRPC;
     public TestesLivrosRPC(ConfiguradorTestes configurador, ITestOutputHelper output) : base( configurador, output)
 	{
-
-        var channel = GrpcChannel.ForAddress(configurador.Config.UrlGIBAPI);
+        string Endereco = configurador.Config.UrlGIBAPI 
+            ?? throw new Exception("Endereço da api interna do GIB indefinido");
+        var httpClient = new HttpClient();
+		httpClient.DefaultRequestHeaders.Add("id",(1).ToString());
+		var grpcChannelOptions  = new GrpcChannelOptions(){
+			Credentials = Grpc.Core.ChannelCredentials.Insecure,
+			HttpClient = httpClient
+		};
+	
+        var channel = GrpcChannel.ForAddress(configurador.Config.UrlGIBAPI, grpcChannelOptions);
+		
         repLivrosRPC = new RepLivroRPC(output.ToLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
     }
 }

@@ -2,7 +2,7 @@ using LivrEtec.Servidor;
 using LivrEtec.GIB;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
-using Xunit.Abstractions;
+using Xunit.Abstractions; 
 
 namespace LivrEtec.Testes;
 
@@ -39,7 +39,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 			new Tag(3,"Politica"),
 			new Tag(4,"Literatura"),
 			new Tag(5,"Sociologia"),
-		};
+		}; 
+		
 		BDU.Livros = new[]{
 			new Livro {
 				Id = 1,
@@ -86,7 +87,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
 		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
-
+		
 		Assert.NotNull(livroRegistrado);
 		AssertLivroIgual(livroARegistrar,livroRegistrado);
 	}

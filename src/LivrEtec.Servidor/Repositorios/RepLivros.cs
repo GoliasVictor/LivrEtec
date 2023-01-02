@@ -14,7 +14,6 @@ public sealed class RepLivros : Repositorio, IRepLivros
  
 	public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
 	{
-		using var BD = BDFactory.CreateDbContext();
 		IQueryable<Livro> livros = BD.Livros;
 
 		if (!string.IsNullOrEmpty(nome) || !string.IsNullOrEmpty(nomeAutor))
@@ -39,19 +38,19 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	}
 	private async Task<bool> ExisteAsync(Livro livro)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		return await BD.Livros.ContainsAsync(livro);
 	}
 	private async Task<bool> ExisteAsync(int id)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		return await BD.Livros.AnyAsync((l)=> l.Id == id);
 	}
 
 
 	public async Task<Livro?> GetAsync(int id)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		var livro = await BD.Livros.FindAsync(id);
 		if (livro == null)
 			return livro;
@@ -62,7 +61,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 	public async Task RegistrarAsync(Livro livro)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
 		if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
 			throw new InvalidDataException();
@@ -77,7 +76,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 	public async Task RemoverAsync(int id)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		if(await ExisteAsync(id) == false)
 			throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
 		var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
@@ -87,7 +86,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 	public async Task EditarAsync(Livro livro)
 	{
-		using var BD = BDFactory.CreateDbContext();
+
 		_= livro ?? throw new ArgumentNullException(nameof(livro));
 	   	foreach(var tag in livro.Tags) 
 			if (tag is null)

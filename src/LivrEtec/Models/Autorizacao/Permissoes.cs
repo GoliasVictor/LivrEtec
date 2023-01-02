@@ -18,12 +18,13 @@ public static partial class Permissoes
 	{
 		int UltimoID = 1;
 		Livro 	   = new(nameof(Livro)		, UltimoID);
-		Tag 	   = new(nameof(Tag)		, UltimoID=UltimoID + 4);
-		Autor 	   = new(nameof(Autor)		, UltimoID=UltimoID + 4);
-		Usuario    = new(nameof(Usuario)	, UltimoID=UltimoID + 4);
-		Cargo 	   = new(nameof(Cargo)		, UltimoID=UltimoID + 4);
-		Pessoa 	   = new(nameof(Pessoa)		, UltimoID=UltimoID + 4);
-		Emprestimo = new(nameof(Emprestimo)	, UltimoID=UltimoID + 4, Livro.Visualizar, Pessoa.Visualizar);
+		Tag 	   = new(nameof(Tag)		, UltimoID+=4);
+		Autor 	   = new(nameof(Autor)		, UltimoID+=4);
+		Usuario    = new(nameof(Usuario)	, UltimoID+=4);
+		Cargo 	   = new(nameof(Cargo)		, UltimoID+=4);
+		Pessoa 	   = new(nameof(Pessoa)		, UltimoID+=4);
+		Emprestimo = new(nameof(Emprestimo)	, UltimoID+=4, Livro.Visualizar, Pessoa.Visualizar);
+	
 	}
 	
 }

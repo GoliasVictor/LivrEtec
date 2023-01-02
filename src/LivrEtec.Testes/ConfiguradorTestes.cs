@@ -13,10 +13,15 @@ public sealed class ConfiguradorTestes
 	{
 		return LoggerFactory.Create((lb) => {
 			lb.AddXUnit(output);
+			lb.SetMinimumLevel(LogLevel.Information);
             //lb.AddFilter((_, _, logLevel) => logLevel >= LogLevel.Information);
             lb.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
         });
-    } 
+    }
+    public ILogger<T> CreateLogger<T>(ITestOutputHelper output)
+    {
+        return CreateLoggerFactory(output).CreateLogger<T>();
+    }
     public ConfiguradorTestes()
 	{
         string? AppSettingsJsonPath =  Environment.GetEnvironmentVariable("APP_SETTINGS_JSON_PATH");

@@ -17,7 +17,7 @@ namespace LivrEtec.GIB.Servidor
         public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
 		{
             try {
-			    await _acervoService.Livros.RegistrarAsync(request!);
+			    await _acervoService.Livros.RegistrarAsync(request);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);
@@ -25,10 +25,10 @@ namespace LivrEtec.GIB.Servidor
             return new Empty();
 
 		}
-		public override async Task<RPC.Livro> Get(IdLivro request, ServerCallContext context)
+		public override async Task<RPC.Livro?> Get(IdLivro request, ServerCallContext context)
         {
             try{
-                return await _acervoService.Livros.GetAsync(request.Id) ?? null!;
+                return await _acervoService.Livros.GetAsync(request.Id);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);
@@ -48,12 +48,12 @@ namespace LivrEtec.GIB.Servidor
 
         public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
+            
             var Tags = request.Tags.Select((t) => (Tag)t);
             try{
-                return new EnumLivros() { 
-                    Livros = { 
-                        (await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags)).Select(l=> (RPC.Livro)l).ToArray()
-                    }
+				IEnumerable<Livro> Livros = await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags);
+				return new EnumLivros() { 
+                    Livros = { Livros.Select(l=> (RPC.Livro)l).ToArray() }
                 };
             }
             catch (Exception ex) {
@@ -64,7 +64,7 @@ namespace LivrEtec.GIB.Servidor
         public override async Task<Empty> Editar(RPC.Livro request, ServerCallContext context)
         {
             try{
-                await _acervoService.Livros.EditarAsync(request!);
+                await _acervoService.Livros.EditarAsync(request);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);

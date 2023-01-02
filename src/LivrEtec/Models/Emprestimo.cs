@@ -5,16 +5,32 @@ namespace LivrEtec
 {
 
      
-    public sealed class Emprestimo : IEmprestimo
+    public sealed class Emprestimo 
     {
         public Emprestimo(int id, Aluno aluno, Livro livro, DateTime dataEmprestimo)
         {
             Id = id;
-            Aluno = aluno;
+            Pessoa = aluno;
             Livro = livro;
             DataEmprestimo = dataEmprestimo;
         }
-
+        public Emprestimo Clone(){
+            return new Emprestimo(){
+                Id =  Id,
+                Livro = Livro,
+                Pessoa = Pessoa,
+                UsuarioCriador = UsuarioCriador,
+                Fechado = Fechado,
+                DataEmprestimo =  DataEmprestimo,
+                DataFechamento = DataFechamento,
+                FimDataEmprestimo = FimDataEmprestimo,
+                AtrasoJustificado = AtrasoJustificado,
+                Comentario =  Comentario,
+                UsuarioFechador = UsuarioFechador,
+                Devolvido = Devolvido,
+                ExplicacaoAtraso = ExplicacaoAtraso,
+            };
+        }
 		public Emprestimo() { }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,22 +39,27 @@ namespace LivrEtec
 
 
 		[Required]
-        public Aluno Aluno { get; set; } = null!;
+        public Pessoa Pessoa { get; set; } = null!;
 
         [Required]
         public Livro Livro { get; set; } = null!; 
 
         [Required]
-        public Usuario Usuario = null!;
+        public Usuario UsuarioCriador {get;set;} = null!;
+
+        public Usuario? UsuarioFechador {get;set;} = null!;
 
         [Required]
         public DateTime DataEmprestimo { get; set; }
-        public DateTime DataDevolucao { get; set; }
+        [Required]
         public DateTime FimDataEmprestimo { get; set; }
+        public DateTime? DataFechamento { get; set; }
         public string? Comentario { get; set; }
 
-        public bool AtrasoJustificado;
-        public string? ExplicaçãoAtraso;
+        public bool Fechado { get; set; }
+        public bool? Devolvido { get; set; }
+        public bool? AtrasoJustificado { get; set; }
+        public string? ExplicacaoAtraso {get;set;}
 
         
 
