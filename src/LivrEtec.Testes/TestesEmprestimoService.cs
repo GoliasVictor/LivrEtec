@@ -224,7 +224,7 @@ namespace LivrEtec.Testes
 			await emprestimoService.DevolverAsync(idEmprestimo, AtrasoJustificado:true, ExplicacaoAtraso);
             
             var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
-            Assert.NotNull(idEmprestimo);
+            Assert.NotNull(emprestimoAtual);
             AssertEmprestimoIgual(emprestimoEsperado,emprestimoAtual!);
 
         }
