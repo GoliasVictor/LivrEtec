@@ -1,0 +1,30 @@
+  Nome: LivrEtec
+  Tipo: Projeto
+  Descricao: Projeto LivrEtec
+  Linguagem: c#
+  ComandoAbrir: code .
+  SubProjetos:
+    - Nome: LivrEtec
+      Caminho: ./src/LivrEtec
+    
+    - Nome: GIB
+      Caminho: ./src/LivrEtec.GIB
+    
+    - Nome: GIB.Servidor
+      Caminho: ./src/LivrEtec.GIB.Servidor
+    
+    - Nome: Servidor
+      Caminho: ./src/LivrEtec.Servidor
+      Scripts:
+        gib-up: dotnet run --project ./src/LivrEtec.GIB.Servidor
+    
+    - Nome: Testes
+      Caminho: ./src/LivrEtec.Testes
+      
+  Scripts:
+    test: dotnet test ./src
+    test-remoto: dotnet test ./src --filter Category=Remoto
+    test-local: dotnet test ./src --filter Category=local
+    gib-up: dotnet run --project ./src/LivrEtec.GIB.Servidor
+    docker: sudo docker compose -f src/docker-compose.yml up --build --exit-code-from testes
+    
