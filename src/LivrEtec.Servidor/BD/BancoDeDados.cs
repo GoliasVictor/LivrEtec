@@ -17,6 +17,4 @@ public sealed class PacaContext : DbContext
 	public DbSet<Usuario> Usuarios { get; set; } = null!;
 	public DbSet<Cargo> Cargos { get; set; } = null!;
 	public DbSet<Permissao> Permissoes { get; set; } = null!;
-	ILoggerFactory? LoggerFactory { get; init; }
-	Action<DbContextOptionsBuilder>? _configurarAction;
 }
