@@ -1,6 +1,7 @@
 using LivrEtec; 
 using LivrEtec.GIB.Servidor; 
 using LivrEtec.Servidor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -13,12 +14,11 @@ builder.Services.AddGrpc();
 var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorGIB>();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
-builder.Services.AddDbContextFactory<PacaContext>(( _ )=>{
-
+builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
+    options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));
 });
 builder.Services.AddLogging();
-builder.Services.AddSingleton<IRelogio,RelogioSistema>();
-builder.Services.AddSingleton<IConfiguracao>(Config);
+builder.Services.AddSingleton<IRelogio,RelogioSistema>(); 
 builder.Services.AddTransient<PacaContext>();
 builder.Services.AddLogging(configure => {
     configure.AddConsole();

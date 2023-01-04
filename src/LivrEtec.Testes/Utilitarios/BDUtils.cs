@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
-public sealed class BDUtil : IDisposable
+public class BDUtil : IDisposable
 {
 	
 	public PacaContext CriarContexto(){
@@ -11,7 +11,6 @@ public sealed class BDUtil : IDisposable
 	}
 	public PacaContextFactory PacaContextFactory { get; private set; }
 
-	private ConfiguradorTestes _configuradorTestes;
 	public void SalvarDados()
     {
         ResetarBanco();
@@ -33,11 +32,10 @@ public sealed class BDUtil : IDisposable
 
     }
 	
-    public BDUtil(ConfiguradorTestes configuradorTestes,ILoggerFactory loggerFactory)
+    protected BDUtil(DbContextOptions<PacaContext> contextOptions )
 	{
 
-		_configuradorTestes = configuradorTestes;	
-        PacaContextFactory = new PacaContextFactory(_configuradorTestes.Config, (_) => { }, loggerFactory);
+        PacaContextFactory = new PacaContextFactory(contextOptions);
     }
 
     public Livro[] Livros { get; set; } =  new Livro[0];
@@ -71,11 +69,38 @@ public sealed class BDUtil : IDisposable
 	}
 	public void ResetarBanco()
 	{
-		using var BD = CriarContexto();
-		BD.Database.EnsureDeleted();
+		using var BD = CriarContexto(); 
 		BD.Database.EnsureCreated();  
+
+		BD.Livros.RemoveRange(BD.Livros.AsQueryable());
+		BD.Autores.RemoveRange(BD.Autores.AsQueryable());
+		BD.Tags.RemoveRange(BD.Tags.AsQueryable());
+		BD.Pessoas.RemoveRange(BD.Pessoas.AsQueryable());
+		BD.Emprestimos.RemoveRange(BD.Emprestimos.AsQueryable());
+		BD.Usuarios.RemoveRange(BD.Usuarios.AsQueryable());
+		BD.Cargos.RemoveRange(BD.Cargos.AsQueryable());
+		BD.Permissoes.RemoveRange(BD.Permissoes.AsQueryable());
+
+		BD.SaveChanges();
 	}
 	public void Dispose()
 	{
 	}
+}
+
+public sealed class BDUtilMySQl : BDUtil {
+	public BDUtilMySQl(string strConexaoMySQL, ILoggerFactory loggerFactory) 
+		: base(new DbContextOptionsBuilder<PacaContext>()
+				.UseLoggerFactory(loggerFactory)
+				.UseMySql(strConexaoMySQL, ServerVersion.AutoDetect(strConexaoMySQL))
+				.Options
+		){}
+}
+public sealed class BDUtilSqlLite : BDUtil {
+	public BDUtilSqlLite(ILoggerFactory loggerFactory) 
+		: base( new DbContextOptionsBuilder<PacaContext>()
+				.UseLoggerFactory(loggerFactory)
+				.UseSqlite($"DataSource=Contatos.db")
+				.Options
+		){}
 }

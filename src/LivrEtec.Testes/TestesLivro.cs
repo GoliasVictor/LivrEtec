@@ -1,15 +1,14 @@
 using LivrEtec.Servidor;
-using LivrEtec.GIB;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
-using Xunit.Abstractions; 
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
 public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
 {
-	protected abstract T RepLivros { get; }
+	protected abstract T RepLivros { get;init;}
 	protected readonly BDUtil BDU; 
 
 	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){
@@ -23,9 +22,9 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
         AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
         AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
     }
-	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output)
+	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output, BDUtil bdu)
 	{
-		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU = bdu;
 		BDU.Autores = new Autor[]{
 				new Autor(1, "J. R. R. Tolkien"),
 				new Autor(2, "Friedrich Engels"),

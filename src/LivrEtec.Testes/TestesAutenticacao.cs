@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace LivrEtec.Testes;
+namespace LivrEtec.Testes.Local;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
 public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
@@ -15,7 +15,7 @@ public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
 	public TestesAutenticacao(ConfiguradorTestes configurador, ITestOutputHelper output)
 	{
 		
-		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output));
 		var Cargo = new Cargo(1, "cargo",new List<Permissao>());
 		Senhas 	= new[]{
 			(1, "Senha"			,"be6b9084a5dcdb09af8f433557a2119c"),

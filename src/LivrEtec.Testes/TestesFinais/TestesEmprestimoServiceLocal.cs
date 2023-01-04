@@ -1,16 +1,19 @@
-
-using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
-
-namespace LivrEtec.Testes;
+namespace LivrEtec.Testes.Local;
 
 [Trait("Category", "Local")]
-public class TestesEmprestimoServiceLocal : TestesEmprestimoService<EmprestimoService>, IDisposable 
+public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<EmprestimoService>, IDisposable 
 {
 	readonly PacaContext BD;
 	protected override EmprestimoService emprestimoService {get; init; }
-            
-	public TestesEmprestimoServiceLocal(ConfiguradorTestes configurador, ITestOutputHelper output) : base(configurador, output, new RelogioStub(new DateTime(2022,1,1)))
+	public TestesEmprestimoServiceLocal(ConfiguradorTestes configurador, ITestOutputHelper output) 
+	: base ( 
+		
+		configurador,
+		output,
+		new RelogioStub(new DateTime(2022,1,1)),
+		new BDUtilSqlLite(configurador.CreateLoggerFactory(output))
+	)
 	{
 		BD = BDU.CriarContexto();
 		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), relogio);
