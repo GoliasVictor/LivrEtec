@@ -87,7 +87,7 @@ public sealed class BDUtilMySQl : BDUtil {
 		){}
 }
 public sealed class BDUtilSqlLite : BDUtil {
-	public BDUtilSqlLite(ILoggerFactory loggerFactory,string nomeTeste) 
+	public BDUtilSqlLite(ILoggerFactory loggerFactory) 
 		: base( new DbContextOptionsBuilder<PacaContext>()
 				.UseLoggerFactory(loggerFactory)
 				.UseSqlite($"DataSource=Contatos.db")

@@ -7,9 +7,5 @@ GIB:
 servidor: 
   - any: 
     - src/LivrEtec.Servidor/*
-    - src/LivrEtec.GIB.Servidor/*
-API: 
-  - any:
-    - src/LivrEtec.GIB.Servidor/*
-
+    - src/LivrEtec.GIB.Servidor/* 
     

@@ -36,62 +36,6 @@
 				"${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
 			],
 			"problemMatcher": "$msCompile"
-		},
-		{
-			"type": "docker-build",
-			"label": "docker-build: debug",
-			"dependsOn": [
-				"build"
-			],
-			"dockerBuild": {
-				"tag": "livretec:dev",
-				"target": "base",
-				"dockerfile": "${workspaceFolder}/src/LivrEtec.Testes/Dockerfile",
-				"context": "${workspaceFolder}",
-				"pull": true
-			},
-			"netCore": {
-				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
-			}
-		},
-		{
-			"type": "docker-build",
-			"label": "docker-build: release",
-			"dependsOn": [
-				"build"
-			],
-			"dockerBuild": {
-				"tag": "livretec:latest",
-				"dockerfile": "${workspaceFolder}/src/LivrEtec.Testes/Dockerfile",
-				"context": "${workspaceFolder}",
-				"pull": true
-			},
-			"netCore": {
-				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
-			}
-		},
-		{
-			"type": "docker-run",
-			"label": "docker-run: debug",
-			"dependsOn": [
-				"docker-build: debug"
-			],
-			"dockerRun": {},
-			"netCore": {
-				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj",
-				"enableDebugging": true
-			}
-		},
-		{
-			"type": "docker-run",
-			"label": "docker-run: release",
-			"dependsOn": [
-				"docker-build: release"
-			],
-			"dockerRun": {},
-			"netCore": {
-				"appProject": "${workspaceFolder}/src/LivrEtec.Testes/LivrEtec.Testes.csproj"
-			}
-		}
+		}, 
 	]
 }

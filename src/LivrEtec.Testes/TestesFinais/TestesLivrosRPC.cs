@@ -1,16 +1,13 @@
-﻿
-using Grpc.Net.Client;
-using Microsoft.Extensions.Logging;
 using LivrEtec.GIB;
 using Xunit.Abstractions;
+using Grpc.Net.Client;
 
-namespace LivrEtec.Testes;
+namespace LivrEtec.Testes.Remoto;
 
 [Trait("Category", "Remoto")]
-public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
+public sealed class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 {
-	RepLivroRPC repLivrosRPC;
-	protected override RepLivroRPC RepLivros => repLivrosRPC;
+	protected override RepLivroRPC RepLivros {get;init;}
     public TestesLivrosRPC(ConfiguradorTestes configurador, ITestOutputHelper output) 
 		: base( 
 			configurador, 
@@ -19,6 +16,6 @@ public class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 		)
 	{
 		GrpcChannel channel = gRPCUtil.GetGrpChannel(configurador.Config.UrlGIBAPI);
-        repLivrosRPC = new RepLivroRPC(output.ToLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
+        RepLivros = new RepLivroRPC(output.ToLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
     }
 }

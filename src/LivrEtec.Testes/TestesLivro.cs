@@ -1,15 +1,14 @@
 using LivrEtec.Servidor;
-using LivrEtec.GIB;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
-using Xunit.Abstractions; 
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
 public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
 {
-	protected abstract T RepLivros { get; }
+	protected abstract T RepLivros { get;init;}
 	protected readonly BDUtil BDU; 
 
 	public static void AssertEhIgual<K>( IEnumerable<K> A, IEnumerable<K> B){

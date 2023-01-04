@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace LivrEtec.Testes;
+namespace LivrEtec.Testes.Local;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
 public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable 
@@ -14,7 +14,7 @@ public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable
 	public TestesAutorizacao(ConfiguradorTestes configurador,ITestOutputHelper output ) 
 	{ 	
 	
-		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output), nameof(TestesLivrosLocal));
+		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output));
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
 		BDU.BDPermissoes =  Permissoes.TodasPermissoes;
