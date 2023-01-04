@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
@@ -23,7 +24,7 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 	}
 	public TestesIdentidade(ConfiguradorTestes configurador, ITestOutputHelper output)
 	{
-		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output), nameof(TestesIdentidade));
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
 		Senhas = new[]{

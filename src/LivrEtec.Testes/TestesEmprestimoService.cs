@@ -1,4 +1,5 @@
-﻿using Xunit.Abstractions;  
+﻿using Microsoft.EntityFrameworkCore;
+using Xunit.Abstractions;  
 namespace LivrEtec.Testes
 {
 
@@ -16,8 +17,9 @@ namespace LivrEtec.Testes
         protected const int ID_EMPRESTIMO_ABERTO = 2;
 		protected const int ID_EMPRESTIMO_FECHADO = 1;
         protected readonly Usuario usuarioTeste;
-		public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output, IRelogio relogio)
+		public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output, IRelogio relogio, BDUtil  bdu)
         {
+            BDU = bdu;
             this.relogio = relogio;
 			Cargo cargoTeste = new Cargo()
 			{
@@ -33,19 +35,16 @@ namespace LivrEtec.Testes
 				Senha = "senha",
 				Cargo = cargoTeste
 			};
-        
-            BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output))
-            {
-                Autores = new Autor[]{
-                    new Autor(1, "J. R. R. Tolkien"),
-                    new Autor(2, "Friedrich Engels")
-                },
+            
+            BDU.Autores = new Autor[]{
+                new Autor(1, "J. R. R. Tolkien"),
+                new Autor(2, "Friedrich Engels")
+            };
 
-                Tags = new Tag[]{
-                    new Tag(1,"Aventura"),
-                    new Tag(2,"Fantasia"),
-                    new Tag(3,"Politica")
-                }
+            BDU.Tags = new Tag[]{
+                new Tag(1,"Aventura"),
+                new Tag(2,"Fantasia"),
+                new Tag(3,"Politica")
             };
             BDU.Cargos = new []{ usuarioTeste.Cargo };
             foreach (var perm in Permissoes.TodasPermissoes)
@@ -123,7 +122,6 @@ namespace LivrEtec.Testes
                     ExplicacaoAtraso= null,
                 }
             };
-
             BDU.SalvarDados();
             var BD = BDU.CriarContexto();
         }

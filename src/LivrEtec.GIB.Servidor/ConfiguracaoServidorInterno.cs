@@ -1,5 +1,5 @@
 ﻿namespace LivrEtec.GIB.Servidor;
-class ConfiguracaoServidorGIB : IConfiguracao
+class ConfiguracaoServidorGIB 
 {
     public string? StrConexaoMySQL { get; set; }
 }

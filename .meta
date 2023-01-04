@@ -22,9 +22,9 @@
       Caminho: ./src/LivrEtec.Testes
       
   Scripts:
-    test: dotnet test ./src
-    test-remoto: dotnet test ./src --filter Category=Remoto
-    test-local: dotnet test ./src --filter Category=local
-    gib-up: dotnet run --project ./src/LivrEtec.GIB.Servidor
+    test:        dotnet test ./src  --logger "console;verbosity=normal"
+    test-remoto: dotnet test ./src --filter Category=Remoto  --logger "console;verbosity=normal"
+    test-local:  dotnet test ./src --filter Category=local  --logger "console;verbosity=normal"
+    gib-up:      dotnet run --project ./src/LivrEtec.GIB.Servidor
     docker: sudo docker compose -f src/docker-compose.yml up --build --exit-code-from testes
     

@@ -23,9 +23,9 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
         AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
         AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
     }
-	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output)
+	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output, BDUtil bdu)
 	{
-		BDU = new BDUtil(configurador, configurador.CreateLoggerFactory(output));
+		BDU = bdu;
 		BDU.Autores = new Autor[]{
 				new Autor(1, "J. R. R. Tolkien"),
 				new Autor(2, "Friedrich Engels"),

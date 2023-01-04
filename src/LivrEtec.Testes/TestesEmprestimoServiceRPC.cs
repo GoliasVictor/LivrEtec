@@ -10,7 +10,13 @@ namespace LivrEtec.Testes;
 public class TestesEmprestimoServiceRPC : TestesEmprestimoService<EmprestimoServiceRPC> 
 {
 	protected override EmprestimoServiceRPC emprestimoService {get; init; }
-	public TestesEmprestimoServiceRPC(ConfiguradorTestes configurador, ITestOutputHelper output) : base(configurador, output, new RelogioSistema())
+	public TestesEmprestimoServiceRPC(ConfiguradorTestes configurador, ITestOutputHelper output) 
+		: base(
+			configurador,
+			output,
+			new RelogioSistema(),
+			new BDUtilMySQl(configurador.Config.StrConexaoMySQL, configurador.CreateLoggerFactory(output))
+		)
 	{
 		    string Endereco = configurador.Config.UrlGIBAPI 
             ?? throw new Exception("Endereço da api interna do GIB indefinido");

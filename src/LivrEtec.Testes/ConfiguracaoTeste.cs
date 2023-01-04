@@ -1,8 +1,14 @@
 namespace LivrEtec.Testes;
 
-public sealed class ConfiguracaoTeste : IConfiguracao
+public sealed class ConfiguracaoTeste
 {
-	public string? UrlGIBAPI { get; set; }
-	public string? StrConexaoMySQL { get; set; }
+	public ConfiguracaoTeste(string urlGIBAPI, string strConexaoMySQL)
+	{
+		UrlGIBAPI = urlGIBAPI;
+		StrConexaoMySQL = strConexaoMySQL;
+	}
+
+	public string UrlGIBAPI { get; set; }
+	public string StrConexaoMySQL { get; set; }
 	
 }

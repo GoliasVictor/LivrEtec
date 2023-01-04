@@ -10,7 +10,12 @@ public class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 	readonly AcervoService acervoService;
 	readonly PacaContext BD;
 	protected override  RepLivros RepLivros => (RepLivros)acervoService.Livros;
-	public TestesLivrosLocal(ConfiguradorTestes configurador, ITestOutputHelper output) : base(configurador, output)
+	public TestesLivrosLocal(ConfiguradorTestes configurador, ITestOutputHelper output) 
+	: base(
+		configurador, 
+		output, 
+		new BDUtilSqlLite(configurador.CreateLoggerFactory(output), nameof(TestesLivrosLocal))
+	)
 	{
 		BD = BDU.CriarContexto();
 		acervoService = new AcervoService(BDU.CriarContexto(), configurador.CreateLoggerFactory(output).CreateLogger<AcervoService>(), new RelogioStub(new DateTime(2000,1,1)));
