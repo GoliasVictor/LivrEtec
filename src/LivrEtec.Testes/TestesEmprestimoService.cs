@@ -151,7 +151,6 @@ public abstract class TestesEmprestimoService<T> : IClassFixture<ConfiguradorTes
 		const int idPessoa = ID_ALUNO;
 		var emprestimoEsperado = new Emprestimo()
 		{
-			Id = 3,
 			Pessoa = BDU.gPessoa(idPessoa),
 			Livro = BDU.gLivro(ID_LIVRO_DISPONIVEL),
 			UsuarioCriador = BDU.gUsuario(ID_USUARIO_TESTE),
@@ -165,6 +164,8 @@ public abstract class TestesEmprestimoService<T> : IClassFixture<ConfiguradorTes
 		};
 
 		var idEmprestimo = await emprestimoService.AbrirAsync(idPessoa, ID_LIVRO_DISPONIVEL);
+		
+		emprestimoEsperado.Id = idEmprestimo;
 		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);

@@ -69,9 +69,19 @@ public class BDUtil : IDisposable
 	}
 	public void ResetarBanco()
 	{
-		using var BD = CriarContexto();
-		BD.Database.EnsureDeleted();
+		using var BD = CriarContexto(); 
 		BD.Database.EnsureCreated();  
+
+		BD.Livros.RemoveRange(BD.Livros.AsQueryable());
+		BD.Autores.RemoveRange(BD.Autores.AsQueryable());
+		BD.Tags.RemoveRange(BD.Tags.AsQueryable());
+		BD.Pessoas.RemoveRange(BD.Pessoas.AsQueryable());
+		BD.Emprestimos.RemoveRange(BD.Emprestimos.AsQueryable());
+		BD.Usuarios.RemoveRange(BD.Usuarios.AsQueryable());
+		BD.Cargos.RemoveRange(BD.Cargos.AsQueryable());
+		BD.Permissoes.RemoveRange(BD.Permissoes.AsQueryable());
+
+		BD.SaveChanges();
 	}
 	public void Dispose()
 	{
