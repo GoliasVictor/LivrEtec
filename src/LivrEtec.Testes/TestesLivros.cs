@@ -211,7 +211,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado=  await RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag?.Select(t=> BDU.gTag(t)));
+		var resulutado=  await RepLivros.BuscarAsync(textoBusca, textoBusca, arrTag);
 		AssertEhIgual(idExperados,  resulutado.Select((i)=> i.Id));
 	}	
 	

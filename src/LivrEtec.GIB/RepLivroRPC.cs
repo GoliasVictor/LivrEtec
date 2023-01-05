@@ -69,14 +69,14 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
+        public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags)
         {
             nome ??= "";
             nomeAutor ??= "";
-            tags ??= new List<Tag>();
+            idTags ??= new List<int>();
             EnumLivros enumLivros = default!;
             try{
-			    enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, Tags = { tags?.Select(t => (RPC::Tag)t) } });
+			    enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex);
