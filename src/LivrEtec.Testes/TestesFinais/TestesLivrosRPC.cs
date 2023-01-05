@@ -8,14 +8,13 @@ namespace LivrEtec.Testes.Remoto;
 public sealed class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 {
 	protected override RepLivroRPC RepLivros {get;init;}
-    public TestesLivrosRPC(ConfiguradorTestes configurador, ITestOutputHelper output) 
-		: base( 
-			configurador, 
+    public TestesLivrosRPC(ITestOutputHelper output) 
+		: base (  
 			output,
-			new BDUtilMySQl(configurador.Config.StrConexaoMySQL, configurador.CreateLoggerFactory(output))
+			new BDUtilMySQl(Configuracao.StrConexaoMySQL, LogUtils.CreateLoggerFactory(output))
 		)
 	{
-		GrpcChannel channel = gRPCUtil.GetGrpChannel(configurador.Config.UrlGIBAPI);
+		GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI);
         RepLivros = new RepLivroRPC(new GIB.RPC.Livros.LivrosClient(channel),output.ToLogger<RepLivroRPC>());
     }
 }

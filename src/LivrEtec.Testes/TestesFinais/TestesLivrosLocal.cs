@@ -8,15 +8,14 @@ public sealed class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 {
 	readonly PacaContext BD;
 	protected override  RepLivros RepLivros {get; init; }
-	public TestesLivrosLocal(ConfiguradorTestes configurador, ITestOutputHelper output) 
+	public TestesLivrosLocal(ITestOutputHelper output) 
 	: base(
-		configurador, 
 		output, 
-		new BDUtilSqlLite(configurador.CreateLoggerFactory(output))
+		new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output))
 	)
 	{
 		BD = BDU.CriarContexto(); 
-		RepLivros = new RepLivros(BD, configurador.CreateLogger<RepLivros>(output)) ;
+		RepLivros = new RepLivros(BD, LogUtils.CreateLogger<RepLivros>(output)) ;
 	}
 
 	public void Dispose()

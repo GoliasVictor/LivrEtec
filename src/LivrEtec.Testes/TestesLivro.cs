@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
+public abstract class TestesLivro<T> where T : IRepLivros  
 {
 	protected abstract T RepLivros { get;init;}
 	protected readonly BDUtil BDU; 
@@ -23,7 +23,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
         AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
         AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
     }
-	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output, BDUtil bdu)
+	public TestesLivro(ITestOutputHelper output, BDUtil bdu)
 	{
 		BDU = bdu;
 		BDU.Autores = new Autor[]{

@@ -4,7 +4,7 @@ using Xunit.Abstractions;
 namespace LivrEtec.Testes.Local;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
-public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
+public class TestesAutenticacao : IDisposable
 {
 	readonly BDUtil BDU;
 	readonly PacaContext BD;
@@ -12,10 +12,10 @@ public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
 	(int Id, string Senha, string Hash)[] Senhas; 
 	string gSenha(int id) => Senhas.First((s)=> s.Id == id).Senha; 
 	string gHash(int id) => Senhas.First((h)=> h.Id == id).Hash; 
-	public TestesAutenticacao(ConfiguradorTestes configurador, ITestOutputHelper output)
+	public TestesAutenticacao(ITestOutputHelper output)
 	{
-		
-		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output));
+		var loggerFactory = LogUtils.CreateLoggerFactory(output);
+		BDU = new BDUtilSqlLite(loggerFactory);
 		var Cargo = new Cargo(1, "cargo",new List<Permissao>());
 		Senhas 	= new[]{
 			(1, "Senha"			,"be6b9084a5dcdb09af8f433557a2119c"),
@@ -29,10 +29,11 @@ public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		BD = BDU.CriarContexto();
-		var repUsuarios =  new RepUsuarios(BD, configurador.CreateLogger<RepUsuarios>(output));
+		
+		var repUsuarios =  new RepUsuarios(BD, LogUtils.CreateLogger<RepUsuarios>(output));
 		AutenticacaoService = new AutenticacaoService(
 			repUsuarios, 
-			configurador.CreateLogger<AutenticacaoService>(output));
+			LogUtils.CreateLogger<AutenticacaoService>(output));
 	}
 	[Theory] 
 	[InlineData(1)]

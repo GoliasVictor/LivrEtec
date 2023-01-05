@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 namespace LivrEtec.Testes.Local;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
-public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
+public class TestesIdentidade :  IDisposable
 {
 	readonly BDUtil BDU;
 	readonly IIdentidadeService Identidade;
@@ -22,9 +22,9 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 	{
 		Assert.Equal(A.OrderBy(a=>a),B.OrderBy(b=>b));
 	}
-	public TestesIdentidade(ConfiguradorTestes configurador, ITestOutputHelper output)
+	public TestesIdentidade(ITestOutputHelper output)
 	{
-		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output));
+		BDU = new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output));
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
 		Senhas = new[]{
@@ -41,12 +41,13 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		var BD = BDU.CriarContexto();
-		var repUsuarios =  new RepUsuarios(BD, configurador.CreateLogger<RepUsuarios>(output));
+		var loggerFactory = LogUtils.CreateLoggerFactory(output);
+		var repUsuarios =  new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
 		Identidade = new IdentidadeService(
 			repUsuarios,
-			new AutorizacaoService(repUsuarios, configurador.CreateLogger<AutorizacaoService>(output)),
-			new AutenticacaoService(repUsuarios, configurador.CreateLogger<AutenticacaoService>(output)),
-            output.ToLogger<IdentidadeService>()
+			new AutorizacaoService(repUsuarios, loggerFactory.CreateLogger<AutorizacaoService>()),
+			new AutenticacaoService(repUsuarios, loggerFactory.CreateLogger<AutenticacaoService>()),
+            loggerFactory.CreateLogger<IdentidadeService>()
 		);
 	}
 
