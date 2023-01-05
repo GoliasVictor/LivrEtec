@@ -8,12 +8,12 @@ namespace LivrEtec.GIB
 {
     public sealed class RepLivroRPC:  IRepLivros
     {
-        private readonly ILogger<RepLivroRPC> _logger;
-        public readonly RPC::Livros.LivrosClient LivrosClientRPC;
-        public RepLivroRPC(ILogger<RepLivroRPC> logger, RPC::Livros.LivrosClient livrosClientRPC)
+        readonly ILogger<RepLivroRPC> logger;
+        readonly RPC::Livros.LivrosClient livrosClientRPC;
+        public RepLivroRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<RepLivroRPC> logger)
         {
-            LivrosClientRPC = livrosClientRPC;
-            _logger = logger;
+            this.livrosClientRPC = livrosClientRPC;
+            this.logger = logger;
         }
 
         public async Task EditarAsync(Livro livro)
@@ -24,7 +24,7 @@ namespace LivrEtec.GIB
 
             livro.Tags ??= new();
             try{
-                await LivrosClientRPC.EditarAsync(livro);
+                await livrosClientRPC.EditarAsync(livro);
             }
             catch(RpcException ex){
                throw ManipuladorException.RpcExceptionToException(ex);
@@ -34,7 +34,7 @@ namespace LivrEtec.GIB
         public async Task<Livro?> GetAsync(int id)
         {
             try{
-                return await LivrosClientRPC.GetAsync(new IdLivro() { Id = id });
+                return await livrosClientRPC.GetAsync(new IdLivro() { Id = id });
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex); 
@@ -52,7 +52,7 @@ namespace LivrEtec.GIB
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
             try{
-                await LivrosClientRPC.RegistrarAsync(livro);
+                await livrosClientRPC.RegistrarAsync(livro);
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex);
@@ -64,7 +64,7 @@ namespace LivrEtec.GIB
 		public async Task RemoverAsync(int id)
         {
             try{
-                await LivrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
+                await livrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex);
@@ -77,7 +77,7 @@ namespace LivrEtec.GIB
             nomeAutor ??= "";
             idTags ??= new List<int>();
             try{
-			    ListaLivros listaLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
+			    ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
 			    return listaLivros.Livros.Select(l=> (Livro)l!);
             }
             catch(RpcException ex){

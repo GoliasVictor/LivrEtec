@@ -16,6 +16,6 @@ public sealed class TestesLivrosRPC: TestesLivro<RepLivroRPC>
 		)
 	{
 		GrpcChannel channel = gRPCUtil.GetGrpChannel(configurador.Config.UrlGIBAPI);
-        RepLivros = new RepLivroRPC(output.ToLogger<RepLivroRPC>(),new GIB.RPC.Livros.LivrosClient(channel));
+        RepLivros = new RepLivroRPC(new GIB.RPC.Livros.LivrosClient(channel),output.ToLogger<RepLivroRPC>());
     }
 }

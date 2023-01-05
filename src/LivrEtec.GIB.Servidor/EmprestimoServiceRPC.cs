@@ -7,9 +7,9 @@ namespace LivrEtec.GIB.Servidor;
 
 public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 {
-	private readonly ILogger<EmprestimoServiceRPC> logger;
-	private readonly IEmprestimoService emprestimoService;
-	private readonly IdentidadeServiceRPC? identidadeService;
+	readonly ILogger<EmprestimoServiceRPC> logger;
+	readonly IEmprestimoService emprestimoService;
+	readonly IdentidadeServiceRPC? identidadeService;
 	public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
 	{
 		this.logger = logger;

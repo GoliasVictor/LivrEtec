@@ -5,11 +5,11 @@ namespace LivrEtec.GIB.Servidor
 {
     public sealed class LivroServiceRPC : Livros.LivrosBase
     {
-        private readonly ILogger<LivroServiceRPC> _logger;
-        private readonly IRepLivros repLivros;
+        readonly ILogger<LivroServiceRPC> logger;
+        readonly IRepLivros repLivros;
         public LivroServiceRPC(ILogger<LivroServiceRPC> logger, IRepLivros repLivros)
         {
-            _logger = logger;
+            this.logger = logger;
             this.repLivros = repLivros;
         }
 

@@ -11,11 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
 builder.Services.AddGrpc();
 
-var Config = builder.Configuration.GetSection("ConfiguracaoInterna").Get<ConfiguracaoServidorGIB>();
+
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
-    options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));
+    var strConexao = builder.Configuration.GetConnectionString("MySql");
+    options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
 });
 builder.Services.AddSingleton<IRelogio,RelogioSistema>(); 
 builder.Services.AddScoped<PacaContext>();
