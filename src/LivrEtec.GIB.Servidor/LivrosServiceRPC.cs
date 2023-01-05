@@ -46,12 +46,12 @@ namespace LivrEtec.GIB.Servidor
             return new Empty();
         }
 
-        public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)
+        public override async Task<ListaLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
             
             try{
 				IEnumerable<Livro> Livros = await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, request.IdTags);
-				return new EnumLivros() { 
+				return new ListaLivros() { 
                     Livros = { Livros.Select(l=> (RPC.Livro)l).ToArray() }
                 };
             }

@@ -76,14 +76,13 @@ namespace LivrEtec.GIB
             nome ??= "";
             nomeAutor ??= "";
             idTags ??= new List<int>();
-            EnumLivros enumLivros = default!;
             try{
-			    enumLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
+			    ListaLivros listaLivros = await LivrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
+			    return listaLivros.Livros.Select(l=> (Livro)l!);
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
-			return enumLivros.Livros.Select(l=> (Livro)l!);
         }
 
 	}
