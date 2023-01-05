@@ -13,7 +13,7 @@ namespace LivrEtec
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required, Key]
+        [Key, Required, InteiroPositivo(nameof(Id))]
         public int Id { get; set; }
 
         [Required]
@@ -49,5 +49,6 @@ namespace LivrEtec
         {
             return !(left == right);
         }
+
     }
 }

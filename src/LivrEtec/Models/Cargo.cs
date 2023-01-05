@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LivrEtec
 {
-    public sealed class Cargo :  IComparable<Cargo>
+	public sealed class Cargo :  IComparable<Cargo>
     {
 		public Cargo()
 		{
 		}
-
 		public Cargo(int id, string nome, List<Permissao> permissoes)
 		{
 			Id = id;
@@ -17,7 +16,7 @@ namespace LivrEtec
 		}
 
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required, Key]
+        [Key, Required, InteiroPositivo(nameof(Id))]
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; } = null!;

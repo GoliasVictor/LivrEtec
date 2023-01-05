@@ -42,11 +42,13 @@ namespace LivrEtec.GIB
         }
 
         public async Task RegistrarAsync(Livro livro)
-        {
-            _ = livro ?? throw new ArgumentNullException(nameof(livro));
-            livro.Tags ??= new();
-            livro.Autores ??= new();
-            livro.Descricao = "";
+        { 
+            if(livro is not null){
+                livro.Tags ??= new();
+                livro.Autores ??= new();    
+            }
+            Validador.ErroSeInvalido(livro);
+            RPC::Livro livroRPC = livro;
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
             try{

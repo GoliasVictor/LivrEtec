@@ -6,7 +6,7 @@ namespace LivrEtec
     public sealed class Tag : IComparable<Tag>, IEquatable<Tag?>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required, Key]
+        [Key, Required, InteiroPositivo(nameof(Id))]
         public int Id { get; set; }
         [Required]
         public string? Nome { get; set; }

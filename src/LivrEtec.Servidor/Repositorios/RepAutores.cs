@@ -10,6 +10,7 @@ public sealed class RepAutores : Repositorio, IRepAutores
 
 	public async Task RegistrarAsync(Autor autor)
 	{
+		Validador.ErroSeInvalido(autor);
 		BD.Autores.Add(autor);
 		await BD.SaveChangesAsync();
 		Logger?.LogInformation($"Autor @{autor.Id} registrado");
@@ -17,7 +18,6 @@ public sealed class RepAutores : Repositorio, IRepAutores
 
 	public IAsyncEnumerable<Autor> TodosAsync()
 	{
-
 		var Autores = BD.Autores.AsAsyncEnumerable();
 		Logger?.LogInformation("Todos Autores Coletados");
 		return Autores;
