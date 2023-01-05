@@ -1,11 +1,10 @@
-núcleo: src/LivrEtec/*
-teste: src/LivrEtec.Testes/*
+núcleo: src/LivrEtec/**/*
+teste: src/LivrEtec.Testes/**/*
 GIB:
-  - any:
-      - src/LivrEtec.GIB/*
-      - src/LivrEtec.GIB.Servidor/*
+  - src/LivrEtec.GIB/**/*
+  - src/LivrEtec.GIB.Servidor/**/*
 servidor: 
-  - any: 
-    - src/LivrEtec.Servidor/*
-    - src/LivrEtec.GIB.Servidor/* 
+  - src/LivrEtec.Servidor/**/*
+  - src/LivrEtec.GIB.Servidor/**/* 
+
     
