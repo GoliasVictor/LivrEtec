@@ -42,8 +42,8 @@ public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		var BD = BDU.CriarContexto(); 
-		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), new RelogioSistema());
-		AutorizacaoService =  new AutorizacaoService(acervoService.Usuarios, configurador.CreateLogger<AutorizacaoService>(output));
+		var repUsuarios =  new RepUsuarios(BD, configurador.CreateLogger<RepUsuarios>(output));
+		AutorizacaoService =  new AutorizacaoService(repUsuarios, configurador.CreateLogger<AutorizacaoService>(output));
 	}
 	[Theory]
 	[InlineData(IdAdministrador)]

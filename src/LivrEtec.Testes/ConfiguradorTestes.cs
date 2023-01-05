@@ -11,13 +11,16 @@ public sealed class ConfiguradorTestes
 	public ConfiguracaoTeste Config;
     public ILoggerFactory CreateLoggerFactory(ITestOutputHelper output)
 	{
-		return LoggerFactory.Create((lb) => {
+		return LoggerFactory.Create(CriarConfiguradorLogging(output));
+    }
+	public Action<ILoggingBuilder> CriarConfiguradorLogging(ITestOutputHelper output){
+		return (lb) => {
 			lb.AddXUnit(output);
 			lb.SetMinimumLevel(LogLevel.Information);
             //lb.AddFilter((_, _, logLevel) => logLevel >= LogLevel.Information);
             lb.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
-        });
-    }
+        };
+	}
     public ILogger<T> CreateLogger<T>(ITestOutputHelper output)
     {
         return CreateLoggerFactory(output).CreateLogger<T>();

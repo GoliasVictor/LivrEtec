@@ -1,9 +1,11 @@
+using Microsoft.Extensions.Logging;
+
 namespace LivrEtec.Servidor
 {
 	public class RepUsuarios : Repositorio, IRepUsuarios
 	{
 
-		public RepUsuarios(AcervoService acervoService) : base(acervoService)
+		public RepUsuarios(PacaContext BD, ILogger<RepUsuarios> logger) : base(BD, logger)
 		{
 		}
 

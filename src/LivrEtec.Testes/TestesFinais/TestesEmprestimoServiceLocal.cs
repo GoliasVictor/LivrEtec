@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Xunit.Abstractions;
 namespace LivrEtec.Testes.Local;
 
@@ -16,10 +17,13 @@ public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<Empre
 	)
 	{
 		BD = BDU.CriarContexto();
-		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), relogio);
 		var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
+
+		var repUsuarios = new RepUsuarios(BD, configurador.CreateLogger<RepUsuarios>(output));
 		emprestimoService = new EmprestimoService(
-			acervoService,
+			new RepEmprestimos(BD,repUsuarios, configurador.CreateLogger<RepEmprestimos>(output), relogio),
+			new RepPessoas(BD, configurador.CreateLogger<RepPessoas>(output)),
+			new RepLivros(BD, configurador.CreateLogger<RepLivros>(output)),
 			identidadeService,
 			relogio,
 			configurador.CreateLogger<EmprestimoService>(output)

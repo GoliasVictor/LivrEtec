@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor
 {
-    internal class RepPessoas : Repositorio, IRepPessoas
+    public class RepPessoas : Repositorio, IRepPessoas
     {
-        public RepPessoas(AcervoService acervoService) : base(acervoService)
+        public RepPessoas(PacaContext BD, ILogger<RepPessoas> logger) : base(BD, logger)
         {
 
         }

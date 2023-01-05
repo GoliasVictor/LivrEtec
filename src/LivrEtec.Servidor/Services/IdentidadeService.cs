@@ -6,15 +6,15 @@ namespace LivrEtec.Servidor;
 public class IdentidadeService : IIdentidadeService
 {
 	ILogger<IdentidadeService>? logger;
-	AcervoService acervoService;
+	IRepUsuarios repUsuarios;
 	public IdentidadeService( 
-		AcervoService acervoService,
+		IRepUsuarios repUsuarios,
 		IAutorizacaoService autorizacaoService,
 		IAutenticacaoService autenticacaoService,
 	 	ILogger<IdentidadeService>? logger
 	)
 	{
-		this.acervoService = acervoService;
+		this.repUsuarios = repUsuarios;
 		this.logger = logger;
 		AutorizacaoService = autorizacaoService;
 		AutenticacaoService = autenticacaoService;
@@ -27,7 +27,7 @@ public class IdentidadeService : IIdentidadeService
 
 	public async Task DefinirUsuarioAsync(int idUsuario)
 	{
-		if (false == await acervoService.Usuarios.ExisteAsync(idUsuario))
+		if (false == await repUsuarios.ExisteAsync(idUsuario))
 			throw new ArgumentException("Usuario não existe");
 		EstaAutenticado = false;
 		IdUsuario = idUsuario;
@@ -38,7 +38,7 @@ public class IdentidadeService : IIdentidadeService
 	{
 		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
 		if (EstaAutenticado)
-			Usuario = await acervoService.Usuarios.ObterAsync(IdUsuario);
+			Usuario = await repUsuarios.ObterAsync(IdUsuario);
 		
 	}
 	public  Task<bool> EhAutorizadoAsync(Permissao permissao)

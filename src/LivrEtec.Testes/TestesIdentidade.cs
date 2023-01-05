@@ -41,11 +41,11 @@ public class TestesIdentidade : IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		var BD = BDU.CriarContexto();
-		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), new RelogioSistema());
+		var repUsuarios =  new RepUsuarios(BD, configurador.CreateLogger<RepUsuarios>(output));
 		Identidade = new IdentidadeService(
-			acervoService,
-			new AutorizacaoService(acervoService.Usuarios, configurador.CreateLogger<AutorizacaoService>(output)),
-			new AutenticacaoService(acervoService.Usuarios, configurador.CreateLogger<AutenticacaoService>(output)),
+			repUsuarios,
+			new AutorizacaoService(repUsuarios, configurador.CreateLogger<AutorizacaoService>(output)),
+			new AutenticacaoService(repUsuarios, configurador.CreateLogger<AutenticacaoService>(output)),
             output.ToLogger<IdentidadeService>()
 		);
 	}

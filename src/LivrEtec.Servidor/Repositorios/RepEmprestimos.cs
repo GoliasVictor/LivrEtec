@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Formats.Asn1;
@@ -8,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace LivrEtec.Servidor
 {
-    public class RepEmprestimos : Repositorio, IRepEmprestimo
+    public class RepEmprestimos : Repositorio, IRepEmprestimos
     {
         IRelogio _relogio ;
-        public RepEmprestimos(AcervoService acervoService, IRelogio relogio) : base(acervoService)
+        IRepUsuarios repUsuarios;
+        public RepEmprestimos(PacaContext BD, IRepUsuarios repUsuarios, ILogger<RepEmprestimos> logger, IRelogio relogio) : base(BD, logger)
         {
+            this.repUsuarios = repUsuarios;
             _relogio = relogio;
         }
         public async Task<int> RegistrarAsync(Emprestimo emprestimo)
@@ -69,7 +72,7 @@ namespace LivrEtec.Servidor
 		{			
             Emprestimo emprestimo = await ObterAsync(parametros.IdEmprestimo)
 				?? throw new InvalidOperationException($"Não existe o emprestimo de id {parametros.IdEmprestimo}");
-			Usuario UsuarioFechador = await acervoService.Usuarios.ObterAsync(parametros.idUsuarioFechador)
+			Usuario UsuarioFechador = await repUsuarios.ObterAsync(parametros.idUsuarioFechador)
 				?? throw new InvalidOperationException($"Não é possivel fechar emprestimo porque usuario de id {{{parametros.idUsuarioFechador}}} não existe.");
 			
             emprestimo.Fechado = true;

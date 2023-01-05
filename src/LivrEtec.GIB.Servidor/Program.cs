@@ -17,16 +17,19 @@ builder.Logging.AddConsole();
 builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
     options.UseMySql(Config.StrConexaoMySQL, ServerVersion.AutoDetect(Config.StrConexaoMySQL));
 });
-builder.Services.AddLogging();
 builder.Services.AddSingleton<IRelogio,RelogioSistema>(); 
-builder.Services.AddTransient<PacaContext>();
+builder.Services.AddScoped<PacaContext>();
 builder.Services.AddLogging(configure => {
     configure.AddConsole();
 }); 
+builder.Services.AddScoped<IRepUsuarios, RepUsuarios>();
+builder.Services.AddScoped<IRepAutores, RepAutores>();
+builder.Services.AddScoped<IRepLivros, RepLivros>();
+builder.Services.AddScoped<IRepPessoas, RepPessoas>();
+builder.Services.AddScoped<IRepEmprestimos, RepEmprestimos>();
 
 builder.Services.AddScoped<IIdentidadeService,IdentidadeServiceRPC>();
-builder.Services.AddTransient<IAcervoService, AcervoService>();
-builder.Services.AddTransient<IEmprestimoService, EmprestimoService>();
+builder.Services.AddScoped<IEmprestimoService, EmprestimoService>();
 builder.Services.AddApplicationInsightsTelemetry();
 var app = builder.Build();
 
