@@ -21,7 +21,7 @@ public sealed class Permissao : IComparable<Permissao>
 	}
 
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-	[Required, Key]
+    [Key, Required, InteiroPositivo(nameof(Id))]
 	public int Id { get; set; }
 	[Required]
 	public string Nome { get; set; } = null!;

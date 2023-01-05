@@ -36,7 +36,7 @@ message ParamBusca {
 message Livro {
     int32 Id =  1;
     string Nome = 2;
-    string Descricao = 3;
+    optional string Descricao = 3;
     repeated Tag Tags = 4;
     repeated Autor Autores = 5;
     bool Arquivado = 6;
