@@ -12,7 +12,7 @@ namespace LivrEtec
 	public sealed class Usuario 
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		[Required, Key]
+        [Key, Required, InteiroPositivo(nameof(Id))]
 		public int Id { get; set; }
 		[Required]
 		[DataType(DataType.Password)]

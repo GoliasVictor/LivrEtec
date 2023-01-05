@@ -41,6 +41,6 @@ namespace LivrEtec
         public static bool operator !=(Aluno? left, Aluno? right)
         {
             return !(left == right);
-        }
+        } 
     }
 }

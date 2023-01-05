@@ -61,10 +61,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 	public async Task RegistrarAsync(Livro livro)
 	{
-
-		_= livro ?? throw new ArgumentNullException(nameof(livro));
-		if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
-			throw new InvalidDataException();
+		Validador.ErroSeInvalido(livro); 
 		if (await ExisteAsync(livro))
 			throw new InvalidOperationException($"O livro {{{ livro.Id }}} já existe no sistema");
 		BD.AttachRange(livro.Tags);

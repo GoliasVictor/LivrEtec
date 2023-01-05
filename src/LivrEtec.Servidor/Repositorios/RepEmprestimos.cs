@@ -17,6 +17,7 @@ namespace LivrEtec.Servidor
         }
         public async Task<int> RegistrarAsync(Emprestimo emprestimo)
         {
+		    Validador.ErroSeInvalido(emprestimo);
             BD.Attach(emprestimo);
             BD.Entry(emprestimo).State = EntityState.Added;
             await BD.SaveChangesAsync();

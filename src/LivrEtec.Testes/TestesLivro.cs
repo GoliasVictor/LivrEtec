@@ -2,6 +2,7 @@ using LivrEtec.Servidor;
 using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
 using Xunit.Abstractions;
+using System.ComponentModel.DataAnnotations;
 
 namespace LivrEtec.Testes;
 
@@ -118,7 +119,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 		Livro Livro =  null!;
 
 
-		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
+		await Assert.ThrowsAsync<ValidationException>(async ()=>{
 			await RepLivros.RegistrarAsync(Livro);
 		});
 	}
@@ -134,7 +135,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 		};
 
 
-		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
+		await Assert.ThrowsAsync<ValidationException>(async ()=>{
 			await RepLivros.RegistrarAsync(livro);
 		});
 	}

@@ -12,11 +12,11 @@ namespace LivrEtec.GIB.RPC
                 Id = model.Id,
                 Nome = model.Nome,
                 Arquivado =  model.Arquivado,
-                Descricao = model.Descricao,
+                Descricao = model.Descricao ?? "",
                 Quantidade = model.Quantidade,
                 Autores  = {model.Autores.Select((modelAutor)=> (Autor)modelAutor) },
-                Tags  = {model.Tags.Select( (modelTag)=> (Tag)modelTag )}
-            };
+                Tags  = {model.Tags.Select( (modelTag)=> (Tag)modelTag )},
+            }; 
         [return: NotNullIfNotNull("proto")]
         public static implicit operator LE::Livro?(Livro? proto)
             => proto == null

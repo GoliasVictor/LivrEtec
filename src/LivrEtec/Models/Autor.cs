@@ -5,8 +5,8 @@ namespace LivrEtec
 {
     public sealed class Autor : IComparable<Autor>, IEquatable<Autor?>
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required, Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]        
+        [Key, Required, InteiroPositivo(nameof(Id))] 
         public int Id { get; set; }
         [Required]
         public string Nome { get; set;} = null!;
