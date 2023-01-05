@@ -49,9 +49,8 @@ namespace LivrEtec.GIB.Servidor
         public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
             
-            var Tags = request.Tags.Select((t) => (Tag)t);
             try{
-				IEnumerable<Livro> Livros = await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, Tags);
+				IEnumerable<Livro> Livros = await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, request.IdTags);
 				return new EnumLivros() { 
                     Livros = { Livros.Select(l=> (RPC.Livro)l).ToArray() }
                 };

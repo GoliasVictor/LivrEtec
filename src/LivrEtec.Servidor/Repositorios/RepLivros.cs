@@ -12,7 +12,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	{	
 	}
  
-	public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<Tag>? tags)
+	public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags)
 	{
 		IQueryable<Livro> livros = BD.Livros;
 
@@ -29,11 +29,11 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		}
 
 
-		if (tags is not null && tags.Count() != 0)
-			foreach (var tag in tags)
-				livros = livros.Where((livro) => livro.Tags.Contains(tag));
+		if (idTags is not null && idTags.Count() != 0)
+			foreach (var id in idTags)
+				livros = livros.Where((livro) => livro.Tags.Any( (tag) => tag.Id == id));
 				
-		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", tags ?? Enumerable.Empty<Tag>())}");
+		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", idTags ?? Enumerable.Empty<int>())}");
 		return await livros.ToListAsync();
 	}
 	private async Task<bool> ExisteAsync(Livro livro)
