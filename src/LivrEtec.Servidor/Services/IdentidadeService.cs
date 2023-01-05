@@ -3,15 +3,19 @@ using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor;
 
-public class IdentidadeService : Service, IIdentidadeService
+public class IdentidadeService : IIdentidadeService
 {
-	public IdentidadeService(
-		PacaContext bd,
-	 	ILogger<IdentidadeService>? logger,
+	ILogger<IdentidadeService>? logger;
+	IRepUsuarios repUsuarios;
+	public IdentidadeService( 
+		IRepUsuarios repUsuarios,
 		IAutorizacaoService autorizacaoService,
-		IAutenticacaoService autenticacaoService
-	) : base(bd, logger)
+		IAutenticacaoService autenticacaoService,
+	 	ILogger<IdentidadeService>? logger
+	)
 	{
+		this.repUsuarios = repUsuarios;
+		this.logger = logger;
 		AutorizacaoService = autorizacaoService;
 		AutenticacaoService = autenticacaoService;
 	}
@@ -23,25 +27,19 @@ public class IdentidadeService : Service, IIdentidadeService
 
 	public async Task DefinirUsuarioAsync(int idUsuario)
 	{
-		await Task.Run(()=>{
-			if (BD.Usuarios.Find(idUsuario) == null)
-				throw new ArgumentException("Usuario não existe");
-			EstaAutenticado = false;
-			IdUsuario = idUsuario;
-		});
+		if (false == await repUsuarios.ExisteAsync(idUsuario))
+			throw new ArgumentException("Usuario não existe");
+		EstaAutenticado = false;
+		IdUsuario = idUsuario;
 		
 	}
 
  	public async Task AutenticarUsuarioAsync(string senha)
 	{
 		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
-		if(EstaAutenticado){
-			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
-			if(Usuario != null){
-				BD.Entry(Usuario).Reference((u)=> u.Cargo).Load();
-				BD.Entry(Usuario.Cargo).Collection((c)=> c.Permissoes).Load();
-			}
-		}
+		if (EstaAutenticado)
+			Usuario = await repUsuarios.ObterAsync(IdUsuario);
+		
 	}
 	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
 	{

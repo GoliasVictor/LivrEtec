@@ -5,19 +5,19 @@ namespace LivrEtec.GIB.Servidor
 {
     public sealed class LivroServiceRPC : Livros.LivrosBase
     {
-        private readonly ILogger<LivroServiceRPC> _logger;
-        private readonly IAcervoService _acervoService;
-        public LivroServiceRPC(ILogger<LivroServiceRPC> logger, IAcervoService acervoService)
+        readonly ILogger<LivroServiceRPC> logger;
+        readonly IRepLivros repLivros;
+        public LivroServiceRPC(ILogger<LivroServiceRPC> logger, IRepLivros repLivros)
         {
-            _logger = logger;
-            _acervoService = acervoService;
+            this.logger = logger;
+            this.repLivros = repLivros;
         }
 
 
         public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
 		{
             try {
-			    await _acervoService.Livros.RegistrarAsync(request);
+			    await repLivros.RegistrarAsync(request);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);
@@ -28,7 +28,7 @@ namespace LivrEtec.GIB.Servidor
 		public override async Task<RPC.Livro?> Get(IdLivro request, ServerCallContext context)
         {
             try{
-                return await _acervoService.Livros.GetAsync(request.Id);
+                return await repLivros.GetAsync(request.Id);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);
@@ -38,7 +38,7 @@ namespace LivrEtec.GIB.Servidor
         public override async Task<Empty> Remover(RPC.IdLivro request, ServerCallContext context)
         {
             try {
-                await _acervoService.Livros.RemoverAsync(request.Id);
+                await repLivros.RemoverAsync(request.Id);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);
@@ -46,12 +46,12 @@ namespace LivrEtec.GIB.Servidor
             return new Empty();
         }
 
-        public override async Task<EnumLivros> Buscar(ParamBusca request, ServerCallContext context)
+        public override async Task<ListaLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
             
             try{
-				IEnumerable<Livro> Livros = await _acervoService.Livros.BuscarAsync(request.NomeLivro, request.NomeAutor, request.IdTags);
-				return new EnumLivros() { 
+				IEnumerable<Livro> Livros = await repLivros.BuscarAsync(request.NomeLivro, request.NomeAutor, request.IdTags);
+				return new ListaLivros() { 
                     Livros = { Livros.Select(l=> (RPC.Livro)l).ToArray() }
                 };
             }
@@ -63,7 +63,7 @@ namespace LivrEtec.GIB.Servidor
         public override async Task<Empty> Editar(RPC.Livro request, ServerCallContext context)
         {
             try{
-                await _acervoService.Livros.EditarAsync(request);
+                await repLivros.EditarAsync(request);
             }
             catch (Exception ex) {
                 throw ManipuladorException.ExceptionToRpcException(ex);

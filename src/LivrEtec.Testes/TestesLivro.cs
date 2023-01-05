@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace LivrEtec.Testes;
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where T : IRepLivros  
+public abstract class TestesLivro<T> where T : IRepLivros  
 {
 	protected abstract T RepLivros { get;init;}
 	protected readonly BDUtil BDU; 
@@ -23,7 +23,7 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
         AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
         AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
     }
-	public TestesLivro(ConfiguradorTestes configurador, ITestOutputHelper output, BDUtil bdu)
+	public TestesLivro(ITestOutputHelper output, BDUtil bdu)
 	{
 		BDU = bdu;
 		BDU.Autores = new Autor[]{
@@ -48,7 +48,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 				Arquivado = false,
 				Autores = { BDU.gAutor(1) },
 				Tags = { BDU.gTag(1), BDU.gTag(2),BDU.gTag(4)},
-				Descricao = "Meu precioso"
+				Descricao = "Meu precioso", 
+				Quantidade = 10
 			},
 			new Livro {
 				Id = 2,
@@ -56,7 +57,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 				Arquivado = false,
 				Autores = { BDU.gAutor(2), BDU.gAutor(3), },
 				Tags = { BDU.gTag(3), BDU.gTag(2) },
-				Descricao = "É tudo nosso"
+				Descricao = "É tudo nosso",
+				Quantidade = 5
 			},
 			new Livro {
 				Id = 3,
@@ -64,7 +66,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 				Arquivado = false,
 				Autores = { BDU.gAutor(4)},
 				Tags = { BDU.gTag(5) },
-				Descricao = "É tudo nosso"
+				Descricao = "É tudo nosso",
+				Quantidade = 1
 			}
 		};
 		BDU.SalvarDados();
@@ -79,7 +82,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 			Arquivado = true,
 			Descricao = "Descrição",
 			Tags =  {BDU.gTag(1), BDU.gTag(2) },
-			Autores =  { BDU.gAutor(1) }
+			Autores =  { BDU.gAutor(1) },
+			Quantidade = int.MaxValue
 		};
 		
 		await RepLivros.RegistrarAsync(livroARegistrar);
@@ -105,7 +109,8 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 		var IdLivro = 1;
 		var livro  = new Livro(){ 
 			Id =  IdLivro,
-			Nome = "douglas" 
+			Nome = "douglas",
+			Quantidade = 1
 		};
 
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
@@ -124,14 +129,17 @@ public abstract class TestesLivro<T> : IClassFixture<ConfiguradorTestes>  where 
 		});
 	}
 	[Theory]
-	[InlineData(-1, "nome")]
-	[InlineData(10, "")]
-	[InlineData(10, null)]
-	public async Task Registrar_LivroInValidoAsync(int id, string nome)
+	[InlineData(-1, 1, "nome")]
+	[InlineData(10,-1, "nome")]
+	[InlineData(10, 0, "nome")]
+	[InlineData(10,1, "")]
+	[InlineData(10,1, null)]
+	public async Task Registrar_LivroInvalidoAsync(int id, int Quantidade, string nome)
 	{
 		var livro  = new Livro{
 			Id = id,
 			Nome = nome,
+			Quantidade = Quantidade
 		};
 
 

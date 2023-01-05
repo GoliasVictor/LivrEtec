@@ -7,9 +7,9 @@ namespace LivrEtec.GIB.Servidor;
 
 public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 {
-	private readonly ILogger<EmprestimoServiceRPC> logger;
-	private readonly IEmprestimoService emprestimoService;
-	private readonly IdentidadeServiceRPC? identidadeService;
+	readonly ILogger<EmprestimoServiceRPC> logger;
+	readonly IEmprestimoService emprestimoService;
+	readonly IdentidadeServiceRPC? identidadeService;
 	public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
 	{
 		this.logger = logger;
@@ -33,7 +33,7 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 		}
 	}
 
-	public override async Task<EnumEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
+	public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
 	{
 		try
 		{
@@ -44,7 +44,7 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 				Fechado: request.Fechado,
 				Atrasado: request.Atrasado
 			));
-			return new EnumEmprestimos()
+			return new ListaEmprestimos()
 			{
 				Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
 			};

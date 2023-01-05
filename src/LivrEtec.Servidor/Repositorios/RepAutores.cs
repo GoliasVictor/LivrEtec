@@ -4,7 +4,7 @@ namespace LivrEtec.Servidor;
 
 public sealed class RepAutores : Repositorio, IRepAutores
 {
-	public RepAutores(AcervoService acervoService) : base(acervoService)
+	public RepAutores(PacaContext BD, ILogger<RepAutores> logger) : base(BD, logger)
 	{
 	}
 
@@ -13,13 +13,13 @@ public sealed class RepAutores : Repositorio, IRepAutores
 		Validador.ErroSeInvalido(autor);
 		BD.Autores.Add(autor);
 		await BD.SaveChangesAsync();
-		Logger?.LogInformation($"Autor @{autor.Id} registrado");
+		logger?.LogInformation($"Autor @{autor.Id} registrado");
 	}
 
 	public IAsyncEnumerable<Autor> TodosAsync()
 	{
 		var Autores = BD.Autores.AsAsyncEnumerable();
-		Logger?.LogInformation("Todos Autores Coletados");
+		logger?.LogInformation("Todos Autores Coletados");
 		return Autores;
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace LivrEtec.Servidor
 {
-    public interface IRepEmprestimo
+    public interface IRepEmprestimos
     {
         Task<int> ObterQuantidadeLivrosEmprestadoAsync(int idLivro);
         Task<int> RegistrarAsync(Emprestimo emprestimo);

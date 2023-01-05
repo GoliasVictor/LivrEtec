@@ -4,7 +4,7 @@ namespace LivrEtec.Testes;
 
 
 [Collection("UsaBancoDeDados")]
-public abstract class TestesEmprestimoService<T> : IClassFixture<ConfiguradorTestes> where T : IEmprestimoService
+public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 {
 	protected readonly BDUtil BDU;
 	protected abstract T emprestimoService { get; init; }
@@ -17,7 +17,7 @@ public abstract class TestesEmprestimoService<T> : IClassFixture<ConfiguradorTes
 	protected const int ID_EMPRESTIMO_ABERTO = 2;
 	protected const int ID_EMPRESTIMO_FECHADO = 1;
 	protected readonly Usuario usuarioTeste;
-	public TestesEmprestimoService(ConfiguradorTestes configurador, ITestOutputHelper output, IRelogio relogio, BDUtil bdu)
+	public TestesEmprestimoService(ITestOutputHelper output, IRelogio relogio, BDUtil bdu)
 	{
 		BDU = bdu;
 		this.relogio = relogio;

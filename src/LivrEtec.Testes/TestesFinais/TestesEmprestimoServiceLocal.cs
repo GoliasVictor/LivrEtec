@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 namespace LivrEtec.Testes.Local;
 
@@ -6,23 +8,25 @@ public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<Empre
 {
 	readonly PacaContext BD;
 	protected override EmprestimoService emprestimoService {get; init; }
-	public TestesEmprestimoServiceLocal(ConfiguradorTestes configurador, ITestOutputHelper output) 
+	public TestesEmprestimoServiceLocal(ITestOutputHelper output) 
 	: base ( 
-		
-		configurador,
 		output,
 		new RelogioStub(new DateTime(2022,1,1)),
-		new BDUtilSqlLite(configurador.CreateLoggerFactory(output))
+		new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output))
 	)
 	{
+		var loggerFactory = LogUtils.CreateLoggerFactory(output);
 		BD = BDU.CriarContexto();
-		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), relogio);
 		var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
+
+		var repUsuarios = new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
 		emprestimoService = new EmprestimoService(
-			acervoService,
+			new RepEmprestimos(BD,repUsuarios, loggerFactory.CreateLogger<RepEmprestimos>(), relogio),
+			new RepPessoas(BD, loggerFactory.CreateLogger<RepPessoas>()),
+			new RepLivros(BD, loggerFactory.CreateLogger<RepLivros>()),
 			identidadeService,
 			relogio,
-			configurador.CreateLogger<EmprestimoService>(output)
+			loggerFactory.CreateLogger<EmprestimoService>()
 		);
 	}
 

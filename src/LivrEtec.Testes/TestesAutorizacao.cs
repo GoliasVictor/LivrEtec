@@ -5,16 +5,17 @@ using Xunit.Abstractions;
 namespace LivrEtec.Testes.Local;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
-public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable 
+public class TestesAutorizacao : IDisposable 
 {
 	const int IdAdministrador = 1;
 	const int IdAnonimo = 2;
 	readonly BDUtil BDU;
 	readonly IAutorizacaoService AutorizacaoService;
-	public TestesAutorizacao(ConfiguradorTestes configurador,ITestOutputHelper output ) 
+	public TestesAutorizacao(ITestOutputHelper output ) 
 	{ 	
 	
-		BDU = new BDUtilSqlLite(configurador.CreateLoggerFactory(output));
+		var loggerFactory = LogUtils.CreateLoggerFactory(output);
+		BDU = new BDUtilSqlLite(loggerFactory);
 		foreach (var perm in Permissoes.TodasPermissoes)
 			perm.Cargos = new List<Cargo>();
 		BDU.BDPermissoes =  Permissoes.TodasPermissoes;
@@ -42,7 +43,8 @@ public class TestesAutorizacao : IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		var BD = BDU.CriarContexto(); 
-		AutorizacaoService =  new AutorizacaoService(BD, output.ToLogger<AutorizacaoService>());
+		var repUsuarios =  new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
+		AutorizacaoService =  new AutorizacaoService(repUsuarios, loggerFactory.CreateLogger<AutorizacaoService>());
 	}
 	[Theory]
 	[InlineData(IdAdministrador)]

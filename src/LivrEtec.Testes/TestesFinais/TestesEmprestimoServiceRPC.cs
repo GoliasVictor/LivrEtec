@@ -7,19 +7,18 @@ namespace LivrEtec.Testes.Remoto;
 public sealed class TestesEmprestimoServiceRPC : TestesEmprestimoService<EmprestimoServiceRPC>
 {
 	protected override EmprestimoServiceRPC emprestimoService { get; init; }
-	public TestesEmprestimoServiceRPC(ConfiguradorTestes configurador, ITestOutputHelper output)
+	public TestesEmprestimoServiceRPC(ITestOutputHelper output)
 		: base(
-			configurador,
 			output,
 			new RelogioSistema(),
-			new BDUtilMySQl(configurador.Config.StrConexaoMySQL, configurador.CreateLoggerFactory(output))
+			new BDUtilMySQl(Configuracao.StrConexaoMySQL,LogUtils.CreateLoggerFactory(output))
 		)
 	{
-		GrpcChannel channel = gRPCUtil.GetGrpChannel(configurador.Config.UrlGIBAPI);
+		GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI);
 		
 		var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
 		emprestimoService = new EmprestimoServiceRPC(
-			configurador.CreateLogger<EmprestimoServiceRPC>(output),
+			LogUtils.CreateLogger<EmprestimoServiceRPC>(output),
 			new GIB.RPC.Emprestimos.EmprestimosClient(channel)
 		);
 	}

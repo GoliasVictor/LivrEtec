@@ -8,7 +8,7 @@ namespace LivrEtec.Servidor;
 
 public sealed class RepLivros : Repositorio, IRepLivros
 {
-	public RepLivros(AcervoService acervoService) : base(acervoService) 
+	public RepLivros(PacaContext BD, ILogger<RepLivros> logger) : base(BD, logger)
 	{	
 	}
  
@@ -33,7 +33,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 			foreach (var id in idTags)
 				livros = livros.Where((livro) => livro.Tags.Any( (tag) => tag.Id == id));
 				
-		Logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", idTags ?? Enumerable.Empty<int>())}");
+		logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", idTags ?? Enumerable.Empty<int>())}");
 		return await livros.ToListAsync();
 	}
 	private async Task<bool> ExisteAsync(Livro livro)
@@ -68,7 +68,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		BD.AttachRange(livro.Autores);
 		BD.Livros.Add(livro); 
 		await BD.SaveChangesAsync();
-		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
+		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
 	}
 
 	public async Task RemoverAsync(int id)
@@ -78,7 +78,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 			throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
 		var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
 		await BD.SaveChangesAsync();
-		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} excluido");
+		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} excluido");
 	}
 
 	public async Task EditarAsync(Livro livro)
@@ -103,6 +103,6 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		livroAntigo.Autores.AddRange(BD.Autores.Where( a=> livro.Autores.Contains(a)));
         livroAntigo.Tags.AddRange(BD.Tags.Where( t => livro.Tags.Contains(t)));
 		await  BD.SaveChangesAsync();
-		Logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
+		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
 	}
 }

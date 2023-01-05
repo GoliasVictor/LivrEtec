@@ -2,11 +2,14 @@ using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 
 namespace LivrEtec.Servidor;
-public sealed class AutenticacaoService : Service, IAutenticacaoService
+public sealed class AutenticacaoService : IAutenticacaoService
 {
-
-	public AutenticacaoService(PacaContext bd, ILogger<AutenticacaoService> logger) : base(bd, logger)
+	readonly ILogger<AutenticacaoService> logger;
+	readonly IRepUsuarios repUsuarios;
+	public AutenticacaoService(IRepUsuarios repUsuarios, ILogger<AutenticacaoService> logger) 
 	{
+		this.logger = logger;
+		this.repUsuarios =  repUsuarios;
 	}
 	string GerarHahSenha(int IdUsuario, string senha)
 	{
@@ -19,7 +22,7 @@ public sealed class AutenticacaoService : Service, IAutenticacaoService
 	{
 		_ = senha ?? throw new ArgumentNullException(nameof(senha));
 		var hashSenha = GerarHahSenha(IdUsuario, senha);
-		var usuario = await BD.Usuarios.FindAsync(IdUsuario);
+		var usuario = await repUsuarios.ObterAsync(IdUsuario);
 		if(usuario == null)
 			throw new ArgumentException("Usuario invalido");
 		bool autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();

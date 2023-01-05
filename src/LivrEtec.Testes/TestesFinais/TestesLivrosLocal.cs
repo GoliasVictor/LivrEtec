@@ -6,19 +6,16 @@ namespace LivrEtec.Testes.Local;
 [Trait("Category", "Local")]
 public sealed class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable 
 {
-	readonly AcervoService acervoService;
 	readonly PacaContext BD;
 	protected override  RepLivros RepLivros {get; init; }
-	public TestesLivrosLocal(ConfiguradorTestes configurador, ITestOutputHelper output) 
+	public TestesLivrosLocal(ITestOutputHelper output) 
 	: base(
-		configurador, 
 		output, 
-		new BDUtilSqlLite(configurador.CreateLoggerFactory(output))
+		new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output))
 	)
 	{
-		BD = BDU.CriarContexto();
-		acervoService = new AcervoService(BDU.CriarContexto(), configurador.CreateLoggerFactory(output).CreateLogger<AcervoService>(), new RelogioStub(new DateTime(2000,1,1)));
-		RepLivros = (RepLivros)acervoService.Livros ;
+		BD = BDU.CriarContexto(); 
+		RepLivros = new RepLivros(BD, LogUtils.CreateLogger<RepLivros>(output)) ;
 	}
 
 	public void Dispose()
