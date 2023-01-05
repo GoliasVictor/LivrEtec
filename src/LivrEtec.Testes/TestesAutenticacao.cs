@@ -29,7 +29,8 @@ public class TestesAutenticacao :IClassFixture<ConfiguradorTestes>, IDisposable
 		};
 		BDU.SalvarDados();
 		BD = BDU.CriarContexto();
-		AutenticacaoService = new AutenticacaoService(BD, output.ToLogger<AutenticacaoService>());
+		var acervoService = new AcervoService(BD, configurador.CreateLogger<AcervoService>(output), new RelogioSistema());
+		AutenticacaoService = new AutenticacaoService(acervoService.Usuarios, configurador.CreateLogger<AutenticacaoService>(output));
 	}
 	[Theory] 
 	[InlineData(1)]

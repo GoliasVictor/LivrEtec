@@ -2,36 +2,33 @@ using System.Data.Entity;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor;
-public sealed class AutorizacaoService : Service, IAutorizacaoService
+public sealed class AutorizacaoService : IAutorizacaoService
 {
 
-	public AutorizacaoService(PacaContext bd, ILogger<AutorizacaoService> logger) 
-		: base(bd, logger)
+	readonly ILogger<AutorizacaoService> logger;
+	readonly IRepUsuarios repUsuarios;
+	public AutorizacaoService(IRepUsuarios repUsuarios, ILogger<AutorizacaoService> logger) 
 	{
+		this.repUsuarios = repUsuarios;
+		this.logger = logger;
 	}
 
-	public Task<bool> EhAutorizadoAsync(Usuario usuario, Permissao permissao)
+	public async Task<bool> EhAutorizadoAsync(Usuario usuario, Permissao permissao)
 	{
-		return EhAutorizadoAsync(usuario.Id, permissao);
+		if(usuario is null)
+			return false;
+		return await EhAutorizadoAsync(usuario.Id, permissao);
 	}
 
 	public async Task<bool> EhAutorizadoAsync(int idUsuario, Permissao permissao)
 	{
-		bool autorizado =  false;
-		await Task.Run(()=> {
-			if(permissao == null)
-				throw new ArgumentNullException(nameof(permissao));
-			if(!BD.Permissoes.Any((perm)=> perm.Id == permissao.Id))
-				throw new ArgumentException(nameof(permissao));
-			
-			var usuario =  BD.Usuarios.SingleOrDefault( u => u.Id ==  idUsuario);
-
-			if(!BD.Permissoes.Any(u=> u.Id == idUsuario))
-				throw new ArgumentException(nameof(Usuario));
-			autorizado = BD.Usuarios.Where( u => u.Id ==  idUsuario).Any(u => u.Cargo.Permissoes.Contains(permissao));
-		});
-		
-		return autorizado;
+		if(permissao == null)
+			throw new ArgumentNullException(nameof(permissao));
+		if(!Permissoes.TodasPermissoes.Contains(permissao))
+			throw new ArgumentException(nameof(permissao));
+		var usuario = await repUsuarios.ObterAsync(idUsuario) 
+			?? throw new ArgumentException("Usuario Não Existe");
+		return usuario.Cargo.Permissoes.Any( (p) => p.Id == permissao.Id);
 	}
 	public async Task ErroSeNaoAutorizadoAsync(Usuario usuario, Permissao permissao)
 	{
