@@ -29,14 +29,15 @@ builder.Services.AddScoped<IRepLivros, RepLivros>();
 builder.Services.AddScoped<IRepPessoas, RepPessoas>();
 builder.Services.AddScoped<IRepEmprestimos, RepEmprestimos>();
 
-builder.Services.AddScoped<IIdentidadeService,IdentidadeServiceRPC>();
+builder.Services.AddScoped<IIdentidadeService, IdentidadeServiceRPC>();
 builder.Services.AddScoped<IEmprestimoService, EmprestimoService>();
+builder.Services.AddScoped<ILivrosService, LivrosService>();
 builder.Services.AddApplicationInsightsTelemetry();
 var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
-app.MapGrpcService<LivroServiceRPC>();
+app.MapGrpcService<LivrosServiceRPC>();
 app.MapGrpcService<EmprestimoServiceRPC>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 

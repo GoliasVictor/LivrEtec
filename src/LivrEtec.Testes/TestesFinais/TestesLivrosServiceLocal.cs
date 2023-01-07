@@ -1,13 +1,14 @@
 using Xunit.Abstractions;
+
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Testes.Local;
 
 [Trait("Category", "Local")]
-public sealed class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable 
+public sealed class TestesLivrosLocal : TestesLivrosService<LivrosService>, IDisposable 
 {
 	readonly PacaContext BD;
-	protected override  RepLivros RepLivros {get; init; }
+	protected override  LivrosService livrosService {get; init; }
 	public TestesLivrosLocal(ITestOutputHelper output) 
 	: base(
 		output, 
@@ -15,7 +16,11 @@ public sealed class TestesLivrosLocal : TestesLivro<RepLivros>, IDisposable
 	)
 	{
 		BD = BDU.CriarContexto(); 
-		RepLivros = new RepLivros(BD, LogUtils.CreateLogger<RepLivros>(output)) ;
+		livrosService = new LivrosService(
+			new RepLivros(BD, LogUtils.CreateLogger<RepLivros>(output)),
+			new IdentidadePermitidaStub(),
+			LogUtils.CreateLogger<LivrosService>(output)
+		);
 	}
 
 	public void Dispose()

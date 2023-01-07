@@ -5,16 +5,16 @@ using Grpc.Net.Client;
 namespace LivrEtec.Testes.Remoto;
 
 [Trait("Category", "Remoto")]
-public sealed class TestesLivrosRPC: TestesLivro<RepLivroRPC>
+public sealed class TestesLivrosServiceRPC: TestesLivrosService<LivrosServiceRPC>
 {
-	protected override RepLivroRPC RepLivros {get;init;}
-    public TestesLivrosRPC(ITestOutputHelper output) 
+	protected override LivrosServiceRPC livrosService { get;init;}
+    public TestesLivrosServiceRPC(ITestOutputHelper output) 
 		: base (  
 			output,
 			new BDUtilMySQl(Configuracao.StrConexaoMySQL, LogUtils.CreateLoggerFactory(output))
 		)
 	{
 		GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI);
-        RepLivros = new RepLivroRPC(new GIB.RPC.Livros.LivrosClient(channel),output.ToLogger<RepLivroRPC>());
+        livrosService = new LivrosServiceRPC(new GIB.RPC.Livros.LivrosClient(channel),output.ToLogger<LivrosServiceRPC>());
     }
 }
