@@ -6,11 +6,11 @@ using Grpc.Core;
 
 namespace LivrEtec.GIB
 {
-    public sealed class RepLivroRPC:  IRepLivros
+    public sealed class LivrosServiceRPC:  ILivrosService
     {
-        readonly ILogger<RepLivroRPC> logger;
+        readonly ILogger<LivrosServiceRPC> logger;
         readonly RPC::Livros.LivrosClient livrosClientRPC;
-        public RepLivroRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<RepLivroRPC> logger)
+        public LivrosServiceRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
         {
             this.livrosClientRPC = livrosClientRPC;
             this.logger = logger;

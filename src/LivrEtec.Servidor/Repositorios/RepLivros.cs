@@ -31,9 +31,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
 		if (idTags is not null && idTags.Count() != 0)
 			foreach (var id in idTags)
-				livros = livros.Where((livro) => livro.Tags.Any( (tag) => tag.Id == id));
-				
-		logger?.LogInformation($"Livros: Buscados; Parametros: nome: {nome}, Nome do autor {nomeAutor}, Tags: {string.Join(",", idTags ?? Enumerable.Empty<int>())}");
+				livros = livros.Where((livro) => livro.Tags.Any( (tag) => tag.Id == id));				
 		return await livros.ToListAsync();
 	}
 	private async Task<bool> ExisteAsync(Livro livro)
@@ -68,7 +66,6 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		BD.AttachRange(livro.Autores);
 		BD.Livros.Add(livro); 
 		await BD.SaveChangesAsync();
-		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} registrado");
 	}
 
 	public async Task RemoverAsync(int id)
@@ -78,7 +75,6 @@ public sealed class RepLivros : Repositorio, IRepLivros
 			throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
 		var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
 		await BD.SaveChangesAsync();
-		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} excluido");
 	}
 
 	public async Task EditarAsync(Livro livro)
@@ -103,6 +99,5 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		livroAntigo.Autores.AddRange(BD.Autores.Where( a=> livro.Autores.Contains(a)));
         livroAntigo.Tags.AddRange(BD.Tags.Where( t => livro.Tags.Contains(t)));
 		await  BD.SaveChangesAsync();
-		logger?.LogInformation($"Livro {{{livro.Id}}} de nome {{{livro.Nome}}} editado");
 	}
 }

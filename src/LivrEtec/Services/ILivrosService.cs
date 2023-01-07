@@ -1,6 +1,6 @@
-namespace LivrEtec;
+﻿namespace LivrEtec;
 
-public interface IRepLivros
+public interface ILivrosService
 {
 	Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags = null);
 	Task EditarAsync(Livro livro);
