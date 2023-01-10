@@ -9,7 +9,7 @@ namespace LivrEtec
         [Key, Required, InteiroPositivo(nameof(Id))]
         public int Id { get; set; }
         [Required]
-        public string? Nome { get; set; }
+        public string Nome { get; set; } = null!;
         public List<Livro> Livros {get;set;} =  new();
         public Tag(int id = default, string nome = null!)
         {

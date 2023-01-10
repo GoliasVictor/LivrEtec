@@ -67,6 +67,11 @@ public class BDUtil : IDisposable
 		}
 		return emprestimoAtual;
 	}
+	public async Task<Tag?> gTagBanco(int id)
+	{
+		using var BD = CriarContexto();
+		return await BD.Tags.FindAsync(id);
+	}
 	public void ResetarBanco()
 	{
 		using var BD = CriarContexto(); 
