@@ -21,10 +21,18 @@ service Livros {
     rpc Editar(Livro) returns (Empty);
     rpc Registrar(Livro) returns (Empty);
 }
+service Tags {
+    rpc  Registrar(Tag) returns (IdTag);
+	rpc  Editar(Tag) returns (Empty);
+	rpc  Buscar(Tag.BuscarRequest) returns (ListaTags);
+	rpc  Obter(IdTag) returns (Tag);
+	rpc  Remover(IdTag) returns (Empty);
+}
 
 message Empty {
 
 } 
+
 message IdLivro {
     int32 Id = 1;
 }
@@ -52,6 +60,13 @@ message ListaLivros {
 message Tag {
     int32 Id =  1; 
     string Nome = 2;
+    
+    message BuscarRequest {
+        string Nome = 1;
+    }
+}
+message IdTag {
+    int32 Id = 1;
 }
 
 message Autor {
@@ -125,3 +140,9 @@ message Emprestimo {
 message ListaEmprestimos {
     repeated Emprestimo Emprestimos = 1;
 }
+
+
+message ListaTags {
+    repeated Tag Tags = 1;
+}
+
