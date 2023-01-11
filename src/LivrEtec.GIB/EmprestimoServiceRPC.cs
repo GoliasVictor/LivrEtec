@@ -80,7 +80,7 @@ namespace LivrEtec.GIB
         public async Task ExcluirAsync(int idEmprestimo)
 		{
             try{
-                
+
                 await clientRPC.ExcluirAsync(new IdEmprestimo (){
                     Id = idEmprestimo,
                 });
