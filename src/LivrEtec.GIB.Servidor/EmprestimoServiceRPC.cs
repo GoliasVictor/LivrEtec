@@ -14,104 +14,62 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 	{
 		this.logger = logger;
 		this.emprestimoService = emprestimoService;
-        this.identidadeService = identidadeService as IdentidadeServiceRPC;
+		this.identidadeService = identidadeService as IdentidadeServiceRPC;
 	}
 
 	public override async Task<IdEmprestimo> Abrir(AbrirRequest request, ServerCallContext context)
 	{
-		try
+		identidadeService?.DefinirContexto(context);
+		return new IdEmprestimo()
 		{
-            identidadeService?.DefinirContexto(context);
-			return new IdEmprestimo()
-			{
-				Id = await emprestimoService.AbrirAsync(request.IdPessoa, request.IdLivro)
-			};
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+			Id = await emprestimoService.AbrirAsync(request.IdPessoa, request.IdLivro)
+		};
 	}
 
 	public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
 	{
-		try
+		identidadeService?.DefinirContexto(context);
+		IEnumerable<Emprestimo> Emprestimos = await emprestimoService.BuscarAsync(new ParamBuscaEmprestimo(
+			IdLivro: request.IdLivro,
+			IdPessoa: request.IdPessoa,
+			Fechado: request.Fechado,
+			Atrasado: request.Atrasado
+		));
+		return new ListaEmprestimos()
 		{
-            identidadeService?.DefinirContexto(context);
-			IEnumerable<Emprestimo> Emprestimos = await emprestimoService.BuscarAsync(new ParamBuscaEmprestimo(
-				IdLivro: request.IdLivro,
-				IdPessoa: request.IdPessoa,
-				Fechado: request.Fechado,
-				Atrasado: request.Atrasado
-			));
-			return new ListaEmprestimos()
-			{
-				Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
-			};
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+			Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
+		};
 	}
-
 	public override async Task<Empty> Devolver(DevolverRequest request, ServerCallContext context)
 	{
-		try
-		{
-            identidadeService?.DefinirContexto(context);
-			await emprestimoService.DevolverAsync(
-				request.IdEmprestimo, 
-				request.HasAtrasoJustificado ? request.AtrasoJustificado : null, 
-				request.HasExplicacaoAtraso ? request.ExplicacaoAtraso : null
-			);
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+		identidadeService?.DefinirContexto(context);
+		await emprestimoService.DevolverAsync(
+			request.IdEmprestimo,
+			request.HasAtrasoJustificado ? request.AtrasoJustificado : null,
+			request.HasExplicacaoAtraso ? request.ExplicacaoAtraso : null
+		);
 		return new Empty();
 	}
 
-
 	public override async Task<Empty> Prorrogar(ProrrogarRequest request, ServerCallContext context)
 	{
-		try
-		{
-            identidadeService?.DefinirContexto(context);
-			await emprestimoService.ProrrogarAsnc(request.IdEmprestimo, request.NovaData.ToDateTime());
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+		identidadeService?.DefinirContexto(context);
+		await emprestimoService.ProrrogarAsnc(request.IdEmprestimo, request.NovaData.ToDateTime());
 		return new Empty();
 	}
 
 	public override async Task<Empty> RegistrarPerda(IdEmprestimo request, ServerCallContext context)
 	{
-		try
-		{
-            identidadeService?.DefinirContexto(context);
-			await emprestimoService.RegistrarPerdaAsync(request.Id);
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+		identidadeService?.DefinirContexto(context);
+		await emprestimoService.RegistrarPerdaAsync(request.Id);
 		return new Empty();
 	}
+
 	public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
 	{
-		try
-		{
-            identidadeService?.DefinirContexto(context);
-			await emprestimoService.ExcluirAsync(request.Id);
-		}
-		catch (Exception ex)
-		{
-			throw ManipuladorException.ExceptionToRpcException(ex);
-		}
+		identidadeService?.DefinirContexto(context);
+		await emprestimoService.ExcluirAsync(request.Id);
 		return new Empty();
 	}
+
 }
