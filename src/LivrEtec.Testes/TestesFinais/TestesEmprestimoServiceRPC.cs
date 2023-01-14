@@ -14,7 +14,7 @@ public sealed class TestesEmprestimoServiceRPC : TestesEmprestimoService<Emprest
 			new BDUtilMySQl(Configuracao.StrConexaoMySQL,LogUtils.CreateLoggerFactory(output))
 		)
 	{
-		GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI);
+		GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, usuarioTeste);
 		
 		var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
 		emprestimoService = new EmprestimoServiceRPC(

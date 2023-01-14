@@ -41,6 +41,12 @@ public class IdentidadeService : IIdentidadeService
 			Usuario = await repUsuarios.ObterAsync(IdUsuario);
 		
 	}
+	public async Task AutenticarUsuarioAsync()
+	{
+		EstaAutenticado = true;
+		Usuario = await repUsuarios.ObterAsync(IdUsuario);
+		
+	}
 	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
 	{
 		if (!EstaAutenticado)
@@ -49,7 +55,7 @@ public class IdentidadeService : IIdentidadeService
 	}
 	public Task ErroSeNaoAutorizadoAsync(Permissao permissao)
 	{
-		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
+		_ = Usuario ?? throw new NaoAutenticadoException("Usuario não definido");
 		if (!EstaAutenticado)
 			throw new NaoAutenticadoException(Usuario);
 		return AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
