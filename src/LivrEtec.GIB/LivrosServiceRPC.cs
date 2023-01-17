@@ -34,7 +34,7 @@ namespace LivrEtec.GIB
         public async Task<Livro?> Obter(int id)
         {
             try{
-                return await livrosClientRPC.GetAsync(new IdLivro() { Id = id });
+                return await livrosClientRPC.ObterAsync(new IdLivro() { Id = id });
             }
             catch(RpcException ex){
                 throw ManipuladorException.RpcExceptionToException(ex); 
@@ -48,7 +48,6 @@ namespace LivrEtec.GIB
                 livro.Autores ??= new();    
             }
             Validador.ErroSeInvalido(livro);
-            RPC::Livro livroRPC = livro;
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
             try{

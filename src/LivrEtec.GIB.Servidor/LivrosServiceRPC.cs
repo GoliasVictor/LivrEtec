@@ -20,7 +20,7 @@ namespace LivrEtec.GIB.Servidor
 			return new Empty();
 
 		}
-		public override async Task<RPC.Livro?> Get(IdLivro request, ServerCallContext context)
+		public override async Task<RPC.Livro?> Obter(IdLivro request, ServerCallContext context)
 		{
 			return await livrosService.Obter(request.Id);
 		}
