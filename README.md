@@ -28,10 +28,16 @@ Para executar os testes é preferível que tenha instalado o MySQL, porém, caso
 Caso deseje testar com o MySQL, editar o arquivo `.src/LivrEtec.Testes/appsettings.json` ou configurar a variável de ambiente `APP_SETTINGS_JSON_PATH` para sua respectiva configuração.
 
 #### CLI
-Primeiramente, verifique se está instalado o .NET 6.0 e sua CLI, então execute na pasta `./src/` o seguinte comando:
+Primeiramente, verifique se está instalado o .NET 6.0.0
+```bash
+dotnet --list-sdks
+```
+
+E então execute na pasta `./src/` o seguinte comando:
 ```bash
 dotnet test
 ```
+
 #### Visual Studio 
 Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir (View em Inglês) abra o Gerenciador de Testes e clique em Executar.
 

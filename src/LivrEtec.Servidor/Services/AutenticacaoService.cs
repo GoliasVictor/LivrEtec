@@ -11,17 +11,16 @@ public sealed class AutenticacaoService : IAutenticacaoService
 		this.logger = logger;
 		this.repUsuarios =  repUsuarios;
 	}
-	string GerarHahSenha(int IdUsuario, string senha)
+	public static string GerarHahSenha(int IdUsuario, string senha)
 	{
 		using MD5 md5 = System.Security.Cryptography.MD5.Create();
         byte[] bytesSenha = System.Text.Encoding.ASCII.GetBytes(senha + IdUsuario.ToString());
         byte[] bytesHash = md5.ComputeHash(bytesSenha);
         return Convert.ToHexString(bytesHash); 
 	}
-	public async Task<bool> EhAutenticoAsync(int IdUsuario, string senha)
+	public async Task<bool> EhAutenticoAsync(int IdUsuario, string hashSenha)
 	{
-		_ = senha ?? throw new ArgumentNullException(nameof(senha));
-		var hashSenha = GerarHahSenha(IdUsuario, senha);
+		_ = hashSenha ?? throw new ArgumentNullException(nameof(hashSenha));
 		var usuario = await repUsuarios.ObterAsync(IdUsuario);
 		if(usuario == null)
 			throw new ArgumentException("Usuario invalido");

@@ -8,7 +8,7 @@ public class TestesAutenticacao : IDisposable
 {
 	readonly BDUtil BDU;
 	readonly PacaContext BD;
-	readonly IAutenticacaoService AutenticacaoService;
+	readonly IAutenticacaoService autenticacaoService;
 	(int Id, string Senha, string Hash)[] Senhas; 
 	string gSenha(int id) => Senhas.First((s)=> s.Id == id).Senha; 
 	string gHash(int id) => Senhas.First((h)=> h.Id == id).Hash; 
@@ -31,7 +31,7 @@ public class TestesAutenticacao : IDisposable
 		BD = BDU.CriarContexto();
 		
 		var repUsuarios =  new RepUsuarios(BD, LogUtils.CreateLogger<RepUsuarios>(output));
-		AutenticacaoService = new AutenticacaoService(
+		autenticacaoService = new AutenticacaoService(
 			repUsuarios, 
 			LogUtils.CreateLogger<AutenticacaoService>(output));
 	}
@@ -43,7 +43,7 @@ public class TestesAutenticacao : IDisposable
 	{
 		var senha =  gSenha(idUsuario);
 
-		var autentico = await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
+		var autentico = await autenticacaoService.EhAutenticoAsync(idUsuario, AutenticacaoService.GerarHahSenha(idUsuario,senha));
 
 		Assert.True(autentico);
 	}
@@ -56,7 +56,7 @@ public class TestesAutenticacao : IDisposable
 	{
 		var senha =  "Qualquer senha aleatoria errada";
 
-		var autentico = await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
+		var autentico = await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
 
 		Assert.False(autentico);
 	}
@@ -69,7 +69,7 @@ public class TestesAutenticacao : IDisposable
 		var idUsuario = -10;
 
 		await Assert.ThrowsAsync<ArgumentException>(async ()=>{
-			await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
+			await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
 		});
 	}
 
@@ -80,7 +80,7 @@ public class TestesAutenticacao : IDisposable
 		var idUsuario = 1;
 
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await AutenticacaoService.EhAutenticoAsync(idUsuario, senha);
+			await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
 		});
 	}
 

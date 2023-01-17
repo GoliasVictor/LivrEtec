@@ -26,7 +26,9 @@ namespace LivrEtec.GIB
         }
         public static RpcException ExceptionToRpcException(Exception ex)
         {
-            var metadata = new Metadata(){
+            if(ex is RpcException rpcEx)
+				return rpcEx;
+			var metadata = new Metadata(){
                 { "excecao" , ex.GetType().Name },
             };
             switch (ex)
@@ -38,7 +40,11 @@ namespace LivrEtec.GIB
                     return new RpcException(new Status(StatusCode.InvalidArgument, $"{ArgumentNull.ParamName} e nulo", ex), metadata);
                 case InvalidOperationException:
                     return new RpcException(new Status(StatusCode.FailedPrecondition, "Operacao Invalida", ex), metadata);
-                default:
+                case NaoAutorizadoException:
+					return new RpcException(new Status(StatusCode.PermissionDenied, "Permissão Negada", ex), metadata);
+                case NaoAutenticadoException:
+					return new RpcException(new Status(StatusCode.Unauthenticated, "Não Autenticado", ex), metadata);
+				default:
                     return new RpcException(new Status(StatusCode.Internal, "Erro interno", ex));
             }
         }
