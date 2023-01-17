@@ -399,4 +399,4 @@ FodyWeavers.xsd
 
 !.meta
 appsettings.json
-!Docker/**/appsettings.json
+!src/Docker/**/appsettings.json
