@@ -13,7 +13,7 @@ namespace LivrEtec.Servidor
         {
 
         }
-        public async Task<Pessoa?> ObterAsync(int id)
+        public async Task<Pessoa?> ObterObter(int id)
         {
             return await BD.Pessoas.FindAsync(id);
         }

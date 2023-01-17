@@ -38,7 +38,7 @@ public abstract class TestesTagsService<T> where T : ITagsService
 		var tagEsperada  = new Tag{
 			Nome = "Matématica",
 		};
-		var id = await tagsService.RegistrarAsync(tagEsperada);
+		var id = await tagsService.Registrar(tagEsperada);
 		var tagAtual = await BDU.gTagBanco(id);
 	}
 	[Fact]
@@ -46,7 +46,7 @@ public abstract class TestesTagsService<T> where T : ITagsService
 		int idTag = ID_TAG_EXISTENTE;
 		var tagEsperada = BDU.gTag(idTag);
 
-		var tagAtual = await tagsService.ObterAsync(idTag);
+		var tagAtual = await tagsService.Obter(idTag);
 		Assert.NotNull(tagAtual);
 		AssertTagIgual(tagEsperada, tagAtual!);
 	}
@@ -58,7 +58,7 @@ public abstract class TestesTagsService<T> where T : ITagsService
 			new Tag(4,"Literatura"),
 		}; 
 
-		var tagsAtuais = await tagsService.BuscarAsync(nomeBusca);
+		var tagsAtuais = await tagsService.Buscar(nomeBusca);
 
 		Assert.NotNull(tagsAtuais);
 		AssertEhIgual(tagsEsperadas, tagsAtuais);
@@ -72,7 +72,7 @@ public abstract class TestesTagsService<T> where T : ITagsService
 			Nome="Aventura Medieval"
 		};
 
-		await tagsService.EditarAsync(tagEsperada);
+		await tagsService.Editar(tagEsperada);
 		
 		var tagAtual = await BDU.gTagBanco(idTag);
 
@@ -84,7 +84,7 @@ public abstract class TestesTagsService<T> where T : ITagsService
 	public async Task Excluir_Valida(){
 		int idTag = ID_TAG_EXISTENTE;
 	
-		await tagsService.RemoverAsync(idTag);
+		await tagsService.Remover(idTag);
 		
 		var tagAtual = await BDU.gTagBanco(idTag);
 		Assert.Null(tagAtual);

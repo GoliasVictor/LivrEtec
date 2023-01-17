@@ -15,7 +15,7 @@ namespace LivrEtec.GIB
             this.tagsClientRPC = tagsClientRPC;
             this.logger = logger;
         }
-        public async Task<int> RegistrarAsync(Tag tag)
+        public async Task<int> Registrar(Tag tag)
         { 
             Validador.ErroSeInvalido(tag);
             try{
@@ -27,7 +27,7 @@ namespace LivrEtec.GIB
 
 		}
 
-        public async Task EditarAsync(Tag tag)
+        public async Task Editar(Tag tag)
         {
             _ = tag ?? throw new ArgumentNullException(nameof(tag));
             try{
@@ -38,7 +38,7 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task<Tag?> ObterAsync(int id)
+        public async Task<Tag?> Obter(int id)
         {
             try{
                 return await tagsClientRPC.ObterAsync(new IdTag() { Id = id });
@@ -49,7 +49,7 @@ namespace LivrEtec.GIB
         }
 
 
-		public async Task RemoverAsync(int id)
+		public async Task Remover(int id)
         {
             try{
                 await tagsClientRPC.RemoverAsync(new IdTag(){ Id = id});
@@ -59,7 +59,7 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task<IEnumerable<Tag>> BuscarAsync(string nome)
+        public async Task<IEnumerable<Tag>> Buscar(string nome)
         {
             nome ??= "";
             try{

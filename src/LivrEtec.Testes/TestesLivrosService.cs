@@ -86,7 +86,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 			Quantidade = int.MaxValue
 		};
 		
-		await livrosService.RegistrarAsync(livroARegistrar);
+		await livrosService.Registrar(livroARegistrar);
 		using var BD = BDU.CriarContexto();
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
@@ -101,7 +101,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		var livro  = BDU.gLivro(1);
 		
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await livrosService.RegistrarAsync(livro);
+			await livrosService.Registrar(livro);
 		});
 	}
 	[Fact]
@@ -114,7 +114,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		};
 
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await livrosService.RegistrarAsync(livro);
+			await livrosService.Registrar(livro);
 		});
 
 	}
@@ -125,7 +125,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 
 
 		await Assert.ThrowsAsync<ValidationException>(async ()=>{
-			await livrosService.RegistrarAsync(Livro);
+			await livrosService.Registrar(Livro);
 		});
 	}
 	[Theory]
@@ -144,7 +144,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 
 
 		await Assert.ThrowsAsync<ValidationException>(async ()=>{
-			await livrosService.RegistrarAsync(livro);
+			await livrosService.Registrar(livro);
 		});
 	}
 
@@ -153,7 +153,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 	public async Task Remover_LivroValidoAsync(){
 		var Id =  1;
 		
-		await livrosService.RemoverAsync(Id); 
+		await livrosService.Remover(Id); 
 		using var BD = BDU.CriarContexto();
 		var Contem = BD.Livros.Any( l => l.Id == Id); 
 		Assert.False(Contem);
@@ -163,7 +163,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		var Id = 100;
 	
 		await Assert.ThrowsAsync<InvalidOperationException>(async ()=>{
-			await livrosService.RemoverAsync(Id);
+			await livrosService.Remover(Id);
 		});
 	}
 	[Fact]
@@ -179,7 +179,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		var livroEsperado = livroEditado.Clone();
 		using var BD = BDU.CriarContexto();
 
-		await livrosService.EditarAsync(livroEditado);
+		await livrosService.Editar(livroEditado);
 		var livroRegistrado = BD.Livros.Find(idLivro)!;
 		BD.Entry(livroRegistrado).Collection(l => l.Tags).Load();
 		BD.Entry(livroRegistrado).Collection(l => l.Autores).Load();
@@ -193,7 +193,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		Livro livro = null!;
 		
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await livrosService.EditarAsync(livro);
+			await livrosService.Editar(livro);
 		});
 	}
 
@@ -206,7 +206,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 
 		livroEditado.Tags = new List<Tag>(){ null! };
 		await Assert.ThrowsAsync<InvalidDataException>(async ()=>{
-			await livrosService.EditarAsync(livroEditado);
+			await livrosService.Editar(livroEditado);
 		});		
 	}
 
@@ -219,7 +219,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 	[InlineData("Senhor", new int[]{2}	, new int[]{1})]
 	public async Task Buscar_filtroValido(string textoBusca, int[] arrTag, int[] idExperados ){
 		
-		var resulutado=  await livrosService.BuscarAsync(textoBusca, textoBusca, arrTag);
+		var resulutado=  await livrosService.Buscar(textoBusca, textoBusca, arrTag);
 		AssertEhIgual(idExperados,  resulutado.Select((i)=> i.Id));
 	}	
 	

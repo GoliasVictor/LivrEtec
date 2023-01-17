@@ -2,9 +2,9 @@
 
 public interface ILivrosService
 {
-	Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags = null);
-	Task EditarAsync(Livro livro);
-	Task<Livro?> GetAsync(int id);
-	Task RegistrarAsync(Livro livro);
-	Task RemoverAsync(int id);
+	Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags = null);
+	Task Editar(Livro livro);
+	Task<Livro?> Obter(int id);
+	Task Registrar(Livro livro);
+	Task Remover(int id);
 }

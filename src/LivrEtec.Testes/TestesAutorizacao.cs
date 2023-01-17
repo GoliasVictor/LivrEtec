@@ -56,7 +56,7 @@ public class TestesAutorizacao : IDisposable
 		var permissao =  Permissoes.Livro.Visualizar; 
 		
 
-		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizado(usuario, permissao);
 
 		Assert.True(autorizado);
 	}
@@ -69,7 +69,7 @@ public class TestesAutorizacao : IDisposable
 		var usuario = BDU.gUsuario(idUsuario);
 		var permissao =  Permissoes.Cargo.Criar;
 
-		var autorizado = await AutorizacaoService.EhAutorizadoAsync(usuario, permissao);
+		var autorizado = await AutorizacaoService.EhAutorizado(usuario, permissao);
 		
 		Assert.False(autorizado);
 	}

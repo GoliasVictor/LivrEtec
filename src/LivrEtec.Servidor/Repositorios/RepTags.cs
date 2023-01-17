@@ -12,7 +12,7 @@ public sealed class RepTags : Repositorio, IRepTags
 	{	
 	}
  
-	public async Task<IEnumerable<Tag>> BuscarAsync(string nome)
+	public async Task<IEnumerable<Tag>> Buscar(string nome)
 	{
 		if (string.IsNullOrEmpty(nome))
 			return await BD.Tags.ToListAsync(); 
@@ -24,12 +24,12 @@ public sealed class RepTags : Repositorio, IRepTags
 	}
 
 
-	public async Task<Tag?> ObterAsync(int id)
+	public async Task<Tag?> Obter(int id)
 	{
 		return await BD.Tags.FindAsync(id);
 	}
 
-	public async Task<int> RegistrarAsync(Tag tag)
+	public async Task<int> Registrar(Tag tag)
 	{
 		Validador.ErroSeInvalido(tag); 
 		if (await ExisteAsync(tag.Id))
@@ -39,7 +39,7 @@ public sealed class RepTags : Repositorio, IRepTags
 		return tag.Id;
 	}
 
-	public async Task RemoverAsync(int id)
+	public async Task Remover(int id)
 	{
 
 		if(await ExisteAsync(id) == false)
@@ -48,7 +48,7 @@ public sealed class RepTags : Repositorio, IRepTags
 		await BD.SaveChangesAsync();
 	}
 
-	public async Task EditarAsync(Tag tag)
+	public async Task Editar(Tag tag)
 	{
 		_= tag ?? throw new ArgumentNullException(nameof(tag));
 		var tagAntiga = await BD.Tags.SingleOrDefaultAsync(t => t.Id == tag.Id);

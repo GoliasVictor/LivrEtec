@@ -43,7 +43,7 @@ public class TestesAutenticacao : IDisposable
 	{
 		var senha =  gSenha(idUsuario);
 
-		var autentico = await autenticacaoService.EhAutenticoAsync(idUsuario, AutenticacaoService.GerarHahSenha(idUsuario,senha));
+		var autentico = await autenticacaoService.EhAutentico(idUsuario, AutenticacaoService.GerarHahSenha(idUsuario,senha));
 
 		Assert.True(autentico);
 	}
@@ -56,7 +56,7 @@ public class TestesAutenticacao : IDisposable
 	{
 		var senha =  "Qualquer senha aleatoria errada";
 
-		var autentico = await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
+		var autentico = await autenticacaoService.EhAutentico(idUsuario, senha);
 
 		Assert.False(autentico);
 	}
@@ -69,7 +69,7 @@ public class TestesAutenticacao : IDisposable
 		var idUsuario = -10;
 
 		await Assert.ThrowsAsync<ArgumentException>(async ()=>{
-			await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
+			await autenticacaoService.EhAutentico(idUsuario, senha);
 		});
 	}
 
@@ -80,7 +80,7 @@ public class TestesAutenticacao : IDisposable
 		var idUsuario = 1;
 
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await autenticacaoService.EhAutenticoAsync(idUsuario, senha);
+			await autenticacaoService.EhAutentico(idUsuario, senha);
 		});
 	}
 

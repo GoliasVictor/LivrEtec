@@ -16,7 +16,7 @@ namespace LivrEtec.GIB
             this.logger = logger;
         }
 
-        public async Task EditarAsync(Livro livro)
+        public async Task Editar(Livro livro)
         {
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
             if(livro.Tags.Any((t)=> t is null))
@@ -31,7 +31,7 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task<Livro?> GetAsync(int id)
+        public async Task<Livro?> Obter(int id)
         {
             try{
                 return await livrosClientRPC.GetAsync(new IdLivro() { Id = id });
@@ -41,7 +41,7 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task RegistrarAsync(Livro livro)
+        public async Task Registrar(Livro livro)
         { 
             if(livro is not null){
                 livro.Tags ??= new();
@@ -61,7 +61,7 @@ namespace LivrEtec.GIB
 		}
 
 
-		public async Task RemoverAsync(int id)
+		public async Task Remover(int id)
         {
             try{
                 await livrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
@@ -71,7 +71,7 @@ namespace LivrEtec.GIB
             }
         }
 
-        public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags)
+        public async Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
         {
             nome ??= "";
             nomeAutor ??= "";

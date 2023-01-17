@@ -163,7 +163,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 			FimDataEmprestimo = relogio.Agora.AddDays(30),
 		};
 
-		var idEmprestimo = await emprestimoService.AbrirAsync(idPessoa, ID_LIVRO_DISPONIVEL);
+		var idEmprestimo = await emprestimoService.Abrir(idPessoa, ID_LIVRO_DISPONIVEL);
 		
 		emprestimoEsperado.Id = idEmprestimo;
 		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
@@ -180,7 +180,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
 		emprestimoEsperado.FimDataEmprestimo = dataEsperada;
 
-		await emprestimoService.ProrrogarAsnc(idEmprestimo, dataEsperada);
+		await emprestimoService.Prorrogar(idEmprestimo, dataEsperada);
 
 		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
@@ -199,7 +199,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
 		emprestimoEsperado.DataFechamento = relogio.Agora;
 
-		await emprestimoService.DevolverAsync(idEmprestimo);
+		await emprestimoService.Devolver(idEmprestimo);
 
 		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
@@ -220,7 +220,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
 		emprestimoEsperado.DataFechamento = relogio.Agora;
 
-		await emprestimoService.DevolverAsync(idEmprestimo, AtrasoJustificado: true, ExplicacaoAtraso);
+		await emprestimoService.Devolver(idEmprestimo, AtrasoJustificado: true, ExplicacaoAtraso);
 
 		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
@@ -238,7 +238,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		emprestimoEsperado.DataFechamento = relogio.Agora;
 		emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
 
-		await emprestimoService.RegistrarPerdaAsync(idEmprestimo);
+		await emprestimoService.RegistrarPerda(idEmprestimo);
 
 		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
@@ -249,7 +249,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	{
 		var idEmprestimo = ID_EMPRESTIMO_ABERTO;
 
-		await emprestimoService.ExcluirAsync(idEmprestimo);
+		await emprestimoService.Excluir(idEmprestimo);
 
 		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.Null(emprestimoAtual);

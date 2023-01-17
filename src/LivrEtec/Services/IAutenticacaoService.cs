@@ -2,5 +2,5 @@ namespace LivrEtec;
 
 public interface IAutenticacaoService
 {
-	Task<bool> EhAutenticoAsync(int IdUsuario, string hash);
+	Task<bool> EhAutentico(int IdUsuario, string hash);
 }

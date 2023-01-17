@@ -21,13 +21,13 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 	{
 		return new IdEmprestimo()
 		{
-			Id = await emprestimoService.AbrirAsync(request.IdPessoa, request.IdLivro)
+			Id = await emprestimoService.Abrir(request.IdPessoa, request.IdLivro)
 		};
 	}
 
 	public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
 	{
-		IEnumerable<Emprestimo> Emprestimos = await emprestimoService.BuscarAsync(new ParamBuscaEmprestimo(
+		IEnumerable<Emprestimo> Emprestimos = await emprestimoService.Buscar(new ParamBuscaEmprestimo(
 			IdLivro: request.IdLivro,
 			IdPessoa: request.IdPessoa,
 			Fechado: request.Fechado,
@@ -40,7 +40,7 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 	}
 	public override async Task<Empty> Devolver(DevolverRequest request, ServerCallContext context)
 	{
-		await emprestimoService.DevolverAsync(
+		await emprestimoService.Devolver(
 			request.IdEmprestimo,
 			request.HasAtrasoJustificado ? request.AtrasoJustificado : null,
 			request.HasExplicacaoAtraso ? request.ExplicacaoAtraso : null
@@ -50,19 +50,19 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 
 	public override async Task<Empty> Prorrogar(ProrrogarRequest request, ServerCallContext context)
 	{
-		await emprestimoService.ProrrogarAsnc(request.IdEmprestimo, request.NovaData.ToDateTime());
+		await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData.ToDateTime());
 		return new Empty();
 	}
 
 	public override async Task<Empty> RegistrarPerda(IdEmprestimo request, ServerCallContext context)
 	{
-		await emprestimoService.RegistrarPerdaAsync(request.Id);
+		await emprestimoService.RegistrarPerda(request.Id);
 		return new Empty();
 	}
 
 	public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
 	{
-		await emprestimoService.ExcluirAsync(request.Id);
+		await emprestimoService.Excluir(request.Id);
 		return new Empty();
 	}
 

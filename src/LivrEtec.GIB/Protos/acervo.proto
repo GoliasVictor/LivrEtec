@@ -15,7 +15,7 @@ service Emprestimos {
     rpc Excluir(IdEmprestimo) returns (Empty) ;
 }
 service Livros {
-    rpc Get(IdLivro) returns (Livro);
+    rpc Obter(IdLivro) returns (Livro);
     rpc Remover(IdLivro) returns (Empty);
     rpc Buscar(ParamBusca) returns (ListaLivros);
     rpc Editar(Livro) returns (Empty);

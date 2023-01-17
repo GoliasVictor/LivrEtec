@@ -18,7 +18,7 @@ namespace LivrEtec.GIB
             this.logger = logger;
         }
 
-		public async Task<int> AbrirAsync(int idPessoa, int idlivro)
+		public async Task<int> Abrir(int idPessoa, int idlivro)
 		{
             try{
                 IdEmprestimo idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest(){
@@ -32,12 +32,12 @@ namespace LivrEtec.GIB
             }
 		}
 
-		public Task<IEnumerable<Emprestimo>> BuscarAsync(ParamBuscaEmprestimo parametros)
+		public Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
 		{
 			throw new NotImplementedException();
 		}
 
-		public async Task DevolverAsync(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
+		public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
 		{
             try{
 				DevolverRequest request = new DevolverRequest(){ IdEmprestimo = idEmprestimo };
@@ -52,7 +52,7 @@ namespace LivrEtec.GIB
             }
 		}
 
-		public async Task ProrrogarAsnc(int idEmprestimo, DateTime novaData)
+		public async Task Prorrogar(int idEmprestimo, DateTime novaData)
 		{
 
             try{
@@ -66,7 +66,7 @@ namespace LivrEtec.GIB
             }
 		}
 
-		public async Task RegistrarPerdaAsync(int idEmprestimo)
+		public async Task RegistrarPerda(int idEmprestimo)
 		{
             try{
                 await clientRPC.RegistrarPerdaAsync(new IdEmprestimo (){
@@ -77,7 +77,7 @@ namespace LivrEtec.GIB
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
 		}
-        public async Task ExcluirAsync(int idEmprestimo)
+        public async Task Excluir(int idEmprestimo)
 		{
             try{
 

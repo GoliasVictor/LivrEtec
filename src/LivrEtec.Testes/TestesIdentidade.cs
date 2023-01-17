@@ -57,7 +57,7 @@ public class TestesIdentidade :  IDisposable
 	[InlineData(IdAnonimo)]
 	public async Task DefinirUsuario_UsuarioValidoAsync(int idUsuario)
 	{
-		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.DefinirUsuario(idUsuario);
 
 		Assert.Equal(Identidade.IdUsuario, idUsuario);
 	}
@@ -68,7 +68,7 @@ public class TestesIdentidade :  IDisposable
 	public async Task DefinirUsuario_UsuarioInvalidoAsync(int idUsuario)
 	{
 		await Assert.ThrowsAsync<ArgumentException>(async ()=>{
-			await Identidade.DefinirUsuarioAsync(idUsuario);
+			await Identidade.DefinirUsuario(idUsuario);
 		});
 	}
 
@@ -78,8 +78,8 @@ public class TestesIdentidade :  IDisposable
 		var idUsuario = IdAdmin;
 		var UsuarioExperado =  BDU.gUsuario(idUsuario);
 		
-		await Identidade.DefinirUsuarioAsync(idUsuario);
-		await Identidade.AutenticarUsuarioAsync(gSenha(idUsuario));
+		await Identidade.DefinirUsuario(idUsuario);
+		await Identidade.AutenticarUsuario(gSenha(idUsuario));
 		var Usuario = Identidade.Usuario!;
 		
 		Assert.True(Identidade.EstaAutenticado);
@@ -98,8 +98,8 @@ public class TestesIdentidade :  IDisposable
 	{
 		var idUsuario = IdAdmin;
 
-		await Identidade.DefinirUsuarioAsync(idUsuario);
-		await Identidade.AutenticarUsuarioAsync(senha);
+		await Identidade.DefinirUsuario(idUsuario);
+		await Identidade.AutenticarUsuario(senha);
 
 		Assert.False(Identidade.EstaAutenticado);
 		Assert.NotEqual(Identidade.Usuario, BDU.gUsuario(IdAdmin));
@@ -109,10 +109,10 @@ public class TestesIdentidade :  IDisposable
 	{
 		var idUsuario = IdAdmin;
 		
-		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.DefinirUsuario(idUsuario);
 
 		await Assert.ThrowsAsync<ArgumentNullException>(async ()=>{
-			await Identidade.AutenticarUsuarioAsync(null!);
+			await Identidade.AutenticarUsuario(null!);
 		});
 	}
 
@@ -122,10 +122,10 @@ public class TestesIdentidade :  IDisposable
 	public async Task EhAutorizadoAsync(int idUsuario, bool ExpectativaAutorizado )
 	{
 		var permissao = Permissoes.Cargo.Criar;
-		await Identidade.DefinirUsuarioAsync(idUsuario);
-		await Identidade.AutenticarUsuarioAsync(gSenha(idUsuario));
+		await Identidade.DefinirUsuario(idUsuario);
+		await Identidade.AutenticarUsuario(gSenha(idUsuario));
 
-		var Autorizado = await Identidade.EhAutorizadoAsync(permissao);
+		var Autorizado = await Identidade.EhAutorizado(permissao);
 
 		Assert.Equal(Autorizado, ExpectativaAutorizado);
 	}
@@ -136,9 +136,9 @@ public class TestesIdentidade :  IDisposable
 		var permissao = Permissoes.Cargo.Criar;
 		var idUsuario = IdAdmin;
 
-		await Identidade.DefinirUsuarioAsync(idUsuario);
+		await Identidade.DefinirUsuario(idUsuario);
 		
-		bool Autorizado = await Identidade.EhAutorizadoAsync(permissao);
+		bool Autorizado = await Identidade.EhAutorizado(permissao);
 
 		Assert.False(Autorizado);
 	}

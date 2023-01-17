@@ -13,7 +13,7 @@ public sealed class AutorizacaoService : IAutorizacaoService
 		this.logger = logger;
 	}
 
-	public async Task<bool> EhAutorizadoAsync(Usuario usuario, Permissao permissao)
+	public async Task<bool> EhAutorizado(Usuario usuario, Permissao permissao)
 	{
 		if(usuario is null)
 			return false;
@@ -26,13 +26,13 @@ public sealed class AutorizacaoService : IAutorizacaoService
 			throw new ArgumentNullException(nameof(permissao));
 		if(!Permissoes.TodasPermissoes.Contains(permissao))
 			throw new ArgumentException(nameof(permissao));
-		var usuario = await repUsuarios.ObterAsync(idUsuario) 
+		var usuario = await repUsuarios.Obter(idUsuario) 
 			?? throw new ArgumentException("Usuario Não Existe");
 		return usuario.Cargo.Permissoes.Any( (p) => p.Id == permissao.Id);
 	}
 	public async Task ErroSeNaoAutorizadoAsync(Usuario usuario, Permissao permissao)
 	{
-		if (await EhAutorizadoAsync(usuario, permissao) == false)
+		if (await EhAutorizado(usuario, permissao) == false)
 			throw new NaoAutorizadoException(usuario, permissao);
 	}
 }

@@ -9,7 +9,7 @@ namespace LivrEtec.Servidor
 		{
 		}
 
-		public async Task<Usuario?> ObterAsync(int id)
+		public async Task<Usuario?> Obter(int id)
 		{
 			
 			var usuario = await BD.Usuarios.FindAsync(id);
@@ -19,7 +19,7 @@ namespace LivrEtec.Servidor
 			await BD.Entry(usuario.Cargo).Collection(c=> c.Permissoes).LoadAsync();
 			return usuario;
 		}
-		public async Task<bool> ExisteAsync(int id)
+		public async Task<bool> Existe(int id)
 		{
 			return await Task.Run<bool>(()=> BD.Usuarios.Any(u => u.Id == id));
 		}
