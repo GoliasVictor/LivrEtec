@@ -14,7 +14,7 @@ builder.Services.AddGrpc( options => {
     options.Interceptors.Add<ExceptionInterceptor>();
     options.Interceptors.Add<IdentidadeInterceptor>();
 });
-
+builder.WebHost.UseUrls();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
