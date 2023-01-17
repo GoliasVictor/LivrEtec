@@ -19,7 +19,7 @@ namespace LivrEtec.GIB.Servidor
 		[AllowAnonymous]
 		public override async Task<Token> Login(LoginRequest request, ServerCallContext context)
 		{
-			if( false == await autenticacaoService.EhAutenticoAsync(request.IdUsuario, request.HashSenha))
+			if( false == await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha))
 				throw new RpcException(new Status(StatusCode.Unauthenticated,"Usuario não encontrado ou Senha incorreta  "));
 			return new Token {
 				Valor = TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey)

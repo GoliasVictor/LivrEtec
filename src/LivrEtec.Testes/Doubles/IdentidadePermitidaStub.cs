@@ -28,14 +28,14 @@ namespace LivrEtec.Testes
 
         public bool EstaAutenticado => true;
 
-        public async Task AutenticarUsuarioAsync(string senha){ }
+        public async Task AutenticarUsuario(string senha){ }
 
-		public async Task AutenticarUsuarioAsync() { }
+		public async Task AutenticarUsuario() { }
 
-		public async Task DefinirUsuarioAsync(int idUsuario){ }
+		public async Task DefinirUsuario(int idUsuario){ }
 
-        public async Task<bool> EhAutorizadoAsync(Permissao permissao) => true;
+        public async Task<bool> EhAutorizado(Permissao permissao) => true;
 
-        public async Task ErroSeNaoAutorizadoAsync(Permissao permissao){ }
+        public async Task ErroSeNaoAutorizado(Permissao permissao){ }
     }
 }

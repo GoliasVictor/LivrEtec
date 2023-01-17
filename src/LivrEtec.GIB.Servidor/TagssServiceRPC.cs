@@ -19,25 +19,25 @@ namespace LivrEtec.GIB.Servidor
 		{
 			return new IdTag()
 			{
-				Id = await tagsService.RegistrarAsync(request)
+				Id = await tagsService.Registrar(request)
 			};
 
 		}
 		public override async Task<RPC.Tag?> Obter(IdTag request, ServerCallContext context)
 		{
-			return await tagsService.ObterAsync(request.Id);
+			return await tagsService.Obter(request.Id);
 		}
 
 		public override async Task<Empty> Remover(RPC.IdTag request, ServerCallContext context)
 		{
-			await tagsService.RemoverAsync(request.Id);
+			await tagsService.Remover(request.Id);
 			return new Empty();
 		}
 
 		public override async Task<ListaTags> Buscar(BuscarRequest request, ServerCallContext context)
 		{
 
-			IEnumerable<Tag> Tags = await tagsService.BuscarAsync(request.Nome);
+			IEnumerable<Tag> Tags = await tagsService.Buscar(request.Nome);
 			return new ListaTags()
 			{
 				Tags = { Tags.Select(l => (RPC.Tag)l).ToArray() }
@@ -46,7 +46,7 @@ namespace LivrEtec.GIB.Servidor
 
 		public override async Task<Empty> Editar(RPC.Tag request, ServerCallContext context)
 		{
-			await tagsService.EditarAsync(request);
+			await tagsService.Editar(request);
 			return new Empty();
 		}
 	}

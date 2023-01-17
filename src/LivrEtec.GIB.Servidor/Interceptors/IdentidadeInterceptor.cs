@@ -21,8 +21,8 @@ public class IdentidadeInterceptor : Interceptor
 		var user = context.GetHttpContext().User;
 		if(user.Identity?.IsAuthenticated == true){
 			var id = int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-			await IdentidadeService.DefinirUsuarioAsync(id);
-			await IdentidadeService.AutenticarUsuarioAsync();
+			await IdentidadeService.DefinirUsuario(id);
+			await IdentidadeService.AutenticarUsuario();
 		}
 
 		return await continuation(request, context);

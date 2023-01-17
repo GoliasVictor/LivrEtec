@@ -2,6 +2,6 @@ namespace LivrEtec;
 
 public interface IRepAutores
 {
-	Task RegistrarAsync(Autor autor);
-	IAsyncEnumerable<Autor> TodosAsync();
+	Task Registrar(Autor autor);
+	IAsyncEnumerable<Autor> Todos();
 }

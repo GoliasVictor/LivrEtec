@@ -25,36 +25,36 @@ public class IdentidadeService : IIdentidadeService
 	public Usuario? Usuario { get; private set; }
 	public bool EstaAutenticado { get; private set; }
 
-	public async Task DefinirUsuarioAsync(int idUsuario)
+	public async Task DefinirUsuario(int idUsuario)
 	{
-		if (false == await repUsuarios.ExisteAsync(idUsuario))
+		if (false == await repUsuarios.Existe(idUsuario))
 			throw new ArgumentException("Usuario não existe");
 		EstaAutenticado = false;
 		IdUsuario = idUsuario;
 		
 	}
 
- 	public async Task AutenticarUsuarioAsync(string senha)
+ 	public async Task AutenticarUsuario(string senha)
 	{
 		_ = senha ?? throw new ArgumentNullException(senha);
-		EstaAutenticado = await autenticacaoService.EhAutenticoAsync(IdUsuario, AutenticacaoService.GerarHahSenha(IdUsuario,senha));
+		EstaAutenticado = await autenticacaoService.EhAutentico(IdUsuario, AutenticacaoService.GerarHahSenha(IdUsuario,senha));
 		if (EstaAutenticado)
-			Usuario = await repUsuarios.ObterAsync(IdUsuario);
+			Usuario = await repUsuarios.Obter(IdUsuario);
 		
 	}
-	public async Task AutenticarUsuarioAsync()
+	public async Task AutenticarUsuario()
 	{
 		EstaAutenticado = true;
-		Usuario = await repUsuarios.ObterAsync(IdUsuario);
+		Usuario = await repUsuarios.Obter(IdUsuario);
 		
 	}
-	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
+	public  Task<bool> EhAutorizado(Permissao permissao)
 	{
 		if (!EstaAutenticado)
 			return  Task.FromResult(false);
 		return autorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
 	}
-	public Task ErroSeNaoAutorizadoAsync(Permissao permissao)
+	public Task ErroSeNaoAutorizado(Permissao permissao)
 	{
 		_ = Usuario ?? throw new NaoAutenticadoException("Usuario não definido");
 		if (!EstaAutenticado)

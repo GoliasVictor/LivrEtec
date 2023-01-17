@@ -12,7 +12,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	{	
 	}
  
-	public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags)
+	public async Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
 	{
 		IQueryable<Livro> livros = BD.Livros;
 
@@ -46,7 +46,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 	}
 
 
-	public async Task<Livro?> GetAsync(int id)
+	public async Task<Livro?> Obter(int id)
 	{
 
 		var livro = await BD.Livros.FindAsync(id);
@@ -57,7 +57,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		return livro;
 	}
 
-	public async Task RegistrarAsync(Livro livro)
+	public async Task RegistrarObter(Livro livro)
 	{
 		Validador.ErroSeInvalido(livro); 
 		if (await ExisteAsync(livro))
@@ -68,7 +68,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		await BD.SaveChangesAsync();
 	}
 
-	public async Task RemoverAsync(int id)
+	public async Task RemoverObter(int id)
 	{
 
 		if(await ExisteAsync(id) == false)
@@ -77,7 +77,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
 		await BD.SaveChangesAsync();
 	}
 
-	public async Task EditarAsync(Livro livro)
+	public async Task Editar(Livro livro)
 	{
 
 		_= livro ?? throw new ArgumentNullException(nameof(livro));

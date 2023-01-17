@@ -34,16 +34,16 @@ namespace LivrEtec.Servidor
             Logger = logger;
         }
 
-        public async Task<int> AbrirAsync(int idPessoa, int idLivro)
+        public async Task<int> Abrir(int idPessoa, int idLivro)
         {
-            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Criar);
+            await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Criar);
 
-            var pessoa = await repPessoas.ObterAsync(idPessoa) 
+            var pessoa = await repPessoas.ObterObter(idPessoa) 
                 ?? throw new InvalidOperationException($"Pessoa de id {{{idPessoa}}} não existe.");
-            var livro = await repLivros.GetAsync(idLivro) 
+            var livro = await repLivros.Obter(idLivro) 
                 ?? throw new InvalidOperationException($"Livro de id {{{idPessoa}}} não existe.");
             
-            var QtEmprestada = await repEmprestimos.ObterQuantidadeLivrosEmprestadoAsync(idLivro);
+            var QtEmprestada = await repEmprestimos.ObterQuantidadeLivrosEmprestado(idLivro);
             var LivrosDisponiveis = livro.Quantidade - QtEmprestada;
             if (LivrosDisponiveis <= 0)
                 throw new LivroEsgotadoException(livro.Id, $"Não é possivel abrir emprestimo, livro {{{livro.Id}}}");
@@ -55,27 +55,27 @@ namespace LivrEtec.Servidor
                 DataEmprestimo = relogio.Agora,
                 FimDataEmprestimo = relogio.Agora.AddDays(30),
             };
-            var id = await repEmprestimos.RegistrarAsync(Emprestimo); 
+            var id = await repEmprestimos.Registrar(Emprestimo); 
             Logger?.LogInformation("Emprestimo {{{id}}} aberto", id);
             return id ;
         }
 
-        public async Task<IEnumerable<Emprestimo>> BuscarAsync(ParamBuscaEmprestimo parametros)
+        public async Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
         {
-            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Visualizar);
-            var emprestimos = await repEmprestimos.BuscarAsync(parametros);
+            await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Visualizar);
+            var emprestimos = await repEmprestimos.Buscar(parametros);
             Logger?.LogInformation("Foram buscado os emprestimso do usuario {{{idPessoa}}} e livro {{{idLivro}}}",parametros.IdPessoa, parametros.IdLivro);
             return emprestimos;
         }
 
-        public async Task ProrrogarAsnc(int idEmprestimo, DateTime novaData)
+        public async Task Prorrogar(int idEmprestimo, DateTime novaData)
         {
-            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Editar);
+            await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Editar);
             await repEmprestimos.EditarFimData(idEmprestimo, novaData);
             Logger?.LogInformation("Data do livro {{{idEmprestimo}}}, foi modificada para {{{novaData}}}",idEmprestimo, novaData);
             
         }
-        public Task DevolverAsync(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null){
+        public Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null){
             return FecharAsync(new ParamFecharEmprestimo(){
                 IdEmprestimo = idEmprestimo, 
                 Devolvido = true,
@@ -83,7 +83,7 @@ namespace LivrEtec.Servidor
                 ExplicacaoAtraso = ExplicacaoAtraso
             });
         }
-        public Task RegistrarPerdaAsync(int idEmprestimo){
+        public Task RegistrarPerda(int idEmprestimo){
             return FecharAsync(new ParamFecharEmprestimo(){
                 IdEmprestimo = idEmprestimo, 
                 Devolvido = false,
@@ -91,16 +91,16 @@ namespace LivrEtec.Servidor
         }
         private async Task FecharAsync(ParamFecharEmprestimo parametros)
         {
-            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Fechar);
+            await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Fechar);
             parametros.idUsuarioFechador = identidadeService.IdUsuario;
-            await repEmprestimos.FecharAsync(parametros);
+            await repEmprestimos.Fechar(parametros);
             
             Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi devolvido", parametros.IdEmprestimo);
         }
 
-        public async Task ExcluirAsync(int idEmprestimo)
+        public async Task Excluir(int idEmprestimo)
         {
-            await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Emprestimo.Excluir);
+            await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Excluir);
             await repEmprestimos.Excluir(idEmprestimo);
             
             Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi excluido", idEmprestimo);

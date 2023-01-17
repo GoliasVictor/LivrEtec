@@ -24,41 +24,41 @@ public sealed class TagsService : ITagsService
 		Logger = logger;
 	}
 
-	public async Task<IEnumerable<Tag>> BuscarAsync(string nome)
+	public async Task<IEnumerable<Tag>> Buscar(string nome)
 	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Visualizar);
-		var tags = await repTags.BuscarAsync(nome);
+		await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
+		var tags = await repTags.Buscar(nome);
 		Logger?.LogInformation("Tags buscadas, Detalhes: busca={{{nome}}};",nome);
 		return tags;
 	}
 
-	public async Task EditarAsync(Tag tag)
+	public async Task Editar(Tag tag)
 	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Editar);
-		await repTags.EditarAsync(tag);
+		await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Editar);
+		await repTags.Editar(tag);
 		Logger?.LogInformation("Tag Editada, Detalhes: nome={{{nome}}};", tag.Nome);
 	}
 
-	public async Task<Tag?> ObterAsync(int id)
+	public async Task<Tag?> Obter(int id)
 	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Visualizar);
-		var tag = await repTags.ObterAsync(id);
+		await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
+		var tag = await repTags.Obter(id);
 		Logger?.LogInformation("Tag obtida, Detalhes: id={{{id}}};", id);
 		return tag;
 	}
 
-	public async Task<int> RegistrarAsync(Tag tag)
+	public async Task<int> Registrar(Tag tag)
 	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Criar);
-		var id = await repTags.RegistrarAsync(tag);
+		await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Criar);
+		var id = await repTags.Registrar(tag);
 		Logger?.LogInformation("Tag registrado, Detalhes: tag={{{tag}}};", tag);
             return id;
 	}
 
-	public async Task RemoverAsync(int id)
+	public async Task Remover(int id)
 	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Excluir);
-		await repTags.RemoverAsync(id);
+		await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Excluir);
+		await repTags.Remover(id);
 		Logger?.LogInformation("Tag excluida, Detalhes: id={{{id}}};", id);
 	}
 }

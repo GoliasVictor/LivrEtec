@@ -16,24 +16,24 @@ namespace LivrEtec.GIB.Servidor
 
 		public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
 		{
-			await livrosService.RegistrarAsync(request);
+			await livrosService.Registrar(request);
 			return new Empty();
 
 		}
-		public override async Task<RPC.Livro?> Get(IdLivro request, ServerCallContext context)
+		public override async Task<RPC.Livro?> Obter(IdLivro request, ServerCallContext context)
 		{
-			return await livrosService.GetAsync(request.Id);
+			return await livrosService.Obter(request.Id);
 		}
 
 		public override async Task<Empty> Remover(RPC.IdLivro request, ServerCallContext context)
 		{
-			await livrosService.RemoverAsync(request.Id);
+			await livrosService.Remover(request.Id);
 			return new Empty();
 		}
 
 		public override async Task<ListaLivros> Buscar(ParamBusca request, ServerCallContext context)
 		{
-			IEnumerable<Livro> Livros = await livrosService.BuscarAsync(request.NomeLivro, request.NomeAutor, request.IdTags);
+			IEnumerable<Livro> Livros = await livrosService.Buscar(request.NomeLivro, request.NomeAutor, request.IdTags);
 			return new ListaLivros()
 			{
 				Livros = { Livros.Select(l => (RPC.Livro)l).ToArray() }
@@ -42,7 +42,7 @@ namespace LivrEtec.GIB.Servidor
 
 		public override async Task<Empty> Editar(RPC.Livro request, ServerCallContext context)
 		{
-			await livrosService.EditarAsync(request);
+			await livrosService.Editar(request);
 			return new Empty();
 		}
 	}

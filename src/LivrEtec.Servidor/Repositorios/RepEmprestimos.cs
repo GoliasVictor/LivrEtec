@@ -18,7 +18,7 @@ namespace LivrEtec.Servidor
             this.repUsuarios = repUsuarios;
             _relogio = relogio;
         }
-        public async Task<int> RegistrarAsync(Emprestimo emprestimo)
+        public async Task<int> Registrar(Emprestimo emprestimo)
         {
 		    Validador.ErroSeInvalido(emprestimo);
             BD.Attach(emprestimo);
@@ -27,12 +27,12 @@ namespace LivrEtec.Servidor
             return emprestimo.Id;
 
         }
-        public async Task<int> ObterQuantidadeLivrosEmprestadoAsync(int idLivro)
+        public async Task<int> ObterQuantidadeLivrosEmprestado(int idLivro)
         {
             return await BD.Emprestimos.CountAsync((e) => e.Livro.Id == idLivro && !e.Fechado);
         }
 
-		public async Task<IEnumerable<Emprestimo>> BuscarAsync(ParamBuscaEmprestimo parametros)
+		public async Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
 		{
             var emprestimos = from emprestimo  in BD.Emprestimos 
                               where parametros.Fechado  != null || emprestimo.Fechado == parametros.Fechado
@@ -43,7 +43,7 @@ namespace LivrEtec.Servidor
             return await emprestimos.ToListAsync();
 		}   
 
-        public async Task<Emprestimo?> ObterAsync(int id)
+        public async Task<Emprestimo?> Obter(int id)
         {
 
             var emprestimo = await BD.Emprestimos.FindAsync(id);
@@ -55,7 +55,7 @@ namespace LivrEtec.Servidor
         }
         public async Task EditarFimData(int idEmprestimo, DateTime NovaData)
         {
-            Emprestimo emprestimo = await ObterAsync(idEmprestimo)
+            Emprestimo emprestimo = await Obter(idEmprestimo)
                 ?? throw new InvalidOperationException($"Emprestimo {idEmprestimo} não existe");
             emprestimo.FimDataEmprestimo =  NovaData;
             BD.Update(emprestimo);
@@ -63,16 +63,16 @@ namespace LivrEtec.Servidor
         }
         public async Task Excluir(int idEmprestimo)
         {
-            Emprestimo emprestimo = await ObterAsync(idEmprestimo)
+            Emprestimo emprestimo = await Obter(idEmprestimo)
                 ?? throw new InvalidOperationException($"Emprestimo {idEmprestimo} não existe");
             BD.Remove(emprestimo);
             await BD.SaveChangesAsync();
         }
-        public async Task FecharAsync(ParamFecharEmprestimo parametros)
+        public async Task Fechar(ParamFecharEmprestimo parametros)
 		{			
-            Emprestimo emprestimo = await ObterAsync(parametros.IdEmprestimo)
+            Emprestimo emprestimo = await Obter(parametros.IdEmprestimo)
 				?? throw new InvalidOperationException($"Não existe o emprestimo de id {parametros.IdEmprestimo}");
-			Usuario UsuarioFechador = await repUsuarios.ObterAsync(parametros.idUsuarioFechador)
+			Usuario UsuarioFechador = await repUsuarios.Obter(parametros.idUsuarioFechador)
 				?? throw new InvalidOperationException($"Não é possivel fechar emprestimo porque usuario de id {{{parametros.idUsuarioFechador}}} não existe.");
 			
             emprestimo.Fechado = true;

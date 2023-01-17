@@ -2,6 +2,6 @@
 {
     public interface IRepPessoas
     {
-        Task<Pessoa?> ObterAsync(int id);
+        Task<Pessoa?> ObterObter(int id);
     }
 }
