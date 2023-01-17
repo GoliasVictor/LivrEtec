@@ -105,7 +105,7 @@ public sealed class BDUtilSqlLite : BDUtil {
 	public BDUtilSqlLite(ILoggerFactory loggerFactory) 
 		: base( new DbContextOptionsBuilder<PacaContext>()
 				.UseLoggerFactory(loggerFactory)
-				.UseSqlite($"DataSource=Contatos.db")
+				.UseSqlite($"DataSource=LivrEtecTeste.db")
 				.Options
 		){}
 }
