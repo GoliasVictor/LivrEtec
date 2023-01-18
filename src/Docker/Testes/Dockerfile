@@ -12,7 +12,7 @@ RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
 COPY . .
 WORKDIR /src/LivrEtec.Testes
 RUN  --mount=type=cache,id=nuget,target=/root/.nuget/packages \
-	dotnet build "LivrEtec.Testes.csproj" -c Release -o /build --no-restore
+	dotnet build "LivrEtec.Testes.csproj" -c Release -o /build 
 RUN cp /src/Docker/Testes/appsettings.json /build/appsettings.json
 
 FROM base AS final

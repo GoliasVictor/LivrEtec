@@ -13,7 +13,7 @@ RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
 COPY . .
 WORKDIR "/src/LivrEtec.GIB.Servidor"
 RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
-    dotnet build "LivrEtec.GIB.Servidor.csproj" -c Release --no-restore
+    dotnet build "LivrEtec.GIB.Servidor.csproj" -c Release 
 
 FROM build AS publish
 RUN  --mount=type=cache,id=nuget,target=/root/.nuget/packages \
