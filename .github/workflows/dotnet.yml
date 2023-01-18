@@ -18,8 +18,8 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore LivrEtec.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build LivrEtec.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger GitHubActions --filter Category!=Remoto
+      run: dotnet test LivrEtec.sln --no-build --verbosity normal --logger GitHubActions --filter Category!=Remoto
