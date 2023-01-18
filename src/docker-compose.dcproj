@@ -4,6 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>a6fde3f9-e074-4dbd-bd27-c2ebc860eed2</ProjectGuid>
+    <DockerComposeProjectName>livretec</DockerComposeProjectName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
@@ -13,6 +14,6 @@
     <None Include=".dockerignore" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Docker\**" />
+    <none Include="Docker\**" />
   </ItemGroup>
 </Project>

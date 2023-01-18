@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Up Docker Images
-      run: docker compose up --build --exit-code-from testes
+      run:  docker compose -p livretec --profile teste up --build --exit-code-from testes

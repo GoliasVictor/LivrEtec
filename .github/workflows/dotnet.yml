@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     env: 
-      APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/src/appsettings.json'
+      APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/.github/workflows/settings/dotnet/appsettings.json'
     runs-on: ubuntu-latest
     defaults:
       run: 
@@ -16,13 +16,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Setup MySQL 
-      uses: mirromutth/mysql-action@v1.1
-      with: 
-        mysql root password: root 
-        mysql database: LivrEtecBD 
-        mysql user: LivrEtecServe 
-        mysql password: LivrEtecSenha 
 
     - name: Restore dependencies
       run: dotnet restore

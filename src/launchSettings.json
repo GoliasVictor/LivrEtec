@@ -1,0 +1,22 @@
+{
+  "profiles": {
+    "backend": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeProfile": {
+        "includes": [
+          "backend"
+        ]
+      }
+    },
+    "teste": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeProfile": {
+        "includes": [
+          "teste"
+        ]
+      }
+    }
+  }
+}
