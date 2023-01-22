@@ -8,15 +8,15 @@ COPY LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj LivrEtec.GIB.Servidor/
 COPY LivrEtec.GIB/LivrEtec.GIB.csproj LivrEtec.GIB/
 COPY LivrEtec/LivrEtec.csproj LivrEtec/
 COPY LivrEtec.Servidor/LivrEtec.Servidor.csproj LivrEtec.Servidor/
-RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+RUN --mount=type=cache,target=/root/.nuget/packages \
     dotnet restore "LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj"
 COPY . .
 WORKDIR "/src/LivrEtec.GIB.Servidor"
-RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+RUN --mount=type=cache,target=/root/.nuget/packages \
     dotnet build "LivrEtec.GIB.Servidor.csproj" -c Release 
 
 FROM build AS publish
-RUN  --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+RUN  --mount=type=cache,target=/root/.nuget/packages \
 	dotnet publish "LivrEtec.GIB.Servidor.csproj" -c Release -o /app/publish /p:UseAppHost=false --no-build
 RUN cp /src/Docker/GIB.Servidor/appsettings.json /app/publish/appsettings.json
 
