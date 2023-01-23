@@ -1,0 +1,217 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.IRepAutores
+  commentId: T:LivrEtec.IRepAutores
+  id: IRepAutores
+  parent: LivrEtec
+  children:
+  - LivrEtec.IRepAutores.Registrar(LivrEtec.Autor)
+  - LivrEtec.IRepAutores.Todos
+  langs:
+  - csharp
+  - vb
+  name: IRepAutores
+  nameWithType: IRepAutores
+  fullName: LivrEtec.IRepAutores
+  type: Interface
+  source:
+    remote:
+      path: src/LivrEtec/Repositorios/IRepAutores.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IRepAutores
+    path: ../src/LivrEtec/Repositorios/IRepAutores.cs
+    startLine: 2
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public interface IRepAutores
+    content.vb: Public Interface IRepAutores
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: LivrEtec.IRepAutores.Registrar(LivrEtec.Autor)
+  commentId: M:LivrEtec.IRepAutores.Registrar(LivrEtec.Autor)
+  id: Registrar(LivrEtec.Autor)
+  parent: LivrEtec.IRepAutores
+  langs:
+  - csharp
+  - vb
+  name: Registrar(Autor)
+  nameWithType: IRepAutores.Registrar(Autor)
+  fullName: LivrEtec.IRepAutores.Registrar(LivrEtec.Autor)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Repositorios/IRepAutores.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Registrar
+    path: ../src/LivrEtec/Repositorios/IRepAutores.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: Task Registrar(Autor autor)
+    parameters:
+    - id: autor
+      type: LivrEtec.Autor
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function Registrar(autor As Autor) As Task
+  overload: LivrEtec.IRepAutores.Registrar*
+- uid: LivrEtec.IRepAutores.Todos
+  commentId: M:LivrEtec.IRepAutores.Todos
+  id: Todos
+  parent: LivrEtec.IRepAutores
+  langs:
+  - csharp
+  - vb
+  name: Todos()
+  nameWithType: IRepAutores.Todos()
+  fullName: LivrEtec.IRepAutores.Todos()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Repositorios/IRepAutores.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Todos
+    path: ../src/LivrEtec/Repositorios/IRepAutores.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: IAsyncEnumerable<Autor> Todos()
+    return:
+      type: System.Collections.Generic.IAsyncEnumerable{LivrEtec.Autor}
+    content.vb: Function Todos As IAsyncEnumerable(Of Autor)
+  overload: LivrEtec.IRepAutores.Todos*
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.IRepAutores.Registrar*
+  commentId: Overload:LivrEtec.IRepAutores.Registrar
+  name: Registrar
+  nameWithType: IRepAutores.Registrar
+  fullName: LivrEtec.IRepAutores.Registrar
+- uid: LivrEtec.Autor
+  commentId: T:LivrEtec.Autor
+  parent: LivrEtec
+  name: Autor
+  nameWithType: Autor
+  fullName: LivrEtec.Autor
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.IRepAutores.Todos*
+  commentId: Overload:LivrEtec.IRepAutores.Todos
+  name: Todos
+  nameWithType: IRepAutores.Todos
+  fullName: LivrEtec.IRepAutores.Todos
+- uid: System.Collections.Generic.IAsyncEnumerable{LivrEtec.Autor}
+  commentId: T:System.Collections.Generic.IAsyncEnumerable{LivrEtec.Autor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerable`1
+  name: IAsyncEnumerable<Autor>
+  nameWithType: IAsyncEnumerable<Autor>
+  fullName: System.Collections.Generic.IAsyncEnumerable<LivrEtec.Autor>
+  nameWithType.vb: IAsyncEnumerable(Of Autor)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of LivrEtec.Autor)
+  name.vb: IAsyncEnumerable(Of Autor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerable`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
+  isExternal: true
+  name: IAsyncEnumerable<T>
+  nameWithType: IAsyncEnumerable<T>
+  fullName: System.Collections.Generic.IAsyncEnumerable<T>
+  nameWithType.vb: IAsyncEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
+  name.vb: IAsyncEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

@@ -1,0 +1,1346 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Tag
+  commentId: T:LivrEtec.Tag
+  id: Tag
+  parent: LivrEtec
+  children:
+  - LivrEtec.Tag.#ctor
+  - LivrEtec.Tag.#ctor(System.Int32,System.String)
+  - LivrEtec.Tag.#ctor(System.Int32)
+  - LivrEtec.Tag.#ctor(System.String)
+  - LivrEtec.Tag.CompareTo(LivrEtec.Tag)
+  - LivrEtec.Tag.Equals(LivrEtec.Tag)
+  - LivrEtec.Tag.Equals(System.Object)
+  - LivrEtec.Tag.GetHashCode
+  - LivrEtec.Tag.Id
+  - LivrEtec.Tag.Livros
+  - LivrEtec.Tag.Nome
+  - LivrEtec.Tag.op_Equality(LivrEtec.Tag,LivrEtec.Tag)
+  - LivrEtec.Tag.op_Inequality(LivrEtec.Tag,LivrEtec.Tag)
+  langs:
+  - csharp
+  - vb
+  name: Tag
+  nameWithType: Tag
+  fullName: LivrEtec.Tag
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Tag
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: 'public sealed class Tag : IComparable<Tag>, IEquatable<Tag>'
+    content.vb: >-
+      Public NotInheritable Class Tag
+
+          Implements IComparable(Of Tag), IEquatable(Of Tag)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IComparable{LivrEtec.Tag}
+  - System.IEquatable{LivrEtec.Tag}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Tag.Id
+  commentId: P:LivrEtec.Tag.Id
+  id: Id
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Tag.Id
+  fullName: LivrEtec.Tag.Id
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Id
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 7
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+      [Key]
+
+      [Required]
+
+      [InteiroPositivo("Id")]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+
+      <Key>
+
+      <Required>
+
+      <InteiroPositivo("Id")>
+
+      Public Property Id As Integer
+  overload: LivrEtec.Tag.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute.#ctor(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption
+      value: 1
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: LivrEtec.InteiroPositivoAttribute
+    ctor: LivrEtec.InteiroPositivoAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.Nome
+  commentId: P:LivrEtec.Tag.Nome
+  id: Nome
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: Tag.Nome
+  fullName: LivrEtec.Tag.Nome
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Nome
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [Required]
+
+      public string Nome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Nome As String
+  overload: LivrEtec.Tag.Nome*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.Livros
+  commentId: P:LivrEtec.Tag.Livros
+  id: Livros
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Livros
+  nameWithType: Tag.Livros
+  fullName: LivrEtec.Tag.Livros
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Livros
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 12
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public List<Livro> Livros { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{LivrEtec.Livro}
+    content.vb: Public Property Livros As List(Of Livro)
+  overload: LivrEtec.Tag.Livros*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.#ctor(System.Int32,System.String)
+  commentId: M:LivrEtec.Tag.#ctor(System.Int32,System.String)
+  id: '#ctor(System.Int32,System.String)'
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Tag(Int32, String)
+  nameWithType: Tag.Tag(Int32, String)
+  fullName: LivrEtec.Tag.Tag(System.Int32, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 13
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Tag(int id = 0, string nome = null)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: nome
+      type: System.String
+    content.vb: Public Sub New(id As Integer = 0, nome As String = Nothing)
+  overload: LivrEtec.Tag.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.#ctor(System.Int32)
+  commentId: M:LivrEtec.Tag.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Tag(Int32)
+  nameWithType: Tag.Tag(Int32)
+  fullName: LivrEtec.Tag.Tag(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 18
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Tag(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub New(id As Integer)
+  overload: LivrEtec.Tag.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.#ctor(System.String)
+  commentId: M:LivrEtec.Tag.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Tag(String)
+  nameWithType: Tag.Tag(String)
+  fullName: LivrEtec.Tag.Tag(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 22
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Tag(string nome)
+    parameters:
+    - id: nome
+      type: System.String
+    content.vb: Public Sub New(nome As String)
+  overload: LivrEtec.Tag.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.#ctor
+  commentId: M:LivrEtec.Tag.#ctor
+  id: '#ctor'
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Tag()
+  nameWithType: Tag.Tag()
+  fullName: LivrEtec.Tag.Tag()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 26
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Tag()
+    content.vb: Public Sub New
+  overload: LivrEtec.Tag.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.CompareTo(LivrEtec.Tag)
+  commentId: M:LivrEtec.Tag.CompareTo(LivrEtec.Tag)
+  id: CompareTo(LivrEtec.Tag)
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: CompareTo(Tag)
+  nameWithType: Tag.CompareTo(Tag)
+  fullName: LivrEtec.Tag.CompareTo(LivrEtec.Tag)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CompareTo
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 30
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public int CompareTo(Tag other)
+    parameters:
+    - id: other
+      type: LivrEtec.Tag
+    return:
+      type: System.Int32
+    content.vb: Public Function CompareTo(other As Tag) As Integer
+  overload: LivrEtec.Tag.CompareTo*
+  implements:
+  - System.IComparable{LivrEtec.Tag}.CompareTo(LivrEtec.Tag)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.Equals(System.Object)
+  commentId: M:LivrEtec.Tag.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Tag.Equals(Object)
+  fullName: LivrEtec.Tag.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 36
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: LivrEtec.Tag.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Tag.Equals(LivrEtec.Tag)
+  commentId: M:LivrEtec.Tag.Equals(LivrEtec.Tag)
+  id: Equals(LivrEtec.Tag)
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Equals(Tag)
+  nameWithType: Tag.Equals(Tag)
+  fullName: LivrEtec.Tag.Equals(LivrEtec.Tag)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 41
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public bool Equals(Tag other)
+    parameters:
+    - id: other
+      type: LivrEtec.Tag
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Tag) As Boolean
+  overload: LivrEtec.Tag.Equals*
+  implements:
+  - System.IEquatable{LivrEtec.Tag}.Equals(LivrEtec.Tag)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Tag.GetHashCode
+  commentId: M:LivrEtec.Tag.GetHashCode
+  id: GetHashCode
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Tag.GetHashCode()
+  fullName: LivrEtec.Tag.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: GetHashCode
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 48
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: LivrEtec.Tag.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Tag.op_Equality(LivrEtec.Tag,LivrEtec.Tag)
+  commentId: M:LivrEtec.Tag.op_Equality(LivrEtec.Tag,LivrEtec.Tag)
+  id: op_Equality(LivrEtec.Tag,LivrEtec.Tag)
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Equality(Tag, Tag)
+  nameWithType: Tag.Equality(Tag, Tag)
+  fullName: LivrEtec.Tag.Equality(LivrEtec.Tag, LivrEtec.Tag)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Equality
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 53
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator ==(Tag left, Tag right)
+    parameters:
+    - id: left
+      type: LivrEtec.Tag
+    - id: right
+      type: LivrEtec.Tag
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As Tag, right As Tag) As Boolean
+  overload: LivrEtec.Tag.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: LivrEtec.Tag.op_Inequality(LivrEtec.Tag,LivrEtec.Tag)
+  commentId: M:LivrEtec.Tag.op_Inequality(LivrEtec.Tag,LivrEtec.Tag)
+  id: op_Inequality(LivrEtec.Tag,LivrEtec.Tag)
+  parent: LivrEtec.Tag
+  langs:
+  - csharp
+  - vb
+  name: Inequality(Tag, Tag)
+  nameWithType: Tag.Inequality(Tag, Tag)
+  fullName: LivrEtec.Tag.Inequality(LivrEtec.Tag, LivrEtec.Tag)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Tag.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Inequality
+    path: ../src/LivrEtec/Models/Tag.cs
+    startLine: 58
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator !=(Tag left, Tag right)
+    parameters:
+    - id: left
+      type: LivrEtec.Tag
+    - id: right
+      type: LivrEtec.Tag
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As Tag, right As Tag) As Boolean
+  overload: LivrEtec.Tag.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IComparable{LivrEtec.Tag}
+  commentId: T:System.IComparable{LivrEtec.Tag}
+  parent: System
+  definition: System.IComparable`1
+  name: IComparable<Tag>
+  nameWithType: IComparable<Tag>
+  fullName: System.IComparable<LivrEtec.Tag>
+  nameWithType.vb: IComparable(Of Tag)
+  fullName.vb: System.IComparable(Of LivrEtec.Tag)
+  name.vb: IComparable(Of Tag)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{LivrEtec.Tag}
+  commentId: T:System.IEquatable{LivrEtec.Tag}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Tag>
+  nameWithType: IEquatable<Tag>
+  fullName: System.IEquatable<LivrEtec.Tag>
+  nameWithType.vb: IEquatable(Of Tag)
+  fullName.vb: System.IEquatable(Of LivrEtec.Tag)
+  name.vb: IEquatable(Of Tag)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Tag.Id*
+  commentId: Overload:LivrEtec.Tag.Id
+  name: Id
+  nameWithType: Tag.Id
+  fullName: LivrEtec.Tag.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Tag.Nome*
+  commentId: Overload:LivrEtec.Tag.Nome
+  name: Nome
+  nameWithType: Tag.Nome
+  fullName: LivrEtec.Tag.Nome
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.Tag.Livros*
+  commentId: Overload:LivrEtec.Tag.Livros
+  name: Livros
+  nameWithType: Tag.Livros
+  fullName: LivrEtec.Tag.Livros
+- uid: System.Collections.Generic.List{LivrEtec.Livro}
+  commentId: T:System.Collections.Generic.List{LivrEtec.Livro}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Livro>
+  nameWithType: List<Livro>
+  fullName: System.Collections.Generic.List<LivrEtec.Livro>
+  nameWithType.vb: List(Of Livro)
+  fullName.vb: System.Collections.Generic.List(Of LivrEtec.Livro)
+  name.vb: List(Of Livro)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: LivrEtec.Tag.#ctor*
+  commentId: Overload:LivrEtec.Tag.#ctor
+  name: Tag
+  nameWithType: Tag.Tag
+  fullName: LivrEtec.Tag.Tag
+- uid: LivrEtec.Tag.CompareTo*
+  commentId: Overload:LivrEtec.Tag.CompareTo
+  name: CompareTo
+  nameWithType: Tag.CompareTo
+  fullName: LivrEtec.Tag.CompareTo
+- uid: System.IComparable{LivrEtec.Tag}.CompareTo(LivrEtec.Tag)
+  commentId: M:System.IComparable{LivrEtec.Tag}.CompareTo(LivrEtec.Tag)
+  parent: System.IComparable{LivrEtec.Tag}
+  definition: System.IComparable`1.CompareTo(`0)
+  name: CompareTo(Tag)
+  nameWithType: IComparable<Tag>.CompareTo(Tag)
+  fullName: System.IComparable<LivrEtec.Tag>.CompareTo(LivrEtec.Tag)
+  nameWithType.vb: IComparable(Of Tag).CompareTo(Tag)
+  fullName.vb: System.IComparable(Of LivrEtec.Tag).CompareTo(LivrEtec.Tag)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable<Tag>.CompareTo
+    fullName: System.IComparable<LivrEtec.Tag>.CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable(Of Tag).CompareTo
+    fullName: System.IComparable(Of LivrEtec.Tag).CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Tag
+  commentId: T:LivrEtec.Tag
+  parent: LivrEtec
+  name: Tag
+  nameWithType: Tag
+  fullName: LivrEtec.Tag
+- uid: System.IComparable`1.CompareTo(`0)
+  commentId: M:System.IComparable`1.CompareTo(`0)
+  isExternal: true
+  name: CompareTo(T)
+  nameWithType: IComparable<T>.CompareTo(T)
+  fullName: System.IComparable<T>.CompareTo(T)
+  nameWithType.vb: IComparable(Of T).CompareTo(T)
+  fullName.vb: System.IComparable(Of T).CompareTo(T)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable<T>.CompareTo
+    fullName: System.IComparable<T>.CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable(Of T).CompareTo
+    fullName: System.IComparable(Of T).CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Tag.Equals*
+  commentId: Overload:LivrEtec.Tag.Equals
+  name: Equals
+  nameWithType: Tag.Equals
+  fullName: LivrEtec.Tag.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{LivrEtec.Tag}.Equals(LivrEtec.Tag)
+  commentId: M:System.IEquatable{LivrEtec.Tag}.Equals(LivrEtec.Tag)
+  parent: System.IEquatable{LivrEtec.Tag}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Tag)
+  nameWithType: IEquatable<Tag>.Equals(Tag)
+  fullName: System.IEquatable<LivrEtec.Tag>.Equals(LivrEtec.Tag)
+  nameWithType.vb: IEquatable(Of Tag).Equals(Tag)
+  fullName.vb: System.IEquatable(Of LivrEtec.Tag).Equals(LivrEtec.Tag)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Tag>.Equals
+    fullName: System.IEquatable<LivrEtec.Tag>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Tag).Equals
+    fullName: System.IEquatable(Of LivrEtec.Tag).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Tag.GetHashCode*
+  commentId: Overload:LivrEtec.Tag.GetHashCode
+  name: GetHashCode
+  nameWithType: Tag.GetHashCode
+  fullName: LivrEtec.Tag.GetHashCode
+- uid: LivrEtec.Tag.op_Equality*
+  commentId: Overload:LivrEtec.Tag.op_Equality
+  name: Equality
+  nameWithType: Tag.Equality
+  fullName: LivrEtec.Tag.Equality
+- uid: LivrEtec.Tag.op_Inequality*
+  commentId: Overload:LivrEtec.Tag.op_Inequality
+  name: Inequality
+  nameWithType: Tag.Inequality
+  fullName: LivrEtec.Tag.Inequality

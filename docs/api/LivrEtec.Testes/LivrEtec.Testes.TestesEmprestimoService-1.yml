@@ -1,0 +1,1200 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.TestesEmprestimoService`1
+  commentId: T:LivrEtec.Testes.TestesEmprestimoService`1
+  id: TestesEmprestimoService`1
+  parent: LivrEtec.Testes
+  children:
+  - LivrEtec.Testes.TestesEmprestimoService`1.#ctor(Xunit.Abstractions.ITestOutputHelper,LivrEtec.IRelogio,LivrEtec.Testes.BDUtil)
+  - LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  - LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  - LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  - LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  - LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  - LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  - LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  - LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  - LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  - LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  - LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  langs:
+  - csharp
+  - vb
+  name: TestesEmprestimoService<T>
+  nameWithType: TestesEmprestimoService<T>
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: TestesEmprestimoService
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Collection("UsaBancoDeDados")]
+
+      public abstract class TestesEmprestimoService<T>
+
+          where T : IEmprestimoService
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <Collection("UsaBancoDeDados")>
+
+      Public MustInherit Class TestesEmprestimoService(Of T As IEmprestimoService)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  - LivrEtec.Testes.Remoto.TestesEmprestimoServiceRPC
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Xunit.CollectionAttribute
+    ctor: Xunit.CollectionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: UsaBancoDeDados
+  nameWithType.vb: TestesEmprestimoService(Of T)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T)
+  name.vb: TestesEmprestimoService(Of T)
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  id: BDU
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: BDU
+  nameWithType: TestesEmprestimoService<T>.BDU
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.BDU
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: BDU
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected readonly BDUtil BDU
+    return:
+      type: LivrEtec.Testes.BDUtil
+    content.vb: Protected ReadOnly BDU As BDUtil
+  nameWithType.vb: TestesEmprestimoService(Of T).BDU
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).BDU
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  commentId: P:LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  id: emprestimoService
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: emprestimoService
+  nameWithType: TestesEmprestimoService<T>.emprestimoService
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.emprestimoService
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: emprestimoService
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 9
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected abstract T emprestimoService { get; set; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Protected MustOverride Property emprestimoService As T
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService*
+  nameWithType.vb: TestesEmprestimoService(Of T).emprestimoService
+  modifiers.csharp:
+  - protected
+  - abstract
+  - get
+  - set
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).emprestimoService
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  id: relogio
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: relogio
+  nameWithType: TestesEmprestimoService<T>.relogio
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.relogio
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: relogio
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected readonly IRelogio relogio
+    return:
+      type: LivrEtec.IRelogio
+    content.vb: Protected ReadOnly relogio As IRelogio
+  nameWithType.vb: TestesEmprestimoService(Of T).relogio
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).relogio
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  id: ID_PESSOA
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_PESSOA
+  nameWithType: TestesEmprestimoService<T>.ID_PESSOA
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_PESSOA
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_PESSOA
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 11
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_PESSOA = 1
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_PESSOA As Integer = 1
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_PESSOA
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_PESSOA
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  id: ID_ALUNO
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_ALUNO
+  nameWithType: TestesEmprestimoService<T>.ID_ALUNO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_ALUNO
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_ALUNO
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 12
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_ALUNO = 2
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_ALUNO As Integer = 2
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_ALUNO
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_ALUNO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  id: ID_USUARIO_CRIADOR
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_USUARIO_CRIADOR
+  nameWithType: TestesEmprestimoService<T>.ID_USUARIO_CRIADOR
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_USUARIO_CRIADOR
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_USUARIO_CRIADOR
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 13
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_USUARIO_CRIADOR = 1
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_USUARIO_CRIADOR As Integer = 1
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_USUARIO_CRIADOR
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_USUARIO_CRIADOR
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  id: ID_USUARIO_TESTE
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_USUARIO_TESTE
+  nameWithType: TestesEmprestimoService<T>.ID_USUARIO_TESTE
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_USUARIO_TESTE
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_USUARIO_TESTE
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 14
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_USUARIO_TESTE = 2
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_USUARIO_TESTE As Integer = 2
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_USUARIO_TESTE
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_USUARIO_TESTE
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  id: ID_LIVRO_DISPONIVEL
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_LIVRO_DISPONIVEL
+  nameWithType: TestesEmprestimoService<T>.ID_LIVRO_DISPONIVEL
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_LIVRO_DISPONIVEL
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_LIVRO_DISPONIVEL
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 15
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_LIVRO_DISPONIVEL = 1
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_LIVRO_DISPONIVEL As Integer = 1
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_LIVRO_DISPONIVEL
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_LIVRO_DISPONIVEL
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  id: ID_EMPRESTIMO_ABERTO
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_EMPRESTIMO_ABERTO
+  nameWithType: TestesEmprestimoService<T>.ID_EMPRESTIMO_ABERTO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_EMPRESTIMO_ABERTO
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_EMPRESTIMO_ABERTO
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 16
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_EMPRESTIMO_ABERTO = 2
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_EMPRESTIMO_ABERTO As Integer = 2
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_EMPRESTIMO_ABERTO
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_EMPRESTIMO_ABERTO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  id: ID_EMPRESTIMO_FECHADO
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ID_EMPRESTIMO_FECHADO
+  nameWithType: TestesEmprestimoService<T>.ID_EMPRESTIMO_FECHADO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_EMPRESTIMO_FECHADO
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ID_EMPRESTIMO_FECHADO
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 17
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected const int ID_EMPRESTIMO_FECHADO = 1
+    return:
+      type: System.Int32
+    content.vb: Protected Const ID_EMPRESTIMO_FECHADO As Integer = 1
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_EMPRESTIMO_FECHADO
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_EMPRESTIMO_FECHADO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  id: usuarioTeste
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: usuarioTeste
+  nameWithType: TestesEmprestimoService<T>.usuarioTeste
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.usuarioTeste
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: usuarioTeste
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 18
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected readonly Usuario usuarioTeste
+    return:
+      type: LivrEtec.Usuario
+    content.vb: Protected ReadOnly usuarioTeste As Usuario
+  nameWithType.vb: TestesEmprestimoService(Of T).usuarioTeste
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).usuarioTeste
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.#ctor(Xunit.Abstractions.ITestOutputHelper,LivrEtec.IRelogio,LivrEtec.Testes.BDUtil)
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.#ctor(Xunit.Abstractions.ITestOutputHelper,LivrEtec.IRelogio,LivrEtec.Testes.BDUtil)
+  id: '#ctor(Xunit.Abstractions.ITestOutputHelper,LivrEtec.IRelogio,LivrEtec.Testes.BDUtil)'
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: TestesEmprestimoService(ITestOutputHelper, IRelogio, BDUtil)
+  nameWithType: TestesEmprestimoService<T>.TestesEmprestimoService(ITestOutputHelper, IRelogio, BDUtil)
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.TestesEmprestimoService(Xunit.Abstractions.ITestOutputHelper, LivrEtec.IRelogio, LivrEtec.Testes.BDUtil)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 19
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public TestesEmprestimoService(ITestOutputHelper output, IRelogio relogio, BDUtil bdu)
+    parameters:
+    - id: output
+      type: Xunit.Abstractions.ITestOutputHelper
+    - id: relogio
+      type: LivrEtec.IRelogio
+    - id: bdu
+      type: LivrEtec.Testes.BDUtil
+    content.vb: Public Sub New(output As ITestOutputHelper, relogio As IRelogio, bdu As BDUtil)
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.#ctor*
+  nameWithType.vb: TestesEmprestimoService(Of T).TestesEmprestimoService(ITestOutputHelper, IRelogio, BDUtil)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).TestesEmprestimoService(Xunit.Abstractions.ITestOutputHelper, LivrEtec.IRelogio, LivrEtec.Testes.BDUtil)
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  id: AbrirAsync_Valido
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: AbrirAsync_Valido()
+  nameWithType: TestesEmprestimoService<T>.AbrirAsync_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.AbrirAsync_Valido()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AbrirAsync_Valido
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 147
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task AbrirAsync_Valido()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function AbrirAsync_Valido As Task
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).AbrirAsync_Valido()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).AbrirAsync_Valido()
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  id: ProrrogarAsnc_Valido
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ProrrogarAsnc_Valido()
+  nameWithType: TestesEmprestimoService<T>.ProrrogarAsnc_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ProrrogarAsnc_Valido()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ProrrogarAsnc_Valido
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 174
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task ProrrogarAsnc_Valido()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function ProrrogarAsnc_Valido As Task
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).ProrrogarAsnc_Valido()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ProrrogarAsnc_Valido()
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  id: DevolverAsync_SemAtraso
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: DevolverAsync_SemAtraso()
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_SemAtraso()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_SemAtraso()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: DevolverAsync_SemAtraso
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 191
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async void DevolverAsync_SemAtraso()
+    content.vb: >-
+      <Fact>
+
+      Public Sub DevolverAsync_SemAtraso
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_SemAtraso()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_SemAtraso()
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  id: DevolverAsync_ComAtrasoJustificado
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: DevolverAsync_ComAtrasoJustificado()
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: DevolverAsync_ComAtrasoJustificado
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 209
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async void DevolverAsync_ComAtrasoJustificado()
+    content.vb: >-
+      <Fact>
+
+      Public Sub DevolverAsync_ComAtrasoJustificado
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado()
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  id: RegistrarPerdaAsync_ValidaAsync
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: RegistrarPerdaAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RegistrarPerdaAsync_ValidaAsync
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 230
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task RegistrarPerdaAsync_ValidaAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function RegistrarPerdaAsync_ValidaAsync As Task
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync()
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  id: ExcluirAsync_ValidaAsync
+  parent: LivrEtec.Testes.TestesEmprestimoService`1
+  langs:
+  - csharp
+  - vb
+  name: ExcluirAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesEmprestimoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ExcluirAsync_ValidaAsync
+    path: ../LivrEtec.Testes/TestesEmprestimoService.cs
+    startLine: 246
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task ExcluirAsync_ValidaAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function ExcluirAsync_ValidaAsync As Task
+  overload: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  nameWithType.vb: TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync()
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync()
+references:
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.Testes.BDUtil
+  commentId: T:LivrEtec.Testes.BDUtil
+  parent: LivrEtec.Testes
+  name: BDUtil
+  nameWithType: BDUtil
+  fullName: LivrEtec.Testes.BDUtil
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  name: emprestimoService
+  nameWithType: TestesEmprestimoService<T>.emprestimoService
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.emprestimoService
+  nameWithType.vb: TestesEmprestimoService(Of T).emprestimoService
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).emprestimoService
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LivrEtec.IRelogio
+  commentId: T:LivrEtec.IRelogio
+  parent: LivrEtec
+  name: IRelogio
+  nameWithType: IRelogio
+  fullName: LivrEtec.IRelogio
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Usuario
+  commentId: T:LivrEtec.Usuario
+  parent: LivrEtec
+  name: Usuario
+  nameWithType: Usuario
+  fullName: LivrEtec.Usuario
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.#ctor*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.#ctor
+  name: TestesEmprestimoService
+  nameWithType: TestesEmprestimoService<T>.TestesEmprestimoService
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.TestesEmprestimoService
+  nameWithType.vb: TestesEmprestimoService(Of T).TestesEmprestimoService
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).TestesEmprestimoService
+- uid: Xunit.Abstractions.ITestOutputHelper
+  commentId: T:Xunit.Abstractions.ITestOutputHelper
+  parent: Xunit.Abstractions
+  isExternal: true
+  name: ITestOutputHelper
+  nameWithType: ITestOutputHelper
+  fullName: Xunit.Abstractions.ITestOutputHelper
+- uid: Xunit.Abstractions
+  commentId: N:Xunit.Abstractions
+  isExternal: true
+  name: Xunit.Abstractions
+  nameWithType: Xunit.Abstractions
+  fullName: Xunit.Abstractions
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  name: AbrirAsync_Valido
+  nameWithType: TestesEmprestimoService<T>.AbrirAsync_Valido
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.AbrirAsync_Valido
+  nameWithType.vb: TestesEmprestimoService(Of T).AbrirAsync_Valido
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).AbrirAsync_Valido
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  name: ProrrogarAsnc_Valido
+  nameWithType: TestesEmprestimoService<T>.ProrrogarAsnc_Valido
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ProrrogarAsnc_Valido
+  nameWithType.vb: TestesEmprestimoService(Of T).ProrrogarAsnc_Valido
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ProrrogarAsnc_Valido
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  name: DevolverAsync_SemAtraso
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_SemAtraso
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_SemAtraso
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_SemAtraso
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_SemAtraso
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  name: DevolverAsync_ComAtrasoJustificado
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  name: RegistrarPerdaAsync_ValidaAsync
+  nameWithType: TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync
+  nameWithType.vb: TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync*
+  commentId: Overload:LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  name: ExcluirAsync_ValidaAsync
+  nameWithType: TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync
+  nameWithType.vb: TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync

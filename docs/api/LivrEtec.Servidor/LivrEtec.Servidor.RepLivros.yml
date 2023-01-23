@@ -1,0 +1,1260 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Servidor.RepLivros
+  commentId: T:LivrEtec.Servidor.RepLivros
+  id: RepLivros
+  parent: LivrEtec.Servidor
+  children:
+  - LivrEtec.Servidor.RepLivros.#ctor(LivrEtec.Servidor.PacaContext,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros})
+  - LivrEtec.Servidor.RepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  - LivrEtec.Servidor.RepLivros.Editar(LivrEtec.Livro)
+  - LivrEtec.Servidor.RepLivros.Obter(System.Int32)
+  - LivrEtec.Servidor.RepLivros.RegistrarObter(LivrEtec.Livro)
+  - LivrEtec.Servidor.RepLivros.RemoverObter(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: RepLivros
+  nameWithType: RepLivros
+  fullName: LivrEtec.Servidor.RepLivros
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RepLivros
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: 'public sealed class RepLivros : Repositorio, IRepLivros'
+    content.vb: >-
+      Public NotInheritable Class RepLivros
+
+          Inherits Repositorio
+
+          Implements IRepLivros
+  inheritance:
+  - System.Object
+  - LivrEtec.Servidor.Repositorio
+  implements:
+  - LivrEtec.IRepLivros
+  inheritedMembers:
+  - LivrEtec.Servidor.Repositorio.BD
+  - LivrEtec.Servidor.Repositorio.logger
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Servidor.RepLivros.#ctor(LivrEtec.Servidor.PacaContext,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros})
+  commentId: M:LivrEtec.Servidor.RepLivros.#ctor(LivrEtec.Servidor.PacaContext,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros})
+  id: '#ctor(LivrEtec.Servidor.PacaContext,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros})'
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: RepLivros(PacaContext, ILogger<RepLivros>)
+  nameWithType: RepLivros.RepLivros(PacaContext, ILogger<RepLivros>)
+  fullName: LivrEtec.Servidor.RepLivros.RepLivros(LivrEtec.Servidor.PacaContext, Microsoft.Extensions.Logging.ILogger<LivrEtec.Servidor.RepLivros>)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public RepLivros(PacaContext BD, ILogger<RepLivros> logger)
+    parameters:
+    - id: BD
+      type: LivrEtec.Servidor.PacaContext
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros}
+    content.vb: Public Sub New(BD As PacaContext, logger As ILogger(Of RepLivros))
+  overload: LivrEtec.Servidor.RepLivros.#ctor*
+  nameWithType.vb: RepLivros.RepLivros(PacaContext, ILogger(Of RepLivros))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Servidor.RepLivros.RepLivros(LivrEtec.Servidor.PacaContext, Microsoft.Extensions.Logging.ILogger(Of LivrEtec.Servidor.RepLivros))
+  name.vb: RepLivros(PacaContext, ILogger(Of RepLivros))
+- uid: LivrEtec.Servidor.RepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  commentId: M:LivrEtec.Servidor.RepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  id: Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: Buscar(String, String, IEnumerable<Int32>)
+  nameWithType: RepLivros.Buscar(String, String, IEnumerable<Int32>)
+  fullName: LivrEtec.Servidor.RepLivros.Buscar(System.String, System.String, System.Collections.Generic.IEnumerable<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Buscar
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 14
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int> idTags)
+    parameters:
+    - id: nome
+      type: System.String
+    - id: nomeAutor
+      type: System.String
+    - id: idTags
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{LivrEtec.Livro}}
+    content.vb: Public Function Buscar(nome As String, nomeAutor As String, idTags As IEnumerable(Of Integer)) As Task(Of IEnumerable(Of Livro))
+  overload: LivrEtec.Servidor.RepLivros.Buscar*
+  implements:
+  - LivrEtec.IRepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  nameWithType.vb: RepLivros.Buscar(String, String, IEnumerable(Of Int32))
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Servidor.RepLivros.Buscar(System.String, System.String, System.Collections.Generic.IEnumerable(Of System.Int32))
+  name.vb: Buscar(String, String, IEnumerable(Of Int32))
+- uid: LivrEtec.Servidor.RepLivros.Obter(System.Int32)
+  commentId: M:LivrEtec.Servidor.RepLivros.Obter(System.Int32)
+  id: Obter(System.Int32)
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: Obter(Int32)
+  nameWithType: RepLivros.Obter(Int32)
+  fullName: LivrEtec.Servidor.RepLivros.Obter(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Obter
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 48
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task<Livro> Obter(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{LivrEtec.Livro}
+    content.vb: Public Function Obter(id As Integer) As Task(Of Livro)
+  overload: LivrEtec.Servidor.RepLivros.Obter*
+  implements:
+  - LivrEtec.IRepLivros.Obter(System.Int32)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Servidor.RepLivros.RegistrarObter(LivrEtec.Livro)
+  commentId: M:LivrEtec.Servidor.RepLivros.RegistrarObter(LivrEtec.Livro)
+  id: RegistrarObter(LivrEtec.Livro)
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: RegistrarObter(Livro)
+  nameWithType: RepLivros.RegistrarObter(Livro)
+  fullName: LivrEtec.Servidor.RepLivros.RegistrarObter(LivrEtec.Livro)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RegistrarObter
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 59
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task RegistrarObter(Livro livro)
+    parameters:
+    - id: livro
+      type: LivrEtec.Livro
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function RegistrarObter(livro As Livro) As Task
+  overload: LivrEtec.Servidor.RepLivros.RegistrarObter*
+  implements:
+  - LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Servidor.RepLivros.RemoverObter(System.Int32)
+  commentId: M:LivrEtec.Servidor.RepLivros.RemoverObter(System.Int32)
+  id: RemoverObter(System.Int32)
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: RemoverObter(Int32)
+  nameWithType: RepLivros.RemoverObter(Int32)
+  fullName: LivrEtec.Servidor.RepLivros.RemoverObter(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RemoverObter
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 70
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task RemoverObter(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function RemoverObter(id As Integer) As Task
+  overload: LivrEtec.Servidor.RepLivros.RemoverObter*
+  implements:
+  - LivrEtec.IRepLivros.RemoverObter(System.Int32)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Servidor.RepLivros.Editar(LivrEtec.Livro)
+  commentId: M:LivrEtec.Servidor.RepLivros.Editar(LivrEtec.Livro)
+  id: Editar(LivrEtec.Livro)
+  parent: LivrEtec.Servidor.RepLivros
+  langs:
+  - csharp
+  - vb
+  name: Editar(Livro)
+  nameWithType: RepLivros.Editar(Livro)
+  fullName: LivrEtec.Servidor.RepLivros.Editar(LivrEtec.Livro)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Repositorios/RepLivros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Editar
+    path: ../LivrEtec.Servidor/Repositorios/RepLivros.cs
+    startLine: 79
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task Editar(Livro livro)
+    parameters:
+    - id: livro
+      type: LivrEtec.Livro
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function Editar(livro As Livro) As Task
+  overload: LivrEtec.Servidor.RepLivros.Editar*
+  implements:
+  - LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.Servidor.Repositorio
+  commentId: T:LivrEtec.Servidor.Repositorio
+  parent: LivrEtec.Servidor
+  name: Repositorio
+  nameWithType: Repositorio
+  fullName: LivrEtec.Servidor.Repositorio
+- uid: LivrEtec.IRepLivros
+  commentId: T:LivrEtec.IRepLivros
+  parent: LivrEtec
+  name: IRepLivros
+  nameWithType: IRepLivros
+  fullName: LivrEtec.IRepLivros
+- uid: LivrEtec.Servidor.Repositorio.BD
+  commentId: F:LivrEtec.Servidor.Repositorio.BD
+  parent: LivrEtec.Servidor.Repositorio
+  name: BD
+  nameWithType: Repositorio.BD
+  fullName: LivrEtec.Servidor.Repositorio.BD
+- uid: LivrEtec.Servidor.Repositorio.logger
+  commentId: F:LivrEtec.Servidor.Repositorio.logger
+  parent: LivrEtec.Servidor.Repositorio
+  name: logger
+  nameWithType: Repositorio.logger
+  fullName: LivrEtec.Servidor.Repositorio.logger
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.Servidor.RepLivros.#ctor*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.#ctor
+  name: RepLivros
+  nameWithType: RepLivros.RepLivros
+  fullName: LivrEtec.Servidor.RepLivros.RepLivros
+- uid: LivrEtec.Servidor.PacaContext
+  commentId: T:LivrEtec.Servidor.PacaContext
+  parent: LivrEtec.Servidor
+  name: PacaContext
+  nameWithType: PacaContext
+  fullName: LivrEtec.Servidor.PacaContext
+- uid: Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.RepLivros}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  name: ILogger<RepLivros>
+  nameWithType: ILogger<RepLivros>
+  fullName: Microsoft.Extensions.Logging.ILogger<LivrEtec.Servidor.RepLivros>
+  nameWithType.vb: ILogger(Of RepLivros)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of LivrEtec.Servidor.RepLivros)
+  name.vb: ILogger(Of RepLivros)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.RepLivros
+    name: RepLivros
+    nameWithType: RepLivros
+    fullName: LivrEtec.Servidor.RepLivros
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.RepLivros
+    name: RepLivros
+    nameWithType: RepLivros
+    fullName: LivrEtec.Servidor.RepLivros
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TCategoryName
+    nameWithType: TCategoryName
+    fullName: TCategoryName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TCategoryName
+    nameWithType: TCategoryName
+    fullName: TCategoryName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+- uid: LivrEtec.Servidor.RepLivros.Buscar*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.Buscar
+  name: Buscar
+  nameWithType: RepLivros.Buscar
+  fullName: LivrEtec.Servidor.RepLivros.Buscar
+- uid: LivrEtec.IRepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  commentId: M:LivrEtec.IRepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+  parent: LivrEtec.IRepLivros
+  isExternal: true
+  name: Buscar(String, String, IEnumerable<Int32>)
+  nameWithType: IRepLivros.Buscar(String, String, IEnumerable<Int32>)
+  fullName: LivrEtec.IRepLivros.Buscar(System.String, System.String, System.Collections.Generic.IEnumerable<System.Int32>)
+  nameWithType.vb: IRepLivros.Buscar(String, String, IEnumerable(Of Int32))
+  fullName.vb: LivrEtec.IRepLivros.Buscar(System.String, System.String, System.Collections.Generic.IEnumerable(Of System.Int32))
+  name.vb: Buscar(String, String, IEnumerable(Of Int32))
+  spec.csharp:
+  - uid: LivrEtec.IRepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+    name: Buscar
+    nameWithType: IRepLivros.Buscar
+    fullName: LivrEtec.IRepLivros.Buscar
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IRepLivros.Buscar(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})
+    name: Buscar
+    nameWithType: IRepLivros.Buscar
+    fullName: LivrEtec.IRepLivros.Buscar
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.IEnumerable{System.Int32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Int32>
+  nameWithType: IEnumerable<Int32>
+  fullName: System.Collections.Generic.IEnumerable<System.Int32>
+  nameWithType.vb: IEnumerable(Of Int32)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Int32)
+  name.vb: IEnumerable(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{LivrEtec.Livro}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{LivrEtec.Livro}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<IEnumerable<Livro>>
+  nameWithType: Task<IEnumerable<Livro>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<LivrEtec.Livro>>
+  nameWithType.vb: Task(Of IEnumerable(Of Livro))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of LivrEtec.Livro))
+  name.vb: Task(Of IEnumerable(Of Livro))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.Servidor.RepLivros.Obter*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.Obter
+  name: Obter
+  nameWithType: RepLivros.Obter
+  fullName: LivrEtec.Servidor.RepLivros.Obter
+- uid: LivrEtec.IRepLivros.Obter(System.Int32)
+  commentId: M:LivrEtec.IRepLivros.Obter(System.Int32)
+  parent: LivrEtec.IRepLivros
+  isExternal: true
+  name: Obter(Int32)
+  nameWithType: IRepLivros.Obter(Int32)
+  fullName: LivrEtec.IRepLivros.Obter(System.Int32)
+  spec.csharp:
+  - uid: LivrEtec.IRepLivros.Obter(System.Int32)
+    name: Obter
+    nameWithType: IRepLivros.Obter
+    fullName: LivrEtec.IRepLivros.Obter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IRepLivros.Obter(System.Int32)
+    name: Obter
+    nameWithType: IRepLivros.Obter
+    fullName: LivrEtec.IRepLivros.Obter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Threading.Tasks.Task{LivrEtec.Livro}
+  commentId: T:System.Threading.Tasks.Task{LivrEtec.Livro}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Livro>
+  nameWithType: Task<Livro>
+  fullName: System.Threading.Tasks.Task<LivrEtec.Livro>
+  nameWithType.vb: Task(Of Livro)
+  fullName.vb: System.Threading.Tasks.Task(Of LivrEtec.Livro)
+  name.vb: Task(Of Livro)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Servidor.RepLivros.RegistrarObter*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.RegistrarObter
+  name: RegistrarObter
+  nameWithType: RepLivros.RegistrarObter
+  fullName: LivrEtec.Servidor.RepLivros.RegistrarObter
+- uid: LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+  commentId: M:LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+  parent: LivrEtec.IRepLivros
+  name: RegistrarObter(Livro)
+  nameWithType: IRepLivros.RegistrarObter(Livro)
+  fullName: LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+  spec.csharp:
+  - uid: LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+    name: RegistrarObter
+    nameWithType: IRepLivros.RegistrarObter
+    fullName: LivrEtec.IRepLivros.RegistrarObter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IRepLivros.RegistrarObter(LivrEtec.Livro)
+    name: RegistrarObter
+    nameWithType: IRepLivros.RegistrarObter
+    fullName: LivrEtec.IRepLivros.RegistrarObter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Livro
+  commentId: T:LivrEtec.Livro
+  parent: LivrEtec
+  name: Livro
+  nameWithType: Livro
+  fullName: LivrEtec.Livro
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: LivrEtec.Servidor.RepLivros.RemoverObter*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.RemoverObter
+  name: RemoverObter
+  nameWithType: RepLivros.RemoverObter
+  fullName: LivrEtec.Servidor.RepLivros.RemoverObter
+- uid: LivrEtec.IRepLivros.RemoverObter(System.Int32)
+  commentId: M:LivrEtec.IRepLivros.RemoverObter(System.Int32)
+  parent: LivrEtec.IRepLivros
+  isExternal: true
+  name: RemoverObter(Int32)
+  nameWithType: IRepLivros.RemoverObter(Int32)
+  fullName: LivrEtec.IRepLivros.RemoverObter(System.Int32)
+  spec.csharp:
+  - uid: LivrEtec.IRepLivros.RemoverObter(System.Int32)
+    name: RemoverObter
+    nameWithType: IRepLivros.RemoverObter
+    fullName: LivrEtec.IRepLivros.RemoverObter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IRepLivros.RemoverObter(System.Int32)
+    name: RemoverObter
+    nameWithType: IRepLivros.RemoverObter
+    fullName: LivrEtec.IRepLivros.RemoverObter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Servidor.RepLivros.Editar*
+  commentId: Overload:LivrEtec.Servidor.RepLivros.Editar
+  name: Editar
+  nameWithType: RepLivros.Editar
+  fullName: LivrEtec.Servidor.RepLivros.Editar
+- uid: LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+  commentId: M:LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+  parent: LivrEtec.IRepLivros
+  name: Editar(Livro)
+  nameWithType: IRepLivros.Editar(Livro)
+  fullName: LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+  spec.csharp:
+  - uid: LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+    name: Editar
+    nameWithType: IRepLivros.Editar
+    fullName: LivrEtec.IRepLivros.Editar
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IRepLivros.Editar(LivrEtec.Livro)
+    name: Editar
+    nameWithType: IRepLivros.Editar
+    fullName: LivrEtec.IRepLivros.Editar
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )

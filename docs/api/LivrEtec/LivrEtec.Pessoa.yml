@@ -1,0 +1,999 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Pessoa
+  commentId: T:LivrEtec.Pessoa
+  id: Pessoa
+  parent: LivrEtec
+  children:
+  - LivrEtec.Pessoa.#ctor
+  - LivrEtec.Pessoa.#ctor(System.String,System.String)
+  - LivrEtec.Pessoa.Equals(LivrEtec.Pessoa)
+  - LivrEtec.Pessoa.Equals(System.Object)
+  - LivrEtec.Pessoa.GetHashCode
+  - LivrEtec.Pessoa.Id
+  - LivrEtec.Pessoa.Nome
+  - LivrEtec.Pessoa.op_Equality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  - LivrEtec.Pessoa.op_Inequality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  - LivrEtec.Pessoa.Telefone
+  langs:
+  - csharp
+  - vb
+  name: Pessoa
+  nameWithType: Pessoa
+  fullName: LivrEtec.Pessoa
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Pessoa
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: 'public class Pessoa : IEquatable<Pessoa>'
+    content.vb: >-
+      Public Class Pessoa
+
+          Implements IEquatable(Of Pessoa)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LivrEtec.Aluno
+  implements:
+  - System.IEquatable{LivrEtec.Pessoa}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.Pessoa.#ctor
+  commentId: M:LivrEtec.Pessoa.#ctor
+  id: '#ctor'
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Pessoa()
+  nameWithType: Pessoa.Pessoa()
+  fullName: LivrEtec.Pessoa.Pessoa()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 7
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Pessoa()
+    content.vb: Public Sub New
+  overload: LivrEtec.Pessoa.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.#ctor(System.String,System.String)
+  commentId: M:LivrEtec.Pessoa.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Pessoa(String, String)
+  nameWithType: Pessoa.Pessoa(String, String)
+  fullName: LivrEtec.Pessoa.Pessoa(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Pessoa(string nome, string telefone)
+    parameters:
+    - id: nome
+      type: System.String
+    - id: telefone
+      type: System.String
+    content.vb: Public Sub New(nome As String, telefone As String)
+  overload: LivrEtec.Pessoa.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.Id
+  commentId: P:LivrEtec.Pessoa.Id
+  id: Id
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Pessoa.Id
+  fullName: LivrEtec.Pessoa.Id
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Id
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 14
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+      [Key]
+
+      [Required]
+
+      [InteiroPositivo("Id")]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+
+      <Key>
+
+      <Required>
+
+      <InteiroPositivo("Id")>
+
+      Public Property Id As Integer
+  overload: LivrEtec.Pessoa.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute.#ctor(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption
+      value: 1
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: LivrEtec.InteiroPositivoAttribute
+    ctor: LivrEtec.InteiroPositivoAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.Nome
+  commentId: P:LivrEtec.Pessoa.Nome
+  id: Nome
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: Pessoa.Nome
+  fullName: LivrEtec.Pessoa.Nome
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Nome
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 18
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [Required]
+
+      public string Nome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Nome As String
+  overload: LivrEtec.Pessoa.Nome*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.Telefone
+  commentId: P:LivrEtec.Pessoa.Telefone
+  id: Telefone
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Telefone
+  nameWithType: Pessoa.Telefone
+  fullName: LivrEtec.Pessoa.Telefone
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Telefone
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 21
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [MaxLength(14)]
+
+      public string Telefone { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(14)>
+
+      Public Property Telefone As String
+  overload: LivrEtec.Pessoa.Telefone*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 14
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.Equals(System.Object)
+  commentId: M:LivrEtec.Pessoa.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Pessoa.Equals(Object)
+  fullName: LivrEtec.Pessoa.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 24
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: LivrEtec.Pessoa.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Pessoa.Equals(LivrEtec.Pessoa)
+  commentId: M:LivrEtec.Pessoa.Equals(LivrEtec.Pessoa)
+  id: Equals(LivrEtec.Pessoa)
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Equals(Pessoa)
+  nameWithType: Pessoa.Equals(Pessoa)
+  fullName: LivrEtec.Pessoa.Equals(LivrEtec.Pessoa)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 29
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public bool Equals(Pessoa other)
+    parameters:
+    - id: other
+      type: LivrEtec.Pessoa
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Pessoa) As Boolean
+  overload: LivrEtec.Pessoa.Equals*
+  implements:
+  - System.IEquatable{LivrEtec.Pessoa}.Equals(LivrEtec.Pessoa)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Pessoa.GetHashCode
+  commentId: M:LivrEtec.Pessoa.GetHashCode
+  id: GetHashCode
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Pessoa.GetHashCode()
+  fullName: LivrEtec.Pessoa.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: GetHashCode
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 37
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: LivrEtec.Pessoa.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Pessoa.op_Equality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  commentId: M:LivrEtec.Pessoa.op_Equality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  id: op_Equality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Equality(Pessoa, Pessoa)
+  nameWithType: Pessoa.Equality(Pessoa, Pessoa)
+  fullName: LivrEtec.Pessoa.Equality(LivrEtec.Pessoa, LivrEtec.Pessoa)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Equality
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 42
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator ==(Pessoa left, Pessoa right)
+    parameters:
+    - id: left
+      type: LivrEtec.Pessoa
+    - id: right
+      type: LivrEtec.Pessoa
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As Pessoa, right As Pessoa) As Boolean
+  overload: LivrEtec.Pessoa.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: LivrEtec.Pessoa.op_Inequality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  commentId: M:LivrEtec.Pessoa.op_Inequality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  id: op_Inequality(LivrEtec.Pessoa,LivrEtec.Pessoa)
+  parent: LivrEtec.Pessoa
+  langs:
+  - csharp
+  - vb
+  name: Inequality(Pessoa, Pessoa)
+  nameWithType: Pessoa.Inequality(Pessoa, Pessoa)
+  fullName: LivrEtec.Pessoa.Inequality(LivrEtec.Pessoa, LivrEtec.Pessoa)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Pessoa.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Inequality
+    path: ../src/LivrEtec/Models/Pessoa.cs
+    startLine: 47
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator !=(Pessoa left, Pessoa right)
+    parameters:
+    - id: left
+      type: LivrEtec.Pessoa
+    - id: right
+      type: LivrEtec.Pessoa
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As Pessoa, right As Pessoa) As Boolean
+  overload: LivrEtec.Pessoa.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IEquatable{LivrEtec.Pessoa}
+  commentId: T:System.IEquatable{LivrEtec.Pessoa}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Pessoa>
+  nameWithType: IEquatable<Pessoa>
+  fullName: System.IEquatable<LivrEtec.Pessoa>
+  nameWithType.vb: IEquatable(Of Pessoa)
+  fullName.vb: System.IEquatable(Of LivrEtec.Pessoa)
+  name.vb: IEquatable(Of Pessoa)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Pessoa.#ctor*
+  commentId: Overload:LivrEtec.Pessoa.#ctor
+  name: Pessoa
+  nameWithType: Pessoa.Pessoa
+  fullName: LivrEtec.Pessoa.Pessoa
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.Pessoa.Id*
+  commentId: Overload:LivrEtec.Pessoa.Id
+  name: Id
+  nameWithType: Pessoa.Id
+  fullName: LivrEtec.Pessoa.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Pessoa.Nome*
+  commentId: Overload:LivrEtec.Pessoa.Nome
+  name: Nome
+  nameWithType: Pessoa.Nome
+  fullName: LivrEtec.Pessoa.Nome
+- uid: LivrEtec.Pessoa.Telefone*
+  commentId: Overload:LivrEtec.Pessoa.Telefone
+  name: Telefone
+  nameWithType: Pessoa.Telefone
+  fullName: LivrEtec.Pessoa.Telefone
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Pessoa.Equals*
+  commentId: Overload:LivrEtec.Pessoa.Equals
+  name: Equals
+  nameWithType: Pessoa.Equals
+  fullName: LivrEtec.Pessoa.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{LivrEtec.Pessoa}.Equals(LivrEtec.Pessoa)
+  commentId: M:System.IEquatable{LivrEtec.Pessoa}.Equals(LivrEtec.Pessoa)
+  parent: System.IEquatable{LivrEtec.Pessoa}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Pessoa)
+  nameWithType: IEquatable<Pessoa>.Equals(Pessoa)
+  fullName: System.IEquatable<LivrEtec.Pessoa>.Equals(LivrEtec.Pessoa)
+  nameWithType.vb: IEquatable(Of Pessoa).Equals(Pessoa)
+  fullName.vb: System.IEquatable(Of LivrEtec.Pessoa).Equals(LivrEtec.Pessoa)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Pessoa>.Equals
+    fullName: System.IEquatable<LivrEtec.Pessoa>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Pessoa).Equals
+    fullName: System.IEquatable(Of LivrEtec.Pessoa).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Pessoa
+  commentId: T:LivrEtec.Pessoa
+  parent: LivrEtec
+  name: Pessoa
+  nameWithType: Pessoa
+  fullName: LivrEtec.Pessoa
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Pessoa.GetHashCode*
+  commentId: Overload:LivrEtec.Pessoa.GetHashCode
+  name: GetHashCode
+  nameWithType: Pessoa.GetHashCode
+  fullName: LivrEtec.Pessoa.GetHashCode
+- uid: LivrEtec.Pessoa.op_Equality*
+  commentId: Overload:LivrEtec.Pessoa.op_Equality
+  name: Equality
+  nameWithType: Pessoa.Equality
+  fullName: LivrEtec.Pessoa.Equality
+- uid: LivrEtec.Pessoa.op_Inequality*
+  commentId: Overload:LivrEtec.Pessoa.op_Inequality
+  name: Inequality
+  nameWithType: Pessoa.Inequality
+  fullName: LivrEtec.Pessoa.Inequality

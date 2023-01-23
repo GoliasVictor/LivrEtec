@@ -1,0 +1,760 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.ParamFecharEmprestimo
+  commentId: T:LivrEtec.ParamFecharEmprestimo
+  id: ParamFecharEmprestimo
+  parent: LivrEtec
+  children:
+  - LivrEtec.ParamFecharEmprestimo.#ctor(System.Int32,System.Boolean,System.Nullable{System.Boolean},System.String,System.Int32)
+  - LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+  - LivrEtec.ParamFecharEmprestimo.Devolvido
+  - LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+  - LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+  - LivrEtec.ParamFecharEmprestimo.idUsuarioFechador
+  langs:
+  - csharp
+  - vb
+  name: ParamFecharEmprestimo
+  nameWithType: ParamFecharEmprestimo
+  fullName: LivrEtec.ParamFecharEmprestimo
+  type: Struct
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ParamFecharEmprestimo
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 3
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: 'public struct ParamFecharEmprestimo : IEquatable<ParamFecharEmprestimo>'
+    content.vb: >-
+      Public Structure ParamFecharEmprestimo
+
+          Implements IEquatable(Of ParamFecharEmprestimo)
+  implements:
+  - System.IEquatable{LivrEtec.ParamFecharEmprestimo}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: LivrEtec.ParamFecharEmprestimo.#ctor(System.Int32,System.Boolean,System.Nullable{System.Boolean},System.String,System.Int32)
+  commentId: M:LivrEtec.ParamFecharEmprestimo.#ctor(System.Int32,System.Boolean,System.Nullable{System.Boolean},System.String,System.Int32)
+  id: '#ctor(System.Int32,System.Boolean,System.Nullable{System.Boolean},System.String,System.Int32)'
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: ParamFecharEmprestimo(Int32, Boolean, Nullable<Boolean>, String, Int32)
+  nameWithType: ParamFecharEmprestimo.ParamFecharEmprestimo(Int32, Boolean, Nullable<Boolean>, String, Int32)
+  fullName: LivrEtec.ParamFecharEmprestimo.ParamFecharEmprestimo(System.Int32, System.Boolean, System.Nullable<System.Boolean>, System.String, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 3
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public ParamFecharEmprestimo(int IdEmprestimo, bool Devolvido, bool? AtrasoJustificado, string ExplicacaoAtraso, int idUsuarioFechador)
+    parameters:
+    - id: IdEmprestimo
+      type: System.Int32
+    - id: Devolvido
+      type: System.Boolean
+    - id: AtrasoJustificado
+      type: System.Nullable{System.Boolean}
+    - id: ExplicacaoAtraso
+      type: System.String
+    - id: idUsuarioFechador
+      type: System.Int32
+    content.vb: Public Sub New(IdEmprestimo As Integer, Devolvido As Boolean, AtrasoJustificado As Boolean?, ExplicacaoAtraso As String, idUsuarioFechador As Integer)
+  overload: LivrEtec.ParamFecharEmprestimo.#ctor*
+  nameWithType.vb: ParamFecharEmprestimo.ParamFecharEmprestimo(Int32, Boolean, Nullable(Of Boolean), String, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.ParamFecharEmprestimo.ParamFecharEmprestimo(System.Int32, System.Boolean, System.Nullable(Of System.Boolean), System.String, System.Int32)
+  name.vb: ParamFecharEmprestimo(Int32, Boolean, Nullable(Of Boolean), String, Int32)
+- uid: LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+  commentId: P:LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+  id: IdEmprestimo
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimo
+  nameWithType: ParamFecharEmprestimo.IdEmprestimo
+  fullName: LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IdEmprestimo
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public int IdEmprestimo { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property IdEmprestimo As Integer
+  overload: LivrEtec.ParamFecharEmprestimo.IdEmprestimo*
+  modifiers.csharp:
+  - public
+  - readonly get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.ParamFecharEmprestimo.Devolvido
+  commentId: P:LivrEtec.ParamFecharEmprestimo.Devolvido
+  id: Devolvido
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Devolvido
+  nameWithType: ParamFecharEmprestimo.Devolvido
+  fullName: LivrEtec.ParamFecharEmprestimo.Devolvido
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Devolvido
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public bool Devolvido { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Devolvido As Boolean
+  overload: LivrEtec.ParamFecharEmprestimo.Devolvido*
+  modifiers.csharp:
+  - public
+  - readonly get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+  commentId: P:LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+  id: AtrasoJustificado
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: AtrasoJustificado
+  nameWithType: ParamFecharEmprestimo.AtrasoJustificado
+  fullName: LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AtrasoJustificado
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 6
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public bool? AtrasoJustificado { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property AtrasoJustificado As Boolean?
+  overload: LivrEtec.ParamFecharEmprestimo.AtrasoJustificado*
+  modifiers.csharp:
+  - public
+  - readonly get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+  commentId: P:LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+  id: ExplicacaoAtraso
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: ExplicacaoAtraso
+  nameWithType: ParamFecharEmprestimo.ExplicacaoAtraso
+  fullName: LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ExplicacaoAtraso
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 7
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public string ExplicacaoAtraso { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ExplicacaoAtraso As String
+  overload: LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso*
+  modifiers.csharp:
+  - public
+  - readonly get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.ParamFecharEmprestimo.idUsuarioFechador
+  commentId: P:LivrEtec.ParamFecharEmprestimo.idUsuarioFechador
+  id: idUsuarioFechador
+  parent: LivrEtec.ParamFecharEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: idUsuarioFechador
+  nameWithType: ParamFecharEmprestimo.idUsuarioFechador
+  fullName: LivrEtec.ParamFecharEmprestimo.idUsuarioFechador
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Parametros.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: idUsuarioFechador
+    path: ../src/LivrEtec/Models/Parametros.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public int idUsuarioFechador { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property idUsuarioFechador As Integer
+  overload: LivrEtec.ParamFecharEmprestimo.idUsuarioFechador*
+  modifiers.csharp:
+  - public
+  - readonly get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.IEquatable{LivrEtec.ParamFecharEmprestimo}
+  commentId: T:System.IEquatable{LivrEtec.ParamFecharEmprestimo}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<ParamFecharEmprestimo>
+  nameWithType: IEquatable<ParamFecharEmprestimo>
+  fullName: System.IEquatable<LivrEtec.ParamFecharEmprestimo>
+  nameWithType.vb: IEquatable(Of ParamFecharEmprestimo)
+  fullName.vb: System.IEquatable(Of LivrEtec.ParamFecharEmprestimo)
+  name.vb: IEquatable(Of ParamFecharEmprestimo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.ParamFecharEmprestimo
+    name: ParamFecharEmprestimo
+    nameWithType: ParamFecharEmprestimo
+    fullName: LivrEtec.ParamFecharEmprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.ParamFecharEmprestimo
+    name: ParamFecharEmprestimo
+    nameWithType: ParamFecharEmprestimo
+    fullName: LivrEtec.ParamFecharEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.ParamFecharEmprestimo.#ctor*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.#ctor
+  name: ParamFecharEmprestimo
+  nameWithType: ParamFecharEmprestimo.ParamFecharEmprestimo
+  fullName: LivrEtec.ParamFecharEmprestimo.ParamFecharEmprestimo
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.ParamFecharEmprestimo.IdEmprestimo*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+  name: IdEmprestimo
+  nameWithType: ParamFecharEmprestimo.IdEmprestimo
+  fullName: LivrEtec.ParamFecharEmprestimo.IdEmprestimo
+- uid: LivrEtec.ParamFecharEmprestimo.Devolvido*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.Devolvido
+  name: Devolvido
+  nameWithType: ParamFecharEmprestimo.Devolvido
+  fullName: LivrEtec.ParamFecharEmprestimo.Devolvido
+- uid: LivrEtec.ParamFecharEmprestimo.AtrasoJustificado*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+  name: AtrasoJustificado
+  nameWithType: ParamFecharEmprestimo.AtrasoJustificado
+  fullName: LivrEtec.ParamFecharEmprestimo.AtrasoJustificado
+- uid: LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+  name: ExplicacaoAtraso
+  nameWithType: ParamFecharEmprestimo.ExplicacaoAtraso
+  fullName: LivrEtec.ParamFecharEmprestimo.ExplicacaoAtraso
+- uid: LivrEtec.ParamFecharEmprestimo.idUsuarioFechador*
+  commentId: Overload:LivrEtec.ParamFecharEmprestimo.idUsuarioFechador
+  name: idUsuarioFechador
+  nameWithType: ParamFecharEmprestimo.idUsuarioFechador
+  fullName: LivrEtec.ParamFecharEmprestimo.idUsuarioFechador

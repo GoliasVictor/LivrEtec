@@ -1,0 +1,157 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  id: LivrEtec.Testes
+  children:
+  - LivrEtec.Testes.BDUtil
+  - LivrEtec.Testes.BDUtilMySQl
+  - LivrEtec.Testes.BDUtilSqlLite
+  - LivrEtec.Testes.Configuracao
+  - LivrEtec.Testes.TestesEmprestimoService`1
+  - LivrEtec.Testes.TestesLivrosService`1
+  - LivrEtec.Testes.TestesTagsService`1
+  langs:
+  - csharp
+  - vb
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes
+  type: Namespace
+  assemblies:
+  - LivrEtec.Testes
+references:
+- uid: LivrEtec.Testes.Configuracao
+  commentId: T:LivrEtec.Testes.Configuracao
+  name: Configuracao
+  nameWithType: Configuracao
+  fullName: LivrEtec.Testes.Configuracao
+- uid: LivrEtec.Testes.TestesEmprestimoService`1
+  commentId: T:LivrEtec.Testes.TestesEmprestimoService`1
+  name: TestesEmprestimoService<T>
+  nameWithType: TestesEmprestimoService<T>
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>
+  nameWithType.vb: TestesEmprestimoService(Of T)
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T)
+  name.vb: TestesEmprestimoService(Of T)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1
+  commentId: T:LivrEtec.Testes.TestesLivrosService`1
+  name: TestesLivrosService<T>
+  nameWithType: TestesLivrosService<T>
+  fullName: LivrEtec.Testes.TestesLivrosService<T>
+  nameWithType.vb: TestesLivrosService(Of T)
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T)
+  name.vb: TestesLivrosService(Of T)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesTagsService`1
+  commentId: T:LivrEtec.Testes.TestesTagsService`1
+  name: TestesTagsService<T>
+  nameWithType: TestesTagsService<T>
+  fullName: LivrEtec.Testes.TestesTagsService<T>
+  nameWithType.vb: TestesTagsService(Of T)
+  fullName.vb: LivrEtec.Testes.TestesTagsService(Of T)
+  name.vb: TestesTagsService(Of T)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesTagsService`1
+    name: TestesTagsService
+    nameWithType: TestesTagsService
+    fullName: LivrEtec.Testes.TestesTagsService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesTagsService`1
+    name: TestesTagsService
+    nameWithType: TestesTagsService
+    fullName: LivrEtec.Testes.TestesTagsService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.BDUtil
+  commentId: T:LivrEtec.Testes.BDUtil
+  parent: LivrEtec.Testes
+  name: BDUtil
+  nameWithType: BDUtil
+  fullName: LivrEtec.Testes.BDUtil
+- uid: LivrEtec.Testes.BDUtilMySQl
+  commentId: T:LivrEtec.Testes.BDUtilMySQl
+  name: BDUtilMySQl
+  nameWithType: BDUtilMySQl
+  fullName: LivrEtec.Testes.BDUtilMySQl
+- uid: LivrEtec.Testes.BDUtilSqlLite
+  commentId: T:LivrEtec.Testes.BDUtilSqlLite
+  name: BDUtilSqlLite
+  nameWithType: BDUtilSqlLite
+  fullName: LivrEtec.Testes.BDUtilSqlLite
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes

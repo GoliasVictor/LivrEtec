@@ -17,10 +17,10 @@ public sealed class AutorizacaoService : IAutorizacaoService
 	{
 		if(usuario is null)
 			return false;
-		return await EhAutorizadoAsync(usuario.Id, permissao);
+		return await EhAutorizado(usuario.Id, permissao);
 	}
 
-	public async Task<bool> EhAutorizadoAsync(int idUsuario, Permissao permissao)
+	public async Task<bool> EhAutorizado(int idUsuario, Permissao permissao)
 	{
 		if(permissao == null)
 			throw new ArgumentNullException(nameof(permissao));
@@ -30,7 +30,7 @@ public sealed class AutorizacaoService : IAutorizacaoService
 			?? throw new ArgumentException("Usuario Não Existe");
 		return usuario.Cargo.Permissoes.Any( (p) => p.Id == permissao.Id);
 	}
-	public async Task ErroSeNaoAutorizadoAsync(Usuario usuario, Permissao permissao)
+	public async Task ErroSeNaoAutorizado(Usuario usuario, Permissao permissao)
 	{
 		if (await EhAutorizado(usuario, permissao) == false)
 			throw new NaoAutorizadoException(usuario, permissao);

@@ -1,4 +1,4 @@
-﻿namespace LivrEtec.Servidor
+﻿namespace LivrEtec
 {
     public interface IRepEmprestimos
     {

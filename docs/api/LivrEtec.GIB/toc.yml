@@ -1,0 +1,91 @@
+### YamlMime:TableOfContent
+- uid: LivrEtec.GIB
+  name: LivrEtec.GIB
+  items:
+  - uid: LivrEtec.GIB.EmprestimoServiceRPC
+    name: EmprestimoServiceRPC
+  - uid: LivrEtec.GIB.LivrosServiceRPC
+    name: LivrosServiceRPC
+  - uid: LivrEtec.GIB.ManipuladorException
+    name: ManipuladorException
+  - uid: LivrEtec.GIB.TagsServiceRPC
+    name: TagsServiceRPC
+- uid: LivrEtec.GIB.RPC
+  name: LivrEtec.GIB.RPC
+  items:
+  - uid: LivrEtec.GIB.RPC.AcervoReflection
+    name: AcervoReflection
+  - uid: LivrEtec.GIB.RPC.Autor
+    name: Autor
+  - uid: LivrEtec.GIB.RPC.Cargo
+    name: Cargo
+  - uid: LivrEtec.GIB.RPC.Emprestimo
+    name: Emprestimo
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types
+    name: Emprestimo.Types
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.AbrirRequest
+    name: Emprestimo.Types.AbrirRequest
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.BuscarRequest
+    name: Emprestimo.Types.BuscarRequest
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.ProrrogarRequest
+    name: Emprestimo.Types.ProrrogarRequest
+  - uid: LivrEtec.GIB.RPC.Emprestimos
+    name: Emprestimos
+  - uid: LivrEtec.GIB.RPC.Emprestimos.EmprestimosBase
+    name: Emprestimos.EmprestimosBase
+  - uid: LivrEtec.GIB.RPC.Emprestimos.EmprestimosClient
+    name: Emprestimos.EmprestimosClient
+  - uid: LivrEtec.GIB.RPC.Empty
+    name: Empty
+  - uid: LivrEtec.GIB.RPC.GerenciamentoSessao
+    name: GerenciamentoSessao
+  - uid: LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoBase
+    name: GerenciamentoSessao.GerenciamentoSessaoBase
+  - uid: LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoClient
+    name: GerenciamentoSessao.GerenciamentoSessaoClient
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+  - uid: LivrEtec.GIB.RPC.IdLivro
+    name: IdLivro
+  - uid: LivrEtec.GIB.RPC.IdTag
+    name: IdTag
+  - uid: LivrEtec.GIB.RPC.ListaEmprestimos
+    name: ListaEmprestimos
+  - uid: LivrEtec.GIB.RPC.ListaLivros
+    name: ListaLivros
+  - uid: LivrEtec.GIB.RPC.ListaTags
+    name: ListaTags
+  - uid: LivrEtec.GIB.RPC.Livro
+    name: Livro
+  - uid: LivrEtec.GIB.RPC.Livros
+    name: Livros
+  - uid: LivrEtec.GIB.RPC.Livros.LivrosBase
+    name: Livros.LivrosBase
+  - uid: LivrEtec.GIB.RPC.Livros.LivrosClient
+    name: Livros.LivrosClient
+  - uid: LivrEtec.GIB.RPC.LoginRequest
+    name: LoginRequest
+  - uid: LivrEtec.GIB.RPC.ParamBusca
+    name: ParamBusca
+  - uid: LivrEtec.GIB.RPC.Permissao
+    name: Permissao
+  - uid: LivrEtec.GIB.RPC.Pessoa
+    name: Pessoa
+  - uid: LivrEtec.GIB.RPC.Tag
+    name: Tag
+  - uid: LivrEtec.GIB.RPC.Tag.Types
+    name: Tag.Types
+  - uid: LivrEtec.GIB.RPC.Tag.Types.BuscarRequest
+    name: Tag.Types.BuscarRequest
+  - uid: LivrEtec.GIB.RPC.Tags
+    name: Tags
+  - uid: LivrEtec.GIB.RPC.Tags.TagsBase
+    name: Tags.TagsBase
+  - uid: LivrEtec.GIB.RPC.Tags.TagsClient
+    name: Tags.TagsClient
+  - uid: LivrEtec.GIB.RPC.Token
+    name: Token
+  - uid: LivrEtec.GIB.RPC.Usuario
+    name: Usuario

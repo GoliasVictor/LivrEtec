@@ -1,0 +1,1351 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Livro
+  commentId: T:LivrEtec.Livro
+  id: Livro
+  parent: LivrEtec
+  children:
+  - LivrEtec.Livro.#ctor
+  - LivrEtec.Livro.#ctor(System.String,System.String,System.Collections.Generic.List{LivrEtec.Tag},System.Collections.Generic.List{LivrEtec.Autor},System.Boolean)
+  - LivrEtec.Livro.Arquivado
+  - LivrEtec.Livro.Autores
+  - LivrEtec.Livro.Clone
+  - LivrEtec.Livro.Descricao
+  - LivrEtec.Livro.Equals(LivrEtec.Livro)
+  - LivrEtec.Livro.Equals(System.Object)
+  - LivrEtec.Livro.GetHashCode
+  - LivrEtec.Livro.Id
+  - LivrEtec.Livro.Nome
+  - LivrEtec.Livro.op_Equality(LivrEtec.Livro,LivrEtec.Livro)
+  - LivrEtec.Livro.op_Inequality(LivrEtec.Livro,LivrEtec.Livro)
+  - LivrEtec.Livro.Quantidade
+  - LivrEtec.Livro.Tags
+  langs:
+  - csharp
+  - vb
+  name: Livro
+  nameWithType: Livro
+  fullName: LivrEtec.Livro
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Livro
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: 'public sealed class Livro : IEquatable<Livro>'
+    content.vb: >-
+      Public NotInheritable Class Livro
+
+          Implements IEquatable(Of Livro)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{LivrEtec.Livro}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Livro.#ctor
+  commentId: M:LivrEtec.Livro.#ctor
+  id: '#ctor'
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Livro()
+  nameWithType: Livro.Livro()
+  fullName: LivrEtec.Livro.Livro()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 7
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Livro()
+    content.vb: Public Sub New
+  overload: LivrEtec.Livro.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.#ctor(System.String,System.String,System.Collections.Generic.List{LivrEtec.Tag},System.Collections.Generic.List{LivrEtec.Autor},System.Boolean)
+  commentId: M:LivrEtec.Livro.#ctor(System.String,System.String,System.Collections.Generic.List{LivrEtec.Tag},System.Collections.Generic.List{LivrEtec.Autor},System.Boolean)
+  id: '#ctor(System.String,System.String,System.Collections.Generic.List{LivrEtec.Tag},System.Collections.Generic.List{LivrEtec.Autor},System.Boolean)'
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Livro(String, String, List<Tag>, List<Autor>, Boolean)
+  nameWithType: Livro.Livro(String, String, List<Tag>, List<Autor>, Boolean)
+  fullName: LivrEtec.Livro.Livro(System.String, System.String, System.Collections.Generic.List<LivrEtec.Tag>, System.Collections.Generic.List<LivrEtec.Autor>, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Livro(string nome, string descricao, List<Tag> tags = null, List<Autor> autores = null, bool arquivado = false)
+    parameters:
+    - id: nome
+      type: System.String
+    - id: descricao
+      type: System.String
+    - id: tags
+      type: System.Collections.Generic.List{LivrEtec.Tag}
+    - id: autores
+      type: System.Collections.Generic.List{LivrEtec.Autor}
+    - id: arquivado
+      type: System.Boolean
+    content.vb: Public Sub New(nome As String, descricao As String, tags As List(Of Tag) = Nothing, autores As List(Of Autor) = Nothing, arquivado As Boolean = False)
+  overload: LivrEtec.Livro.#ctor*
+  nameWithType.vb: Livro.Livro(String, String, List(Of Tag), List(Of Autor), Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Livro.Livro(System.String, System.String, System.Collections.Generic.List(Of LivrEtec.Tag), System.Collections.Generic.List(Of LivrEtec.Autor), System.Boolean)
+  name.vb: Livro(String, String, List(Of Tag), List(Of Autor), Boolean)
+- uid: LivrEtec.Livro.Id
+  commentId: P:LivrEtec.Livro.Id
+  id: Id
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Livro.Id
+  fullName: LivrEtec.Livro.Id
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Id
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 18
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+      [Key]
+
+      [Required]
+
+      [InteiroPositivo("Id")]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+
+      <Key>
+
+      <Required>
+
+      <InteiroPositivo("Id")>
+
+      Public Property Id As Integer
+  overload: LivrEtec.Livro.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute.#ctor(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption
+      value: 1
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: LivrEtec.InteiroPositivoAttribute
+    ctor: LivrEtec.InteiroPositivoAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Nome
+  commentId: P:LivrEtec.Livro.Nome
+  id: Nome
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: Livro.Nome
+  fullName: LivrEtec.Livro.Nome
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Nome
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 22
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [Required]
+
+      public string Nome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Nome As String
+  overload: LivrEtec.Livro.Nome*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Descricao
+  commentId: P:LivrEtec.Livro.Descricao
+  id: Descricao
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Descricao
+  nameWithType: Livro.Descricao
+  fullName: LivrEtec.Livro.Descricao
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Descricao
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 24
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public string Descricao { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Descricao As String
+  overload: LivrEtec.Livro.Descricao*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Quantidade
+  commentId: P:LivrEtec.Livro.Quantidade
+  id: Quantidade
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Quantidade
+  nameWithType: Livro.Quantidade
+  fullName: LivrEtec.Livro.Quantidade
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Quantidade
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 25
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [Range(1, 2147483647)]
+
+      public int Quantidade { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Range(1, 2147483647)>
+
+      Public Property Quantidade As Integer
+  overload: LivrEtec.Livro.Quantidade*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 2147483647
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Tags
+  commentId: P:LivrEtec.Livro.Tags
+  id: Tags
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Tags
+  nameWithType: Livro.Tags
+  fullName: LivrEtec.Livro.Tags
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Tags
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 27
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public List<Tag> Tags { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{LivrEtec.Tag}
+    content.vb: Public Property Tags As List(Of Tag)
+  overload: LivrEtec.Livro.Tags*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Autores
+  commentId: P:LivrEtec.Livro.Autores
+  id: Autores
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Autores
+  nameWithType: Livro.Autores
+  fullName: LivrEtec.Livro.Autores
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Autores
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 28
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public List<Autor> Autores { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{LivrEtec.Autor}
+    content.vb: Public Property Autores As List(Of Autor)
+  overload: LivrEtec.Livro.Autores*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Arquivado
+  commentId: P:LivrEtec.Livro.Arquivado
+  id: Arquivado
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Arquivado
+  nameWithType: Livro.Arquivado
+  fullName: LivrEtec.Livro.Arquivado
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Arquivado
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 29
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: >-
+      [Required]
+
+      public bool Arquivado { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Required>
+
+      Public Property Arquivado As Boolean
+  overload: LivrEtec.Livro.Arquivado*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Clone
+  commentId: M:LivrEtec.Livro.Clone
+  id: Clone
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Livro.Clone()
+  fullName: LivrEtec.Livro.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Clone
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 32
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public Livro Clone()
+    return:
+      type: LivrEtec.Livro
+    content.vb: Public Function Clone As Livro
+  overload: LivrEtec.Livro.Clone*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.Equals(System.Object)
+  commentId: M:LivrEtec.Livro.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Livro.Equals(Object)
+  fullName: LivrEtec.Livro.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 44
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: LivrEtec.Livro.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Livro.Equals(LivrEtec.Livro)
+  commentId: M:LivrEtec.Livro.Equals(LivrEtec.Livro)
+  id: Equals(LivrEtec.Livro)
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Equals(Livro)
+  nameWithType: Livro.Equals(Livro)
+  fullName: LivrEtec.Livro.Equals(LivrEtec.Livro)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 49
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public bool Equals(Livro other)
+    parameters:
+    - id: other
+      type: LivrEtec.Livro
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Livro) As Boolean
+  overload: LivrEtec.Livro.Equals*
+  implements:
+  - System.IEquatable{LivrEtec.Livro}.Equals(LivrEtec.Livro)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Livro.GetHashCode
+  commentId: M:LivrEtec.Livro.GetHashCode
+  id: GetHashCode
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Livro.GetHashCode()
+  fullName: LivrEtec.Livro.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: GetHashCode
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 61
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: LivrEtec.Livro.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.Livro.op_Equality(LivrEtec.Livro,LivrEtec.Livro)
+  commentId: M:LivrEtec.Livro.op_Equality(LivrEtec.Livro,LivrEtec.Livro)
+  id: op_Equality(LivrEtec.Livro,LivrEtec.Livro)
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Equality(Livro, Livro)
+  nameWithType: Livro.Equality(Livro, Livro)
+  fullName: LivrEtec.Livro.Equality(LivrEtec.Livro, LivrEtec.Livro)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Equality
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 66
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator ==(Livro left, Livro right)
+    parameters:
+    - id: left
+      type: LivrEtec.Livro
+    - id: right
+      type: LivrEtec.Livro
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As Livro, right As Livro) As Boolean
+  overload: LivrEtec.Livro.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: LivrEtec.Livro.op_Inequality(LivrEtec.Livro,LivrEtec.Livro)
+  commentId: M:LivrEtec.Livro.op_Inequality(LivrEtec.Livro,LivrEtec.Livro)
+  id: op_Inequality(LivrEtec.Livro,LivrEtec.Livro)
+  parent: LivrEtec.Livro
+  langs:
+  - csharp
+  - vb
+  name: Inequality(Livro, Livro)
+  nameWithType: Livro.Inequality(Livro, Livro)
+  fullName: LivrEtec.Livro.Inequality(LivrEtec.Livro, LivrEtec.Livro)
+  type: Operator
+  source:
+    remote:
+      path: src/LivrEtec/Models/Livro.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: op_Inequality
+    path: ../src/LivrEtec/Models/Livro.cs
+    startLine: 71
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public static bool operator !=(Livro left, Livro right)
+    parameters:
+    - id: left
+      type: LivrEtec.Livro
+    - id: right
+      type: LivrEtec.Livro
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As Livro, right As Livro) As Boolean
+  overload: LivrEtec.Livro.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IEquatable{LivrEtec.Livro}
+  commentId: T:System.IEquatable{LivrEtec.Livro}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Livro>
+  nameWithType: IEquatable<Livro>
+  fullName: System.IEquatable<LivrEtec.Livro>
+  nameWithType.vb: IEquatable(Of Livro)
+  fullName.vb: System.IEquatable(Of LivrEtec.Livro)
+  name.vb: IEquatable(Of Livro)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Livro.#ctor*
+  commentId: Overload:LivrEtec.Livro.#ctor
+  name: Livro
+  nameWithType: Livro.Livro
+  fullName: LivrEtec.Livro.Livro
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.List{LivrEtec.Tag}
+  commentId: T:System.Collections.Generic.List{LivrEtec.Tag}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Tag>
+  nameWithType: List<Tag>
+  fullName: System.Collections.Generic.List<LivrEtec.Tag>
+  nameWithType.vb: List(Of Tag)
+  fullName.vb: System.Collections.Generic.List(Of LivrEtec.Tag)
+  name.vb: List(Of Tag)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{LivrEtec.Autor}
+  commentId: T:System.Collections.Generic.List{LivrEtec.Autor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Autor>
+  nameWithType: List<Autor>
+  fullName: System.Collections.Generic.List<LivrEtec.Autor>
+  nameWithType.vb: List(Of Autor)
+  fullName.vb: System.Collections.Generic.List(Of LivrEtec.Autor)
+  name.vb: List(Of Autor)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: LivrEtec.Livro.Id*
+  commentId: Overload:LivrEtec.Livro.Id
+  name: Id
+  nameWithType: Livro.Id
+  fullName: LivrEtec.Livro.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Livro.Nome*
+  commentId: Overload:LivrEtec.Livro.Nome
+  name: Nome
+  nameWithType: Livro.Nome
+  fullName: LivrEtec.Livro.Nome
+- uid: LivrEtec.Livro.Descricao*
+  commentId: Overload:LivrEtec.Livro.Descricao
+  name: Descricao
+  nameWithType: Livro.Descricao
+  fullName: LivrEtec.Livro.Descricao
+- uid: LivrEtec.Livro.Quantidade*
+  commentId: Overload:LivrEtec.Livro.Quantidade
+  name: Quantidade
+  nameWithType: Livro.Quantidade
+  fullName: LivrEtec.Livro.Quantidade
+- uid: LivrEtec.Livro.Tags*
+  commentId: Overload:LivrEtec.Livro.Tags
+  name: Tags
+  nameWithType: Livro.Tags
+  fullName: LivrEtec.Livro.Tags
+- uid: LivrEtec.Livro.Autores*
+  commentId: Overload:LivrEtec.Livro.Autores
+  name: Autores
+  nameWithType: Livro.Autores
+  fullName: LivrEtec.Livro.Autores
+- uid: LivrEtec.Livro.Arquivado*
+  commentId: Overload:LivrEtec.Livro.Arquivado
+  name: Arquivado
+  nameWithType: Livro.Arquivado
+  fullName: LivrEtec.Livro.Arquivado
+- uid: LivrEtec.Livro.Clone*
+  commentId: Overload:LivrEtec.Livro.Clone
+  name: Clone
+  nameWithType: Livro.Clone
+  fullName: LivrEtec.Livro.Clone
+- uid: LivrEtec.Livro
+  commentId: T:LivrEtec.Livro
+  parent: LivrEtec
+  name: Livro
+  nameWithType: Livro
+  fullName: LivrEtec.Livro
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Livro.Equals*
+  commentId: Overload:LivrEtec.Livro.Equals
+  name: Equals
+  nameWithType: Livro.Equals
+  fullName: LivrEtec.Livro.Equals
+- uid: System.IEquatable{LivrEtec.Livro}.Equals(LivrEtec.Livro)
+  commentId: M:System.IEquatable{LivrEtec.Livro}.Equals(LivrEtec.Livro)
+  parent: System.IEquatable{LivrEtec.Livro}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Livro)
+  nameWithType: IEquatable<Livro>.Equals(Livro)
+  fullName: System.IEquatable<LivrEtec.Livro>.Equals(LivrEtec.Livro)
+  nameWithType.vb: IEquatable(Of Livro).Equals(Livro)
+  fullName.vb: System.IEquatable(Of LivrEtec.Livro).Equals(LivrEtec.Livro)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Livro>.Equals
+    fullName: System.IEquatable<LivrEtec.Livro>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Livro).Equals
+    fullName: System.IEquatable(Of LivrEtec.Livro).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Livro.GetHashCode*
+  commentId: Overload:LivrEtec.Livro.GetHashCode
+  name: GetHashCode
+  nameWithType: Livro.GetHashCode
+  fullName: LivrEtec.Livro.GetHashCode
+- uid: LivrEtec.Livro.op_Equality*
+  commentId: Overload:LivrEtec.Livro.op_Equality
+  name: Equality
+  nameWithType: Livro.Equality
+  fullName: LivrEtec.Livro.Equality
+- uid: LivrEtec.Livro.op_Inequality*
+  commentId: Overload:LivrEtec.Livro.op_Inequality
+  name: Inequality
+  nameWithType: Livro.Inequality
+  fullName: LivrEtec.Livro.Inequality

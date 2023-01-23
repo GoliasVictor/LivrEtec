@@ -1,0 +1,1717 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal
+  commentId: T:LivrEtec.Testes.Local.TestesLivrosLocal
+  id: TestesLivrosLocal
+  parent: LivrEtec.Testes.Local
+  children:
+  - LivrEtec.Testes.Local.TestesLivrosLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  - LivrEtec.Testes.Local.TestesLivrosLocal.Dispose
+  - LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+  langs:
+  - csharp
+  - vb
+  name: TestesLivrosLocal
+  nameWithType: TestesLivrosLocal
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: TestesLivrosLocal
+    path: ../LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+    startLine: 6
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Trait("Category", "Local")]
+
+      public sealed class TestesLivrosLocal : TestesLivrosService<LivrosService>, IDisposable
+    content.vb: >-
+      <Trait("Category", "Local")>
+
+      Public NotInheritable Class TestesLivrosLocal
+
+          Inherits TestesLivrosService(Of LivrosService)
+
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.BDU
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.AssertEhIgual``1(System.Collections.Generic.IEnumerable{{K}},System.Collections.Generic.IEnumerable{{K}})
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroValidoAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroExistenteAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_idExistenteAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroNuloAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroValidoAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroInvalidoAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_TudoLivroValidoAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroNuloAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroTagNulaAsync
+  - LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Xunit.TraitAttribute
+    ctor: Xunit.TraitAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Category
+    - type: System.String
+      value: Local
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+  commentId: P:LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+  id: livrosService
+  parent: LivrEtec.Testes.Local.TestesLivrosLocal
+  langs:
+  - csharp
+  - vb
+  name: livrosService
+  nameWithType: TestesLivrosLocal.livrosService
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: livrosService
+    path: ../LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: protected override LivrosService livrosService { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Servidor.LivrosService
+    content.vb: Protected Overrides Property livrosService As LivrosService
+  overridden: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.livrosService
+  overload: LivrEtec.Testes.Local.TestesLivrosLocal.livrosService*
+  modifiers.csharp:
+  - protected
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  commentId: M:LivrEtec.Testes.Local.TestesLivrosLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  id: '#ctor(Xunit.Abstractions.ITestOutputHelper)'
+  parent: LivrEtec.Testes.Local.TestesLivrosLocal
+  langs:
+  - csharp
+  - vb
+  name: TestesLivrosLocal(ITestOutputHelper)
+  nameWithType: TestesLivrosLocal.TestesLivrosLocal(ITestOutputHelper)
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.TestesLivrosLocal(Xunit.Abstractions.ITestOutputHelper)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+    startLine: 11
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public TestesLivrosLocal(ITestOutputHelper output)
+    parameters:
+    - id: output
+      type: Xunit.Abstractions.ITestOutputHelper
+    content.vb: Public Sub New(output As ITestOutputHelper)
+  overload: LivrEtec.Testes.Local.TestesLivrosLocal.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.Dispose
+  commentId: M:LivrEtec.Testes.Local.TestesLivrosLocal.Dispose
+  id: Dispose
+  parent: LivrEtec.Testes.Local.TestesLivrosLocal
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TestesLivrosLocal.Dispose()
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Dispose
+    path: ../LivrEtec.Testes/TestesFinais/TestesLivrosServiceLocal.cs
+    startLine: 25
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: LivrEtec.Testes.Local.TestesLivrosLocal.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Testes.Local
+  commentId: N:LivrEtec.Testes.Local
+  name: LivrEtec.Testes.Local
+  nameWithType: LivrEtec.Testes.Local
+  fullName: LivrEtec.Testes.Local
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  commentId: T:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  parent: LivrEtec.Testes
+  definition: LivrEtec.Testes.TestesLivrosService`1
+  name: TestesLivrosService<LivrosService>
+  nameWithType: TestesLivrosService<LivrosService>
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>
+  nameWithType.vb: TestesLivrosService(Of LivrosService)
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService)
+  name.vb: TestesLivrosService(Of LivrosService)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.LivrosService
+    name: LivrosService
+    nameWithType: LivrosService
+    fullName: LivrEtec.Servidor.LivrosService
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.LivrosService
+    name: LivrosService
+    nameWithType: LivrosService
+    fullName: LivrEtec.Servidor.LivrosService
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.BDU
+  commentId: F:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.BDU
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.BDU
+  name: BDU
+  nameWithType: TestesLivrosService<LivrosService>.BDU
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.BDU
+  nameWithType.vb: TestesLivrosService(Of LivrosService).BDU
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).BDU
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.AssertEhIgual``1(System.Collections.Generic.IEnumerable{{K}},System.Collections.Generic.IEnumerable{{K}})
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  name: AssertEhIgual<K>(IEnumerable<K>, IEnumerable<K>)
+  nameWithType: TestesLivrosService<LivrosService>.AssertEhIgual<K>(IEnumerable<K>, IEnumerable<K>)
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.AssertEhIgual<K>(System.Collections.Generic.IEnumerable<K>, System.Collections.Generic.IEnumerable<K>)
+  nameWithType.vb: TestesLivrosService(Of LivrosService).AssertEhIgual(Of K)(IEnumerable(Of K), IEnumerable(Of K))
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).AssertEhIgual(Of K)(System.Collections.Generic.IEnumerable(Of K), System.Collections.Generic.IEnumerable(Of K))
+  name.vb: AssertEhIgual(Of K)(IEnumerable(Of K), IEnumerable(Of K))
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AssertEhIgual<K>
+    nameWithType: TestesLivrosService<LivrosService>.AssertEhIgual<K>
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.AssertEhIgual<K>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AssertEhIgual(Of K)
+    nameWithType: TestesLivrosService(Of LivrosService).AssertEhIgual(Of K)
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).AssertEhIgual(Of K)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroValidoAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+  name: Registrar_LivroValidoAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Registrar_LivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+    name: Registrar_LivroValidoAsync
+    nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+    name: Registrar_LivroValidoAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Registrar_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroExistenteAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroExistenteAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+  name: Registrar_LivroExistenteAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroExistenteAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroExistenteAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Registrar_LivroExistenteAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroExistenteAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+    name: Registrar_LivroExistenteAsync
+    nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+    name: Registrar_LivroExistenteAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Registrar_LivroExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_idExistenteAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_idExistenteAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+  name: Registrar_idExistenteAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Registrar_idExistenteAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_idExistenteAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Registrar_idExistenteAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_idExistenteAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+    name: Registrar_idExistenteAsync
+    nameWithType: TestesLivrosService<LivrosService>.Registrar_idExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_idExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+    name: Registrar_idExistenteAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Registrar_idExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_idExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroNuloAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroNuloAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+  name: Registrar_LivroNuloAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroNuloAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroNuloAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Registrar_LivroNuloAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroNuloAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+    name: Registrar_LivroNuloAsync
+    nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+    name: Registrar_LivroNuloAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Registrar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  name: Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroInvalidoAsync(System.Int32, System.Int32, System.String)
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroInvalidoAsync(System.Int32, System.Int32, System.String)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+    name: Registrar_LivroInvalidoAsync
+    nameWithType: TestesLivrosService<LivrosService>.Registrar_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Registrar_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+    name: Registrar_LivroInvalidoAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Registrar_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Registrar_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroValidoAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+  name: Remover_LivroValidoAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Remover_LivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Remover_LivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Remover_LivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Remover_LivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+    name: Remover_LivroValidoAsync
+    nameWithType: TestesLivrosService<LivrosService>.Remover_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Remover_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+    name: Remover_LivroValidoAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Remover_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Remover_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroInvalidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Remover_LivroInvalidoAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+  name: Remover_LivroInvalidoAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Remover_LivroInvalidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Remover_LivroInvalidoAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Remover_LivroInvalidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Remover_LivroInvalidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+    name: Remover_LivroInvalidoAsync
+    nameWithType: TestesLivrosService<LivrosService>.Remover_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Remover_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+    name: Remover_LivroInvalidoAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Remover_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Remover_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_TudoLivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_TudoLivroValidoAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+  name: Editar_TudoLivroValidoAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Editar_TudoLivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_TudoLivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Editar_TudoLivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_TudoLivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+    name: Editar_TudoLivroValidoAsync
+    nameWithType: TestesLivrosService<LivrosService>.Editar_TudoLivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_TudoLivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+    name: Editar_TudoLivroValidoAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Editar_TudoLivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_TudoLivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroNuloAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroNuloAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+  name: Editar_LivroNuloAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Editar_LivroNuloAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_LivroNuloAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Editar_LivroNuloAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_LivroNuloAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+    name: Editar_LivroNuloAsync
+    nameWithType: TestesLivrosService<LivrosService>.Editar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+    name: Editar_LivroNuloAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Editar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroTagNulaAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Editar_LivroTagNulaAsync
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+  name: Editar_LivroTagNulaAsync()
+  nameWithType: TestesLivrosService<LivrosService>.Editar_LivroTagNulaAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_LivroTagNulaAsync()
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Editar_LivroTagNulaAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_LivroTagNulaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+    name: Editar_LivroTagNulaAsync
+    nameWithType: TestesLivrosService<LivrosService>.Editar_LivroTagNulaAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Editar_LivroTagNulaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+    name: Editar_LivroTagNulaAsync
+    nameWithType: TestesLivrosService(Of LivrosService).Editar_LivroTagNulaAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Editar_LivroTagNulaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  commentId: M:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  name: Buscar_filtroValido(String, Int32[], Int32[])
+  nameWithType: TestesLivrosService<LivrosService>.Buscar_filtroValido(String, Int32[], Int32[])
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Buscar_filtroValido(System.String, System.Int32[], System.Int32[])
+  nameWithType.vb: TestesLivrosService(Of LivrosService).Buscar_filtroValido(String, Int32(), Int32())
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Buscar_filtroValido(System.String, System.Int32(), System.Int32())
+  name.vb: Buscar_filtroValido(String, Int32(), Int32())
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+    name: Buscar_filtroValido
+    nameWithType: TestesLivrosService<LivrosService>.Buscar_filtroValido
+    fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.Buscar_filtroValido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+    name: Buscar_filtroValido
+    nameWithType: TestesLivrosService(Of LivrosService).Buscar_filtroValido
+    fullName: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).Buscar_filtroValido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.Testes.TestesLivrosService`1
+  commentId: T:LivrEtec.Testes.TestesLivrosService`1
+  name: TestesLivrosService<T>
+  nameWithType: TestesLivrosService<T>
+  fullName: LivrEtec.Testes.TestesLivrosService<T>
+  nameWithType.vb: TestesLivrosService(Of T)
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T)
+  name.vb: TestesLivrosService(Of T)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1
+    name: TestesLivrosService
+    nameWithType: TestesLivrosService
+    fullName: LivrEtec.Testes.TestesLivrosService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes
+- uid: LivrEtec.Testes.TestesLivrosService`1.BDU
+  commentId: F:LivrEtec.Testes.TestesLivrosService`1.BDU
+  name: BDU
+  nameWithType: TestesLivrosService<T>.BDU
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.BDU
+  nameWithType.vb: TestesLivrosService(Of T).BDU
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).BDU
+- uid: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  isExternal: true
+  name: AssertEhIgual<K>(IEnumerable<K>, IEnumerable<K>)
+  nameWithType: TestesLivrosService<T>.AssertEhIgual<K>(IEnumerable<K>, IEnumerable<K>)
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.AssertEhIgual<K>(System.Collections.Generic.IEnumerable<K>, System.Collections.Generic.IEnumerable<K>)
+  nameWithType.vb: TestesLivrosService(Of T).AssertEhIgual(Of K)(IEnumerable(Of K), IEnumerable(Of K))
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).AssertEhIgual(Of K)(System.Collections.Generic.IEnumerable(Of K), System.Collections.Generic.IEnumerable(Of K))
+  name.vb: AssertEhIgual(Of K)(IEnumerable(Of K), IEnumerable(Of K))
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AssertEhIgual<K>
+    nameWithType: TestesLivrosService<T>.AssertEhIgual<K>
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.AssertEhIgual<K>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.AssertEhIgual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AssertEhIgual(Of K)
+    nameWithType: TestesLivrosService(Of T).AssertEhIgual(Of K)
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).AssertEhIgual(Of K)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+  name: Registrar_LivroValidoAsync()
+  nameWithType: TestesLivrosService<T>.Registrar_LivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Registrar_LivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+    name: Registrar_LivroValidoAsync
+    nameWithType: TestesLivrosService<T>.Registrar_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroValidoAsync
+    name: Registrar_LivroValidoAsync
+    nameWithType: TestesLivrosService(Of T).Registrar_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+  name: Registrar_LivroExistenteAsync()
+  nameWithType: TestesLivrosService<T>.Registrar_LivroExistenteAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroExistenteAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Registrar_LivroExistenteAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroExistenteAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+    name: Registrar_LivroExistenteAsync
+    nameWithType: TestesLivrosService<T>.Registrar_LivroExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroExistenteAsync
+    name: Registrar_LivroExistenteAsync
+    nameWithType: TestesLivrosService(Of T).Registrar_LivroExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+  name: Registrar_idExistenteAsync()
+  nameWithType: TestesLivrosService<T>.Registrar_idExistenteAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_idExistenteAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Registrar_idExistenteAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_idExistenteAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+    name: Registrar_idExistenteAsync
+    nameWithType: TestesLivrosService<T>.Registrar_idExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_idExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_idExistenteAsync
+    name: Registrar_idExistenteAsync
+    nameWithType: TestesLivrosService(Of T).Registrar_idExistenteAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_idExistenteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+  name: Registrar_LivroNuloAsync()
+  nameWithType: TestesLivrosService<T>.Registrar_LivroNuloAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroNuloAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Registrar_LivroNuloAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroNuloAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+    name: Registrar_LivroNuloAsync
+    nameWithType: TestesLivrosService<T>.Registrar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroNuloAsync
+    name: Registrar_LivroNuloAsync
+    nameWithType: TestesLivrosService(Of T).Registrar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+  isExternal: true
+  name: Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  nameWithType: TestesLivrosService<T>.Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroInvalidoAsync(System.Int32, System.Int32, System.String)
+  nameWithType.vb: TestesLivrosService(Of T).Registrar_LivroInvalidoAsync(Int32, Int32, String)
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroInvalidoAsync(System.Int32, System.Int32, System.String)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+    name: Registrar_LivroInvalidoAsync
+    nameWithType: TestesLivrosService<T>.Registrar_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Registrar_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Registrar_LivroInvalidoAsync(System.Int32,System.Int32,System.String)
+    name: Registrar_LivroInvalidoAsync
+    nameWithType: TestesLivrosService(Of T).Registrar_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Registrar_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+  name: Remover_LivroValidoAsync()
+  nameWithType: TestesLivrosService<T>.Remover_LivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Remover_LivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Remover_LivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Remover_LivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+    name: Remover_LivroValidoAsync
+    nameWithType: TestesLivrosService<T>.Remover_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Remover_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroValidoAsync
+    name: Remover_LivroValidoAsync
+    nameWithType: TestesLivrosService(Of T).Remover_LivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Remover_LivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+  name: Remover_LivroInvalidoAsync()
+  nameWithType: TestesLivrosService<T>.Remover_LivroInvalidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Remover_LivroInvalidoAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Remover_LivroInvalidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Remover_LivroInvalidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+    name: Remover_LivroInvalidoAsync
+    nameWithType: TestesLivrosService<T>.Remover_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Remover_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Remover_LivroInvalidoAsync
+    name: Remover_LivroInvalidoAsync
+    nameWithType: TestesLivrosService(Of T).Remover_LivroInvalidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Remover_LivroInvalidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+  name: Editar_TudoLivroValidoAsync()
+  nameWithType: TestesLivrosService<T>.Editar_TudoLivroValidoAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_TudoLivroValidoAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Editar_TudoLivroValidoAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Editar_TudoLivroValidoAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+    name: Editar_TudoLivroValidoAsync
+    nameWithType: TestesLivrosService<T>.Editar_TudoLivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_TudoLivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_TudoLivroValidoAsync
+    name: Editar_TudoLivroValidoAsync
+    nameWithType: TestesLivrosService(Of T).Editar_TudoLivroValidoAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Editar_TudoLivroValidoAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+  name: Editar_LivroNuloAsync()
+  nameWithType: TestesLivrosService<T>.Editar_LivroNuloAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_LivroNuloAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Editar_LivroNuloAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Editar_LivroNuloAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+    name: Editar_LivroNuloAsync
+    nameWithType: TestesLivrosService<T>.Editar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroNuloAsync
+    name: Editar_LivroNuloAsync
+    nameWithType: TestesLivrosService(Of T).Editar_LivroNuloAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Editar_LivroNuloAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+  name: Editar_LivroTagNulaAsync()
+  nameWithType: TestesLivrosService<T>.Editar_LivroTagNulaAsync()
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_LivroTagNulaAsync()
+  nameWithType.vb: TestesLivrosService(Of T).Editar_LivroTagNulaAsync()
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Editar_LivroTagNulaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+    name: Editar_LivroTagNulaAsync
+    nameWithType: TestesLivrosService<T>.Editar_LivroTagNulaAsync
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Editar_LivroTagNulaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Editar_LivroTagNulaAsync
+    name: Editar_LivroTagNulaAsync
+    nameWithType: TestesLivrosService(Of T).Editar_LivroTagNulaAsync
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Editar_LivroTagNulaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  commentId: M:LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+  isExternal: true
+  name: Buscar_filtroValido(String, Int32[], Int32[])
+  nameWithType: TestesLivrosService<T>.Buscar_filtroValido(String, Int32[], Int32[])
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.Buscar_filtroValido(System.String, System.Int32[], System.Int32[])
+  nameWithType.vb: TestesLivrosService(Of T).Buscar_filtroValido(String, Int32(), Int32())
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).Buscar_filtroValido(System.String, System.Int32(), System.Int32())
+  name.vb: Buscar_filtroValido(String, Int32(), Int32())
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+    name: Buscar_filtroValido
+    nameWithType: TestesLivrosService<T>.Buscar_filtroValido
+    fullName: LivrEtec.Testes.TestesLivrosService<T>.Buscar_filtroValido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesLivrosService`1.Buscar_filtroValido(System.String,System.Int32[],System.Int32[])
+    name: Buscar_filtroValido
+    nameWithType: TestesLivrosService(Of T).Buscar_filtroValido
+    fullName: LivrEtec.Testes.TestesLivrosService(Of T).Buscar_filtroValido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.livrosService
+  commentId: P:LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}.livrosService
+  parent: LivrEtec.Testes.TestesLivrosService{LivrEtec.Servidor.LivrosService}
+  definition: LivrEtec.Testes.TestesLivrosService`1.livrosService
+  name: livrosService
+  nameWithType: TestesLivrosService<LivrosService>.livrosService
+  fullName: LivrEtec.Testes.TestesLivrosService<LivrEtec.Servidor.LivrosService>.livrosService
+  nameWithType.vb: TestesLivrosService(Of LivrosService).livrosService
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of LivrEtec.Servidor.LivrosService).livrosService
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.livrosService*
+  commentId: Overload:LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+  name: livrosService
+  nameWithType: TestesLivrosLocal.livrosService
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.livrosService
+- uid: LivrEtec.Servidor.LivrosService
+  commentId: T:LivrEtec.Servidor.LivrosService
+  parent: LivrEtec.Servidor
+  name: LivrosService
+  nameWithType: LivrosService
+  fullName: LivrEtec.Servidor.LivrosService
+- uid: LivrEtec.Testes.TestesLivrosService`1.livrosService
+  commentId: P:LivrEtec.Testes.TestesLivrosService`1.livrosService
+  name: livrosService
+  nameWithType: TestesLivrosService<T>.livrosService
+  fullName: LivrEtec.Testes.TestesLivrosService<T>.livrosService
+  nameWithType.vb: TestesLivrosService(Of T).livrosService
+  fullName.vb: LivrEtec.Testes.TestesLivrosService(Of T).livrosService
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.#ctor*
+  commentId: Overload:LivrEtec.Testes.Local.TestesLivrosLocal.#ctor
+  name: TestesLivrosLocal
+  nameWithType: TestesLivrosLocal.TestesLivrosLocal
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.TestesLivrosLocal
+- uid: Xunit.Abstractions.ITestOutputHelper
+  commentId: T:Xunit.Abstractions.ITestOutputHelper
+  parent: Xunit.Abstractions
+  isExternal: true
+  name: ITestOutputHelper
+  nameWithType: ITestOutputHelper
+  fullName: Xunit.Abstractions.ITestOutputHelper
+- uid: Xunit.Abstractions
+  commentId: N:Xunit.Abstractions
+  isExternal: true
+  name: Xunit.Abstractions
+  nameWithType: Xunit.Abstractions
+  fullName: Xunit.Abstractions
+- uid: LivrEtec.Testes.Local.TestesLivrosLocal.Dispose*
+  commentId: Overload:LivrEtec.Testes.Local.TestesLivrosLocal.Dispose
+  name: Dispose
+  nameWithType: TestesLivrosLocal.Dispose
+  fullName: LivrEtec.Testes.Local.TestesLivrosLocal.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

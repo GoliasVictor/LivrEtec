@@ -1,0 +1,827 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Permissoes.CRUD
+  commentId: T:LivrEtec.Permissoes.CRUD
+  id: Permissoes.CRUD
+  parent: LivrEtec
+  children:
+  - LivrEtec.Permissoes.CRUD.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)
+  - LivrEtec.Permissoes.CRUD.Criar
+  - LivrEtec.Permissoes.CRUD.Editar
+  - LivrEtec.Permissoes.CRUD.Excluir
+  - LivrEtec.Permissoes.CRUD.Nome
+  - LivrEtec.Permissoes.CRUD.Todas
+  - LivrEtec.Permissoes.CRUD.Visualizar
+  langs:
+  - csharp
+  - vb
+  name: Permissoes.CRUD
+  nameWithType: Permissoes.CRUD
+  fullName: LivrEtec.Permissoes.CRUD
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CRUD
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 3
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: 'public class CRUD : IGrupoPermissao, IEquatable<Permissoes.CRUD>'
+    content.vb: >-
+      Public Class CRUD
+
+          Implements IGrupoPermissao, IEquatable(Of Permissoes.CRUD)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LivrEtec.Permissoes.PermissoesEmprestimo
+  implements:
+  - LivrEtec.IGrupoPermissao
+  - System.IEquatable{LivrEtec.Permissoes.CRUD}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.Permissoes.CRUD.Nome
+  commentId: P:LivrEtec.Permissoes.CRUD.Nome
+  id: Nome
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: Permissoes.CRUD.Nome
+  fullName: LivrEtec.Permissoes.CRUD.Nome
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Nome
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public string Nome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Nome As String
+  overload: LivrEtec.Permissoes.CRUD.Nome*
+  implements:
+  - LivrEtec.IGrupoPermissao.Nome
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Permissoes.CRUD.Criar
+  commentId: F:LivrEtec.Permissoes.CRUD.Criar
+  id: Criar
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Criar
+  nameWithType: Permissoes.CRUD.Criar
+  fullName: LivrEtec.Permissoes.CRUD.Criar
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Criar
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 6
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public readonly Permissao Criar
+    return:
+      type: LivrEtec.Permissao
+    content.vb: Public ReadOnly Criar As Permissao
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.Permissoes.CRUD.Visualizar
+  commentId: F:LivrEtec.Permissoes.CRUD.Visualizar
+  id: Visualizar
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Visualizar
+  nameWithType: Permissoes.CRUD.Visualizar
+  fullName: LivrEtec.Permissoes.CRUD.Visualizar
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Visualizar
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 7
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public readonly Permissao Visualizar
+    return:
+      type: LivrEtec.Permissao
+    content.vb: Public ReadOnly Visualizar As Permissao
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.Permissoes.CRUD.Editar
+  commentId: F:LivrEtec.Permissoes.CRUD.Editar
+  id: Editar
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Editar
+  nameWithType: Permissoes.CRUD.Editar
+  fullName: LivrEtec.Permissoes.CRUD.Editar
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Editar
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public readonly Permissao Editar
+    return:
+      type: LivrEtec.Permissao
+    content.vb: Public ReadOnly Editar As Permissao
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.Permissoes.CRUD.Excluir
+  commentId: F:LivrEtec.Permissoes.CRUD.Excluir
+  id: Excluir
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Excluir
+  nameWithType: Permissoes.CRUD.Excluir
+  fullName: LivrEtec.Permissoes.CRUD.Excluir
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Excluir
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 9
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public readonly Permissao Excluir
+    return:
+      type: LivrEtec.Permissao
+    content.vb: Public ReadOnly Excluir As Permissao
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.Permissoes.CRUD.Todas
+  commentId: P:LivrEtec.Permissoes.CRUD.Todas
+  id: Todas
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: Todas
+  nameWithType: Permissoes.CRUD.Todas
+  fullName: LivrEtec.Permissoes.CRUD.Todas
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Todas
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public List<Permissao> Todas { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{LivrEtec.Permissao}
+    content.vb: Public Property Todas As List(Of Permissao)
+  overload: LivrEtec.Permissoes.CRUD.Todas*
+  implements:
+  - LivrEtec.IGrupoPermissao.Todas
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Permissoes.CRUD.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)
+  commentId: M:LivrEtec.Permissoes.CRUD.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)'
+  parent: LivrEtec.Permissoes.CRUD
+  langs:
+  - csharp
+  - vb
+  name: CRUD(String, Int32, String, String, String, String)
+  nameWithType: Permissoes.CRUD.CRUD(String, Int32, String, String, String, String)
+  fullName: LivrEtec.Permissoes.CRUD.CRUD(System.String, System.Int32, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/CRUD.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../src/LivrEtec/Models/Autorizacao/CRUD.cs
+    startLine: 11
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public CRUD(string nome, int idInicial, string descricaoCriar = "", string descricaoVisualizar = "", string descricaoEditar = "", string descricaoExcluir = "")
+    parameters:
+    - id: nome
+      type: System.String
+    - id: idInicial
+      type: System.Int32
+    - id: descricaoCriar
+      type: System.String
+    - id: descricaoVisualizar
+      type: System.String
+    - id: descricaoEditar
+      type: System.String
+    - id: descricaoExcluir
+      type: System.String
+    content.vb: Public Sub New(nome As String, idInicial As Integer, descricaoCriar As String = "", descricaoVisualizar As String = "", descricaoEditar As String = "", descricaoExcluir As String = "")
+  overload: LivrEtec.Permissoes.CRUD.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.IGrupoPermissao
+  commentId: T:LivrEtec.IGrupoPermissao
+  parent: LivrEtec
+  name: IGrupoPermissao
+  nameWithType: IGrupoPermissao
+  fullName: LivrEtec.IGrupoPermissao
+- uid: System.IEquatable{LivrEtec.Permissoes.CRUD}
+  commentId: T:System.IEquatable{LivrEtec.Permissoes.CRUD}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Permissoes.CRUD>
+  nameWithType: IEquatable<Permissoes.CRUD>
+  fullName: System.IEquatable<LivrEtec.Permissoes.CRUD>
+  nameWithType.vb: IEquatable(Of Permissoes.CRUD)
+  fullName.vb: System.IEquatable(Of LivrEtec.Permissoes.CRUD)
+  name.vb: IEquatable(Of Permissoes.CRUD)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Permissoes.CRUD
+    name: Permissoes.CRUD
+    nameWithType: Permissoes.CRUD
+    fullName: LivrEtec.Permissoes.CRUD
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Permissoes.CRUD
+    name: Permissoes.CRUD
+    nameWithType: Permissoes.CRUD
+    fullName: LivrEtec.Permissoes.CRUD
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Permissoes.CRUD.Nome*
+  commentId: Overload:LivrEtec.Permissoes.CRUD.Nome
+  name: Nome
+  nameWithType: Permissoes.CRUD.Nome
+  fullName: LivrEtec.Permissoes.CRUD.Nome
+- uid: LivrEtec.IGrupoPermissao.Nome
+  commentId: P:LivrEtec.IGrupoPermissao.Nome
+  parent: LivrEtec.IGrupoPermissao
+  name: Nome
+  nameWithType: IGrupoPermissao.Nome
+  fullName: LivrEtec.IGrupoPermissao.Nome
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.Permissao
+  commentId: T:LivrEtec.Permissao
+  parent: LivrEtec
+  name: Permissao
+  nameWithType: Permissao
+  fullName: LivrEtec.Permissao
+- uid: LivrEtec.Permissoes.CRUD.Todas*
+  commentId: Overload:LivrEtec.Permissoes.CRUD.Todas
+  name: Todas
+  nameWithType: Permissoes.CRUD.Todas
+  fullName: LivrEtec.Permissoes.CRUD.Todas
+- uid: LivrEtec.IGrupoPermissao.Todas
+  commentId: P:LivrEtec.IGrupoPermissao.Todas
+  parent: LivrEtec.IGrupoPermissao
+  name: Todas
+  nameWithType: IGrupoPermissao.Todas
+  fullName: LivrEtec.IGrupoPermissao.Todas
+- uid: System.Collections.Generic.List{LivrEtec.Permissao}
+  commentId: T:System.Collections.Generic.List{LivrEtec.Permissao}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Permissao>
+  nameWithType: List<Permissao>
+  fullName: System.Collections.Generic.List<LivrEtec.Permissao>
+  nameWithType.vb: List(Of Permissao)
+  fullName.vb: System.Collections.Generic.List(Of LivrEtec.Permissao)
+  name.vb: List(Of Permissao)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: LivrEtec.Permissoes.CRUD.#ctor*
+  commentId: Overload:LivrEtec.Permissoes.CRUD.#ctor
+  name: CRUD
+  nameWithType: Permissoes.CRUD.CRUD
+  fullName: LivrEtec.Permissoes.CRUD.CRUD
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

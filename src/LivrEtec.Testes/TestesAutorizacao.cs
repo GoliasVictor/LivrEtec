@@ -79,7 +79,7 @@ public class TestesAutorizacao : IDisposable
     {
         var usuario = BDU.gUsuario(IdAdministrador);
         var permissao = Permissoes.Cargo.Criar;
-        await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
+        await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
     }
     [Fact]
     public async Task ErroSeNaoAutorizado_NaoAutorizadoExceptionAsync()
@@ -87,7 +87,7 @@ public class TestesAutorizacao : IDisposable
         var usuario = BDU.gUsuario(IdAnonimo);
         var permissao = Permissoes.Cargo.Criar;
 		await Assert.ThrowsAsync<NaoAutorizadoException>(async () => {
-			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
+			await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
 		});
     }
 
@@ -97,7 +97,7 @@ public class TestesAutorizacao : IDisposable
         var usuario = BDU.gUsuario(IdAnonimo);
         Permissao permissao = null!;
 		await Assert.ThrowsAsync<ArgumentNullException>(async () => {
-			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
+			await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
 		});
     }
 	[Fact]
@@ -107,7 +107,7 @@ public class TestesAutorizacao : IDisposable
 		const int IdInvalido = 100;
 		Permissao permissao = new Permissao(){ Id = IdInvalido };
 		await Assert.ThrowsAsync<ArgumentException>(async () => {
-			await AutorizacaoService.ErroSeNaoAutorizadoAsync(usuario, permissao);
+			await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
 		});
     }
 

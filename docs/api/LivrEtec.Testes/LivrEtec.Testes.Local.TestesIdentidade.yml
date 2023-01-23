@@ -1,0 +1,920 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.Local.TestesIdentidade
+  commentId: T:LivrEtec.Testes.Local.TestesIdentidade
+  id: TestesIdentidade
+  parent: LivrEtec.Testes.Local
+  children:
+  - LivrEtec.Testes.Local.TestesIdentidade.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  - LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync(System.String)
+  - LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+  - LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+  - LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync(System.Int32)
+  - LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync(System.Int32)
+  - LivrEtec.Testes.Local.TestesIdentidade.Dispose
+  - LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+  - LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync(System.Int32,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: TestesIdentidade
+  nameWithType: TestesIdentidade
+  fullName: LivrEtec.Testes.Local.TestesIdentidade
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: TestesIdentidade
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Collection("UsaBancoDeDados")]
+
+      [Trait("Category", "Local")]
+
+      public class TestesIdentidade : IDisposable
+    content.vb: >-
+      <Collection("UsaBancoDeDados")>
+
+      <Trait("Category", "Local")>
+
+      Public Class TestesIdentidade
+
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Xunit.CollectionAttribute
+    ctor: Xunit.CollectionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: UsaBancoDeDados
+  - type: Xunit.TraitAttribute
+    ctor: Xunit.TraitAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Category
+    - type: System.String
+      value: Local
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.Testes.Local.TestesIdentidade.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  id: '#ctor(Xunit.Abstractions.ITestOutputHelper)'
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: TestesIdentidade(ITestOutputHelper)
+  nameWithType: TestesIdentidade.TestesIdentidade(ITestOutputHelper)
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.TestesIdentidade(Xunit.Abstractions.ITestOutputHelper)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 24
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public TestesIdentidade(ITestOutputHelper output)
+    parameters:
+    - id: output
+      type: Xunit.Abstractions.ITestOutputHelper
+    content.vb: Public Sub New(output As ITestOutputHelper)
+  overload: LivrEtec.Testes.Local.TestesIdentidade.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync(System.Int32)
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync(System.Int32)
+  id: DefinirUsuario_UsuarioValidoAsync(System.Int32)
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: DefinirUsuario_UsuarioValidoAsync(Int32)
+  nameWithType: TestesIdentidade.DefinirUsuario_UsuarioValidoAsync(Int32)
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: DefinirUsuario_UsuarioValidoAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 54
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[]{1})]
+
+      [InlineData(new object[]{2})]
+
+      public async Task DefinirUsuario_UsuarioValidoAsync(int idUsuario)
+    parameters:
+    - id: idUsuario
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() {1})>
+
+      <InlineData(New Object() {2})>
+
+      Public Function DefinirUsuario_UsuarioValidoAsync(idUsuario As Integer) As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync(System.Int32)
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync(System.Int32)
+  id: DefinirUsuario_UsuarioInvalidoAsync(System.Int32)
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: DefinirUsuario_UsuarioInvalidoAsync(Int32)
+  nameWithType: TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync(Int32)
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: DefinirUsuario_UsuarioInvalidoAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 64
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[]{100})]
+
+      [InlineData(new object[]{-2})]
+
+      public async Task DefinirUsuario_UsuarioInvalidoAsync(int idUsuario)
+    parameters:
+    - id: idUsuario
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() {100})>
+
+      <InlineData(New Object() {-2})>
+
+      Public Function DefinirUsuario_UsuarioInvalidoAsync(idUsuario As Integer) As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+  id: AutenticarUsuario_SenhaValidaAsync
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: AutenticarUsuario_SenhaValidaAsync()
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaValidaAsync()
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AutenticarUsuario_SenhaValidaAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 74
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task AutenticarUsuario_SenhaValidaAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function AutenticarUsuario_SenhaValidaAsync As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync(System.String)
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync(System.String)
+  id: AutenticarUsuario_SenhaInvalidaAsync(System.String)
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: AutenticarUsuario_SenhaInvalidaAsync(String)
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync(String)
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AutenticarUsuario_SenhaInvalidaAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 93
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[]{"admin1"})]
+
+      [InlineData(new object[]{"root"})]
+
+      public async Task AutenticarUsuario_SenhaInvalidaAsync(string senha)
+    parameters:
+    - id: senha
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() {"admin1"})>
+
+      <InlineData(New Object() {"root"})>
+
+      Public Function AutenticarUsuario_SenhaInvalidaAsync(senha As String) As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+  id: AutenticarUsuario_SenhaNulaAsync
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: AutenticarUsuario_SenhaNulaAsync()
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaNulaAsync()
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AutenticarUsuario_SenhaNulaAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 106
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task AutenticarUsuario_SenhaNulaAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function AutenticarUsuario_SenhaNulaAsync As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync(System.Int32,System.Boolean)
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync(System.Int32,System.Boolean)
+  id: EhAutorizadoAsync(System.Int32,System.Boolean)
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: EhAutorizadoAsync(Int32, Boolean)
+  nameWithType: TestesIdentidade.EhAutorizadoAsync(Int32, Boolean)
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync(System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EhAutorizadoAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 118
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[]{1, true})]
+
+      [InlineData(new object[]{2, false})]
+
+      public async Task EhAutorizadoAsync(int idUsuario, bool ExpectativaAutorizado)
+    parameters:
+    - id: idUsuario
+      type: System.Int32
+    - id: ExpectativaAutorizado
+      type: System.Boolean
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() {1, True})>
+
+      <InlineData(New Object() {2, False})>
+
+      Public Function EhAutorizadoAsync(idUsuario As Integer, ExpectativaAutorizado As Boolean) As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+  id: EhAutorizado_NaoAutenticadoAsync
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: EhAutorizado_NaoAutenticadoAsync()
+  nameWithType: TestesIdentidade.EhAutorizado_NaoAutenticadoAsync()
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EhAutorizado_NaoAutenticadoAsync
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 132
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Fact]
+
+      public async Task EhAutorizado_NaoAutenticadoAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function EhAutorizado_NaoAutenticadoAsync As Task
+  overload: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesIdentidade.Dispose
+  commentId: M:LivrEtec.Testes.Local.TestesIdentidade.Dispose
+  id: Dispose
+  parent: LivrEtec.Testes.Local.TestesIdentidade
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TestesIdentidade.Dispose()
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesIdentidade.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Dispose
+    path: ../LivrEtec.Testes/TestesIdentidade.cs
+    startLine: 145
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: LivrEtec.Testes.Local.TestesIdentidade.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Testes.Local
+  commentId: N:LivrEtec.Testes.Local
+  name: LivrEtec.Testes.Local
+  nameWithType: LivrEtec.Testes.Local
+  fullName: LivrEtec.Testes.Local
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.Testes.Local.TestesIdentidade.#ctor*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.#ctor
+  name: TestesIdentidade
+  nameWithType: TestesIdentidade.TestesIdentidade
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.TestesIdentidade
+- uid: Xunit.Abstractions.ITestOutputHelper
+  commentId: T:Xunit.Abstractions.ITestOutputHelper
+  parent: Xunit.Abstractions
+  isExternal: true
+  name: ITestOutputHelper
+  nameWithType: ITestOutputHelper
+  fullName: Xunit.Abstractions.ITestOutputHelper
+- uid: Xunit.Abstractions
+  commentId: N:Xunit.Abstractions
+  isExternal: true
+  name: Xunit.Abstractions
+  nameWithType: Xunit.Abstractions
+  fullName: Xunit.Abstractions
+- uid: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync
+  name: DefinirUsuario_UsuarioValidoAsync
+  nameWithType: TestesIdentidade.DefinirUsuario_UsuarioValidoAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioValidoAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync
+  name: DefinirUsuario_UsuarioInvalidoAsync
+  nameWithType: TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.DefinirUsuario_UsuarioInvalidoAsync
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+  name: AutenticarUsuario_SenhaValidaAsync
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaValidaAsync
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync
+  name: AutenticarUsuario_SenhaInvalidaAsync
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaInvalidaAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+  name: AutenticarUsuario_SenhaNulaAsync
+  nameWithType: TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.AutenticarUsuario_SenhaNulaAsync
+- uid: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync
+  name: EhAutorizadoAsync
+  nameWithType: TestesIdentidade.EhAutorizadoAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizadoAsync
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+  name: EhAutorizado_NaoAutenticadoAsync
+  nameWithType: TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.EhAutorizado_NaoAutenticadoAsync
+- uid: LivrEtec.Testes.Local.TestesIdentidade.Dispose*
+  commentId: Overload:LivrEtec.Testes.Local.TestesIdentidade.Dispose
+  name: Dispose
+  nameWithType: TestesIdentidade.Dispose
+  fullName: LivrEtec.Testes.Local.TestesIdentidade.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

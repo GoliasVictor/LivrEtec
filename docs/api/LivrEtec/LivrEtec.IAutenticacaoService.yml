@@ -1,0 +1,195 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.IAutenticacaoService
+  commentId: T:LivrEtec.IAutenticacaoService
+  id: IAutenticacaoService
+  parent: LivrEtec
+  children:
+  - LivrEtec.IAutenticacaoService.EhAutentico(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IAutenticacaoService
+  nameWithType: IAutenticacaoService
+  fullName: LivrEtec.IAutenticacaoService
+  type: Interface
+  source:
+    remote:
+      path: src/LivrEtec/Services/IAutenticacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IAutenticacaoService
+    path: ../src/LivrEtec/Services/IAutenticacaoService.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  summary: ".\nServiço responsavel por verificar atutenticidade do usuario \n"
+  example: []
+  syntax:
+    content: public interface IAutenticacaoService
+    content.vb: Public Interface IAutenticacaoService
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: LivrEtec.IAutenticacaoService.EhAutentico(System.Int32,System.String)
+  commentId: M:LivrEtec.IAutenticacaoService.EhAutentico(System.Int32,System.String)
+  id: EhAutentico(System.Int32,System.String)
+  parent: LivrEtec.IAutenticacaoService
+  langs:
+  - csharp
+  - vb
+  name: EhAutentico(Int32, String)
+  nameWithType: IAutenticacaoService.EhAutentico(Int32, String)
+  fullName: LivrEtec.IAutenticacaoService.EhAutentico(System.Int32, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Services/IAutenticacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EhAutentico
+    path: ../src/LivrEtec/Services/IAutenticacaoService.cs
+    startLine: 13
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  summary: "\nVerifica se o usuario de identificado por <code data-dev-comment-type=\"paramref\" class=\"paramref\">idUsuario</code>, com a o hash da senha <code data-dev-comment-type=\"paramref\" class=\"paramref\">hash</code> é autentico\n"
+  example: []
+  syntax:
+    content: Task<bool> EhAutentico(int idUsuario, string hash)
+    parameters:
+    - id: idUsuario
+      type: System.Int32
+      description: Id do usuario.
+    - id: hash
+      type: System.String
+      description: 'O hash da senha do usuario '
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: Boleano indicando se as credenciais estão corretas.
+    content.vb: Function EhAutentico(idUsuario As Integer, hash As String) As Task(Of Boolean)
+  overload: LivrEtec.IAutenticacaoService.EhAutentico*
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.IAutenticacaoService.EhAutentico*
+  commentId: Overload:LivrEtec.IAutenticacaoService.EhAutentico
+  name: EhAutentico
+  nameWithType: IAutenticacaoService.EhAutentico
+  fullName: LivrEtec.IAutenticacaoService.EhAutentico
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

@@ -1,0 +1,16 @@
+### YamlMime:TableOfContent
+- uid: LivrEtec.GIB.Servidor
+  name: LivrEtec.GIB.Servidor
+  items:
+  - uid: LivrEtec.GIB.Servidor.EmprestimoServiceRPC
+    name: EmprestimoServiceRPC
+  - uid: LivrEtec.GIB.Servidor.ExceptionInterceptor
+    name: ExceptionInterceptor
+  - uid: LivrEtec.GIB.Servidor.IdentidadeInterceptor
+    name: IdentidadeInterceptor
+  - uid: LivrEtec.GIB.Servidor.LivrosServiceRPC
+    name: LivrosServiceRPC
+  - uid: LivrEtec.GIB.Servidor.TagsServiceRPC
+    name: TagsServiceRPC
+  - uid: LivrEtec.GIB.Servidor.TokenService
+    name: TokenService

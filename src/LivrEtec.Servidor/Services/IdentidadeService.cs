@@ -52,14 +52,14 @@ public class IdentidadeService : IIdentidadeService
 	{
 		if (!EstaAutenticado)
 			return  Task.FromResult(false);
-		return autorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
+		return autorizacaoService.EhAutorizado(IdUsuario, permissao);
 	}
 	public Task ErroSeNaoAutorizado(Permissao permissao)
 	{
 		_ = Usuario ?? throw new NaoAutenticadoException("Usuario não definido");
 		if (!EstaAutenticado)
 			throw new NaoAutenticadoException(Usuario);
-		return autorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
+		return autorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
 	}
 
 

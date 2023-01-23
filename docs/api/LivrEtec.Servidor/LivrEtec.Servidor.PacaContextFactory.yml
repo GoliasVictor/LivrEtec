@@ -1,0 +1,668 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Servidor.PacaContextFactory
+  commentId: T:LivrEtec.Servidor.PacaContextFactory
+  id: PacaContextFactory
+  parent: LivrEtec.Servidor
+  children:
+  - LivrEtec.Servidor.PacaContextFactory.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  - LivrEtec.Servidor.PacaContextFactory.CreateDbContext
+  langs:
+  - csharp
+  - vb
+  name: PacaContextFactory
+  nameWithType: PacaContextFactory
+  fullName: LivrEtec.Servidor.PacaContextFactory
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/BD/PacaContextFactory.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: PacaContextFactory
+    path: ../LivrEtec.Servidor/BD/PacaContextFactory.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: 'public class PacaContextFactory : IDbContextFactory<PacaContext>'
+    content.vb: >-
+      Public Class PacaContextFactory
+
+          Implements IDbContextFactory(Of PacaContext)
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.Servidor.PacaContextFactory.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  commentId: M:LivrEtec.Servidor.PacaContextFactory.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  id: '#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})'
+  parent: LivrEtec.Servidor.PacaContextFactory
+  langs:
+  - csharp
+  - vb
+  name: PacaContextFactory(DbContextOptions<PacaContext>)
+  nameWithType: PacaContextFactory.PacaContextFactory(DbContextOptions<PacaContext>)
+  fullName: LivrEtec.Servidor.PacaContextFactory.PacaContextFactory(Microsoft.EntityFrameworkCore.DbContextOptions<LivrEtec.Servidor.PacaContext>)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/BD/PacaContextFactory.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Servidor/BD/PacaContextFactory.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public PacaContextFactory(DbContextOptions<PacaContext> contextOptions)
+    parameters:
+    - id: contextOptions
+      type: Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+    content.vb: Public Sub New(contextOptions As DbContextOptions(Of PacaContext))
+  overload: LivrEtec.Servidor.PacaContextFactory.#ctor*
+  nameWithType.vb: PacaContextFactory.PacaContextFactory(DbContextOptions(Of PacaContext))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Servidor.PacaContextFactory.PacaContextFactory(Microsoft.EntityFrameworkCore.DbContextOptions(Of LivrEtec.Servidor.PacaContext))
+  name.vb: PacaContextFactory(DbContextOptions(Of PacaContext))
+- uid: LivrEtec.Servidor.PacaContextFactory.CreateDbContext
+  commentId: M:LivrEtec.Servidor.PacaContextFactory.CreateDbContext
+  id: CreateDbContext
+  parent: LivrEtec.Servidor.PacaContextFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateDbContext()
+  nameWithType: PacaContextFactory.CreateDbContext()
+  fullName: LivrEtec.Servidor.PacaContextFactory.CreateDbContext()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/BD/PacaContextFactory.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CreateDbContext
+    path: ../LivrEtec.Servidor/BD/PacaContextFactory.cs
+    startLine: 11
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public PacaContext CreateDbContext()
+    return:
+      type: LivrEtec.Servidor.PacaContext
+    content.vb: Public Function CreateDbContext As PacaContext
+  overload: LivrEtec.Servidor.PacaContextFactory.CreateDbContext*
+  implements:
+  - Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}.CreateDbContext
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  name: IDbContextFactory<PacaContext>
+  nameWithType: IDbContextFactory<PacaContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<LivrEtec.Servidor.PacaContext>
+  nameWithType.vb: IDbContextFactory(Of PacaContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of LivrEtec.Servidor.PacaContext)
+  name.vb: IDbContextFactory(Of PacaContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    nameWithType: IDbContextFactory
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    nameWithType: IDbContextFactory
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  isExternal: true
+  name: IDbContextFactory<TContext>
+  nameWithType: IDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>
+  nameWithType.vb: IDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext)
+  name.vb: IDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    nameWithType: IDbContextFactory
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    nameWithType: IDbContextFactory
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+- uid: LivrEtec.Servidor.PacaContextFactory.#ctor*
+  commentId: Overload:LivrEtec.Servidor.PacaContextFactory.#ctor
+  name: PacaContextFactory
+  nameWithType: PacaContextFactory.PacaContextFactory
+  fullName: LivrEtec.Servidor.PacaContextFactory.PacaContextFactory
+- uid: Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbContextOptions`1
+  name: DbContextOptions<PacaContext>
+  nameWithType: DbContextOptions<PacaContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptions<LivrEtec.Servidor.PacaContext>
+  nameWithType.vb: DbContextOptions(Of PacaContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptions(Of LivrEtec.Servidor.PacaContext)
+  name.vb: DbContextOptions(Of PacaContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptions`1
+  isExternal: true
+  name: DbContextOptions<TContext>
+  nameWithType: DbContextOptions<TContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptions<TContext>
+  nameWithType.vb: DbContextOptions(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptions(Of TContext)
+  name.vb: DbContextOptions(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Servidor.PacaContextFactory.CreateDbContext*
+  commentId: Overload:LivrEtec.Servidor.PacaContextFactory.CreateDbContext
+  name: CreateDbContext
+  nameWithType: PacaContextFactory.CreateDbContext
+  fullName: LivrEtec.Servidor.PacaContextFactory.CreateDbContext
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}.CreateDbContext
+  commentId: M:Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}.CreateDbContext
+  parent: Microsoft.EntityFrameworkCore.IDbContextFactory{LivrEtec.Servidor.PacaContext}
+  definition: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+  name: CreateDbContext()
+  nameWithType: IDbContextFactory<PacaContext>.CreateDbContext()
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<LivrEtec.Servidor.PacaContext>.CreateDbContext()
+  nameWithType.vb: IDbContextFactory(Of PacaContext).CreateDbContext()
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of LivrEtec.Servidor.PacaContext).CreateDbContext()
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+    name: CreateDbContext
+    nameWithType: IDbContextFactory<PacaContext>.CreateDbContext
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<LivrEtec.Servidor.PacaContext>.CreateDbContext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+    name: CreateDbContext
+    nameWithType: IDbContextFactory(Of PacaContext).CreateDbContext
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory(Of LivrEtec.Servidor.PacaContext).CreateDbContext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Servidor.PacaContext
+  commentId: T:LivrEtec.Servidor.PacaContext
+  parent: LivrEtec.Servidor
+  name: PacaContext
+  nameWithType: PacaContext
+  fullName: LivrEtec.Servidor.PacaContext
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+  commentId: M:Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+  isExternal: true
+  name: CreateDbContext()
+  nameWithType: IDbContextFactory<TContext>.CreateDbContext()
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>.CreateDbContext()
+  nameWithType.vb: IDbContextFactory(Of TContext).CreateDbContext()
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext).CreateDbContext()
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+    name: CreateDbContext
+    nameWithType: IDbContextFactory<TContext>.CreateDbContext
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>.CreateDbContext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1.CreateDbContext
+    name: CreateDbContext
+    nameWithType: IDbContextFactory(Of TContext).CreateDbContext
+    fullName: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext).CreateDbContext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

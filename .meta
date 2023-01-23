@@ -28,4 +28,6 @@
     gib:up:      dotnet run --project ./src/LivrEtec.GIB.Servidor
     gib:dev:     dotnet watch run --project ./src/LivrEtec.GIB.Servidor
     docker: sudo docker compose -f src/docker-compose.yml -p livretec --profile teste up --build --exit-code-from testes
+    doc-build:   docfx docs/docfx.json
+    doc-up:      docfx docs/docfx.json --serve
     

@@ -1,0 +1,218 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.IGrupoPermissao
+  commentId: T:LivrEtec.IGrupoPermissao
+  id: IGrupoPermissao
+  parent: LivrEtec
+  children:
+  - LivrEtec.IGrupoPermissao.Nome
+  - LivrEtec.IGrupoPermissao.Todas
+  langs:
+  - csharp
+  - vb
+  name: IGrupoPermissao
+  nameWithType: IGrupoPermissao
+  fullName: LivrEtec.IGrupoPermissao
+  type: Interface
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IGrupoPermissao
+    path: ../src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+    startLine: 2
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public interface IGrupoPermissao
+    content.vb: Public Interface IGrupoPermissao
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: LivrEtec.IGrupoPermissao.Nome
+  commentId: P:LivrEtec.IGrupoPermissao.Nome
+  id: Nome
+  parent: LivrEtec.IGrupoPermissao
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: IGrupoPermissao.Nome
+  fullName: LivrEtec.IGrupoPermissao.Nome
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Nome
+    path: ../src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+    startLine: 3
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: string Nome { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Nome As String
+  overload: LivrEtec.IGrupoPermissao.Nome*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: LivrEtec.IGrupoPermissao.Todas
+  commentId: P:LivrEtec.IGrupoPermissao.Todas
+  id: Todas
+  parent: LivrEtec.IGrupoPermissao
+  langs:
+  - csharp
+  - vb
+  name: Todas
+  nameWithType: IGrupoPermissao.Todas
+  fullName: LivrEtec.IGrupoPermissao.Todas
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Todas
+    path: ../src/LivrEtec/Models/Autorizacao/IGrupoPermissao.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: List<Permissao> Todas { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{LivrEtec.Permissao}
+    content.vb: ReadOnly Property Todas As List(Of Permissao)
+  overload: LivrEtec.IGrupoPermissao.Todas*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.IGrupoPermissao.Nome*
+  commentId: Overload:LivrEtec.IGrupoPermissao.Nome
+  name: Nome
+  nameWithType: IGrupoPermissao.Nome
+  fullName: LivrEtec.IGrupoPermissao.Nome
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.IGrupoPermissao.Todas*
+  commentId: Overload:LivrEtec.IGrupoPermissao.Todas
+  name: Todas
+  nameWithType: IGrupoPermissao.Todas
+  fullName: LivrEtec.IGrupoPermissao.Todas
+- uid: System.Collections.Generic.List{LivrEtec.Permissao}
+  commentId: T:System.Collections.Generic.List{LivrEtec.Permissao}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Permissao>
+  nameWithType: List<Permissao>
+  fullName: System.Collections.Generic.List<LivrEtec.Permissao>
+  nameWithType.vb: List(Of Permissao)
+  fullName.vb: System.Collections.Generic.List(Of LivrEtec.Permissao)
+  name.vb: List(Of Permissao)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

@@ -1,0 +1,1797 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.BDUtil
+  commentId: T:LivrEtec.Testes.BDUtil
+  id: BDUtil
+  parent: LivrEtec.Testes
+  children:
+  - LivrEtec.Testes.BDUtil.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  - LivrEtec.Testes.BDUtil.Autores
+  - LivrEtec.Testes.BDUtil.BDPermissoes
+  - LivrEtec.Testes.BDUtil.Cargos
+  - LivrEtec.Testes.BDUtil.CriarContexto
+  - LivrEtec.Testes.BDUtil.Dispose
+  - LivrEtec.Testes.BDUtil.Emprestimos
+  - LivrEtec.Testes.BDUtil.gAutor(System.Int32)
+  - LivrEtec.Testes.BDUtil.gCargo(System.Int32)
+  - LivrEtec.Testes.BDUtil.gEmprestimo(System.Int32)
+  - LivrEtec.Testes.BDUtil.gEmprestimoBanco(System.Int32)
+  - LivrEtec.Testes.BDUtil.gLivro(System.Int32)
+  - LivrEtec.Testes.BDUtil.gPessoa(System.Int32)
+  - LivrEtec.Testes.BDUtil.gTag(System.Int32)
+  - LivrEtec.Testes.BDUtil.gTagBanco(System.Int32)
+  - LivrEtec.Testes.BDUtil.gUsuario(System.Int32)
+  - LivrEtec.Testes.BDUtil.Livros
+  - LivrEtec.Testes.BDUtil.PacaContextFactory
+  - LivrEtec.Testes.BDUtil.Pessoas
+  - LivrEtec.Testes.BDUtil.ResetarBanco
+  - LivrEtec.Testes.BDUtil.SalvarDados
+  - LivrEtec.Testes.BDUtil.Tags
+  - LivrEtec.Testes.BDUtil.Usuarios
+  langs:
+  - csharp
+  - vb
+  name: BDUtil
+  nameWithType: BDUtil
+  fullName: LivrEtec.Testes.BDUtil
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: BDUtil
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: 'public class BDUtil : IDisposable'
+    content.vb: >-
+      Public Class BDUtil
+
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LivrEtec.Testes.BDUtilMySQl
+  - LivrEtec.Testes.BDUtilSqlLite
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.Testes.BDUtil.CriarContexto
+  commentId: M:LivrEtec.Testes.BDUtil.CriarContexto
+  id: CriarContexto
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: CriarContexto()
+  nameWithType: BDUtil.CriarContexto()
+  fullName: LivrEtec.Testes.BDUtil.CriarContexto()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CriarContexto
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 8
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public PacaContext CriarContexto()
+    return:
+      type: LivrEtec.Servidor.PacaContext
+    content.vb: Public Function CriarContexto As PacaContext
+  overload: LivrEtec.Testes.BDUtil.CriarContexto*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.PacaContextFactory
+  commentId: P:LivrEtec.Testes.BDUtil.PacaContextFactory
+  id: PacaContextFactory
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: PacaContextFactory
+  nameWithType: BDUtil.PacaContextFactory
+  fullName: LivrEtec.Testes.BDUtil.PacaContextFactory
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: PacaContextFactory
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 11
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public PacaContextFactory PacaContextFactory { get; }
+    parameters: []
+    return:
+      type: LivrEtec.Servidor.PacaContextFactory
+    content.vb: Public ReadOnly Property PacaContextFactory As PacaContextFactory
+  overload: LivrEtec.Testes.BDUtil.PacaContextFactory*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.Testes.BDUtil.SalvarDados
+  commentId: M:LivrEtec.Testes.BDUtil.SalvarDados
+  id: SalvarDados
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: SalvarDados()
+  nameWithType: BDUtil.SalvarDados()
+  fullName: LivrEtec.Testes.BDUtil.SalvarDados()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: SalvarDados
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 13
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public void SalvarDados()
+    content.vb: Public Sub SalvarDados
+  overload: LivrEtec.Testes.BDUtil.SalvarDados*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  commentId: M:LivrEtec.Testes.BDUtil.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})
+  id: '#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext})'
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: BDUtil(DbContextOptions<PacaContext>)
+  nameWithType: BDUtil.BDUtil(DbContextOptions<PacaContext>)
+  fullName: LivrEtec.Testes.BDUtil.BDUtil(Microsoft.EntityFrameworkCore.DbContextOptions<LivrEtec.Servidor.PacaContext>)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 34
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: protected BDUtil(DbContextOptions<PacaContext> contextOptions)
+    parameters:
+    - id: contextOptions
+      type: Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+    content.vb: Protected Sub New(contextOptions As DbContextOptions(Of PacaContext))
+  overload: LivrEtec.Testes.BDUtil.#ctor*
+  nameWithType.vb: BDUtil.BDUtil(DbContextOptions(Of PacaContext))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: LivrEtec.Testes.BDUtil.BDUtil(Microsoft.EntityFrameworkCore.DbContextOptions(Of LivrEtec.Servidor.PacaContext))
+  name.vb: BDUtil(DbContextOptions(Of PacaContext))
+- uid: LivrEtec.Testes.BDUtil.Livros
+  commentId: P:LivrEtec.Testes.BDUtil.Livros
+  id: Livros
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Livros
+  nameWithType: BDUtil.Livros
+  fullName: LivrEtec.Testes.BDUtil.Livros
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Livros
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 40
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Livro[] Livros { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Livro[]
+    content.vb: Public Property Livros As Livro()
+  overload: LivrEtec.Testes.BDUtil.Livros*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Autores
+  commentId: P:LivrEtec.Testes.BDUtil.Autores
+  id: Autores
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Autores
+  nameWithType: BDUtil.Autores
+  fullName: LivrEtec.Testes.BDUtil.Autores
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Autores
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 41
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Autor[] Autores { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Autor[]
+    content.vb: Public Property Autores As Autor()
+  overload: LivrEtec.Testes.BDUtil.Autores*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Tags
+  commentId: P:LivrEtec.Testes.BDUtil.Tags
+  id: Tags
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Tags
+  nameWithType: BDUtil.Tags
+  fullName: LivrEtec.Testes.BDUtil.Tags
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Tags
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 42
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Tag[] Tags { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Tag[]
+    content.vb: Public Property Tags As Tag()
+  overload: LivrEtec.Testes.BDUtil.Tags*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Pessoas
+  commentId: P:LivrEtec.Testes.BDUtil.Pessoas
+  id: Pessoas
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Pessoas
+  nameWithType: BDUtil.Pessoas
+  fullName: LivrEtec.Testes.BDUtil.Pessoas
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Pessoas
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 43
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Pessoa[] Pessoas { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Pessoa[]
+    content.vb: Public Property Pessoas As Pessoa()
+  overload: LivrEtec.Testes.BDUtil.Pessoas*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Emprestimos
+  commentId: P:LivrEtec.Testes.BDUtil.Emprestimos
+  id: Emprestimos
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Emprestimos
+  nameWithType: BDUtil.Emprestimos
+  fullName: LivrEtec.Testes.BDUtil.Emprestimos
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Emprestimos
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 44
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Emprestimo[] Emprestimos { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Emprestimo[]
+    content.vb: Public Property Emprestimos As Emprestimo()
+  overload: LivrEtec.Testes.BDUtil.Emprestimos*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Usuarios
+  commentId: P:LivrEtec.Testes.BDUtil.Usuarios
+  id: Usuarios
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Usuarios
+  nameWithType: BDUtil.Usuarios
+  fullName: LivrEtec.Testes.BDUtil.Usuarios
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Usuarios
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 45
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Usuario[] Usuarios { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Usuario[]
+    content.vb: Public Property Usuarios As Usuario()
+  overload: LivrEtec.Testes.BDUtil.Usuarios*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Cargos
+  commentId: P:LivrEtec.Testes.BDUtil.Cargos
+  id: Cargos
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Cargos
+  nameWithType: BDUtil.Cargos
+  fullName: LivrEtec.Testes.BDUtil.Cargos
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Cargos
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 46
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Cargo[] Cargos { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Cargo[]
+    content.vb: Public Property Cargos As Cargo()
+  overload: LivrEtec.Testes.BDUtil.Cargos*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.BDPermissoes
+  commentId: P:LivrEtec.Testes.BDUtil.BDPermissoes
+  id: BDPermissoes
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: BDPermissoes
+  nameWithType: BDUtil.BDPermissoes
+  fullName: LivrEtec.Testes.BDUtil.BDPermissoes
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: BDPermissoes
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 47
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Permissao[] BDPermissoes { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Permissao[]
+    content.vb: Public Property BDPermissoes As Permissao()
+  overload: LivrEtec.Testes.BDUtil.BDPermissoes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gAutor(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gAutor(System.Int32)
+  id: gAutor(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gAutor(Int32)
+  nameWithType: BDUtil.gAutor(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gAutor(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gAutor
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 49
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Autor gAutor(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Autor
+    content.vb: Public Function gAutor(id As Integer) As Autor
+  overload: LivrEtec.Testes.BDUtil.gAutor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gTag(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gTag(System.Int32)
+  id: gTag(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gTag(Int32)
+  nameWithType: BDUtil.gTag(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gTag(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gTag
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 50
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Tag gTag(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Tag
+    content.vb: Public Function gTag(id As Integer) As Tag
+  overload: LivrEtec.Testes.BDUtil.gTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gLivro(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gLivro(System.Int32)
+  id: gLivro(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gLivro(Int32)
+  nameWithType: BDUtil.gLivro(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gLivro(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gLivro
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 51
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Livro gLivro(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Livro
+    content.vb: Public Function gLivro(id As Integer) As Livro
+  overload: LivrEtec.Testes.BDUtil.gLivro*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gUsuario(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gUsuario(System.Int32)
+  id: gUsuario(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gUsuario(Int32)
+  nameWithType: BDUtil.gUsuario(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gUsuario(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gUsuario
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 52
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Usuario gUsuario(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Usuario
+    content.vb: Public Function gUsuario(id As Integer) As Usuario
+  overload: LivrEtec.Testes.BDUtil.gUsuario*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gCargo(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gCargo(System.Int32)
+  id: gCargo(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gCargo(Int32)
+  nameWithType: BDUtil.gCargo(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gCargo(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gCargo
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 53
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Cargo gCargo(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Cargo
+    content.vb: Public Function gCargo(id As Integer) As Cargo
+  overload: LivrEtec.Testes.BDUtil.gCargo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gPessoa(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gPessoa(System.Int32)
+  id: gPessoa(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gPessoa(Int32)
+  nameWithType: BDUtil.gPessoa(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gPessoa(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gPessoa
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 54
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Pessoa gPessoa(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Pessoa
+    content.vb: Public Function gPessoa(id As Integer) As Pessoa
+  overload: LivrEtec.Testes.BDUtil.gPessoa*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gEmprestimo(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gEmprestimo(System.Int32)
+  id: gEmprestimo(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gEmprestimo(Int32)
+  nameWithType: BDUtil.gEmprestimo(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gEmprestimo(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gEmprestimo
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 55
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public Emprestimo gEmprestimo(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: LivrEtec.Emprestimo
+    content.vb: Public Function gEmprestimo(id As Integer) As Emprestimo
+  overload: LivrEtec.Testes.BDUtil.gEmprestimo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gEmprestimoBanco(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gEmprestimoBanco(System.Int32)
+  id: gEmprestimoBanco(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gEmprestimoBanco(Int32)
+  nameWithType: BDUtil.gEmprestimoBanco(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gEmprestimoBanco(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gEmprestimoBanco
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 56
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public async Task<Emprestimo> gEmprestimoBanco(int idEmprestimo)
+    parameters:
+    - id: idEmprestimo
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{LivrEtec.Emprestimo}
+    content.vb: Public Function gEmprestimoBanco(idEmprestimo As Integer) As Task(Of Emprestimo)
+  overload: LivrEtec.Testes.BDUtil.gEmprestimoBanco*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.gTagBanco(System.Int32)
+  commentId: M:LivrEtec.Testes.BDUtil.gTagBanco(System.Int32)
+  id: gTagBanco(System.Int32)
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: gTagBanco(Int32)
+  nameWithType: BDUtil.gTagBanco(Int32)
+  fullName: LivrEtec.Testes.BDUtil.gTagBanco(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: gTagBanco
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 69
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public async Task<Tag> gTagBanco(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{LivrEtec.Tag}
+    content.vb: Public Function gTagBanco(id As Integer) As Task(Of Tag)
+  overload: LivrEtec.Testes.BDUtil.gTagBanco*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.ResetarBanco
+  commentId: M:LivrEtec.Testes.BDUtil.ResetarBanco
+  id: ResetarBanco
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: ResetarBanco()
+  nameWithType: BDUtil.ResetarBanco()
+  fullName: LivrEtec.Testes.BDUtil.ResetarBanco()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ResetarBanco
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 74
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public void ResetarBanco()
+    content.vb: Public Sub ResetarBanco
+  overload: LivrEtec.Testes.BDUtil.ResetarBanco*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.BDUtil.Dispose
+  commentId: M:LivrEtec.Testes.BDUtil.Dispose
+  id: Dispose
+  parent: LivrEtec.Testes.BDUtil
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: BDUtil.Dispose()
+  fullName: LivrEtec.Testes.BDUtil.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/Utilitarios/BDUtils.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Dispose
+    path: ../LivrEtec.Testes/Utilitarios/BDUtils.cs
+    startLine: 90
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: LivrEtec.Testes.BDUtil.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.Testes.BDUtil.CriarContexto*
+  commentId: Overload:LivrEtec.Testes.BDUtil.CriarContexto
+  name: CriarContexto
+  nameWithType: BDUtil.CriarContexto
+  fullName: LivrEtec.Testes.BDUtil.CriarContexto
+- uid: LivrEtec.Servidor.PacaContext
+  commentId: T:LivrEtec.Servidor.PacaContext
+  parent: LivrEtec.Servidor
+  name: PacaContext
+  nameWithType: PacaContext
+  fullName: LivrEtec.Servidor.PacaContext
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: LivrEtec.Testes.BDUtil.PacaContextFactory*
+  commentId: Overload:LivrEtec.Testes.BDUtil.PacaContextFactory
+  name: PacaContextFactory
+  nameWithType: BDUtil.PacaContextFactory
+  fullName: LivrEtec.Testes.BDUtil.PacaContextFactory
+- uid: LivrEtec.Servidor.PacaContextFactory
+  commentId: T:LivrEtec.Servidor.PacaContextFactory
+  parent: LivrEtec.Servidor
+  name: PacaContextFactory
+  nameWithType: PacaContextFactory
+  fullName: LivrEtec.Servidor.PacaContextFactory
+- uid: LivrEtec.Testes.BDUtil.SalvarDados*
+  commentId: Overload:LivrEtec.Testes.BDUtil.SalvarDados
+  name: SalvarDados
+  nameWithType: BDUtil.SalvarDados
+  fullName: LivrEtec.Testes.BDUtil.SalvarDados
+- uid: LivrEtec.Testes.BDUtil.#ctor*
+  commentId: Overload:LivrEtec.Testes.BDUtil.#ctor
+  name: BDUtil
+  nameWithType: BDUtil.BDUtil
+  fullName: LivrEtec.Testes.BDUtil.BDUtil
+- uid: Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptions{LivrEtec.Servidor.PacaContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbContextOptions`1
+  name: DbContextOptions<PacaContext>
+  nameWithType: DbContextOptions<PacaContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptions<LivrEtec.Servidor.PacaContext>
+  nameWithType.vb: DbContextOptions(Of PacaContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptions(Of LivrEtec.Servidor.PacaContext)
+  name.vb: DbContextOptions(Of PacaContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.PacaContext
+    name: PacaContext
+    nameWithType: PacaContext
+    fullName: LivrEtec.Servidor.PacaContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptions`1
+  isExternal: true
+  name: DbContextOptions<TContext>
+  nameWithType: DbContextOptions<TContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptions<TContext>
+  nameWithType.vb: DbContextOptions(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptions(Of TContext)
+  name.vb: DbContextOptions(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptions`1
+    name: DbContextOptions
+    nameWithType: DbContextOptions
+    fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+- uid: LivrEtec.Testes.BDUtil.Livros*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Livros
+  name: Livros
+  nameWithType: BDUtil.Livros
+  fullName: LivrEtec.Testes.BDUtil.Livros
+- uid: LivrEtec.Livro[]
+  isExternal: true
+  name: Livro[]
+  nameWithType: Livro[]
+  fullName: LivrEtec.Livro[]
+  nameWithType.vb: Livro()
+  fullName.vb: LivrEtec.Livro()
+  name.vb: Livro()
+  spec.csharp:
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.Livro
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Autores*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Autores
+  name: Autores
+  nameWithType: BDUtil.Autores
+  fullName: LivrEtec.Testes.BDUtil.Autores
+- uid: LivrEtec.Autor[]
+  isExternal: true
+  name: Autor[]
+  nameWithType: Autor[]
+  fullName: LivrEtec.Autor[]
+  nameWithType.vb: Autor()
+  fullName.vb: LivrEtec.Autor()
+  name.vb: Autor()
+  spec.csharp:
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Autor
+    name: Autor
+    nameWithType: Autor
+    fullName: LivrEtec.Autor
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Tags*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Tags
+  name: Tags
+  nameWithType: BDUtil.Tags
+  fullName: LivrEtec.Testes.BDUtil.Tags
+- uid: LivrEtec.Tag[]
+  isExternal: true
+  name: Tag[]
+  nameWithType: Tag[]
+  fullName: LivrEtec.Tag[]
+  nameWithType.vb: Tag()
+  fullName.vb: LivrEtec.Tag()
+  name.vb: Tag()
+  spec.csharp:
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Pessoas*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Pessoas
+  name: Pessoas
+  nameWithType: BDUtil.Pessoas
+  fullName: LivrEtec.Testes.BDUtil.Pessoas
+- uid: LivrEtec.Pessoa[]
+  isExternal: true
+  name: Pessoa[]
+  nameWithType: Pessoa[]
+  fullName: LivrEtec.Pessoa[]
+  nameWithType.vb: Pessoa()
+  fullName.vb: LivrEtec.Pessoa()
+  name.vb: Pessoa()
+  spec.csharp:
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Emprestimos*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Emprestimos
+  name: Emprestimos
+  nameWithType: BDUtil.Emprestimos
+  fullName: LivrEtec.Testes.BDUtil.Emprestimos
+- uid: LivrEtec.Emprestimo[]
+  isExternal: true
+  name: Emprestimo[]
+  nameWithType: Emprestimo[]
+  fullName: LivrEtec.Emprestimo[]
+  nameWithType.vb: Emprestimo()
+  fullName.vb: LivrEtec.Emprestimo()
+  name.vb: Emprestimo()
+  spec.csharp:
+  - uid: LivrEtec.Emprestimo
+    name: Emprestimo
+    nameWithType: Emprestimo
+    fullName: LivrEtec.Emprestimo
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Emprestimo
+    name: Emprestimo
+    nameWithType: Emprestimo
+    fullName: LivrEtec.Emprestimo
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Usuarios*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Usuarios
+  name: Usuarios
+  nameWithType: BDUtil.Usuarios
+  fullName: LivrEtec.Testes.BDUtil.Usuarios
+- uid: LivrEtec.Usuario[]
+  isExternal: true
+  name: Usuario[]
+  nameWithType: Usuario[]
+  fullName: LivrEtec.Usuario[]
+  nameWithType.vb: Usuario()
+  fullName.vb: LivrEtec.Usuario()
+  name.vb: Usuario()
+  spec.csharp:
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.Cargos*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Cargos
+  name: Cargos
+  nameWithType: BDUtil.Cargos
+  fullName: LivrEtec.Testes.BDUtil.Cargos
+- uid: LivrEtec.Cargo[]
+  isExternal: true
+  name: Cargo[]
+  nameWithType: Cargo[]
+  fullName: LivrEtec.Cargo[]
+  nameWithType.vb: Cargo()
+  fullName.vb: LivrEtec.Cargo()
+  name.vb: Cargo()
+  spec.csharp:
+  - uid: LivrEtec.Cargo
+    name: Cargo
+    nameWithType: Cargo
+    fullName: LivrEtec.Cargo
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Cargo
+    name: Cargo
+    nameWithType: Cargo
+    fullName: LivrEtec.Cargo
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.BDPermissoes*
+  commentId: Overload:LivrEtec.Testes.BDUtil.BDPermissoes
+  name: BDPermissoes
+  nameWithType: BDUtil.BDPermissoes
+  fullName: LivrEtec.Testes.BDUtil.BDPermissoes
+- uid: LivrEtec.Permissao[]
+  isExternal: true
+  name: Permissao[]
+  nameWithType: Permissao[]
+  fullName: LivrEtec.Permissao[]
+  nameWithType.vb: Permissao()
+  fullName.vb: LivrEtec.Permissao()
+  name.vb: Permissao()
+  spec.csharp:
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: LivrEtec.Testes.BDUtil.gAutor*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gAutor
+  name: gAutor
+  nameWithType: BDUtil.gAutor
+  fullName: LivrEtec.Testes.BDUtil.gAutor
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Autor
+  commentId: T:LivrEtec.Autor
+  parent: LivrEtec
+  name: Autor
+  nameWithType: Autor
+  fullName: LivrEtec.Autor
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.Testes.BDUtil.gTag*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gTag
+  name: gTag
+  nameWithType: BDUtil.gTag
+  fullName: LivrEtec.Testes.BDUtil.gTag
+- uid: LivrEtec.Tag
+  commentId: T:LivrEtec.Tag
+  parent: LivrEtec
+  name: Tag
+  nameWithType: Tag
+  fullName: LivrEtec.Tag
+- uid: LivrEtec.Testes.BDUtil.gLivro*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gLivro
+  name: gLivro
+  nameWithType: BDUtil.gLivro
+  fullName: LivrEtec.Testes.BDUtil.gLivro
+- uid: LivrEtec.Livro
+  commentId: T:LivrEtec.Livro
+  parent: LivrEtec
+  name: Livro
+  nameWithType: Livro
+  fullName: LivrEtec.Livro
+- uid: LivrEtec.Testes.BDUtil.gUsuario*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gUsuario
+  name: gUsuario
+  nameWithType: BDUtil.gUsuario
+  fullName: LivrEtec.Testes.BDUtil.gUsuario
+- uid: LivrEtec.Usuario
+  commentId: T:LivrEtec.Usuario
+  parent: LivrEtec
+  name: Usuario
+  nameWithType: Usuario
+  fullName: LivrEtec.Usuario
+- uid: LivrEtec.Testes.BDUtil.gCargo*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gCargo
+  name: gCargo
+  nameWithType: BDUtil.gCargo
+  fullName: LivrEtec.Testes.BDUtil.gCargo
+- uid: LivrEtec.Cargo
+  commentId: T:LivrEtec.Cargo
+  parent: LivrEtec
+  name: Cargo
+  nameWithType: Cargo
+  fullName: LivrEtec.Cargo
+- uid: LivrEtec.Testes.BDUtil.gPessoa*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gPessoa
+  name: gPessoa
+  nameWithType: BDUtil.gPessoa
+  fullName: LivrEtec.Testes.BDUtil.gPessoa
+- uid: LivrEtec.Pessoa
+  commentId: T:LivrEtec.Pessoa
+  parent: LivrEtec
+  name: Pessoa
+  nameWithType: Pessoa
+  fullName: LivrEtec.Pessoa
+- uid: LivrEtec.Testes.BDUtil.gEmprestimo*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gEmprestimo
+  name: gEmprestimo
+  nameWithType: BDUtil.gEmprestimo
+  fullName: LivrEtec.Testes.BDUtil.gEmprestimo
+- uid: LivrEtec.Emprestimo
+  commentId: T:LivrEtec.Emprestimo
+  parent: LivrEtec
+  name: Emprestimo
+  nameWithType: Emprestimo
+  fullName: LivrEtec.Emprestimo
+- uid: LivrEtec.Testes.BDUtil.gEmprestimoBanco*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gEmprestimoBanco
+  name: gEmprestimoBanco
+  nameWithType: BDUtil.gEmprestimoBanco
+  fullName: LivrEtec.Testes.BDUtil.gEmprestimoBanco
+- uid: System.Threading.Tasks.Task{LivrEtec.Emprestimo}
+  commentId: T:System.Threading.Tasks.Task{LivrEtec.Emprestimo}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Emprestimo>
+  nameWithType: Task<Emprestimo>
+  fullName: System.Threading.Tasks.Task<LivrEtec.Emprestimo>
+  nameWithType.vb: Task(Of Emprestimo)
+  fullName.vb: System.Threading.Tasks.Task(Of LivrEtec.Emprestimo)
+  name.vb: Task(Of Emprestimo)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Emprestimo
+    name: Emprestimo
+    nameWithType: Emprestimo
+    fullName: LivrEtec.Emprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Emprestimo
+    name: Emprestimo
+    nameWithType: Emprestimo
+    fullName: LivrEtec.Emprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.Testes.BDUtil.gTagBanco*
+  commentId: Overload:LivrEtec.Testes.BDUtil.gTagBanco
+  name: gTagBanco
+  nameWithType: BDUtil.gTagBanco
+  fullName: LivrEtec.Testes.BDUtil.gTagBanco
+- uid: System.Threading.Tasks.Task{LivrEtec.Tag}
+  commentId: T:System.Threading.Tasks.Task{LivrEtec.Tag}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Tag>
+  nameWithType: Task<Tag>
+  fullName: System.Threading.Tasks.Task<LivrEtec.Tag>
+  nameWithType.vb: Task(Of Tag)
+  fullName.vb: System.Threading.Tasks.Task(Of LivrEtec.Tag)
+  name.vb: Task(Of Tag)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Tag
+    name: Tag
+    nameWithType: Tag
+    fullName: LivrEtec.Tag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.BDUtil.ResetarBanco*
+  commentId: Overload:LivrEtec.Testes.BDUtil.ResetarBanco
+  name: ResetarBanco
+  nameWithType: BDUtil.ResetarBanco
+  fullName: LivrEtec.Testes.BDUtil.ResetarBanco
+- uid: LivrEtec.Testes.BDUtil.Dispose*
+  commentId: Overload:LivrEtec.Testes.BDUtil.Dispose
+  name: Dispose
+  nameWithType: BDUtil.Dispose
+  fullName: LivrEtec.Testes.BDUtil.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

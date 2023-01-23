@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.Remoto
+  commentId: N:LivrEtec.Testes.Remoto
+  id: LivrEtec.Testes.Remoto
+  children:
+  - LivrEtec.Testes.Remoto.TestesEmprestimoServiceRPC
+  - LivrEtec.Testes.Remoto.TestesLivrosServiceRPC
+  - LivrEtec.Testes.Remoto.TestesTagsServiceRPC
+  langs:
+  - csharp
+  - vb
+  name: LivrEtec.Testes.Remoto
+  nameWithType: LivrEtec.Testes.Remoto
+  fullName: LivrEtec.Testes.Remoto
+  type: Namespace
+  assemblies:
+  - LivrEtec.Testes
+references:
+- uid: LivrEtec.Testes.Remoto.TestesEmprestimoServiceRPC
+  commentId: T:LivrEtec.Testes.Remoto.TestesEmprestimoServiceRPC
+  name: TestesEmprestimoServiceRPC
+  nameWithType: TestesEmprestimoServiceRPC
+  fullName: LivrEtec.Testes.Remoto.TestesEmprestimoServiceRPC
+- uid: LivrEtec.Testes.Remoto.TestesLivrosServiceRPC
+  commentId: T:LivrEtec.Testes.Remoto.TestesLivrosServiceRPC
+  name: TestesLivrosServiceRPC
+  nameWithType: TestesLivrosServiceRPC
+  fullName: LivrEtec.Testes.Remoto.TestesLivrosServiceRPC
+- uid: LivrEtec.Testes.Remoto.TestesTagsServiceRPC
+  commentId: T:LivrEtec.Testes.Remoto.TestesTagsServiceRPC
+  name: TestesTagsServiceRPC
+  nameWithType: TestesTagsServiceRPC
+  fullName: LivrEtec.Testes.Remoto.TestesTagsServiceRPC

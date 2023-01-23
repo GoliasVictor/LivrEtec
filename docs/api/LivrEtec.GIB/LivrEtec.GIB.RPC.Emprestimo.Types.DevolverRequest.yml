@@ -1,0 +1,2234 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  commentId: T:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  id: Emprestimo.Types.DevolverRequest
+  parent: LivrEtec.GIB.RPC
+  children:
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificadoFieldNumber
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(System.Object)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtrasoFieldNumber
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimoFieldNumber
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(Google.Protobuf.CodedInputStream)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString
+  - LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Emprestimo.Types.DevolverRequest
+  nameWithType: Emprestimo.Types.DevolverRequest
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: DevolverRequest
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5450
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: 'public sealed class DevolverRequest : IMessage<Emprestimo.Types.DevolverRequest>, IEquatable<Emprestimo.Types.DevolverRequest>, IDeepCloneable<Emprestimo.Types.DevolverRequest>, IBufferMessage, IMessage'
+    content.vb: >-
+      Public NotInheritable Class DevolverRequest
+
+          Implements IMessage(Of Emprestimo.Types.DevolverRequest), IEquatable(Of Emprestimo.Types.DevolverRequest), IDeepCloneable(Of Emprestimo.Types.DevolverRequest), IBufferMessage, IMessage
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  - System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  - Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+  id: Parser
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Emprestimo.Types.DevolverRequest.Parser
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Parser
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5458
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public static MessageParser<Emprestimo.Types.DevolverRequest> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Emprestimo.Types.DevolverRequest)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+  id: Descriptor
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Emprestimo.Types.DevolverRequest.Descriptor
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Descriptor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5462
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Emprestimo.Types.DevolverRequest.IMessage.Descriptor
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5468
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor
+  id: '#ctor'
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: DevolverRequest()
+  nameWithType: Emprestimo.Types.DevolverRequest.DevolverRequest()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.DevolverRequest()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5474
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public DevolverRequest()
+    content.vb: Public Sub New
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  id: '#ctor(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)'
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: DevolverRequest(Emprestimo.Types.DevolverRequest)
+  nameWithType: Emprestimo.Types.DevolverRequest.DevolverRequest(Emprestimo.Types.DevolverRequest)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.DevolverRequest(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5482
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public DevolverRequest(Emprestimo.Types.DevolverRequest other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    content.vb: Public Sub New(other As Emprestimo.Types.DevolverRequest)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone
+  id: Clone
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Emprestimo.Types.DevolverRequest.Clone()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Clone
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5492
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public Emprestimo.Types.DevolverRequest Clone()
+    return:
+      type: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    content.vb: Public Function Clone As Emprestimo.Types.DevolverRequest
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimoFieldNumber
+  commentId: F:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimoFieldNumber
+  id: IdEmprestimoFieldNumber
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimoFieldNumber
+  nameWithType: Emprestimo.Types.DevolverRequest.IdEmprestimoFieldNumber
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimoFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IdEmprestimoFieldNumber
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5499
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Field number for the &quot;idEmprestimo&quot; field.
+  example: []
+  syntax:
+    content: public const int IdEmprestimoFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const IdEmprestimoFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+  id: IdEmprestimo
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimo
+  nameWithType: Emprestimo.Types.DevolverRequest.IdEmprestimo
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IdEmprestimo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5501
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public int IdEmprestimo { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property IdEmprestimo As Integer
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificadoFieldNumber
+  commentId: F:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificadoFieldNumber
+  id: AtrasoJustificadoFieldNumber
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: AtrasoJustificadoFieldNumber
+  nameWithType: Emprestimo.Types.DevolverRequest.AtrasoJustificadoFieldNumber
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificadoFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AtrasoJustificadoFieldNumber
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5511
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Field number for the &quot;AtrasoJustificado&quot; field.
+  example: []
+  syntax:
+    content: public const int AtrasoJustificadoFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const AtrasoJustificadoFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  id: AtrasoJustificado
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: AtrasoJustificado
+  nameWithType: Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AtrasoJustificado
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5513
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public bool AtrasoJustificado { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AtrasoJustificado As Boolean
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  id: HasAtrasoJustificado
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: HasAtrasoJustificado
+  nameWithType: Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: HasAtrasoJustificado
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5523
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Gets whether the &quot;AtrasoJustificado&quot; field is set
+  example: []
+  syntax:
+    content: public bool HasAtrasoJustificado { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasAtrasoJustificado As Boolean
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+  id: ClearAtrasoJustificado
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: ClearAtrasoJustificado()
+  nameWithType: Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ClearAtrasoJustificado
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5529
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Clears the value of the &quot;AtrasoJustificado&quot; field
+  example: []
+  syntax:
+    content: public void ClearAtrasoJustificado()
+    content.vb: Public Sub ClearAtrasoJustificado
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtrasoFieldNumber
+  commentId: F:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtrasoFieldNumber
+  id: ExplicacaoAtrasoFieldNumber
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: ExplicacaoAtrasoFieldNumber
+  nameWithType: Emprestimo.Types.DevolverRequest.ExplicacaoAtrasoFieldNumber
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtrasoFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ExplicacaoAtrasoFieldNumber
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5536
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Field number for the &quot;ExplicacaoAtraso&quot; field.
+  example: []
+  syntax:
+    content: public const int ExplicacaoAtrasoFieldNumber = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const ExplicacaoAtrasoFieldNumber As Integer = 3
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  id: ExplicacaoAtraso
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: ExplicacaoAtraso
+  nameWithType: Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ExplicacaoAtraso
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5538
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public string ExplicacaoAtraso { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ExplicacaoAtraso As String
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  commentId: P:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  id: HasExplicacaoAtraso
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: HasExplicacaoAtraso
+  nameWithType: Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: HasExplicacaoAtraso
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5547
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Gets whether the &quot;ExplicacaoAtraso&quot; field is set
+  example: []
+  syntax:
+    content: public bool HasExplicacaoAtraso { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasExplicacaoAtraso As Boolean
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+  id: ClearExplicacaoAtraso
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: ClearExplicacaoAtraso()
+  nameWithType: Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ClearExplicacaoAtraso
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5553
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Clears the value of the &quot;ExplicacaoAtraso&quot; field
+  example: []
+  syntax:
+    content: public void ClearExplicacaoAtraso()
+    content.vb: Public Sub ClearExplicacaoAtraso
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(System.Object)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Emprestimo.Types.DevolverRequest.Equals(Object)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5559
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  id: Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: Equals(Emprestimo.Types.DevolverRequest)
+  nameWithType: Emprestimo.Types.DevolverRequest.Equals(Emprestimo.Types.DevolverRequest)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5565
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public bool Equals(Emprestimo.Types.DevolverRequest other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Emprestimo.Types.DevolverRequest) As Boolean
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals*
+  implements:
+  - System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode
+  id: GetHashCode
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Emprestimo.Types.DevolverRequest.GetHashCode()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: GetHashCode
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5580
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString
+  id: ToString
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Emprestimo.Types.DevolverRequest.ToString()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ToString
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5593
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Emprestimo.Types.DevolverRequest.WriteTo(CodedOutputStream)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: WriteTo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5599
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  id: Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  isEii: true
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: IBufferMessage.InternalWriteTo(ref WriteContext)
+  nameWithType: Emprestimo.Types.DevolverRequest.IBufferMessage.InternalWriteTo(ref WriteContext)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IBufferMessage.InternalWriteTo(ref Google.Protobuf.WriteContext)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5624
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: void IBufferMessage.InternalWriteTo(ref WriteContext output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.WriteContext
+    content.vb: Sub pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef output As WriteContext) Implements IBufferMessage.InternalWriteTo
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo*
+  implements:
+  - Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef WriteContext)
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef Google.Protobuf.WriteContext)
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef WriteContext)
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize
+  id: CalculateSize
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Emprestimo.Types.DevolverRequest.CalculateSize()
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CalculateSize
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5645
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  id: MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Emprestimo.Types.DevolverRequest)
+  nameWithType: Emprestimo.Types.DevolverRequest.MergeFrom(Emprestimo.Types.DevolverRequest)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: MergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5664
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void MergeFrom(Emprestimo.Types.DevolverRequest other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    content.vb: Public Sub MergeFrom(other As Emprestimo.Types.DevolverRequest)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Emprestimo.Types.DevolverRequest.MergeFrom(CodedInputStream)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: MergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5682
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  commentId: M:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  id: Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  isEii: true
+  parent: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  langs:
+  - csharp
+  - vb
+  name: IBufferMessage.InternalMergeFrom(ref ParseContext)
+  nameWithType: Emprestimo.Types.DevolverRequest.IBufferMessage.InternalMergeFrom(ref ParseContext)
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IBufferMessage.InternalMergeFrom(ref Google.Protobuf.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 5712
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: void IBufferMessage.InternalMergeFrom(ref ParseContext input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.ParseContext
+    content.vb: Sub pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef input As ParseContext) Implements IBufferMessage.InternalMergeFrom
+  overload: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom*
+  implements:
+  - Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef ParseContext)
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef Google.Protobuf.ParseContext)
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef ParseContext)
+references:
+- uid: LivrEtec.GIB.RPC
+  commentId: N:LivrEtec.GIB.RPC
+  name: LivrEtec.GIB.RPC
+  nameWithType: LivrEtec.GIB.RPC
+  fullName: LivrEtec.GIB.RPC
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  commentId: T:Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Emprestimo.Types.DevolverRequest>
+  nameWithType: IMessage<Emprestimo.Types.DevolverRequest>
+  fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>
+  nameWithType.vb: IMessage(Of Emprestimo.Types.DevolverRequest)
+  fullName.vb: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  name.vb: IMessage(Of Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  commentId: T:System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Emprestimo.Types.DevolverRequest>
+  nameWithType: IEquatable<Emprestimo.Types.DevolverRequest>
+  fullName: System.IEquatable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>
+  nameWithType.vb: IEquatable(Of Emprestimo.Types.DevolverRequest)
+  fullName.vb: System.IEquatable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  name.vb: IEquatable(Of Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  commentId: T:Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Emprestimo.Types.DevolverRequest>
+  nameWithType: IDeepCloneable<Emprestimo.Types.DevolverRequest>
+  fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>
+  nameWithType.vb: IDeepCloneable(Of Emprestimo.Types.DevolverRequest)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  name.vb: IDeepCloneable(Of Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: true
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+  name: Parser
+  nameWithType: Emprestimo.Types.DevolverRequest.Parser
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Parser
+- uid: Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  commentId: T:Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Emprestimo.Types.DevolverRequest>
+  nameWithType: MessageParser<Emprestimo.Types.DevolverRequest>
+  fullName: Google.Protobuf.MessageParser<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>
+  nameWithType.vb: MessageParser(Of Emprestimo.Types.DevolverRequest)
+  fullName.vb: Google.Protobuf.MessageParser(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  name.vb: MessageParser(Of Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+  name: Descriptor
+  nameWithType: Emprestimo.Types.DevolverRequest.Descriptor
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: true
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IMessage#Descriptor
+  name: IMessage.Descriptor
+  nameWithType: Emprestimo.Types.DevolverRequest.IMessage.Descriptor
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.#ctor
+  name: DevolverRequest
+  nameWithType: Emprestimo.Types.DevolverRequest.DevolverRequest
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.DevolverRequest
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  commentId: T:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  parent: LivrEtec.GIB.RPC
+  name: Emprestimo.Types.DevolverRequest
+  nameWithType: Emprestimo.Types.DevolverRequest
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone
+  name: Clone
+  nameWithType: Emprestimo.Types.DevolverRequest.Clone
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Clone
+- uid: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Clone
+  parent: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Emprestimo.Types.DevolverRequest>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Emprestimo.Types.DevolverRequest).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Emprestimo.Types.DevolverRequest>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Emprestimo.Types.DevolverRequest).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+  name: IdEmprestimo
+  nameWithType: Emprestimo.Types.DevolverRequest.IdEmprestimo
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.IdEmprestimo
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  name: AtrasoJustificado
+  nameWithType: Emprestimo.Types.DevolverRequest.AtrasoJustificado
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.AtrasoJustificado
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  name: HasAtrasoJustificado
+  nameWithType: Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasAtrasoJustificado
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+  name: ClearAtrasoJustificado
+  nameWithType: Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearAtrasoJustificado
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  name: ExplicacaoAtraso
+  nameWithType: Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ExplicacaoAtraso
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  name: HasExplicacaoAtraso
+  nameWithType: Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.HasExplicacaoAtraso
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+  name: ClearExplicacaoAtraso
+  nameWithType: Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ClearExplicacaoAtraso
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals
+  name: Equals
+  nameWithType: Emprestimo.Types.DevolverRequest.Equals
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Equals
+- uid: System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  commentId: M:System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  parent: System.IEquatable{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Emprestimo.Types.DevolverRequest)
+  nameWithType: IEquatable<Emprestimo.Types.DevolverRequest>.Equals(Emprestimo.Types.DevolverRequest)
+  fullName: System.IEquatable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  nameWithType.vb: IEquatable(Of Emprestimo.Types.DevolverRequest).Equals(Emprestimo.Types.DevolverRequest)
+  fullName.vb: System.IEquatable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).Equals(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Emprestimo.Types.DevolverRequest>.Equals
+    fullName: System.IEquatable<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Emprestimo.Types.DevolverRequest).Equals
+    fullName: System.IEquatable(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode
+  name: GetHashCode
+  nameWithType: Emprestimo.Types.DevolverRequest.GetHashCode
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString
+  name: ToString
+  nameWithType: Emprestimo.Types.DevolverRequest.ToString
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.ToString
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo
+  name: WriteTo
+  nameWithType: Emprestimo.Types.DevolverRequest.WriteTo
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalWriteTo
+  name: IBufferMessage.InternalWriteTo
+  nameWithType: Emprestimo.Types.DevolverRequest.IBufferMessage.InternalWriteTo
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IBufferMessage.InternalWriteTo
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+- uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  commentId: M:Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  parent: Google.Protobuf.IBufferMessage
+  isExternal: true
+  name: InternalWriteTo(WriteContext)
+  nameWithType: IBufferMessage.InternalWriteTo(WriteContext)
+  fullName: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext)
+  spec.csharp:
+  - uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+    name: InternalWriteTo
+    nameWithType: IBufferMessage.InternalWriteTo
+    fullName: Google.Protobuf.IBufferMessage.InternalWriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WriteContext
+    name: WriteContext
+    nameWithType: WriteContext
+    fullName: Google.Protobuf.WriteContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+    name: InternalWriteTo
+    nameWithType: IBufferMessage.InternalWriteTo
+    fullName: Google.Protobuf.IBufferMessage.InternalWriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WriteContext
+    name: WriteContext
+    nameWithType: WriteContext
+    fullName: Google.Protobuf.WriteContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WriteContext
+  commentId: T:Google.Protobuf.WriteContext
+  parent: Google.Protobuf
+  isExternal: true
+  name: WriteContext
+  nameWithType: WriteContext
+  fullName: Google.Protobuf.WriteContext
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize
+  name: CalculateSize
+  nameWithType: Emprestimo.Types.DevolverRequest.CalculateSize
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom
+  name: MergeFrom
+  nameWithType: Emprestimo.Types.DevolverRequest.MergeFrom
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.MergeFrom
+- uid: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  commentId: M:Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  parent: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Emprestimo.Types.DevolverRequest)
+  nameWithType: IMessage<Emprestimo.Types.DevolverRequest>.MergeFrom(Emprestimo.Types.DevolverRequest)
+  fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  nameWithType.vb: IMessage(Of Emprestimo.Types.DevolverRequest).MergeFrom(Emprestimo.Types.DevolverRequest)
+  fullName.vb: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).MergeFrom(LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Emprestimo.Types.DevolverRequest>.MergeFrom
+    fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Emprestimo.Types.DevolverRequest).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+    name: Emprestimo.Types.DevolverRequest
+    nameWithType: Emprestimo.Types.DevolverRequest
+    fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom*
+  commentId: Overload:LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google#Protobuf#IBufferMessage#InternalMergeFrom
+  name: IBufferMessage.InternalMergeFrom
+  nameWithType: Emprestimo.Types.DevolverRequest.IBufferMessage.InternalMergeFrom
+  fullName: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.Google.Protobuf.IBufferMessage.InternalMergeFrom
+  nameWithType.vb: Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+  fullName.vb: LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+- uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  commentId: M:Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  parent: Google.Protobuf.IBufferMessage
+  isExternal: true
+  name: InternalMergeFrom(ParseContext)
+  nameWithType: IBufferMessage.InternalMergeFrom(ParseContext)
+  fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext)
+  spec.csharp:
+  - uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+    name: InternalMergeFrom
+    nameWithType: IBufferMessage.InternalMergeFrom
+    fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ParseContext
+    name: ParseContext
+    nameWithType: ParseContext
+    fullName: Google.Protobuf.ParseContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+    name: InternalMergeFrom
+    nameWithType: IBufferMessage.InternalMergeFrom
+    fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ParseContext
+    name: ParseContext
+    nameWithType: ParseContext
+    fullName: Google.Protobuf.ParseContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ParseContext
+  commentId: T:Google.Protobuf.ParseContext
+  parent: Google.Protobuf
+  isExternal: true
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: Google.Protobuf.ParseContext

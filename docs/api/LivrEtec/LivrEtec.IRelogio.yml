@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.IRelogio
+  commentId: T:LivrEtec.IRelogio
+  id: IRelogio
+  parent: LivrEtec
+  children:
+  - LivrEtec.IRelogio.Agora
+  langs:
+  - csharp
+  - vb
+  name: IRelogio
+  nameWithType: IRelogio
+  fullName: LivrEtec.IRelogio
+  type: Interface
+  source:
+    remote:
+      path: src/LivrEtec/Services/IRelogio.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IRelogio
+    path: ../src/LivrEtec/Services/IRelogio.cs
+    startLine: 2
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public interface IRelogio
+    content.vb: Public Interface IRelogio
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: LivrEtec.IRelogio.Agora
+  commentId: P:LivrEtec.IRelogio.Agora
+  id: Agora
+  parent: LivrEtec.IRelogio
+  langs:
+  - csharp
+  - vb
+  name: Agora
+  nameWithType: IRelogio.Agora
+  fullName: LivrEtec.IRelogio.Agora
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec/Services/IRelogio.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Agora
+    path: ../src/LivrEtec/Services/IRelogio.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: DateTime Agora { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: ReadOnly Property Agora As Date
+  overload: LivrEtec.IRelogio.Agora*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.IRelogio.Agora*
+  commentId: Overload:LivrEtec.IRelogio.Agora
+  name: Agora
+  nameWithType: IRelogio.Agora
+  fullName: LivrEtec.IRelogio.Agora
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

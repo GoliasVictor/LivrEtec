@@ -1,0 +1,177 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.IRepPessoas
+  commentId: T:LivrEtec.IRepPessoas
+  id: IRepPessoas
+  parent: LivrEtec
+  children:
+  - LivrEtec.IRepPessoas.ObterObter(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: IRepPessoas
+  nameWithType: IRepPessoas
+  fullName: LivrEtec.IRepPessoas
+  type: Interface
+  source:
+    remote:
+      path: src/LivrEtec/Repositorios/IRepPessoas.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IRepPessoas
+    path: ../src/LivrEtec/Repositorios/IRepPessoas.cs
+    startLine: 2
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: public interface IRepPessoas
+    content.vb: Public Interface IRepPessoas
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: LivrEtec.IRepPessoas.ObterObter(System.Int32)
+  commentId: M:LivrEtec.IRepPessoas.ObterObter(System.Int32)
+  id: ObterObter(System.Int32)
+  parent: LivrEtec.IRepPessoas
+  langs:
+  - csharp
+  - vb
+  name: ObterObter(Int32)
+  nameWithType: IRepPessoas.ObterObter(Int32)
+  fullName: LivrEtec.IRepPessoas.ObterObter(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec/Repositorios/IRepPessoas.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ObterObter
+    path: ../src/LivrEtec/Repositorios/IRepPessoas.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec
+  namespace: LivrEtec
+  syntax:
+    content: Task<Pessoa> ObterObter(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{LivrEtec.Pessoa}
+    content.vb: Function ObterObter(id As Integer) As Task(Of Pessoa)
+  overload: LivrEtec.IRepPessoas.ObterObter*
+references:
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.IRepPessoas.ObterObter*
+  commentId: Overload:LivrEtec.IRepPessoas.ObterObter
+  name: ObterObter
+  nameWithType: IRepPessoas.ObterObter
+  fullName: LivrEtec.IRepPessoas.ObterObter
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Threading.Tasks.Task{LivrEtec.Pessoa}
+  commentId: T:System.Threading.Tasks.Task{LivrEtec.Pessoa}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Pessoa>
+  nameWithType: Task<Pessoa>
+  fullName: System.Threading.Tasks.Task<LivrEtec.Pessoa>
+  nameWithType.vb: Task(Of Pessoa)
+  fullName.vb: System.Threading.Tasks.Task(Of LivrEtec.Pessoa)
+  name.vb: Task(Of Pessoa)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Pessoa
+    name: Pessoa
+    nameWithType: Pessoa
+    fullName: LivrEtec.Pessoa
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

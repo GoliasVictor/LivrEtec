@@ -1,0 +1,898 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Servidor.AutorizacaoService
+  commentId: T:LivrEtec.Servidor.AutorizacaoService
+  id: AutorizacaoService
+  parent: LivrEtec.Servidor
+  children:
+  - LivrEtec.Servidor.AutorizacaoService.#ctor(LivrEtec.Servidor.IRepUsuarios,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService})
+  - LivrEtec.Servidor.AutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  - LivrEtec.Servidor.AutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  - LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  langs:
+  - csharp
+  - vb
+  name: AutorizacaoService
+  nameWithType: AutorizacaoService
+  fullName: LivrEtec.Servidor.AutorizacaoService
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Services/AutorizacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: AutorizacaoService
+    path: ../LivrEtec.Servidor/Services/AutorizacaoService.cs
+    startLine: 4
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: 'public sealed class AutorizacaoService : IAutorizacaoService'
+    content.vb: >-
+      Public NotInheritable Class AutorizacaoService
+
+          Implements IAutorizacaoService
+  inheritance:
+  - System.Object
+  implements:
+  - LivrEtec.IAutorizacaoService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Servidor.AutorizacaoService.#ctor(LivrEtec.Servidor.IRepUsuarios,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService})
+  commentId: M:LivrEtec.Servidor.AutorizacaoService.#ctor(LivrEtec.Servidor.IRepUsuarios,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService})
+  id: '#ctor(LivrEtec.Servidor.IRepUsuarios,Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService})'
+  parent: LivrEtec.Servidor.AutorizacaoService
+  langs:
+  - csharp
+  - vb
+  name: AutorizacaoService(IRepUsuarios, ILogger<AutorizacaoService>)
+  nameWithType: AutorizacaoService.AutorizacaoService(IRepUsuarios, ILogger<AutorizacaoService>)
+  fullName: LivrEtec.Servidor.AutorizacaoService.AutorizacaoService(LivrEtec.Servidor.IRepUsuarios, Microsoft.Extensions.Logging.ILogger<LivrEtec.Servidor.AutorizacaoService>)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Services/AutorizacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Servidor/Services/AutorizacaoService.cs
+    startLine: 9
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public AutorizacaoService(IRepUsuarios repUsuarios, ILogger<AutorizacaoService> logger)
+    parameters:
+    - id: repUsuarios
+      type: LivrEtec.Servidor.IRepUsuarios
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService}
+    content.vb: Public Sub New(repUsuarios As IRepUsuarios, logger As ILogger(Of AutorizacaoService))
+  overload: LivrEtec.Servidor.AutorizacaoService.#ctor*
+  nameWithType.vb: AutorizacaoService.AutorizacaoService(IRepUsuarios, ILogger(Of AutorizacaoService))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: LivrEtec.Servidor.AutorizacaoService.AutorizacaoService(LivrEtec.Servidor.IRepUsuarios, Microsoft.Extensions.Logging.ILogger(Of LivrEtec.Servidor.AutorizacaoService))
+  name.vb: AutorizacaoService(IRepUsuarios, ILogger(Of AutorizacaoService))
+- uid: LivrEtec.Servidor.AutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  commentId: M:LivrEtec.Servidor.AutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  id: EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  parent: LivrEtec.Servidor.AutorizacaoService
+  langs:
+  - csharp
+  - vb
+  name: EhAutorizado(Usuario, Permissao)
+  nameWithType: AutorizacaoService.EhAutorizado(Usuario, Permissao)
+  fullName: LivrEtec.Servidor.AutorizacaoService.EhAutorizado(LivrEtec.Usuario, LivrEtec.Permissao)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Services/AutorizacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EhAutorizado
+    path: ../LivrEtec.Servidor/Services/AutorizacaoService.cs
+    startLine: 15
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task<bool> EhAutorizado(Usuario usuario, Permissao permissao)
+    parameters:
+    - id: usuario
+      type: LivrEtec.Usuario
+    - id: permissao
+      type: LivrEtec.Permissao
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Public Function EhAutorizado(usuario As Usuario, permissao As Permissao) As Task(Of Boolean)
+  overload: LivrEtec.Servidor.AutorizacaoService.EhAutorizado*
+  implements:
+  - LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Servidor.AutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  commentId: M:LivrEtec.Servidor.AutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  id: EhAutorizado(System.Int32,LivrEtec.Permissao)
+  parent: LivrEtec.Servidor.AutorizacaoService
+  langs:
+  - csharp
+  - vb
+  name: EhAutorizado(Int32, Permissao)
+  nameWithType: AutorizacaoService.EhAutorizado(Int32, Permissao)
+  fullName: LivrEtec.Servidor.AutorizacaoService.EhAutorizado(System.Int32, LivrEtec.Permissao)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Services/AutorizacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EhAutorizado
+    path: ../LivrEtec.Servidor/Services/AutorizacaoService.cs
+    startLine: 22
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task<bool> EhAutorizado(int idUsuario, Permissao permissao)
+    parameters:
+    - id: idUsuario
+      type: System.Int32
+    - id: permissao
+      type: LivrEtec.Permissao
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Public Function EhAutorizado(idUsuario As Integer, permissao As Permissao) As Task(Of Boolean)
+  overload: LivrEtec.Servidor.AutorizacaoService.EhAutorizado*
+  implements:
+  - LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  commentId: M:LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  id: ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  parent: LivrEtec.Servidor.AutorizacaoService
+  langs:
+  - csharp
+  - vb
+  name: ErroSeNaoAutorizado(Usuario, Permissao)
+  nameWithType: AutorizacaoService.ErroSeNaoAutorizado(Usuario, Permissao)
+  fullName: LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario, LivrEtec.Permissao)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Servidor/Services/AutorizacaoService.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ErroSeNaoAutorizado
+    path: ../LivrEtec.Servidor/Services/AutorizacaoService.cs
+    startLine: 32
+  assemblies:
+  - LivrEtec.Servidor
+  namespace: LivrEtec.Servidor
+  syntax:
+    content: public async Task ErroSeNaoAutorizado(Usuario usuario, Permissao permissao)
+    parameters:
+    - id: usuario
+      type: LivrEtec.Usuario
+    - id: permissao
+      type: LivrEtec.Permissao
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ErroSeNaoAutorizado(usuario As Usuario, permissao As Permissao) As Task
+  overload: LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado*
+  implements:
+  - LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.IAutorizacaoService
+  commentId: T:LivrEtec.IAutorizacaoService
+  parent: LivrEtec
+  name: IAutorizacaoService
+  nameWithType: IAutorizacaoService
+  fullName: LivrEtec.IAutorizacaoService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec
+  commentId: N:LivrEtec
+  name: LivrEtec
+  nameWithType: LivrEtec
+  fullName: LivrEtec
+- uid: LivrEtec.Servidor.AutorizacaoService.#ctor*
+  commentId: Overload:LivrEtec.Servidor.AutorizacaoService.#ctor
+  name: AutorizacaoService
+  nameWithType: AutorizacaoService.AutorizacaoService
+  fullName: LivrEtec.Servidor.AutorizacaoService.AutorizacaoService
+- uid: LivrEtec.Servidor.IRepUsuarios
+  commentId: T:LivrEtec.Servidor.IRepUsuarios
+  parent: LivrEtec.Servidor
+  name: IRepUsuarios
+  nameWithType: IRepUsuarios
+  fullName: LivrEtec.Servidor.IRepUsuarios
+- uid: Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{LivrEtec.Servidor.AutorizacaoService}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  name: ILogger<AutorizacaoService>
+  nameWithType: ILogger<AutorizacaoService>
+  fullName: Microsoft.Extensions.Logging.ILogger<LivrEtec.Servidor.AutorizacaoService>
+  nameWithType.vb: ILogger(Of AutorizacaoService)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of LivrEtec.Servidor.AutorizacaoService)
+  name.vb: ILogger(Of AutorizacaoService)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.AutorizacaoService
+    name: AutorizacaoService
+    nameWithType: AutorizacaoService
+    fullName: LivrEtec.Servidor.AutorizacaoService
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.AutorizacaoService
+    name: AutorizacaoService
+    nameWithType: AutorizacaoService
+    fullName: LivrEtec.Servidor.AutorizacaoService
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TCategoryName
+    nameWithType: TCategoryName
+    fullName: TCategoryName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    nameWithType: ILogger
+    fullName: Microsoft.Extensions.Logging.ILogger
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TCategoryName
+    nameWithType: TCategoryName
+    fullName: TCategoryName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+- uid: LivrEtec.Servidor.AutorizacaoService.EhAutorizado*
+  commentId: Overload:LivrEtec.Servidor.AutorizacaoService.EhAutorizado
+  name: EhAutorizado
+  nameWithType: AutorizacaoService.EhAutorizado
+  fullName: LivrEtec.Servidor.AutorizacaoService.EhAutorizado
+- uid: LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  commentId: M:LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  parent: LivrEtec.IAutorizacaoService
+  name: EhAutorizado(Usuario, Permissao)
+  nameWithType: IAutorizacaoService.EhAutorizado(Usuario, Permissao)
+  fullName: LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario, LivrEtec.Permissao)
+  spec.csharp:
+  - uid: LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+    name: EhAutorizado
+    nameWithType: IAutorizacaoService.EhAutorizado
+    fullName: LivrEtec.IAutorizacaoService.EhAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IAutorizacaoService.EhAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+    name: EhAutorizado
+    nameWithType: IAutorizacaoService.EhAutorizado
+    fullName: LivrEtec.IAutorizacaoService.EhAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Usuario
+  commentId: T:LivrEtec.Usuario
+  parent: LivrEtec
+  name: Usuario
+  nameWithType: Usuario
+  fullName: LivrEtec.Usuario
+- uid: LivrEtec.Permissao
+  commentId: T:LivrEtec.Permissao
+  parent: LivrEtec
+  name: Permissao
+  nameWithType: Permissao
+  fullName: LivrEtec.Permissao
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  commentId: M:LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+  parent: LivrEtec.IAutorizacaoService
+  isExternal: true
+  name: EhAutorizado(Int32, Permissao)
+  nameWithType: IAutorizacaoService.EhAutorizado(Int32, Permissao)
+  fullName: LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32, LivrEtec.Permissao)
+  spec.csharp:
+  - uid: LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+    name: EhAutorizado
+    nameWithType: IAutorizacaoService.EhAutorizado
+    fullName: LivrEtec.IAutorizacaoService.EhAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IAutorizacaoService.EhAutorizado(System.Int32,LivrEtec.Permissao)
+    name: EhAutorizado
+    nameWithType: IAutorizacaoService.EhAutorizado
+    fullName: LivrEtec.IAutorizacaoService.EhAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado*
+  commentId: Overload:LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado
+  name: ErroSeNaoAutorizado
+  nameWithType: AutorizacaoService.ErroSeNaoAutorizado
+  fullName: LivrEtec.Servidor.AutorizacaoService.ErroSeNaoAutorizado
+- uid: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  commentId: M:LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+  parent: LivrEtec.IAutorizacaoService
+  name: ErroSeNaoAutorizado(Usuario, Permissao)
+  nameWithType: IAutorizacaoService.ErroSeNaoAutorizado(Usuario, Permissao)
+  fullName: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario, LivrEtec.Permissao)
+  spec.csharp:
+  - uid: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+    name: ErroSeNaoAutorizado
+    nameWithType: IAutorizacaoService.ErroSeNaoAutorizado
+    fullName: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado(LivrEtec.Usuario,LivrEtec.Permissao)
+    name: ErroSeNaoAutorizado
+    nameWithType: IAutorizacaoService.ErroSeNaoAutorizado
+    fullName: LivrEtec.IAutorizacaoService.ErroSeNaoAutorizado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.Usuario
+    name: Usuario
+    nameWithType: Usuario
+    fullName: LivrEtec.Usuario
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: LivrEtec.Permissao
+    name: Permissao
+    nameWithType: Permissao
+    fullName: LivrEtec.Permissao
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

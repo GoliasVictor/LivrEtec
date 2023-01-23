@@ -1,0 +1,2069 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient
+  commentId: T:LivrEtec.GIB.RPC.Livros.LivrosClient
+  id: Livros.LivrosClient
+  parent: LivrEtec.GIB.RPC
+  children:
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.CallInvoker)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ChannelBase)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  - LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: Livros.LivrosClient
+  nameWithType: Livros.LivrosClient
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: LivrosClient
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 474
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Client for Livros
+  example: []
+  syntax:
+    content: 'public class LivrosClient : ClientBase<Livros.LivrosClient>'
+    content.vb: >-
+      Public Class LivrosClient
+
+          Inherits ClientBase(Of Livros.LivrosClient)
+  inheritance:
+  - System.Object
+  - Grpc.Core.ClientBase
+  - Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}
+  inheritedMembers:
+  - Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.WithHost(System.String)
+  - Grpc.Core.ClientBase.CallInvoker
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ChannelBase)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ChannelBase)
+  id: '#ctor(Grpc.Core.ChannelBase)'
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: LivrosClient(ChannelBase)
+  nameWithType: Livros.LivrosClient.LivrosClient(ChannelBase)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.LivrosClient(Grpc.Core.ChannelBase)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 478
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Creates a new client for Livros
+  example: []
+  syntax:
+    content: public LivrosClient(ChannelBase channel)
+    parameters:
+    - id: channel
+      type: Grpc.Core.ChannelBase
+      description: The channel to use to make remote calls.
+    content.vb: Public Sub New(channel As ChannelBase)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.CallInvoker)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.CallInvoker)
+  id: '#ctor(Grpc.Core.CallInvoker)'
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: LivrosClient(CallInvoker)
+  nameWithType: Livros.LivrosClient.LivrosClient(CallInvoker)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.LivrosClient(Grpc.Core.CallInvoker)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 484
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Creates a new client for Livros that uses a custom <code>CallInvoker</code>.
+  example: []
+  syntax:
+    content: public LivrosClient(CallInvoker callInvoker)
+    parameters:
+    - id: callInvoker
+      type: Grpc.Core.CallInvoker
+      description: The callInvoker to use to make remote calls.
+    content.vb: Public Sub New(callInvoker As CallInvoker)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor
+  id: '#ctor'
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: LivrosClient()
+  nameWithType: Livros.LivrosClient.LivrosClient()
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.LivrosClient()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 489
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Protected parameterless constructor to allow creation of test doubles.
+  example: []
+  syntax:
+    content: protected LivrosClient()
+    content.vb: Protected Sub New
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  id: '#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)'
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: LivrosClient(ClientBase.ClientBaseConfiguration)
+  nameWithType: Livros.LivrosClient.LivrosClient(ClientBase.ClientBaseConfiguration)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.LivrosClient(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 495
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Protected constructor to allow creation of configured clients.
+  example: []
+  syntax:
+    content: protected LivrosClient(ClientBase.ClientBaseConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: Grpc.Core.ClientBase.ClientBaseConfiguration
+      description: The client configuration.
+    content.vb: Protected Sub New(configuration As ClientBase.ClientBaseConfiguration)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Obter(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.Obter(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Obter
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 500
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Livro Obter(IdLivro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: LivrEtec.GIB.RPC.Livro
+    content.vb: Public Overridable Function Obter(request As IdLivro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As Livro
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter*
+  nameWithType.vb: Livros.LivrosClient.Obter(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: Obter(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  id: Obter(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Obter(IdLivro, CallOptions)
+  nameWithType: Livros.LivrosClient.Obter(IdLivro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Obter
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 505
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Livro Obter(IdLivro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: LivrEtec.GIB.RPC.Livro
+    content.vb: Public Overridable Function Obter(request As IdLivro, options As CallOptions) As Livro
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: ObterAsync(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.ObterAsync(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ObterAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 510
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Livro> ObterAsync(IdLivro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Livro}
+    content.vb: Public Overridable Function ObterAsync(request As IdLivro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As AsyncUnaryCall(Of Livro)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync*
+  nameWithType.vb: Livros.LivrosClient.ObterAsync(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: ObterAsync(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  id: ObterAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: ObterAsync(IdLivro, CallOptions)
+  nameWithType: Livros.LivrosClient.ObterAsync(IdLivro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ObterAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 515
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Livro> ObterAsync(IdLivro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Livro}
+    content.vb: Public Overridable Function ObterAsync(request As IdLivro, options As CallOptions) As AsyncUnaryCall(Of Livro)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Remover(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.Remover(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Remover
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 520
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Remover(IdLivro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Remover(request As IdLivro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover*
+  nameWithType.vb: Livros.LivrosClient.Remover(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: Remover(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  id: Remover(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Remover(IdLivro, CallOptions)
+  nameWithType: Livros.LivrosClient.Remover(IdLivro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Remover
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 525
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Remover(IdLivro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Remover(request As IdLivro, options As CallOptions) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: RemoverAsync(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.RemoverAsync(IdLivro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RemoverAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 530
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> RemoverAsync(IdLivro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function RemoverAsync(request As IdLivro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync*
+  nameWithType.vb: Livros.LivrosClient.RemoverAsync(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: RemoverAsync(IdLivro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  id: RemoverAsync(LivrEtec.GIB.RPC.IdLivro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: RemoverAsync(IdLivro, CallOptions)
+  nameWithType: Livros.LivrosClient.RemoverAsync(IdLivro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync(LivrEtec.GIB.RPC.IdLivro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RemoverAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 535
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> RemoverAsync(IdLivro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.IdLivro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function RemoverAsync(request As IdLivro, options As CallOptions) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Buscar(ParamBusca, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.Buscar(ParamBusca, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Buscar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 540
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual ListaLivros Buscar(ParamBusca request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.ParamBusca
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: LivrEtec.GIB.RPC.ListaLivros
+    content.vb: Public Overridable Function Buscar(request As ParamBusca, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As ListaLivros
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar*
+  nameWithType.vb: Livros.LivrosClient.Buscar(ParamBusca, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: Buscar(ParamBusca, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  id: Buscar(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Buscar(ParamBusca, CallOptions)
+  nameWithType: Livros.LivrosClient.Buscar(ParamBusca, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Buscar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 545
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual ListaLivros Buscar(ParamBusca request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.ParamBusca
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: LivrEtec.GIB.RPC.ListaLivros
+    content.vb: Public Overridable Function Buscar(request As ParamBusca, options As CallOptions) As ListaLivros
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: BuscarAsync(ParamBusca, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.BuscarAsync(ParamBusca, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: BuscarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 550
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<ListaLivros> BuscarAsync(ParamBusca request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.ParamBusca
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.ListaLivros}
+    content.vb: Public Overridable Function BuscarAsync(request As ParamBusca, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As AsyncUnaryCall(Of ListaLivros)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync*
+  nameWithType.vb: Livros.LivrosClient.BuscarAsync(ParamBusca, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: BuscarAsync(ParamBusca, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  id: BuscarAsync(LivrEtec.GIB.RPC.ParamBusca,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: BuscarAsync(ParamBusca, CallOptions)
+  nameWithType: Livros.LivrosClient.BuscarAsync(ParamBusca, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync(LivrEtec.GIB.RPC.ParamBusca, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: BuscarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 555
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<ListaLivros> BuscarAsync(ParamBusca request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.ParamBusca
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.ListaLivros}
+    content.vb: Public Overridable Function BuscarAsync(request As ParamBusca, options As CallOptions) As AsyncUnaryCall(Of ListaLivros)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Editar(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.Editar(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Editar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 560
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Editar(Livro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Editar(request As Livro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar*
+  nameWithType.vb: Livros.LivrosClient.Editar(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: Editar(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  id: Editar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Editar(Livro, CallOptions)
+  nameWithType: Livros.LivrosClient.Editar(Livro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar(LivrEtec.GIB.RPC.Livro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Editar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 565
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Editar(Livro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Editar(request As Livro, options As CallOptions) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: EditarAsync(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.EditarAsync(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EditarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 570
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> EditarAsync(Livro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function EditarAsync(request As Livro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync*
+  nameWithType.vb: Livros.LivrosClient.EditarAsync(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: EditarAsync(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  id: EditarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: EditarAsync(Livro, CallOptions)
+  nameWithType: Livros.LivrosClient.EditarAsync(Livro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: EditarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 575
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> EditarAsync(Livro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function EditarAsync(request As Livro, options As CallOptions) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Registrar(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.Registrar(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Registrar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 580
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Registrar(Livro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Registrar(request As Livro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar*
+  nameWithType.vb: Livros.LivrosClient.Registrar(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: Registrar(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  id: Registrar(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: Registrar(Livro, CallOptions)
+  nameWithType: Livros.LivrosClient.Registrar(Livro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar(LivrEtec.GIB.RPC.Livro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Registrar
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 585
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual Empty Registrar(Livro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: LivrEtec.GIB.RPC.Empty
+    content.vb: Public Overridable Function Registrar(request As Livro, options As CallOptions) As Empty
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  id: RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: RegistrarAsync(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  nameWithType: Livros.LivrosClient.RegistrarAsync(Livro, Metadata, Nullable<DateTime>, CancellationToken)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable<System.DateTime>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RegistrarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 590
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> RegistrarAsync(Livro request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: headers
+      type: Grpc.Core.Metadata
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function RegistrarAsync(request As Livro, headers As Metadata = Nothing, deadline As Date? = Nothing, cancellationToken As CancellationToken = Nothing) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync*
+  nameWithType.vb: Livros.LivrosClient.RegistrarAsync(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.Metadata, System.Nullable(Of System.DateTime), System.Threading.CancellationToken)
+  name.vb: RegistrarAsync(Livro, Metadata, Nullable(Of DateTime), CancellationToken)
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  id: RegistrarAsync(LivrEtec.GIB.RPC.Livro,Grpc.Core.CallOptions)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: RegistrarAsync(Livro, CallOptions)
+  nameWithType: Livros.LivrosClient.RegistrarAsync(Livro, CallOptions)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync(LivrEtec.GIB.RPC.Livro, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: RegistrarAsync
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 595
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public virtual AsyncUnaryCall<Empty> RegistrarAsync(Livro request, CallOptions options)
+    parameters:
+    - id: request
+      type: LivrEtec.GIB.RPC.Livro
+    - id: options
+      type: Grpc.Core.CallOptions
+    return:
+      type: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+    content.vb: Public Overridable Function RegistrarAsync(request As Livro, options As CallOptions) As AsyncUnaryCall(Of Empty)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  commentId: M:LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  id: NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  parent: LivrEtec.GIB.RPC.Livros.LivrosClient
+  langs:
+  - csharp
+  - vb
+  name: NewInstance(ClientBase.ClientBaseConfiguration)
+  nameWithType: Livros.LivrosClient.NewInstance(ClientBase.ClientBaseConfiguration)
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: NewInstance
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/AcervoGrpc.cs
+    startLine: 601
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Creates a new instance of client from given <code>ClientBaseConfiguration</code>.
+  example: []
+  syntax:
+    content: protected override Livros.LivrosClient NewInstance(ClientBase.ClientBaseConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: Grpc.Core.ClientBase.ClientBaseConfiguration
+    return:
+      type: LivrEtec.GIB.RPC.Livros.LivrosClient
+    content.vb: Protected Overrides Function NewInstance(configuration As ClientBase.ClientBaseConfiguration) As Livros.LivrosClient
+  overridden: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  overload: LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: LivrEtec.GIB.RPC
+  commentId: N:LivrEtec.GIB.RPC
+  name: LivrEtec.GIB.RPC
+  nameWithType: LivrEtec.GIB.RPC
+  fullName: LivrEtec.GIB.RPC
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Grpc.Core.ClientBase
+  commentId: T:Grpc.Core.ClientBase
+  parent: Grpc.Core
+  isExternal: true
+  name: ClientBase
+  nameWithType: ClientBase
+  fullName: Grpc.Core.ClientBase
+- uid: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}
+  commentId: T:Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}
+  parent: Grpc.Core
+  definition: Grpc.Core.ClientBase`1
+  name: ClientBase<Livros.LivrosClient>
+  nameWithType: ClientBase<Livros.LivrosClient>
+  fullName: Grpc.Core.ClientBase<LivrEtec.GIB.RPC.Livros.LivrosClient>
+  nameWithType.vb: ClientBase(Of Livros.LivrosClient)
+  fullName.vb: Grpc.Core.ClientBase(Of LivrEtec.GIB.RPC.Livros.LivrosClient)
+  name.vb: ClientBase(Of Livros.LivrosClient)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1
+    name: ClientBase
+    nameWithType: ClientBase
+    fullName: Grpc.Core.ClientBase
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Livros.LivrosClient
+    name: Livros.LivrosClient
+    nameWithType: Livros.LivrosClient
+    fullName: LivrEtec.GIB.RPC.Livros.LivrosClient
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1
+    name: ClientBase
+    nameWithType: ClientBase
+    fullName: Grpc.Core.ClientBase
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Livros.LivrosClient
+    name: Livros.LivrosClient
+    nameWithType: Livros.LivrosClient
+    fullName: LivrEtec.GIB.RPC.Livros.LivrosClient
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.WithHost(System.String)
+  commentId: M:Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.WithHost(System.String)
+  parent: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}
+  definition: Grpc.Core.ClientBase`1.WithHost(System.String)
+  name: WithHost(String)
+  nameWithType: ClientBase<Livros.LivrosClient>.WithHost(String)
+  fullName: Grpc.Core.ClientBase<LivrEtec.GIB.RPC.Livros.LivrosClient>.WithHost(System.String)
+  nameWithType.vb: ClientBase(Of Livros.LivrosClient).WithHost(String)
+  fullName.vb: Grpc.Core.ClientBase(Of LivrEtec.GIB.RPC.Livros.LivrosClient).WithHost(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1.WithHost(System.String)
+    name: WithHost
+    nameWithType: ClientBase<Livros.LivrosClient>.WithHost
+    fullName: Grpc.Core.ClientBase<LivrEtec.GIB.RPC.Livros.LivrosClient>.WithHost
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1.WithHost(System.String)
+    name: WithHost
+    nameWithType: ClientBase(Of Livros.LivrosClient).WithHost
+    fullName: Grpc.Core.ClientBase(Of LivrEtec.GIB.RPC.Livros.LivrosClient).WithHost
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.ClientBase.CallInvoker
+  commentId: P:Grpc.Core.ClientBase.CallInvoker
+  parent: Grpc.Core.ClientBase
+  isExternal: true
+  name: CallInvoker
+  nameWithType: ClientBase.CallInvoker
+  fullName: Grpc.Core.ClientBase.CallInvoker
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: true
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: Grpc.Core.ClientBase`1
+  commentId: T:Grpc.Core.ClientBase`1
+  isExternal: true
+  name: ClientBase<T>
+  nameWithType: ClientBase<T>
+  fullName: Grpc.Core.ClientBase<T>
+  nameWithType.vb: ClientBase(Of T)
+  fullName.vb: Grpc.Core.ClientBase(Of T)
+  name.vb: ClientBase(Of T)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1
+    name: ClientBase
+    nameWithType: ClientBase
+    fullName: Grpc.Core.ClientBase
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1
+    name: ClientBase
+    nameWithType: ClientBase
+    fullName: Grpc.Core.ClientBase
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.ClientBase`1.WithHost(System.String)
+  commentId: M:Grpc.Core.ClientBase`1.WithHost(System.String)
+  isExternal: true
+  name: WithHost(String)
+  nameWithType: ClientBase<T>.WithHost(String)
+  fullName: Grpc.Core.ClientBase<T>.WithHost(System.String)
+  nameWithType.vb: ClientBase(Of T).WithHost(String)
+  fullName.vb: Grpc.Core.ClientBase(Of T).WithHost(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1.WithHost(System.String)
+    name: WithHost
+    nameWithType: ClientBase<T>.WithHost
+    fullName: Grpc.Core.ClientBase<T>.WithHost
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1.WithHost(System.String)
+    name: WithHost
+    nameWithType: ClientBase(Of T).WithHost
+    fullName: Grpc.Core.ClientBase(Of T).WithHost
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.#ctor
+  name: LivrosClient
+  nameWithType: Livros.LivrosClient.LivrosClient
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.LivrosClient
+- uid: Grpc.Core.ChannelBase
+  commentId: T:Grpc.Core.ChannelBase
+  parent: Grpc.Core
+  isExternal: true
+  name: ChannelBase
+  nameWithType: ChannelBase
+  fullName: Grpc.Core.ChannelBase
+- uid: Grpc.Core.CallInvoker
+  commentId: T:Grpc.Core.CallInvoker
+  parent: Grpc.Core
+  isExternal: true
+  name: CallInvoker
+  nameWithType: CallInvoker
+  fullName: Grpc.Core.CallInvoker
+- uid: Grpc.Core.ClientBase.ClientBaseConfiguration
+  commentId: T:Grpc.Core.ClientBase.ClientBaseConfiguration
+  parent: Grpc.Core
+  isExternal: true
+  name: ClientBase.ClientBaseConfiguration
+  nameWithType: ClientBase.ClientBaseConfiguration
+  fullName: Grpc.Core.ClientBase.ClientBaseConfiguration
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.Obter
+  name: Obter
+  nameWithType: Livros.LivrosClient.Obter
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Obter
+- uid: LivrEtec.GIB.RPC.IdLivro
+  commentId: T:LivrEtec.GIB.RPC.IdLivro
+  parent: LivrEtec.GIB.RPC
+  name: IdLivro
+  nameWithType: IdLivro
+  fullName: LivrEtec.GIB.RPC.IdLivro
+- uid: Grpc.Core.Metadata
+  commentId: T:Grpc.Core.Metadata
+  parent: Grpc.Core
+  isExternal: true
+  name: Metadata
+  nameWithType: Metadata
+  fullName: Grpc.Core.Metadata
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: LivrEtec.GIB.RPC.Livro
+  commentId: T:LivrEtec.GIB.RPC.Livro
+  parent: LivrEtec.GIB.RPC
+  name: Livro
+  nameWithType: Livro
+  fullName: LivrEtec.GIB.RPC.Livro
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: Grpc.Core.CallOptions
+  commentId: T:Grpc.Core.CallOptions
+  parent: Grpc.Core
+  isExternal: true
+  name: CallOptions
+  nameWithType: CallOptions
+  fullName: Grpc.Core.CallOptions
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync
+  name: ObterAsync
+  nameWithType: Livros.LivrosClient.ObterAsync
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.ObterAsync
+- uid: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Livro}
+  commentId: T:Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Livro}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncUnaryCall`1
+  name: AsyncUnaryCall<Livro>
+  nameWithType: AsyncUnaryCall<Livro>
+  fullName: Grpc.Core.AsyncUnaryCall<LivrEtec.GIB.RPC.Livro>
+  nameWithType.vb: AsyncUnaryCall(Of Livro)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of LivrEtec.GIB.RPC.Livro)
+  name.vb: AsyncUnaryCall(Of Livro)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.GIB.RPC.Livro
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Livro
+    name: Livro
+    nameWithType: Livro
+    fullName: LivrEtec.GIB.RPC.Livro
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncUnaryCall`1
+  commentId: T:Grpc.Core.AsyncUnaryCall`1
+  isExternal: true
+  name: AsyncUnaryCall<TResponse>
+  nameWithType: AsyncUnaryCall<TResponse>
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>
+  nameWithType.vb: AsyncUnaryCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse)
+  name.vb: AsyncUnaryCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.Remover
+  name: Remover
+  nameWithType: Livros.LivrosClient.Remover
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Remover
+- uid: LivrEtec.GIB.RPC.Empty
+  commentId: T:LivrEtec.GIB.RPC.Empty
+  parent: LivrEtec.GIB.RPC
+  name: Empty
+  nameWithType: Empty
+  fullName: LivrEtec.GIB.RPC.Empty
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync
+  name: RemoverAsync
+  nameWithType: Livros.LivrosClient.RemoverAsync
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RemoverAsync
+- uid: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+  commentId: T:Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.Empty}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncUnaryCall`1
+  name: AsyncUnaryCall<Empty>
+  nameWithType: AsyncUnaryCall<Empty>
+  fullName: Grpc.Core.AsyncUnaryCall<LivrEtec.GIB.RPC.Empty>
+  nameWithType.vb: AsyncUnaryCall(Of Empty)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of LivrEtec.GIB.RPC.Empty)
+  name.vb: AsyncUnaryCall(Of Empty)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.Empty
+    name: Empty
+    nameWithType: Empty
+    fullName: LivrEtec.GIB.RPC.Empty
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.Empty
+    name: Empty
+    nameWithType: Empty
+    fullName: LivrEtec.GIB.RPC.Empty
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar
+  name: Buscar
+  nameWithType: Livros.LivrosClient.Buscar
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Buscar
+- uid: LivrEtec.GIB.RPC.ParamBusca
+  commentId: T:LivrEtec.GIB.RPC.ParamBusca
+  parent: LivrEtec.GIB.RPC
+  name: ParamBusca
+  nameWithType: ParamBusca
+  fullName: LivrEtec.GIB.RPC.ParamBusca
+- uid: LivrEtec.GIB.RPC.ListaLivros
+  commentId: T:LivrEtec.GIB.RPC.ListaLivros
+  parent: LivrEtec.GIB.RPC
+  name: ListaLivros
+  nameWithType: ListaLivros
+  fullName: LivrEtec.GIB.RPC.ListaLivros
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync
+  name: BuscarAsync
+  nameWithType: Livros.LivrosClient.BuscarAsync
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.BuscarAsync
+- uid: Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.ListaLivros}
+  commentId: T:Grpc.Core.AsyncUnaryCall{LivrEtec.GIB.RPC.ListaLivros}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncUnaryCall`1
+  name: AsyncUnaryCall<ListaLivros>
+  nameWithType: AsyncUnaryCall<ListaLivros>
+  fullName: Grpc.Core.AsyncUnaryCall<LivrEtec.GIB.RPC.ListaLivros>
+  nameWithType.vb: AsyncUnaryCall(Of ListaLivros)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of LivrEtec.GIB.RPC.ListaLivros)
+  name.vb: AsyncUnaryCall(Of ListaLivros)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.ListaLivros
+    name: ListaLivros
+    nameWithType: ListaLivros
+    fullName: LivrEtec.GIB.RPC.ListaLivros
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.ListaLivros
+    name: ListaLivros
+    nameWithType: ListaLivros
+    fullName: LivrEtec.GIB.RPC.ListaLivros
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.Editar
+  name: Editar
+  nameWithType: Livros.LivrosClient.Editar
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Editar
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync
+  name: EditarAsync
+  nameWithType: Livros.LivrosClient.EditarAsync
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.EditarAsync
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar
+  name: Registrar
+  nameWithType: Livros.LivrosClient.Registrar
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.Registrar
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync
+  name: RegistrarAsync
+  nameWithType: Livros.LivrosClient.RegistrarAsync
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.RegistrarAsync
+- uid: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  commentId: M:Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  parent: Grpc.Core.ClientBase{LivrEtec.GIB.RPC.Livros.LivrosClient}
+  definition: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  name: NewInstance(ClientBase.ClientBaseConfiguration)
+  nameWithType: ClientBase<Livros.LivrosClient>.NewInstance(ClientBase.ClientBaseConfiguration)
+  fullName: Grpc.Core.ClientBase<LivrEtec.GIB.RPC.Livros.LivrosClient>.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  nameWithType.vb: ClientBase(Of Livros.LivrosClient).NewInstance(ClientBase.ClientBaseConfiguration)
+  fullName.vb: Grpc.Core.ClientBase(Of LivrEtec.GIB.RPC.Livros.LivrosClient).NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+    name: NewInstance
+    nameWithType: ClientBase<Livros.LivrosClient>.NewInstance
+    fullName: Grpc.Core.ClientBase<LivrEtec.GIB.RPC.Livros.LivrosClient>.NewInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.ClientBase.ClientBaseConfiguration
+    name: ClientBase.ClientBaseConfiguration
+    nameWithType: ClientBase.ClientBaseConfiguration
+    fullName: Grpc.Core.ClientBase.ClientBaseConfiguration
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+    name: NewInstance
+    nameWithType: ClientBase(Of Livros.LivrosClient).NewInstance
+    fullName: Grpc.Core.ClientBase(Of LivrEtec.GIB.RPC.Livros.LivrosClient).NewInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.ClientBase.ClientBaseConfiguration
+    name: ClientBase.ClientBaseConfiguration
+    nameWithType: ClientBase.ClientBaseConfiguration
+    fullName: Grpc.Core.ClientBase.ClientBaseConfiguration
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance*
+  commentId: Overload:LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance
+  name: NewInstance
+  nameWithType: Livros.LivrosClient.NewInstance
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient.NewInstance
+- uid: LivrEtec.GIB.RPC.Livros.LivrosClient
+  commentId: T:LivrEtec.GIB.RPC.Livros.LivrosClient
+  parent: LivrEtec.GIB.RPC
+  name: Livros.LivrosClient
+  nameWithType: Livros.LivrosClient
+  fullName: LivrEtec.GIB.RPC.Livros.LivrosClient
+- uid: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  commentId: M:Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  isExternal: true
+  name: NewInstance(ClientBase.ClientBaseConfiguration)
+  nameWithType: ClientBase<T>.NewInstance(ClientBase.ClientBaseConfiguration)
+  fullName: Grpc.Core.ClientBase<T>.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  nameWithType.vb: ClientBase(Of T).NewInstance(ClientBase.ClientBaseConfiguration)
+  fullName.vb: Grpc.Core.ClientBase(Of T).NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+  spec.csharp:
+  - uid: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+    name: NewInstance
+    nameWithType: ClientBase<T>.NewInstance
+    fullName: Grpc.Core.ClientBase<T>.NewInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.ClientBase.ClientBaseConfiguration
+    name: ClientBase.ClientBaseConfiguration
+    nameWithType: ClientBase.ClientBaseConfiguration
+    fullName: Grpc.Core.ClientBase.ClientBaseConfiguration
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.ClientBase`1.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)
+    name: NewInstance
+    nameWithType: ClientBase(Of T).NewInstance
+    fullName: Grpc.Core.ClientBase(Of T).NewInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.ClientBase.ClientBaseConfiguration
+    name: ClientBase.ClientBaseConfiguration
+    nameWithType: ClientBase.ClientBaseConfiguration
+    fullName: Grpc.Core.ClientBase.ClientBaseConfiguration
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

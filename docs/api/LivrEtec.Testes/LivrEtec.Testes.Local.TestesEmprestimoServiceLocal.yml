@@ -1,0 +1,1181 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  commentId: T:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  id: TestesEmprestimoServiceLocal
+  parent: LivrEtec.Testes.Local
+  children:
+  - LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  - LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose
+  - LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+  langs:
+  - csharp
+  - vb
+  name: TestesEmprestimoServiceLocal
+  nameWithType: TestesEmprestimoServiceLocal
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: TestesEmprestimoServiceLocal
+    path: ../LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+    startLine: 5
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: >-
+      [Trait("Category", "Local")]
+
+      public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<EmprestimoService>, IDisposable
+    content.vb: >-
+      <Trait("Category", "Local")>
+
+      Public NotInheritable Class TestesEmprestimoServiceLocal
+
+          Inherits TestesEmprestimoService(Of EmprestimoService)
+
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.BDU
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.relogio
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_PESSOA
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_ALUNO
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_CRIADOR
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_TESTE
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_LIVRO_DISPONIVEL
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_ABERTO
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_FECHADO
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.usuarioTeste
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.AbrirAsync_Valido
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ProrrogarAsnc_Valido
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_SemAtraso
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_ComAtrasoJustificado
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.RegistrarPerdaAsync_ValidaAsync
+  - LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ExcluirAsync_ValidaAsync
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Xunit.TraitAttribute
+    ctor: Xunit.TraitAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Category
+    - type: System.String
+      value: Local
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+  commentId: P:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+  id: emprestimoService
+  parent: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  langs:
+  - csharp
+  - vb
+  name: emprestimoService
+  nameWithType: TestesEmprestimoServiceLocal.emprestimoService
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: emprestimoService
+    path: ../LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+    startLine: 9
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: protected override EmprestimoService emprestimoService { get; set; }
+    parameters: []
+    return:
+      type: LivrEtec.Servidor.EmprestimoService
+    content.vb: Protected Overrides Property emprestimoService As EmprestimoService
+  overridden: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.emprestimoService
+  overload: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService*
+  modifiers.csharp:
+  - protected
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  commentId: M:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  id: '#ctor(Xunit.Abstractions.ITestOutputHelper)'
+  parent: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  langs:
+  - csharp
+  - vb
+  name: TestesEmprestimoServiceLocal(ITestOutputHelper)
+  nameWithType: TestesEmprestimoServiceLocal.TestesEmprestimoServiceLocal(ITestOutputHelper)
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.TestesEmprestimoServiceLocal(Xunit.Abstractions.ITestOutputHelper)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+    startLine: 10
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public TestesEmprestimoServiceLocal(ITestOutputHelper output)
+    parameters:
+    - id: output
+      type: Xunit.Abstractions.ITestOutputHelper
+    content.vb: Public Sub New(output As ITestOutputHelper)
+  overload: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose
+  commentId: M:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose
+  id: Dispose
+  parent: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TestesEmprestimoServiceLocal.Dispose()
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Dispose
+    path: ../LivrEtec.Testes/TestesFinais/TestesEmprestimoServiceLocal.cs
+    startLine: 32
+  assemblies:
+  - LivrEtec.Testes
+  namespace: LivrEtec.Testes.Local
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: LivrEtec.Testes.Local
+  commentId: N:LivrEtec.Testes.Local
+  name: LivrEtec.Testes.Local
+  nameWithType: LivrEtec.Testes.Local
+  fullName: LivrEtec.Testes.Local
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  commentId: T:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  parent: LivrEtec.Testes
+  definition: LivrEtec.Testes.TestesEmprestimoService`1
+  name: TestesEmprestimoService<EmprestimoService>
+  nameWithType: TestesEmprestimoService<EmprestimoService>
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService)
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService)
+  name.vb: TestesEmprestimoService(Of EmprestimoService)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.Servidor.EmprestimoService
+    name: EmprestimoService
+    nameWithType: EmprestimoService
+    fullName: LivrEtec.Servidor.EmprestimoService
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.Servidor.EmprestimoService
+    name: EmprestimoService
+    nameWithType: EmprestimoService
+    fullName: LivrEtec.Servidor.EmprestimoService
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.BDU
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.BDU
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  name: BDU
+  nameWithType: TestesEmprestimoService<EmprestimoService>.BDU
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.BDU
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).BDU
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).BDU
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.relogio
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.relogio
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  name: relogio
+  nameWithType: TestesEmprestimoService<EmprestimoService>.relogio
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.relogio
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).relogio
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).relogio
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_PESSOA
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_PESSOA
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  name: ID_PESSOA
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_PESSOA
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_PESSOA
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_PESSOA
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_PESSOA
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_ALUNO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_ALUNO
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  name: ID_ALUNO
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_ALUNO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_ALUNO
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_ALUNO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_ALUNO
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_CRIADOR
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_CRIADOR
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  name: ID_USUARIO_CRIADOR
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_USUARIO_CRIADOR
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_USUARIO_CRIADOR
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_USUARIO_CRIADOR
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_USUARIO_CRIADOR
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_TESTE
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_USUARIO_TESTE
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  name: ID_USUARIO_TESTE
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_USUARIO_TESTE
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_USUARIO_TESTE
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_USUARIO_TESTE
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_USUARIO_TESTE
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_LIVRO_DISPONIVEL
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_LIVRO_DISPONIVEL
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  name: ID_LIVRO_DISPONIVEL
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_LIVRO_DISPONIVEL
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_LIVRO_DISPONIVEL
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_LIVRO_DISPONIVEL
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_LIVRO_DISPONIVEL
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_ABERTO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_ABERTO
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  name: ID_EMPRESTIMO_ABERTO
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_EMPRESTIMO_ABERTO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_EMPRESTIMO_ABERTO
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_EMPRESTIMO_ABERTO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_EMPRESTIMO_ABERTO
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_FECHADO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ID_EMPRESTIMO_FECHADO
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  name: ID_EMPRESTIMO_FECHADO
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ID_EMPRESTIMO_FECHADO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ID_EMPRESTIMO_FECHADO
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ID_EMPRESTIMO_FECHADO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ID_EMPRESTIMO_FECHADO
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.usuarioTeste
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.usuarioTeste
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  name: usuarioTeste
+  nameWithType: TestesEmprestimoService<EmprestimoService>.usuarioTeste
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.usuarioTeste
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).usuarioTeste
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).usuarioTeste
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.AbrirAsync_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.AbrirAsync_Valido
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  name: AbrirAsync_Valido()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.AbrirAsync_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.AbrirAsync_Valido()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).AbrirAsync_Valido()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).AbrirAsync_Valido()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+    name: AbrirAsync_Valido
+    nameWithType: TestesEmprestimoService<EmprestimoService>.AbrirAsync_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.AbrirAsync_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+    name: AbrirAsync_Valido
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).AbrirAsync_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).AbrirAsync_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ProrrogarAsnc_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ProrrogarAsnc_Valido
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  name: ProrrogarAsnc_Valido()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ProrrogarAsnc_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ProrrogarAsnc_Valido()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ProrrogarAsnc_Valido()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ProrrogarAsnc_Valido()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+    name: ProrrogarAsnc_Valido
+    nameWithType: TestesEmprestimoService<EmprestimoService>.ProrrogarAsnc_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ProrrogarAsnc_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+    name: ProrrogarAsnc_Valido
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).ProrrogarAsnc_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ProrrogarAsnc_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_SemAtraso
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_SemAtraso
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  name: DevolverAsync_SemAtraso()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.DevolverAsync_SemAtraso()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.DevolverAsync_SemAtraso()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).DevolverAsync_SemAtraso()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).DevolverAsync_SemAtraso()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+    name: DevolverAsync_SemAtraso
+    nameWithType: TestesEmprestimoService<EmprestimoService>.DevolverAsync_SemAtraso
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.DevolverAsync_SemAtraso
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+    name: DevolverAsync_SemAtraso
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).DevolverAsync_SemAtraso
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).DevolverAsync_SemAtraso
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_ComAtrasoJustificado
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.DevolverAsync_ComAtrasoJustificado
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  name: DevolverAsync_ComAtrasoJustificado()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.DevolverAsync_ComAtrasoJustificado()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.DevolverAsync_ComAtrasoJustificado()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).DevolverAsync_ComAtrasoJustificado()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).DevolverAsync_ComAtrasoJustificado()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+    name: DevolverAsync_ComAtrasoJustificado
+    nameWithType: TestesEmprestimoService<EmprestimoService>.DevolverAsync_ComAtrasoJustificado
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.DevolverAsync_ComAtrasoJustificado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+    name: DevolverAsync_ComAtrasoJustificado
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).DevolverAsync_ComAtrasoJustificado
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).DevolverAsync_ComAtrasoJustificado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.RegistrarPerdaAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.RegistrarPerdaAsync_ValidaAsync
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  name: RegistrarPerdaAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.RegistrarPerdaAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.RegistrarPerdaAsync_ValidaAsync()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).RegistrarPerdaAsync_ValidaAsync()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).RegistrarPerdaAsync_ValidaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+    name: RegistrarPerdaAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService<EmprestimoService>.RegistrarPerdaAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.RegistrarPerdaAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+    name: RegistrarPerdaAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).RegistrarPerdaAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).RegistrarPerdaAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ExcluirAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.ExcluirAsync_ValidaAsync
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  name: ExcluirAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<EmprestimoService>.ExcluirAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ExcluirAsync_ValidaAsync()
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).ExcluirAsync_ValidaAsync()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ExcluirAsync_ValidaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+    name: ExcluirAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService<EmprestimoService>.ExcluirAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.ExcluirAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+    name: ExcluirAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService(Of EmprestimoService).ExcluirAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).ExcluirAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LivrEtec.Testes.TestesEmprestimoService`1
+  commentId: T:LivrEtec.Testes.TestesEmprestimoService`1
+  name: TestesEmprestimoService<T>
+  nameWithType: TestesEmprestimoService<T>
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>
+  nameWithType.vb: TestesEmprestimoService(Of T)
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T)
+  name.vb: TestesEmprestimoService(Of T)
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1
+    name: TestesEmprestimoService
+    nameWithType: TestesEmprestimoService
+    fullName: LivrEtec.Testes.TestesEmprestimoService
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes
+  commentId: N:LivrEtec.Testes
+  name: LivrEtec.Testes
+  nameWithType: LivrEtec.Testes
+  fullName: LivrEtec.Testes
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.BDU
+  name: BDU
+  nameWithType: TestesEmprestimoService<T>.BDU
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.BDU
+  nameWithType.vb: TestesEmprestimoService(Of T).BDU
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).BDU
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.relogio
+  name: relogio
+  nameWithType: TestesEmprestimoService<T>.relogio
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.relogio
+  nameWithType.vb: TestesEmprestimoService(Of T).relogio
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).relogio
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_PESSOA
+  name: ID_PESSOA
+  nameWithType: TestesEmprestimoService<T>.ID_PESSOA
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_PESSOA
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_PESSOA
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_PESSOA
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_ALUNO
+  name: ID_ALUNO
+  nameWithType: TestesEmprestimoService<T>.ID_ALUNO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_ALUNO
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_ALUNO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_ALUNO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_CRIADOR
+  name: ID_USUARIO_CRIADOR
+  nameWithType: TestesEmprestimoService<T>.ID_USUARIO_CRIADOR
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_USUARIO_CRIADOR
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_USUARIO_CRIADOR
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_USUARIO_CRIADOR
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_USUARIO_TESTE
+  name: ID_USUARIO_TESTE
+  nameWithType: TestesEmprestimoService<T>.ID_USUARIO_TESTE
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_USUARIO_TESTE
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_USUARIO_TESTE
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_USUARIO_TESTE
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_LIVRO_DISPONIVEL
+  name: ID_LIVRO_DISPONIVEL
+  nameWithType: TestesEmprestimoService<T>.ID_LIVRO_DISPONIVEL
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_LIVRO_DISPONIVEL
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_LIVRO_DISPONIVEL
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_LIVRO_DISPONIVEL
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_ABERTO
+  name: ID_EMPRESTIMO_ABERTO
+  nameWithType: TestesEmprestimoService<T>.ID_EMPRESTIMO_ABERTO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_EMPRESTIMO_ABERTO
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_EMPRESTIMO_ABERTO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_EMPRESTIMO_ABERTO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.ID_EMPRESTIMO_FECHADO
+  name: ID_EMPRESTIMO_FECHADO
+  nameWithType: TestesEmprestimoService<T>.ID_EMPRESTIMO_FECHADO
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ID_EMPRESTIMO_FECHADO
+  nameWithType.vb: TestesEmprestimoService(Of T).ID_EMPRESTIMO_FECHADO
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ID_EMPRESTIMO_FECHADO
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  commentId: F:LivrEtec.Testes.TestesEmprestimoService`1.usuarioTeste
+  name: usuarioTeste
+  nameWithType: TestesEmprestimoService<T>.usuarioTeste
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.usuarioTeste
+  nameWithType.vb: TestesEmprestimoService(Of T).usuarioTeste
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).usuarioTeste
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+  name: AbrirAsync_Valido()
+  nameWithType: TestesEmprestimoService<T>.AbrirAsync_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.AbrirAsync_Valido()
+  nameWithType.vb: TestesEmprestimoService(Of T).AbrirAsync_Valido()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).AbrirAsync_Valido()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+    name: AbrirAsync_Valido
+    nameWithType: TestesEmprestimoService<T>.AbrirAsync_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.AbrirAsync_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.AbrirAsync_Valido
+    name: AbrirAsync_Valido
+    nameWithType: TestesEmprestimoService(Of T).AbrirAsync_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).AbrirAsync_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+  name: ProrrogarAsnc_Valido()
+  nameWithType: TestesEmprestimoService<T>.ProrrogarAsnc_Valido()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ProrrogarAsnc_Valido()
+  nameWithType.vb: TestesEmprestimoService(Of T).ProrrogarAsnc_Valido()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ProrrogarAsnc_Valido()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+    name: ProrrogarAsnc_Valido
+    nameWithType: TestesEmprestimoService<T>.ProrrogarAsnc_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ProrrogarAsnc_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ProrrogarAsnc_Valido
+    name: ProrrogarAsnc_Valido
+    nameWithType: TestesEmprestimoService(Of T).ProrrogarAsnc_Valido
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).ProrrogarAsnc_Valido
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+  name: DevolverAsync_SemAtraso()
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_SemAtraso()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_SemAtraso()
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_SemAtraso()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_SemAtraso()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+    name: DevolverAsync_SemAtraso
+    nameWithType: TestesEmprestimoService<T>.DevolverAsync_SemAtraso
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_SemAtraso
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_SemAtraso
+    name: DevolverAsync_SemAtraso
+    nameWithType: TestesEmprestimoService(Of T).DevolverAsync_SemAtraso
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_SemAtraso
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+  name: DevolverAsync_ComAtrasoJustificado()
+  nameWithType: TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado()
+  nameWithType.vb: TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+    name: DevolverAsync_ComAtrasoJustificado
+    nameWithType: TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.DevolverAsync_ComAtrasoJustificado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.DevolverAsync_ComAtrasoJustificado
+    name: DevolverAsync_ComAtrasoJustificado
+    nameWithType: TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).DevolverAsync_ComAtrasoJustificado
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+  name: RegistrarPerdaAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync()
+  nameWithType.vb: TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+    name: RegistrarPerdaAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.RegistrarPerdaAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.RegistrarPerdaAsync_ValidaAsync
+    name: RegistrarPerdaAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).RegistrarPerdaAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  commentId: M:LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+  name: ExcluirAsync_ValidaAsync()
+  nameWithType: TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync()
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync()
+  nameWithType.vb: TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync()
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync()
+  spec.csharp:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+    name: ExcluirAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService<T>.ExcluirAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: LivrEtec.Testes.TestesEmprestimoService`1.ExcluirAsync_ValidaAsync
+    name: ExcluirAsync_ValidaAsync
+    nameWithType: TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync
+    fullName: LivrEtec.Testes.TestesEmprestimoService(Of T).ExcluirAsync_ValidaAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.emprestimoService
+  commentId: P:LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}.emprestimoService
+  parent: LivrEtec.Testes.TestesEmprestimoService{LivrEtec.Servidor.EmprestimoService}
+  definition: LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  name: emprestimoService
+  nameWithType: TestesEmprestimoService<EmprestimoService>.emprestimoService
+  fullName: LivrEtec.Testes.TestesEmprestimoService<LivrEtec.Servidor.EmprestimoService>.emprestimoService
+  nameWithType.vb: TestesEmprestimoService(Of EmprestimoService).emprestimoService
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of LivrEtec.Servidor.EmprestimoService).emprestimoService
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService*
+  commentId: Overload:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+  name: emprestimoService
+  nameWithType: TestesEmprestimoServiceLocal.emprestimoService
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.emprestimoService
+- uid: LivrEtec.Servidor.EmprestimoService
+  commentId: T:LivrEtec.Servidor.EmprestimoService
+  parent: LivrEtec.Servidor
+  name: EmprestimoService
+  nameWithType: EmprestimoService
+  fullName: LivrEtec.Servidor.EmprestimoService
+- uid: LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  commentId: P:LivrEtec.Testes.TestesEmprestimoService`1.emprestimoService
+  name: emprestimoService
+  nameWithType: TestesEmprestimoService<T>.emprestimoService
+  fullName: LivrEtec.Testes.TestesEmprestimoService<T>.emprestimoService
+  nameWithType.vb: TestesEmprestimoService(Of T).emprestimoService
+  fullName.vb: LivrEtec.Testes.TestesEmprestimoService(Of T).emprestimoService
+- uid: LivrEtec.Servidor
+  commentId: N:LivrEtec.Servidor
+  name: LivrEtec.Servidor
+  nameWithType: LivrEtec.Servidor
+  fullName: LivrEtec.Servidor
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor*
+  commentId: Overload:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.#ctor
+  name: TestesEmprestimoServiceLocal
+  nameWithType: TestesEmprestimoServiceLocal.TestesEmprestimoServiceLocal
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.TestesEmprestimoServiceLocal
+- uid: Xunit.Abstractions.ITestOutputHelper
+  commentId: T:Xunit.Abstractions.ITestOutputHelper
+  parent: Xunit.Abstractions
+  isExternal: true
+  name: ITestOutputHelper
+  nameWithType: ITestOutputHelper
+  fullName: Xunit.Abstractions.ITestOutputHelper
+- uid: Xunit.Abstractions
+  commentId: N:Xunit.Abstractions
+  isExternal: true
+  name: Xunit.Abstractions
+  nameWithType: Xunit.Abstractions
+  fullName: Xunit.Abstractions
+- uid: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose*
+  commentId: Overload:LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose
+  name: Dispose
+  nameWithType: TestesEmprestimoServiceLocal.Dispose
+  fullName: LivrEtec.Testes.Local.TestesEmprestimoServiceLocal.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

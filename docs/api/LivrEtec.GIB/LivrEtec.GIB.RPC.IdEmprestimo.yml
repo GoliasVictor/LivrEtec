@@ -1,0 +1,1918 @@
+### YamlMime:ManagedReference
+items:
+- uid: LivrEtec.GIB.RPC.IdEmprestimo
+  commentId: T:LivrEtec.GIB.RPC.IdEmprestimo
+  id: IdEmprestimo
+  parent: LivrEtec.GIB.RPC
+  children:
+  - LivrEtec.GIB.RPC.IdEmprestimo.#ctor
+  - LivrEtec.GIB.RPC.IdEmprestimo.#ctor(LivrEtec.GIB.RPC.IdEmprestimo)
+  - LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize
+  - LivrEtec.GIB.RPC.IdEmprestimo.Clone
+  - LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+  - LivrEtec.GIB.RPC.IdEmprestimo.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  - LivrEtec.GIB.RPC.IdEmprestimo.Equals(System.Object)
+  - LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode
+  - LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  - LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  - LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor
+  - LivrEtec.GIB.RPC.IdEmprestimo.Id
+  - LivrEtec.GIB.RPC.IdEmprestimo.IdFieldNumber
+  - LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(Google.Protobuf.CodedInputStream)
+  - LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  - LivrEtec.GIB.RPC.IdEmprestimo.Parser
+  - LivrEtec.GIB.RPC.IdEmprestimo.ToString
+  - LivrEtec.GIB.RPC.IdEmprestimo.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimo
+  nameWithType: IdEmprestimo
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  type: Class
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IdEmprestimo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3707
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: 'public sealed class IdEmprestimo : IMessage<IdEmprestimo>, IEquatable<IdEmprestimo>, IDeepCloneable<IdEmprestimo>, IBufferMessage, IMessage'
+    content.vb: >-
+      Public NotInheritable Class IdEmprestimo
+
+          Implements IMessage(Of IdEmprestimo), IEquatable(Of IdEmprestimo), IDeepCloneable(Of IdEmprestimo), IBufferMessage, IMessage
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}
+  - System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}
+  - Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Parser
+  commentId: P:LivrEtec.GIB.RPC.IdEmprestimo.Parser
+  id: Parser
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: IdEmprestimo.Parser
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Parser
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Parser
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3714
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public static MessageParser<IdEmprestimo> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.IdEmprestimo}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of IdEmprestimo)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+  commentId: P:LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+  id: Descriptor
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: IdEmprestimo.Descriptor
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Descriptor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3718
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor
+  commentId: P:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: IdEmprestimo.IMessage.Descriptor
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3724
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.#ctor
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.#ctor
+  id: '#ctor'
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimo()
+  nameWithType: IdEmprestimo.IdEmprestimo()
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.IdEmprestimo()
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3730
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public IdEmprestimo()
+    content.vb: Public Sub New
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.#ctor(LivrEtec.GIB.RPC.IdEmprestimo)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.#ctor(LivrEtec.GIB.RPC.IdEmprestimo)
+  id: '#ctor(LivrEtec.GIB.RPC.IdEmprestimo)'
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IdEmprestimo(IdEmprestimo)
+  nameWithType: IdEmprestimo.IdEmprestimo(IdEmprestimo)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.IdEmprestimo(LivrEtec.GIB.RPC.IdEmprestimo)
+  type: Constructor
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: .ctor
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3738
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public IdEmprestimo(IdEmprestimo other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.IdEmprestimo
+    content.vb: Public Sub New(other As IdEmprestimo)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Clone
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.Clone
+  id: Clone
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: IdEmprestimo.Clone()
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Clone
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3745
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public IdEmprestimo Clone()
+    return:
+      type: LivrEtec.GIB.RPC.IdEmprestimo
+    content.vb: Public Function Clone As IdEmprestimo
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.IdFieldNumber
+  commentId: F:LivrEtec.GIB.RPC.IdEmprestimo.IdFieldNumber
+  id: IdFieldNumber
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IdFieldNumber
+  nameWithType: IdEmprestimo.IdFieldNumber
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.IdFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: IdFieldNumber
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3752
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  summary: Field number for the &quot;Id&quot; field.
+  example: []
+  syntax:
+    content: public const int IdFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const IdFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Id
+  commentId: P:LivrEtec.GIB.RPC.IdEmprestimo.Id
+  id: Id
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: IdEmprestimo.Id
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Id
+  type: Property
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Id
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3754
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Equals(System.Object)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: IdEmprestimo.Equals(Object)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3763
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  id: Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: Equals(IdEmprestimo)
+  nameWithType: IdEmprestimo.Equals(IdEmprestimo)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: Equals
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3769
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public bool Equals(IdEmprestimo other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.IdEmprestimo
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As IdEmprestimo) As Boolean
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Equals*
+  implements:
+  - System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode
+  id: GetHashCode
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: IdEmprestimo.GetHashCode()
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: GetHashCode
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3782
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.ToString
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.ToString
+  id: ToString
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: IdEmprestimo.ToString()
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: ToString
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3793
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IdEmprestimo.WriteTo(CodedOutputStream)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: WriteTo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3799
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  id: Google#Protobuf#IBufferMessage#InternalWriteTo(Google.Protobuf.WriteContext@)
+  isEii: true
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IBufferMessage.InternalWriteTo(ref WriteContext)
+  nameWithType: IdEmprestimo.IBufferMessage.InternalWriteTo(ref WriteContext)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IBufferMessage.InternalWriteTo(ref Google.Protobuf.WriteContext)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3816
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: void IBufferMessage.InternalWriteTo(ref WriteContext output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.WriteContext
+    content.vb: Sub pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef output As WriteContext) Implements IBufferMessage.InternalWriteTo
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo*
+  implements:
+  - Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef WriteContext)
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef Google.Protobuf.WriteContext)
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalWriteTo(ByRef WriteContext)
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize
+  id: CalculateSize
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: IdEmprestimo.CalculateSize()
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: CalculateSize
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3829
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  id: MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(IdEmprestimo)
+  nameWithType: IdEmprestimo.MergeFrom(IdEmprestimo)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: MergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3842
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void MergeFrom(IdEmprestimo other)
+    parameters:
+    - id: other
+      type: LivrEtec.GIB.RPC.IdEmprestimo
+    content.vb: Public Sub MergeFrom(other As IdEmprestimo)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IdEmprestimo.MergeFrom(CodedInputStream)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: MergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3854
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  commentId: M:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  id: Google#Protobuf#IBufferMessage#InternalMergeFrom(Google.Protobuf.ParseContext@)
+  isEii: true
+  parent: LivrEtec.GIB.RPC.IdEmprestimo
+  langs:
+  - csharp
+  - vb
+  name: IBufferMessage.InternalMergeFrom(ref ParseContext)
+  nameWithType: IdEmprestimo.IBufferMessage.InternalMergeFrom(ref ParseContext)
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IBufferMessage.InternalMergeFrom(ref Google.Protobuf.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+      branch: documentando
+      repo: https://github.com/GoliasVictor/LivrEtec.git
+    id: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+    path: ../LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs
+    startLine: 3876
+  assemblies:
+  - LivrEtec.GIB
+  namespace: LivrEtec.GIB.RPC
+  syntax:
+    content: void IBufferMessage.InternalMergeFrom(ref ParseContext input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.ParseContext
+    content.vb: Sub pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef input As ParseContext) Implements IBufferMessage.InternalMergeFrom
+  overload: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom*
+  implements:
+  - Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef ParseContext)
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef Google.Protobuf.ParseContext)
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom(ByRef ParseContext)
+references:
+- uid: LivrEtec.GIB.RPC
+  commentId: N:LivrEtec.GIB.RPC
+  name: LivrEtec.GIB.RPC
+  nameWithType: LivrEtec.GIB.RPC
+  fullName: LivrEtec.GIB.RPC
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}
+  commentId: T:Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<IdEmprestimo>
+  nameWithType: IMessage<IdEmprestimo>
+  fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.IdEmprestimo>
+  nameWithType.vb: IMessage(Of IdEmprestimo)
+  fullName.vb: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.IdEmprestimo)
+  name.vb: IMessage(Of IdEmprestimo)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}
+  commentId: T:System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<IdEmprestimo>
+  nameWithType: IEquatable<IdEmprestimo>
+  fullName: System.IEquatable<LivrEtec.GIB.RPC.IdEmprestimo>
+  nameWithType.vb: IEquatable(Of IdEmprestimo)
+  fullName.vb: System.IEquatable(Of LivrEtec.GIB.RPC.IdEmprestimo)
+  name.vb: IEquatable(Of IdEmprestimo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}
+  commentId: T:Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<IdEmprestimo>
+  nameWithType: IDeepCloneable<IdEmprestimo>
+  fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.IdEmprestimo>
+  nameWithType.vb: IDeepCloneable(Of IdEmprestimo)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.IdEmprestimo)
+  name.vb: IDeepCloneable(Of IdEmprestimo)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: true
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Parser*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Parser
+  name: Parser
+  nameWithType: IdEmprestimo.Parser
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Parser
+- uid: Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.IdEmprestimo}
+  commentId: T:Google.Protobuf.MessageParser{LivrEtec.GIB.RPC.IdEmprestimo}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<IdEmprestimo>
+  nameWithType: MessageParser<IdEmprestimo>
+  fullName: Google.Protobuf.MessageParser<LivrEtec.GIB.RPC.IdEmprestimo>
+  nameWithType.vb: MessageParser(Of IdEmprestimo)
+  fullName.vb: Google.Protobuf.MessageParser(Of LivrEtec.GIB.RPC.IdEmprestimo)
+  name.vb: MessageParser(Of IdEmprestimo)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Descriptor*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+  name: Descriptor
+  nameWithType: IdEmprestimo.Descriptor
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: true
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IMessage#Descriptor
+  name: IMessage.Descriptor
+  nameWithType: IdEmprestimo.IMessage.Descriptor
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.#ctor*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.#ctor
+  name: IdEmprestimo
+  nameWithType: IdEmprestimo.IdEmprestimo
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.IdEmprestimo
+- uid: LivrEtec.GIB.RPC.IdEmprestimo
+  commentId: T:LivrEtec.GIB.RPC.IdEmprestimo
+  parent: LivrEtec.GIB.RPC
+  name: IdEmprestimo
+  nameWithType: IdEmprestimo
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Clone*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Clone
+  name: Clone
+  nameWithType: IdEmprestimo.Clone
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Clone
+- uid: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}.Clone
+  parent: Google.Protobuf.IDeepCloneable{LivrEtec.GIB.RPC.IdEmprestimo}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<IdEmprestimo>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.IdEmprestimo>.Clone()
+  nameWithType.vb: IDeepCloneable(Of IdEmprestimo).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.IdEmprestimo).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<IdEmprestimo>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<LivrEtec.GIB.RPC.IdEmprestimo>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of IdEmprestimo).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of LivrEtec.GIB.RPC.IdEmprestimo).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Id*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Id
+  name: Id
+  nameWithType: IdEmprestimo.Id
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Id
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Equals*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Equals
+  name: Equals
+  nameWithType: IdEmprestimo.Equals
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  commentId: M:System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  parent: System.IEquatable{LivrEtec.GIB.RPC.IdEmprestimo}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(IdEmprestimo)
+  nameWithType: IEquatable<IdEmprestimo>.Equals(IdEmprestimo)
+  fullName: System.IEquatable<LivrEtec.GIB.RPC.IdEmprestimo>.Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  nameWithType.vb: IEquatable(Of IdEmprestimo).Equals(IdEmprestimo)
+  fullName.vb: System.IEquatable(Of LivrEtec.GIB.RPC.IdEmprestimo).Equals(LivrEtec.GIB.RPC.IdEmprestimo)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<IdEmprestimo>.Equals
+    fullName: System.IEquatable<LivrEtec.GIB.RPC.IdEmprestimo>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of IdEmprestimo).Equals
+    fullName: System.IEquatable(Of LivrEtec.GIB.RPC.IdEmprestimo).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode
+  name: GetHashCode
+  nameWithType: IdEmprestimo.GetHashCode
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.ToString*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.ToString
+  name: ToString
+  nameWithType: IdEmprestimo.ToString
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.WriteTo*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.WriteTo
+  name: WriteTo
+  nameWithType: IdEmprestimo.WriteTo
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalWriteTo
+  name: IBufferMessage.InternalWriteTo
+  nameWithType: IdEmprestimo.IBufferMessage.InternalWriteTo
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IBufferMessage.InternalWriteTo
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalWriteTo
+- uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  commentId: M:Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+  parent: Google.Protobuf.IBufferMessage
+  isExternal: true
+  name: InternalWriteTo(WriteContext)
+  nameWithType: IBufferMessage.InternalWriteTo(WriteContext)
+  fullName: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext)
+  spec.csharp:
+  - uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+    name: InternalWriteTo
+    nameWithType: IBufferMessage.InternalWriteTo
+    fullName: Google.Protobuf.IBufferMessage.InternalWriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WriteContext
+    name: WriteContext
+    nameWithType: WriteContext
+    fullName: Google.Protobuf.WriteContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IBufferMessage.InternalWriteTo(Google.Protobuf.WriteContext@)
+    name: InternalWriteTo
+    nameWithType: IBufferMessage.InternalWriteTo
+    fullName: Google.Protobuf.IBufferMessage.InternalWriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WriteContext
+    name: WriteContext
+    nameWithType: WriteContext
+    fullName: Google.Protobuf.WriteContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WriteContext
+  commentId: T:Google.Protobuf.WriteContext
+  parent: Google.Protobuf
+  isExternal: true
+  name: WriteContext
+  nameWithType: WriteContext
+  fullName: Google.Protobuf.WriteContext
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize
+  name: CalculateSize
+  nameWithType: IdEmprestimo.CalculateSize
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom
+  name: MergeFrom
+  nameWithType: IdEmprestimo.MergeFrom
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.MergeFrom
+- uid: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  commentId: M:Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  parent: Google.Protobuf.IMessage{LivrEtec.GIB.RPC.IdEmprestimo}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(IdEmprestimo)
+  nameWithType: IMessage<IdEmprestimo>.MergeFrom(IdEmprestimo)
+  fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.IdEmprestimo>.MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  nameWithType.vb: IMessage(Of IdEmprestimo).MergeFrom(IdEmprestimo)
+  fullName.vb: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.IdEmprestimo).MergeFrom(LivrEtec.GIB.RPC.IdEmprestimo)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<IdEmprestimo>.MergeFrom
+    fullName: Google.Protobuf.IMessage<LivrEtec.GIB.RPC.IdEmprestimo>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of IdEmprestimo).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of LivrEtec.GIB.RPC.IdEmprestimo).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: LivrEtec.GIB.RPC.IdEmprestimo
+    name: IdEmprestimo
+    nameWithType: IdEmprestimo
+    fullName: LivrEtec.GIB.RPC.IdEmprestimo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom*
+  commentId: Overload:LivrEtec.GIB.RPC.IdEmprestimo.Google#Protobuf#IBufferMessage#InternalMergeFrom
+  name: IBufferMessage.InternalMergeFrom
+  nameWithType: IdEmprestimo.IBufferMessage.InternalMergeFrom
+  fullName: LivrEtec.GIB.RPC.IdEmprestimo.Google.Protobuf.IBufferMessage.InternalMergeFrom
+  nameWithType.vb: IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+  fullName.vb: LivrEtec.GIB.RPC.IdEmprestimo.pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+  name.vb: pb::Google.Protobuf.IBufferMessage.InternalMergeFrom
+- uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  commentId: M:Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+  parent: Google.Protobuf.IBufferMessage
+  isExternal: true
+  name: InternalMergeFrom(ParseContext)
+  nameWithType: IBufferMessage.InternalMergeFrom(ParseContext)
+  fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext)
+  spec.csharp:
+  - uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+    name: InternalMergeFrom
+    nameWithType: IBufferMessage.InternalMergeFrom
+    fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ParseContext
+    name: ParseContext
+    nameWithType: ParseContext
+    fullName: Google.Protobuf.ParseContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IBufferMessage.InternalMergeFrom(Google.Protobuf.ParseContext@)
+    name: InternalMergeFrom
+    nameWithType: IBufferMessage.InternalMergeFrom
+    fullName: Google.Protobuf.IBufferMessage.InternalMergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ParseContext
+    name: ParseContext
+    nameWithType: ParseContext
+    fullName: Google.Protobuf.ParseContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ParseContext
+  commentId: T:Google.Protobuf.ParseContext
+  parent: Google.Protobuf
+  isExternal: true
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: Google.Protobuf.ParseContext
