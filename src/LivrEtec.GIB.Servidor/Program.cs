@@ -6,6 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Formatting.Json;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,15 +37,35 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 		ValidateAudience = false
 	};
 });
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
+
+builder.Host.UseSerilog((context, services, configuration) =>{
+	configuration
+		.ReadFrom.Configuration(context.Configuration)
+		.ReadFrom.Services(services)
+		.Enrich.FromLogContext()
+		.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:w3}] {SourceContext}: {Message}{NewLine}{Exception}")
+		.WriteTo.File(Path.Combine("./", "logs/txt/txt-.log"),
+			rollingInterval: RollingInterval.Day,
+			rollOnFileSizeLimit: true)
+		.WriteTo.File(new JsonFormatter(), "logs/json/json-.log",
+			rollingInterval: RollingInterval.Day,
+			rollOnFileSizeLimit: true);
+});
+// Additional configuration is required to successfully run gRPC on macOS.
+// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+builder.Services.AddGrpc();
+
 builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
     var strConexao = builder.Configuration.GetConnectionString("MySql");
     options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
 });
 builder.Services.AddSingleton<IRelogio,RelogioSistema>(); 
 builder.Services.AddScoped<PacaContext>();
-builder.Services.AddLogging(configure => {
-    configure.AddConsole();
-}); 
+
 builder.Services.AddScoped<IRepUsuarios, RepUsuarios>();
 builder.Services.AddScoped<IRepTags, RepTags>();
 builder.Services.AddScoped<IRepAutores, RepAutores>();
@@ -69,5 +91,4 @@ app.MapGrpcService<GerenciamentoSessao>();
 app.MapGrpcService<EmprestimoServiceRPC>();
 app.MapGrpcService<TagsServiceRPC>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
-
 app.Run();
