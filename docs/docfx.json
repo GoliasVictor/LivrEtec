@@ -71,7 +71,7 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "templates/discordfx"
+      "templates/singulinkfx"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
