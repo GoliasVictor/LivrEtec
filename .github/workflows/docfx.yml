@@ -7,14 +7,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
-    with:
+      with:
         dotnet-version: 6.x
-
     - run: dotnet install -g docfx
     - run: docfx docs/docfx.json
-
     - name: Deploy
-    uses: peaceiris/actions-gh-pages@v3
-    with:
+      uses: peaceiris/actions-gh-pages@v3
+      with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: docs/_site
