@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LivrEtec
+namespace LivrEtec.Models
 {
-    public class Pessoa :  IEquatable<Pessoa?>
+    public class Pessoa : IEquatable<Pessoa?>
     {
-        public Pessoa() {}
+        public Pessoa() { }
         public Pessoa(string nome, string telefone)
         {
             Nome = nome;

@@ -1,6 +1,9 @@
-﻿namespace LivrEtec;
+﻿using LivrEtec.Models;
 
-public interface IGrupoPermissao {
-	string Nome { get; }
-	List<Permissao> Todas { get; }
+namespace LivrEtec.Models.Autorizacao;
+
+public interface IGrupoPermissao
+{
+    string Nome { get; }
+    List<Permissao> Todas { get; }
 };

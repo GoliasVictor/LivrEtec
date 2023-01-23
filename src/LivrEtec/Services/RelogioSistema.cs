@@ -1,4 +1,4 @@
-﻿namespace LivrEtec
+﻿namespace LivrEtec.Services
 {
     public sealed class RelogioSistema : IRelogio
     {

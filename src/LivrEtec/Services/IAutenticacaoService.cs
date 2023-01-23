@@ -1,4 +1,4 @@
-namespace LivrEtec;
+namespace LivrEtec.Services;
 
 /// <summary>.
 /// Serviço responsavel por verificar atutenticidade do usuario 
@@ -6,7 +6,7 @@ namespace LivrEtec;
 public interface IAutenticacaoService
 {
 	/// <summary>
-    /// Verifica se o usuario de identificado por <paramref name="idUsuario"/>, com a o hash da senha <paramref name="hash"/> é autentico
+	/// Verifica se o usuario de identificado por <paramref name="idUsuario"/>, com a o hash da senha <paramref name="hash"/> é autentico
 	/// </summary>
 	/// <param name="idUsuario">Id do usuario.</param>
 	/// <param name="hash">O hash da senha do usuario </param>

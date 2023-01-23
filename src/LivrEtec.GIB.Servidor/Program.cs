@@ -1,12 +1,16 @@
-using LivrEtec; 
-using LivrEtec.GIB.Servidor; 
-using LivrEtec.Servidor;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Text;
+using LivrEtec.Services;
+using LivrEtec.Repositorios;
+using LivrEtec.GIB.Servidor.Interceptors;
+using LivrEtec.GIB.Servidor.Services;
+using LivrEtec.Servidor.Repositorios;
+using LivrEtec.Servidor.Services;
+using LivrEtec.Servidor.BD;
 
 var builder = WebApplication.CreateBuilder(args);
 

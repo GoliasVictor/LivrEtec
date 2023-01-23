@@ -1,4 +1,4 @@
-﻿namespace LivrEtec
+﻿namespace LivrEtec.Services
 {
     public interface IRelogio
     {

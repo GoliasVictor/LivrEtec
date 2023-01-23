@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LivrEtec
+namespace LivrEtec.Models
 {
-    public sealed class Livro :  IEquatable<Livro?>
+    public sealed class Livro : IEquatable<Livro?>
     {
-        public Livro(){}
-        public Livro(string nome, string descricao, List<Tag>? tags =  default, List<Autor>? autores = default, bool arquivado = false)
+        public Livro() { }
+        public Livro(string nome, string descricao, List<Tag>? tags = default, List<Autor>? autores = default, bool arquivado = false)
         {
-            Id =  default;
+            Id = default;
             Nome = nome;
             Descricao = descricao;
-            Tags = tags ?? new() ;
+            Tags = tags ?? new();
             Autores = autores ?? new();
             Arquivado = arquivado;
         }
@@ -22,23 +22,25 @@ namespace LivrEtec
 
         [Required]
         public string Nome { get; set; } = null!;
-        public string? Descricao { get; set; } 
+        public string? Descricao { get; set; }
         [Range(1, int.MaxValue)]
         public int Quantidade { get; set; }
-        public List<Tag> Tags { get; set; } = new ();
+        public List<Tag> Tags { get; set; } = new();
         public List<Autor> Autores { get; set; } = new();
         [Required]
         public bool Arquivado { get; set; }
- 
-        public Livro Clone(){
-            return new Livro(){
-                Id =  Id,
+
+        public Livro Clone()
+        {
+            return new Livro()
+            {
+                Id = Id,
                 Nome = Nome,
-                Arquivado =  Arquivado,
-                Descricao =  Descricao,
+                Arquivado = Arquivado,
+                Descricao = Descricao,
                 Quantidade = Quantidade,
-                Autores = Autores.Select(a=>a).ToList(),
-                Tags = Tags.Select(t=>t).ToList(),
+                Autores = Autores.Select(a => a).ToList(),
+                Tags = Tags.Select(t => t).ToList(),
             };
         }
 
@@ -53,7 +55,7 @@ namespace LivrEtec
                    Id == other.Id &&
                    Nome == other.Nome &&
                    Descricao == other.Descricao &&
-                   Quantidade ==  other.Quantidade &&
+                   Quantidade == other.Quantidade &&
                    EqualityComparer<ISet<Tag>>.Default.Equals(Tags.ToHashSet(), other.Tags.ToHashSet()) &&
                    EqualityComparer<ISet<Autor>>.Default.Equals(Autores.ToHashSet(), other.Autores.ToHashSet()) &&
                    Arquivado == other.Arquivado;

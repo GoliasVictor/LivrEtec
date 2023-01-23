@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LivrEtec.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivrEtec.Testes
+namespace LivrEtec.Testes.Doubles
 {
     class RelogioStub : IRelogio
     {
@@ -12,7 +13,7 @@ namespace LivrEtec.Testes
         {
             Agora = agora;
         }
-        
+
         public DateTime Agora { get; set; }
 
     }

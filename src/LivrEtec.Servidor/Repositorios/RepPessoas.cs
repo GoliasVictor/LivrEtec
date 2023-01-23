@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LivrEtec.Models;
+using LivrEtec.Repositorios;
+using LivrEtec.Servidor.BD;
 using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.Servidor
+namespace LivrEtec.Servidor.Repositorios
 {
     public class RepPessoas : Repositorio, IRepPessoas
     {

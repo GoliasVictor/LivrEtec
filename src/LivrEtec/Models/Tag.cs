@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LivrEtec
+namespace LivrEtec.Models
 {
     public sealed class Tag : IComparable<Tag>, IEquatable<Tag?>
     {
@@ -10,29 +10,29 @@ namespace LivrEtec
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; } = null!;
-        public List<Livro> Livros {get;set;} =  new();
+        public List<Livro> Livros { get; set; } = new();
         public Tag(int id = default, string nome = null!)
         {
-            this.Id = id;
-            this.Nome = nome;
+            Id = id;
+            Nome = nome;
         }
         public Tag(int id)
         {
-            this.Id = id;
+            Id = id;
         }
         public Tag(string nome)
         {
-            this.Nome = nome;
+            Nome = nome;
         }
         public Tag()
-		{
-		}
+        {
+        }
 
-		public int CompareTo(Tag? other)
-		{
+        public int CompareTo(Tag? other)
+        {
             _ = other ?? throw new NullReferenceException();
             return Id.CompareTo(other.Id);
-		}
+        }
 
         public override bool Equals(object? obj)
         {

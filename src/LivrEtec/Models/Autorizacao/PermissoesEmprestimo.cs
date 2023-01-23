@@ -1,4 +1,6 @@
-﻿namespace LivrEtec;
+﻿using LivrEtec.Models;
+
+namespace LivrEtec;
 public static partial class Permissoes
 {
     public record PermissoesEmprestimo : CRUD

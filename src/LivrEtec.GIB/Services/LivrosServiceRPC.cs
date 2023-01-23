@@ -1,16 +1,17 @@
-﻿using LivrEtec.GIB;
-using RPC = LivrEtec.GIB.RPC;
+﻿using RPC = LivrEtec.GIB.RPC;
 using Microsoft.Extensions.Logging;
 using LivrEtec.GIB.RPC;
 using Grpc.Core;
+using LivrEtec.Models;
+using LivrEtec.Services;
 
-namespace LivrEtec.GIB
+namespace LivrEtec.GIB.Services
 {
-    public sealed class LivrosServiceRPC:  ILivrosService
+    public sealed class LivrosServiceRPC : ILivrosService
     {
         readonly ILogger<LivrosServiceRPC> logger;
-        readonly RPC::Livros.LivrosClient livrosClientRPC;
-        public LivrosServiceRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
+        readonly Livros.LivrosClient livrosClientRPC;
+        public LivrosServiceRPC(Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
         {
             this.livrosClientRPC = livrosClientRPC;
             this.logger = logger;
@@ -19,53 +20,62 @@ namespace LivrEtec.GIB
         public async Task Editar(Livro livro)
         {
             _ = livro ?? throw new ArgumentNullException(nameof(livro));
-            if(livro.Tags.Any((t)=> t is null))
+            if (livro.Tags.Any((t) => t is null))
                 throw new InvalidDataException("tag nula");
 
             livro.Tags ??= new();
-            try{
+            try
+            {
                 await livrosClientRPC.EditarAsync(livro);
             }
-            catch(RpcException ex){
-               throw ManipuladorException.RpcExceptionToException(ex);
+            catch (RpcException ex)
+            {
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
         public async Task<Livro?> Obter(int id)
         {
-            try{
+            try
+            {
                 return await livrosClientRPC.ObterAsync(new IdLivro() { Id = id });
             }
-            catch(RpcException ex){
-                throw ManipuladorException.RpcExceptionToException(ex); 
+            catch (RpcException ex)
+            {
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
         public async Task Registrar(Livro livro)
-        { 
-            if(livro is not null){
+        {
+            if (livro is not null)
+            {
                 livro.Tags ??= new();
-                livro.Autores ??= new();    
+                livro.Autores ??= new();
             }
             Validador.ErroSeInvalido(livro);
             if (string.IsNullOrWhiteSpace(livro.Nome) || livro.Id < 0)
                 throw new InvalidDataException();
-            try{
+            try
+            {
                 await livrosClientRPC.RegistrarAsync(livro);
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
 
-		}
+        }
 
 
-		public async Task Remover(int id)
+        public async Task Remover(int id)
         {
-            try{
-                await livrosClientRPC.RemoverAsync(new IdLivro(){ Id = id});
+            try
+            {
+                await livrosClientRPC.RemoverAsync(new IdLivro() { Id = id });
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
@@ -75,14 +85,16 @@ namespace LivrEtec.GIB
             nome ??= "";
             nomeAutor ??= "";
             idTags ??= new List<int>();
-            try{
-			    ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags }});
-			    return listaLivros.Livros.Select(l=> (Livro)l!);
+            try
+            {
+                ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags } });
+                return listaLivros.Livros.Select(l => (Livro)l!);
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
-	}
+    }
 }

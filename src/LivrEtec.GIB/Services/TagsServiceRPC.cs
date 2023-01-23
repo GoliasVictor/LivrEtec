@@ -1,60 +1,70 @@
-﻿using LivrEtec.GIB;
-using RPC = LivrEtec.GIB.RPC;
+﻿using RPC = LivrEtec.GIB.RPC;
 using Microsoft.Extensions.Logging;
 using LivrEtec.GIB.RPC;
 using Grpc.Core;
 using static LivrEtec.GIB.RPC.Tag.Types;
-namespace LivrEtec.GIB
+using LivrEtec.Services;
+using LivrEtec.Models;
+
+namespace LivrEtec.GIB.Services
 {
-    public sealed class TagsServiceRPC:  ITagsService
+    public sealed class TagsServiceRPC : ITagsService
     {
         readonly ILogger<TagsServiceRPC> logger;
-        readonly RPC::Tags.TagsClient tagsClientRPC;
-        public TagsServiceRPC(RPC::Tags.TagsClient tagsClientRPC, ILogger<TagsServiceRPC> logger)
+        readonly Tags.TagsClient tagsClientRPC;
+        public TagsServiceRPC(Tags.TagsClient tagsClientRPC, ILogger<TagsServiceRPC> logger)
         {
             this.tagsClientRPC = tagsClientRPC;
             this.logger = logger;
         }
         public async Task<int> Registrar(Tag tag)
-        { 
+        {
             Validador.ErroSeInvalido(tag);
-            try{
-               return (await tagsClientRPC.RegistrarAsync(tag)).Id;
+            try
+            {
+                return (await tagsClientRPC.RegistrarAsync(tag)).Id;
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
 
-		}
+        }
 
         public async Task Editar(Tag tag)
         {
             _ = tag ?? throw new ArgumentNullException(nameof(tag));
-            try{
+            try
+            {
                 await tagsClientRPC.EditarAsync(tag);
             }
-            catch(RpcException ex){
-               throw ManipuladorException.RpcExceptionToException(ex);
+            catch (RpcException ex)
+            {
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
         public async Task<Tag?> Obter(int id)
         {
-            try{
+            try
+            {
                 return await tagsClientRPC.ObterAsync(new IdTag() { Id = id });
             }
-            catch(RpcException ex){
-                throw ManipuladorException.RpcExceptionToException(ex); 
+            catch (RpcException ex)
+            {
+                throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
 
-		public async Task Remover(int id)
+        public async Task Remover(int id)
         {
-            try{
-                await tagsClientRPC.RemoverAsync(new IdTag(){ Id = id});
+            try
+            {
+                await tagsClientRPC.RemoverAsync(new IdTag() { Id = id });
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
@@ -62,14 +72,16 @@ namespace LivrEtec.GIB
         public async Task<IEnumerable<Tag>> Buscar(string nome)
         {
             nome ??= "";
-            try{
-			    ListaTags listaTags = await tagsClientRPC.BuscarAsync(new BuscarRequest(){ Nome = nome});
-			    return listaTags.Tags.Select(l=> (Tag)l!);
+            try
+            {
+                ListaTags listaTags = await tagsClientRPC.BuscarAsync(new BuscarRequest() { Nome = nome });
+                return listaTags.Tags.Select(l => (Tag)l!);
             }
-            catch(RpcException ex){
+            catch (RpcException ex)
+            {
                 throw ManipuladorException.RpcExceptionToException(ex);
             }
         }
 
-	}
+    }
 }

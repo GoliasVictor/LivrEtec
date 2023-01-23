@@ -1,8 +1,8 @@
 using Grpc.Core;
 using Grpc.Core.Interceptors;
 
-namespace LivrEtec.GIB.Servidor;
-public class ExceptionInterceptor: Interceptor
+namespace LivrEtec.GIB.Servidor.Interceptors;
+public class ExceptionInterceptor : Interceptor
 {
     public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(
         TRequest request,
@@ -15,7 +15,7 @@ public class ExceptionInterceptor: Interceptor
         }
         catch (Exception ex)
         {
-			throw ManipuladorException.ExceptionToRpcException(ex);
+            throw ManipuladorException.ExceptionToRpcException(ex);
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LivrEtec
+namespace LivrEtec.Models
 {
     public class Aluno : Pessoa, IEquatable<Aluno?>
     {
-        public Aluno(){}
+        public Aluno() { }
         public Aluno(string nome, string telefone, string rm) : base(nome, telefone)
         {
             RM = rm;
@@ -41,6 +41,6 @@ namespace LivrEtec
         public static bool operator !=(Aluno? left, Aluno? right)
         {
             return !(left == right);
-        } 
+        }
     }
 }

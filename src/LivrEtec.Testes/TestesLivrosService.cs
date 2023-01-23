@@ -3,6 +3,9 @@ using Grpc.Core.Interceptors;
 using Microsoft.EntityFrameworkCore;
 using Xunit.Abstractions;
 using System.ComponentModel.DataAnnotations;
+using LivrEtec.Models;
+using LivrEtec.Services;
+using LivrEtec.Testes.Utilitarios;
 
 namespace LivrEtec.Testes;
 
