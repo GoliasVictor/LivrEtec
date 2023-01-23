@@ -1,6 +1,3 @@
-using LivrEtec.Models;
-using System.Diagnostics.CodeAnalysis;
-
 namespace LivrEtec.Services;
 
 public interface IIdentidadeService

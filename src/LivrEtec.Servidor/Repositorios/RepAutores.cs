@@ -1,6 +1,3 @@
-using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
 using LivrEtec.Servidor.BD;
 using Microsoft.Extensions.Logging;
 

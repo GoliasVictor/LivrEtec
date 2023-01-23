@@ -1,7 +1,4 @@
-using System.Data.Entity;
-using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
+using LivrEtec.Exceptions;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor.Services;

@@ -1,5 +1,4 @@
 using LivrEtec.Servidor.BD;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor.Repositorios;

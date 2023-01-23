@@ -1,11 +1,4 @@
-﻿using LivrEtec.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivrEtec.Testes.Doubles
+﻿namespace LivrEtec.Testes.Doubles
 {
     class RelogioStub : IRelogio
     {

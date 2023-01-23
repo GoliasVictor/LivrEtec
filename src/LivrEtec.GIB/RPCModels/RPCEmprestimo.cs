@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Google.Protobuf.WellKnownTypes;
-using LE = LivrEtec;
+
 namespace LivrEtec.GIB.RPC
 {
     public partial class Emprestimo
     {
         [return: NotNullIfNotNull("model")]
-        public static implicit operator Emprestimo?(LE::Emprestimo? model)
+        public static implicit operator Emprestimo?(LEM::Emprestimo? model)
             => model == null
              ? null : new()
             {
@@ -28,7 +28,7 @@ namespace LivrEtec.GIB.RPC
                 
             };
         [return: NotNullIfNotNull("proto")]
-        public static implicit operator LE::Emprestimo?(Emprestimo? proto)
+        public static implicit operator LEM::Emprestimo?(Emprestimo? proto)
             => proto == null
              ? null : new()
             {

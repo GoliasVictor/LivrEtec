@@ -1,9 +1,5 @@
-using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
 using LivrEtec.Servidor.BD;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Logging;
 using System.Data;
 

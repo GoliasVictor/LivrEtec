@@ -1,7 +1,6 @@
 using Grpc.Core;
 using Grpc.Net.Client;
 using LivrEtec.GIB.Servidor.Services;
-using LivrEtec.Models;
 
 namespace LivrEtec.Testes.Utilitarios;
 

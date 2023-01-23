@@ -1,15 +1,6 @@
-﻿using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
-using LivrEtec.Servidor.BD;
+﻿using LivrEtec.Servidor.BD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivrEtec.Servidor.Repositorios
 {

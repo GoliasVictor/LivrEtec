@@ -1,7 +1,4 @@
-using Grpc.Core;
 using LivrEtec.GIB.RPC;
-using LivrEtec.Models;
-using LivrEtec.Services;
 
 namespace LivrEtec.GIB.Servidor.Services
 {
@@ -35,7 +32,7 @@ namespace LivrEtec.GIB.Servidor.Services
 
         public override async Task<ListaLivros> Buscar(ParamBusca request, ServerCallContext context)
         {
-            IEnumerable<Livro> Livros = await livrosService.Buscar(request.NomeLivro, request.NomeAutor, request.IdTags);
+            IEnumerable<LEM::Livro> Livros = await livrosService.Buscar(request.NomeLivro, request.NomeAutor, request.IdTags);
             return new ListaLivros()
             {
                 Livros = { Livros.Select(l => (RPC.Livro)l).ToArray() }

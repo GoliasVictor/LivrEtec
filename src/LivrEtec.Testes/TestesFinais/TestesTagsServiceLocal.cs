@@ -1,6 +1,3 @@
-using LivrEtec.Servidor.BD;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.Services;
 using Xunit.Abstractions;
 
 namespace LivrEtec.Testes.TestesFinais;

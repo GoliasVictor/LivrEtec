@@ -1,7 +1,4 @@
-using Grpc.Core;
 using LivrEtec.GIB.RPC;
-using LivrEtec.Models;
-using LivrEtec.Services;
 using static LivrEtec.GIB.RPC.Tag.Types;
 
 namespace LivrEtec.GIB.Servidor.Services
@@ -39,7 +36,7 @@ namespace LivrEtec.GIB.Servidor.Services
         public override async Task<ListaTags> Buscar(BuscarRequest request, ServerCallContext context)
         {
 
-            IEnumerable<Tag> Tags = await tagsService.Buscar(request.Nome);
+            IEnumerable<LEM::Tag> Tags = await tagsService.Buscar(request.Nome);
             return new ListaTags()
             {
                 Tags = { Tags.Select(l => (RPC.Tag)l).ToArray() }

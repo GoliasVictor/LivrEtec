@@ -1,9 +1,6 @@
-using LivrEtec.Servidor.BD;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.Services;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
+
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Local")]

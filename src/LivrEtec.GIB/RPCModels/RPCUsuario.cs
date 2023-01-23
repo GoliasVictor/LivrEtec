@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using LE = LivrEtec;
+
 
 namespace LivrEtec.GIB.RPC
 {
     public partial class Usuario
     {
         [return: NotNullIfNotNull("model")]
-        public static implicit operator Usuario?( LE::Usuario? model) 
+        public static implicit operator Usuario?( LEM::Usuario? model) 
             => model == null
              ?  null : new(){
                 Id = model.Id,
@@ -14,7 +14,7 @@ namespace LivrEtec.GIB.RPC
                 Cargo = model.Cargo
             }; 
         [return: NotNullIfNotNull("proto")]
-        public static implicit operator LE::Usuario?(Usuario? proto) 
+        public static implicit operator LEM::Usuario?(Usuario? proto) 
             => proto == null
              ? null : new() {
                 Id = proto.Id,

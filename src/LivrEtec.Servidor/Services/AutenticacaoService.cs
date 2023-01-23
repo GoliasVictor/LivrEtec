@@ -1,5 +1,3 @@
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 

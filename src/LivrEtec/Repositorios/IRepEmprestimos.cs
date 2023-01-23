@@ -1,6 +1,4 @@
-﻿using LivrEtec.Models;
-
-namespace LivrEtec.Repositorios
+﻿namespace LivrEtec.Repositorios
 {
     public interface IRepEmprestimos
     {

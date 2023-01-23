@@ -1,5 +1,3 @@
-using LivrEtec.Models;
-
 namespace LivrEtec.Repositorios
 {
     public interface IRepTags

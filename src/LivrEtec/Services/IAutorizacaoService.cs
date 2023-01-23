@@ -1,5 +1,3 @@
-using LivrEtec.Models;
-
 namespace LivrEtec.Services;
 /// <summary>
 /// Serviço dedicado a veririficar se usuario é autorizado a tomar alguma ação

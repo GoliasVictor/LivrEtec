@@ -1,19 +1,15 @@
-using RPC = LivrEtec.GIB.RPC;
 using Microsoft.Extensions.Logging;
 using Google.Protobuf.WellKnownTypes;
-using LivrEtec.GIB.RPC;
-using Grpc.Core;
 using static LivrEtec.GIB.RPC.Emprestimo.Types;
 using LivrEtec.Models;
-using LivrEtec.Services;
 
 namespace LivrEtec.GIB.Services
 {
     public sealed class EmprestimoServiceRPC : IEmprestimoService
     {
         readonly ILogger<EmprestimoServiceRPC> logger;
-        readonly Emprestimos.EmprestimosClient clientRPC;
-        public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, Emprestimos.EmprestimosClient clientRPC)
+        readonly RPC::Emprestimos.EmprestimosClient clientRPC;
+        public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, RPC::Emprestimos.EmprestimosClient clientRPC)
         {
             this.clientRPC = clientRPC;
             this.logger = logger;
@@ -23,7 +19,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                IdEmprestimo idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest()
+                RPC::IdEmprestimo idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest()
                 {
                     IdLivro = idlivro,
                     IdPessoa = idPessoa
@@ -79,7 +75,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                await clientRPC.RegistrarPerdaAsync(new IdEmprestimo()
+                await clientRPC.RegistrarPerdaAsync(new RPC::IdEmprestimo()
                 {
                     Id = idEmprestimo,
                 });
@@ -94,7 +90,7 @@ namespace LivrEtec.GIB.Services
             try
             {
 
-                await clientRPC.ExcluirAsync(new IdEmprestimo()
+                await clientRPC.ExcluirAsync(new RPC::IdEmprestimo()
                 {
                     Id = idEmprestimo,
                 });

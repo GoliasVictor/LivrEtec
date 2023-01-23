@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using LivrEtec.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor.BD;
 public sealed class PacaContext : DbContext

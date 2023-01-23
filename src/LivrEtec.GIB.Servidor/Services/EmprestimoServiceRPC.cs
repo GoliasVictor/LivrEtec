@@ -1,10 +1,5 @@
-using Grpc.Core;
-using LivrEtec.GIB.RPC;
-using RPC = LivrEtec.GIB.RPC;
 using static LivrEtec.GIB.RPC.Emprestimo.Types;
-using LivrEtec.Models;
-using LivrEtec.Services;
-
+using LivrEtec.GIB.RPC;
 namespace LivrEtec.GIB.Servidor.Services;
 
 public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
@@ -29,7 +24,7 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 
     public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
     {
-        IEnumerable<Emprestimo> Emprestimos = await emprestimoService.Buscar(new ParamBuscaEmprestimo(
+        IEnumerable<LEM::Emprestimo> Emprestimos = await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
             IdLivro: request.IdLivro,
             IdPessoa: request.IdPessoa,
             Fechado: request.Fechado,

@@ -1,10 +1,4 @@
 using LivrEtec.Exceptions;
-using LivrEtec.Models;
-using LivrEtec.Services;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.Services;
-using LivrEtec.Testes.Utilitarios;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 

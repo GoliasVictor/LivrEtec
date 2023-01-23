@@ -1,7 +1,4 @@
-using System.Security.Claims;
-using Grpc.Core;
 using LivrEtec.GIB.RPC;
-using LivrEtec.Services;
 using Microsoft.AspNetCore.Authorization;
 
 namespace LivrEtec.GIB.Servidor.Services

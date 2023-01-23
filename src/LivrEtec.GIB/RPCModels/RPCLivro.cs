@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using LE = LivrEtec;
+
 namespace LivrEtec.GIB.RPC
 {
     public partial class Livro
     {
         [return: NotNullIfNotNull("model")]
-        public static implicit operator Livro?(LE::Livro? model)
+        public static implicit operator Livro?(LEM::Livro? model)
             => model == null
              ? null! : new()
             {
@@ -18,7 +18,7 @@ namespace LivrEtec.GIB.RPC
                 Tags  = {model.Tags.Select( (modelTag)=> (Tag)modelTag )},
             }; 
         [return: NotNullIfNotNull("proto")]
-        public static implicit operator LE::Livro?(Livro? proto)
+        public static implicit operator LEM::Livro?(Livro? proto)
             => proto == null
              ? null! : new()
             {
@@ -27,8 +27,8 @@ namespace LivrEtec.GIB.RPC
                 Arquivado = proto.Arquivado,
                 Descricao = proto.Descricao,
                 Quantidade = proto.Quantidade,
-                Autores = proto.Autores.Select((a)=> (LE::Autor)a).ToList(),
-                Tags = proto.Tags.Select((t)=> (LE::Tag)t).ToList() 
+                Autores = proto.Autores.Select((a)=> (LEM::Autor)a).ToList(),
+                Tags = proto.Tags.Select((t)=> (LEM::Tag)t).ToList() 
             };
     }
 }

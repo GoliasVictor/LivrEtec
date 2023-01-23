@@ -1,8 +1,5 @@
-using LivrEtec.Models;
-using LivrEtec.Servidor.BD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Xunit.Abstractions;
 
 namespace LivrEtec.Testes.Utilitarios;
 public class BDUtil : IDisposable

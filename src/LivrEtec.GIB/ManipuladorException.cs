@@ -1,5 +1,4 @@
-﻿using Grpc.Core;
-using LivrEtec.Exceptions;
+﻿using LivrEtec.Exceptions;
 
 namespace LivrEtec.GIB
 {

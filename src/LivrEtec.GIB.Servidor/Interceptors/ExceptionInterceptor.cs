@@ -1,4 +1,3 @@
-using Grpc.Core;
 using Grpc.Core.Interceptors;
 
 namespace LivrEtec.GIB.Servidor.Interceptors;

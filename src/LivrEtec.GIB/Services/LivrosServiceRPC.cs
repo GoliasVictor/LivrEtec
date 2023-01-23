@@ -1,17 +1,13 @@
-﻿using RPC = LivrEtec.GIB.RPC;
-using Microsoft.Extensions.Logging;
-using LivrEtec.GIB.RPC;
-using Grpc.Core;
+﻿using Microsoft.Extensions.Logging;
 using LivrEtec.Models;
-using LivrEtec.Services;
 
 namespace LivrEtec.GIB.Services
 {
     public sealed class LivrosServiceRPC : ILivrosService
     {
         readonly ILogger<LivrosServiceRPC> logger;
-        readonly Livros.LivrosClient livrosClientRPC;
-        public LivrosServiceRPC(Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
+        readonly RPC::Livros.LivrosClient livrosClientRPC;
+        public LivrosServiceRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
         {
             this.livrosClientRPC = livrosClientRPC;
             this.logger = logger;
@@ -38,7 +34,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                return await livrosClientRPC.ObterAsync(new IdLivro() { Id = id });
+                return await livrosClientRPC.ObterAsync(new RPC::IdLivro() { Id = id });
             }
             catch (RpcException ex)
             {
@@ -72,7 +68,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                await livrosClientRPC.RemoverAsync(new IdLivro() { Id = id });
+                await livrosClientRPC.RemoverAsync(new RPC::IdLivro() { Id = id });
             }
             catch (RpcException ex)
             {
@@ -87,7 +83,7 @@ namespace LivrEtec.GIB.Services
             idTags ??= new List<int>();
             try
             {
-                ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags } });
+                RPC::ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new RPC::ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags } });
                 return listaLivros.Livros.Select(l => (Livro)l!);
             }
             catch (RpcException ex)

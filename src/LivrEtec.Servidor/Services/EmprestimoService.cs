@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LivrEtec.Exceptions;
-using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
-using Microsoft.EntityFrameworkCore;
+﻿using LivrEtec.Exceptions;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor.Services

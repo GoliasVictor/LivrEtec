@@ -1,7 +1,5 @@
 using System.Security.Claims;
-using Grpc.Core;
 using Grpc.Core.Interceptors;
-using LivrEtec.Services;
 
 namespace LivrEtec.GIB.Servidor.Interceptors;
 public class IdentidadeInterceptor : Interceptor

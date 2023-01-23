@@ -1,6 +1,4 @@
-﻿using LivrEtec.Models;
-
-namespace LivrEtec.Services;
+﻿namespace LivrEtec.Services;
 
 public interface ITagsService
 {

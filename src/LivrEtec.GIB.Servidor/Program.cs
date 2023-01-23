@@ -1,10 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System.Text;
-using LivrEtec.Services;
 using LivrEtec.Repositorios;
 using LivrEtec.GIB.Servidor.Interceptors;
 using LivrEtec.GIB.Servidor.Services;

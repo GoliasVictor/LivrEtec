@@ -1,6 +1,4 @@
-﻿using LivrEtec.Models;
-
-namespace LivrEtec.Models.Autorizacao;
+﻿namespace LivrEtec.Models.Autorizacao;
 
 public interface IGrupoPermissao
 {

@@ -1,10 +1,5 @@
 using Xunit.Abstractions;
 
-using Microsoft.Extensions.Logging;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.BD;
-using LivrEtec.Servidor.Services;
-
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Local")]

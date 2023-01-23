@@ -1,10 +1,3 @@
-using LivrEtec.Models;
-using LivrEtec.Services;
-using LivrEtec.Servidor.BD;
-using LivrEtec.Servidor.Repositorios;
-using LivrEtec.Servidor.Services;
-using LivrEtec.Testes.Utilitarios;
-using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;

@@ -1,5 +1,4 @@
-﻿using LivrEtec.Models;
-using LivrEtec.Models.Autorizacao;
+﻿using LivrEtec.Models.Autorizacao;
 
 namespace LivrEtec;
 public static partial class Permissoes

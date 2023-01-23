@@ -1,9 +1,5 @@
-﻿using RPC = LivrEtec.GIB.RPC;
-using Microsoft.Extensions.Logging;
-using LivrEtec.GIB.RPC;
-using Grpc.Core;
+﻿using Microsoft.Extensions.Logging;
 using static LivrEtec.GIB.RPC.Tag.Types;
-using LivrEtec.Services;
 using LivrEtec.Models;
 
 namespace LivrEtec.GIB.Services
@@ -11,8 +7,8 @@ namespace LivrEtec.GIB.Services
     public sealed class TagsServiceRPC : ITagsService
     {
         readonly ILogger<TagsServiceRPC> logger;
-        readonly Tags.TagsClient tagsClientRPC;
-        public TagsServiceRPC(Tags.TagsClient tagsClientRPC, ILogger<TagsServiceRPC> logger)
+        readonly RPC::Tags.TagsClient tagsClientRPC;
+        public TagsServiceRPC(RPC::Tags.TagsClient tagsClientRPC, ILogger<TagsServiceRPC> logger)
         {
             this.tagsClientRPC = tagsClientRPC;
             this.logger = logger;
@@ -48,7 +44,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                return await tagsClientRPC.ObterAsync(new IdTag() { Id = id });
+                return await tagsClientRPC.ObterAsync(new RPC::IdTag() { Id = id });
             }
             catch (RpcException ex)
             {
@@ -61,7 +57,7 @@ namespace LivrEtec.GIB.Services
         {
             try
             {
-                await tagsClientRPC.RemoverAsync(new IdTag() { Id = id });
+                await tagsClientRPC.RemoverAsync(new RPC::IdTag() { Id = id });
             }
             catch (RpcException ex)
             {
@@ -74,7 +70,7 @@ namespace LivrEtec.GIB.Services
             nome ??= "";
             try
             {
-                ListaTags listaTags = await tagsClientRPC.BuscarAsync(new BuscarRequest() { Nome = nome });
+                RPC::ListaTags listaTags = await tagsClientRPC.BuscarAsync(new BuscarRequest() { Nome = nome });
                 return listaTags.Tags.Select(l => (Tag)l!);
             }
             catch (RpcException ex)

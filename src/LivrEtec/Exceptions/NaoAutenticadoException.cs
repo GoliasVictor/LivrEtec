@@ -1,5 +1,3 @@
-using LivrEtec.Models;
-
 namespace LivrEtec.Exceptions;
 
 [Serializable]

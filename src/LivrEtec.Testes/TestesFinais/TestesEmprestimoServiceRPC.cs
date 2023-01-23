@@ -1,6 +1,5 @@
 using Grpc.Net.Client;
 using LivrEtec.GIB.Services;
-using LivrEtec.Testes.Utilitarios;
 using Xunit.Abstractions;
 namespace LivrEtec.Testes.TestesFinais;
 
