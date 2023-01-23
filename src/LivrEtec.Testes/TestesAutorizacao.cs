@@ -7,17 +7,20 @@ namespace LivrEtec.Testes;
 [Trait("Category", "Local")]
 public class TestesAutorizacao : IDisposable
 {
-    const int IdAdministrador = 1;
-    const int IdAnonimo = 2;
-    readonly BDUtil BDU;
-    readonly IAutorizacaoService AutorizacaoService;
+    private const int IdAdministrador = 1;
+    private const int IdAnonimo = 2;
+    private readonly BDUtil BDU;
+    private readonly IAutorizacaoService AutorizacaoService;
     public TestesAutorizacao(ITestOutputHelper output)
     {
 
-        var loggerFactory = LogUtils.CreateLoggerFactory(output);
+        ILoggerFactory loggerFactory = LogUtils.CreateLoggerFactory(output);
         BDU = new BDUtilSqlLite(loggerFactory);
-        foreach (var perm in Permissoes.TodasPermissoes)
+        foreach (Permissao perm in Permissoes.TodasPermissoes)
+        {
             perm.Cargos = new List<Cargo>();
+        }
+
         BDU.BDPermissoes = Permissoes.TodasPermissoes;
         BDU.Cargos = new[]{
             new Cargo(IdAdministrador, "Administrador", Permissoes.TodasPermissoes.ToList()),
@@ -42,7 +45,7 @@ public class TestesAutorizacao : IDisposable
             new Usuario(4, "", "Atlas"  , "Atlas"   , BDU.gCargo(4)),
         };
         BDU.SalvarDados();
-        var BD = BDU.CriarContexto();
+        PacaContext BD = BDU.CriarContexto();
         var repUsuarios = new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
         AutorizacaoService = new AutorizacaoService(repUsuarios, loggerFactory.CreateLogger<AutorizacaoService>());
     }
@@ -52,8 +55,8 @@ public class TestesAutorizacao : IDisposable
     [InlineData(4)]
     public async void EhAutorizado_Autorizado(int idUsuario)
     {
-        var usuario = BDU.gUsuario(idUsuario);
-        var permissao = Permissoes.Livro.Visualizar;
+        Usuario usuario = BDU.gUsuario(idUsuario);
+        Permissao permissao = Permissoes.Livro.Visualizar;
 
 
         var autorizado = await AutorizacaoService.EhAutorizado(usuario, permissao);
@@ -66,8 +69,8 @@ public class TestesAutorizacao : IDisposable
     [InlineData(4)]
     public async void EhAutorizado_NaoAutorizado(int idUsuario)
     {
-        var usuario = BDU.gUsuario(idUsuario);
-        var permissao = Permissoes.Cargo.Criar;
+        Usuario usuario = BDU.gUsuario(idUsuario);
+        Permissao permissao = Permissoes.Cargo.Criar;
 
         var autorizado = await AutorizacaoService.EhAutorizado(usuario, permissao);
 
@@ -77,16 +80,16 @@ public class TestesAutorizacao : IDisposable
     [Fact]
     public async Task ErroSeNaoAutorizado_NadaAsync()
     {
-        var usuario = BDU.gUsuario(IdAdministrador);
-        var permissao = Permissoes.Cargo.Criar;
+        Usuario usuario = BDU.gUsuario(IdAdministrador);
+        Permissao permissao = Permissoes.Cargo.Criar;
         await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
     }
     [Fact]
     public async Task ErroSeNaoAutorizado_NaoAutorizadoExceptionAsync()
     {
-        var usuario = BDU.gUsuario(IdAnonimo);
-        var permissao = Permissoes.Cargo.Criar;
-        await Assert.ThrowsAsync<NaoAutorizadoException>(async () =>
+        Usuario usuario = BDU.gUsuario(IdAnonimo);
+        Permissao permissao = Permissoes.Cargo.Criar;
+        _ = await Assert.ThrowsAsync<NaoAutorizadoException>(async () =>
         {
             await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
         });
@@ -95,9 +98,9 @@ public class TestesAutorizacao : IDisposable
     [Fact]
     public async Task ErroSeNaoAutorizado_PermissaoNulaAsync()
     {
-        var usuario = BDU.gUsuario(IdAnonimo);
+        Usuario usuario = BDU.gUsuario(IdAnonimo);
         Permissao permissao = null!;
-        await Assert.ThrowsAsync<ArgumentNullException>(async () =>
+        _ = await Assert.ThrowsAsync<ArgumentNullException>(async () =>
         {
             await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
         });
@@ -105,10 +108,10 @@ public class TestesAutorizacao : IDisposable
     [Fact]
     public async Task ErroSeNaoAutorizado_PermissaoInvalidaAsync()
     {
-        var usuario = BDU.gUsuario(IdAnonimo);
+        Usuario usuario = BDU.gUsuario(IdAnonimo);
         const int IdInvalido = 100;
-        Permissao permissao = new Permissao() { Id = IdInvalido };
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        var permissao = new Permissao() { Id = IdInvalido };
+        _ = await Assert.ThrowsAsync<ArgumentException>(async () =>
         {
             await AutorizacaoService.ErroSeNaoAutorizado(usuario, permissao);
         });

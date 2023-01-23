@@ -14,7 +14,7 @@ public class BDUtil : IDisposable
     public void SalvarDados()
     {
         ResetarBanco();
-        using var BD = CriarContexto();
+        using PacaContext BD = CriarContexto();
 
         BD.Permissoes.AddRange(BDPermissoes);
         BD.Cargos.AddRange(Cargos);
@@ -27,7 +27,7 @@ public class BDUtil : IDisposable
         BD.Pessoas.AddRange(Pessoas);
         BD.Emprestimos.AddRange(Emprestimos);
 
-        BD.SaveChanges();
+        _ = BD.SaveChanges();
         BD.ChangeTracker.Clear();
 
     }
@@ -47,17 +47,45 @@ public class BDUtil : IDisposable
     public Cargo[] Cargos { get; set; } = new Cargo[0];
     public Permissao[] BDPermissoes { get; set; } = new Permissao[0];
 
-    public Autor gAutor(int id) => Autores.First((a) => a.Id == id);
-    public Tag gTag(int id) => Tags.First((a) => a.Id == id);
-    public Livro gLivro(int id) => Livros.First((l) => l.Id == id);
-    public Usuario gUsuario(int id) => Usuarios.First((u) => u.Id == id);
-    public Cargo gCargo(int id) => Cargos.First((c) => c.Id == id);
-    public Pessoa gPessoa(int id) => Pessoas.First((c) => c.Id == id);
-    public Emprestimo gEmprestimo(int id) => Emprestimos.First((e) => e.Id == id);
+    public Autor gAutor(int id)
+    {
+        return Autores.First((a) => a.Id == id);
+    }
+
+    public Tag gTag(int id)
+    {
+        return Tags.First((a) => a.Id == id);
+    }
+
+    public Livro gLivro(int id)
+    {
+        return Livros.First((l) => l.Id == id);
+    }
+
+    public Usuario gUsuario(int id)
+    {
+        return Usuarios.First((u) => u.Id == id);
+    }
+
+    public Cargo gCargo(int id)
+    {
+        return Cargos.First((c) => c.Id == id);
+    }
+
+    public Pessoa gPessoa(int id)
+    {
+        return Pessoas.First((c) => c.Id == id);
+    }
+
+    public Emprestimo gEmprestimo(int id)
+    {
+        return Emprestimos.First((e) => e.Id == id);
+    }
+
     public async Task<Emprestimo?> gEmprestimoBanco(int idEmprestimo)
     {
-        using var BD = CriarContexto();
-        var emprestimoAtual = await BD.Emprestimos.FindAsync(idEmprestimo);
+        using PacaContext BD = CriarContexto();
+        Emprestimo? emprestimoAtual = await BD.Emprestimos.FindAsync(idEmprestimo);
         if (emprestimoAtual is not null)
         {
 
@@ -70,13 +98,13 @@ public class BDUtil : IDisposable
     }
     public async Task<Tag?> gTagBanco(int id)
     {
-        using var BD = CriarContexto();
+        using PacaContext BD = CriarContexto();
         return await BD.Tags.FindAsync(id);
     }
     public void ResetarBanco()
     {
-        using var BD = CriarContexto();
-        BD.Database.EnsureCreated();
+        using PacaContext BD = CriarContexto();
+        _ = BD.Database.EnsureCreated();
 
         BD.Livros.RemoveRange(BD.Livros.AsQueryable());
         BD.Autores.RemoveRange(BD.Autores.AsQueryable());
@@ -87,7 +115,7 @@ public class BDUtil : IDisposable
         BD.Cargos.RemoveRange(BD.Cargos.AsQueryable());
         BD.Permissoes.RemoveRange(BD.Permissoes.AsQueryable());
 
-        BD.SaveChanges();
+        _ = BD.SaveChanges();
     }
     public void Dispose()
     {

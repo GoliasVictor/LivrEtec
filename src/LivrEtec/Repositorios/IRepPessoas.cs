@@ -1,7 +1,6 @@
-﻿namespace LivrEtec.Repositorios
+﻿namespace LivrEtec.Repositorios;
+
+public interface IRepPessoas
 {
-    public interface IRepPessoas
-    {
-        Task<Pessoa?> ObterObter(int id);
-    }
+    Task<Pessoa?> ObterObter(int id);
 }

@@ -17,20 +17,25 @@ public sealed class RepLivros : Repositorio, IRepLivros
 
         if (!string.IsNullOrEmpty(nome) || !string.IsNullOrEmpty(nomeAutor))
         {
-            var livPorNome = from livro in BD.Livros
-                             where livro.Nome.Contains(nome)
-                             select livro;
-            var livPorAutor = from autor in BD.Autores
-                              from livro in autor.Livros
-                              where livro.Nome.Contains(nomeAutor)
-                              select livro;
+            IQueryable<Livro> livPorNome = from livro in BD.Livros
+                                           where livro.Nome.Contains(nome)
+                                           select livro;
+            IQueryable<Livro> livPorAutor = from autor in BD.Autores
+                                            from livro in autor.Livros
+                                            where livro.Nome.Contains(nomeAutor)
+                                            select livro;
             livros = livPorNome.Union(livPorAutor);
         }
 
 
         if (idTags is not null && idTags.Count() != 0)
+        {
             foreach (var id in idTags)
+            {
                 livros = livros.Where((livro) => livro.Tags.Any((tag) => tag.Id == id));
+            }
+        }
+
         return await livros.ToListAsync();
     }
     private async Task<bool> ExisteAsync(Livro livro)
@@ -48,9 +53,12 @@ public sealed class RepLivros : Repositorio, IRepLivros
     public async Task<Livro?> Obter(int id)
     {
 
-        var livro = await BD.Livros.FindAsync(id);
+        Livro? livro = await BD.Livros.FindAsync(id);
         if (livro == null)
+        {
             return livro;
+        }
+
         await BD.Entry(livro).Collection(l => l.Tags).LoadAsync();
         await BD.Entry(livro).Collection(l => l.Autores).LoadAsync();
         return livro;
@@ -60,33 +68,46 @@ public sealed class RepLivros : Repositorio, IRepLivros
     {
         Validador.ErroSeInvalido(livro);
         if (await ExisteAsync(livro))
+        {
             throw new InvalidOperationException($"O livro {{{livro.Id}}} já existe no sistema");
+        }
+
         BD.AttachRange(livro.Tags);
         BD.AttachRange(livro.Autores);
-        BD.Livros.Add(livro);
-        await BD.SaveChangesAsync();
+        _ = BD.Livros.Add(livro);
+        _ = await BD.SaveChangesAsync();
     }
 
     public async Task RemoverObter(int id)
     {
 
         if (await ExisteAsync(id) == false)
+        {
             throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
-        var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
-        await BD.SaveChangesAsync();
+        }
+
+        _ = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
+        _ = await BD.SaveChangesAsync();
     }
 
     public async Task Editar(Livro livro)
     {
 
         _ = livro ?? throw new ArgumentNullException(nameof(livro));
-        foreach (var tag in livro.Tags)
+        foreach (Tag? tag in livro.Tags)
+        {
             if (tag is null)
+            {
                 throw new InvalidDataException("tag nula");
-        if (await ExisteAsync(livro) == false)
-            throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
+            }
+        }
 
-        var livroAntigo = BD.Livros.Include(l => l.Tags)
+        if (await ExisteAsync(livro) == false)
+        {
+            throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
+        }
+
+        Livro livroAntigo = BD.Livros.Include(l => l.Tags)
                                    .Include(l => l.Autores)
                                    .Single(l => l.Id == livro.Id);
         livroAntigo.Nome = livro.Nome;
@@ -94,9 +115,9 @@ public sealed class RepLivros : Repositorio, IRepLivros
         livroAntigo.Arquivado = livro.Arquivado;
         livroAntigo.Tags.Clear();
         livroAntigo.Autores.Clear();
-        await BD.SaveChangesAsync();
+        _ = await BD.SaveChangesAsync();
         livroAntigo.Autores.AddRange(BD.Autores.Where(a => livro.Autores.Contains(a)));
         livroAntigo.Tags.AddRange(BD.Tags.Where(t => livro.Tags.Contains(t)));
-        await BD.SaveChangesAsync();
+        _ = await BD.SaveChangesAsync();
     }
 }

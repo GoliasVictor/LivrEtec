@@ -20,7 +20,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	{
 		BDU = bdu;
 		this.relogio = relogio;
-		Cargo cargoTeste = new Cargo()
+		var cargoTeste = new Cargo()
 		{
 			Id = 10,
 			Nome = "Cargo Teste",
@@ -46,8 +46,11 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 				new Tag(3,"Politica")
 			};
 		BDU.Cargos = new[] { usuarioTeste.Cargo };
-		foreach (var perm in Permissoes.TodasPermissoes)
+		foreach (Permissao perm in Permissoes.TodasPermissoes)
+		{
 			perm.Cargos = new List<Cargo>();
+		}
+
 		BDU.Usuarios = new[]{
 				new Usuario(){
 					Id= ID_USUARIO_CRIADOR,
@@ -122,7 +125,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 				}
 			};
 		BDU.SalvarDados();
-		var BD = BDU.CriarContexto();
+		_ = BDU.CriarContexto();
 	}
 	private void AssertEmprestimoIgual(Emprestimo esperado, Emprestimo atual)
 	{
@@ -130,9 +133,14 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		Assert.Equal(esperado.Comentario, atual.Comentario);
 		Assert.Equal(esperado.DataEmprestimo, atual.DataEmprestimo, new TimeSpan(1, 0, 0, 0));
 		if (esperado.DataFechamento is not null && atual.DataFechamento is not null)
+		{
 			Assert.Equal(esperado.DataFechamento.Value, atual.DataFechamento.Value, new TimeSpan(1, 0, 0, 0));
+		}
 		else
+		{
 			Assert.Equal(esperado.DataFechamento, atual.DataFechamento);
+		}
+
 		Assert.Equal(esperado.Devolvido, atual.Devolvido);
 		Assert.Equal(esperado.ExplicacaoAtraso, atual.ExplicacaoAtraso);
 		Assert.Equal(esperado.Fechado, atual.Fechado);
@@ -163,7 +171,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		};
 
 		var idEmprestimo = await emprestimoService.Abrir(idPessoa, ID_LIVRO_DISPONIVEL);
-		
+
 		emprestimoEsperado.Id = idEmprestimo;
 		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
@@ -181,7 +189,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 		await emprestimoService.Prorrogar(idEmprestimo, dataEsperada);
 
-		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
 	}
@@ -192,7 +200,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	public async void DevolverAsync_SemAtraso()
 	{
 		var idEmprestimo = ID_EMPRESTIMO_ABERTO;
-		var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+		Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
 		emprestimoEsperado.Devolvido = true;
 		emprestimoEsperado.Fechado = true;
 		emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
@@ -200,7 +208,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 		await emprestimoService.Devolver(idEmprestimo);
 
-		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
 
@@ -211,7 +219,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	{
 		const int idEmprestimo = ID_EMPRESTIMO_ABERTO;
 		const string ExplicacaoAtraso = "Por motivos de teste.";
-		var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+		Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
 		emprestimoEsperado.Devolvido = true;
 		emprestimoEsperado.Fechado = true;
 		emprestimoEsperado.AtrasoJustificado = true;
@@ -221,7 +229,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 		await emprestimoService.Devolver(idEmprestimo, AtrasoJustificado: true, ExplicacaoAtraso);
 
-		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
 
@@ -231,7 +239,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	public async Task RegistrarPerdaAsync_ValidaAsync()
 	{
 		var idEmprestimo = ID_EMPRESTIMO_ABERTO;
-		var emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
+		Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
 		emprestimoEsperado.Devolvido = false;
 		emprestimoEsperado.Fechado = true;
 		emprestimoEsperado.DataFechamento = relogio.Agora;
@@ -239,7 +247,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 		await emprestimoService.RegistrarPerda(idEmprestimo);
 
-		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
 	}
@@ -250,7 +258,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 		await emprestimoService.Excluir(idEmprestimo);
 
-		var emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
+		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.Null(emprestimoAtual);
 	}
 }

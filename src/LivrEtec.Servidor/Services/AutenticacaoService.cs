@@ -4,8 +4,8 @@ using System.Security.Cryptography;
 namespace LivrEtec.Servidor.Services;
 public sealed class AutenticacaoService : IAutenticacaoService
 {
-    readonly ILogger<AutenticacaoService> logger;
-    readonly IRepUsuarios repUsuarios;
+    private readonly ILogger<AutenticacaoService> logger;
+    private readonly IRepUsuarios repUsuarios;
     public AutenticacaoService(IRepUsuarios repUsuarios, ILogger<AutenticacaoService> logger)
     {
         this.logger = logger;
@@ -13,18 +13,21 @@ public sealed class AutenticacaoService : IAutenticacaoService
     }
     public static string GerarHahSenha(int IdUsuario, string senha)
     {
-        using MD5 md5 = MD5.Create();
-        byte[] bytesSenha = System.Text.Encoding.ASCII.GetBytes(senha + IdUsuario.ToString());
-        byte[] bytesHash = md5.ComputeHash(bytesSenha);
+        using var md5 = MD5.Create();
+        var bytesSenha = System.Text.Encoding.ASCII.GetBytes(senha + IdUsuario.ToString());
+        var bytesHash = md5.ComputeHash(bytesSenha);
         return Convert.ToHexString(bytesHash);
     }
     public async Task<bool> EhAutentico(int IdUsuario, string hashSenha)
     {
         _ = hashSenha ?? throw new ArgumentNullException(nameof(hashSenha));
-        var usuario = await repUsuarios.Obter(IdUsuario);
+        Usuario? usuario = await repUsuarios.Obter(IdUsuario);
         if (usuario == null)
+        {
             throw new ArgumentException("Usuario invalido");
-        bool autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();
+        }
+
+        var autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();
         return autentico;
     }
 }

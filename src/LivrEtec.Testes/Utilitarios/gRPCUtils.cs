@@ -4,9 +4,9 @@ using LivrEtec.GIB.Servidor.Services;
 
 namespace LivrEtec.Testes.Utilitarios;
 
-class gRPCUtil
+internal class gRPCUtil
 {
-    static public GrpcChannel GetGrpChannel(string? UrlAPI, Usuario usuario)
+    public static GrpcChannel GetGrpChannel(string? UrlAPI, Usuario usuario)
     {
         _ = UrlAPI ?? throw new Exception("Endereço da API gRPC indefinido");
         var credentials = CallCredentials.FromInterceptor((_, _) => Task.CompletedTask);

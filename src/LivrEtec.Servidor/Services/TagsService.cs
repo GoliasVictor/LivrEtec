@@ -3,9 +3,9 @@
 namespace LivrEtec.Servidor.Services;
 public sealed class TagsService : ITagsService
 {
-    readonly ILogger<TagsService>? Logger;
-    readonly IIdentidadeService identidadeService;
-    readonly IRepTags repTags;
+    private readonly ILogger<TagsService>? Logger;
+    private readonly IIdentidadeService identidadeService;
+    private readonly IRepTags repTags;
     public TagsService(
         IRepTags repTags,
         IIdentidadeService identidadeService,
@@ -20,7 +20,7 @@ public sealed class TagsService : ITagsService
     public async Task<IEnumerable<Tag>> Buscar(string nome)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
-        var tags = await repTags.Buscar(nome);
+        IEnumerable<Tag> tags = await repTags.Buscar(nome);
         Logger?.LogInformation("Tags buscadas, Detalhes: busca={{{nome}}};", nome);
         return tags;
     }
@@ -35,7 +35,7 @@ public sealed class TagsService : ITagsService
     public async Task<Tag?> Obter(int id)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
-        var tag = await repTags.Obter(id);
+        Tag? tag = await repTags.Obter(id);
         Logger?.LogInformation("Tag obtida, Detalhes: id={{{id}}};", id);
         return tag;
     }

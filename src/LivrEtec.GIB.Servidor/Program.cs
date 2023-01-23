@@ -1,31 +1,33 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.EntityFrameworkCore;
-using System.Text;
-using LivrEtec.Repositorios;
 using LivrEtec.GIB.Servidor.Interceptors;
 using LivrEtec.GIB.Servidor.Services;
+using LivrEtec.Repositorios;
+using LivrEtec.Servidor.BD;
 using LivrEtec.Servidor.Repositorios;
 using LivrEtec.Servidor.Services;
-using LivrEtec.Servidor.BD;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpc( options => {
-    options.Interceptors.Add<ExceptionInterceptor>();
-    options.Interceptors.Add<IdentidadeInterceptor>();
+builder.Services.AddGrpc(options =>
+{
+	options.Interceptors.Add<ExceptionInterceptor>();
+	options.Interceptors.Add<IdentidadeInterceptor>();
 });
 builder.WebHost.UseUrls();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-string strAuthKey =  builder.Configuration["AuthKey"];
+string strAuthKey = builder.Configuration["AuthKey"];
 byte[] authKey = Encoding.ASCII.GetBytes(strAuthKey);
 builder.Services.AddSingleton<AuthKeyProvider>(new AuthKeyProvider(authKey));
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer(options => {
+.AddJwtBearer(options =>
+{
 	options.RequireHttpsMetadata = false;
 	options.SaveToken = true;
 	options.TokenValidationParameters = new TokenValidationParameters()
@@ -36,15 +38,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 		ValidateAudience = false
 	};
 });
-builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
-    var strConexao = builder.Configuration.GetConnectionString("MySql");
-    options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
+builder.Services.AddDbContextFactory<PacaContext>((options) =>
+{
+	var strConexao = builder.Configuration.GetConnectionString("MySql");
+	options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
 });
-builder.Services.AddSingleton<IRelogio,RelogioSistema>(); 
+builder.Services.AddSingleton<IRelogio, RelogioSistema>();
 builder.Services.AddScoped<PacaContext>();
-builder.Services.AddLogging(configure => {
-    configure.AddConsole();
-}); 
+builder.Services.AddLogging(configure =>
+{
+	configure.AddConsole();
+});
 builder.Services.AddScoped<IRepUsuarios, RepUsuarios>();
 builder.Services.AddScoped<IRepTags, RepTags>();
 builder.Services.AddScoped<IRepAutores, RepAutores>();

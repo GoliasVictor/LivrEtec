@@ -17,7 +17,9 @@ public sealed class Permissao : IComparable<Permissao>
         Nome = nome;
         Descricao = descricao;
         if (permissoesDependete != null)
+        {
             PermissoesDependete = permissoesDependete;
+        }
     }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

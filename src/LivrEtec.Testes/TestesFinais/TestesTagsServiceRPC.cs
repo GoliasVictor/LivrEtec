@@ -1,6 +1,6 @@
-using Xunit.Abstractions;
 using Grpc.Net.Client;
 using LivrEtec.GIB.Services;
+using Xunit.Abstractions;
 
 namespace LivrEtec.Testes.TestesFinais;
 
@@ -14,7 +14,7 @@ public sealed class TestesTagsServiceRPC : TestesTagsService<TagsServiceRPC>
             new BDUtilMySQl(Configuracao.StrConexaoMySQL, LogUtils.CreateLoggerFactory(output))
         )
     {
-        Cargo cargoTeste = new Cargo()
+        var cargoTeste = new Cargo()
         {
             Id = 10,
             Nome = "Cargo Teste",
@@ -29,8 +29,11 @@ public sealed class TestesTagsServiceRPC : TestesTagsService<TagsServiceRPC>
             Cargo = cargoTeste
         };
         BDU.Cargos = new[] { UsuarioTeste.Cargo };
-        foreach (var perm in Permissoes.TodasPermissoes)
+        foreach (Permissao perm in Permissoes.TodasPermissoes)
+        {
             perm.Cargos = new List<Cargo>();
+        }
+
         BDU.Usuarios = new[] { UsuarioTeste };
         BDU.SalvarDados();
         GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, UsuarioTeste);

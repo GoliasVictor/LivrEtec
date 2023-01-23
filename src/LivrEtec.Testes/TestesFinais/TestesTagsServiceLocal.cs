@@ -5,7 +5,7 @@ namespace LivrEtec.Testes.TestesFinais;
 [Trait("Category", "Local")]
 public sealed class TestesTagsLocal : TestesTagsService<TagsService>, IDisposable
 {
-    readonly PacaContext BD;
+    private readonly PacaContext BD;
     protected override TagsService tagsService { get; init; }
     public TestesTagsLocal(ITestOutputHelper output)
     : base(

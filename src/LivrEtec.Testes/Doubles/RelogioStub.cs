@@ -1,13 +1,12 @@
-﻿namespace LivrEtec.Testes.Doubles
+﻿namespace LivrEtec.Testes.Doubles;
+
+internal class RelogioStub : IRelogio
 {
-    class RelogioStub : IRelogio
+    public RelogioStub(DateTime agora)
     {
-        public RelogioStub(DateTime agora)
-        {
-            Agora = agora;
-        }
-
-        public DateTime Agora { get; set; }
-
+        Agora = agora;
     }
+
+    public DateTime Agora { get; set; }
+
 }

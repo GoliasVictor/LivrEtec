@@ -6,17 +6,25 @@ namespace LivrEtec.Testes;
 [Trait("Category", "Local")]
 public class TestesIdentidade : IDisposable
 {
-    readonly BDUtil BDU;
-    readonly IIdentidadeService Identidade;
-    const int IdCargoAdmin = 1;
-    const int IdCargoAnonimo = 2;
-    const int IdAdmin = 1;
-    const int IdAnonimo = 2;
-    (int Id, string Senha, string Hash)[] Senhas;
-    string gSenha(int id) => Senhas.First((s) => s.Id == id).Senha;
-    string gHash(int id) => Senhas.First((s) => s.Id == id).Hash;
+    private readonly BDUtil BDU;
+    private readonly IIdentidadeService Identidade;
+    private const int IdCargoAdmin = 1;
+    private const int IdCargoAnonimo = 2;
+    private const int IdAdmin = 1;
+    private const int IdAnonimo = 2;
+    private readonly (int Id, string Senha, string Hash)[] Senhas;
 
-    static void AssertEhIgual<K>(IEnumerable<K> A, IEnumerable<K> B)
+    private string gSenha(int id)
+    {
+        return Senhas.First((s) => s.Id == id).Senha;
+    }
+
+    private string gHash(int id)
+    {
+        return Senhas.First((s) => s.Id == id).Hash;
+    }
+
+    private static void AssertEhIgual<K>(IEnumerable<K> A, IEnumerable<K> B)
         where K : IComparable<K>
     {
         Assert.Equal(A.OrderBy(a => a), B.OrderBy(b => b));
@@ -24,8 +32,11 @@ public class TestesIdentidade : IDisposable
     public TestesIdentidade(ITestOutputHelper output)
     {
         BDU = new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output));
-        foreach (var perm in Permissoes.TodasPermissoes)
+        foreach (Permissao perm in Permissoes.TodasPermissoes)
+        {
             perm.Cargos = new List<Cargo>();
+        }
+
         Senhas = new[]{
             (1, "admin"         ,"e00cf25ad42683b3df678c61f42c6bda"),
             (2, "2@oCP06io1#q"  , "97a290347762986f757e7fe694b43e45")
@@ -39,8 +50,8 @@ public class TestesIdentidade : IDisposable
             new Usuario(IdAnonimo, gHash(IdAnonimo), "Atlas"  , "Atlas"   , BDU.gCargo(IdCargoAnonimo)),
         };
         BDU.SalvarDados();
-        var BD = BDU.CriarContexto();
-        var loggerFactory = LogUtils.CreateLoggerFactory(output);
+        PacaContext BD = BDU.CriarContexto();
+        ILoggerFactory loggerFactory = LogUtils.CreateLoggerFactory(output);
         var repUsuarios = new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
         Identidade = new IdentidadeService(
             repUsuarios,
@@ -66,7 +77,7 @@ public class TestesIdentidade : IDisposable
     [InlineData(-2)]
     public async Task DefinirUsuario_UsuarioInvalidoAsync(int idUsuario)
     {
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        _ = await Assert.ThrowsAsync<ArgumentException>(async () =>
         {
             await Identidade.DefinirUsuario(idUsuario);
         });
@@ -76,11 +87,11 @@ public class TestesIdentidade : IDisposable
     public async Task AutenticarUsuario_SenhaValidaAsync()
     {
         var idUsuario = IdAdmin;
-        var UsuarioExperado = BDU.gUsuario(idUsuario);
+        Usuario UsuarioExperado = BDU.gUsuario(idUsuario);
 
         await Identidade.DefinirUsuario(idUsuario);
         await Identidade.AutenticarUsuario(gSenha(idUsuario));
-        var Usuario = Identidade.Usuario!;
+        Usuario Usuario = Identidade.Usuario!;
 
         Assert.True(Identidade.EstaAutenticado);
         Assert.NotNull(Usuario);
@@ -111,7 +122,7 @@ public class TestesIdentidade : IDisposable
 
         await Identidade.DefinirUsuario(idUsuario);
 
-        await Assert.ThrowsAsync<ArgumentNullException>(async () =>
+        _ = await Assert.ThrowsAsync<ArgumentNullException>(async () =>
         {
             await Identidade.AutenticarUsuario(null!);
         });
@@ -122,7 +133,7 @@ public class TestesIdentidade : IDisposable
     [InlineData(IdAnonimo, false)]
     public async Task EhAutorizadoAsync(int idUsuario, bool ExpectativaAutorizado)
     {
-        var permissao = Permissoes.Cargo.Criar;
+        Permissao permissao = Permissoes.Cargo.Criar;
         await Identidade.DefinirUsuario(idUsuario);
         await Identidade.AutenticarUsuario(gSenha(idUsuario));
 
@@ -134,12 +145,12 @@ public class TestesIdentidade : IDisposable
     [Fact]
     public async Task EhAutorizado_NaoAutenticadoAsync()
     {
-        var permissao = Permissoes.Cargo.Criar;
+        Permissao permissao = Permissoes.Cargo.Criar;
         var idUsuario = IdAdmin;
 
         await Identidade.DefinirUsuario(idUsuario);
 
-        bool Autorizado = await Identidade.EhAutorizado(permissao);
+        var Autorizado = await Identidade.EhAutorizado(permissao);
 
         Assert.False(Autorizado);
     }

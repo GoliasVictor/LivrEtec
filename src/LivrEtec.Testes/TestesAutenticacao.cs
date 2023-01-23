@@ -5,15 +5,24 @@ namespace LivrEtec.Testes;
 [Trait("Category", "Local")]
 public class TestesAutenticacao : IDisposable
 {
-    readonly BDUtil BDU;
-    readonly PacaContext BD;
-    readonly IAutenticacaoService autenticacaoService;
-    (int Id, string Senha, string Hash)[] Senhas;
-    string gSenha(int id) => Senhas.First((s) => s.Id == id).Senha;
-    string gHash(int id) => Senhas.First((h) => h.Id == id).Hash;
+    private readonly BDUtil BDU;
+    private readonly PacaContext BD;
+    private readonly IAutenticacaoService autenticacaoService;
+    private readonly (int Id, string Senha, string Hash)[] Senhas;
+
+    private string gSenha(int id)
+    {
+        return Senhas.First((s) => s.Id == id).Senha;
+    }
+
+    private string gHash(int id)
+    {
+        return Senhas.First((h) => h.Id == id).Hash;
+    }
+
     public TestesAutenticacao(ITestOutputHelper output)
     {
-        var loggerFactory = LogUtils.CreateLoggerFactory(output);
+        Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = LogUtils.CreateLoggerFactory(output);
         BDU = new BDUtilSqlLite(loggerFactory);
         var Cargo = new Cargo(1, "cargo", new List<Permissao>());
         Senhas = new[]{
@@ -67,9 +76,9 @@ public class TestesAutenticacao : IDisposable
         var senha = "Qualquer senha aleatoria errada";
         var idUsuario = -10;
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        _ = await Assert.ThrowsAsync<ArgumentException>(async () =>
         {
-            await autenticacaoService.EhAutentico(idUsuario, senha);
+            _ = await autenticacaoService.EhAutentico(idUsuario, senha);
         });
     }
 
@@ -79,9 +88,9 @@ public class TestesAutenticacao : IDisposable
         string senha = null!;
         var idUsuario = 1;
 
-        await Assert.ThrowsAsync<ArgumentNullException>(async () =>
+        _ = await Assert.ThrowsAsync<ArgumentNullException>(async () =>
         {
-            await autenticacaoService.EhAutentico(idUsuario, senha);
+            _ = await autenticacaoService.EhAutentico(idUsuario, senha);
         });
     }
 

@@ -5,7 +5,7 @@ namespace LivrEtec.Testes.TestesFinais;
 [Trait("Category", "Local")]
 public sealed class TestesLivrosLocal : TestesLivrosService<LivrosService>, IDisposable
 {
-    readonly PacaContext BD;
+    private readonly PacaContext BD;
     protected override LivrosService livrosService { get; init; }
     public TestesLivrosLocal(ITestOutputHelper output)
     : base(

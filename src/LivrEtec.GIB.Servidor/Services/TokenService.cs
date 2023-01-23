@@ -1,6 +1,6 @@
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
 
 namespace LivrEtec.GIB.Servidor.Services;
 public static class TokenService
@@ -20,12 +20,12 @@ public static class TokenService
                 SecurityAlgorithms.HmacSha256Signature
             )
         };
-        var token = tokenHandler.CreateToken(tokenDescriptor);
+        SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }
 }
 
-class AuthKeyProvider
+internal class AuthKeyProvider
 {
     public byte[] authKey;
 

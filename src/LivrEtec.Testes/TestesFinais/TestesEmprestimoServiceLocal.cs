@@ -6,7 +6,7 @@ namespace LivrEtec.Testes.TestesFinais;
 [Trait("Category", "Local")]
 public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<EmprestimoService>, IDisposable
 {
-    readonly PacaContext BD;
+    private readonly PacaContext BD;
     protected override EmprestimoService emprestimoService { get; init; }
     public TestesEmprestimoServiceLocal(ITestOutputHelper output)
     : base(
@@ -15,7 +15,7 @@ public sealed class TestesEmprestimoServiceLocal : TestesEmprestimoService<Empre
         new BDUtilSqlLite(LogUtils.CreateLoggerFactory(output))
     )
     {
-        var loggerFactory = LogUtils.CreateLoggerFactory(output);
+        ILoggerFactory loggerFactory = LogUtils.CreateLoggerFactory(output);
         BD = BDU.CriarContexto();
         var identidadeService = new IdentidadePermitidaStub(usuarioTeste);
 

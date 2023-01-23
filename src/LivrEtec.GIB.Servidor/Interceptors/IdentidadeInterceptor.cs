@@ -1,10 +1,10 @@
-using System.Security.Claims;
 using Grpc.Core.Interceptors;
+using System.Security.Claims;
 
 namespace LivrEtec.GIB.Servidor.Interceptors;
 public class IdentidadeInterceptor : Interceptor
 {
-    IIdentidadeService IdentidadeService;
+    private readonly IIdentidadeService IdentidadeService;
 
     public IdentidadeInterceptor(IIdentidadeService identidadeService)
     {
@@ -17,7 +17,7 @@ public class IdentidadeInterceptor : Interceptor
         UnaryServerMethod<TRequest, TResponse> continuation)
     {
 
-        var user = context.GetHttpContext().User;
+        ClaimsPrincipal user = context.GetHttpContext().User;
         if (user.Identity?.IsAuthenticated == true)
         {
             var id = int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)!.Value);

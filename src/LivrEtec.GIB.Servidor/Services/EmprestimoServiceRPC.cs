@@ -1,12 +1,12 @@
-using static LivrEtec.GIB.RPC.Emprestimo.Types;
 using LivrEtec.GIB.RPC;
+using static LivrEtec.GIB.RPC.Emprestimo.Types;
 namespace LivrEtec.GIB.Servidor.Services;
 
 public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 {
-    readonly ILogger<EmprestimoServiceRPC> logger;
-    readonly IEmprestimoService emprestimoService;
-    readonly IIdentidadeService identidadeService;
+    private readonly ILogger<EmprestimoServiceRPC> logger;
+    private readonly IEmprestimoService emprestimoService;
+    private readonly IIdentidadeService identidadeService;
     public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
     {
         this.logger = logger;
