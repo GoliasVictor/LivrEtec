@@ -1,2 +1,13 @@
-- name: Introduction
+- name: Introdução
   href: intro.md
+- name: Arquitetura dos Projetos
+  href: arquitetura-dos-projetos.md
+- name: GIB
+  items:
+    - name: Funcionalidades
+      href: gib/funcionalidades.md
+    - name: Telas
+      href: gib/telas.md
+- name: Modelos de Dados
+  href: modelos-de-dados.md
+    
