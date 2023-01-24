@@ -26,22 +26,23 @@ public class RepEmprestimos : Repositorio, IRepEmprestimos
     {
         return await BD.Emprestimos.CountAsync((e) => e.Livro.Id == idLivro && !e.Fechado);
     }
-
     public async Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
     {
-        IQueryable<Emprestimo> emprestimos = from emprestimo in BD.Emprestimos
-                                             where parametros.Fechado != null || emprestimo.Fechado == parametros.Fechado
-                                             where parametros.IdPessoa != null || emprestimo.Pessoa.Id == parametros.IdPessoa
-                                             where parametros.IdLivro != null || emprestimo.Livro.Id == parametros.IdLivro
-                                             where parametros.Atrasado != null || (!emprestimo.Fechado && emprestimo.DataFechamento == null && emprestimo.FimDataEmprestimo > _relogio.Agora)
-                                             select emprestimo;
-        return await emprestimos.ToListAsync();
-    }
+		IQueryable<Emprestimo> emprestimos = from emprestimo in BD.Emprestimos
+											 where parametros.Fechado != null || emprestimo.Fechado == parametros.Fechado
+											 where parametros.IdPessoa != null || emprestimo.Pessoa.Id == parametros.IdPessoa
+											 where parametros.IdLivro != null || emprestimo.Livro.Id == parametros.IdLivro
+                                             let atrasado = emprestimo.Fechado ? emprestimo.FimDataEmprestimo > _relogio.Agora
+                                                                               : emprestimo.Devolvido == true && emprestimo.FimDataEmprestimo > emprestimo.DataFechamento
+											 where parametros.Atrasado != null || parametros.Atrasado == atrasado
+		select emprestimo;
+		return await emprestimos.ToListAsync();
+	}
 
-    public async Task<Emprestimo?> Obter(int id)
+	public async Task<Emprestimo?> Obter(int idEmprestimo)
     {
 
-        Emprestimo? emprestimo = await BD.Emprestimos.FindAsync(id);
+        Emprestimo? emprestimo = await BD.Emprestimos.FindAsync(idEmprestimo);
         if (emprestimo == null)
         {
             return emprestimo;
@@ -66,6 +67,7 @@ public class RepEmprestimos : Repositorio, IRepEmprestimos
         _ = BD.Remove(emprestimo);
         _ = await BD.SaveChangesAsync();
     }
+
     public async Task Fechar(ParamFecharEmprestimo parametros)
     {
         Emprestimo emprestimo = await Obter(parametros.IdEmprestimo)
@@ -85,5 +87,4 @@ public class RepEmprestimos : Repositorio, IRepEmprestimos
 
         _ = BD.SaveChanges();
     }
-
 }
