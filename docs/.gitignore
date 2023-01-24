@@ -6,4 +6,9 @@
 /**/packages/
 /**/bin/
 /**/obj/
+/api/LivrEtec/
+/api/LivrEtec.GIB/
+/api/LivrEtec.GIB.Servidor/
+/api/LivrEtec.Servidor/
+/api/LivrEtec.Testes/
 _site
