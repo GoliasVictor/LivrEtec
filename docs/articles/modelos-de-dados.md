@@ -1,3 +1,6 @@
+---
+uid: modelos-de-dados
+---
 # Modelos de Dados
 
 ## Livro  
@@ -8,7 +11,7 @@
 - Tags
 - Quantidade 
 
-[Veja a implementação em C# ](xref:LivrEtec.Models.)
+[Veja a implementação em C# ](xref:LivrEtec.Models.Livro)
 
 ## Tag
 - Nome

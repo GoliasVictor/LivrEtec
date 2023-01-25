@@ -1,3 +1,6 @@
+---
+uid: gib.funcionalidades
+---
 # Funcionalidades
 
 Todos os gerenciar, precisam ter as operações básicas de criação, visualização, edição e exclusão de que se referem. 
