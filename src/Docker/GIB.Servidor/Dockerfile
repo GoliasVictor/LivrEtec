@@ -8,12 +8,10 @@ COPY LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj LivrEtec.GIB.Servidor/
 COPY LivrEtec.GIB/LivrEtec.GIB.csproj LivrEtec.GIB/
 COPY LivrEtec/LivrEtec.csproj LivrEtec/
 COPY LivrEtec.Servidor/LivrEtec.Servidor.csproj LivrEtec.Servidor/
-RUN --mount=type=cache,target=/root/.nuget/packages \
-    dotnet restore "LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj"
+RUN dotnet restore "LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj"
 COPY . .
 WORKDIR "/src/LivrEtec.GIB.Servidor"
-
-RUN dotnet build "LivrEtec.GIB.Servidor.csproj" -c Release 
+RUN dotnet build "LivrEtec.GIB.Servidor.csproj" -c Release
 
 FROM build AS publish
 RUN	dotnet publish "LivrEtec.GIB.Servidor.csproj" -c Release -o /app/publish /p:UseAppHost=false --no-build

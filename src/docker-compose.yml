@@ -11,6 +11,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    ports:
+      - 5259:5259
   testes: 
     container_name: "livretec_testes"
     image: livretec_testes
