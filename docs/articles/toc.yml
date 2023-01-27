@@ -8,6 +8,8 @@
       href: gib/funcionalidades.md
     - name: Telas
       href: gib/telas.md
+    - name: Criação Banco de Dados
+      href: gib/criacao-banco-de-dados.md
 - name: Modelos de Dados
   href: modelos-de-dados.md
     

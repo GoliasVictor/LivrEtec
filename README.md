@@ -35,7 +35,7 @@ Após configurar o projeto, você pode tanto abrir o projeto no visual studio e 
 ```bash
 dotnet run
 ```
-Pode acontecer erro caso não tenha configurado o appsettings corretamente, como string de conexão invalida, ou escolher uma porta http invalida. E em caso de qualquer erro se sinta confortável para [postar um issue](https://github.com/GoliasVictor/LivrEtec/issues/new)  
+Pode acontecer erro caso não tenha configurado o appsettings corretamente, como string de conexão invalida, ou escolher uma porta invalida. E em caso de qualquer erro se sinta confortável para [postar um issue](https://github.com/GoliasVictor/LivrEtec/issues/new)  
 
 #### Levantando usando Docker
 
@@ -51,25 +51,40 @@ Após executar o projeto, ele informara as portas que ele esta ouvindo, é recom
 
 Para fazer as chamadas a api escolha o cliente gRPC a sua escolha, algumas alternativas são o [Insomnia](https://docs.insomnia.rest/insomnia/grpc) ou o [Postman](https://learning.postman.com/docs/sending-requests/grpc/grpc-request-interface/), o arquivo proto da api está em [./src/LivrEtec.GIB/Protos/acervo.proto](./src/LivrEtec.GIB/Protos/acervo.proto).
 
+Após isso é necessário fazer login na api fazendo um request para `login` em `GerenciamentoSessao`, para fazer login é necessário o nome de login e o hash da senha, porém na primeira vez iniciando o servidor, ele ira criar criar o banco de dados e criar um usuário `admin` com senha `senha` e `id` 1. E o hash da senha precisa ser gerado da seguinte maneira md5(senha + id). Então a mensagem deve ficar da seguinte maneira: 
+```json 
+{
+	"IdUsuario": 1,
+	"HashSenha": "92f20dafc5e5ac1c66820903c492cc04"
+}
+```
+ 
+E então ele retornara o token JWT, que deve ser adicionado a header da seguinte maneira:
+`Authorization: Bearer <JWT Token>` 
+
+Após isso você tera acesso ao resto da api como administrador.
 
 ### Executando os Testes
-Para executar os testes é preferível que tenha instalado o MySQL, porém, caso não esteja instalado, o aplicativo utilizará um banco de dados In-Memory. 
 
-Caso deseje testar com o MySQL, editar o arquivo `.src/LivrEtec.Testes/appsettings.json` ou configurar a variável de ambiente `APP_SETTINGS_JSON_PATH` para sua respectiva configuração.
+Igualmente a API do GIB é possível testar no ambiente local e no docker, porém diferente da API do GIB é possível fazer alguns testes sem um servidor MySQL instalado.
 
-#### CLI
-Primeiramente, verifique se está instalado o .NET 6.0.0
+#### Ambiente Local
+Os testes são divididos em dois, os testes locais que testam cada um dos serviços no próprio processo do teste usando um banco de dados SqlLite, e so remotos que são os testes de integração.
+
+Para executar apenas os testes locais, basta ter instalado o .NET 6  e na pasta `./src/` executar o seguinte comando:
 ```bash
-dotnet --list-sdks
+dotnet test LivrEtec.sln --filter Category=local
 ```
+Caso esteja usando Visual Studio abra o gerenciador de teste e execute a categoria de testes `local`
 
-E então execute na pasta `./src/` o seguinte comando:
+Para executar também testes de remotos é necessário primeiro [levantar o servidor do GIB](#executando-api-do-gib). Após ter levantado, é necessário que copie o arquivo [./src/LivrEtec.Testes/appsettings.modelo.json](./src/LivrEtec.Testes/appsettings.modelo.json) para a mesma pasta e renomeie a copia para `appsettings.json` e preencha com as mesma informações que preencheu o appsettings do servidor, além de adicionar o link(http) do servidor, que caso apareça neste formato: `http://[::]:21312` significa que o link é este `http://localhost:21312`
+
+E após ter configurado o servidor para executar o projeto basta executar o seguinte comando na pasta `./src/`
 ```bash
-dotnet test
+dotnet test LivrEtec.sln
 ```
+No visual studio basta abrir o Gerenciador de Testes e clique em executar.
 
-#### Visual Studio 
-Abra o `./src/LivrEtec.sln` no Visual Studio, e então no menu Exibir (View em Inglês) abra o Gerenciador de Testes e clique em Executar.
 
 #### Docker
 Caso deseje usar o docker, apenas vá até a pasta `./src/` e execute os containers com o docker compose com o seguinte comando:
@@ -84,7 +99,7 @@ docker compose up --build
 O design está disponível em https://figma.com/community/file/1176031299741420547
 
 ## Como colaborar 
-Toda ajuda é bem vinda, caso queira colaborar. Recomendamos que primeiro vá na (Wiki)[./wiki/Arquitetura-dos-Projetos] e leia um pouco para ter a visão geral do projeto, e então procure nas (Issues)[./issues] qualquer problema que lhe interesse consertar. Se encontrar algum crie um fork do projeto, faça suas modificações e então faça um pull request para o projeto.
+Toda ajuda é bem vinda, caso queira colaborar. Recomendamos que primeiro vá na (Wiki)[./wiki/Arquitetura-dos-Projetos] e leia um pouco para ter a visão geral do projeto, e então procure nas (Issues)[./issues] qualquer problema que lhe interesse resolver. Se encontrar algum crie um fork do projeto, faça suas modificações e então faça um pull request para o projeto.
 Garanta que antes de fazer o pull request, tenha criado os testes para suas novas implementações, e de que esteja passando em todos os testes.
 
 ## Documentação
