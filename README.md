@@ -89,7 +89,7 @@ No visual studio basta abrir o Gerenciador de Testes e clique em executar.
 #### Docker
 Caso deseje usar o docker, apenas vá até a pasta `./src/` e execute os containers com o docker compose com o seguinte comando:
 ```bash
-docker compose up --build
+docker compose --profile teste up --build
 ``` 
 > O `--build` é para garantir que o container seja executado com o código mais recente.
 
