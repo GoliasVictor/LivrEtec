@@ -1,7 +1,5 @@
 - name: Introdução
-  href: intro.md
-- name: Arquitetura dos Projetos
-  href: arquitetura-dos-projetos.md
+  href: intro.md 
 - name: GIB
   items:
     - name: Funcionalidades
@@ -12,4 +10,6 @@
       href: gib/criacao-banco-de-dados.md
 - name: Modelos de Dados
   href: modelos-de-dados.md
+- name: Testes
+  href: testes.md
     
