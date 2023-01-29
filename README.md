@@ -35,7 +35,7 @@ Para executar em ambiente local, há os seguintes requisitos:
 
 É necessário que antes da execução configurar o arquivo `./src/LivrEtec.GIB.Servidor/appsettings.json` 
 
-> Recomendo que copie o arquivo `[appsettings.modelo.json](./src/LivrEtec.GIB.Servidor/appsettings.modelo.json)`, preenchendo a propriedade _AuthKey_ com uma string qualquer que sirva como chave de autenticação e a string de conexão de acordo com seu servidor MySQL. Use como exemplo o arquivo `["appsettings usado no docker"](src/Docker/GIB.Servidor/appsettings.json)`.
+> Recomendo que copie o arquivo [appsettings.modelo.json](./src/LivrEtec.GIB.Servidor/appsettings.modelo.json), preenchendo a propriedade _AuthKey_ com uma string qualquer que sirva como chave de autenticação e a string de conexão de acordo com seu servidor MySQL. Use como exemplo o arquivo [appsettings usado no docker](src/Docker/GIB.Servidor/appsettings.json).
 
 Após configurar o projeto, você abrir o projeto no Visual Studio e escolher o **LivrEtec.GIB.Servidor** como projeto de iniciação, ou, executar num emulador de terminal no diretório `./src/LivrEtec.GIB.Servidor` com o seguinte comando:
 ```bash
@@ -59,11 +59,13 @@ Para fazer as chamadas à API, escolha o cliente gRPC a sua escolha.
 
 Algumas alternativas são o [Insomnia](https://docs.insomnia.rest/insomnia/grpc) ou o [Postman](https://learning.postman.com/docs/sending-requests/grpc/grpc-request-interface/).
 
-O arquivo proto da api está em `[./src/LivrEtec.GIB/Protos/acervo.proto](./src/LivrEtec.GIB/Protos/acervo.proto)`.
+O arquivo proto da api está em [./src/LivrEtec.GIB/Protos/acervo.proto](./src/LivrEtec.GIB/Protos/acervo.proto).
 
 Após isso, é necessário fazer login na API através de um request para `login` em `GerenciamentoSessao`. Para fazer o login são necessários o nome de login e o hash da senha, porém, na primeira vez iniciando o servidor, ele irá criar no banco de dados um usuário com login `admin:senha` e `id` 1.
 
-> O hash da senha precisa ser gerado da seguinte maneira: `md5(senha + id)`. Então o request deve ficar da seguinte maneira: 
+> O hash da senha precisa ser gerado da seguinte maneira: `md5(senha + id)`. 
+
+Então o request deve ficar da seguinte maneira: 
 ```json 
 {
 	"IdUsuario": 1,
@@ -92,9 +94,11 @@ dotnet test LivrEtec.sln --filter Category=local
 
 Caso esteja usando Visual Studio abra o gerenciador de teste e execute a categoria de testes `local`
 
-Para executar também testes remotos é necessário primeiro [executar o servidor do GIB](#executando-api-do-gib). Após ter executado, é necessário que copie o arquivo `[./src/LivrEtec.Testes/appsettings.modelo.json](./src/LivrEtec.Testes/appsettings.modelo.json)` para a mesma pasta e renomeie a cópia para `appsettings.json` e preencha com as mesma informações que preencheu o appsettings do servidor, além de adicionar o link do servidor, que caso apareça neste formato: `http://[::]:21312` significa o mesmo que `http://localhost:21312`
 
-E após ter configurado o servidor para executar o projeto basta executar o seguinte comando no diretório `./src/`
+Para executar também testes remotos é necessário primeiro [executar o servidor do GIB](#executando-api-do-gib). Após ter executado, é necessário que crie e configure o arquivo `./src/LivrEtec.Testes/appsettings.json`.
+> Copie o arquivo [appsettings.modelo.json](./src/LivrEtec.Testes/appsettings.modelo.json), e preencha com as mesma informações que preencheu o appsettings do servidor do GIB, além de adicionar o link do servidor, caso o link apareça neste formato: `http://[::]:21312` significa o mesmo que `http://localhost:21312` 
+
+E após ter configurado o servidor e os testes para executar o projeto basta executar o seguinte comando no diretório `./src/`
 ```bash
 dotnet test LivrEtec.sln
 ```
