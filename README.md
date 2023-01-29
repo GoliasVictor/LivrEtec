@@ -20,38 +20,49 @@ Neste repositório vai existir três projetos:
 - **Figma**: Para prototipar o design
 
 ## Como Executar
-Atualmente está completo em partes o API interna do GIB feita em gRPC, e também é possível executar o testes unitários do projeto.
+Atualmente está parcialmente completa a API interna do GIB feita em gRPC. É possível executar os testes unitários do projeto.
 ### Executando API do GIB
-É possível executar a API de duas formas, usando o ambiente da maquina, ou usando docker, caso tenha o docker instalado ou não consiga instalar os requisitos pra executar o projeto no ambiente da maquina, é recomendado a execução no docker, porém dependendo da internet pode demorar para instalação das imagens e dos pacotes.
-#### Levantando em Ambiente local
-Para executar no ambiente local há os seguintes requisitos 
+É possível executar a API de duas formas: usando o ambiente de máquina ou usando Docker. É preferível o uso do Docker caso já tenha instalado ou não consiga instalar os requisitos para a execução no ambiente de máquina.
 
-- .NET 6.0
-- MySql
+> Pode ser que, devido à velocidade de banda, demore para instalar as imagens e pacotes.
 
-Também é necessário antes da execução que você configure o arquivo `./src/LivrEtec.GIB.Servidor/appsettings.json`, recomendo que copie o arquivo [`appsettings.modelo.json`](./src/LivrEtec.GIB.Servidor/appsettings.modelo.json) e preencha a propriedade AuthKey primeiramente com uma string qualquer que servira como chave de autenticação, de preferencia que seja uma sequencia aleatória de caracteres, e também preencha a string de conexão com o seu servidor MySql. Caso não entenda como preencher use como exemplo o [appsettings usado no docker](src/Docker/GIB.Servidor/appsettings.json)
+#### Executando em ambiente local
+Para executar em ambiente local, há os seguintes requisitos:
 
-Após configurar o projeto, você pode tanto abrir o projeto no visual studio e selecionar o projeto de iniciação como LivrEtec.GIB.Servidor, como também executar no terminal, abrindo o terminal na pasta `./src/LivrEtec.GIB.Servidor` e executando o seguinte comando:
+- **.NET 6.0.0**
+- **MySQL**
+
+É necessário que antes da execução configurar o arquivo `./src/LivrEtec.GIB.Servidor/appsettings.json` 
+
+> Recomendo que copie o arquivo `[appsettings.modelo.json](./src/LivrEtec.GIB.Servidor/appsettings.modelo.json)`, preenchendo a propriedade _AuthKey_ com uma string qualquer que sirva como chave de autenticação e a string de conexão de acordo com seu servidor MySQL. Use como exemplo o arquivo `["appsettings usado no docker"](src/Docker/GIB.Servidor/appsettings.json)`.
+
+Após configurar o projeto, você abrir o projeto no Visual Studio e escolher o **LivrEtec.GIB.Servidor** como projeto de iniciação, ou, executar num emulador de terminal no diretório `./src/LivrEtec.GIB.Servidor` com o seguinte comando:
 ```bash
 dotnet run
 ```
-Pode acontecer erro caso não tenha configurado o appsettings corretamente, como string de conexão invalida, ou escolher uma porta invalida. E em caso de qualquer erro se sinta confortável para [postar um issue](https://github.com/GoliasVictor/LivrEtec/issues/new)  
+Pode ocorrer algum erro caso não tenha configurado o appsettings corretamente, como string de conexão ou porta inválida. Em caso de qualquer erro, sinta-se confortável para [postar uma issue](https://github.com/GoliasVictor/LivrEtec/issues/new)  
 
-#### Levantando usando Docker
+#### Executando usando Docker
 
-Para levantar o servidor usando docker é simples, basta ter instalado e rodando o docker em sua maquina e executar o seguinte comando  na pasta `./src`
+Para executar o servidor usando Docker é simples, basta executar o seguinte comando na pasta `./src`
 ```bash
 docker compose --profile backend up --build
 ```
-> Como dito anteriormente,como é necessário baixar as imagens e pacotes NuGet pode demorar minutos para baixar dependendo da sua internet. 
+> Como dito anteriormente,como é necessário baixar as imagens e pacotes NuGet pode demorar minutos para baixar dependendo da sua banda de internet. 
 
 #### Chamando 
 
-Após executar o projeto, ele informara as portas que ele esta ouvindo, é recomendado que use a porta http, por causa que não está configurado certificados https ainda
+Após executar o projeto, ele informará nas portas que está ouvindo. Como ainda não estão configurados certificados SSL, é recomendado usar padrões HTTP.
 
-Para fazer as chamadas a api escolha o cliente gRPC a sua escolha, algumas alternativas são o [Insomnia](https://docs.insomnia.rest/insomnia/grpc) ou o [Postman](https://learning.postman.com/docs/sending-requests/grpc/grpc-request-interface/), o arquivo proto da api está em [./src/LivrEtec.GIB/Protos/acervo.proto](./src/LivrEtec.GIB/Protos/acervo.proto).
+Para fazer as chamadas à API, escolha o cliente gRPC a sua escolha.
 
-Após isso é necessário fazer login na api fazendo um request para `login` em `GerenciamentoSessao`, para fazer login é necessário o nome de login e o hash da senha, porém na primeira vez iniciando o servidor, ele ira criar criar o banco de dados e criar um usuário `admin` com senha `senha` e `id` 1. E o hash da senha precisa ser gerado da seguinte maneira md5(senha + id). Então a mensagem deve ficar da seguinte maneira: 
+Algumas alternativas são o [Insomnia](https://docs.insomnia.rest/insomnia/grpc) ou o [Postman](https://learning.postman.com/docs/sending-requests/grpc/grpc-request-interface/).
+
+O arquivo proto da api está em `[./src/LivrEtec.GIB/Protos/acervo.proto](./src/LivrEtec.GIB/Protos/acervo.proto)`.
+
+Após isso, é necessário fazer login na API através de um request para `login` em `GerenciamentoSessao`. Para fazer o login são necessários o nome de login e o hash da senha, porém, na primeira vez iniciando o servidor, ele irá criar no banco de dados um usuário com login `admin:senha` e `id` 1.
+
+> O hash da senha precisa ser gerado da seguinte maneira: `md5(senha + id)`. Então o request deve ficar da seguinte maneira: 
 ```json 
 {
 	"IdUsuario": 1,
@@ -59,41 +70,44 @@ Após isso é necessário fazer login na api fazendo um request para `login` em 
 }
 ```
  
-E então ele retornara o token JWT, que deve ser adicionado a header da seguinte maneira:
+E então ele retornará o token JWT, que deve ser adicionado a header da seguinte maneira:
 `Authorization: Bearer <JWT Token>` 
 
-Após isso você tera acesso ao resto da api como administrador.
+Pronto, agora você terá acesso ao resto da API como administrador.
 
 ### Executando os Testes
 
-Igualmente a API do GIB é possível testar no ambiente local e no docker, porém diferente da API do GIB é possível fazer alguns testes sem um servidor MySQL instalado.
+Assim como a API do GIB é possível testar no ambiente local e no Docker, porém, é possível fazer alguns testes sem um servidor MySQL instalado.
 
 #### Ambiente Local
-Os testes são divididos em dois, os testes locais que testam cada um dos serviços no próprio processo do teste usando um banco de dados SqlLite, e so remotos que são os testes de integração.
+Os testes são divididos em dois:
+* Os testes locais que testam cada um dos serviços no próprio processo do teste usando SqlLite
+* Testes remotos que são os testes de integração.
 
-Para executar apenas os testes locais, basta ter instalado o .NET 6  e na pasta `./src/` executar o seguinte comando:
+Para executar apenas os testes locais, basta ter instalado o .NET 6.0.0 e na pasta `./src/` executar o seguinte comando:
 ```bash
 dotnet test LivrEtec.sln --filter Category=local
 ```
+
 Caso esteja usando Visual Studio abra o gerenciador de teste e execute a categoria de testes `local`
 
-Para executar também testes de remotos é necessário primeiro [levantar o servidor do GIB](#executando-api-do-gib). Após ter levantado, é necessário que copie o arquivo [./src/LivrEtec.Testes/appsettings.modelo.json](./src/LivrEtec.Testes/appsettings.modelo.json) para a mesma pasta e renomeie a copia para `appsettings.json` e preencha com as mesma informações que preencheu o appsettings do servidor, além de adicionar o link(http) do servidor, que caso apareça neste formato: `http://[::]:21312` significa que o link é este `http://localhost:21312`
+Para executar também testes remotos é necessário primeiro [executar o servidor do GIB](#executando-api-do-gib). Após ter executado, é necessário que copie o arquivo `[./src/LivrEtec.Testes/appsettings.modelo.json](./src/LivrEtec.Testes/appsettings.modelo.json)` para a mesma pasta e renomeie a cópia para `appsettings.json` e preencha com as mesma informações que preencheu o appsettings do servidor, além de adicionar o link do servidor, que caso apareça neste formato: `http://[::]:21312` significa o mesmo que `http://localhost:21312`
 
-E após ter configurado o servidor para executar o projeto basta executar o seguinte comando na pasta `./src/`
+E após ter configurado o servidor para executar o projeto basta executar o seguinte comando no diretório `./src/`
 ```bash
 dotnet test LivrEtec.sln
 ```
-No visual studio basta abrir o Gerenciador de Testes e clique em executar.
+No Visual Studio basta abrir o Gerenciador de Testes e clicar em executar.
 
 
 #### Docker
-Caso deseje usar o docker, apenas vá até a pasta `./src/` e execute os containers com o docker compose com o seguinte comando:
+Caso deseje usar o docker, apenas vá até a pasta `./src/` e execute os containers com o seguinte comando:
 ```bash
 docker compose --profile teste up --build
 ``` 
 > O `--build` é para garantir que o container seja executado com o código mais recente.
 
-> Depois de executar os testes, o container do banco de dados irá continuar executando. Caso queria que saia automaticamente após os testes adicione `--exit-code-from app` ao comando.
+> Depois de executar os testes, o container do banco de dados irá continuar executando. Caso queira que saia automaticamente após os testes, adicione `--exit-code-from app` como flag no comando.
 
 ## Design 
 O design está disponível em https://figma.com/community/file/1176031299741420547
