@@ -1,0 +1,970 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BDUtil
+ </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BDUtil
+ ">
+  
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+  
+  
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LivrEtec.Testes.Utilitarios.BDUtil">
+
+
+  <h1 id="LivrEtec_Testes_Utilitarios_BDUtil" data-uid="LivrEtec.Testes.Utilitarios.BDUtil" class="text-break">Class BDUtil
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BDUtil</span></div>
+      <div class="level2"><a class="xref" href="LivrEtec.Testes.Utilitarios.BDUtilMySQl.html">BDUtilMySQl</a></div>
+      <div class="level2"><a class="xref" href="LivrEtec.Testes.Utilitarios.BDUtilSqlLite.html">BDUtilSqlLite</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.Testes.Utilitarios.html">LivrEtec.Testes.Utilitarios</a></h6>
+  <h6><strong>Assembly</strong>: LivrEtec.Testes.dll</h6>
+  <h5 id="LivrEtec_Testes_Utilitarios_BDUtil_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BDUtil : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil__ctor_DbContextOptions_LivrEtec_Servidor_BD_PacaContext__.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.%23ctor(DbContextOptions%7BLivrEtec.Servidor.BD.PacaContext%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L35">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil__ctor_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.#ctor*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil__ctor_DbContextOptions_LivrEtec_Servidor_BD_PacaContext__" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.#ctor(DbContextOptions{LivrEtec.Servidor.BD.PacaContext})">BDUtil(DbContextOptions&lt;PacaContext&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BDUtil(DbContextOptions&lt;PacaContext&gt; contextOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DbContextOptions</span>&lt;<a class="xref" href="../LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContext.html">PacaContext</a>&gt;</td>
+        <td><span class="parametername">contextOptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Autores.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Autores%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L42">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Autores_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Autores*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Autores" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Autores">Autores</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Autor[] Autores { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Autor</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_BDPermissoes.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.BDPermissoes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L48">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_BDPermissoes_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.BDPermissoes*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_BDPermissoes" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.BDPermissoes">BDPermissoes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Permissao[] BDPermissoes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Permissao</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Cargos.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Cargos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L47">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Cargos_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Cargos*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Cargos" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Cargos">Cargos</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cargo[] Cargos { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Cargo</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Emprestimos.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Emprestimos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L45">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Emprestimos_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Emprestimos*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Emprestimos" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Emprestimos">Emprestimos</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Emprestimo[] Emprestimos { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Emprestimo</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Livros.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Livros%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L41">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Livros_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Livros*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Livros" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Livros">Livros</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Livro[] Livros { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Livro</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_PacaContextFactory.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.PacaContextFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L12">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_PacaContextFactory_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.PacaContextFactory*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_PacaContextFactory" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.PacaContextFactory">PacaContextFactory</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PacaContextFactory PacaContextFactory { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContextFactory.html">PacaContextFactory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Pessoas.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Pessoas%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L44">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Pessoas_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Pessoas*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Pessoas" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Pessoas">Pessoas</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pessoa[] Pessoas { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pessoa</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Tags.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Tags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L43">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Tags_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Tags*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Tags" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Tags">Tags</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tag[] Tags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Tag</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Usuarios.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Usuarios%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L46">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Usuarios_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Usuarios*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Usuarios" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Usuarios">Usuarios</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Usuario[] Usuarios { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Usuario</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_CriarContexto.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.CriarContexto%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L8">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_CriarContexto_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.CriarContexto*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_CriarContexto" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.CriarContexto">CriarContexto()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PacaContext CriarContexto()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContext.html">PacaContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_Dispose.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L120">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_Dispose_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Dispose*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_Dispose" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gAutor_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gAutor(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L50">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gAutor_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gAutor*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gAutor_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gAutor(System.Int32)">gAutor(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Autor gAutor(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Autor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gCargo_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gCargo(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L70">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gCargo_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gCargo*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gCargo_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gCargo(System.Int32)">gCargo(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cargo gCargo(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Cargo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimo_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimo(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L80">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimo_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimo*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimo_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimo(System.Int32)">gEmprestimo(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Emprestimo gEmprestimo(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Emprestimo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimoBanco_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimoBanco(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L85">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimoBanco_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimoBanco*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gEmprestimoBanco_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gEmprestimoBanco(System.Int32)">gEmprestimoBanco(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;Emprestimo?&gt; gEmprestimoBanco(int idEmprestimo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">idEmprestimo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Emprestimo</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gLivro_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gLivro(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L60">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gLivro_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gLivro*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gLivro_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gLivro(System.Int32)">gLivro(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Livro gLivro(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Livro</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gPessoa_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gPessoa(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L75">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gPessoa_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gPessoa*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gPessoa_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gPessoa(System.Int32)">gPessoa(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pessoa gPessoa(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pessoa</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gTag_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gTag(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L55">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gTag_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gTag*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gTag_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gTag(System.Int32)">gTag(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tag gTag(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Tag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gTagBanco_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gTagBanco(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L99">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gTagBanco_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gTagBanco*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gTagBanco_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gTagBanco(System.Int32)">gTagBanco(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;Tag?&gt; gTagBanco(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Tag</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_gUsuario_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.gUsuario(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L65">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_gUsuario_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gUsuario*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_gUsuario_System_Int32_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.gUsuario(System.Int32)">gUsuario(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Usuario gUsuario(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Usuario</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_ResetarBanco.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.ResetarBanco%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L104">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_ResetarBanco_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.ResetarBanco*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_ResetarBanco" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.ResetarBanco">ResetarBanco()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetarBanco()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil_SalvarDados.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil.SalvarDados%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L14">View Source</a>
+  </span>
+  <a id="LivrEtec_Testes_Utilitarios_BDUtil_SalvarDados_" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.SalvarDados*"></a>
+  <h4 id="LivrEtec_Testes_Utilitarios_BDUtil_SalvarDados" data-uid="LivrEtec.Testes.Utilitarios.BDUtil.SalvarDados">SalvarDados()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SalvarDados()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Testes_Utilitarios_BDUtil.md&amp;value=---%0Auid%3A%20LivrEtec.Testes.Utilitarios.BDUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.Testes/Utilitarios/BDUtils.cs/#L5" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

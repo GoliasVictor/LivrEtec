@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Telas </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Telas ">
+  
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+  
+  
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="telas">Telas</h1>
+
+<p>As telas estão disponíveis em <a href="https://www.figma.com/community/file/1176031299741420547">https://www.figma.com/community/file/1176031299741420547</a>
+Este artigo se dedica a explicar o que deve haver em cada uma das tela, a descrição de cada uma delas está organizada em organizadas em,</p>
+<ul>
+<li>Funcionalidade da tela</li>
+<li>Ações possíveis</li>
+<li>Estados possíveis.</li>
+</ul>
+<h2 id="tela-navegação">Tela Navegação</h2>
+<p>A navegação</p>
+<h2 id="tela-entrar">Tela Entrar</h2>
+<p>Nesta tela o usuário ira inserir seu login e senha, e caso ambos estejam certos ele terá acesso as outras telas.</p>
+<p>E os estados da tela possíveis são:</p>
+<h2 id="tela-novo-livro">Tela Novo Livro</h2>
+<p>Nesta telo o usuário poderá <a class="xref" href="funcionalidades.html#gerenciar-livros">registrar</a> os dados do livro (disponível em <a class="xref" href="../modelos-de-dados.html#livro">Modelos de Dados</a>).</p>
+<p>E os estados da tela possíveis são:</p>
+<ul>
+<li>Erro nome duplicado</li>
+<li>Erro valor obrigatório nulo</li>
+<li>Valor invalido de ISBN</li>
+</ul>
+<h2 id="tela-buscar-livros">Tela Buscar Livros</h2>
+<p>Nesta tela o usuário poderá <a class="xref" href="funcionalidades.html#gerenciar-livros">buscar livros</a>, com base no <strong>nome do autor</strong>, <strong>nome do livro</strong> e as <strong>tags</strong> que do livro, sendo o filtro por tag exclusivo.</p>
+<ul>
+<li>Nenhuma tag definida</li>
+</ul>
+<h2 id="tela-gerenciar-livro">Tela Gerenciar Livro</h2>
+<p>Nesta tela o usuário visualizara as informações do livro e de quantos foram emprestado, e poderá:</p>
+<ul>
+<li><a class="xref" href="funcionalidades.html#gerenciar-livros">Excluir o Livro</a></li>
+<li><a class="xref" href="funcionalidades.html#Fazer-Empr%C3%A9stimo">Redireccionar para Empréstimo do livro</a></li>
+<li><a class="xref" href="funcionalidades.html#gerenciar-livros">Redireccionar para Editar Livro</a></li>
+</ul>
+<p>Estados possíveis:</p>
+<ul>
+<li>Nenhum Exemplar Disponível</li>
+<li>Nenhum Livro no acervo</li>
+<li>Indisponível para fazer emprestimo</li>
+</ul>
+<h2 id="tela-editar-livro">Tela Editar Livro</h2>
+<p>Nesta tela o usuário poderá <a class="xref" href="funcionalidades.html#gerenciar-livros">editar</a>  os dados do livro (disponível em <a class="xref" href="../modelos-de-dados.html#livro">Modelos de Dados</a>)
+Estados possíveis:</p>
+<ul>
+<li>Erro nome já usado</li>
+<li>Erro nome vazio</li>
+<li>Modificando capa</li>
+<li>Adicionando tag</li>
+<li>Removendo tag</li>
+</ul>
+<h2 id="tela-fazer-empréstimo">Tela Fazer Empréstimo</h2>
+<p>Nesta tela é onde o <a class="xref" href="funcionalidades.html#fazer-empr%C3%A9stimo">empréstimo é feito</a>, será possível adicionar uma pessoa ao empréstimo, definir o livro que será emprestado e sua data de devolução vem uma data calculada por padrão. E nesta tela devera ser mostrado um histórico resumido de todos, destacando pessoas que não devolveram sem justificativa .</p>
+<p>Estados possíveis:</p>
+<ul>
+<li>Buscando livro</li>
+<li>Buscando usuario</li>
+<li>Erro Livro indisponível</li>
+<li>Aviso Histórico pessoa com empréstimo não devolvido</li>
+<li>Pessoa já com empréstimo</li>
+</ul>
+<h2 id="tela-visualizar-todos-empréstimos">Tela Visualizar Todos Empréstimos</h2>
+<p>Nesta tela o usuário o usuário poderá <a class="xref" href="funcionalidades.html#visualizar-empr%C3%A9stimos">ver informações básicas dos empréstimos</a> dos empréstimos, e podendo filtrá-los por</p>
+<ul>
+<li>Data empréstimo</li>
+<li>Data fechamento</li>
+<li>Livro</li>
+<li>Pessoa</li>
+<li>Estado(Aberto/Fechado)</li>
+</ul>
+<p>Os estados possíveis de cada um dos empréstimos são</p>
+<dl>
+  <dt>Em aguardo</dt>
+  <dd><li>Fim do prazo</li></dd>
+  <dt>Atrasado</dt> 
+  <dd><li>Quanto tempo atrasado</li></dd>
+  <dt>Fechado</dt>
+  <dd>
+    <li>data fechamento</li>
+    <li>Houve Perda e se foi perdoada</li>   
+  </dd>
+</dl>
+<h2 id="tela-gerenciar-empréstimo">Tela Gerenciar Empréstimo</h2>
+<p>Nesta tela mostrará todos os dados do empréstimo (disponíveis em <a class="xref" href="../modelos-de-dados.html#empr%C3%A9stimo">Modelos de Dados</a>
+Ele poderá editar</p>
+<ul>
+<li>Data de devolução esperada</li>
+<li>Comentário</li>
+</ul>
+<p>Nesta tela o usuário também poderá <a class="xref" href="funcionalidades.html#fechar-empr%C3%A9stimo">fechar o empréstimo</a> de duas formas</p>
+<dl>
+  <dt>Livro devolvido</dt>
+  <dd>O funcionário apenas confirma a devolução do livro e o sistema registra</dd>
+  <dt>livro perdido </dt>
+  <dd>Neste caso a pessoa afirma que não pode ter perdido o livro, porem informa uma justificativa valida, como ter sido roubada, então é registrado junto a justificativa que o livro foi perdido, ou não caso não haja justificativa ou simplismente a pessoa nunca mais apareça, é apenas registrado o fechamento sem devolução</dd>
+</dl>
+em todos os casos o funcionário pode adicionar um comentário sobre o fechamento do empréstimo.
+<p>Estados possíveis:</p>
+<ul>
+<li>Livro perdido
+<ul>
+<li>Justificado / Não Justificado</li>
+<li>Justificativa perdoada</li>
+</ul>
+</li>
+</ul>
+<h2 id="tela-configurações">Tela Configurações</h2>
+<p>Nas configurações sera onde o usuario ira gerenciar detalhes não muitos usuais mas que precisam ser acessados, sendo dividido em sub telas sendo elas</p>
+<h3 id="tela-gerenciar-tags">Tela Gerenciar Tags</h3>
+<p>É onde o usuario ira fazer o <a class="xref" href="funcionalidades.html#gerenciar-tags-livros">CRUD das tags</a>.</p>
+<h3 id="tela-gerenciar-autores">Tela Gerenciar Autores</h3>
+<p>É onde o usuario ira fazer o <a class="xref" href="funcionalidades.html#gerenciar-autores-livros">CRUD dos autores</a>.</p>
+<h3 id="tela-gerenciar-usuarios">Tela Gerenciar Usuarios</h3>
+<p>Nesta tela o usuario poderar fazer o <a class="xref" href="funcionalidades.html#gerenciar-usu%C3%A1rios">CRUD dos usuarios</a>.</p>
+<h3 id="tela-gerenciar-cargos">Tela Gerenciar Cargos</h3>
+<p>É onde o usuário ira poder fazer os <a class="xref" href="funcionalidades.html#gerenciar-cargos">CRUD dos cargos</a>, alem de definir quais permissões cada cargo possui. E o sistema deverá deixar marcado que para um cargo possuir certa permissão, ele deve possuir também outras permissões, por exemplo, para ter permissão de fechar um empréstimo é necessário a opção de visualiza-lo e edita-lo.</p>
+<h3 id="tela-exportação-e-importação-livro">Tela Exportação e Importação Livro</h3>
+<p>A ser documentada nesta tela, o usuário poderá fazer duas ações, ou importar livros, onde o usuário insere o arquivo no sistema, o sistema o avalia as informações dos livros e mostra quais livros serão importados, e então o usuário confirma ou cancela a importação. Ou pode também exportar os dados, escolhendo o tipo de arquivo deseja exportar, e então escolhendo o local onda deverá ser salvo e então salvo.</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/docs/articles/gib/telas.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

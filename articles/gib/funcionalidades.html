@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Funcionalidades </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Funcionalidades ">
+  
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+  
+  
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="gib.funcionalidades">
+<h1 id="funcionalidades">Funcionalidades</h1>
+
+<p>Todos os gerenciar, precisam ter as operações básicas de criação, visualização, edição e exclusão de que se referem.</p>
+<h2 id="gerenciar-livros">Gerenciar livros</h2>
+<p>Uma das principais funções do aplicativo é o gerenciamento de quais livros estão na biblioteca.</p>
+<h3 id="importar-e-exportar-dados-livros">Importar e Exportar Dados Livros</h3>
+<p>Sera necessário haver a possibilidade de importar dados vindos de uma planilha Excel. E tambem Devera ser possível que seja exportado dados de todos os livros para algum tipo de arquivo excel, json ou csv.</p>
+<h3 id="gerenciar-autores-livros">Gerenciar Autores Livros</h3>
+<p>Necessário apenas funcionalidades básicas de criação, visualização, edição e exclusão.</p>
+<h3 id="gerenciar-tags-livros">Gerenciar Tags Livros</h3>
+<p>Necessário apenas funcionalidades básicas de criação, visualização, edição e exclusão.</p>
+<h2 id="gerenciar-estante">Gerenciar Estante</h2>
+<h2 id="gerenciar-emprestimos">Gerenciar Emprestimos</h2>
+<p>Outra funcionalidade principal sera o gerenciamento dos empréstimo,</p>
+<h3 id="fazer-empréstimo">Fazer Empréstimo</h3>
+<p>O aluno ou professor vai até a biblioteca, escolhe o livro que deseja, solicita para o funcionário da biblioteca e ele então registra o livro, a pessoa e quando deve ser devolvido, que por padrão será alguns dias apos a data de registro, e esse tempo está definido nas configurações. E o sistema registra isto.
+No momento do registro deve ser possível ver o histórico de empréstimo daquela pessoa que está pegando emprestado o livro.</p>
+<h3 id="prorrogar-empréstimo">Prorrogar empréstimo</h3>
+<p>Deverá ser possível o usuário poderá prorrogar a entrega de um ou vários livros de algum dia em especifico.</p>
+<h3 id="fechar-empréstimo">Fechar empréstimo</h3>
+<p>Há dois casos de fechamento de empréstimo</p>
+<ul>
+<li><strong>Livro Devolvido:</strong>
+Onde o aluno vai até a biblioteca e devolve o livro que tinha pego, estando atrasado ou não, então o funcionário registra a devolução no sistema.</li>
+<li><strong>Livro Perdido:</strong>
+Onde é concluído que por algum motivo ouve uma perda do livro por exemplo a pessoa não devolver depois de meses, então o funcionário registra que se perdeu o livro, junto da justificativa desta perda.</li>
+</ul>
+<h3 id="visualizar-empréstimos">Visualizar Empréstimos</h3>
+<p>Devera ser possível visualizar os empréstimos, tendo alguns filtros sendo eles:</p>
+<ul>
+<li>Por pessoa</li>
+<li>Por Fechado/Abertos/Todos</li>
+<li>Em atraso</li>
+</ul>
+<h2 id="gerenciar-pessoas">Gerenciar Pessoas</h2>
+<p>Ainda precisa ser melhor analisado</p>
+<h2 id="gerenciar-usuários">Gerenciar Usuários</h2>
+<p>Os usuários são as pessoas que interagem com o sistema.</p>
+<h3 id="entrar-no-sistema">Entrar no sistema</h3>
+<p>Cada usuário possui um login e senha para entrar no sistema, para então poder ter outras interações.</p>
+<h2 id="gerenciar-cargos">Gerenciar cargos</h2>
+<p>Cada usuário possui um cargo, que define quais são as ações que ele pode fazer dentro do sistema, e cada cargo é basicamente a lista de permissões, e no sistema deverá ser possível o usuário criar, editar as permissões do cargo e excluir cargos (menos o cargo de administrador). E as permissões podem ser interdependentes por exemplo, para um usuário poder excluir um livro ele deve poder</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/docs/articles/gib/funcionalidades.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

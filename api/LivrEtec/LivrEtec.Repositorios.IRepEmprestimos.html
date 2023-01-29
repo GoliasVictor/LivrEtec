@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IRepEmprestimos
+ </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IRepEmprestimos
+ ">
+  
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+  
+  
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LivrEtec.Repositorios.IRepEmprestimos">
+
+
+  <h1 id="LivrEtec_Repositorios_IRepEmprestimos" data-uid="LivrEtec.Repositorios.IRepEmprestimos" class="text-break">Interface IRepEmprestimos
+</h1>
+  <div class="markdown level0 summary"><p>Repositorio que define métodos para persistência de dados de emprestimos</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.Repositorios.html">LivrEtec.Repositorios</a></h6>
+  <h6><strong>Assembly</strong>: LivrEtec.dll</h6>
+  <h5 id="LivrEtec_Repositorios_IRepEmprestimos_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IRepEmprestimos</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_Buscar_LivrEtec_Models_ParamBuscaEmprestimo_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.Buscar(LivrEtec.Models.ParamBuscaEmprestimo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L63">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_Buscar_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Buscar*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_Buscar_LivrEtec_Models_ParamBuscaEmprestimo_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Buscar(LivrEtec.Models.ParamBuscaEmprestimo)">Buscar(ParamBuscaEmprestimo)</h4>
+  <div class="markdown level1 summary"><p>Busca todos os usuarios que satifazem a seguintes condições todas as seguintes condições</p>
+<ul><li> Caso <code>parametros.IdLivro</code> não seja <span class="xref">null</span> apenas os emprestimos do livro indicado por <code>parametros.IdLivro</code></li><li> Caso <code>parametros.IdPessoa</code> não seja <span class="xref">null</span> retornara emprestimos que foram emprestados pela pessoa indicada por <code>parametros.IdPessoa</code> </li><li> Caso <code>parametros.Fechado</code> seja <span class="xref">true</span> retornara apenas os emprestimos fechados  </li><li> Caso <code>parametros.Fechado</code> seja <span class="xref">false</span> retornara apenas os emprestimos abertos  </li><li> Caso <code>parametros.Atrasado</code> seja <span class="xref">true</span>  retornara apenas os emprestimos atrasados  </li><li> Caso <code>parametros.Atrasado</code> seja <span class="xref">false</span> retornara apenas os emprestimos que não estão estão atrasados</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Emprestimo&gt;&gt; Buscar(ParamBuscaEmprestimo parametros)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.Models.ParamBuscaEmprestimo.html">ParamBuscaEmprestimo</a></td>
+        <td><span class="parametername">parametros</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="LivrEtec.Models.Emprestimo.html">Emprestimo</a>&gt;&gt;</td>
+        <td><p>Emprestimos apos todos</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LivrEtec_Repositorios_IRepEmprestimos_Buscar_LivrEtec_Models_ParamBuscaEmprestimo__examples">Examples</h5>
+  <p>Esse codigo busca todos os emprestimos abertos que estão atrasados</p>
+<pre><code>await emprestimoService.Buscar(new ParamBuscaEmprestimo(
+    IdLivro: null,
+    IdPessoa: null,
+    Fechado: false,
+    Atrasado: true
+))</code></pre>
+<p>Já este busca todos os emprestimos já fechados do livro de id 5</p>
+<pre><code>await emprestimoService.Buscar(new ParamBuscaEmprestimo(
+    IdLivro: 5,
+    IdPessoa: null,
+    Fechado: true,
+    Atrasado: null
+))</code></pre>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_EditarFimData_System_Int32_System_DateTime_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.EditarFimData(System.Int32%2CSystem.DateTime)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L71">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_EditarFimData_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.EditarFimData*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_EditarFimData_System_Int32_System_DateTime_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.EditarFimData(System.Int32,System.DateTime)">EditarFimData(Int32, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Repositorio que define métodos para persistência de dados de emprestimos</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task EditarFimData(int idLivro, DateTime NovaData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">idLivro</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">NovaData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_Excluir_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.Excluir(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L72">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_Excluir_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Excluir*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_Excluir_System_Int32_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Excluir(System.Int32)">Excluir(Int32)</h4>
+  <div class="markdown level1 summary"><p>Repositorio que define métodos para persistência de dados de emprestimos</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task Excluir(int idEmprestimo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">idEmprestimo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_Fechar_LivrEtec_Models_ParamFecharEmprestimo_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.Fechar(LivrEtec.Models.ParamFecharEmprestimo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L69">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_Fechar_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Fechar*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_Fechar_LivrEtec_Models_ParamFecharEmprestimo_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Fechar(LivrEtec.Models.ParamFecharEmprestimo)">Fechar(ParamFecharEmprestimo)</h4>
+  <div class="markdown level1 summary"><p>Define o emprestimo como fechado</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task Fechar(ParamFecharEmprestimo parametros)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.Models.ParamFecharEmprestimo.html">ParamFecharEmprestimo</a></td>
+        <td><span class="parametername">parametros</span></td>
+        <td><p><a class="xref" href="LivrEtec.Models.ParamFecharEmprestimo.html">ParamFecharEmprestimo</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>O id do usuário ou o emprestimo não estão registrados</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_Obter_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.Obter(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L28">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_Obter_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Obter*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_Obter_System_Int32_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Obter(System.Int32)">Obter(Int32)</h4>
+  <div class="markdown level1 summary"><p>Busca um emprestimo</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Emprestimo&gt; Obter(int idEmprestimo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">idEmprestimo</span></td>
+        <td><p>O id do emprestimo a ser buscado</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="LivrEtec.Models.Emprestimo.html">Emprestimo</a>&gt;</td>
+        <td><p>O  emprestimo caso o encontre, caso contrário retorna <span class="xref">null</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_ObterQuantidadeLivrosEmprestado_System_Int32_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.ObterQuantidadeLivrosEmprestado(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L15">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_ObterQuantidadeLivrosEmprestado_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.ObterQuantidadeLivrosEmprestado*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_ObterQuantidadeLivrosEmprestado_System_Int32_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.ObterQuantidadeLivrosEmprestado(System.Int32)">ObterQuantidadeLivrosEmprestado(Int32)</h4>
+  <div class="markdown level1 summary"><p>Calcula a quantidade de exemplares do livro estão sendo emprestados atualmente</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ObterQuantidadeLivrosEmprestado(int idLivro)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">idLivro</span></td>
+        <td><p>O id dos livro</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>A quantidade de exemplares empretados</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos_Registrar_LivrEtec_Models_Emprestimo_.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos.Registrar(LivrEtec.Models.Emprestimo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L22">View Source</a>
+  </span>
+  <a id="LivrEtec_Repositorios_IRepEmprestimos_Registrar_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Registrar*"></a>
+  <h4 id="LivrEtec_Repositorios_IRepEmprestimos_Registrar_LivrEtec_Models_Emprestimo_" data-uid="LivrEtec.Repositorios.IRepEmprestimos.Registrar(LivrEtec.Models.Emprestimo)">Registrar(Emprestimo)</h4>
+  <div class="markdown level1 summary"><p>Registra um emprestimo</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; Registrar(Emprestimo emprestimo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.Models.Emprestimo.html">Emprestimo</a></td>
+        <td><span class="parametername">emprestimo</span></td>
+        <td><p>O emprestimo a ser registrado</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>O id do emprestimo</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.DataAnnotations.ValidationException</span></td>
+        <td><p>Emprestimo invalido</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_Repositorios_IRepEmprestimos.md&amp;value=---%0Auid%3A%20LivrEtec.Repositorios.IRepEmprestimos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Repositorios/IRepEmprestimos.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
