@@ -22,9 +22,12 @@
       Caminho: ./src/LivrEtec.Testes
       
   Scripts:
-    test: dotnet test ./src
-    test-remoto: dotnet test ./src --filter Category=Remoto
-    test-local: dotnet test ./src --filter Category=local
-    gib-up: dotnet run --project ./src/LivrEtec.GIB.Servidor
-    docker: sudo docker compose -f src/docker-compose.yml up --build --exit-code-from testes
+    test:        dotnet test ./src/LivrEtec.sln  --logger "console;verbosity=normal"
+    test-remoto: dotnet test ./src/LivrEtec.sln --filter Category=Remoto  --logger "console;verbosity=normal"
+    test-local:  dotnet test ./src/LivrEtec.sln --filter Category=local  --logger "console;verbosity=normal"
+    gib:up:      dotnet run --project ./src/LivrEtec.GIB.Servidor
+    gib:dev:     dotnet watch run --project ./src/LivrEtec.GIB.Servidor
+    docker: sudo docker compose -f src/docker-compose.yml -p livretec --profile teste up --build --exit-code-from testes
+    doc:build:   docfx docs/docfx.json
+    doc:up:      docfx docs/docfx.json --serve
     

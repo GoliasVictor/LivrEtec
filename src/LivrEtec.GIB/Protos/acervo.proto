@@ -8,42 +8,64 @@ package livrEtecRPC;
 
 service Emprestimos { 
     rpc Abrir(Emprestimo.AbrirRequest) returns (IdEmprestimo);
-    rpc Buscar(Emprestimo.BuscarRequest) returns (EnumEmprestimos);
+    rpc Buscar(Emprestimo.BuscarRequest) returns (ListaEmprestimos);
     rpc Prorrogar(Emprestimo.ProrrogarRequest) returns (Empty);
     rpc Devolver(Emprestimo.DevolverRequest) returns (Empty);
     rpc RegistrarPerda(IdEmprestimo) returns (Empty) ;
     rpc Excluir(IdEmprestimo) returns (Empty) ;
 }
 service Livros {
-    rpc Get(IdLivro) returns (Livro);
+    rpc Obter(IdLivro) returns (Livro);
     rpc Remover(IdLivro) returns (Empty);
-    rpc Buscar(ParamBusca) returns (EnumLivros);
+    rpc Buscar(ParamBusca) returns (ListaLivros);
     rpc Editar(Livro) returns (Empty);
     rpc Registrar(Livro) returns (Empty);
+}
+
+service GerenciamentoSessao {
+    rpc Login(LoginRequest) returns ( Token );
+}
+
+service Tags {
+    rpc  Registrar(Tag) returns (IdTag);
+	rpc  Editar(Tag) returns (Empty);
+	rpc  Buscar(Tag.BuscarRequest) returns (ListaTags);
+	rpc  Obter(IdTag) returns (Tag);
+	rpc  Remover(IdTag) returns (Empty);
+}
+
+message LoginRequest {
+    int32 IdUsuario = 1;
+    string HashSenha = 2;
+}
+message Token {
+    string Valor = 1;
 }
 
 message Empty {
 
 } 
+
 message IdLivro {
     int32 Id = 1;
 }
 message ParamBusca {
     string NomeLivro = 1;
     string NomeAutor = 2;
-    repeated Tag Tags = 3;
+    repeated int32 IdTags = 3;
 }
 message Livro {
     int32 Id =  1;
     string Nome = 2;
-    string Descricao = 3;
+    optional string Descricao = 3;
     repeated Tag Tags = 4;
     repeated Autor Autores = 5;
     bool Arquivado = 6;
     int32 Quantidade = 7;
+
 }
 
-message EnumLivros {
+message ListaLivros {
     repeated Livro Livros = 1;
 }
 
@@ -51,6 +73,13 @@ message EnumLivros {
 message Tag {
     int32 Id =  1; 
     string Nome = 2;
+    
+    message BuscarRequest {
+        string Nome = 1;
+    }
+}
+message IdTag {
+    int32 Id = 1;
 }
 
 message Autor {
@@ -97,8 +126,8 @@ message Emprestimo {
     optional string Comentario = 11;
     optional google.protobuf.BoolValue AtrasoJustificado = 10;
     optional string ExplicacaoAtraso = 13;
-
     
+
     message AbrirRequest { 
         int32 IdLivro = 1;
         int32 IdPessoa = 2;
@@ -121,6 +150,12 @@ message Emprestimo {
     };
 }
 
-message EnumEmprestimos {
+message ListaEmprestimos {
     repeated Emprestimo Emprestimos = 1;
 }
+
+
+message ListaTags {
+    repeated Tag Tags = 1;
+}
+

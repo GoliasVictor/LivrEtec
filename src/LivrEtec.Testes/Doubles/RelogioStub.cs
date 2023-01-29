@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace LivrEtec.Testes.Doubles;
 
-namespace LivrEtec.Testes
+internal class RelogioStub : IRelogio
 {
-    class RelogioStub : IRelogio
+    public RelogioStub(DateTime agora)
     {
-        public RelogioStub(DateTime agora)
-        {
-            Agora = agora;
-        }
-        
-        public DateTime Agora { get; set; }
-
+        Agora = agora;
     }
+
+    public DateTime Agora { get; set; }
+
 }

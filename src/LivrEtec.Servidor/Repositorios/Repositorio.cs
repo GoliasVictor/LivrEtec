@@ -1,15 +1,15 @@
-using Microsoft.EntityFrameworkCore;
+using LivrEtec.Servidor.BD;
 using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.Servidor;
+namespace LivrEtec.Servidor.Repositorios;
 
-public abstract class Repositorio 
+public abstract class Repositorio
 {
-	protected AcervoService acervoService;
-	protected PacaContext BD => acervoService.BD;
-	protected ILogger? Logger => acervoService.Logger;
-	public Repositorio(AcervoService acervoService)
-	{
-		this.acervoService = acervoService;
-	}
+    protected PacaContext BD;
+    protected ILogger? logger;
+    public Repositorio(PacaContext BD, ILogger logger)
+    {
+        this.BD = BD;
+        this.logger = logger;
+    }
 }

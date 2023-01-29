@@ -1,61 +1,67 @@
-using System.Data.Entity;
+using LivrEtec.Exceptions;
 using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.Servidor;
+namespace LivrEtec.Servidor.Services;
 
-public class IdentidadeService : Service, IIdentidadeService
+public class IdentidadeService : IIdentidadeService
 {
-	public IdentidadeService(
-		PacaContext bd,
-	 	ILogger<IdentidadeService>? logger,
-		IAutorizacaoService autorizacaoService,
-		IAutenticacaoService autenticacaoService
-	) : base(bd, logger)
-	{
-		AutorizacaoService = autorizacaoService;
-		AutenticacaoService = autenticacaoService;
-	}
-	IAutorizacaoService AutorizacaoService { get; set; }
-	IAutenticacaoService AutenticacaoService { get; set; }
-	public int IdUsuario { get; private set; }
-	public Usuario? Usuario { get; private set; }
-	public bool EstaAutenticado { get; private set; }
+    private readonly ILogger<IdentidadeService>? logger;
+    private readonly IRepUsuarios repUsuarios;
+    public IdentidadeService(
+        IRepUsuarios repUsuarios,
+        IAutorizacaoService autorizacaoService,
+        IAutenticacaoService autenticacaoService,
+         ILogger<IdentidadeService>? logger
+    )
+    {
+        this.repUsuarios = repUsuarios;
+        this.logger = logger;
+        this.autorizacaoService = autorizacaoService;
+        this.autenticacaoService = autenticacaoService;
+    }
 
-	public async Task DefinirUsuarioAsync(int idUsuario)
-	{
-		await Task.Run(()=>{
-			if (BD.Usuarios.Find(idUsuario) == null)
-				throw new ArgumentException("Usuario não existe");
-			EstaAutenticado = false;
-			IdUsuario = idUsuario;
-		});
-		
-	}
+    private IAutorizacaoService autorizacaoService { get; set; }
+    private IAutenticacaoService autenticacaoService { get; set; }
+    public int IdUsuario { get; private set; }
+    public Usuario? Usuario { get; private set; }
+    public bool EstaAutenticado { get; private set; }
 
- 	public async Task AutenticarUsuarioAsync(string senha)
-	{
-		EstaAutenticado = await AutenticacaoService.EhAutenticoAsync(IdUsuario, senha);
-		if(EstaAutenticado){
-			Usuario = await BD.Usuarios.FindAsync(IdUsuario);
-			if(Usuario != null){
-				BD.Entry(Usuario).Reference((u)=> u.Cargo).Load();
-				BD.Entry(Usuario.Cargo).Collection((c)=> c.Permissoes).Load();
-			}
-		}
-	}
-	public  Task<bool> EhAutorizadoAsync(Permissao permissao)
-	{
-		if (!EstaAutenticado)
-			return  Task.FromResult(false);
-		return AutorizacaoService.EhAutorizadoAsync(IdUsuario, permissao);
-	}
-	public Task ErroSeNaoAutorizadoAsync(Permissao permissao)
-	{
-		_ = Usuario ?? throw new NullReferenceException("Usuario não definido");
-		if (!EstaAutenticado)
-			throw new NaoAutenticadoException(Usuario);
-		return AutorizacaoService.ErroSeNaoAutorizadoAsync(Usuario, permissao);
-	}
+    public async Task DefinirUsuario(int idUsuario)
+    {
+        if (false == await repUsuarios.Existe(idUsuario))
+        {
+            throw new ArgumentException("Usuario não existe");
+        }
+
+        EstaAutenticado = false;
+        IdUsuario = idUsuario;
+
+    }
+
+    public async Task AutenticarUsuario(string senha)
+    {
+        _ = senha ?? throw new ArgumentNullException(senha);
+        EstaAutenticado = await autenticacaoService.EhAutentico(IdUsuario, AutenticacaoService.GerarHahSenha(IdUsuario, senha));
+        if (EstaAutenticado)
+        {
+            Usuario = await repUsuarios.Obter(IdUsuario);
+        }
+    }
+    public async Task AutenticarUsuario()
+    {
+        EstaAutenticado = true;
+        Usuario = await repUsuarios.Obter(IdUsuario);
+
+    }
+    public Task<bool> EhAutorizado(Permissao permissao)
+    {
+        return !EstaAutenticado ? Task.FromResult(false) : autorizacaoService.EhAutorizado(IdUsuario, permissao);
+    }
+    public Task ErroSeNaoAutorizado(Permissao permissao)
+    {
+        _ = Usuario ?? throw new NaoAutenticadoException("Usuario não definido");
+        return !EstaAutenticado ? throw new NaoAutenticadoException(Usuario) : autorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
+    }
 
 
 }

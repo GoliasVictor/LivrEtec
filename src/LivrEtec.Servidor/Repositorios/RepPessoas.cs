@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LivrEtec.Servidor.BD;
+using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.Servidor
+namespace LivrEtec.Servidor.Repositorios;
+
+public class RepPessoas : Repositorio, IRepPessoas
 {
-    internal class RepPessoas : Repositorio, IRepPessoas
+    public RepPessoas(PacaContext BD, ILogger<RepPessoas> logger) : base(BD, logger)
     {
-        public RepPessoas(AcervoService acervoService) : base(acervoService)
-        {
 
-        }
-        public async Task<Pessoa?> ObterAsync(int id)
-        {
-            return await BD.Pessoas.FindAsync(id);
-        }
+    }
+    public async Task<Pessoa?> ObterObter(int id)
+    {
+        return await BD.Pessoas.FindAsync(id);
     }
 }

@@ -1,0 +1,10 @@
+- name: API Núcleo
+  href: LivrEtec/toc.yml
+- name: API Servidor
+  href: LivrEtec.Servidor/toc.yml
+- name: API Núcleo GIB
+  href: LivrEtec.GIB/toc.yml
+- name: API Servidor GIB
+  href: LivrEtec.GIB.Servidor/toc.yml
+- name: API Testes
+  href: LivrEtec.Testes/toc.yml

@@ -4,15 +4,19 @@ services:
   gib_servidor: 
     container_name: "livretec_gib_servidor"
     image: livretec_gib_servidor
+    profiles: [teste, backend]
     build:
       context: .
       dockerfile: ./Docker/GIB.Servidor/Dockerfile
     depends_on:
       db:
         condition: service_healthy
+    ports:
+      - 5259:5259
   testes: 
     container_name: "livretec_testes"
     image: livretec_testes
+    profiles: [teste]
     build:
       context: .
       dockerfile: ./Docker/Testes/Dockerfile
