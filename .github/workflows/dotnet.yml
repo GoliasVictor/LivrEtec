@@ -1,11 +1,11 @@
 name: .NET
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
     env: 
-      APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/src/appsettings.json'
+      APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/.github/workflows/settings/dotnet/appsettings.json'
     runs-on: ubuntu-latest
     defaults:
       run: 
@@ -16,17 +16,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Setup MySQL 
-      uses: mirromutth/mysql-action@v1.1
-      with: 
-        mysql root password: root 
-        mysql database: LivrEtecBD 
-        mysql user: LivrEtecServe 
-        mysql password: LivrEtecSenha 
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore LivrEtec.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build LivrEtec.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger GitHubActions --filter Category!=Remoto
+      run: dotnet test LivrEtec.sln --no-build --verbosity normal --logger GitHubActions --filter Category!=Remoto

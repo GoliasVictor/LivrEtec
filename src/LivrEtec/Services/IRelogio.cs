@@ -1,7 +1,6 @@
-﻿namespace LivrEtec
+﻿namespace LivrEtec.Services;
+
+public interface IRelogio
 {
-    public interface IRelogio
-    {
-        DateTime Agora { get; }
-    }
+    DateTime Agora { get; }
 }
