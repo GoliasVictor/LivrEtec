@@ -16,8 +16,8 @@ Neste repositório vai existir três projetos:
 - **Entity Framework**: ORM para conectar a aplicação ao banco de dados
 - **gRPC**: Como protocolo de comunicação entre o servidor GIB e o cliente 
 - **Blazor Hybrid + MAUI**: Interface do cliente GIB
-- **xUnit**: Para Executar Testes Unitários das bibliotecas
-- **DocFx**: Para Criação da documentação
+- **xUnit**: Para executar testes unitários das bibliotecas
+- **DocFx**: Para criação da documentação
 - **Figma**: Para prototipar o design
 
 ## Como Executar
