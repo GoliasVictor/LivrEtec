@@ -11,7 +11,10 @@ public sealed class TestesEmprestimoServiceRPC : TestesEmprestimoService<Emprest
         : base(
             output,
             new RelogioSistema(),
-            new BDUtilMySQl(Configuracao.StrConexaoMySQL, LogUtils.CreateLoggerFactory(output))
+            new BDUtilMySQl(
+                Configuracao.StrConexaoMySQL ?? throw new Exception("Defina uma string de conexão do MySQL"), 
+                LogUtils.CreateLoggerFactory(output)
+            )
         )
     {
         GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, usuarioTeste);

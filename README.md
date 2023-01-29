@@ -17,6 +17,7 @@ Neste repositório vai existir três projetos:
 - **gRPC**: Como protocolo de comunicação entre o servidor GIB e o cliente 
 - **Blazor Hybrid + MAUI**: Interface do cliente GIB
 - **xUnit**: Para Executar Testes Unitários das bibliotecas
+- **DocFx**: Para Criação da documentação
 - **Figma**: Para prototipar o design
 
 ## Como Executar

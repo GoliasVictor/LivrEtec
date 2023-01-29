@@ -11,7 +11,10 @@ public sealed class TestesLivrosServiceRPC : TestesLivrosService<LivrosServiceRP
     public TestesLivrosServiceRPC(ITestOutputHelper output)
         : base(
             output,
-            new BDUtilMySQl(Configuracao.StrConexaoMySQL, LogUtils.CreateLoggerFactory(output))
+            new BDUtilMySQl(
+                Configuracao.StrConexaoMySQL ?? throw new Exception("Defina uma string de conexão do MySQL"),
+                LogUtils.CreateLoggerFactory(output)
+            )
         )
 
     {
