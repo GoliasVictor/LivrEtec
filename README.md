@@ -122,6 +122,6 @@ Toda ajuda é bem vinda, caso queira colaborar. Recomendamos que primeiro vá na
 Garanta que antes de fazer o pull request, tenha criado os testes para suas novas implementações, e de que esteja passando em todos os testes.
 
 ## Documentação
-Para mais informações sobre o projeto, vá na [Wiki](https://github.com/GoliasVictor/LivrEtec/wiki) onde está a documentação do projeto.
+Para mais informações sobre o projeto, veja nossa [documentação](https://goliasvictor.github.io/LivrEtec/).
 
 Seja bem-vindo :)
