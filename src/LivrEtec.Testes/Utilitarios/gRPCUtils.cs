@@ -1,17 +1,30 @@
+using Grpc.Core;
 using Grpc.Net.Client;
+using LivrEtec.GIB.Servidor.Services;
 
-namespace LivrEtec.Testes;
- 
-class gRPCUtil {
-	static public GrpcChannel GetGrpChannel(string? UrlAPI){
- 		_ = UrlAPI?? throw new Exception("Endereço da API gRPC indefinido");
+namespace LivrEtec.Testes.Utilitarios;
+
+internal class gRPCUtil
+{
+    public static GrpcChannel GetGrpChannel(string? UrlAPI, Usuario usuario)
+    {
+        _ = UrlAPI ?? throw new Exception("Endereço da API gRPC indefinido");
+        var credentials = CallCredentials.FromInterceptor((_, _) => Task.CompletedTask);
+
+
         var httpClient = new HttpClient();
-		httpClient.DefaultRequestHeaders.Add("id",(2).ToString());
-		var grpcChannelOptions  = new GrpcChannelOptions(){
-			Credentials = Grpc.Core.ChannelCredentials.Insecure,
-			HttpClient = httpClient
-		};
-        return GrpcChannel.ForAddress(UrlAPI, grpcChannelOptions);
+        if (usuario is not null)
+        {
+            var token = TokenService.GerarToken(usuario.Id, Configuracao.AuthKey!);
+            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+        }
+        var grpcChannelOptions = new GrpcChannelOptions
+        {
 
-	}	
+            HttpClient = httpClient,
+        };
+
+
+        return GrpcChannel.ForAddress(UrlAPI, grpcChannelOptions);
+    }
 }

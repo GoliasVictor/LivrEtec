@@ -1,64 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LivrEtec.Exceptions;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.Servidor;
+namespace LivrEtec.Servidor.Services;
 public sealed class TagsService : ITagsService
 {
-	readonly ILogger<TagsService>? Logger;
-	readonly IIdentidadeService identidadeService;
-	readonly IRepTags repTags;
-	public TagsService(
-		IRepTags repTags,
-		IIdentidadeService identidadeService,
-		ILogger<TagsService>? logger
-	)
-	{
-		this.repTags = repTags;
-		this.identidadeService = identidadeService;
-		Logger = logger;
-	}
+    private readonly ILogger<TagsService>? Logger;
+    private readonly IIdentidadeService identidadeService;
+    private readonly IRepTags repTags;
+    public TagsService(
+        IRepTags repTags,
+        IIdentidadeService identidadeService,
+        ILogger<TagsService>? logger
+    )
+    {
+        this.repTags = repTags;
+        this.identidadeService = identidadeService;
+        Logger = logger;
+    }
 
-	public async Task<IEnumerable<Tag>> BuscarAsync(string nome)
-	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Visualizar);
-		var tags = await repTags.BuscarAsync(nome);
-		Logger?.LogInformation("Tags buscadas, Detalhes: busca={{{nome}}};",nome);
-		return tags;
-	}
+    public async Task<IEnumerable<Tag>> Buscar(string nome)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
+        IEnumerable<Tag> tags = await repTags.Buscar(nome);
+        Logger?.LogInformation("Tags buscadas, Detalhes: busca={{{nome}}};", nome);
+        return tags;
+    }
 
-	public async Task EditarAsync(Tag tag)
-	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Editar);
-		await repTags.EditarAsync(tag);
-		Logger?.LogInformation("Tag Editada, Detalhes: nome={{{nome}}};", tag.Nome);
-	}
+    public async Task Editar(Tag tag)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Editar);
+        await repTags.Editar(tag);
+        Logger?.LogInformation("Tag Editada, Detalhes: nome={{{nome}}};", tag.Nome);
+    }
 
-	public async Task<Tag?> ObterAsync(int id)
-	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Visualizar);
-		var tag = await repTags.ObterAsync(id);
-		Logger?.LogInformation("Tag obtida, Detalhes: id={{{id}}};", id);
-		return tag;
-	}
+    public async Task<Tag?> Obter(int id)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Visualizar);
+        Tag? tag = await repTags.Obter(id);
+        Logger?.LogInformation("Tag obtida, Detalhes: id={{{id}}};", id);
+        return tag;
+    }
 
-	public async Task<int> RegistrarAsync(Tag tag)
-	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Criar);
-		var id = await repTags.RegistrarAsync(tag);
-		Logger?.LogInformation("Tag registrado, Detalhes: tag={{{tag}}};", tag);
-            return id;
-	}
+    public async Task<int> Registrar(Tag tag)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Criar);
+        var id = await repTags.Registrar(tag);
+        Logger?.LogInformation("Tag registrado, Detalhes: tag={{{tag}}};", tag);
+        return id;
+    }
 
-	public async Task RemoverAsync(int id)
-	{
-		await identidadeService.ErroSeNaoAutorizadoAsync(Permissoes.Tag.Excluir);
-		await repTags.RemoverAsync(id);
-		Logger?.LogInformation("Tag excluida, Detalhes: id={{{id}}};", id);
-	}
+    public async Task Remover(int id)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Tag.Excluir);
+        await repTags.Remover(id);
+        Logger?.LogInformation("Tag excluida, Detalhes: id={{{id}}};", id);
+    }
 }

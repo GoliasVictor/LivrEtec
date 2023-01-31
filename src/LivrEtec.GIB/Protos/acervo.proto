@@ -15,18 +15,31 @@ service Emprestimos {
     rpc Excluir(IdEmprestimo) returns (Empty) ;
 }
 service Livros {
-    rpc Get(IdLivro) returns (Livro);
+    rpc Obter(IdLivro) returns (Livro);
     rpc Remover(IdLivro) returns (Empty);
     rpc Buscar(ParamBusca) returns (ListaLivros);
     rpc Editar(Livro) returns (Empty);
     rpc Registrar(Livro) returns (Empty);
 }
+
+service GerenciamentoSessao {
+    rpc Login(LoginRequest) returns ( Token );
+}
+
 service Tags {
     rpc  Registrar(Tag) returns (IdTag);
 	rpc  Editar(Tag) returns (Empty);
 	rpc  Buscar(Tag.BuscarRequest) returns (ListaTags);
 	rpc  Obter(IdTag) returns (Tag);
 	rpc  Remover(IdTag) returns (Empty);
+}
+
+message LoginRequest {
+    int32 IdUsuario = 1;
+    string HashSenha = 2;
+}
+message Token {
+    string Valor = 1;
 }
 
 message Empty {

@@ -1,103 +1,123 @@
-
+using LivrEtec.Servidor.BD;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Logging;
 using System.Data;
 
-namespace LivrEtec.Servidor;
+namespace LivrEtec.Servidor.Repositorios;
 
 public sealed class RepLivros : Repositorio, IRepLivros
 {
-	public RepLivros(PacaContext BD, ILogger<RepLivros> logger) : base(BD, logger)
-	{	
-	}
- 
-	public async Task<IEnumerable<Livro>> BuscarAsync(string nome, string nomeAutor, IEnumerable<int>? idTags)
-	{
-		IQueryable<Livro> livros = BD.Livros;
+    public RepLivros(PacaContext BD, ILogger<RepLivros> logger) : base(BD, logger)
+    {
+    }
 
-		if (!string.IsNullOrEmpty(nome) || !string.IsNullOrEmpty(nomeAutor))
-		{
-			var livPorNome = from livro in BD.Livros
-							 where livro.Nome.Contains(nome)
-							 select livro;
-			var livPorAutor = from autor in BD.Autores
-							  from livro in autor.Livros
-							  where livro.Nome.Contains(nomeAutor)
-							  select livro;
-			livros = livPorNome.Union(livPorAutor);
-		}
+    public async Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
+    {
+        IQueryable<Livro> livros = BD.Livros;
 
-
-		if (idTags is not null && idTags.Count() != 0)
-			foreach (var id in idTags)
-				livros = livros.Where((livro) => livro.Tags.Any( (tag) => tag.Id == id));				
-		return await livros.ToListAsync();
-	}
-	private async Task<bool> ExisteAsync(Livro livro)
-	{
-
-		return await BD.Livros.ContainsAsync(livro);
-	}
-	private async Task<bool> ExisteAsync(int id)
-	{
-
-		return await BD.Livros.AnyAsync((l)=> l.Id == id);
-	}
+        if (!string.IsNullOrEmpty(nome) || !string.IsNullOrEmpty(nomeAutor))
+        {
+            IQueryable<Livro> livPorNome = from livro in BD.Livros
+                                           where livro.Nome.Contains(nome)
+                                           select livro;
+            IQueryable<Livro> livPorAutor = from autor in BD.Autores
+                                            from livro in autor.Livros
+                                            where livro.Nome.Contains(nomeAutor)
+                                            select livro;
+            livros = livPorNome.Union(livPorAutor);
+        }
 
 
-	public async Task<Livro?> GetAsync(int id)
-	{
+        if (idTags is not null && idTags.Count() != 0)
+        {
+            foreach (var id in idTags)
+            {
+                livros = livros.Where((livro) => livro.Tags.Any((tag) => tag.Id == id));
+            }
+        }
 
-		var livro = await BD.Livros.FindAsync(id);
-		if (livro == null)
-			return livro;
-		await BD.Entry(livro).Collection(l => l.Tags).LoadAsync();
-		await BD.Entry(livro).Collection(l => l.Autores).LoadAsync();
-		return livro;
-	}
+        return await livros.ToListAsync();
+    }
+    private async Task<bool> ExisteAsync(Livro livro)
+    {
 
-	public async Task RegistrarAsync(Livro livro)
-	{
-		Validador.ErroSeInvalido(livro); 
-		if (await ExisteAsync(livro))
-			throw new InvalidOperationException($"O livro {{{ livro.Id }}} já existe no sistema");
-		BD.AttachRange(livro.Tags);
-		BD.AttachRange(livro.Autores);
-		BD.Livros.Add(livro); 
-		await BD.SaveChangesAsync();
-	}
+        return await BD.Livros.ContainsAsync(livro);
+    }
+    private async Task<bool> ExisteAsync(int id)
+    {
 
-	public async Task RemoverAsync(int id)
-	{
+        return await BD.Livros.AnyAsync((l) => l.Id == id);
+    }
 
-		if(await ExisteAsync(id) == false)
-			throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
-		var livro = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
-		await BD.SaveChangesAsync();
-	}
 
-	public async Task EditarAsync(Livro livro)
-	{
+    public async Task<Livro?> Obter(int id)
+    {
 
-		_= livro ?? throw new ArgumentNullException(nameof(livro));
-	   	foreach(var tag in livro.Tags) 
-			if (tag is null)
-				throw new InvalidDataException("tag nula");
-		if( await ExisteAsync(livro) == false)
-			throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
-		
-		var livroAntigo = BD.Livros.Include(l=>l.Tags)
-								   .Include(l => l.Autores)
-								   .Single(l => l.Id == livro.Id);
-		livroAntigo.Nome = livro.Nome;
-		livroAntigo.Descricao = livro.Descricao;
-		livroAntigo.Arquivado = livro.Arquivado;
-		livroAntigo.Tags.Clear();
-		livroAntigo.Autores.Clear();
-        await  BD.SaveChangesAsync();
-		livroAntigo.Autores.AddRange(BD.Autores.Where( a=> livro.Autores.Contains(a)));
-        livroAntigo.Tags.AddRange(BD.Tags.Where( t => livro.Tags.Contains(t)));
-		await  BD.SaveChangesAsync();
-	}
+        Livro? livro = await BD.Livros.FindAsync(id);
+        if (livro == null)
+        {
+            return livro;
+        }
+
+        await BD.Entry(livro).Collection(l => l.Tags).LoadAsync();
+        await BD.Entry(livro).Collection(l => l.Autores).LoadAsync();
+        return livro;
+    }
+
+    public async Task RegistrarObter(Livro livro)
+    {
+        Validador.ErroSeInvalido(livro);
+        if (await ExisteAsync(livro))
+        {
+            throw new InvalidOperationException($"O livro {{{livro.Id}}} já existe no sistema");
+        }
+
+        BD.AttachRange(livro.Tags);
+        BD.AttachRange(livro.Autores);
+        _ = BD.Livros.Add(livro);
+        _ = await BD.SaveChangesAsync();
+    }
+
+    public async Task RemoverObter(int id)
+    {
+
+        if (await ExisteAsync(id) == false)
+        {
+            throw new InvalidOperationException($"O ID {{{id}}} já não existe no banco de dados");
+        }
+
+        _ = BD.Livros.Remove(BD.Livros.Find(id)!).Entity;
+        _ = await BD.SaveChangesAsync();
+    }
+
+    public async Task Editar(Livro livro)
+    {
+
+        _ = livro ?? throw new ArgumentNullException(nameof(livro));
+        foreach (Tag? tag in livro.Tags)
+        {
+            if (tag is null)
+            {
+                throw new InvalidDataException("tag nula");
+            }
+        }
+
+        if (await ExisteAsync(livro) == false)
+        {
+            throw new InvalidOperationException($"Livro {{{livro.Nome}}} não existe no banco de dados");
+        }
+
+        Livro livroAntigo = BD.Livros.Include(l => l.Tags)
+                                   .Include(l => l.Autores)
+                                   .Single(l => l.Id == livro.Id);
+        livroAntigo.Nome = livro.Nome;
+        livroAntigo.Descricao = livro.Descricao;
+        livroAntigo.Arquivado = livro.Arquivado;
+        livroAntigo.Tags.Clear();
+        livroAntigo.Autores.Clear();
+        _ = await BD.SaveChangesAsync();
+        livroAntigo.Autores.AddRange(BD.Autores.Where(a => livro.Autores.Contains(a)));
+        livroAntigo.Tags.AddRange(BD.Tags.Where(t => livro.Tags.Contains(t)));
+        _ = await BD.SaveChangesAsync();
+    }
 }

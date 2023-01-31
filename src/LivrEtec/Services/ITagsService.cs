@@ -1,10 +1,10 @@
-﻿namespace LivrEtec;
+﻿namespace LivrEtec.Services;
 
 public interface ITagsService
 {
-	Task<int> RegistrarAsync(Tag tag);
-	Task EditarAsync(Tag tag);
-	Task<IEnumerable<Tag>> BuscarAsync(string nome);
-	Task<Tag?> ObterAsync(int id);
-	Task RemoverAsync(int id);
+    Task<int> Registrar(Tag tag);
+    Task Editar(Tag tag);
+    Task<IEnumerable<Tag>> Buscar(string nome);
+    Task<Tag?> Obter(int id);
+    Task Remover(int id);
 }

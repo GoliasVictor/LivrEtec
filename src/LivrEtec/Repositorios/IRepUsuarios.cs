@@ -1,8 +1,7 @@
-﻿namespace LivrEtec.Servidor
+﻿namespace LivrEtec.Repositorios;
+
+public interface IRepUsuarios
 {
-    public interface IRepUsuarios
-    {
-		Task<bool> ExisteAsync(int id);
-        Task<Usuario?> ObterAsync(int id);
-    }
+    Task<bool> Existe(int id);
+    Task<Usuario?> Obter(int id);
 }
