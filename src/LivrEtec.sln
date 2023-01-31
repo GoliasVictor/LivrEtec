@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{A670F930-0576-4580-ABCC-405B4D4B38A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrEtec.GIB.Cliente", "LivrEtec.GIB.Cliente\LivrEtec.GIB.Cliente.csproj", "{B88BF541-9BA8-405E-824B-80A5FEF9AC0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB.Cliente", "LivrEtec.GIB.Cliente\LivrEtec.GIB.Cliente.csproj", "{B88BF541-9BA8-405E-824B-80A5FEF9AC0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

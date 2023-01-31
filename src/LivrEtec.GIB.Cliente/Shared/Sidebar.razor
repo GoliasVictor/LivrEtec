@@ -1,0 +1,74 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="sidebar">
+    <div class="logo">LV</div>
+    <nav> 
+        <ul>
+            @foreach (var item in Itens)
+            {
+                <li>
+                    <NavLink class='sidebar-item' href="@item.url">
+                        <span class="material-symbols-outlined icone">@item.icone</span>
+                        <span>@item.nome</span>
+                    </NavLink>
+                    <ul>
+                        @foreach (var subItem in item.SubItens)
+                        {
+                            <li>
+                                <NavLink class='@( "sidebar-item subitem " + ObterAtivo(subItem.url) )' href="@subItem.url">
+                                    <span class="material-symbols-outlined icone">@subItem.icone</span>
+                                    <span>@subItem.nome</span>
+                                </NavLink>
+                            </li>
+                        } 
+                    </ul>
+                </li>
+            }
+        </ul>
+
+    </nav>
+    <nav>
+        <ul>
+
+            <li>
+                <NavLink class="sidebar-item" href="config">
+                    <span class="material-symbols-outlined icone">settings</span>
+                    <span>Config.</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="sidebar-item">
+                    <span class="material-symbols-outlined icone">logout</span>
+                    <span>Sair</span>
+                </NavLink>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+
+@code {
+    record SubItem (string nome, string icone, string url);
+
+    record Item (string nome, string icone, string url,SubItem[] SubItens);
+    
+    Item[] Itens = new[]{
+        new Item("Acervo","book", "livro/procurar", new []{
+            new SubItem("Procurar","search", "livro/procurar"),
+            new SubItem("Arquivados","inventory_2", "arquivado")
+        }),
+        new Item("Emprestimo","handshake", "emprestimo/novo", new []{
+            new SubItem("Novo","add", "novo"),
+            new SubItem("Histórico","history", "historico"),
+            new SubItem("Pessoas","person", "Pessoas")
+        })
+    };
+
+    bool EstaAtivo(string href, NavLinkMatch navLinkMatch = NavLinkMatch.Prefix)
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).ToLower();
+        return navLinkMatch == NavLinkMatch.All ? relativePath == href.ToLower() : relativePath.StartsWith(href.ToLower());
+    }
+
+    string ObterAtivo(string href, NavLinkMatch navLinkMatch = NavLinkMatch.Prefix) => EstaAtivo(href, navLinkMatch) ? "ativo" : "";
+}

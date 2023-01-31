@@ -1,6 +1,55 @@
-﻿
+﻿@import url("reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --aviso: #D32F2F;
+    --sucesso: #388E3C;
+    --branco: #FFFFFF;
+    --preto: #000000;
+    --secundaria-900: #1C3038;
+    --secundaria-800: #2C454F;
+    --secundaria-700: #3A5863;
+    --secundaria-600: #486C79;
+    --secundaria-500: #537B8A;
+    --secundaria-400: #6D8E9B;
+    --secundaria-300: #86A3AE;
+    --secundaria-200: #A7BDC6;
+    --secundaria-100: #C7D8DE;
+    --secundaria-50: #E6F0F5;
+    --primaria-900: #3E2723;
+    --primaria-800: #4E342E;
+    --primaria-700: #5D4037;
+    --primaria-600: #6D4C41;
+    --primaria-500: #795548;
+    --primaria-400: #8D6E63;
+    --primaria-300: #A1887F;
+    --primaria-200: #BCAAA4;
+    --primaria-100: #D7CCC8;
+    --primaria-50: #EFEBE9;
+    /* Text-size styles */
+    --titulo-1: 60px;
+    --titulo-2: 48px;
+    --titulo-3: 38px;
+    --titulo-4: 30px;
+    --titulo-5: 24px;
+    --paragrafo: 16px;
+    --subtitulo: 16px;
+}
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--primaria-50);
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+#app{
+    height: 100%;
+    width: 100%;
 }
 
 h1:focus {
@@ -10,29 +59,6 @@ h1:focus {
 a, .btn-link {
     color: #0071c1;
 }
-
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
-.content {
-    padding-top: 1.1rem;
-}
-
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
-}
-
-.invalid {
-    outline: 1px solid red;
-}
-
-.validation-message {
-    color: red;
-}
-
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
