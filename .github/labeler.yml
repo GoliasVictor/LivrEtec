@@ -2,7 +2,9 @@ núcleo: src/LivrEtec/**/*
 teste: src/LivrEtec.Testes/**/*
 GIB:
   - src/LivrEtec.GIB/**/*
-  - src/LivrEtec.GIB.Servidor/**/*
+  - src/LivrEtec.GIB.*/**/*
+cliente: 
+  - src/LivrEtec.GIB.Cliente/**/*
 servidor: 
   - src/LivrEtec.Servidor/**/*
   - src/LivrEtec.GIB.Servidor/**/* 
