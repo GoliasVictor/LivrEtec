@@ -22,6 +22,8 @@ Neste repositório vai existir três projetos:
 
 ## Como Executar
 Atualmente está parcialmente completa a API interna do GIB feita em gRPC. É possível executar os testes unitários do projeto.
+
+
 ### Executando API do GIB
 É possível executar a API de duas formas: usando o ambiente de máquina ou usando Docker. É preferível o uso do Docker caso já tenha instalado ou não consiga instalar os requisitos para a execução no ambiente de máquina.
 
@@ -77,6 +79,14 @@ E então ele retornará o token JWT, que deve ser adicionado a header da seguint
 `Authorization: Bearer <JWT Token>` 
 
 Pronto, agora você terá acesso ao resto da API como administrador.
+
+### Executando Cliente do GIB
+Para executar o cliente do GIB é necessário ter o Visual Studio 2022 instalado, e definir o LivrEtec.GIB.Cliente como projeto de iniciação e executar.
+
+Para editar o css do projeto nos arquivos `.razor.scss` é necessário preprocessar os arquivos para `.razor.css`, que pode ser feito de diversas, recomendamos que instale o [pacote sass](https://sass-lang.com/install) e executar o seguinte comando na pasta `./src/LivrEtec.GIB.Cliente` 
+```bash
+sass --watch --no-source-map .:.
+```
 
 ### Executando os Testes
 
