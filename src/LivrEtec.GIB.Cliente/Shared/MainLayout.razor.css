@@ -1,0 +1,6 @@
+.page { 
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 100%;
+    height: 100%;
+}

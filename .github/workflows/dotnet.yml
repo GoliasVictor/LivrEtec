@@ -6,7 +6,7 @@ jobs:
   build:
     env: 
       APP_SETTINGS_JSON_PATH: '${{ github.workspace }}/.github/workflows/settings/dotnet/appsettings.json'
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     defaults:
       run: 
         working-directory: "src"
@@ -16,7 +16,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-
+    - name: Install MAUI workload
+      run: dotnet workload install maui
     - name: Restore dependencies
       run: dotnet restore LivrEtec.sln
     - name: Build
