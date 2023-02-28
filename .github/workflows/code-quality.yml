@@ -2,8 +2,8 @@ name: "Code Quality"
 on: [push]
 
 jobs:
-  CodeQL-analyze:
-    name: Analyze
+  codeql-analyze:
+    name: CodeQL Analyze
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -26,6 +26,9 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
-  Codecov-analyze:
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
+  codecov-analyze:
+    name: Codecov Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
