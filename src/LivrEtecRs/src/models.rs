@@ -39,13 +39,13 @@ pub struct Tag {
 pub struct Cargo {
 	pub id : Id,
 	pub nome: String,
-	pub permissoes : Vec<Permisao>
+	pub permissoes : Vec<Permissao>
 }
-pub struct  Permisao {
+pub struct  Permissao {
 	pub id : Id,
 	pub nome: String,
 	pub descricao : String,
-	pub dependencias : Vec<Permisao>
+	pub dependencias : Vec<Permissao>
 }
 pub struct  Usuario {
 	pub id : Id,
@@ -61,9 +61,9 @@ pub struct Emprestimo {
 	pub usuario_criador : Recurso<Usuario>,
 	pub data_emprestimo: Instant,
 	pub fim_data_emprestimo: Instant,
-	pub estado : EstadosEmperstimo
+	pub estado : EstadosEmprestimo
 }
-pub enum EstadosEmperstimo {
+pub enum EstadosEmprestimo {
 	Aberto,
 	Fechado {
 		data_fechamento : Instant,
