@@ -1,8 +1,9 @@
 use datetime::Instant;
 pub type Id = i32;
 pub type Senha = String;
-pub enum Recurso<T> {
-	NaoCarregado(Id),
+pub type RecursoId<T> = Recurso<Id, T>;
+pub enum Recurso<I,T> {
+	NaoCarregado(I),
 	Carregado(T)
 }
 pub struct Pessoa {
@@ -51,14 +52,14 @@ pub struct  Usuario {
 	pub id : Id,
 	pub senha : Senha,
 	pub login : String, 
-	pub cargo : Recurso<Cargo>
+	pub cargo : RecursoId<Cargo>
 }
 
 pub struct Emprestimo {
 	pub id:Id,
-	pub livro : Recurso<Livro>,
-	pub pessoa : Recurso<Pessoa>,
-	pub usuario_criador : Recurso<Usuario>,
+	pub livro : RecursoId<Livro>,
+	pub pessoa : RecursoId<Pessoa>,
+	pub usuario_criador : RecursoId<Usuario>,
 	pub data_emprestimo: Instant,
 	pub fim_data_emprestimo: Instant,
 	pub estado : EstadosEmprestimo
@@ -67,7 +68,7 @@ pub enum EstadosEmprestimo {
 	Aberto,
 	Fechado {
 		data_fechamento : Instant,
-		usuario_fechador : Recurso<Usuario>,
+		usuario_fechador : RecursoId<Usuario>,
 		devolvido : bool,
 		estado_devolucao :EstadoDevolucao,
 	}
