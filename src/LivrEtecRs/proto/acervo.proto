@@ -1,0 +1,160 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "LivrEtec.GIB.RPC";
+
+package livrEtecRPC;
+
+service Emprestimos { 
+    rpc Abrir(Emprestimo.AbrirRequest) returns (IdEmprestimo);
+    rpc Buscar(Emprestimo.BuscarRequest) returns (ListaEmprestimos);
+    rpc Prorrogar(Emprestimo.ProrrogarRequest) returns (Empty);
+    rpc Devolver(Emprestimo.DevolverRequest) returns (Empty);
+    rpc RegistrarPerda(IdEmprestimo) returns (Empty) ;
+    rpc Excluir(IdEmprestimo) returns (Empty) ;
+}
+service Livros {
+    rpc Obter(IdLivro) returns (Livro);
+    rpc Remover(IdLivro) returns (Empty);
+    rpc Buscar(ParamBusca) returns (ListaLivros);
+    rpc Editar(Livro) returns (Empty);
+    rpc Registrar(Livro) returns (Empty);
+}
+
+service GerenciamentoSessao {
+    rpc Login(LoginRequest) returns ( Token );
+}
+
+service Tags {
+    rpc  Registrar(Tag) returns (IdTag);
+	rpc  Editar(Tag) returns (Empty);
+	rpc  Buscar(Tag.BuscarRequest) returns (ListaTags);
+	rpc  Obter(IdTag) returns (Tag);
+	rpc  Remover(IdTag) returns (Empty);
+}
+
+message LoginRequest {
+    int32 IdUsuario = 1;
+    string HashSenha = 2;
+}
+message Token {
+    string Valor = 1;
+}
+
+message Empty {
+
+} 
+
+message IdLivro {
+    int32 Id = 1;
+}
+message ParamBusca {
+    string NomeLivro = 1;
+    string NomeAutor = 2;
+    repeated int32 IdTags = 3;
+}
+message Livro {
+    int32 Id =  1;
+    string Nome = 2;
+    string Descricao = 3;
+    repeated Tag Tags = 4;
+    repeated Autor Autores = 5;
+    bool Arquivado = 6;
+    int32 Quantidade = 7;
+
+}
+
+message ListaLivros {
+    repeated Livro Livros = 1;
+}
+
+
+message Tag {
+    int32 Id =  1; 
+    string Nome = 2;
+    
+    message BuscarRequest {
+        string Nome = 1;
+    }
+}
+message IdTag {
+    int32 Id = 1;
+}
+
+message Autor {
+    int32 Id =  1; 
+    string Nome = 2;
+}
+message Pessoa {
+    int32 Id = 1;
+    string Nome = 2;
+    string Telefone = 3;
+}
+message Permissao {
+    int32 Id =1;
+    string Nome = 2;
+    string Descricao = 3;
+    repeated Permissao PermissoesDependete = 4;
+}
+message Cargo {
+    int32 Id = 1;
+    string Nome = 2;
+    repeated Permissao Permissoes = 3;
+}
+message Usuario {
+    int32 Id = 1;
+    string Senha = 2;
+    string Login = 3;
+    string Nome = 4;
+    Cargo Cargo = 5;
+}
+message IdEmprestimo { 
+    int32 Id = 1;
+}
+message Emprestimo {
+    int32 Id = 1;
+    Livro Livro = 2;
+    Pessoa Pessoa = 3;
+    Usuario UsuarioCriador = 4;
+    bool Fechado = 5;
+    google.protobuf.Timestamp DataEmprestimo = 7;
+    google.protobuf.Timestamp FimDataEmprestimo =9;
+    google.protobuf.BoolValue Devolvido = 6;
+    google.protobuf.Timestamp DataFechamento = 8;
+    Usuario UsuarioFechador = 12;
+    string Comentario = 11;
+    google.protobuf.BoolValue AtrasoJustificado = 10;
+    string ExplicacaoAtraso = 13;
+    
+
+    message AbrirRequest { 
+        int32 IdLivro = 1;
+        int32 IdPessoa = 2;
+    }
+    message ProrrogarRequest { 
+        int32 idEmprestimo = 1;
+        google.protobuf.Timestamp novaData = 2;
+    }
+    message BuscarRequest {
+        int32 IdLivro = 1;
+        int32 IdPessoa = 2;
+        bool Fechado = 3;
+        bool Atrasado = 4;
+    }
+
+	message DevolverRequest {
+		int32 idEmprestimo = 1; 
+        bool AtrasoJustificado = 2;
+        string ExplicacaoAtraso = 3; 
+    };
+}
+
+message ListaEmprestimos {
+    repeated Emprestimo Emprestimos = 1;
+}
+
+
+message ListaTags {
+    repeated Tag Tags = 1;
+}
