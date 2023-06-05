@@ -19,6 +19,6 @@
   <ProjectReference Include="..\LivrEtec\LivrEtec.csproj" />
 </ItemGroup>
 	<ItemGroup>
-		<Protobuf Include="Protos\acervo.proto" GrpcServices="Both" />
+		<Protobuf Include="..\proto\acervo.proto" GrpcServices="Both" />
 	</ItemGroup>
 </Project>

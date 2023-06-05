@@ -57,7 +57,7 @@ message ParamBusca {
 message Livro {
     int32 Id =  1;
     string Nome = 2;
-    string Descricao = 3;
+    optional string Descricao = 3;
     repeated Tag Tags = 4;
     repeated Autor Autores = 5;
     bool Arquivado = 6;
@@ -120,12 +120,12 @@ message Emprestimo {
     bool Fechado = 5;
     google.protobuf.Timestamp DataEmprestimo = 7;
     google.protobuf.Timestamp FimDataEmprestimo =9;
-    google.protobuf.BoolValue Devolvido = 6;
-    google.protobuf.Timestamp DataFechamento = 8;
-    Usuario UsuarioFechador = 12;
-    string Comentario = 11;
-    google.protobuf.BoolValue AtrasoJustificado = 10;
-    string ExplicacaoAtraso = 13;
+    optional google.protobuf.BoolValue Devolvido = 6;
+    optional google.protobuf.Timestamp DataFechamento = 8;
+    optional Usuario UsuarioFechador = 12;
+    optional string Comentario = 11;
+    optional google.protobuf.BoolValue AtrasoJustificado = 10;
+    optional string ExplicacaoAtraso = 13;
     
 
     message AbrirRequest { 
@@ -137,16 +137,16 @@ message Emprestimo {
         google.protobuf.Timestamp novaData = 2;
     }
     message BuscarRequest {
-        int32 IdLivro = 1;
-        int32 IdPessoa = 2;
-        bool Fechado = 3;
-        bool Atrasado = 4;
+        optional int32 IdLivro = 1;
+        optional int32 IdPessoa = 2;
+        optional bool Fechado = 3;
+        optional bool Atrasado = 4;
     }
 
 	message DevolverRequest {
 		int32 idEmprestimo = 1; 
-        bool AtrasoJustificado = 2;
-        string ExplicacaoAtraso = 3; 
+        optional bool AtrasoJustificado = 2;
+        optional string ExplicacaoAtraso = 3; 
     };
 }
 
@@ -158,3 +158,4 @@ message ListaEmprestimos {
 message ListaTags {
     repeated Tag Tags = 1;
 }
+
