@@ -2,7 +2,7 @@ drop schema if exists LivrEtecRs;
 create schema if not exists LivrEtecRs;
 use LivrEtecRs;
 create table pessoa (
-	id int not null,
+	id int not null auto_increment,
 	nome varchar(255) not null, 
 	telefone varchar(255) not null, 
 	rm varchar(255),
@@ -10,19 +10,19 @@ create table pessoa (
 );
 
 create table autor (
-	id int not null,
+	id int not null auto_increment,
 	nome varchar(255) not null,
 	primary key(id)
 );
 
 create  table tag (
-	id int not null,
+	id int not null auto_increment,
 	nome varchar(255) not null,
 	primary key (id)
 );
 
 create table livro(
-	id int not null, 
+	id int not null auto_increment, 
 	nome varchar(255) not null,
 	arquivado boolean not null,
 	descricao text,
@@ -44,7 +44,7 @@ create table autor_livro (
 );
 
 create table permissao (
-	id int not null,
+	id int not null auto_increment,
 	nome varchar(255) not null,
 	descricao text not null,
 	primary key (id)
@@ -59,7 +59,7 @@ create table permissao_dependente (
 );
 
 create table cargo (
-	id int not null, 
+	id int not null auto_increment, 
 	nome varchar(255) not null,
 	primary key (id)
 );
@@ -72,7 +72,7 @@ create table permissao_cargo (
 );
 
 create table usuario (
-	id int not null, 
+	id int not null auto_increment, 
 	nome varchar(255) not null,
 	senha varchar(64) not null, 
 	login varchar(255) not null, 
@@ -82,7 +82,7 @@ create table usuario (
 );
 
 create table emprestimo (
-	id int not null,
+	id int not null auto_increment,
 	id_livro int not null,
 	id_pessoa int not null, 
 	dt_emprestimo datetime not null,
