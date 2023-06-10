@@ -1,4 +1,32 @@
 ﻿@page "/"
+@using System.ComponentModel.DataAnnotations;
+<div class="container-form-login">
+    <EditForm Model="@model" OnSubmit="@HandleSubmit">
+        <DataAnnotationsValidator />
+        <div class="model-content">
+            <h2>Login</h2>
+            <InputText class="input-text" id="nome" placeholder="Nome" @bind-Value="model.Nome"/>
+            <InputText class="input-text" id="senha" placeholder="Senha" @bind-Value="model.Senha" type="password" />
+            <button type="submit">Entrar</button>
+        </div>
+    </EditForm>
+</div>
 
-<h1>Livretec :D </h1>
+ 
 
+@code {
+
+    record class LoginModel {
+        [Required]
+        public string Nome { get; set;  }
+        [Required]
+        public string Senha { get; set; }
+    }
+
+    private LoginModel model = new();
+
+    private void HandleSubmit()
+    {
+
+    }
+}

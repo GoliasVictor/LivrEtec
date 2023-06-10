@@ -1,0 +1,15 @@
+.container-form-login {
+  align-self: center;
+  justify-self: center;
+  padding: 54px 64px;
+  background-color: var(--branco);
+  border-radius: 64px;
+}
+
+.model-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
