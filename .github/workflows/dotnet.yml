@@ -26,7 +26,7 @@ jobs:
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
-        filename: /home/runner/work/LivrEtec/LivrEtec/src/coverage/*/coverage.cobertura.xml
+        filename: ./src/coverage/*/coverage.cobertura.xml
         badge: true
         fail_below_min: true
         format: markdown
