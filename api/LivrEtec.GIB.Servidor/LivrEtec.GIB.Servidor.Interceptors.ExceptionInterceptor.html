@@ -4,22 +4,22 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ExceptionInterceptor
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ExceptionInterceptor
  </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ExceptionInterceptor
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ExceptionInterceptor
  ">
-  
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
-  
-  
-  
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -70,16 +70,66 @@
             <article class="content wrap" id="_content" data-uid="LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor">
 
 
+
   <h1 id="LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor" data-uid="LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor" class="text-break">Class ExceptionInterceptor
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ExceptionInterceptor</span></div>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor</a></div>
+    <div class="level2"><span class="xref">ExceptionInterceptor</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.GIB.Servidor.Interceptors.html">LivrEtec.GIB.Servidor.Interceptors</a></h6>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.BlockingUnaryCall&lt;TRequest, TResponse&gt;(TRequest, ClientInterceptorContext&lt;TRequest, TResponse&gt;, Interceptor.BlockingUnaryCallContinuation&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.AsyncUnaryCall&lt;TRequest, TResponse&gt;(TRequest, ClientInterceptorContext&lt;TRequest, TResponse&gt;, Interceptor.AsyncUnaryCallContinuation&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.AsyncServerStreamingCall&lt;TRequest, TResponse&gt;(TRequest, ClientInterceptorContext&lt;TRequest, TResponse&gt;, Interceptor.AsyncServerStreamingCallContinuation&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.AsyncClientStreamingCall&lt;TRequest, TResponse&gt;(ClientInterceptorContext&lt;TRequest, TResponse&gt;, Interceptor.AsyncClientStreamingCallContinuation&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.AsyncDuplexStreamingCall&lt;TRequest, TResponse&gt;(ClientInterceptorContext&lt;TRequest, TResponse&gt;, Interceptor.AsyncDuplexStreamingCallContinuation&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.ClientStreamingServerHandler&lt;TRequest, TResponse&gt;(IAsyncStreamReader&lt;TRequest&gt;, ServerCallContext, ClientStreamingServerMethod&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.ServerStreamingServerHandler&lt;TRequest, TResponse&gt;(TRequest, IServerStreamWriter&lt;TResponse&gt;, ServerCallContext, ServerStreamingServerMethod&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.DuplexStreamingServerHandler&lt;TRequest, TResponse&gt;(IAsyncStreamReader&lt;TRequest&gt;, IServerStreamWriter&lt;TResponse&gt;, ServerCallContext, DuplexStreamingServerMethod&lt;TRequest, TResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.html">LivrEtec</a>.<a class="xref" href="LivrEtec.GIB.html">GIB</a>.<a class="xref" href="LivrEtec.GIB.Servidor.html">Servidor</a>.<a class="xref" href="LivrEtec.GIB.Servidor.Interceptors.html">Interceptors</a></h6>
   <h6><strong>Assembly</strong>: LivrEtec.GIB.Servidor.dll</h6>
   <h5 id="LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -89,21 +139,22 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_UnaryServerHandler__2___0_ServerCallContext_UnaryServerMethod___0___1__.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.UnaryServerHandler%60%602(%60%600%2CServerCallContext%2CUnaryServerMethod%7B%60%600%2C%60%601%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_UnaryServerHandler__2___0_Grpc_Core_ServerCallContext_Grpc_Core_UnaryServerMethod___0___1__.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.UnaryServerHandler%60%602(%60%600%2CGrpc.Core.ServerCallContext%2CGrpc.Core.UnaryServerMethod%7B%60%600%2C%60%601%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB.Servidor/Interceptors/ExceptionInterceptor.cs/#L6">View Source</a>
   </span>
   <a id="LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_UnaryServerHandler_" data-uid="LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.UnaryServerHandler*"></a>
-  <h4 id="LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_UnaryServerHandler__2___0_ServerCallContext_UnaryServerMethod___0___1__" data-uid="LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.UnaryServerHandler``2(``0,ServerCallContext,UnaryServerMethod{``0,``1})">UnaryServerHandler&lt;TRequest, TResponse&gt;(TRequest, ServerCallContext, UnaryServerMethod&lt;TRequest, TResponse&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="LivrEtec_GIB_Servidor_Interceptors_ExceptionInterceptor_UnaryServerHandler__2___0_Grpc_Core_ServerCallContext_Grpc_Core_UnaryServerMethod___0___1__" data-uid="LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.UnaryServerHandler``2(``0,Grpc.Core.ServerCallContext,Grpc.Core.UnaryServerMethod{``0,``1})">UnaryServerHandler&lt;TRequest, TResponse&gt;(TRequest, ServerCallContext, UnaryServerMethod&lt;TRequest, TResponse&gt;)</h4>
+  <div class="markdown level1 summary"><p>Server-side handler for intercepting and incoming unary call.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override async Task&lt;TResponse&gt; UnaryServerHandler&lt;TRequest, TResponse&gt;(TRequest request, ServerCallContext context, UnaryServerMethod&lt;TRequest, TResponse&gt; continuation)</code></pre>
+    <pre><code class="lang-csharp hljs">public override Task&lt;TResponse&gt; UnaryServerHandler&lt;TRequest, TResponse&gt;(TRequest request, ServerCallContext context, UnaryServerMethod&lt;TRequest, TResponse&gt; continuation) where TRequest : class where TResponse : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -115,22 +166,30 @@
       <tr>
         <td><span class="xref">TRequest</span></td>
         <td><span class="parametername">request</span></td>
-        <td></td>
+        <td><p>The request value of the incoming invocation.</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">ServerCallContext</span></td>
+        <td><a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></td>
         <td><span class="parametername">context</span></td>
-        <td></td>
+        <td><p>An instance of <a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a> representing
+the context of the invocation.</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">UnaryServerMethod</span>&lt;TRequest, TResponse&gt;</td>
+        <td><a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/ServerMethods.cs">UnaryServerMethod</a>&lt;TRequest, TResponse&gt;</td>
         <td><span class="parametername">continuation</span></td>
-        <td></td>
+        <td><p>A delegate that asynchronously proceeds with the invocation, calling
+the next interceptor in the chain, or the service request handler,
+in case of the last interceptor and return the response value of
+the RPC. The interceptor can choose to call it zero or more times
+at its discretion.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -139,13 +198,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResponse&gt;</td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TResponse&gt;</td>
+        <td><p>A future representing the response value of the RPC. The interceptor
+can simply return the return value from the continuation intact,
+or an arbitrary response value as it sees fit.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Name</th>
@@ -155,14 +217,19 @@
     <tbody>
       <tr>
         <td><span class="parametername">TRequest</span></td>
-        <td></td>
+        <td><p>Request message type for this method.</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TResponse</span></td>
-        <td></td>
+        <td><p>Response message type for this method.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://github.com/grpc/grpc/blob/3f072f44cb8e984c09e1a5fed3d597982b54f92e/src/csharp/Grpc.Core.Api/Interceptors/Interceptor.cs">Interceptor.UnaryServerHandler&lt;TRequest, TResponse&gt;(TRequest, ServerCallContext, UnaryServerMethod&lt;TRequest, TResponse&gt;)</a></div>
+
 </article>
           </div>
 
@@ -201,7 +268,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

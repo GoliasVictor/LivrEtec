@@ -4,22 +4,22 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IIdentidadeService
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IIdentidadeService
  </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IIdentidadeService
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IIdentidadeService
  ">
-  
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
-  
-  
-  
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -70,11 +70,12 @@
             <article class="content wrap" id="_content" data-uid="LivrEtec.Services.IIdentidadeService">
 
 
+
   <h1 id="LivrEtec_Services_IIdentidadeService" data-uid="LivrEtec.Services.IIdentidadeService" class="text-break">Interface IIdentidadeService
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.Services.html">LivrEtec.Services</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.html">LivrEtec</a>.<a class="xref" href="LivrEtec.Services.html">Services</a></h6>
   <h6><strong>Assembly</strong>: LivrEtec.dll</h6>
   <h5 id="LivrEtec_Services_IIdentidadeService_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -98,7 +99,7 @@
     <pre><code class="lang-csharp hljs">bool EstaAutenticado { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -107,7 +108,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -128,7 +129,7 @@
     <pre><code class="lang-csharp hljs">int IdUsuario { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -137,7 +138,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -155,10 +156,10 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Usuario Usuario { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">Usuario? Usuario { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -190,7 +191,7 @@
     <pre><code class="lang-csharp hljs">Task AutenticarUsuario()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -199,7 +200,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -212,7 +213,7 @@
     <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Services/IIdentidadeService.cs/#L8">View Source</a>
   </span>
   <a id="LivrEtec_Services_IIdentidadeService_AutenticarUsuario_" data-uid="LivrEtec.Services.IIdentidadeService.AutenticarUsuario*"></a>
-  <h4 id="LivrEtec_Services_IIdentidadeService_AutenticarUsuario_System_String_" data-uid="LivrEtec.Services.IIdentidadeService.AutenticarUsuario(System.String)">AutenticarUsuario(String)</h4>
+  <h4 id="LivrEtec_Services_IIdentidadeService_AutenticarUsuario_System_String_" data-uid="LivrEtec.Services.IIdentidadeService.AutenticarUsuario(System.String)">AutenticarUsuario(string)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -220,7 +221,7 @@
     <pre><code class="lang-csharp hljs">Task AutenticarUsuario(string senha)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -230,14 +231,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">senha</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -246,7 +247,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -259,7 +260,7 @@
     <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec/Services/IIdentidadeService.cs/#L10">View Source</a>
   </span>
   <a id="LivrEtec_Services_IIdentidadeService_DefinirUsuario_" data-uid="LivrEtec.Services.IIdentidadeService.DefinirUsuario*"></a>
-  <h4 id="LivrEtec_Services_IIdentidadeService_DefinirUsuario_System_Int32_" data-uid="LivrEtec.Services.IIdentidadeService.DefinirUsuario(System.Int32)">DefinirUsuario(Int32)</h4>
+  <h4 id="LivrEtec_Services_IIdentidadeService_DefinirUsuario_System_Int32_" data-uid="LivrEtec.Services.IIdentidadeService.DefinirUsuario(System.Int32)">DefinirUsuario(int)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -267,7 +268,7 @@
     <pre><code class="lang-csharp hljs">Task DefinirUsuario(int idUsuario)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -277,14 +278,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">idUsuario</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -293,7 +294,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -314,7 +315,7 @@
     <pre><code class="lang-csharp hljs">Task&lt;bool&gt; EhAutorizado(Permissao permissao)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -331,7 +332,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -340,7 +341,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -361,7 +362,7 @@
     <pre><code class="lang-csharp hljs">Task ErroSeNaoAutorizado(Permissao permissao)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -378,7 +379,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -387,11 +388,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -430,7 +432,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

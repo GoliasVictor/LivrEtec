@@ -1,0 +1,743 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class LoginRequest
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class LoginRequest
+ ">
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LivrEtec.GIB.RPC.LoginRequest">
+
+
+
+  <h1 id="LivrEtec_GIB_RPC_LoginRequest" data-uid="LivrEtec.GIB.RPC.LoginRequest" class="text-break">Class LoginRequest
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">LoginRequest</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IMessage.cs">IMessage</a>&lt;<a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a>&gt;</div>
+    <div><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IDeepCloneable.cs">IDeepCloneable</a>&lt;<a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a>&gt;</div>
+    <div><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IBufferMessage.cs">IBufferMessage</a></div>
+    <div><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IMessage.cs">IMessage</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LivrEtec.html">LivrEtec</a>.<a class="xref" href="LivrEtec.GIB.html">GIB</a>.<a class="xref" href="LivrEtec.GIB.RPC.html">RPC</a></h6>
+  <h6><strong>Assembly</strong>: LivrEtec.GIB.dll</h6>
+  <h5 id="LivrEtec_GIB_RPC_LoginRequest_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class LoginRequest : IMessage&lt;LoginRequest&gt;, IEquatable&lt;LoginRequest&gt;, IDeepCloneable&lt;LoginRequest&gt;, IBufferMessage, IMessage</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest__ctor.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L154">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest__ctor_" data-uid="LivrEtec.GIB.RPC.LoginRequest.#ctor*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest__ctor" data-uid="LivrEtec.GIB.RPC.LoginRequest.#ctor">LoginRequest()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LoginRequest()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest__ctor_LivrEtec_GIB_RPC_LoginRequest_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.%23ctor(LivrEtec.GIB.RPC.LoginRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L162">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest__ctor_" data-uid="LivrEtec.GIB.RPC.LoginRequest.#ctor*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest__ctor_LivrEtec_GIB_RPC_LoginRequest_" data-uid="LivrEtec.GIB.RPC.LoginRequest.#ctor(LivrEtec.GIB.RPC.LoginRequest)">LoginRequest(LoginRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LoginRequest(LoginRequest other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_HashSenhaFieldNumber.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.HashSenhaFieldNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L189">View Source</a>
+  </span>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_HashSenhaFieldNumber" data-uid="LivrEtec.GIB.RPC.LoginRequest.HashSenhaFieldNumber">HashSenhaFieldNumber</h4>
+  <div class="markdown level1 summary"><p>Field number for the &quot;HashSenha&quot; field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int HashSenhaFieldNumber = 2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_IdUsuarioFieldNumber.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.IdUsuarioFieldNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L177">View Source</a>
+  </span>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_IdUsuarioFieldNumber" data-uid="LivrEtec.GIB.RPC.LoginRequest.IdUsuarioFieldNumber">IdUsuarioFieldNumber</h4>
+  <div class="markdown level1 summary"><p>Field number for the &quot;IdUsuario&quot; field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int IdUsuarioFieldNumber = 1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_Descriptor.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.Descriptor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L142">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_Descriptor_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Descriptor*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_Descriptor" data-uid="LivrEtec.GIB.RPC.LoginRequest.Descriptor">Descriptor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageDescriptor Descriptor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs">MessageDescriptor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_HashSenha.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.HashSenha%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L191">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_HashSenha_" data-uid="LivrEtec.GIB.RPC.LoginRequest.HashSenha*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_HashSenha" data-uid="LivrEtec.GIB.RPC.LoginRequest.HashSenha">HashSenha</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HashSenha { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_IdUsuario.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.IdUsuario%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L179">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_IdUsuario_" data-uid="LivrEtec.GIB.RPC.LoginRequest.IdUsuario*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_IdUsuario" data-uid="LivrEtec.GIB.RPC.LoginRequest.IdUsuario">IdUsuario</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IdUsuario { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_Parser.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.Parser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L138">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_Parser_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Parser*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_Parser" data-uid="LivrEtec.GIB.RPC.LoginRequest.Parser">Parser</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageParser&lt;LoginRequest&gt; Parser { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/MessageParser.cs">MessageParser</a>&lt;<a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_CalculateSize.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.CalculateSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L276">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_CalculateSize_" data-uid="LivrEtec.GIB.RPC.LoginRequest.CalculateSize*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_CalculateSize" data-uid="LivrEtec.GIB.RPC.LoginRequest.CalculateSize">CalculateSize()</h4>
+  <div class="markdown level1 summary"><p>Calculates the size of this message in Protocol Buffer wire format, in bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CalculateSize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The number of bytes required to write this message
+to a coded output stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_Clone.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.Clone%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L170">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_Clone_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Clone*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_Clone" data-uid="LivrEtec.GIB.RPC.LoginRequest.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Creates a deep clone of this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LoginRequest Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a></td>
+        <td><p>A deep clone of this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_Equals_LivrEtec_GIB_RPC_LoginRequest_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.Equals(LivrEtec.GIB.RPC.LoginRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L206">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_Equals_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Equals*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_Equals_LivrEtec_GIB_RPC_LoginRequest_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Equals(LivrEtec.GIB.RPC.LoginRequest)">Equals(LoginRequest)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(LoginRequest other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_Equals_System_Object_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L200">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_Equals_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Equals*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_Equals_System_Object_" data-uid="LivrEtec.GIB.RPC.LoginRequest.Equals(System.Object)">Equals(object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the specified object  is equal to the current object; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_GetHashCode.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L220">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_GetHashCode_" data-uid="LivrEtec.GIB.RPC.LoginRequest.GetHashCode*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_GetHashCode" data-uid="LivrEtec.GIB.RPC.LoginRequest.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Serves as the default hash function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_MergeFrom_Google_Protobuf_CodedInputStream_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.MergeFrom(Google.Protobuf.CodedInputStream)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L307">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_" data-uid="LivrEtec.GIB.RPC.LoginRequest.MergeFrom*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_Google_Protobuf_CodedInputStream_" data-uid="LivrEtec.GIB.RPC.LoginRequest.MergeFrom(Google.Protobuf.CodedInputStream)">MergeFrom(CodedInputStream)</h4>
+  <div class="markdown level1 summary"><p>Merges the data from the specified coded input stream with the current message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MergeFrom(CodedInputStream input)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/CodedInputStream.cs">CodedInputStream</a></td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_Google_Protobuf_CodedInputStream__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>See the user guide for precise merge semantics.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_MergeFrom_LivrEtec_GIB_RPC_LoginRequest_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.MergeFrom(LivrEtec.GIB.RPC.LoginRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L292">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_" data-uid="LivrEtec.GIB.RPC.LoginRequest.MergeFrom*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_LivrEtec_GIB_RPC_LoginRequest_" data-uid="LivrEtec.GIB.RPC.LoginRequest.MergeFrom(LivrEtec.GIB.RPC.LoginRequest)">MergeFrom(LoginRequest)</h4>
+  <div class="markdown level1 summary"><p>Merges the given message into this one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MergeFrom(LoginRequest other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LivrEtec.GIB.RPC.LoginRequest.html">LoginRequest</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LivrEtec_GIB_RPC_LoginRequest_MergeFrom_LivrEtec_GIB_RPC_LoginRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>See the user guide for precise merge semantics.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_ToString.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L232">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_ToString_" data-uid="LivrEtec.GIB.RPC.LoginRequest.ToString*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_ToString" data-uid="LivrEtec.GIB.RPC.LoginRequest.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A string that represents the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest_WriteTo_Google_Protobuf_CodedOutputStream_.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest.WriteTo(Google.Protobuf.CodedOutputStream)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L238">View Source</a>
+  </span>
+  <a id="LivrEtec_GIB_RPC_LoginRequest_WriteTo_" data-uid="LivrEtec.GIB.RPC.LoginRequest.WriteTo*"></a>
+  <h4 id="LivrEtec_GIB_RPC_LoginRequest_WriteTo_Google_Protobuf_CodedOutputStream_" data-uid="LivrEtec.GIB.RPC.LoginRequest.WriteTo(Google.Protobuf.CodedOutputStream)">WriteTo(CodedOutputStream)</h4>
+  <div class="markdown level1 summary"><p>Writes the data to the given coded output stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteTo(CodedOutputStream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs">CodedOutputStream</a></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Coded output stream to write the data to. Must not be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IMessage.cs">IMessage&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IDeepCloneable.cs">IDeepCloneable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IBufferMessage.cs">IBufferMessage</a>
+  </div>
+  <div>
+      <a class="xref" href="https://github.com/protocolbuffers/protobuf/blob/d96db0e9d8ef9e9c754ee1ffac58654969f3b662/csharp/src/Google.Protobuf/IMessage.cs">IMessage</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/new/main/apiSpec/new?filename=LivrEtec_GIB_RPC_LoginRequest.md&amp;value=---%0Auid%3A%20LivrEtec.GIB.RPC.LoginRequest%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/GoliasVictor/LivrEtec/blob/main/src/LivrEtec.GIB/obj/Release/net6.0/Protos/Acervo.cs/#L131" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

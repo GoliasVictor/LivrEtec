@@ -8,11 +8,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.html",
-          "hash": "mnOjOXo533evYOdUYBsNLxDBFVb2btAVq9brF2RHbeM="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.ExceptionInterceptor.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -20,11 +18,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.IdentidadeInterceptor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.IdentidadeInterceptor.html",
-          "hash": "VkcOcU2LnOPjRLhcQmWDWupCMQBLrbRZJDSMOQZbLpE="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.IdentidadeInterceptor.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -32,11 +28,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.html",
-          "hash": "aNN9mxl0DH+Ho9d8rJz37imjE7gh8fjqYrq6e9L97Xc="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Interceptors.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -44,11 +38,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.EmprestimoServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.EmprestimoServiceRPC.html",
-          "hash": "pi19I2oK6SXd7m+UtCX2fs7jYnbmL3zMyIANp6OViRA="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.EmprestimoServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,11 +48,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.LivrosServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.LivrosServiceRPC.html",
-          "hash": "F/5m9C5c8z9faeMw2e9lAOAY1JlDQjnvao0GHlROeQM="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.LivrosServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -68,11 +58,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TagsServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TagsServiceRPC.html",
-          "hash": "w3b7+KkJK5XAY+3JKxQm1QJv/3aP6Uwop5kIyujeI+4="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TagsServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -80,11 +68,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TokenService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TokenService.html",
-          "hash": "i3NDEtXuSfr+51q0E7BHeYsL8iXiABrESjztKpll1Z4="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.TokenService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -92,11 +78,9 @@
       "source_relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.html",
-          "hash": "ulLGOzyBQCos+q7CVfP3Xz1crnSCb7fzKOsQsmVuM5U="
+          "relative_path": "api/LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.Services.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -104,11 +88,19 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.ManipuladorException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.ManipuladorException.html",
-          "hash": "rd95vHjh5/frDa2WB0A65Pjq2mvx5X5xMneW9N50tUw="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.ManipuladorException.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.AcervoReflection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.AcervoReflection.html"
+        }
+      },
       "version": ""
     },
     {
@@ -116,11 +108,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Autor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Autor.html",
-          "hash": "j3XThqoR66sZ2UXFdQ2jQ+5cLoUHSlhPyzfs66600zg="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Autor.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -128,11 +118,59 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Cargo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Cargo.html",
-          "hash": "DxFCTv9Dj4m1ZRCyfh3LsG06rVFRy3wkc+idQ9TQAiw="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Cargo.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.AbrirRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.AbrirRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.BuscarRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.BuscarRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.DevolverRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.ProrrogarRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.ProrrogarRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.Types.html"
+        }
+      },
       "version": ""
     },
     {
@@ -140,11 +178,139 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.html",
-          "hash": "He8ygyZTGyAMX5GOUWlOJk0v8qqe0uvwd3jgF2vPApU="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimo.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.EmprestimosBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.EmprestimosBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.EmprestimosClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.EmprestimosClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Emprestimos.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Empty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Empty.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.GerenciamentoSessaoClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.GerenciamentoSessao.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdEmprestimo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdEmprestimo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdLivro.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdLivro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.IdTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaEmprestimos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaEmprestimos.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaLivros.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaLivros.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaTags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ListaTags.html"
+        }
+      },
       "version": ""
     },
     {
@@ -152,11 +318,59 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livro.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livro.html",
-          "hash": "WlWYf5Alr/szluSjs/jnHdjwdtFPyJHRtJpFQnQ6xYc="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livro.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.LivrosBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.LivrosBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.LivrosClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.LivrosClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Livros.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.LoginRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.LoginRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ParamBusca.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.ParamBusca.html"
+        }
+      },
       "version": ""
     },
     {
@@ -164,11 +378,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Permissao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Permissao.html",
-          "hash": "1jhu5SeyrGXrliIfT0O+8GLj348UdabAp9jpBPgLgzs="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Permissao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -176,11 +388,29 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Pessoa.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Pessoa.html",
-          "hash": "GtV3zjjERMLLD5clWQu3WmhPCexGq2M4mNCPoaoILh8="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Pessoa.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.Types.BuscarRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.Types.BuscarRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.Types.html"
+        }
+      },
       "version": ""
     },
     {
@@ -188,11 +418,49 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.html",
-          "hash": "aJFL8T6sYNkrNto27zQqNWJDea2ODtwBH56bdsHuy8Q="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tag.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.TagsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.TagsBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.TagsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.TagsClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Tags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Token.html"
+        }
+      },
       "version": ""
     },
     {
@@ -200,11 +468,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Usuario.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Usuario.html",
-          "hash": "+Q4vnSp5fKZs9yvstyFZzs3dgPxFsg8HzcI7eTjlkwY="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.Usuario.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -212,11 +478,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.html",
-          "hash": "elWrgZw5ibiF08BN/04e8h7i1DR68LugEbb5dSlYThk="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.RPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -224,11 +488,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.EmprestimoServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.EmprestimoServiceRPC.html",
-          "hash": "cKykIuLRWEwT7cFCPxSYZxeMLhcoven/Q8MMXUSLBUM="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.EmprestimoServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -236,11 +498,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.LivrosServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.LivrosServiceRPC.html",
-          "hash": "kOUSNLhE1zpRk1g8dlRdjV8nsZA0BfN2qCnguoWJW50="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.LivrosServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -248,11 +508,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.TagsServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.TagsServiceRPC.html",
-          "hash": "QH6/MfNPDpR6YCeumiwtzvPnhJwC1NEl0dkwpX3vYsg="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.TagsServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -260,11 +518,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.html",
-          "hash": "wKfdnqsWCvon2kTmafUs8+mSF3l2ld15mCIvBWIxsB0="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.Services.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -272,11 +528,9 @@
       "source_relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.html",
-          "hash": "hWrEhnKFM/CWwaWaFHbwfgJfnOrVgVsansI6ToSKqCs="
+          "relative_path": "api/LivrEtec.GIB/LivrEtec.GIB.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -284,11 +538,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContext.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContext.html",
-          "hash": "iy/CiyKz2peFhm+X2Qz+WgWAJWEWAnj5cp5BnVQIyqs="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContext.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -296,11 +548,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContextFactory.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContextFactory.html",
-          "hash": "d0xhNUeNKjAef3Dcyy7U8EU0S6U3MMIbo6VfoZcetUk="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.PacaContextFactory.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -308,11 +558,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.html",
-          "hash": "834uyOr5QaSJwIO8sRaPMBOk8htkSGSQQNe06mBtNJ4="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.BD.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -320,11 +568,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepAutores.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepAutores.html",
-          "hash": "rtC2GNqEYR7dYTzggzuk4f/RalEikjsbaE3y++3AiTw="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepAutores.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -332,11 +578,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepEmprestimos.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepEmprestimos.html",
-          "hash": "qFbgObsIvXn5SlUB2Pvv1NoOvp2E5mVq2qZX0+lChIg="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepEmprestimos.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -344,11 +588,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepLivros.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepLivros.html",
-          "hash": "fZ2TYHdpugZ7NTGxS0vEffc7cBj6Pabj+KeFlXGSlvw="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepLivros.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -356,11 +598,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepPessoas.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepPessoas.html",
-          "hash": "mcQkw90Kuj2ASxUMx2U6kAIOooACVU9dF1qYFp3xAWY="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepPessoas.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -368,11 +608,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepTags.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepTags.html",
-          "hash": "qfVe1MNK+RkqMtnOBznnIOY9gzgiyV4tTTlXQKw0m7Y="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepTags.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -380,11 +618,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepUsuarios.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepUsuarios.html",
-          "hash": "bNTyYUimEftqbXXb14sHPcKr73fkZyA7vyzDtyIAGY8="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.RepUsuarios.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -392,11 +628,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.Repositorio.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.Repositorio.html",
-          "hash": "WiW9LWBRRrVvQLBMLm6NuzmYV04VX2Q3biRxRsEnn3I="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.Repositorio.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -404,11 +638,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.html",
-          "hash": "Km6Phqk5re7GAseSjeqCu6N1RbFv41mwBXxJYrytlFA="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Repositorios.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -416,11 +648,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutenticacaoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutenticacaoService.html",
-          "hash": "DT7i1vmCYR+7/0ldMw80zGC32+PVKTfpCBr8S78lMo8="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutenticacaoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -428,11 +658,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutorizacaoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutorizacaoService.html",
-          "hash": "B95n9QorD73VILPNXNrq3/aqDX15v3oudhVp576/iBw="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.AutorizacaoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -440,11 +668,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.EmprestimoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.EmprestimoService.html",
-          "hash": "Dl00alAyW8ItcwD6kzcz5pbQzTD3iISVgHMrNLx75No="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.EmprestimoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -452,11 +678,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.IdentidadeService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.IdentidadeService.html",
-          "hash": "7cIx5FRe6/HW/NfaTqV4iL/0328jCBKZy3FYSHBK3ow="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.IdentidadeService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -464,11 +688,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.LivrosService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.LivrosService.html",
-          "hash": "kLETQ6evEgkOyBz23zu/k9P95mtTdnHwzmlXF/3tstk="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.LivrosService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -476,11 +698,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.TagsService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.TagsService.html",
-          "hash": "5wND3GYIuNhQlxn7SIrncN2ezk4N8hv15rrXiqJL1Zw="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.TagsService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -488,11 +708,9 @@
       "source_relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.html",
-          "hash": "+lzH1RvwjGD7A6BUqdtntFGV8RAm6hWOsQ0m0jiDmoo="
+          "relative_path": "api/LivrEtec.Servidor/LivrEtec.Servidor.Services.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -500,11 +718,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Configuracao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Configuracao.html",
-          "hash": "r1zkh66lznfJuiKgVlam2L8hl+nD2u037E9Pt/q8AtU="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Configuracao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -512,11 +728,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutenticacao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutenticacao.html",
-          "hash": "fc85Vh75B8m3ojVFmFHj0/V+wr2tTorayTrj06Sq/EI="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutenticacao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -524,11 +738,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutorizacao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutorizacao.html",
-          "hash": "gTNcFpAOWF7b9Um17ofW9Q/Obb9Y10ZkEwP9r8bLVJU="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesAutorizacao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -536,11 +748,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesEmprestimoService-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesEmprestimoService-1.html",
-          "hash": "sks4dS7fN2uihqybAH7A+b1MOqZiUKRwJmzM9G2eSzM="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesEmprestimoService-1.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -548,11 +758,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceLocal.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceLocal.html",
-          "hash": "3iYPb0oIRLLsLE7DRx6eBp70sNPkWKk8bF9hv+hbAr0="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceLocal.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -560,11 +768,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceRPC.html",
-          "hash": "By9hJRBpHfcbMhmL5YEv6JsG5WKM1DNzMom7M4E4HwI="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesEmprestimoServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -572,11 +778,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosLocal.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosLocal.html",
-          "hash": "caN1d+e54pFXEmzTErejhQhYd+IzryYG7eb92aD9A08="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosLocal.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -584,11 +788,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosServiceRPC.html",
-          "hash": "5j7CSZ37gQTzARLP0N+3fsIyFcOLJQWAQfT8Hf7fKa4="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesLivrosServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -596,11 +798,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsLocal.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsLocal.html",
-          "hash": "6kqJzJ14riOtiEFvp16Wjm81Zh0ZQUWL2h1LEUuJKtU="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsLocal.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -608,11 +808,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsServiceRPC.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsServiceRPC.html",
-          "hash": "on1zZlsOS8wXXPydEtlh86ah1EhXzeT+2jh5SSPLj7Q="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.TestesTagsServiceRPC.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -620,11 +818,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.html",
-          "hash": "Q02Fb0JG9bVb1AVNDZ+lcKOrkhucAx1uUx85UnKYv+E="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesFinais.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -632,11 +828,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesIdentidade.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesIdentidade.html",
-          "hash": "xsquK3jlEXOg+LDzX+B6AHv0PX28A5u6YhQQvJqDLEY="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesIdentidade.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -644,11 +838,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesLivrosService-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesLivrosService-1.html",
-          "hash": "5tbTC4sh8p3srIKqiKu/aC5oOCbAOTqsFRN8KTl+N9s="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesLivrosService-1.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -656,11 +848,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesTagsService-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesTagsService-1.html",
-          "hash": "QPsJnYzcN0EIhfntJ2KbZ6t/OkrKBWD37t0qKsY9Bso="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.TestesTagsService-1.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -668,11 +858,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtil.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtil.html",
-          "hash": "nsqPNJnWhHi3r0o5OIBM3uo0eCAUZijD/Eps2j1GfxY="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtil.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -680,11 +868,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilMySQl.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilMySQl.html",
-          "hash": "My1d+FJw/TKsyeQpuLA1mVxjvL36tQYiWqH1CcUXRF8="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilMySQl.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -692,11 +878,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilSqlLite.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilSqlLite.html",
-          "hash": "tpqPd6sQ1dh1MIFrFymWMG2uzVLLSuBIaDUbfKCsoRc="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.BDUtilSqlLite.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -704,11 +888,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.html",
-          "hash": "UJMne5KUY9WQN/gvKNdKPALpmdBuIIP3l1MQIZzVbVE="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.Utilitarios.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -716,11 +898,9 @@
       "source_relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.html",
-          "hash": "xHUzCkCPZA3KlYEOR0xSbBGmDrMY0+wLg51YkF1StMo="
+          "relative_path": "api/LivrEtec.Testes/LivrEtec.Testes.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -728,11 +908,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Exceptions.LivroEsgotadoException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.LivroEsgotadoException.html",
-          "hash": "TYmC96+yWSq/0+pDNf2VD7QKObmUDS71ok06aePkYS8="
+          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.LivroEsgotadoException.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -740,11 +918,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutenticadoException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutenticadoException.html",
-          "hash": "7QoagzHYPS9Y/VlpVqtkKBB94B1yIAd5nAL5QVYWt6s="
+          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutenticadoException.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -752,11 +928,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutorizadoException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutorizadoException.html",
-          "hash": "USaspTQFSItEfYUCwgWFt8nIJUUfbMibXG8czR5SlZw="
+          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.NaoAutorizadoException.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -764,11 +938,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Exceptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.html",
-          "hash": "05Ql1jVsUYNKzd5GsHeNCvy416UNbk21ccx7xr/p+Po="
+          "relative_path": "api/LivrEtec/LivrEtec.Exceptions.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -776,11 +948,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.InteiroPositivoAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.InteiroPositivoAttribute.html",
-          "hash": "M+CfYwx/iL69PmXIK3cENLPaVd23pT2+C+mQSZzIXZo="
+          "relative_path": "api/LivrEtec/LivrEtec.InteiroPositivoAttribute.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -788,11 +958,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Aluno.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Aluno.html",
-          "hash": "/GFNypnVXrgKECGS1MdG9U19SmFGbUluT1hX1vBLgbE="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Aluno.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -800,11 +968,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Autor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Autor.html",
-          "hash": "mHNaznhhYsoghhzMh/ZuT3kjz0aaTi2vFakJNJDPeiA="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Autor.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -812,11 +978,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Cargo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Cargo.html",
-          "hash": "G7jzmMe1rzcbVIjJd5z7DOqZSpBb92Q4MDK+Y8fLezA="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Cargo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -824,11 +988,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Emprestimo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Emprestimo.html",
-          "hash": "XpFyH7dZyjTSn157M7rlrjihfPsQ6qEBIYXgvprL+4Y="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Emprestimo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -836,11 +998,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.IGrupoPermissao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.IGrupoPermissao.html",
-          "hash": "WqDfEEP8paEIkuAsz6hxZxQ6RpuGEjuf6r8Ukl4GXaE="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.IGrupoPermissao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -848,11 +1008,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Livro.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Livro.html",
-          "hash": "JIzMPoMkcSiahF1zxaeLLMphg5YEHHWPeaHz+S0KNsw="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Livro.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -860,11 +1018,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.ParamBuscaEmprestimo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.ParamBuscaEmprestimo.html",
-          "hash": "CQBob7kF9gfDhIh0/jRjXPWfvUdlS+1ZupzQ8StD0JU="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.ParamBuscaEmprestimo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -872,11 +1028,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.ParamFecharEmprestimo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.ParamFecharEmprestimo.html",
-          "hash": "SDNENYnl2EbY0FiQL7lKdfz4XmR5FEr3KzmoTB5KKrA="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.ParamFecharEmprestimo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -884,11 +1038,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Permissao.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Permissao.html",
-          "hash": "R+37dfMuiD4vI8g5OGf5xVW/huF2S3PtPFN+7Mwsljo="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Permissao.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -896,11 +1048,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Pessoa.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Pessoa.html",
-          "hash": "xbjao902Zq2s7+WEkAi6mfNR0+eyfZMsmUsGJd+zuWc="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Pessoa.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -908,11 +1058,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Tag.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Tag.html",
-          "hash": "S6Tg+Yjvjsj+tRKUjDVHZnK7swTVkmQ4M64RVc1PDVU="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Tag.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -920,11 +1068,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.Usuario.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.Usuario.html",
-          "hash": "NIQQCnwbTWORopdtavlAAp6nLthEVZx6l9fGdS1yE10="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.Usuario.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -932,11 +1078,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Models.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Models.html",
-          "hash": "8bpYDpwnkPc+GUTX4zYHV3Wxu9LHoGVMsOwN5dEy7eA="
+          "relative_path": "api/LivrEtec/LivrEtec.Models.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -944,11 +1088,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Permissoes.CRUD.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.CRUD.html",
-          "hash": "97H+jsFDKimrfVhX5xVMy3VecuQ+xx0S/NtEIvmbySU="
+          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.CRUD.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -956,11 +1098,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Permissoes.PermissoesEmprestimo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.PermissoesEmprestimo.html",
-          "hash": "Hw8PlGZ1w5BCXdzmhFI1YwB2IfoDKOMBPXN2RxHzhN0="
+          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.PermissoesEmprestimo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -968,11 +1108,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Permissoes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.html",
-          "hash": "E/mePPD613aiR/amqbGDkbxc79oPIzYmG6QWOaVKsiw="
+          "relative_path": "api/LivrEtec/LivrEtec.Permissoes.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -980,11 +1118,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepAutores.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepAutores.html",
-          "hash": "UIGAnwLzDhO6siKxtUPJDZtcfMVV89o6vSRpOHzatxg="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepAutores.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -992,11 +1128,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepEmprestimos.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepEmprestimos.html",
-          "hash": "E98S2Xcy5aoT3I0V+uq9kfj2OKP7ga2xhK108f9f4pQ="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepEmprestimos.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1004,11 +1138,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepLivros.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepLivros.html",
-          "hash": "1LOteIjWiS9DoHdmYmABMyO2o11PC/8XRR/tCisII3I="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepLivros.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1016,11 +1148,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepPessoas.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepPessoas.html",
-          "hash": "LBhjGFPQT49bbt39L+L+pM+enm4fwPXiB4zK7VPs/6o="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepPessoas.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1028,11 +1158,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepTags.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepTags.html",
-          "hash": "4B8Ha7D/VPzMbYEnpunVTd2tHyvLXy5QVcKdbToZHHg="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepTags.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1040,11 +1168,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepUsuarios.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepUsuarios.html",
-          "hash": "uA1htS891WFzMZsggGxImX+KWTV4M7frXOnQjPwsPlw="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.IRepUsuarios.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1052,11 +1178,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Repositorios.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.html",
-          "hash": "CRGJqP59IqPvV0kHnTghUGkKGbiRjXkgO43lJL5Kb60="
+          "relative_path": "api/LivrEtec/LivrEtec.Repositorios.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1064,11 +1188,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.IAutenticacaoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.IAutenticacaoService.html",
-          "hash": "ZAB80fGmlXlMnHrAagwbFyH6TdCjNLyZ75RJ/K+oLMY="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.IAutenticacaoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1076,11 +1198,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.IAutorizacaoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.IAutorizacaoService.html",
-          "hash": "wa+fH/HP/IEbQoZdZOCQrTntNXe7IKvMDI1OEkV2Awo="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.IAutorizacaoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1088,11 +1208,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.IEmprestimoService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.IEmprestimoService.html",
-          "hash": "VZtCbPT2bkVbMw/uUCK9UWvCoEHK/wCthpn6ppB8Ows="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.IEmprestimoService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1100,11 +1218,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.IIdentidadeService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.IIdentidadeService.html",
-          "hash": "1XNXgLoJ6z/o40+/r6c98/Eyqq2weW+6RQH3kXbWqvE="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.IIdentidadeService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1112,11 +1228,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.ILivrosService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.ILivrosService.html",
-          "hash": "sAANNu4aLhNgRlI87zTs8PE77YdUxREmKoeHA6lP/LE="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.ILivrosService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1124,11 +1238,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.IRelogio.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.IRelogio.html",
-          "hash": "mzmHbWsZPU2omkRvn5vWrTEnI3cyA7NMhZMtdr5q9FQ="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.IRelogio.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1136,11 +1248,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.ITagsService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.ITagsService.html",
-          "hash": "+2luhzuwbOuA8bYcLcC5czwY+iivMhay1xUTKVnwe7U="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.ITagsService.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1148,11 +1258,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.RelogioSistema.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.RelogioSistema.html",
-          "hash": "N/lLZZ8rJqm/arrPOali/6CUNWkOX96SJctlyxMXwGw="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.RelogioSistema.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1160,11 +1268,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.Validador.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.Validador.html",
-          "hash": "zZzT0t10IY+laH2p7VLYvM18ihXSwiyyZphrTsIklfE="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.Validador.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1172,11 +1278,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.Services.html",
-          "hash": "cRY5i1c7MJkLNd+xf18ntQL0qIIFZ12KZ54ZKNbDSAo="
+          "relative_path": "api/LivrEtec/LivrEtec.Services.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1184,11 +1288,9 @@
       "source_relative_path": "api/LivrEtec/LivrEtec.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LivrEtec/LivrEtec.html",
-          "hash": "N0VEkXDWqMYdoYik9vZ0X9MliLo2avfmdRYL2YfUQ5Q="
+          "relative_path": "api/LivrEtec/LivrEtec.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1196,11 +1298,9 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "BsMp/aaICZ1cAPds3YZEFVrIazFBT9XqzZOXywnwyek="
+          "relative_path": "api/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1208,11 +1308,9 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "6LnUk7RDArcoEsZlZSqqYbXmghQCyUSeJvAQdQszCuM="
+          "relative_path": "api/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1220,11 +1318,9 @@
       "source_relative_path": "articles/gib/criacao-banco-de-dados.md",
       "output": {
         ".html": {
-          "relative_path": "articles/gib/criacao-banco-de-dados.html",
-          "hash": "+1Am7R1keyf61xFI+qBbevHerw6oU3BjNlyVfEkYp4w="
+          "relative_path": "articles/gib/criacao-banco-de-dados.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1232,11 +1328,9 @@
       "source_relative_path": "articles/gib/funcionalidades.md",
       "output": {
         ".html": {
-          "relative_path": "articles/gib/funcionalidades.html",
-          "hash": "n6dh553D20ZXHlpED366/3HUMc/GnRBqudJV3QplsGI="
+          "relative_path": "articles/gib/funcionalidades.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1244,11 +1338,9 @@
       "source_relative_path": "articles/gib/telas.md",
       "output": {
         ".html": {
-          "relative_path": "articles/gib/telas.html",
-          "hash": "hvM0DnwK0VCwsXu46zAlW0mIyLGsmq7w5/vRw+je1uA="
+          "relative_path": "articles/gib/telas.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1256,11 +1348,9 @@
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "VzqNIBxQpKMNoFkboiBCYyKbBu0rHLsK9wfGM5n009E="
+          "relative_path": "articles/intro.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1268,11 +1358,9 @@
       "source_relative_path": "articles/modelos-de-dados.md",
       "output": {
         ".html": {
-          "relative_path": "articles/modelos-de-dados.html",
-          "hash": "kMm5rEhwE3IjkJGT4Ic+Bt/11Zr9NgS2Uau6F+tNmqg="
+          "relative_path": "articles/modelos-de-dados.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1280,11 +1368,9 @@
       "source_relative_path": "articles/testes.md",
       "output": {
         ".html": {
-          "relative_path": "articles/testes.html",
-          "hash": "EUaIkJ8OvKck+JUf/5eq1lNqcy9OMf3x7hZtBzmf8yA="
+          "relative_path": "articles/testes.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1292,11 +1378,9 @@
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "articles/toc.html",
-          "hash": "bz5ch8rgEzosO0ReY1aeyVHI4jhXRh6URXBelE/Lbd8="
+          "relative_path": "articles/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1304,11 +1388,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "AyFrLr0HiXA70hP9/sLnwWIecckvGVm1108kXodgcRc="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1316,55 +1398,10 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "2TSCRqrRgkWIQmncF4nC9ja15YQ7bEhfIY5owZ2Iz2s="
+          "relative_path": "toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
-    }
-  ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 8,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 99,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
     }
   ],
   "version_info": {},
