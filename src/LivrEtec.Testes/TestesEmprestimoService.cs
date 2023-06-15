@@ -55,7 +55,7 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 				new Usuario(){
 					Id= ID_USUARIO_CRIADOR,
 					Nome="Usuario criador",
-					Senha= AutenticacaoService.GerarHahSenha(ID_USUARIO_CRIADOR, "Senha"),
+					Senha= IAutenticacaoService.GerarHahSenha(ID_USUARIO_CRIADOR, "Senha"),
 					Login="usuario_criador",
 					Cargo =  cargoTeste,
 				},
