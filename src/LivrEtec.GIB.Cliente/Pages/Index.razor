@@ -1,6 +1,11 @@
 ﻿@page "/"
+@page "/login"
 @using System.ComponentModel.DataAnnotations;
 @inject IIdentidadeService IdentidadeService 
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+@attribute [AllowAnonymous]
+
 <div class="container-form-login">
     <EditForm Model="@model" OnSubmit="@HandleSubmit">
         <DataAnnotationsValidator />
@@ -16,8 +21,6 @@
     </EditForm>
 </div>
 
- 
-
 @code {
 
     record class LoginModel {
@@ -28,13 +31,28 @@
     }
 
     private LoginModel model = new();
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "returnUrl")]
+    public string? ReturnUrl { get; set; }
+
     string mensagem = null;
+
     private async Task HandleSubmit()
     {
+        mensagem = "Verificando...";
         await IdentidadeService.AutenticarEDefinirUsuario(model.Login, model.Senha);
         if (IdentidadeService.EstaAutenticado){
             await IdentidadeService.CarregarUsuario();
-            mensagem = IdentidadeService.Usuario.Nome;
+            var auth = (LEAuthenticationStateProvider)AuthStateProvider;
+            auth.Login();
+            if (ReturnUrl is null)  
+            {
+                NavigationManager.NavigateTo("livro/procurar");
+            }
+            else {
+                NavigationManager.NavigateTo(ReturnUrl);
+            }
         } 
         else
         {

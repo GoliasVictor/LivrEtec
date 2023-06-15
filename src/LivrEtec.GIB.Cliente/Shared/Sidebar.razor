@@ -1,4 +1,5 @@
 ﻿@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider;
 
 <div class="sidebar">
     <div class="logo">LV</div>
@@ -37,12 +38,11 @@
                 </NavLink>
             </li>
             <li>
-                <NavLink class="sidebar-item">
+                <NavLink class="sidebar-item" href="javascript: void(0);" @onclick="logout">
                     <span class="material-symbols-outlined icone">logout</span>
                     <span>Sair</span>
                 </NavLink>
             </li>
-
         </ul>
     </nav>
 </div>
@@ -71,4 +71,8 @@
     }
 
     string ObterAtivo(string href, NavLinkMatch navLinkMatch = NavLinkMatch.Prefix) => EstaAtivo(href, navLinkMatch) ? "ativo" : "";
+    void logout(){
+        var auth = (LEAuthenticationStateProvider)AuthStateProvider;
+        auth.Logout();
+    }
 }
