@@ -21,11 +21,12 @@ namespace LivrEtec.GIB.Cliente
 #if DEBUG
 		    builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
-            builder.Services.AddSingleton<IdentidadeService>();
-            builder.Services.AddScoped<GrpcChannelProvider>();
+            Preferences.Set("UrlAPI", "http://localhost:5259");
+            builder.Services.AddSingleton<IConfiguracaoService, ConfiguracaoService>();
+            builder.Services.AddSingleton<IIdentidadeService, IdentidadeService>();
+            builder.Services.AddSingleton<GrpcChannelProvider>();
             builder.Services.AddScoped((serviceProvider) => {
-                var identidade = serviceProvider.GetRequiredService<IdentidadeService>();
-                return serviceProvider.GetRequiredService<GrpcChannelProvider>().GetGrpcChannel(identidade.TokenJWT);
+                return serviceProvider.GetRequiredService<GrpcChannelProvider>().GetGrpcChannel();
             });
             return builder.Build();
         }

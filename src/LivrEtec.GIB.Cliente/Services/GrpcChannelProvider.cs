@@ -10,18 +10,23 @@ using System.Threading.Tasks;
 namespace LivrEtec.GIB.Cliente.Services;
 internal class GrpcChannelProvider
 {
-    IConfiguration Configuration;
-    public GrpcChannelProvider(IConfiguration configuration)
+    IConfiguracaoService Configuracao;
+    string AuthToken;
+    public void DefinirToken(string authToken)
     {
-        Configuration = configuration;
+        AuthToken = authToken;
     }
-    public GrpcChannel GetGrpcChannel(string authToken)
+    public GrpcChannelProvider(IConfiguracaoService configuration)
     {
-        var UrlAPI = Configuration["UrlAPI"] ?? throw new Exception("Endereço da API gRPC indefinido");
+        Configuracao = configuration;
+    }
+    public GrpcChannel GetGrpcChannel()
+    {
+        var UrlAPI = Configuracao["UrlAPI"] ?? throw new Exception("Endereço da API gRPC indefinido");
 
         var httpClient = new HttpClient();
-        if (authToken is not null)
-            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {authToken}");
+        if (AuthToken is not null)
+            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {AuthToken}");
 
         var grpcChannelOptions = new GrpcChannelOptions {
             HttpClient = httpClient,

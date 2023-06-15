@@ -22,46 +22,38 @@ public class IdentidadeService : IIdentidadeService
 
     private IAutorizacaoService autorizacaoService { get; set; }
     private IAutenticacaoService autenticacaoService { get; set; }
-    public int IdUsuario { get; private set; }
-    public Usuario? Usuario { get; private set; }
-    public bool EstaAutenticado { get; private set; }
+    public Usuario? Usuario { get; set; }
+    public bool EstaAutenticado { get; set; }
 
-    public async Task DefinirUsuario(int idUsuario)
-    {
-        if (false == await repUsuarios.Existe(idUsuario))
-        {
-            throw new ArgumentException("Usuario não existe");
-        }
-
-        EstaAutenticado = false;
-        IdUsuario = idUsuario;
-
-    }
-
-    public async Task AutenticarUsuario(string senha)
+    public async Task AutenticarEDefinirUsuario(string login, string senha)
     {
         _ = senha ?? throw new ArgumentNullException(senha);
-        EstaAutenticado = await autenticacaoService.EhAutentico(IdUsuario, IAutenticacaoService.GerarHahSenha(IdUsuario, senha));
+        _ = login ?? throw new ArgumentNullException(login);
+        var id = await repUsuarios.ObterId(login);
+        
+        EstaAutenticado = id is not null && await autenticacaoService.EhAutentico((int)id, IAutenticacaoService.GerarHahSenha((int)id, senha));
         if (EstaAutenticado)
         {
-            Usuario = await repUsuarios.Obter(IdUsuario);
+            Usuario = await repUsuarios.Obter((int)id);
         }
     }
-    public async Task AutenticarUsuario()
+    public async Task CarregarUsuario()
     {
-        EstaAutenticado = true;
-        Usuario = await repUsuarios.Obter(IdUsuario);
-
+        _ = Usuario ?? throw new Exception("Usuario indefindo");
+        if (EstaAutenticado)
+        {
+            Usuario = await repUsuarios.Obter(Usuario.Id);
+        }
     }
     public Task<bool> EhAutorizado(Permissao permissao)
     {
-        return !EstaAutenticado ? Task.FromResult(false) : autorizacaoService.EhAutorizado(IdUsuario, permissao);
+        _ = Usuario ?? throw new Exception("Usuario indefindo");
+        return !EstaAutenticado ? Task.FromResult(false) : autorizacaoService.EhAutorizado(Usuario.Id, permissao);
     }
     public Task ErroSeNaoAutorizado(Permissao permissao)
     {
         _ = Usuario ?? throw new NaoAutenticadoException("Usuario não definido");
         return !EstaAutenticado ? throw new NaoAutenticadoException(Usuario) : autorizacaoService.ErroSeNaoAutorizado(Usuario, permissao);
     }
-
-
+  
 }

@@ -2,12 +2,10 @@ namespace LivrEtec.Services;
 
 public interface IIdentidadeService
 {
-    int IdUsuario { get; }
-    Usuario? Usuario { get; }
-    bool EstaAutenticado { get; }
-    Task AutenticarUsuario(string senha);
-    Task AutenticarUsuario();
-    Task DefinirUsuario(int idUsuario);
+    Usuario? Usuario { get; set; }
+    bool EstaAutenticado { get; set; }
+    Task AutenticarEDefinirUsuario(string login, string senha);
+    Task CarregarUsuario();
     Task<bool> EhAutorizado(Permissao permissao);
     Task ErroSeNaoAutorizado(Permissao permissao);
 

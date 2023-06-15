@@ -1,13 +1,17 @@
 ﻿@page "/"
 @using System.ComponentModel.DataAnnotations;
+@inject IIdentidadeService IdentidadeService 
 <div class="container-form-login">
     <EditForm Model="@model" OnSubmit="@HandleSubmit">
         <DataAnnotationsValidator />
         <div class="model-content">
             <h2>Login</h2>
-            <InputText class="input-text" id="nome" placeholder="Nome" @bind-Value="model.Nome"/>
+            <InputText class="input-text" id="login" placeholder="Login" @bind-Value="model.Login"/>
             <InputText class="input-text" id="senha" placeholder="Senha" @bind-Value="model.Senha" type="password" />
             <button type="submit">Entrar</button>
+            @if ( mensagem is not null ){
+                <p>@mensagem</p>
+            }
         </div>
     </EditForm>
 </div>
@@ -18,15 +22,24 @@
 
     record class LoginModel {
         [Required]
-        public string Nome { get; set;  }
+        public string Login { get; set;  }
         [Required]
         public string Senha { get; set; }
     }
 
     private LoginModel model = new();
-
-    private void HandleSubmit()
+    string mensagem = null;
+    private async Task HandleSubmit()
     {
+        await IdentidadeService.AutenticarEDefinirUsuario(model.Login, model.Senha);
+        if (IdentidadeService.EstaAutenticado){
+            await IdentidadeService.CarregarUsuario();
+            mensagem = IdentidadeService.Usuario.Nome;
+        } 
+        else
+        {
+            mensagem = "Login ou Senha errado";    
+        }
 
     }
 }

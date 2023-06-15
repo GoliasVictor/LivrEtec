@@ -1,5 +1,6 @@
 using LivrEtec.Servidor.BD;
 using Microsoft.Extensions.Logging;
+using System.Data.Entity;
 
 namespace LivrEtec.Servidor.Repositorios;
 
@@ -22,6 +23,10 @@ public class RepUsuarios : Repositorio, IRepUsuarios
         await BD.Entry(usuario).Reference(u => u.Cargo).LoadAsync();
         await BD.Entry(usuario.Cargo).Collection(c => c.Permissoes).LoadAsync();
         return usuario;
+    }
+    public Task<int?> ObterId(string login)
+    {
+        return Task.Run(()=> BD.Usuarios.FirstOrDefault(u => u.Login == login)?.Id);
     }
     public async Task<bool> Existe(int id)
     {

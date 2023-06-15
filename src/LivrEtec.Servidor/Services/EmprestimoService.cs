@@ -1,4 +1,5 @@
 ﻿using LivrEtec.Exceptions;
+using LivrEtec.Services;
 using Microsoft.Extensions.Logging;
 
 namespace LivrEtec.Servidor.Services;
@@ -93,7 +94,7 @@ public sealed class EmprestimoService : IEmprestimoService
     private async Task FecharAsync(ParamFecharEmprestimo parametros)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Fechar);
-        parametros.idUsuarioFechador = identidadeService.IdUsuario;
+        parametros.idUsuarioFechador = identidadeService.Usuario!.Id;
         await repEmprestimos.Fechar(parametros);
 
         Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi devolvido", parametros.IdEmprestimo);

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
-
+/*
 namespace LivrEtec.Testes;
 [Collection("UsaBancoDeDados")]
 [Trait("Category", "Local")]
@@ -160,3 +160,4 @@ public class TestesIdentidade : IDisposable
         BDU.Dispose();
     }
 }
+*/

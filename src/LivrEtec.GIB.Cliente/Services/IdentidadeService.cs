@@ -9,43 +9,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage.Provider;
 
 namespace LivrEtec.GIB.Cliente.Services;
 
 internal class IdentidadeService : IIdentidadeService
 {
-    GrpcChannelProvider GrpcChannelProvider;
-    public IdentidadeService(GrpcChannelProvider grpcChannelProvider)
+    readonly GrpcChannelProvider GrpcChannelProvider;
+    readonly IConfiguracaoService Configuracao;
+    public IdentidadeService(GrpcChannelProvider grpcChannelProvider, IConfiguracaoService configuracao)
     {
         GrpcChannelProvider = grpcChannelProvider;
+        Configuracao = configuracao;
     }
 
-    public IdentidadeService(){ }
+    public IdentidadeService() { }
 
-    public string TokenJWT { get; set; }
-    public int IdUsuario { get; private set; }
-    public Models.Usuario? Usuario { get; private set; }
-    public bool EstaAutenticado { get; private set; }
+    public Models.Usuario? Usuario { get; set; }
+    public bool EstaAutenticado { get; set; }
 
-    public Task DefinirUsuario(int idUsuario)
-    {
-        EstaAutenticado = false;
-        IdUsuario = idUsuario;
-        return Task.CompletedTask;
-    }
-
-    public async Task AutenticarUsuario(string senha)
+    
+    public async Task AutenticarEDefinirUsuario(string login, string senha)
     {
         _ = senha ?? throw new ArgumentNullException(senha);
-        var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel(null));
-        await gerenciamentoSessao.LoginAsync(new LoginRequest {
-            IdUsuario = IdUsuario,
-            HashSenha = IAutenticacaoService.GerarHahSenha(IdUsuario, senha)
-        });
+        try
+        {
+            var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel());
+            var id = (int)(await gerenciamentoSessao.ObterIdAsync(new LoginUsuario() { Login = login })).Id;
+            
+            Token token = await gerenciamentoSessao.LoginAsync(new LoginRequest
+            {
+                IdUsuario = id,
+                HashSenha = IAutenticacaoService.GerarHahSenha(id, senha)
+            });
+            GrpcChannelProvider.DefinirToken(token.Valor);
+
+            EstaAutenticado = true;
+        }
+        catch
+        {
+            EstaAutenticado = false;
+        }
     }
-    public Task AutenticarUsuario()
+
+    public async Task CarregarUsuario()
     {
-        return AutenticarUsuario(Usuario.Senha);
+        var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel());
+        Usuario = await gerenciamentoSessao.CarregarUsuarioAsync(new Empty());
     }
     public Task<bool> EhAutorizado(Models.Permissao permissao)
     {
@@ -55,6 +65,4 @@ internal class IdentidadeService : IIdentidadeService
     {
         throw new NotImplementedException();
     }
-
-
 }

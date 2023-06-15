@@ -25,6 +25,8 @@ service Livros {
 service GerenciamentoSessao {
     rpc Login(LoginRequest) returns ( Token );
     rpc EhAutorizado( IdPermissao ) returns ( RespostaEhAutorizado );
+    rpc CarregarUsuario( Empty ) returns ( Usuario );
+    rpc ObterId( LoginUsuario ) returns ( IdUsuario );
 }
 
 service Tags {
@@ -34,7 +36,12 @@ service Tags {
 	rpc  Obter(IdTag) returns (Tag);
 	rpc  Remover(IdTag) returns (Empty);
 }
-
+message LoginUsuario {
+    string login = 1;
+}
+message IdUsuario {
+    google.protobuf.Int32Value Id = 1;
+}
 message LoginRequest {
     int32 IdUsuario = 1;
     string HashSenha = 2;
