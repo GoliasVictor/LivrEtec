@@ -8,10 +8,12 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
     private readonly ILogger<GerenciamentoSessao> logger;
     private readonly AuthKeyProvider authKeyProvider;
     private readonly IAutenticacaoService autenticacaoService;
-    public GerenciamentoSessao(ILogger<GerenciamentoSessao> logger, IAutenticacaoService autenticacaoService, AuthKeyProvider authKeyProvider)
+    private readonly IIdentidadeService identidadeService;
+    public GerenciamentoSessao(ILogger<GerenciamentoSessao> logger, IAutenticacaoService autenticacaoService, AuthKeyProvider authKeyProvider, IIdentidadeService identidadeService)
     {
         this.logger = logger;
         this.autenticacaoService = autenticacaoService;
+        this.identidadeService = identidadeService;
         this.authKeyProvider = authKeyProvider;
     }
     [AllowAnonymous]
@@ -23,6 +25,16 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
             {
                 Valor = TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey)
             };
+    }
+    [AllowAnonymous]
+    public override async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request, ServerCallContext context)
+    {
+        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Id)
+                ?? throw new RpcException(new Status(StatusCode.FailedPrecondition, "Permissão não existe"));
+        return new RespostaEhAutorizado
+        {
+            Autorizado = await identidadeService.EhAutorizado(permissao)
+        };
     }
 
 }

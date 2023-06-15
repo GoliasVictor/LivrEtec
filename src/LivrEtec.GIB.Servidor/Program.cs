@@ -123,7 +123,7 @@ using (var scope = app.Services.CreateScope()){
 			Id = 1,
 			Login = "admin",
 			Nome = "admin",
-			Senha = AutenticacaoService.GerarHahSenha(1, "senha"),
+			Senha = AutenticacaoService.GerarHahSenha(1, app.Configuration["SenhaPadraoAdmin"]),
 			Cargo = cargoAdmin
 		};
 		BD.Add(cargoAdmin);

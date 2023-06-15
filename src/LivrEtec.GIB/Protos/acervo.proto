@@ -24,6 +24,7 @@ service Livros {
 
 service GerenciamentoSessao {
     rpc Login(LoginRequest) returns ( Token );
+    rpc EhAutorizado( IdPermissao ) returns ( RespostaEhAutorizado );
 }
 
 service Tags {
@@ -159,3 +160,9 @@ message ListaTags {
     repeated Tag Tags = 1;
 }
 
+message RespostaEhAutorizado {
+    bool autorizado = 1;
+}
+message IdPermissao {
+    int32 Id = 1;
+}
