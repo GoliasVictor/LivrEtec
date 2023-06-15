@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using LivrEtec.GIB.Cliente.Services;
+using LivrEtec.GIB.Services;
+using LivrEtec.Services;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 
 namespace LivrEtec.GIB.Cliente
 {
@@ -18,8 +21,12 @@ namespace LivrEtec.GIB.Cliente
 #if DEBUG
 		    builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
-
-
+            builder.Services.AddSingleton<IdentidadeService>();
+            builder.Services.AddScoped<GrpcChannelProvider>();
+            builder.Services.AddScoped((serviceProvider) => {
+                var identidade = serviceProvider.GetRequiredService<IdentidadeService>();
+                return serviceProvider.GetRequiredService<GrpcChannelProvider>().GetGrpcChannel(identidade.TokenJWT);
+            });
             return builder.Build();
         }
     }

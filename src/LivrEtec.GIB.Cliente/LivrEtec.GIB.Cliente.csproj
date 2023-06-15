@@ -30,4 +30,13 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Grpc.Net.Client" Version="2.40.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LivrEtec.GIB\LivrEtec.GIB.csproj" />
+      <ProjectReference Include="..\LivrEtec\LivrEtec.csproj" />
+    </ItemGroup>
+
 </Project>

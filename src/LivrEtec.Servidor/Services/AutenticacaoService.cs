@@ -11,13 +11,7 @@ public sealed class AutenticacaoService : IAutenticacaoService
         this.logger = logger;
         this.repUsuarios = repUsuarios;
     }
-    public static string GerarHahSenha(int IdUsuario, string senha)
-    {
-        using var md5 = MD5.Create();
-        var bytesSenha = System.Text.Encoding.ASCII.GetBytes(senha + IdUsuario.ToString());
-        var bytesHash = md5.ComputeHash(bytesSenha);
-        return Convert.ToHexString(bytesHash);
-    }
+
     public async Task<bool> EhAutentico(int IdUsuario, string hashSenha)
     {
         _ = hashSenha ?? throw new ArgumentNullException(nameof(hashSenha));
