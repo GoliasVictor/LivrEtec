@@ -41,7 +41,7 @@ public class IdentidadeService : IIdentidadeService
     public async Task AutenticarUsuario(string senha)
     {
         _ = senha ?? throw new ArgumentNullException(senha);
-        EstaAutenticado = await autenticacaoService.EhAutentico(IdUsuario, AutenticacaoService.GerarHahSenha(IdUsuario, senha));
+        EstaAutenticado = await autenticacaoService.EhAutentico(IdUsuario, IAutenticacaoService.GerarHahSenha(IdUsuario, senha));
         if (EstaAutenticado)
         {
             Usuario = await repUsuarios.Obter(IdUsuario);
