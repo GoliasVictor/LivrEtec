@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{A670F930-0576-4580-ABCC-405B4D4B38A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivrEtec.GIB.Cliente", "LivrEtec.GIB.Cliente\LivrEtec.GIB.Cliente.csproj", "{B88BF541-9BA8-405E-824B-80A5FEF9AC0B}"
+EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A6FDE3F9-E074-4DBD-BD27-C2EBC860EED2}"
 EndProject
 Global

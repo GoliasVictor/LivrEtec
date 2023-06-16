@@ -1,4 +1,74 @@
 ﻿@page "/"
+@page "/login"
+@using System.ComponentModel.DataAnnotations;
+@inject IIdentidadeService IdentidadeService 
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+@attribute [AllowAnonymous]
 
-<h1>Livretec :D </h1>
+<div class="container-form-login">
+    <EditForm Model="@model" OnSubmit="@HandleSubmit">
+        <div class="model-content">
+            <h2>Login</h2>
+            <InputText class="input-text" id="login" placeholder="Login" @bind-Value="model.Login"/>
+            <InputText class="input-text" id="senha" placeholder="Senha" @bind-Value="model.Senha" type="password" />
+            @if (mensagem is not null) {
+                <div class="info">@mensagem</div>
+            }
+            <button type="submit">
+                @( Carregando ? "Carregando..." : "Entrar" )
+            </button>
+        </div>
+    </EditForm>
+</div>
 
+@code {
+
+    record class LoginModel {
+        public string Login { get; set;  }
+        public string Senha { get; set; }
+    }
+
+    private LoginModel model = new();
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "returnUrl")]
+    public string? ReturnUrl { get; set; }
+
+    string mensagem = null;
+    bool Carregando;
+    string textoBotao = null;
+
+    private async Task HandleSubmit()
+    {
+        if (String.IsNullOrWhiteSpace(model.Login))
+        {
+            mensagem = "Insira um login";
+            return;
+        }
+        if (String.IsNullOrWhiteSpace(model.Senha))
+        {
+            mensagem = "Insira uma senha";
+            return;
+        }
+        Carregando = true;
+        await IdentidadeService.Login(model.Login.Trim(), model.Senha.Trim(), false);
+        if (IdentidadeService.EstaAutenticado){
+            await IdentidadeService.CarregarUsuario();
+            var auth = (LEAuthenticationStateProvider)AuthStateProvider;
+            auth.Login();
+            if (ReturnUrl is null)  
+            {
+                NavigationManager.NavigateTo("livro/procurar");
+            }
+            else {
+                NavigationManager.NavigateTo(ReturnUrl);
+            }
+        } 
+        else
+        {
+            mensagem = "Login ou Senha errado";    
+        }
+        Carregando = false;
+    }
+}

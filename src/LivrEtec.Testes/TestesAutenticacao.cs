@@ -51,7 +51,7 @@ public class TestesAutenticacao : IDisposable
     {
         var senha = gSenha(idUsuario);
 
-        var autentico = await autenticacaoService.EhAutentico(idUsuario, AutenticacaoService.GerarHahSenha(idUsuario, senha));
+        var autentico = await autenticacaoService.EhAutentico(idUsuario, IAutenticacaoService.GerarHahSenha(idUsuario, senha));
 
         Assert.True(autentico);
     }

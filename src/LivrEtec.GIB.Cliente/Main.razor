@@ -1,11 +1,22 @@
-﻿<Router AppAssembly="@typeof(Main).Assembly">
-	<Found Context="routeData">
-		<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-	</Found>
-	<NotFound>
-		<LayoutView Layout="@typeof(MainLayout)">
-			<p role="alert">Alguma coisa deu errado, por favor, tente novamente, ou contate o suporte :)</p>
-		</LayoutView>
-	</NotFound>
-</Router>
+﻿@inject NavigationManager NavigationManager
+
+<CascadingAuthenticationState>
+	<Router AppAssembly="@typeof(Main).Assembly">
+		<Found Context="routeData">
+		
+			<AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+				<NotAuthorized>
+					@{ NavigationManager.NavigateTo($"/login?returnUrl={Uri.EscapeDataString(NavigationManager.Uri)}"); }
+				</NotAuthorized>
+			</AuthorizeRouteView>
+			<FocusOnNavigate RouteData="@routeData" Selector="h1" />
+
+		</Found>
+		<NotFound>
+			<LayoutView Layout="@typeof(MainLayout)">
+				<p role="alert">Alguma coisa deu errado, por favor, tente novamente, ou contate o suporte :)</p>
+			</LayoutView>
+		</NotFound>
+	</Router>
+</CascadingAuthenticationState>
+

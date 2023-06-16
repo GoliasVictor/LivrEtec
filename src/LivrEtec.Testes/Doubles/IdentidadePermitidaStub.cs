@@ -1,5 +1,7 @@
 ﻿#pragma warning disable CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
 
+using System.Formats.Asn1;
+
 namespace LivrEtec.Testes.Doubles;
 
 internal class IdentidadePermitidaStub : IIdentidadeService
@@ -22,13 +24,11 @@ internal class IdentidadePermitidaStub : IIdentidadeService
 
     public Usuario? Usuario { get; set; }
 
-    public bool EstaAutenticado => true;
+    public bool EstaAutenticado { get; set; } = true;
 
-    public async Task AutenticarUsuario(string senha) { }
+    public async Task Login(string login, string senha, bool HashSenha) { }
 
-    public async Task AutenticarUsuario() { }
-
-    public async Task DefinirUsuario(int idUsuario) { }
+    public async Task CarregarUsuario() { }
 
     public async Task<bool> EhAutorizado(Permissao permissao)
     {

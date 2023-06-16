@@ -24,7 +24,7 @@ public sealed class AutorizacaoService : IAutorizacaoService
             throw new ArgumentNullException(nameof(permissao));
         }
 
-        if (!Permissoes.TodasPermissoes.Contains(permissao))
+        if (!Permissoes.TodasPermissoes.Any(p=> p.Id == permissao.Id))
         {
             throw new ArgumentException(nameof(permissao));
         }

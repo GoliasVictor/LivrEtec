@@ -30,4 +30,15 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Grpc.Net.Client" Version="2.40.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LivrEtec.GIB\LivrEtec.GIB.csproj" />
+      <ProjectReference Include="..\LivrEtec\LivrEtec.csproj" />
+    </ItemGroup>
+
 </Project>
