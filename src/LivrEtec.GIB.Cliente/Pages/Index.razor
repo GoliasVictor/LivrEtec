@@ -8,15 +8,16 @@
 
 <div class="container-form-login">
     <EditForm Model="@model" OnSubmit="@HandleSubmit">
-        <DataAnnotationsValidator />
         <div class="model-content">
             <h2>Login</h2>
             <InputText class="input-text" id="login" placeholder="Login" @bind-Value="model.Login"/>
             <InputText class="input-text" id="senha" placeholder="Senha" @bind-Value="model.Senha" type="password" />
-            <button type="submit">Entrar</button>
-            @if ( mensagem is not null ){
-                <p>@mensagem</p>
+            @if (mensagem is not null) {
+                <div class="info">@mensagem</div>
             }
+            <button type="submit">
+                @( Carregando ? "Carregando..." : "Entrar" )
+            </button>
         </div>
     </EditForm>
 </div>
@@ -24,9 +25,7 @@
 @code {
 
     record class LoginModel {
-        [Required]
         public string Login { get; set;  }
-        [Required]
         public string Senha { get; set; }
     }
 
@@ -37,11 +36,23 @@
     public string? ReturnUrl { get; set; }
 
     string mensagem = null;
+    bool Carregando;
+    string textoBotao = null;
 
     private async Task HandleSubmit()
     {
-        mensagem = "Verificando...";
-        await IdentidadeService.Login(model.Login, model.Senha, false);
+        if (String.IsNullOrWhiteSpace(model.Login))
+        {
+            mensagem = "Insira um login";
+            return;
+        }
+        if (String.IsNullOrWhiteSpace(model.Senha))
+        {
+            mensagem = "Insira uma senha";
+            return;
+        }
+        Carregando = true;
+        await IdentidadeService.Login(model.Login.Trim(), model.Senha.Trim(), false);
         if (IdentidadeService.EstaAutenticado){
             await IdentidadeService.CarregarUsuario();
             var auth = (LEAuthenticationStateProvider)AuthStateProvider;
@@ -58,6 +69,6 @@
         {
             mensagem = "Login ou Senha errado";    
         }
-
+        Carregando = false;
     }
 }

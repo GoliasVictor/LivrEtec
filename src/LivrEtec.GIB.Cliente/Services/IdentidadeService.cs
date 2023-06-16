@@ -40,7 +40,7 @@ internal class IdentidadeService : IIdentidadeService
             Token token = await gerenciamentoSessao.LoginAsync(new LoginRequest
             {
                 IdUsuario = id,
-                HashSenha = IAutenticacaoService.GerarHahSenha(id, senha)
+                HashSenha = senha
             });
             GrpcChannelProvider.DefinirToken(token.Valor);
 
