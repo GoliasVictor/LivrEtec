@@ -26,7 +26,7 @@ internal class IdentidadePermitidaStub : IIdentidadeService
 
     public bool EstaAutenticado { get; set; } = true;
 
-    public async Task AutenticarEDefinirUsuario(string login, string senha) { }
+    public async Task Login(string login, string senha, bool HashSenha) { }
 
     public async Task CarregarUsuario() { }
 

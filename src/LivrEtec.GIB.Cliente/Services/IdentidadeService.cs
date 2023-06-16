@@ -16,11 +16,9 @@ namespace LivrEtec.GIB.Cliente.Services;
 internal class IdentidadeService : IIdentidadeService
 {
     readonly GrpcChannelProvider GrpcChannelProvider;
-    readonly IConfiguracaoService Configuracao;
-    public IdentidadeService(GrpcChannelProvider grpcChannelProvider, IConfiguracaoService configuracao)
+    public IdentidadeService(GrpcChannelProvider grpcChannelProvider)
     {
         GrpcChannelProvider = grpcChannelProvider;
-        Configuracao = configuracao;
     }
 
     public IdentidadeService() { }
@@ -29,14 +27,16 @@ internal class IdentidadeService : IIdentidadeService
     public bool EstaAutenticado { get; set; }
 
     
-    public async Task AutenticarEDefinirUsuario(string login, string senha)
+    public async Task Login(string login, string senha, bool senhaHash)
     {
         _ = senha ?? throw new ArgumentNullException(senha);
         try
         {
             var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel());
             var id = (int)(await gerenciamentoSessao.ObterIdAsync(new LoginUsuario() { Login = login })).Id;
-            
+            if (!senhaHash)
+                senha = IAutenticacaoService.GerarHahSenha(id, senha);
+
             Token token = await gerenciamentoSessao.LoginAsync(new LoginRequest
             {
                 IdUsuario = id,

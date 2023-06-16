@@ -41,7 +41,7 @@
     private async Task HandleSubmit()
     {
         mensagem = "Verificando...";
-        await IdentidadeService.AutenticarEDefinirUsuario(model.Login, model.Senha);
+        await IdentidadeService.Login(model.Login, model.Senha, false);
         if (IdentidadeService.EstaAutenticado){
             await IdentidadeService.CarregarUsuario();
             var auth = (LEAuthenticationStateProvider)AuthStateProvider;
