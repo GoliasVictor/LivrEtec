@@ -19,14 +19,14 @@ public sealed class LivrosServiceRPC : Livros.LivrosBase
         return new Empty();
 
     }
-    public override async Task<RPC.Livro?> Obter(IdLivro request, ServerCallContext context)
+    public override async Task<RPC.Livro?> Obter(Id request, ServerCallContext context)
     {
-        return await livrosService.Obter(request.Id);
+        return await livrosService.Obter(request.Valor);
     }
 
-    public override async Task<Empty> Remover(IdLivro request, ServerCallContext context)
+    public override async Task<Empty> Remover(Id request, ServerCallContext context)
     {
-        await livrosService.Remover(request.Id);
+        await livrosService.Remover(request.Valor);
         return new Empty();
     }
 

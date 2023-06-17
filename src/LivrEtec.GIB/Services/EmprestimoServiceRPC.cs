@@ -19,12 +19,12 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
     {
         try
         {
-            RPC::IdEmprestimo idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest()
+            RPC::Id idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest()
             {
                 IdLivro = idlivro,
                 IdPessoa = idPessoa
             });
-            return idEmprestimo.Id;
+            return idEmprestimo.Valor;
         }
         catch (RpcException ex)
         {
@@ -81,10 +81,7 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
     {
         try
         {
-            _ = await clientRPC.RegistrarPerdaAsync(new RPC::IdEmprestimo()
-            {
-                Id = idEmprestimo,
-            });
+            _ = await clientRPC.RegistrarPerdaAsync(new RPC::Id(idEmprestimo));
         }
         catch (RpcException ex)
         {
@@ -96,10 +93,7 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
         try
         {
 
-            _ = await clientRPC.ExcluirAsync(new RPC::IdEmprestimo()
-            {
-                Id = idEmprestimo,
-            });
+            _ = await clientRPC.ExcluirAsync(new RPC::Id(idEmprestimo));
         }
         catch (RpcException ex)
         {

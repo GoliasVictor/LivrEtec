@@ -7,16 +7,16 @@ option csharp_namespace = "LivrEtec.GIB.RPC";
 package livrEtecRPC;
 
 service Emprestimos { 
-    rpc Abrir(Emprestimo.AbrirRequest) returns (IdEmprestimo);
+    rpc Abrir(Emprestimo.AbrirRequest) returns (Id);
     rpc Buscar(Emprestimo.BuscarRequest) returns (ListaEmprestimos);
     rpc Prorrogar(Emprestimo.ProrrogarRequest) returns (Empty);
     rpc Devolver(Emprestimo.DevolverRequest) returns (Empty);
-    rpc RegistrarPerda(IdEmprestimo) returns (Empty) ;
-    rpc Excluir(IdEmprestimo) returns (Empty) ;
+    rpc RegistrarPerda(Id) returns (Empty) ;
+    rpc Excluir(Id) returns (Empty) ;
 }
 service Livros {
-    rpc Obter(IdLivro) returns (Livro);
-    rpc Remover(IdLivro) returns (Empty);
+    rpc Obter(Id) returns (Livro);
+    rpc Remover(Id) returns (Empty);
     rpc Buscar(ParamBusca) returns (ListaLivros);
     rpc Editar(Livro) returns (Empty);
     rpc Registrar(Livro) returns (Empty);
@@ -24,23 +24,26 @@ service Livros {
 
 service GerenciamentoSessao {
     rpc Login(LoginRequest) returns ( Token );
-    rpc EhAutorizado( IdPermissao ) returns ( RespostaEhAutorizado );
+    rpc EhAutorizado( Id ) returns ( RespostaEhAutorizado );
     rpc CarregarUsuario( Empty ) returns ( Usuario );
-    rpc ObterId( LoginUsuario ) returns ( IdUsuario );
+    rpc ObterId( LoginUsuario ) returns ( IdOpcional );
 }
 
 service Tags {
-    rpc  Registrar(Tag) returns (IdTag);
+    rpc  Registrar(Tag) returns (Id);
 	rpc  Editar(Tag) returns (Empty);
 	rpc  Buscar(Tag.BuscarRequest) returns (ListaTags);
-	rpc  Obter(IdTag) returns (Tag);
-	rpc  Remover(IdTag) returns (Empty);
+	rpc  Obter(Id) returns (Tag);
+	rpc  Remover(Id) returns (Empty);
 }
 message LoginUsuario {
     string login = 1;
 }
-message IdUsuario {
+message IdOpcional {
     google.protobuf.Int32Value Id = 1;
+}
+message Id {
+    int32 Valor = 1;
 }
 message LoginRequest {
     int32 IdUsuario = 1;
@@ -52,11 +55,8 @@ message Token {
 
 message Empty {
 
-} 
+}  
 
-message IdLivro {
-    int32 Id = 1;
-}
 message ParamBusca {
     string NomeLivro = 1;
     string NomeAutor = 2;
@@ -85,11 +85,7 @@ message Tag {
     message BuscarRequest {
         string Nome = 1;
     }
-}
-message IdTag {
-    int32 Id = 1;
-}
-
+} 
 message Autor {
     int32 Id =  1; 
     string Nome = 2;
@@ -117,9 +113,7 @@ message Usuario {
     string Nome = 4;
     Cargo Cargo = 5;
 }
-message IdEmprestimo { 
-    int32 Id = 1;
-}
+
 message Emprestimo {
     int32 Id = 1;
     Livro Livro = 2;
@@ -169,7 +163,4 @@ message ListaTags {
 
 message RespostaEhAutorizado {
     bool autorizado = 1;
-}
-message IdPermissao {
-    int32 Id = 1;
 }

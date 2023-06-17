@@ -14,12 +14,9 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
         this.identidadeService = identidadeService;
     }
 
-    public override async Task<IdEmprestimo> Abrir(AbrirRequest request, ServerCallContext context)
+    public override async Task<Id> Abrir(AbrirRequest request, ServerCallContext context)
     {
-        return new IdEmprestimo()
-        {
-            Id = await emprestimoService.Abrir(request.IdPessoa, request.IdLivro)
-        };
+        return new Id(await emprestimoService.Abrir(request.IdPessoa, request.IdLivro));
     }
 
     public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
@@ -51,15 +48,15 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
         return new Empty();
     }
 
-    public override async Task<Empty> RegistrarPerda(IdEmprestimo request, ServerCallContext context)
+    public override async Task<Empty> RegistrarPerda(Id request, ServerCallContext context)
     {
-        await emprestimoService.RegistrarPerda(request.Id);
+        await emprestimoService.RegistrarPerda(request.Valor);
         return new Empty();
     }
 
-    public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
+    public override async Task<Empty> Excluir(Id request, ServerCallContext context)
     {
-        await emprestimoService.Excluir(request.Id);
+        await emprestimoService.Excluir(request.Valor);
         return new Empty();
     }
 

@@ -18,7 +18,7 @@ public sealed class TagsServiceRPC : ITagsService
         Validador.ErroSeInvalido(tag);
         try
         {
-            return (await tagsClientRPC.RegistrarAsync(tag)).Id;
+            return (await tagsClientRPC.RegistrarAsync(tag)).Valor ;
         }
         catch (RpcException ex)
         {
@@ -44,7 +44,7 @@ public sealed class TagsServiceRPC : ITagsService
     {
         try
         {
-            return await tagsClientRPC.ObterAsync(new RPC::IdTag() { Id = id });
+            return await tagsClientRPC.ObterAsync(new RPC::Id(id));
         }
         catch (RpcException ex)
         {
@@ -57,7 +57,7 @@ public sealed class TagsServiceRPC : ITagsService
     {
         try
         {
-            _ = await tagsClientRPC.RemoverAsync(new RPC::IdTag() { Id = id });
+            _ = await tagsClientRPC.RemoverAsync(new RPC::Id(id));
         }
         catch (RpcException ex)
         {

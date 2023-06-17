@@ -36,7 +36,7 @@ public sealed class LivrosServiceRPC : ILivrosService
     {
         try
         {
-            return await livrosClientRPC.ObterAsync(new RPC::IdLivro() { Id = id });
+            return await livrosClientRPC.ObterAsync(new RPC::Id(id));
         }
         catch (RpcException ex)
         {
@@ -73,7 +73,7 @@ public sealed class LivrosServiceRPC : ILivrosService
     {
         try
         {
-            _ = await livrosClientRPC.RemoverAsync(new RPC::IdLivro() { Id = id });
+            _ = await livrosClientRPC.RemoverAsync(new RPC::Id(id));
         }
         catch (RpcException ex)
         {

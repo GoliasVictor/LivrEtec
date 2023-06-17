@@ -33,9 +33,9 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
     }
 
     [AllowAnonymous]
-    public override async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request, ServerCallContext context)
+    public override async Task<RespostaEhAutorizado> EhAutorizado(Id request, ServerCallContext context)
     {
-        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Id)
+        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Valor)
                 ?? throw new RpcException(new Status(StatusCode.FailedPrecondition, "Permissão não existe"));
         return new RespostaEhAutorizado
         {
@@ -49,9 +49,9 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
         return identidadeService.Usuario!;
     }
 
-    public override async Task<IdUsuario> ObterId(LoginUsuario request, ServerCallContext context)
+    public override async Task<IdOpcional> ObterId(LoginUsuario request, ServerCallContext context)
     {
-        return new IdUsuario()
+        return new IdOpcional()
         {
             Id = await repUsuarios.ObterId(request.Login)
         };
