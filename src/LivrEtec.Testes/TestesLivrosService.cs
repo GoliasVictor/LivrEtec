@@ -1,5 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using LivrEtec.GIB.RPC;
+using Microsoft.EntityFrameworkCore;
 using Xunit.Abstractions;
+using Autor = LivrEtec.Models.Autor;
+using Livro = LivrEtec.Models.Livro;
+using Tag = LivrEtec.Models.Tag;
 
 namespace LivrEtec.Testes;
 
@@ -160,11 +165,21 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 	public async Task Remover_LivroValidoAsync()
 	{
 		var Id = 1;
-
-		await livrosService.Remover(Id);
 		using PacaContext BD = BDU.CriarContexto();
-		var Contem = BD.Livros.Any(l => l.Id == Id);
-		Assert.False(Contem);
+		var livroInicial = (await BD.Livros.FindAsync(Id))!;
+		var tags = livroInicial.Tags.Select(t => t.Id);
+		var autores = livroInicial.Autores.Select(t => t.Id);
+		var emprestimos = await BD.Emprestimos.Where(e=> e.Livro.Id == Id).Select(e => e.Id).ToListAsync();
+		
+		await livrosService.Remover(Id);
+		var contem = BD.Livros.Any(l => l.Id == Id);
+		Assert.False(contem);
+		foreach( var tag in tags)
+			Assert.NotNull(await BD.Tags.FindAsync(tag));
+		foreach( var autor in autores)
+			Assert.NotNull(await BD.Tags.FindAsync(autor));
+		foreach (var emprestimo in emprestimos)
+			Assert.Null(await BD.Emprestimos.FindAsync(emprestimo));
 	}
 	[Fact]
 	public async Task Remover_LivroInvalidoAsync()
