@@ -239,17 +239,21 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 	public async Task RegistrarPerdaAsync_ValidaAsync()
 	{
 		var idEmprestimo = ID_EMPRESTIMO_ABERTO;
+		
 		Emprestimo emprestimoEsperado = BDU.gEmprestimo(idEmprestimo);
 		emprestimoEsperado.Devolvido = false;
 		emprestimoEsperado.Fechado = true;
 		emprestimoEsperado.DataFechamento = relogio.Agora;
 		emprestimoEsperado.UsuarioFechador = BDU.gUsuario(ID_USUARIO_TESTE);
-
+		var qtLivroEsperado = emprestimoEsperado.Livro.Quantidade - 1;
+		
 		await emprestimoService.RegistrarPerda(idEmprestimo);
 
 		Emprestimo? emprestimoAtual = await BDU.gEmprestimoBanco(idEmprestimo);
 		Assert.NotNull(emprestimoAtual);
+		Assert.Equal(qtLivroEsperado, emprestimoAtual?.Livro.Quantidade);
 		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual!);
+		
 	}
 	[Fact]
 	public async Task ExcluirAsync_ValidaAsync()

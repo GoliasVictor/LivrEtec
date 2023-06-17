@@ -84,21 +84,19 @@ public class BDUtil : IDisposable
 
     public async Task<Emprestimo?> gEmprestimoBanco(int idEmprestimo)
     {
-        using PacaContext BD = CriarContexto();
+        await using PacaContext BD = CriarContexto();
         Emprestimo? emprestimoAtual = await BD.Emprestimos.FindAsync(idEmprestimo);
-        if (emprestimoAtual is not null)
-        {
-
-            BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioCriador).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioFechador).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.Livro).Load();
-        }
+        if (emprestimoAtual is null) 
+            return null;
+        await BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioCriador).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioFechador).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.Livro).LoadAsync();
         return emprestimoAtual;
     }
     public async Task<Tag?> gTagBanco(int id)
     {
-        using PacaContext BD = CriarContexto();
+        await using PacaContext BD = CriarContexto();
         return await BD.Tags.FindAsync(id);
     }
     public void ResetarBanco()

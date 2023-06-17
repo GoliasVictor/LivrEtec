@@ -83,13 +83,16 @@ public sealed class EmprestimoService : IEmprestimoService
             ExplicacaoAtraso = ExplicacaoAtraso
         });
     }
-    public Task RegistrarPerda(int idEmprestimo)
+    public async Task RegistrarPerda(int idEmprestimo)
     {
-        return FecharAsync(new ParamFecharEmprestimo()
+        await FecharAsync(new ParamFecharEmprestimo()
         {
             IdEmprestimo = idEmprestimo,
             Devolvido = false,
         });
+        var livro = (await repEmprestimos.Obter(idEmprestimo))!.Livro.Clone();
+        livro.Quantidade -= 1;
+        await repLivros.Editar(livro);
     }
     private async Task FecharAsync(ParamFecharEmprestimo parametros)
     {

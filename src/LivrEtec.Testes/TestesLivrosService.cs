@@ -24,6 +24,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		Assert.Equal(livroEsperado.Nome, livroAtual.Nome);
 		Assert.Equal(livroEsperado.Arquivado, livroAtual.Arquivado);
 		Assert.Equal(livroEsperado.Descricao, livroAtual.Descricao);
+		Assert.Equal(livroEsperado.Quantidade, livroAtual.Quantidade);
 		AssertEhIgual(livroEsperado.Autores, livroAtual.Autores);
 		AssertEhIgual(livroEsperado.Tags, livroAtual.Tags);
 	}
@@ -199,6 +200,7 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		livroEditado.Nome = "Livro";
 		livroEditado.Arquivado = true;
 		livroEditado.Descricao = "Descrição";
+		livroEditado.Quantidade = 4;
 		livroEditado.Tags = new() { BDU.gTag(3) };
 		livroEditado.Autores = new() { BDU.gAutor(2) };
 		Livro livroEsperado = livroEditado.Clone();
