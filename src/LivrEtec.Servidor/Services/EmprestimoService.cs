@@ -32,6 +32,7 @@ public sealed class EmprestimoService : IEmprestimoService
     public async Task<int> Abrir(int idPessoa, int idLivro)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Criar);
+        await identidadeService.CarregarUsuario();
 
         Pessoa pessoa = await repPessoas.ObterObter(idPessoa)
             ?? throw new InvalidOperationException($"Pessoa de id {{{idPessoa}}} não existe.");
@@ -49,7 +50,7 @@ public sealed class EmprestimoService : IEmprestimoService
         {
             Pessoa = pessoa,
             Livro = livro,
-            UsuarioCriador = identidadeService.Usuario!,
+            UsuarioCriador = await identidadeService.ObterUsuario(),
             DataEmprestimo = relogio.Agora,
             FimDataEmprestimo = relogio.Agora.AddDays(30),
         };
@@ -97,7 +98,7 @@ public sealed class EmprestimoService : IEmprestimoService
     private async Task FecharAsync(ParamFecharEmprestimo parametros)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Fechar);
-        parametros.idUsuarioFechador = identidadeService.Usuario!.Id;
+        parametros.idUsuarioFechador = (int)identidadeService.IdUsuario;
         await repEmprestimos.Fechar(parametros);
 
         Logger?.LogInformation("O emprestimo {{{idEmprestimo}}} foi devolvido", parametros.IdEmprestimo);

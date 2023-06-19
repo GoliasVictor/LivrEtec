@@ -26,7 +26,10 @@ public class RepUsuarios : Repositorio, IRepUsuarios
     }
     public Task<int?> ObterId(string login)
     {
-        return Task.Run(()=> BD.Usuarios.FirstOrDefault(u => u.Login == login)?.Id);
+        return Task.Run(() =>
+            BD.Usuarios.Where(usuario => usuario.Login == login)
+                       .Select<Usuario, int?>(usuario => usuario.Id)
+                       .FirstOrDefault());
     }
     public async Task<bool> Existe(int id)
     {

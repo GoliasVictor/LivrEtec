@@ -24,12 +24,14 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
     [AllowAnonymous]
     public override async Task<Token> Login(LoginRequest request, ServerCallContext context)
     {
-        return false == await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha)
-            ? throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "))
-            : new Token
+        if (await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha))
+            return new Token
             {
                 Valor = TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey)
             };
+        else
+            throw new RpcException(
+                new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "));
     }
 
     [AllowAnonymous]
@@ -45,8 +47,7 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
 
     public override async Task<Usuario> CarregarUsuario(Empty request, ServerCallContext context)
     {
-        await identidadeService.CarregarUsuario();
-        return identidadeService.Usuario!;
+        return await identidadeService.ObterUsuario();
     }
 
     public override async Task<IdOpcional> ObterId(LoginUsuario request, ServerCallContext context)

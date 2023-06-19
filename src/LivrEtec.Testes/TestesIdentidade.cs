@@ -70,7 +70,7 @@ public class TestesIdentidade : IDisposable
     }
      
  
-    void AssertUsuarioIgual(Usuario Esperado, Usuario Atual)
+    void AssertUsuarioIgual(Usuario? Esperado, Usuario? Atual)
     {
         if (Esperado is null || Atual is null)
         {
@@ -90,13 +90,10 @@ public class TestesIdentidade : IDisposable
         var login = LoginAdmin;
 
         await Identidade.Login(login, gHash(idUsuario), true);
-        Usuario Usuario = Identidade.Usuario!;
 
         Assert.True(Identidade.EstaAutenticado);
-        Assert.NotNull(Usuario);
-        Assert.Equal(Usuario.Id, idUsuario);
-        Assert.Equal(Usuario.Login, login);
-        Assert.Null(Usuario.Senha);
+        Assert.NotNull(Identidade.IdUsuario);
+        Assert.Null((await Identidade.ObterUsuario())?.Senha);
     }
 
     [Theory]
@@ -109,7 +106,7 @@ public class TestesIdentidade : IDisposable
         await Identidade.Login(login, senha, false);
 
         Assert.False(Identidade.EstaAutenticado);
-        Assert.NotEqual(Identidade.Usuario, BDU.gUsuario(IdAdmin));
+        Assert.NotEqual((await Identidade.ObterUsuario()), BDU.gUsuario(IdAdmin));
     }
     [Theory]
 
@@ -131,7 +128,7 @@ public class TestesIdentidade : IDisposable
         await Identidade.Login(login, senha, false);
 
         Assert.False(Identidade.EstaAutenticado);
-        Assert.NotEqual(Identidade.Usuario?.Id,IdAdmin);
+        Assert.NotEqual((await Identidade.ObterUsuario())?.Id,IdAdmin);
     }
 
     [Theory]
@@ -140,12 +137,12 @@ public class TestesIdentidade : IDisposable
     public async Task CarregarUsuario_UsuarioValidoAsync(int idUsuario)
     {
         var usuario = BDU.gUsuario(idUsuario);
-        Identidade.Usuario = new Usuario() { Id = idUsuario };
+        Identidade.IdUsuario = idUsuario;
         Identidade.EstaAutenticado = true;
 
         await Identidade.CarregarUsuario();
 
-        AssertUsuarioIgual(Identidade.Usuario, usuario);
+        AssertUsuarioIgual(await Identidade.ObterUsuario(), usuario);
     }
 
     [Theory]
@@ -153,7 +150,7 @@ public class TestesIdentidade : IDisposable
     [InlineData(-2)]
     public async Task CarregarUsuario_UsuarioInvalidoAsync(int idUsuario)
     {
-        Identidade.Usuario = new Usuario() { Id = idUsuario };
+        Identidade.IdUsuario = idUsuario;
         Identidade.EstaAutenticado = true;
 
         _ = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
@@ -167,7 +164,7 @@ public class TestesIdentidade : IDisposable
     [InlineData(1)]
     public async Task CarregarUsuario_NaoAutenticadoAsync(int idUsuario)
     {
-        Identidade.Usuario = new Usuario() { Id = idUsuario };
+        Identidade.IdUsuario = idUsuario;
         Identidade.EstaAutenticado = false;
 
         _ = await Assert.ThrowsAsync<NaoAutenticadoException>(async () =>
@@ -179,7 +176,7 @@ public class TestesIdentidade : IDisposable
     [Fact]
     public async Task CarregarUsuario_UsuarioNulo()
     {
-        Identidade.Usuario = null;
+        Identidade.IdUsuario = null;
         Identidade.EstaAutenticado = true;
 
         _ = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
@@ -194,9 +191,10 @@ public class TestesIdentidade : IDisposable
     public async Task EhAutorizadoAsync(int idUsuario, bool ExpectativaAutorizado)
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = BDU.gUsuario(idUsuario);
+        Identidade.IdUsuario = idUsuario;
         Identidade.EstaAutenticado = true;
 
+        await Identidade.CarregarUsuario();
         var Autorizado = await Identidade.EhAutorizado(permissao);
 
         Assert.Equal(Autorizado, ExpectativaAutorizado);
@@ -206,7 +204,7 @@ public class TestesIdentidade : IDisposable
     public async Task EhAutorizado_NaoAutenticadoAsync()
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = new Usuario() { Id = IdAdmin };
+        Identidade.IdUsuario = IdAdmin;
 
         var Autorizado = await Identidade.EhAutorizado(permissao);
         Assert.False(Autorizado);
@@ -217,7 +215,7 @@ public class TestesIdentidade : IDisposable
     public async Task EhAutorizado_UsuarioNulo()
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = null;
+        Identidade.IdUsuario = null;
 
         var autorizado = await Identidade.EhAutorizado(permissao);
 
@@ -228,9 +226,10 @@ public class TestesIdentidade : IDisposable
     {
         var idUsuario = IdAdmin;
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = BDU.gUsuario(idUsuario);
+        Identidade.IdUsuario = idUsuario;
         Identidade.EstaAutenticado = true;
 
+        await Identidade.CarregarUsuario();
         await Identidade.ErroSeNaoAutorizado(permissao);
     }
 
@@ -238,11 +237,9 @@ public class TestesIdentidade : IDisposable
     public async Task ErroSeNaoAutorizado_NaoAutorizadoAsync()
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = new Usuario() { Id = IdAnonimo };
+        Identidade.IdUsuario = IdAnonimo;
         Identidade.EstaAutenticado = true;
-
-        var Autorizado = await Identidade.EhAutorizado(permissao);
-
+        
         _ = await Assert.ThrowsAsync<NaoAutorizadoException>(async () =>
         {
             await Identidade.ErroSeNaoAutorizado(permissao);
@@ -253,11 +250,9 @@ public class TestesIdentidade : IDisposable
     public async Task ErroSeNaoAutorizado_NaoAutenticadoAsync()
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = new Usuario() { Id = IdAdmin };
+        Identidade.IdUsuario = IdAdmin;
         Identidade.EstaAutenticado = false;
-
-        var Autorizado = await Identidade.EhAutorizado(permissao);
-
+        
         _ = await Assert.ThrowsAsync<NaoAutenticadoException>(async () =>
         {
             await Identidade.ErroSeNaoAutorizado(permissao);
@@ -268,7 +263,7 @@ public class TestesIdentidade : IDisposable
     public async Task ErroSeNaoAutorizado_UsuarioNulo()
     {
         Permissao permissao = Permissoes.Cargo.Criar;
-        Identidade.Usuario = null;
+        Identidade.IdUsuario = null;
 
         _ = await Assert.ThrowsAsync<NaoAutenticadoException>(async () =>
         {

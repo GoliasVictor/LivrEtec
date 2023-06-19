@@ -1,52 +1,61 @@
 ﻿using LivrEtec.Exceptions;
 using LivrEtec.GIB.RPC;
-using LivrEtec.Models;
-using LivrEtec.Repositorios;
-using LivrEtec.Services;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Storage.Provider;
+using Grpc.Core;
+using Grpc.Net.Client;
+using static LivrEtec.GIB.RPC.GerenciamentoSessao;
+using Permissao = LivrEtec.Models.Permissao;
+using Usuario = LivrEtec.Models.Usuario;
 
 namespace LivrEtec.GIB.Cliente.Services;
 
 internal class IdentidadeService : IIdentidadeService
 {
     readonly GrpcChannelProvider GrpcChannelProvider;
+    GrpcChannel GrpcChannel;
+    GerenciamentoSessaoClient GerenciamentoSessao;
+    public int? IdUsuario { get; set; }
+
     public IdentidadeService(GrpcChannelProvider grpcChannelProvider)
     {
         GrpcChannelProvider = grpcChannelProvider;
+        AtualizarGrpChannel();
     }
 
+    void AtualizarGrpChannel()
+    {
+        GrpcChannel?.Dispose();
+        GrpcChannel = GrpcChannelProvider.GetGrpcChannel();
+        GerenciamentoSessao = new GerenciamentoSessaoClient(GrpcChannel);
+    }
     public IdentidadeService() { }
 
-    public Models.Usuario? Usuario { get; set; }
     public bool EstaAutenticado { get; set; }
 
     
     public async Task Login(string login, string senha, bool senhaHash)
     {
-        _ = senha ?? throw new ArgumentNullException(senha);
+        _ = senha ?? throw new ArgumentNullException(nameof(senha));
         try
         {
-            var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel());
-            var id = (int)(await gerenciamentoSessao.ObterIdAsync(new LoginUsuario() { Login = login })).Id;
+            var idOptional = await GerenciamentoSessao.ObterIdAsync(new LoginUsuario() { Login = login });
+            var id = idOptional.Id  ?? throw new NaoAutenticadoException();
             if (!senhaHash)
                 senha = IAutenticacaoService.GerarHahSenha(id, senha);
 
-            Token token = await gerenciamentoSessao.LoginAsync(new LoginRequest
+            Token token = await GerenciamentoSessao.LoginAsync(new LoginRequest
             {
                 IdUsuario = id,
                 HashSenha = senha
             });
+            
             GrpcChannelProvider.DefinirToken(token.Valor);
-
+            AtualizarGrpChannel();
+            
             EstaAutenticado = true;
         }
-        catch
+        catch (Exception ex) when (
+            ex is NaoAutenticadoException 
+                or RpcException { StatusCode: StatusCode.Unauthenticated })
         {
             EstaAutenticado = false;
         }
@@ -54,15 +63,27 @@ internal class IdentidadeService : IIdentidadeService
 
     public async Task CarregarUsuario()
     {
-        var gerenciamentoSessao = new GerenciamentoSessao.GerenciamentoSessaoClient(GrpcChannelProvider.GetGrpcChannel());
-        Usuario = await gerenciamentoSessao.CarregarUsuarioAsync(new Empty());
+        usuario = await GerenciamentoSessao.CarregarUsuarioAsync(new Empty());
     }
-    public Task<bool> EhAutorizado(Models.Permissao permissao)
+    private Usuario? usuario = null;
+    public async Task<Usuario?> ObterUsuario()
     {
-        throw new NotImplementedException();
+        if (IdUsuario is null || !EstaAutenticado)
+            return null;
+        if (usuario is null)
+            await CarregarUsuario();
+        return usuario;
     }
-    public Task ErroSeNaoAutorizado(Models.Permissao permissao)
+    public async Task<bool> EhAutorizado(Permissao permissao)
     {
-        throw new NotImplementedException();
+        var response = await GerenciamentoSessao.EhAutorizadoAsync(new Id(permissao.Id));
+        return response.Autorizado;
+    }
+    public async Task ErroSeNaoAutorizado(Permissao permissao)
+    {
+        if (EstaAutenticado)
+            throw new NaoAutorizadoException();
+        if (await EhAutorizado(permissao))
+            throw new NaoAutorizadoException();
     }
 }

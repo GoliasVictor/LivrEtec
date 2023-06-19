@@ -18,10 +18,10 @@ public class LEAuthenticationStateProvider : AuthenticationStateProvider
         IdentidadeService = identidadeService;
     }
 
-    public override Task<AuthenticationState> GetAuthenticationStateAsync()
+    public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
-        ClaimsIdentity identity = null;
-        if (IdentidadeService.Usuario is null)
+        ClaimsIdentity? identity = null;
+        if (IdentidadeService.IdUsuario is null || !IdentidadeService.EstaAutenticado)
         {
             identity = new ClaimsIdentity(new[]
             {
@@ -32,18 +32,19 @@ public class LEAuthenticationStateProvider : AuthenticationStateProvider
         }
         else
         {
+            var usuario = await IdentidadeService.ObterUsuario();
             identity = new ClaimsIdentity(new[]
             {
-                new Claim(ClaimTypes. Sid, IdentidadeService.Usuario.Id.ToString()),
-                new Claim(ClaimTypes.Name, IdentidadeService.Usuario.Login) 
+                new Claim(ClaimTypes. Sid, usuario.Id.ToString()),
+                new Claim(ClaimTypes.Name, usuario.Login) 
             }, "LivrEtecAuth");
-            foreach ( var permissao in IdentidadeService.Usuario.Cargo.Permissoes )
+            foreach ( var permissao in usuario.Cargo.Permissoes )
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, permissao.Nome));
             }
 
         }
-        return Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity)));
+        return new AuthenticationState(new ClaimsPrincipal(identity));
     }
 
 
@@ -55,7 +56,7 @@ public class LEAuthenticationStateProvider : AuthenticationStateProvider
     public Task Logout()
     {
         IdentidadeService.EstaAutenticado = false;
-        IdentidadeService.Usuario = null;
+        IdentidadeService.IdUsuario = null;
         var task = this.GetAuthenticationStateAsync();
         this.NotifyAuthenticationStateChanged(this.GetAuthenticationStateAsync());
         return task;
