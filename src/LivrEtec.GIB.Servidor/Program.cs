@@ -79,6 +79,7 @@ builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
 builder.Services.AddSingleton<IRelogio, RelogioSistema>();
 builder.Services.AddScoped<PacaContext>();
 builder.Services.AddScoped<IRepUsuarios, RepUsuarios>();
+builder.Services.AddScoped<IRepSenhas, RepSenhas>();
 builder.Services.AddScoped<IRepTags, RepTags>();
 builder.Services.AddScoped<IRepAutores, RepAutores>();
 builder.Services.AddScoped<IRepLivros, RepLivros>();
@@ -123,7 +124,6 @@ using (var scope = app.Services.CreateScope()){
 			Id = 1,
 			Login = "admin",
 			Nome = "admin",
-			Senha = IAutenticacaoService.GerarHahSenha(1, app.Configuration["SenhaPadraoAdmin"]),
 			Cargo = cargoAdmin
 		};
 		BD.Add(cargoAdmin);

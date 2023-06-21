@@ -39,12 +39,18 @@ public class TestesAutorizacao : IDisposable
             })
         };
         BDU.Usuarios = new[]{
-            new Usuario(1, "", "tavares", "Tavares" , BDU.gCargo(IdAdministrador)),
-            new Usuario(2, "", "Ze"     , "Zé"      , BDU.gCargo(IdAnonimo)),
-            new Usuario(3, "", "Paca"   , "Paca"    , BDU.gCargo(3)),
-            new Usuario(4, "", "Atlas"  , "Atlas"   , BDU.gCargo(4)),
+            new Usuario(1, "tavares", "Tavares" , BDU.gCargo(IdAdministrador)),
+            new Usuario(2, "Ze"     , "Zé"      , BDU.gCargo(IdAnonimo)),
+            new Usuario(3, "Paca"   , "Paca"    , BDU.gCargo(3)),
+            new Usuario(4, "Atlas"  , "Atlas"   , BDU.gCargo(4)),
         };
-        BDU.SalvarDados();
+		BDU.Senhas = new[]{
+			new Senha(1,IAutenticacaoService.GerarHahSenha(1,"senha")),
+			new Senha(2,IAutenticacaoService.GerarHahSenha(2,"senha")),
+			new Senha(3,IAutenticacaoService.GerarHahSenha(3,"senha")),
+			new Senha(4,IAutenticacaoService.GerarHahSenha(4,"senha")),
+		};
+		BDU.SalvarDados();
         PacaContext BD = BDU.CriarContexto();
         var repUsuarios = new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
         AutorizacaoService = new AutorizacaoService(repUsuarios, loggerFactory.CreateLogger<AutorizacaoService>());

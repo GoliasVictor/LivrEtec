@@ -29,7 +29,6 @@ public sealed class TestesLivrosServiceRPC : TestesLivrosService<LivrosServiceRP
             Id = 100,
             Nome = "Usuario Teste",
             Login = "teste",
-            Senha = "senha",
             Cargo = cargoTeste
         };
         BDU.Cargos = new[] { UsuarioTeste.Cargo };

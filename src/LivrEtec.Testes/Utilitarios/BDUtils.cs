@@ -20,6 +20,7 @@ public class BDUtil : IDisposable
         BD.Cargos.AddRange(Cargos);
         BD.Usuarios.AddRange(Usuarios);
 
+        BD.Senhas.AddRange(Senhas);
         BD.Tags.AddRange(Tags);
         BD.Autores.AddRange(Autores);
         BD.Livros.AddRange(Livros);
@@ -44,6 +45,7 @@ public class BDUtil : IDisposable
     public Pessoa[] Pessoas { get; set; } = new Pessoa[0];
     public Emprestimo[] Emprestimos { get; set; } = new Emprestimo[0];
     public Usuario[] Usuarios { get; set; } = new Usuario[0];
+    public Senha[] Senhas { get; set; } = new Senha[0];
     public Cargo[] Cargos { get; set; } = new Cargo[0];
     public Permissao[] BDPermissoes { get; set; } = new Permissao[0];
 
@@ -110,6 +112,7 @@ public class BDUtil : IDisposable
         BD.Pessoas.RemoveRange(BD.Pessoas.AsQueryable());
         BD.Emprestimos.RemoveRange(BD.Emprestimos.AsQueryable());
         BD.Usuarios.RemoveRange(BD.Usuarios.AsQueryable());
+        BD.Senhas.RemoveRange(BD.Senhas.AsQueryable());
         BD.Cargos.RemoveRange(BD.Cargos.AsQueryable());
         BD.Permissoes.RemoveRange(BD.Permissoes.AsQueryable());
 

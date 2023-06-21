@@ -5,23 +5,19 @@ namespace LivrEtec.Servidor.Services;
 public sealed class AutenticacaoService : IAutenticacaoService
 {
     private readonly ILogger<AutenticacaoService> logger;
-    private readonly IRepUsuarios repUsuarios;
-    public AutenticacaoService(IRepUsuarios repUsuarios, ILogger<AutenticacaoService> logger)
+    private readonly IRepSenhas repSenhas;
+    public AutenticacaoService(IRepSenhas repSenhas, ILogger<AutenticacaoService> logger)
     {
         this.logger = logger;
-        this.repUsuarios = repUsuarios;
+        this.repSenhas = repSenhas;
     }
 
     public async Task<bool> EhAutentico(int IdUsuario, string hashSenha)
     {
         _ = hashSenha ?? throw new ArgumentNullException(nameof(hashSenha));
-        Usuario? usuario = await repUsuarios.Obter(IdUsuario);
-        if (usuario == null)
-        {
-            throw new ArgumentException("Usuario invalido");
-        }
-
-        var autentico = usuario.Senha.ToUpper() == hashSenha.ToUpper();
+        string senha = await repSenhas.Obter(IdUsuario);
+        
+        var autentico = senha.ToUpper() == hashSenha.ToUpper();
         return autentico;
     }
 }

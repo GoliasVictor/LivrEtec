@@ -31,7 +31,6 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 			Id = ID_USUARIO_TESTE,
 			Nome = "Usuario Teste Emprestimo Service",
 			Login = "teste",
-			Senha = "senha",
 			Cargo = cargoTeste
 		};
 
@@ -55,12 +54,15 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 				new Usuario(){
 					Id= ID_USUARIO_CRIADOR,
 					Nome="Usuario criador",
-					Senha= IAutenticacaoService.GerarHahSenha(ID_USUARIO_CRIADOR, "Senha"),
 					Login="usuario_criador",
 					Cargo =  cargoTeste,
 				},
 				usuarioTeste
 			};
+		BDU.Senhas = new[]{
+			new Senha(ID_USUARIO_CRIADOR, IAutenticacaoService.GerarHahSenha(ID_USUARIO_CRIADOR, "Senha")),
+			new Senha(ID_USUARIO_TESTE, IAutenticacaoService.GerarHahSenha(ID_USUARIO_TESTE, "Senha"))
+		};
 		BDU.Livros = new[]{
 				new Livro {
 					Id = ID_LIVRO_DISPONIVEL,

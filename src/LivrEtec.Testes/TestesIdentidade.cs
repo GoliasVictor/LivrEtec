@@ -54,17 +54,22 @@ public class TestesIdentidade : IDisposable
             new Cargo(IdCargoAnonimo, "Anonimo", new (){}),
         };
         BDU.Usuarios = new[]{
-            new Usuario(IdAdmin  , gHash(IdAdmin  ), LoginAdmin  , "Tavares" , BDU.gCargo(IdCargoAdmin)),
-            new Usuario(IdAnonimo, gHash(IdAnonimo), "Atlas"  , "Atlas"   , BDU.gCargo(IdCargoAnonimo)),
+            new Usuario(IdAdmin  , LoginAdmin  , "Tavares" , BDU.gCargo(IdCargoAdmin)),
+            new Usuario(IdAnonimo, "Atlas"  , "Atlas"   , BDU.gCargo(IdCargoAnonimo)),
         };
-        BDU.SalvarDados();
+		BDU.Senhas = new[]{
+			new Senha(IdAdmin  , gHash(IdAdmin)),
+			new Senha(IdAnonimo, gHash(IdAnonimo))
+		};
+		BDU.SalvarDados();
         PacaContext BD = BDU.CriarContexto();
         ILoggerFactory loggerFactory = LogUtils.CreateLoggerFactory(output);
         var repUsuarios = new RepUsuarios(BD, loggerFactory.CreateLogger<RepUsuarios>());
+        var repSenhas = new RepSenhas(BD, loggerFactory.CreateLogger<RepSenhas>());
         Identidade = new IdentidadeService(
             repUsuarios,
             new AutorizacaoService(repUsuarios, loggerFactory.CreateLogger<AutorizacaoService>()),
-            new AutenticacaoService(repUsuarios, loggerFactory.CreateLogger<AutenticacaoService>()),
+            new AutenticacaoService(repSenhas, loggerFactory.CreateLogger<AutenticacaoService>()),
             loggerFactory.CreateLogger<IdentidadeService>()
         );
     }
@@ -79,7 +84,6 @@ public class TestesIdentidade : IDisposable
         }
         Assert.Equal(Esperado.Nome, Atual.Nome);
         Assert.Equal(Esperado.Id, Atual.Id);
-        Assert.Equal(Esperado.Senha, Atual.Senha);
         Assert.Equal(Esperado.Login, Atual.Login);
         AssertEhIgual(Esperado.Cargo.Permissoes, Atual.Cargo.Permissoes);
     }
@@ -93,7 +97,6 @@ public class TestesIdentidade : IDisposable
 
         Assert.True(Identidade.EstaAutenticado);
         Assert.NotNull(Identidade.IdUsuario);
-        Assert.Null((await Identidade.ObterUsuario())?.Senha);
     }
 
     [Theory]

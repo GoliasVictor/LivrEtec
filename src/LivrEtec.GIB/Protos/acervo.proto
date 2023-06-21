@@ -108,10 +108,9 @@ message Cargo {
 }
 message Usuario {
     int32 Id = 1;
-    string Senha = 2;
-    string Login = 3;
-    string Nome = 4;
-    Cargo Cargo = 5;
+    string Login = 2;
+    string Nome = 3;
+    Cargo Cargo = 4;
 }
 
 message Emprestimo {
