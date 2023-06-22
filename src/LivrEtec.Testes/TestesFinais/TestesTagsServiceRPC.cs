@@ -28,7 +28,6 @@ public sealed class TestesTagsServiceRPC : TestesTagsService<TagsServiceRPC>
             Id = 100,
             Nome = "Usuario Teste",
             Login = "teste",
-            Senha = "senha",
             Cargo = cargoTeste
         };
         BDU.Cargos = new[] { UsuarioTeste.Cargo };

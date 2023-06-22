@@ -24,18 +24,20 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
     [AllowAnonymous]
     public override async Task<Token> Login(LoginRequest request, ServerCallContext context)
     {
-        return false == await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha)
-            ? throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "))
-            : new Token
+        if (await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha))
+            return new Token
             {
                 Valor = TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey)
             };
+        else
+            throw new RpcException(
+                new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "));
     }
 
     [AllowAnonymous]
-    public override async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request, ServerCallContext context)
+    public override async Task<RespostaEhAutorizado> EhAutorizado(Id request, ServerCallContext context)
     {
-        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Id)
+        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Valor)
                 ?? throw new RpcException(new Status(StatusCode.FailedPrecondition, "Permissão não existe"));
         return new RespostaEhAutorizado
         {
@@ -45,13 +47,12 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
 
     public override async Task<Usuario> CarregarUsuario(Empty request, ServerCallContext context)
     {
-        await identidadeService.CarregarUsuario();
-        return identidadeService.Usuario!;
+        return await identidadeService.ObterUsuario();
     }
 
-    public override async Task<IdUsuario> ObterId(LoginUsuario request, ServerCallContext context)
+    public override async Task<IdOpcional> ObterId(LoginUsuario request, ServerCallContext context)
     {
-        return new IdUsuario()
+        return new IdOpcional()
         {
             Id = await repUsuarios.ObterId(request.Login)
         };

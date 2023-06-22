@@ -16,11 +16,11 @@ internal class IdentidadePermitidaStub : IIdentidadeService
 
     public IdentidadePermitidaStub(Usuario? usuario)
     {
+        IdUsuario = usuario.Id;
         Usuario = usuario;
-
     }
 
-    public int IdUsuario => Usuario!.Id;
+    public int? IdUsuario { get; set; }
 
     public Usuario? Usuario { get; set; }
 
@@ -29,6 +29,10 @@ internal class IdentidadePermitidaStub : IIdentidadeService
     public async Task Login(string login, string senha, bool HashSenha) { }
 
     public async Task CarregarUsuario() { }
+    public Task<Usuario?> ObterUsuario()
+    {
+        return Task.FromResult(Usuario);
+    }
 
     public async Task<bool> EhAutorizado(Permissao permissao)
     {

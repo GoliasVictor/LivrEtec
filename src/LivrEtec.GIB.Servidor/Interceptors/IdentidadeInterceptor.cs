@@ -22,8 +22,7 @@ public class IdentidadeInterceptor : Interceptor
         {
             var id = int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             IdentidadeService.EstaAutenticado = true;
-            IdentidadeService.Usuario = new Models.Usuario() { Id = id };
-            await IdentidadeService.CarregarUsuario();
+            IdentidadeService.IdUsuario = id ;
         }
 
         return await continuation(request, context);

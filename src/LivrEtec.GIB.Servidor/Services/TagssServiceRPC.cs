@@ -14,22 +14,19 @@ public sealed class TagsServiceRPC : Tags.TagsBase
     }
 
 
-    public override async Task<IdTag> Registrar(RPC.Tag request, ServerCallContext context)
+    public override async Task<Id> Registrar(RPC.Tag request, ServerCallContext context)
     {
-        return new IdTag()
-        {
-            Id = await tagsService.Registrar(request)
-        };
+        return new Id(await tagsService.Registrar(request));
 
     }
-    public override async Task<RPC.Tag?> Obter(IdTag request, ServerCallContext context)
+    public override async Task<RPC.Tag?> Obter(Id request, ServerCallContext context)
     {
-        return await tagsService.Obter(request.Id);
+        return await tagsService.Obter(request.Valor);
     }
 
-    public override async Task<Empty> Remover(IdTag request, ServerCallContext context)
+    public override async Task<Empty> Remover(Id request, ServerCallContext context)
     {
-        await tagsService.Remover(request.Id);
+        await tagsService.Remover(request.Valor);
         return new Empty();
     }
 

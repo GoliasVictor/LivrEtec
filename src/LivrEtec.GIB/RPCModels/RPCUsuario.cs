@@ -23,7 +23,6 @@ public partial class Usuario
              Nome = proto.Nome,
              Cargo = proto.Cargo,
              Login = proto.Login,
-             Senha = proto.Senha
          };
 
 }

@@ -113,6 +113,7 @@ public sealed class RepLivros : Repositorio, IRepLivros
         livroAntigo.Nome = livro.Nome;
         livroAntigo.Descricao = livro.Descricao;
         livroAntigo.Arquivado = livro.Arquivado;
+        livroAntigo.Quantidade = livro.Quantidade;
         livroAntigo.Tags.Clear();
         livroAntigo.Autores.Clear();
         _ = await BD.SaveChangesAsync();

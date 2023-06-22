@@ -20,6 +20,7 @@ public class BDUtil : IDisposable
         BD.Cargos.AddRange(Cargos);
         BD.Usuarios.AddRange(Usuarios);
 
+        BD.Senhas.AddRange(Senhas);
         BD.Tags.AddRange(Tags);
         BD.Autores.AddRange(Autores);
         BD.Livros.AddRange(Livros);
@@ -44,6 +45,7 @@ public class BDUtil : IDisposable
     public Pessoa[] Pessoas { get; set; } = new Pessoa[0];
     public Emprestimo[] Emprestimos { get; set; } = new Emprestimo[0];
     public Usuario[] Usuarios { get; set; } = new Usuario[0];
+    public Senha[] Senhas { get; set; } = new Senha[0];
     public Cargo[] Cargos { get; set; } = new Cargo[0];
     public Permissao[] BDPermissoes { get; set; } = new Permissao[0];
 
@@ -84,21 +86,19 @@ public class BDUtil : IDisposable
 
     public async Task<Emprestimo?> gEmprestimoBanco(int idEmprestimo)
     {
-        using PacaContext BD = CriarContexto();
+        await using PacaContext BD = CriarContexto();
         Emprestimo? emprestimoAtual = await BD.Emprestimos.FindAsync(idEmprestimo);
-        if (emprestimoAtual is not null)
-        {
-
-            BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioCriador).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioFechador).Load();
-            BD.Entry(emprestimoAtual).Reference((e) => e.Livro).Load();
-        }
+        if (emprestimoAtual is null) 
+            return null;
+        await BD.Entry(emprestimoAtual).Reference((e) => e.Pessoa).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioCriador).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.UsuarioFechador).LoadAsync();
+        await BD.Entry(emprestimoAtual).Reference((e) => e.Livro).LoadAsync();
         return emprestimoAtual;
     }
     public async Task<Tag?> gTagBanco(int id)
     {
-        using PacaContext BD = CriarContexto();
+        await using PacaContext BD = CriarContexto();
         return await BD.Tags.FindAsync(id);
     }
     public void ResetarBanco()
@@ -112,6 +112,7 @@ public class BDUtil : IDisposable
         BD.Pessoas.RemoveRange(BD.Pessoas.AsQueryable());
         BD.Emprestimos.RemoveRange(BD.Emprestimos.AsQueryable());
         BD.Usuarios.RemoveRange(BD.Usuarios.AsQueryable());
+        BD.Senhas.RemoveRange(BD.Senhas.AsQueryable());
         BD.Cargos.RemoveRange(BD.Cargos.AsQueryable());
         BD.Permissoes.RemoveRange(BD.Permissoes.AsQueryable());
 

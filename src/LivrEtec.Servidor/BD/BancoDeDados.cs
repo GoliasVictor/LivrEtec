@@ -12,6 +12,7 @@ public sealed class PacaContext : DbContext
     public DbSet<Pessoa> Pessoas { get; set; } = null!;
     public DbSet<Emprestimo> Emprestimos { get; set; } = null!;
     public DbSet<Usuario> Usuarios { get; set; } = null!;
+    public DbSet<Senha> Senhas { get; set; } = null!;
     public DbSet<Cargo> Cargos { get; set; } = null!;
     public DbSet<Permissao> Permissoes { get; set; } = null!;
 }

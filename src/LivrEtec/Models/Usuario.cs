@@ -9,10 +9,6 @@ public sealed class Usuario
     [Key, Required, InteiroPositivo(nameof(Id))]
     public int Id { get; set; }
     [Required]
-    [DataType(DataType.Password)]
-    public string Senha { get; set; } = null!;
-
-    [Required]
     public string Login { get; set; } = null!;
     [Required]
     public string Nome { get; set; } = null!;
@@ -23,10 +19,9 @@ public sealed class Usuario
     {
     }
 
-    public Usuario(int id, string senha, string login, string nome, Cargo cargo)
+    public Usuario(int id, string login, string nome, Cargo cargo)
     {
         Id = id;
-        Senha = senha;
         Login = login;
         Nome = nome;
         Cargo = cargo;
