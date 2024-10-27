@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "LivrEtec.GIB.Servidor": {
+    "LivrEtec.GIB": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,

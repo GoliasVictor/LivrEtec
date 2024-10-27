@@ -4,7 +4,7 @@ using LivrEtec.Servidor.Repositorios;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Policy;
 
-namespace LivrEtec.GIB.Servidor.Services;
+namespace LivrEtec.GIB.Services;
 
 internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.GerenciamentoSessaoBase
 {

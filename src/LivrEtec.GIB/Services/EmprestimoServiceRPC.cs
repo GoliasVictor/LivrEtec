@@ -1,109 +1,66 @@
-using Google.Protobuf.WellKnownTypes;
-using LivrEtec.Models;
-using Microsoft.Extensions.Logging;
+using LivrEtec.GIB.RPC;
 using static LivrEtec.GIB.RPC.Emprestimo.Types;
-
 namespace LivrEtec.GIB.Services;
 
-public sealed class EmprestimoServiceRPC : IEmprestimoService
+public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
 {
     private readonly ILogger<EmprestimoServiceRPC> logger;
-    private readonly RPC::Emprestimos.EmprestimosClient clientRPC;
-    public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, RPC::Emprestimos.EmprestimosClient clientRPC)
+    private readonly IEmprestimoService emprestimoService;
+    private readonly IIdentidadeService identidadeService;
+    public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
     {
-        this.clientRPC = clientRPC;
         this.logger = logger;
+        this.emprestimoService = emprestimoService;
+        this.identidadeService = identidadeService;
     }
 
-    public async Task<int> Abrir(int idPessoa, int idlivro)
+    public override async Task<IdEmprestimo> Abrir(AbrirRequest request, ServerCallContext context)
     {
-        try
+        return new IdEmprestimo()
         {
-            RPC::IdEmprestimo idEmprestimo = await clientRPC.AbrirAsync(new AbrirRequest()
-            {
-                IdLivro = idlivro,
-                IdPessoa = idPessoa
-            });
-            return idEmprestimo.Id;
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+            Id = await emprestimoService.Abrir(request.IdPessoa, request.IdLivro)
+        };
     }
 
-    public Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
+    public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
     {
-        throw new NotImplementedException();
+        IEnumerable<LEM::Emprestimo> Emprestimos = await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
+            IdLivro: request.IdLivro,
+            IdPessoa: request.IdPessoa,
+            Fechado: request.Fechado,
+            Atrasado: request.Atrasado
+        ));
+        return new ListaEmprestimos()
+        {
+            Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
+        };
     }
-
-    public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
+    public override async Task<Empty> Devolver(DevolverRequest request, ServerCallContext context)
     {
-        try
-        {
-            var request = new DevolverRequest() { IdEmprestimo = idEmprestimo };
-            if (AtrasoJustificado is not null)
-            {
-                request.AtrasoJustificado = AtrasoJustificado.Value;
-            }
-
-            if (ExplicacaoAtraso is not null)
-            {
-                request.ExplicacaoAtraso = ExplicacaoAtraso;
-            }
-
-            _ = await clientRPC.DevolverAsync(request);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        await emprestimoService.Devolver(
+            request.IdEmprestimo,
+            request.HasAtrasoJustificado ? request.AtrasoJustificado : null,
+            request.HasExplicacaoAtraso ? request.ExplicacaoAtraso : null
+        );
+        return new Empty();
     }
 
-    public async Task Prorrogar(int idEmprestimo, DateTime novaData)
+    public override async Task<Empty> Prorrogar(ProrrogarRequest request, ServerCallContext context)
     {
-
-        try
-        {
-            _ = await clientRPC.ProrrogarAsync(new ProrrogarRequest()
-            {
-                IdEmprestimo = idEmprestimo,
-                NovaData = Timestamp.FromDateTime(novaData.ToUniversalTime())
-            });
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData.ToDateTime());
+        return new Empty();
     }
 
-    public async Task RegistrarPerda(int idEmprestimo)
+    public override async Task<Empty> RegistrarPerda(IdEmprestimo request, ServerCallContext context)
     {
-        try
-        {
-            _ = await clientRPC.RegistrarPerdaAsync(new RPC::IdEmprestimo()
-            {
-                Id = idEmprestimo,
-            });
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        await emprestimoService.RegistrarPerda(request.Id);
+        return new Empty();
     }
-    public async Task Excluir(int idEmprestimo)
-    {
-        try
-        {
 
-            _ = await clientRPC.ExcluirAsync(new RPC::IdEmprestimo()
-            {
-                Id = idEmprestimo,
-            });
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+    public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
+    {
+        await emprestimoService.Excluir(request.Id);
+        return new Empty();
     }
+
 }

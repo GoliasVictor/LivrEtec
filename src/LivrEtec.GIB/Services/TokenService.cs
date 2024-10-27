@@ -2,7 +2,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace LivrEtec.GIB.Servidor.Services;
+namespace LivrEtec.GIB.Services;
 public static class TokenService
 {
     public static string GerarToken(int idUsuario, byte[] key)

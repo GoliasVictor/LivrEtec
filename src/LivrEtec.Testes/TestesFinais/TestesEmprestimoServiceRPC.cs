@@ -1,6 +1,6 @@
 using Grpc.Net.Client;
-using LivrEtec.GIB.Services;
 using Xunit.Abstractions;
+using LivrEtec.GIB.Services.Cliente;
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Remoto")]

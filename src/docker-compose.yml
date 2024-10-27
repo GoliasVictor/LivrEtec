@@ -7,7 +7,7 @@ services:
     profiles: [teste, backend]
     build:
       context: .
-      dockerfile: ./Docker/GIB.Servidor/Dockerfile
+      dockerfile: ./Docker/GIB_Servidor/Dockerfile
     depends_on:
       db:
         condition: service_healthy

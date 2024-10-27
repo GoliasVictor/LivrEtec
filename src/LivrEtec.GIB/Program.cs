@@ -1,6 +1,6 @@
 using LivrEtec;
-using LivrEtec.GIB.Servidor.Interceptors;
-using LivrEtec.GIB.Servidor.Services;
+using LivrEtec.GIB.Interceptors;
+using LivrEtec.GIB.Services;
 using LivrEtec.Models;
 using LivrEtec.Repositorios;
 using LivrEtec.Servidor.BD;

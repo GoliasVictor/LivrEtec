@@ -1,7 +1,7 @@
 using Grpc.Core.Interceptors;
 using System.Security.Claims;
 
-namespace LivrEtec.GIB.Servidor.Interceptors;
+namespace LivrEtec.GIB.Interceptors;
 public class IdentidadeInterceptor : Interceptor
 {
     private readonly IIdentidadeService IdentidadeService;

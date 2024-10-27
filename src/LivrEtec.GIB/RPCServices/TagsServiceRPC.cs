@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using static LivrEtec.GIB.RPC.Tag.Types;
 
-namespace LivrEtec.GIB.Services;
+namespace LivrEtec.GIB.Services.Cliente;
 
 public sealed class TagsServiceRPC : ITagsService
 {

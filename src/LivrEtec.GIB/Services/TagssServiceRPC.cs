@@ -1,7 +1,7 @@
 using LivrEtec.GIB.RPC;
 using static LivrEtec.GIB.RPC.Tag.Types;
 
-namespace LivrEtec.GIB.Servidor.Services;
+namespace LivrEtec.GIB.Services;
 
 public sealed class TagsServiceRPC : Tags.TagsBase
 {

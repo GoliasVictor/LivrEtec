@@ -1,4 +1,4 @@
-﻿namespace LivrEtec.GIB.Servidor;
+﻿namespace LivrEtec.GIB;
 
 internal class ConfiguracaoServidorGIB
 {

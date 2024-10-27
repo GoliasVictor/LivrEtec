@@ -4,8 +4,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY LivrEtec/*.csproj ./LivrEtec/
 COPY LivrEtec.Testes/*.csproj ./LivrEtec.Testes/
-COPY LivrEtec.GIB/*.csproj ./LivrEtec.GIB/
-COPY LivrEtec.GIB.Servidor/*.csproj ./LivrEtec.GIB.Servidor/
+COPY LivrEtec.GIB/*.csproj ./LivrEtec.GIB/ 
 
 #RUN --mount=type=cache,target=/root/.nuget/packages \
 RUN dotnet restore "LivrEtec.Testes/LivrEtec.Testes.csproj"
