@@ -7,7 +7,6 @@ WORKDIR /src
 COPY LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj LivrEtec.GIB.Servidor/
 COPY LivrEtec.GIB/LivrEtec.GIB.csproj LivrEtec.GIB/
 COPY LivrEtec/LivrEtec.csproj LivrEtec/
-COPY LivrEtec.Servidor/LivrEtec.Servidor.csproj LivrEtec.Servidor/
 RUN dotnet restore "LivrEtec.GIB.Servidor/LivrEtec.GIB.Servidor.csproj"
 COPY . .
 WORKDIR "/src/LivrEtec.GIB.Servidor"

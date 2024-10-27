@@ -5,7 +5,6 @@ WORKDIR /src
 COPY LivrEtec/*.csproj ./LivrEtec/
 COPY LivrEtec.Testes/*.csproj ./LivrEtec.Testes/
 COPY LivrEtec.GIB/*.csproj ./LivrEtec.GIB/
-COPY LivrEtec.Servidor/*.csproj ./LivrEtec.Servidor/
 COPY LivrEtec.GIB.Servidor/*.csproj ./LivrEtec.GIB.Servidor/
 
 #RUN --mount=type=cache,target=/root/.nuget/packages \
