@@ -3,7 +3,9 @@ using static LivrEtec.GIB.RPC.Tag.Types;
 
 namespace LivrEtec.GIB.Services;
 
-public sealed class TagsServiceRPC : Tags.TagsBase
+[Route("api/tags")]
+[ApiController]
+public sealed class TagsServiceRPC 
 {
     private readonly ILogger<TagsServiceRPC> logger;
     private readonly ITagsService tagsService;
@@ -13,8 +15,9 @@ public sealed class TagsServiceRPC : Tags.TagsBase
         this.tagsService = tagsService;
     }
 
+    [HttpPost()]
 
-    public override async Task<IdTag> Registrar(RPC.Tag request, ServerCallContext context)
+    public async Task<IdTag> Registrar(RPC.Tag request)
     {
         return new IdTag()
         {
@@ -22,18 +25,22 @@ public sealed class TagsServiceRPC : Tags.TagsBase
         };
 
     }
-    public override async Task<RPC.Tag?> Obter(IdTag request, ServerCallContext context)
+    [HttpGet()]
+    public async Task<RPC.Tag?> Obter(IdTag request)
     {
         return await tagsService.Obter(request.Id);
     }
 
-    public override async Task<Empty> Remover(IdTag request, ServerCallContext context)
+    [HttpDelete()]
+    public async Task<Empty> Remover(IdTag request)
     {
         await tagsService.Remover(request.Id);
         return new Empty();
     }
 
-    public override async Task<ListaTags> Buscar(BuscarRequest request, ServerCallContext context)
+    public record BuscarTagReq(string Nome);
+    [HttpGet("buscar")]
+    public async Task<ListaTags> Buscar(BuscarTagReq request)
     {
 
         IEnumerable<LEM::Tag> Tags = await tagsService.Buscar(request.Nome);
@@ -43,7 +50,8 @@ public sealed class TagsServiceRPC : Tags.TagsBase
         };
     }
 
-    public override async Task<Empty> Editar(RPC.Tag request, ServerCallContext context)
+    [HttpPatch()]
+    public async Task<Empty> Editar(RPC.Tag request)
     {
         await tagsService.Editar(request);
         return new Empty();

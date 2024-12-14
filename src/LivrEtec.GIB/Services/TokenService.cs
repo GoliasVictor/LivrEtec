@@ -25,7 +25,7 @@ public static class TokenService
     }
 }
 
-internal class AuthKeyProvider
+public class AuthKeyProvider
 {
     public byte[] authKey;
 

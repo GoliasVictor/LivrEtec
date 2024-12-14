@@ -2,7 +2,9 @@ using LivrEtec.GIB.RPC;
 
 namespace LivrEtec.GIB.Services;
 
-public sealed class LivrosServiceRPC : Livros.LivrosBase
+[Route("api/livros")]
+[ApiController]
+public sealed class LivrosServiceRPC 
 {
     private readonly ILogger<LivrosServiceRPC> logger;
     private readonly ILivrosService livrosService;
@@ -11,26 +13,30 @@ public sealed class LivrosServiceRPC : Livros.LivrosBase
         this.logger = logger;
         this.livrosService = livrosService;
     }
-
-
-    public override async Task<Empty> Registrar(RPC.Livro request, ServerCallContext context)
+    
+    [HttpPost()]
+    public async Task<Empty> Registrar(RPC.Livro request)
     {
         await livrosService.Registrar(request);
         return new Empty();
 
     }
-    public override async Task<RPC.Livro?> Obter(IdLivro request, ServerCallContext context)
+
+    [HttpGet()]
+    public async Task<RPC.Livro?> Obter(IdLivro request)
     {
         return await livrosService.Obter(request.Id);
     }
 
-    public override async Task<Empty> Remover(IdLivro request, ServerCallContext context)
+    [HttpDelete()]
+    public async Task<Empty> Remover(IdLivro request)
     {
         await livrosService.Remover(request.Id);
         return new Empty();
     }
 
-    public override async Task<ListaLivros> Buscar(ParamBusca request, ServerCallContext context)
+    [HttpGet("buscar")]
+    public async Task<ListaLivros> Buscar(ParamBusca request)
     {
         IEnumerable<LEM::Livro> Livros = await livrosService.Buscar(request.NomeLivro, request.NomeAutor, request.IdTags);
         return new ListaLivros()
@@ -39,7 +45,8 @@ public sealed class LivrosServiceRPC : Livros.LivrosBase
         };
     }
 
-    public override async Task<Empty> Editar(RPC.Livro request, ServerCallContext context)
+    [HttpPatch()]
+    public async Task<Empty> Editar(RPC.Livro request)
     {
         await livrosService.Editar(request);
         return new Empty();

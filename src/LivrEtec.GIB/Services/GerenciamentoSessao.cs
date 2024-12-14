@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Policy;
 
 namespace LivrEtec.GIB.Services;
-
-internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.GerenciamentoSessaoBase
+[Route("api/sessao")]
+[ApiController]
+public sealed class GerenciamentoSessao
 {
     private readonly ILogger<GerenciamentoSessao> logger;
     private readonly AuthKeyProvider authKeyProvider;
@@ -22,7 +23,8 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
         this.repUsuarios = repUsuarios;
     }
     [AllowAnonymous]
-    public override async Task<Token> Login(LoginRequest request, ServerCallContext context)
+    [HttpPost("login")]
+    public  async Task<Token> Login(LoginRequest request)
     {
         return false == await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha)
             ? throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "))
@@ -32,8 +34,9 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
             };
     }
 
+    [HttpGet("autorizado")]
     [AllowAnonymous]
-    public override async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request, ServerCallContext context)
+    public  async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request)
     {
         LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Id)
                 ?? throw new RpcException(new Status(StatusCode.FailedPrecondition, "Permissão não existe"));
@@ -43,13 +46,15 @@ internal sealed class GerenciamentoSessao : RPC.GerenciamentoSessao.Gerenciament
         };
     }
 
-    public override async Task<Usuario> CarregarUsuario(Empty request, ServerCallContext context)
+    [HttpGet("usuario")]
+    public  async Task<Usuario> CarregarUsuario(Empty request)
     {
         await identidadeService.CarregarUsuario();
         return identidadeService.Usuario!;
     }
 
-    public override async Task<IdUsuario> ObterId(LoginUsuario request, ServerCallContext context)
+    [HttpGet("id")]
+    public  async Task<IdUsuario> ObterId(LoginUsuario request)
     {
         return new IdUsuario()
         {

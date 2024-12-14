@@ -2,7 +2,9 @@ using LivrEtec.GIB.RPC;
 using static LivrEtec.GIB.RPC.Emprestimo.Types;
 namespace LivrEtec.GIB.Services;
 
-public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
+[Route("api/emprestimos")]
+[ApiController]
+public sealed class EmprestimoServiceRPC 
 {
     private readonly ILogger<EmprestimoServiceRPC> logger;
     private readonly IEmprestimoService emprestimoService;
@@ -13,16 +15,16 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
         this.emprestimoService = emprestimoService;
         this.identidadeService = identidadeService;
     }
-
-    public override async Task<IdEmprestimo> Abrir(AbrirRequest request, ServerCallContext context)
+    [HttpPost()]
+    public async Task<IdEmprestimo> Abrir(AbrirRequest request)
     {
         return new IdEmprestimo()
         {
             Id = await emprestimoService.Abrir(request.IdPessoa, request.IdLivro)
         };
     }
-
-    public override async Task<ListaEmprestimos> Buscar(BuscarRequest request, ServerCallContext context)
+    [HttpGet("buscar")]
+    public async Task<ListaEmprestimos> Buscar(BuscarRequest request)
     {
         IEnumerable<LEM::Emprestimo> Emprestimos = await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
             IdLivro: request.IdLivro,
@@ -35,7 +37,8 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
             Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
         };
     }
-    public override async Task<Empty> Devolver(DevolverRequest request, ServerCallContext context)
+    [HttpPatch("devolver")]
+    public async Task<Empty> Devolver(DevolverRequest request)
     {
         await emprestimoService.Devolver(
             request.IdEmprestimo,
@@ -44,20 +47,21 @@ public sealed class EmprestimoServiceRPC : Emprestimos.EmprestimosBase
         );
         return new Empty();
     }
-
-    public override async Task<Empty> Prorrogar(ProrrogarRequest request, ServerCallContext context)
+    [HttpPatch("prorrogar")]
+    public async Task<Empty> Prorrogar(ProrrogarRequest request)
     {
         await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData.ToDateTime());
         return new Empty();
     }
 
-    public override async Task<Empty> RegistrarPerda(IdEmprestimo request, ServerCallContext context)
+    [HttpPatch("perda")]
+    public async Task<Empty> RegistrarPerda(IdEmprestimo request)
     {
         await emprestimoService.RegistrarPerda(request.Id);
         return new Empty();
     }
-
-    public override async Task<Empty> Excluir(IdEmprestimo request, ServerCallContext context)
+    [HttpDelete()]
+    public async Task<Empty> Excluir(IdEmprestimo request)
     {
         await emprestimoService.Excluir(request.Id);
         return new Empty();

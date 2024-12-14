@@ -14,7 +14,6 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
         this.clientRPC = clientRPC;
         this.logger = logger;
     }
-
     public async Task<int> Abrir(int idPessoa, int idlivro)
     {
         try
@@ -31,12 +30,10 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
             throw ManipuladorException.RpcExceptionToException(ex);
         }
     }
-
     public Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
     {
         throw new NotImplementedException();
     }
-
     public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
     {
         try
@@ -59,7 +56,6 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
             throw ManipuladorException.RpcExceptionToException(ex);
         }
     }
-
     public async Task Prorrogar(int idEmprestimo, DateTime novaData)
     {
 

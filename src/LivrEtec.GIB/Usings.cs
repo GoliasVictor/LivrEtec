@@ -1,3 +1,4 @@
+global using Microsoft.AspNetCore.Mvc;
 global using Grpc.Core;
 global using LivrEtec.Services;
 global using RPC = LivrEtec.GIB.RPC;
