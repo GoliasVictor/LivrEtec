@@ -2,10 +2,12 @@
 
 namespace LivrEtec.GIB.RPC;
 
-public partial class Autor
+public class DTOAutor
 {
+    public int Id { get; set; }
+    public string Nome { get; set; }
     [return: NotNullIfNotNull("model")]
-    public static implicit operator Autor(LEM::Autor model)
+    public static implicit operator DTOAutor(LEM::Autor model)
         => model == null
          ? null! : new()
          {
@@ -13,7 +15,7 @@ public partial class Autor
              Nome = model.Nome,
          };
     [return: NotNullIfNotNull("proto")]
-    public static implicit operator LEM::Autor(Autor proto)
+    public static implicit operator LEM::Autor(DTOAutor proto)
         => proto == null
          ? null! : new()
          {

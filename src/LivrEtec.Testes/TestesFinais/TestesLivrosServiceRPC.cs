@@ -40,7 +40,7 @@ public sealed class TestesLivrosServiceRPC : TestesLivrosService<LivrosServiceRP
 
         BDU.Usuarios = new[] { UsuarioTeste };
         BDU.SalvarDados();
-        GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, UsuarioTeste);
-        livrosService = new LivrosServiceRPC(new GIB.RPC.Livros.LivrosClient(channel), output.ToLogger<LivrosServiceRPC>());
+        HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, UsuarioTeste);
+        livrosService = new LivrosServiceRPC(client, output.ToLogger<LivrosServiceRPC>());
     }
 }

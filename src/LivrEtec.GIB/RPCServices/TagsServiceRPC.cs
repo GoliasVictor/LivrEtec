@@ -1,16 +1,14 @@
 ﻿using LivrEtec.Models;
-using Microsoft.Extensions.Logging;
-using static LivrEtec.GIB.RPC.Tag.Types;
-
+using Microsoft.AspNetCore.WebUtilities;
 namespace LivrEtec.GIB.Services.Cliente;
 
 public sealed class TagsServiceRPC : ITagsService
 {
     private readonly ILogger<TagsServiceRPC> logger;
-    private readonly RPC::Tags.TagsClient tagsClientRPC;
-    public TagsServiceRPC(RPC::Tags.TagsClient tagsClientRPC, ILogger<TagsServiceRPC> logger)
+    private readonly HttpClient client;
+    public TagsServiceRPC(HttpClient client, ILogger<TagsServiceRPC> logger)
     {
-        this.tagsClientRPC = tagsClientRPC;
+        this.client = client;
         this.logger = logger;
     }
     public async Task<int> Registrar(Tag tag)
@@ -18,7 +16,11 @@ public sealed class TagsServiceRPC : ITagsService
         Validador.ErroSeInvalido(tag);
         try
         {
-            return (await tagsClientRPC.RegistrarAsync(tag)).Id;
+            var response = await client.PostAsJsonAsync("/api/tags",tag);
+            response.EnsureSuccessStatusCode();
+            return Int32.Parse(await response.Content.ReadAsStringAsync());
+            
+
         }
         catch (RpcException ex)
         {
@@ -32,7 +34,7 @@ public sealed class TagsServiceRPC : ITagsService
         _ = tag ?? throw new ArgumentNullException(nameof(tag));
         try
         {
-            _ = await tagsClientRPC.EditarAsync(tag);
+           _ = await client.PutAsJsonAsync("api/tags",(RPC::Tag)tag);
         }
         catch (RpcException ex)
         {
@@ -44,7 +46,7 @@ public sealed class TagsServiceRPC : ITagsService
     {
         try
         {
-            return await tagsClientRPC.ObterAsync(new RPC::IdTag() { Id = id });
+            return await client.GetFromJsonAsync<RPC::Tag?>($"api/tags/{id}");
         }
         catch (RpcException ex)
         {
@@ -57,7 +59,7 @@ public sealed class TagsServiceRPC : ITagsService
     {
         try
         {
-            _ = await tagsClientRPC.RemoverAsync(new RPC::IdTag() { Id = id });
+            _ = await client.DeleteAsync($"api/tags/{id}");
         }
         catch (RpcException ex)
         {
@@ -70,8 +72,11 @@ public sealed class TagsServiceRPC : ITagsService
         nome ??= "";
         try
         {
-            RPC::ListaTags listaTags = await tagsClientRPC.BuscarAsync(new BuscarRequest() { Nome = nome });
-            return listaTags.Tags.Select(l => (Tag)l!);
+            var uri = QueryHelpers.AddQueryString("api/tags", new Dictionary<string, string?> { 
+                {nameof(nome), nome}
+            });
+            return (await client.GetFromJsonAsync<List<RPC::Tag>>(uri))
+                    .Select(l => (Tag)l!);
         }
         catch (RpcException ex)
         {
@@ -79,4 +84,4 @@ public sealed class TagsServiceRPC : ITagsService
         }
     }
 
-}
+} 

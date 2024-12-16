@@ -1,10 +1,9 @@
-using LivrEtec.GIB.RPC;
 
 namespace LivrEtec.GIB.Services;
 
 [Route("api/livros")]
 [ApiController]
-public sealed class LivrosServiceRPC 
+public sealed class LivrosServiceRPC
 {
     private readonly ILogger<LivrosServiceRPC> logger;
     private readonly ILivrosService livrosService;
@@ -13,42 +12,36 @@ public sealed class LivrosServiceRPC
         this.logger = logger;
         this.livrosService = livrosService;
     }
-    
+
     [HttpPost()]
-    public async Task<Empty> Registrar(RPC.Livro request)
+    public async Task Registrar(RPC::Livro request)
     {
         await livrosService.Registrar(request);
-        return new Empty();
-
     }
 
+    [HttpGet("{id}")]
+    public async Task<RPC::Livro?> Obter(int id)
+    {
+        return await livrosService.Obter(id);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task Remover(int id)
+    {
+        await livrosService.Remover(id);
+    }
+    public record ParamBuscaLivro(string? NomeLivro, string? NomeAutor, IEnumerable<int>? IdTags);
     [HttpGet()]
-    public async Task<RPC.Livro?> Obter(IdLivro request)
+    public async Task<IEnumerable<RPC::Livro>> Buscar([FromQuery]ParamBuscaLivro request)
     {
-        return await livrosService.Obter(request.Id);
+        return (await livrosService.Buscar(request.NomeLivro ?? "", request.NomeAutor ?? "", request.IdTags))
+            .Select(l =>  (RPC::Livro)l);
     }
 
-    [HttpDelete()]
-    public async Task<Empty> Remover(IdLivro request)
+    [HttpPut()]
+    public async Task Editar(RPC::Livro request)
     {
-        await livrosService.Remover(request.Id);
-        return new Empty();
-    }
-
-    [HttpGet("buscar")]
-    public async Task<ListaLivros> Buscar(ParamBusca request)
-    {
-        IEnumerable<LEM::Livro> Livros = await livrosService.Buscar(request.NomeLivro, request.NomeAutor, request.IdTags);
-        return new ListaLivros()
-        {
-            Livros = { Livros.Select(l => (RPC.Livro)l).ToArray() }
-        };
-    }
-
-    [HttpPatch()]
-    public async Task<Empty> Editar(RPC.Livro request)
-    {
+        Console.WriteLine(request);
         await livrosService.Editar(request);
-        return new Empty();
     }
 }

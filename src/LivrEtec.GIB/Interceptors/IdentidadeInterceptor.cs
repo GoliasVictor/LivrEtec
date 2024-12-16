@@ -14,12 +14,10 @@ public class IdentidadeInterceptor : IMiddleware
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        Console.WriteLine(context.Request.Headers[HeaderNames.Authorization].ToString());
 
         ClaimsPrincipal user = context.User;
         if (user.Identity?.IsAuthenticated == true)
         {
-            Console.WriteLine("B");
             var id = int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             IdentidadeService.EstaAutenticado = true;
             IdentidadeService.Usuario = new Models.Usuario() { Id = id };

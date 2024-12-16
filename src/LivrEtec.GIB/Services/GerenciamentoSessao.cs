@@ -1,4 +1,3 @@
-using LivrEtec.GIB.RPC;
 using LivrEtec.Repositorios;
 using LivrEtec.Servidor.Repositorios;
 using Microsoft.AspNetCore.Authorization;
@@ -22,43 +21,35 @@ public sealed class GerenciamentoSessao
         this.authKeyProvider = authKeyProvider;
         this.repUsuarios = repUsuarios;
     }
+    public record LoginRequest(int IdUsuario, string HashSenha);
     [AllowAnonymous]
     [HttpPost("login")]
-    public  async Task<Token> Login(LoginRequest request)
+    public  async Task<string> Login(LoginRequest request)
     {
         return false == await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha)
             ? throw new RpcException(new Status(StatusCode.Unauthenticated, "Usuario não encontrado ou Senha incorreta  "))
-            : new Token
-            {
-                Valor = TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey)
-            };
+            : TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey);
     }
 
-    [HttpGet("autorizado")]
+    [HttpGet("autorizado/{id_permissao}")]
     [AllowAnonymous]
-    public  async Task<RespostaEhAutorizado> EhAutorizado(IdPermissao request)
+    public  async Task<bool> EhAutorizado(int id)
     {
-        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == request.Id)
+        LEM.Permissao permissao = Permissoes.TodasPermissoes.FirstOrDefault(p => p.Id == id)
                 ?? throw new RpcException(new Status(StatusCode.FailedPrecondition, "Permissão não existe"));
-        return new RespostaEhAutorizado
-        {
-            Autorizado = await identidadeService.EhAutorizado(permissao)
-        };
+        return await identidadeService.EhAutorizado(permissao);
     }
 
     [HttpGet("usuario")]
-    public  async Task<Usuario> CarregarUsuario(Empty request)
+    public  async Task<LEM::Usuario> CarregarUsuario()
     {
         await identidadeService.CarregarUsuario();
         return identidadeService.Usuario!;
     }
 
-    [HttpGet("id")]
-    public  async Task<IdUsuario> ObterId(LoginUsuario request)
+    [HttpGet("usuario/{login}")]
+    public async Task<int?> ObterId(string login)
     {
-        return new IdUsuario()
-        {
-            Id = await repUsuarios.ObterId(request.Login)
-        };
+        return await repUsuarios.ObterId(login);
     }
 }

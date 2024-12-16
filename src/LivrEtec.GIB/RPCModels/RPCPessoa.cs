@@ -5,6 +5,9 @@ namespace LivrEtec.GIB.RPC;
 
 public partial class Pessoa
 {
+    public int Id;
+    public string Nome;
+    public string? Telefone;
     [return: NotNullIfNotNull("model")]
     public static implicit operator Pessoa?(LEM::Pessoa? model)
         => model == null

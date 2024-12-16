@@ -5,6 +5,11 @@ namespace LivrEtec.GIB.RPC;
 
 public partial class Usuario
 {
+    int Id;
+    string Nome;
+    Cargo Cargo;
+    string Login;
+    string Senha; 
     [return: NotNullIfNotNull("model")]
     public static implicit operator Usuario?(LEM::Usuario? model)
         => model == null

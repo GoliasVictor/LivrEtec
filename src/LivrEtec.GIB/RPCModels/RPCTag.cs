@@ -1,9 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace LivrEtec.GIB.RPC;
 
-public partial class Tag
+namespace LivrEtec.GIB.RPC;
+public class Tag
 {
+    public int Id { get; set; }
+    public string Nome { get; set; }
+
     [return: NotNullIfNotNull("model")]
     public static implicit operator Tag?(LEM::Tag? model)
         => model == null

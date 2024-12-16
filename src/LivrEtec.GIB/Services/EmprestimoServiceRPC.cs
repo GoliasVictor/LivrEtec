@@ -1,5 +1,3 @@
-using LivrEtec.GIB.RPC;
-using static LivrEtec.GIB.RPC.Emprestimo.Types;
 namespace LivrEtec.GIB.Services;
 
 [Route("api/emprestimos")]
@@ -15,56 +13,63 @@ public sealed class EmprestimoServiceRPC
         this.emprestimoService = emprestimoService;
         this.identidadeService = identidadeService;
     }
+    public record AbrirRequest(int IdPessoa, int IdLivro);
     [HttpPost()]
-    public async Task<IdEmprestimo> Abrir(AbrirRequest request)
+    public async Task<int> Abrir(AbrirRequest request)
     {
-        return new IdEmprestimo()
-        {
-            Id = await emprestimoService.Abrir(request.IdPessoa, request.IdLivro)
-        };
+        return await emprestimoService.Abrir(request.IdPessoa, request.IdLivro);
     }
+    public record BuscarRequest(
+        int? IdLivro,
+        int? IdPessoa,
+        bool? Fechado,
+        bool? Atrasado
+    );
     [HttpGet("buscar")]
-    public async Task<ListaEmprestimos> Buscar(BuscarRequest request)
+    public async Task<IEnumerable<RPC::Emprestimo>> Buscar([FromQuery] BuscarRequest request)
     {
-        IEnumerable<LEM::Emprestimo> Emprestimos = await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
+        return (await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
             IdLivro: request.IdLivro,
             IdPessoa: request.IdPessoa,
             Fechado: request.Fechado,
             Atrasado: request.Atrasado
-        ));
-        return new ListaEmprestimos()
-        {
-            Emprestimos = { Emprestimos.Select(l => (RPC::Emprestimo)l).ToArray() }
-        };
+        ))).Select(e => (RPC::Emprestimo)e);
     }
+    public record DevolverRequest(
+        int IdEmprestimo,
+        bool? AtrasoJustificado,
+        string? ExplicacaoAtraso
+    );
     [HttpPatch("devolver")]
-    public async Task<Empty> Devolver(DevolverRequest request)
+    public async Task Devolver(DevolverRequest request)
     {
         await emprestimoService.Devolver(
             request.IdEmprestimo,
-            request.HasAtrasoJustificado ? request.AtrasoJustificado : null,
-            request.HasExplicacaoAtraso ? request.ExplicacaoAtraso : null
+            request.AtrasoJustificado,
+            request.ExplicacaoAtraso 
         );
-        return new Empty();
     }
+    public record ProrrogarRequest(
+        int IdEmprestimo,
+        DateTime NovaData 
+    );
     [HttpPatch("prorrogar")]
-    public async Task<Empty> Prorrogar(ProrrogarRequest request)
+    public async Task Prorrogar(ProrrogarRequest request)
     {
-        await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData.ToDateTime());
-        return new Empty();
+        await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData);
     }
-
+    public record PerdaRequest(
+        int id
+    );
     [HttpPatch("perda")]
-    public async Task<Empty> RegistrarPerda(IdEmprestimo request)
+    public async Task RegistrarPerda(PerdaRequest request)
     {
-        await emprestimoService.RegistrarPerda(request.Id);
-        return new Empty();
+        await emprestimoService.RegistrarPerda(request.id);
     }
-    [HttpDelete()]
-    public async Task<Empty> Excluir(IdEmprestimo request)
+    [HttpDelete("{id}")]
+    public async Task Excluir(int id)
     {
-        await emprestimoService.Excluir(request.Id);
-        return new Empty();
+        await emprestimoService.Excluir(id);
     }
 
 }

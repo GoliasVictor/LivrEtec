@@ -5,6 +5,10 @@ namespace LivrEtec.GIB.RPC;
 
 public partial class Permissao
 {
+    public int Id;
+    public string Nome;
+    public string Descricao;
+    public List<Permissao> PermissoesDependete;
     [return: NotNullIfNotNull("model")]
     public static implicit operator Permissao?(LEM::Permissao? model)
         => model == null
@@ -12,7 +16,7 @@ public partial class Permissao
          {
              Id = model.Id,
              Nome = model.Nome,
-             PermissoesDependete = { model.PermissoesDependete.Select(p => (Permissao)p) },
+             PermissoesDependete = model.PermissoesDependete.Select(p => (Permissao)p).ToList(),
          };
     [return: NotNullIfNotNull("proto")]
     public static implicit operator LEM::Permissao?(Permissao? proto)

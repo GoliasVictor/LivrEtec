@@ -5,6 +5,19 @@ namespace LivrEtec.GIB.RPC;
 
 public partial class Emprestimo
 {
+    int Id;
+    bool? AtrasoJustificado;
+    string? Comentario;
+    DateTime DataEmprestimo;
+    DateTime? DataFechamento;
+    bool? Devolvido;
+    string? ExplicacaoAtraso;
+    bool Fechado;
+    DateTime FimDataEmprestimo;
+    Livro Livro;
+    Pessoa Pessoa;
+    Usuario UsuarioCriador;
+    Usuario UsuarioFechador;
     [return: NotNullIfNotNull("model")]
     public static implicit operator Emprestimo?(LEM::Emprestimo? model)
         => model == null
@@ -13,12 +26,12 @@ public partial class Emprestimo
              Id = model.Id,
              AtrasoJustificado = model.AtrasoJustificado,
              Comentario = model.Comentario,
-             DataEmprestimo = Timestamp.FromDateTime(model.DataEmprestimo),
-             DataFechamento = model.DataFechamento != null ? Timestamp.FromDateTime(model.DataFechamento.Value) : null,
+             DataEmprestimo = model.DataEmprestimo,
+             DataFechamento = model.DataFechamento,
              Devolvido = model.Devolvido,
              ExplicacaoAtraso = model.ExplicacaoAtraso,
              Fechado = model.Fechado,
-             FimDataEmprestimo = Timestamp.FromDateTime(model.FimDataEmprestimo),
+             FimDataEmprestimo = model.FimDataEmprestimo,
              Livro = model.Livro,
              Pessoa = model.Pessoa,
              UsuarioCriador = model.UsuarioCriador,
@@ -32,12 +45,12 @@ public partial class Emprestimo
              Id = proto.Id,
              AtrasoJustificado = proto.AtrasoJustificado,
              Comentario = proto.Comentario,
-             DataEmprestimo = proto.DataEmprestimo.ToDateTime(),
-             DataFechamento = proto.DataFechamento.ToDateTime(),
+             DataEmprestimo = proto.DataEmprestimo,
+             DataFechamento = proto.DataFechamento,
              Devolvido = proto.Devolvido,
              ExplicacaoAtraso = proto.ExplicacaoAtraso,
              Fechado = proto.Fechado,
-             FimDataEmprestimo = proto.FimDataEmprestimo.ToDateTime(),
+             FimDataEmprestimo = proto.FimDataEmprestimo,
              Livro = proto.Livro,
              Pessoa = proto.Pessoa,
              UsuarioCriador = proto.UsuarioCriador,

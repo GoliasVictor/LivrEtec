@@ -39,7 +39,7 @@ public sealed class TestesTagsServiceRPC : TestesTagsService<TagsServiceRPC>
 
         BDU.Usuarios = new[] { UsuarioTeste };
         BDU.SalvarDados();
-        GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, UsuarioTeste);
-        tagsService = new TagsServiceRPC(new GIB.RPC.Tags.TagsClient(channel), output.ToLogger<TagsServiceRPC>());
+        HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, UsuarioTeste);
+        tagsService = new TagsServiceRPC(client, output.ToLogger<TagsServiceRPC>());
     }
 }

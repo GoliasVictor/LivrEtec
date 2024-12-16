@@ -1,11 +1,8 @@
-using LivrEtec.GIB.RPC;
-using static LivrEtec.GIB.RPC.Tag.Types;
-
 namespace LivrEtec.GIB.Services;
 
 [Route("api/tags")]
 [ApiController]
-public sealed class TagsServiceRPC 
+public sealed class TagsServiceRPC
 {
     private readonly ILogger<TagsServiceRPC> logger;
     private readonly ITagsService tagsService;
@@ -17,43 +14,32 @@ public sealed class TagsServiceRPC
 
     [HttpPost()]
 
-    public async Task<IdTag> Registrar(RPC.Tag request)
+    public async Task<int> Registrar(RPC::Tag request)
     {
-        return new IdTag()
-        {
-            Id = await tagsService.Registrar(request)
-        };
-
+        return await tagsService.Registrar(request);
     }
-    [HttpGet()]
-    public async Task<RPC.Tag?> Obter(IdTag request)
+    [HttpGet("{id}")]
+    public async Task<RPC::Tag?> Obter(int id)
     {
-        return await tagsService.Obter(request.Id);
+        return await tagsService.Obter(id);
     }
 
-    [HttpDelete()]
-    public async Task<Empty> Remover(IdTag request)
+    [HttpDelete("{id}")]
+    public async Task Remover(int id)
     {
-        await tagsService.Remover(request.Id);
-        return new Empty();
+        await tagsService.Remover(id);
     }
 
     public record BuscarTagReq(string Nome);
-    [HttpGet("buscar")]
-    public async Task<ListaTags> Buscar(BuscarTagReq request)
+    [HttpGet()]
+    public async Task<IEnumerable<RPC::Tag>> Buscar([FromQuery]BuscarTagReq request)
     {
-
-        IEnumerable<LEM::Tag> Tags = await tagsService.Buscar(request.Nome);
-        return new ListaTags()
-        {
-            Tags = { Tags.Select(l => (RPC.Tag)l).ToArray() }
-        };
+        return (await tagsService.Buscar(request.Nome)).Select(x => (RPC::Tag)x);
     }
 
-    [HttpPatch()]
-    public async Task<Empty> Editar(RPC.Tag request)
+    [HttpPut()]
+    public async Task Editar(RPC::Tag request)
     {
         await tagsService.Editar(request);
-        return new Empty();
     }
 }

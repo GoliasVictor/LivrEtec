@@ -1,19 +1,20 @@
-﻿using LivrEtec.Models;
+﻿using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
 
 namespace LivrEtec.GIB.Services.Cliente;
 
 public sealed class LivrosServiceRPC : ILivrosService
 {
     private readonly ILogger<LivrosServiceRPC> logger;
-    private readonly RPC::Livros.LivrosClient livrosClientRPC;
-    public LivrosServiceRPC(RPC::Livros.LivrosClient livrosClientRPC, ILogger<LivrosServiceRPC> logger)
+    private readonly HttpClient client;
+    public LivrosServiceRPC(HttpClient client, ILogger<LivrosServiceRPC> logger)
     {
-        this.livrosClientRPC = livrosClientRPC;
+        this.client = client;
         this.logger = logger;
     }
 
-    public async Task Editar(Livro livro)
+    public async Task Editar(LEM::Livro livro)
     {
         _ = livro ?? throw new ArgumentNullException(nameof(livro));
         if (livro.Tags.Any((t) => t is null))
@@ -24,7 +25,7 @@ public sealed class LivrosServiceRPC : ILivrosService
         livro.Tags ??= new();
         try
         {
-            _ = await livrosClientRPC.EditarAsync(livro);
+            _ = await client.PutAsJsonAsync("api/livros", (RPC::Livro)livro);
         }
         catch (RpcException ex)
         {
@@ -32,11 +33,11 @@ public sealed class LivrosServiceRPC : ILivrosService
         }
     }
 
-    public async Task<Livro?> Obter(int id)
+    public async Task<LEM::Livro?> Obter(int id)
     {
         try
         {
-            return await livrosClientRPC.ObterAsync(new RPC::IdLivro() { Id = id });
+            return await client.GetFromJsonAsync<RPC::Livro>($"api/livros/{id}");
         }
         catch (RpcException ex)
         {
@@ -44,7 +45,7 @@ public sealed class LivrosServiceRPC : ILivrosService
         }
     }
 
-    public async Task Registrar(Livro livro)
+    public async Task Registrar(LEM::Livro livro)
     {
         if (livro is not null)
         {
@@ -59,7 +60,7 @@ public sealed class LivrosServiceRPC : ILivrosService
 
         try
         {
-            _ = await livrosClientRPC.RegistrarAsync(livro);
+            _ = await client.PostAsJsonAsync("api/livros", (RPC::Livro)livro);
         }
         catch (RpcException ex)
         {
@@ -73,7 +74,7 @@ public sealed class LivrosServiceRPC : ILivrosService
     {
         try
         {
-            _ = await livrosClientRPC.RemoverAsync(new RPC::IdLivro() { Id = id });
+            _ = await client.DeleteAsync($"api/livros/{id}");
         }
         catch (RpcException ex)
         {
@@ -81,15 +82,27 @@ public sealed class LivrosServiceRPC : ILivrosService
         }
     }
 
-    public async Task<IEnumerable<Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
+    public async Task<IEnumerable<LEM::Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
     {
         nome ??= "";
         nomeAutor ??= "";
         idTags ??= new List<int>();
         try
         {
-            RPC::ListaLivros listaLivros = await livrosClientRPC.BuscarAsync(new RPC::ParamBusca() { NomeLivro = nome, NomeAutor = nomeAutor, IdTags = { idTags } });
-            return listaLivros.Livros.Select(l => (Livro)l!);
+
+
+            var uri = "/api/livros";
+            
+            uri = QueryHelpers.AddQueryString(uri, "NomeLivro", nome);
+            uri = QueryHelpers.AddQueryString(uri, "NomeAutor", nomeAutor);
+            foreach(var t in idTags)
+                uri = QueryHelpers.AddQueryString(uri, "IdTags", t.ToString());
+            Console.WriteLine(uri);
+            var response = await client.GetAsync(uri);
+            response.EnsureSuccessStatusCode();
+            Console.WriteLine(response.Content.ReadAsStringAsync());
+            return (await response.Content.ReadFromJsonAsync<IEnumerable<RPC::Livro>>())
+                .Select(l => (LEM::Livro)l!);
         }
         catch (RpcException ex)
         {
@@ -97,4 +110,4 @@ public sealed class LivrosServiceRPC : ILivrosService
         }
     }
 
-}
+} 

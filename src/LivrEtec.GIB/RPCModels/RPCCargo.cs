@@ -2,8 +2,11 @@
 
 namespace LivrEtec.GIB.RPC;
 
-public partial class Cargo
+public class Cargo
 {
+    int Id;
+    string Nome;
+    List<Permissao> Permissoes; 
     [return: NotNullIfNotNull("model")]
     public static implicit operator Cargo?(LEM::Cargo? model)
         => model == null
@@ -11,7 +14,7 @@ public partial class Cargo
          {
              Id = model.Id,
              Nome = model.Nome,
-             Permissoes = { model.Permissoes.Select(p => (Permissao)p) },
+             Permissoes = model.Permissoes.Select(p => (Permissao)p).ToList(),
          };
     [return: NotNullIfNotNull("proto")]
     public static implicit operator LEM::Cargo?(Cargo? proto)

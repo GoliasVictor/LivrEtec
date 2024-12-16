@@ -17,11 +17,11 @@ public sealed class TestesEmprestimoServiceRPC : TestesEmprestimoService<Emprest
             )
         )
     {
-        GrpcChannel channel = gRPCUtil.GetGrpChannel(Configuracao.UrlGIBAPI, usuarioTeste);
+        HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, usuarioTeste);
         _ = new IdentidadePermitidaStub(usuarioTeste);
         emprestimoService = new EmprestimoServiceRPC(
             LogUtils.CreateLogger<EmprestimoServiceRPC>(output),
-            new GIB.RPC.Emprestimos.EmprestimosClient(channel)
+            client
         );
     }
 }
