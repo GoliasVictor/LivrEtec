@@ -1,6 +1,6 @@
 namespace LivrEtec.GIB.Services;
 
-[Route("api/tags")]
+[Route("tags")]
 [ApiController]
 public sealed class TagsController(ILogger<TagsController> logger, ITagsService tagsService)
 {

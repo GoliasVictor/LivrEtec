@@ -13,7 +13,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     {
 
         var response = await client.PostAsJsonAsync(
-            "/api/emprestimos",
+            "emprestimos",
             new AbrirRequest(idPessoa, idlivro)
         );
         response.EnsureSuccessStatusCode();
@@ -28,7 +28,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     {
 
         var request = new DevolverRequest(idEmprestimo, AtrasoJustificado, ExplicacaoAtraso);
-        await client.PatchAsJsonAsync("api/emprestimos/devolver", request);
+        await client.PatchAsJsonAsync("emprestimos/devolver", request);
 
     }
     public async Task Prorrogar(int idEmprestimo, DateTime novaData)
@@ -36,20 +36,20 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
 
 
         var request = new ProrrogarRequest(idEmprestimo, novaData);
-        await client.PatchAsJsonAsync("api/emprestimos/prorrogar", request);
+        await client.PatchAsJsonAsync("emprestimos/prorrogar", request);
 
     }
 
     public async Task RegistrarPerda(int idEmprestimo)
     {
         await client.PatchAsJsonAsync(
-            "api/emprestimos/perda",
+            "emprestimos/perda",
             new PerdaRequest(idEmprestimo)
         );
 
     }
     public async Task Excluir(int idEmprestimo)
     {
-        await client.DeleteAsync($"api/emprestimos/{idEmprestimo}");
+        await client.DeleteAsync($"emprestimos/{idEmprestimo}");
     }
 }

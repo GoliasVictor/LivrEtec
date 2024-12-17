@@ -25,14 +25,14 @@ public sealed class LivrosServiceAPI : ILivrosService
 
         livro.Tags ??= new();
 
-        _ = await client.PutAsJsonAsync("api/livros", (DTO::Livro)livro);
+        _ = await client.PutAsJsonAsync("livros", (DTO::Livro)livro);
 
     }
 
     public async Task<LEM::Livro?> Obter(int id)
     {
 
-        return await client.GetFromJsonAsync<DTO::Livro>($"api/livros/{id}");
+        return await client.GetFromJsonAsync<DTO::Livro>($"livros/{id}");
 
     }
 
@@ -48,13 +48,13 @@ public sealed class LivrosServiceAPI : ILivrosService
         {
             throw new InvalidDataException();
         }
-        _ = await client.PostAsJsonAsync("api/livros", (DTO::Livro)livro);
+        _ = await client.PostAsJsonAsync("livros", (DTO::Livro)livro);
     }
 
 
     public async Task Remover(int id)
     {
-        _ = await client.DeleteAsync($"api/livros/{id}");
+        _ = await client.DeleteAsync($"livros/{id}");
     }
 
     public async Task<IEnumerable<LEM::Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
@@ -63,15 +63,13 @@ public sealed class LivrosServiceAPI : ILivrosService
         nomeAutor ??= "";
         idTags ??= new List<int>();
 
-        var uri = "/api/livros";
+        var uri = "/livros";
         uri = QueryHelpers.AddQueryString(uri, "NomeLivro", nome);
         uri = QueryHelpers.AddQueryString(uri, "NomeAutor", nomeAutor);
         foreach (var t in idTags)
             uri = QueryHelpers.AddQueryString(uri, "IdTags", t.ToString());
-        Console.WriteLine(uri);
         var response = await client.GetAsync(uri);
         response.EnsureSuccessStatusCode();
-        Console.WriteLine(response.Content.ReadAsStringAsync());
         return (await response.Content.ReadFromJsonAsync<IEnumerable<DTO::Livro>>())
             .Select(l => (LEM::Livro)l!);
     }

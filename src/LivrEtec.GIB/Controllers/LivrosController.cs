@@ -1,7 +1,7 @@
 
 namespace LivrEtec.GIB.Controllers;
 
-[Route("api/livros")]
+[Route("livros")]
 [ApiController]
 public sealed class LivrosController(ILogger<LivrosController> logger, ILivrosService livrosService)
 {

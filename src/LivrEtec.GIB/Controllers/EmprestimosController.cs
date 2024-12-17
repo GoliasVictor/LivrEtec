@@ -1,32 +1,32 @@
 namespace LivrEtec.GIB.Controllers;
 
-[Route("api/emprestimos")]
+[Route("emprestimos")]
 [ApiController]
-public sealed class EmprestimoController 
+public sealed class EmprestimosController 
 {
-    private readonly ILogger<EmprestimoController> logger;
+    private readonly ILogger<EmprestimosController> logger;
     private readonly IEmprestimoService emprestimoService;
     private readonly IIdentidadeService identidadeService;
-    public EmprestimoController(ILogger<EmprestimoController> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
+    public EmprestimosController(ILogger<EmprestimosController> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
     {
         this.logger = logger;
         this.emprestimoService = emprestimoService;
         this.identidadeService = identidadeService;
     }
-    public record AbrirRequest(int IdPessoa, int IdLivro);
+    public record RequestAbrirEmprestimo(int IdPessoa, int IdLivro);
     [HttpPost()]
-    public async Task<int> Abrir(AbrirRequest request)
+    public async Task<int> Abrir(RequestAbrirEmprestimo request)
     {
         return await emprestimoService.Abrir(request.IdPessoa, request.IdLivro);
     }
-    public record BuscarRequest(
+    public record RequestBuscar(
         int? IdLivro,
         int? IdPessoa,
         bool? Fechado,
         bool? Atrasado
     );
-    [HttpGet("buscar")]
-    public async Task<IEnumerable<DTO::Emprestimo>> Buscar([FromQuery] BuscarRequest request)
+    [HttpGet()]
+    public async Task<IEnumerable<DTO::Emprestimo>> Buscar([FromQuery] RequestBuscar request)
     {
         return (await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
             IdLivro: request.IdLivro,
@@ -35,13 +35,13 @@ public sealed class EmprestimoController
             Atrasado: request.Atrasado
         ))).Select(e => (DTO::Emprestimo)e);
     }
-    public record DevolverRequest(
+    public record RequestDevolverEmprestimo(
         int IdEmprestimo,
         bool? AtrasoJustificado,
         string? ExplicacaoAtraso
     );
     [HttpPatch("devolver")]
-    public async Task Devolver(DevolverRequest request)
+    public async Task Devolver(RequestDevolverEmprestimo request)
     {
         await emprestimoService.Devolver(
             request.IdEmprestimo,
@@ -49,20 +49,20 @@ public sealed class EmprestimoController
             request.ExplicacaoAtraso 
         );
     }
-    public record ProrrogarRequest(
+    public record RequestProrrogarEmprestimo(
         int IdEmprestimo,
         DateTime NovaData 
     );
     [HttpPatch("prorrogar")]
-    public async Task Prorrogar(ProrrogarRequest request)
+    public async Task Prorrogar(RequestProrrogarEmprestimo request)
     {
         await emprestimoService.Prorrogar(request.IdEmprestimo, request.NovaData);
     }
-    public record PerdaRequest(
+    public record RequestPerdaEmprestimo(
         int id
     );
     [HttpPatch("perda")]
-    public async Task RegistrarPerda(PerdaRequest request)
+    public async Task RegistrarPerda(RequestPerdaEmprestimo request)
     {
         await emprestimoService.RegistrarPerda(request.id);
     }

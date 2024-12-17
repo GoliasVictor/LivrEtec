@@ -5,7 +5,7 @@ using LivrEtec.GIB.Services;
 
 namespace LivrEtec.GIB.Controllers;
 
-[Route("api/sessao")]
+[Route("auth")]
 [ApiController]
 public sealed class AuthController: ControllerBase
 {
@@ -22,10 +22,10 @@ public sealed class AuthController: ControllerBase
         this.authKeyProvider = authKeyProvider;
         this.repUsuarios = repUsuarios;
     }
-    public record LoginRequest(int IdUsuario, string HashSenha);
+    public record RequestLogin(int IdUsuario, string HashSenha);
     [AllowAnonymous]
     [HttpPost("login")]
-    public  async Task<ActionResult<string>> Login(LoginRequest request)
+    public  async Task<ActionResult<string>> Login(RequestLogin request)
     {
         if (await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha))
             return TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey);
@@ -43,7 +43,7 @@ public sealed class AuthController: ControllerBase
     }
 
     [HttpGet("usuario")]
-    public  async Task<LEM::Usuario> CarregarUsuario()
+    public  async Task<DTO::Usuario> CarregarUsuario()
     {
         await identidadeService.CarregarUsuario();
         return identidadeService.Usuario!;
