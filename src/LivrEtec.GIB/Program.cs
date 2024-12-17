@@ -22,7 +22,8 @@ builder.WebHost.UseUrls();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-string strAuthKey = builder.Configuration["AuthKey"];
+string strAuthKey = builder.Configuration["AuthKey"] 
+	?? throw new Exception("Chave de autenticação(AuthKey) não definida");
 byte[] authKey = Encoding.ASCII.GetBytes(strAuthKey);
 builder.Services.AddSingleton<AuthKeyProvider>(new AuthKeyProvider(authKey));
 builder.Services.AddAuthorization();
@@ -141,12 +142,14 @@ using (var scope = app.Services.CreateScope()){
 			Nome = "Admin",
 			Permissoes = Permissoes.TodasPermissoes.ToList()
 		};
+		string senha = app.Configuration["SenhaPadraoAdmin"]
+			?? throw new Exception("Senha Padrão par ao administrador não definida");   
 		var admin = new Usuario()
 		{
 			Id = 1,
 			Login = "admin",
 			Nome = "admin",
-			Senha = IAutenticacaoService.GerarHahSenha(1, app.Configuration["SenhaPadraoAdmin"]),
+			Senha = IAutenticacaoService.GerarHahSenha(1, senha),
 			Cargo = cargoAdmin
 		};
 		BD.Add(cargoAdmin);

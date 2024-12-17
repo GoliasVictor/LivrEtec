@@ -8,7 +8,6 @@ public record Permissao(
     string Nome,
     string Descricao,
     List<Permissao> PermissoesDependete
-
 )
 {
 
@@ -18,7 +17,7 @@ public record Permissao(
          ? null : new(
              Id: model.Id,
              Nome: model.Nome,
-             Descricao : null,
+             Descricao : model.Descricao,
              PermissoesDependete: model.PermissoesDependete.Select(p => (Permissao)p).ToList()
          );
     [return: NotNullIfNotNull("proto")]
