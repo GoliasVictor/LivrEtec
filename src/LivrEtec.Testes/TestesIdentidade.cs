@@ -1,6 +1,5 @@
 using LivrEtec.Exceptions;
 using Microsoft.Extensions.Logging;
-using System.Security.Authentication;
 using Xunit.Abstractions;
 
 namespace LivrEtec.Testes;

@@ -1,12 +1,11 @@
 using Xunit.Abstractions;
-using LivrEtec.GIB.Services.Cliente;
-using EmprestimoService = LivrEtec.GIB.Services.Cliente.EmprestimoService;
+using LivrEtec.Testes.APIClient;
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Remoto")]
-public sealed class TestesEmprestimoServiceAPI : TestesEmprestimoService<EmprestimoService>
+public sealed class TestesEmprestimoServiceAPI : TestesEmprestimoService<EmprestimoServiceAPI>
 {
-    protected override EmprestimoService emprestimoService { get; init; }
+    protected override EmprestimoServiceAPI emprestimoService { get; init; }
     public TestesEmprestimoServiceAPI(ITestOutputHelper output)
         : base(
             output,
@@ -19,8 +18,8 @@ public sealed class TestesEmprestimoServiceAPI : TestesEmprestimoService<Emprest
     {
         HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, usuarioTeste);
         _ = new IdentidadePermitidaStub(usuarioTeste);
-        emprestimoService = new EmprestimoService(
-            LogUtils.CreateLogger<EmprestimoService>(output),
+        emprestimoService = new EmprestimoServiceAPI(
+            LogUtils.CreateLogger<EmprestimoServiceAPI>(output),
             client
         );
     }

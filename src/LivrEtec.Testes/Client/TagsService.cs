@@ -1,12 +1,13 @@
-﻿using LivrEtec.Models;
+﻿using System.Net.Http.Json;
 using Microsoft.AspNetCore.WebUtilities;
-namespace LivrEtec.GIB.Services.Cliente;
+using Microsoft.Extensions.Logging;
+namespace LivrEtec.Testes.Client;
 
-public sealed class TagsService : ITagsService
+public sealed class TagsServiceAPI : ITagsService
 {
-    private readonly ILogger<TagsService> logger;
+    private readonly ILogger<TagsServiceAPI> logger;
     private readonly HttpClient client;
-    public TagsService(HttpClient client, ILogger<TagsService> logger)
+    public TagsServiceAPI(HttpClient client, ILogger<TagsServiceAPI> logger)
     {
         this.client = client;
         this.logger = logger;

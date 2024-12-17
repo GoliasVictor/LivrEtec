@@ -1,18 +1,19 @@
-using LivrEtec.Models;
 using static LivrEtec.GIB.Controllers.EmprestimoController;
+using Microsoft.Extensions.Logging;
+using System.Net.Http.Json;
 
-namespace LivrEtec.GIB.Services.Cliente;
+namespace LivrEtec.Testes.APIClient;
 
-public sealed class EmprestimoService(ILogger<EmprestimoService> logger, HttpClient client) : IEmprestimoService
+public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, HttpClient client) : IEmprestimoService
 {
-    private readonly ILogger<EmprestimoService> logger = logger;
+    private readonly ILogger<EmprestimoServiceAPI> logger = logger;
     private readonly HttpClient client = client;
 
     public async Task<int> Abrir(int idPessoa, int idlivro)
     {
 
         var response = await client.PostAsJsonAsync(
-            "/api/emprestimos", 
+            "/api/emprestimos",
             new AbrirRequest(idPessoa, idlivro)
         );
         response.EnsureSuccessStatusCode();
@@ -34,8 +35,8 @@ public sealed class EmprestimoService(ILogger<EmprestimoService> logger, HttpCli
     {
 
 
-        var request = new ProrrogarRequest(idEmprestimo, novaData); 
-        await client.PatchAsJsonAsync("api/emprestimos/prorrogar",request);
+        var request = new ProrrogarRequest(idEmprestimo, novaData);
+        await client.PatchAsJsonAsync("api/emprestimos/prorrogar", request);
 
     }
 
@@ -45,7 +46,7 @@ public sealed class EmprestimoService(ILogger<EmprestimoService> logger, HttpCli
             "api/emprestimos/perda",
             new PerdaRequest(idEmprestimo)
         );
-        
+
     }
     public async Task Excluir(int idEmprestimo)
     {

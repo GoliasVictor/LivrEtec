@@ -1,13 +1,12 @@
-using LivrEtec.GIB.Services.Cliente;
+using LivrEtec.Testes.Client;
 using Xunit.Abstractions;
-using TagsService = LivrEtec.GIB.Services.Cliente.TagsService;
 
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Remoto")]
-public sealed class TestesTagsServiceAPI : TestesTagsService<TagsService>
+public sealed class TestesTagsServiceAPI : TestesTagsService<TagsServiceAPI>
 {
-    protected override TagsService tagsService { get; init; }
+    protected override TagsServiceAPI tagsService { get; init; }
     public TestesTagsServiceAPI(ITestOutputHelper output)
         : base(
             output,
@@ -40,6 +39,6 @@ public sealed class TestesTagsServiceAPI : TestesTagsService<TagsService>
         BDU.Usuarios = new[] { UsuarioTeste };
         BDU.SalvarDados();
         HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, UsuarioTeste);
-        tagsService = new TagsService(client, output.ToLogger<TagsService>());
+        tagsService = new TagsServiceAPI(client, output.ToLogger<TagsServiceAPI>());
     }
 }

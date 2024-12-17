@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.WebUtilities;
+﻿using System.Net.Http.Json;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Logging;
 
-namespace LivrEtec.GIB.Services.Cliente;
+namespace LivrEtec.Testes.APIClient;
 
-public sealed class LivrosService : ILivrosService
+
+public sealed class LivrosServiceAPI : ILivrosService
 {
-    private readonly ILogger<LivrosService> logger;
+    private readonly ILogger<LivrosServiceAPI> logger;
     private readonly HttpClient client;
-    public LivrosService(HttpClient client, ILogger<LivrosService> logger)
+    public LivrosServiceAPI(HttpClient client, ILogger<LivrosServiceAPI> logger)
     {
         this.client = client;
         this.logger = logger;

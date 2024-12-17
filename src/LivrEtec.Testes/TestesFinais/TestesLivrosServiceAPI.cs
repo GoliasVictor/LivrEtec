@@ -1,13 +1,12 @@
-using LivrEtec.GIB.Services.Cliente;
+using LivrEtec.Testes.APIClient;
 using Xunit.Abstractions;
-using LivrosService = LivrEtec.GIB.Services.Cliente.LivrosService;
 
 namespace LivrEtec.Testes.TestesFinais;
 
 [Trait("Category", "Remoto")]
-public sealed class TestesLivrosServiceAPI : TestesLivrosService<LivrosService>
+public sealed class TestesLivrosServiceAPI : TestesLivrosService<LivrosServiceAPI>
 {
-    protected override LivrosService livrosService { get; init; }
+    protected override LivrosServiceAPI livrosService { get; init; }
     public TestesLivrosServiceAPI(ITestOutputHelper output)
         : base(
             output,
@@ -41,6 +40,6 @@ public sealed class TestesLivrosServiceAPI : TestesLivrosService<LivrosService>
         BDU.Usuarios = new[] { UsuarioTeste };
         BDU.SalvarDados();
         HttpClient client = HttpUtils.GetHttpClient(Configuracao.UrlGIBAPI, UsuarioTeste);
-        livrosService = new LivrosService(client, output.ToLogger<LivrosService>());
+        livrosService = new LivrosServiceAPI(client, output.ToLogger<LivrosServiceAPI>());
     }
 }
