@@ -1,4 +1,4 @@
-using static LivrEtec.GIB.Controllers.EmprestimoController;
+using static LivrEtec.GIB.Controllers.EmprestimosController;
 using Microsoft.Extensions.Logging;
 using System.Net.Http.Json;
 
@@ -14,7 +14,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
 
         var response = await client.PostAsJsonAsync(
             "emprestimos",
-            new AbrirRequest(idPessoa, idlivro)
+            new RequestAbrirEmprestimo(idPessoa, idlivro)
         );
         response.EnsureSuccessStatusCode();
         return int.Parse(await response.Content.ReadAsStringAsync());
@@ -27,7 +27,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
     {
 
-        var request = new DevolverRequest(idEmprestimo, AtrasoJustificado, ExplicacaoAtraso);
+        var request = new RequestDevolverEmprestimo(idEmprestimo, AtrasoJustificado, ExplicacaoAtraso);
         await client.PatchAsJsonAsync("emprestimos/devolver", request);
 
     }
@@ -35,7 +35,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     {
 
 
-        var request = new ProrrogarRequest(idEmprestimo, novaData);
+        var request = new RequestProrrogarEmprestimo(idEmprestimo, novaData);
         await client.PatchAsJsonAsync("emprestimos/prorrogar", request);
 
     }
@@ -44,7 +44,7 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     {
         await client.PatchAsJsonAsync(
             "emprestimos/perda",
-            new PerdaRequest(idEmprestimo)
+            new RequestPerdaEmprestimo(idEmprestimo)
         );
 
     }
