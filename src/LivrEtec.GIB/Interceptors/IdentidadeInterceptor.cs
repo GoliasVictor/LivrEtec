@@ -1,4 +1,3 @@
-using Grpc.Core.Interceptors;
 using Microsoft.Net.Http.Headers;
 using System.Security.Claims;
 

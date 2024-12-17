@@ -16,11 +16,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddGrpc(options =>
-//{
-//	options.Interceptors.Add<ExceptionInterceptor>();
-//	options.Interceptors.Add<IdentidadeInterceptor>();
-//});
+
 builder.WebHost.UseUrls();
 
 builder.Logging.ClearProviders();
@@ -94,9 +90,7 @@ builder.Services.AddDbContextFactory<PacaContext>((options) =>
 	var strConexao = builder.Configuration.GetConnectionString("MySql");
 	options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
 });
-// Additional configuration is required to successfully run gRPC on macOS.
-// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
-//builder.Services.AddGrpc();
+
 
 builder.Services.AddControllers();
 builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
@@ -130,12 +124,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//app.MapGrpcService<LivrosServiceRPC>();
-//app.MapGrpcService<GerenciamentoSessao>();
-//app.MapGrpcService<EmprestimoServiceRPC>();
-//app.MapGrpcService<TagsServiceRPC>();
-//app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
-
 
 app.MapControllers();	
 using (var scope = app.Services.CreateScope()){

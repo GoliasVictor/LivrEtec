@@ -15,19 +15,14 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
     }
     public async Task<int> Abrir(int idPessoa, int idlivro)
     {
-        try
-        {
-            var response = await client.PostAsJsonAsync(
-                "/api/emprestimos", 
-                new AbrirRequest(idPessoa, idlivro)
-            );
-            response.EnsureSuccessStatusCode();
-            return int.Parse(await response.Content.ReadAsStringAsync());
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
+        var response = await client.PostAsJsonAsync(
+            "/api/emprestimos", 
+            new AbrirRequest(idPessoa, idlivro)
+        );
+        response.EnsureSuccessStatusCode();
+        return int.Parse(await response.Content.ReadAsStringAsync());
+
     }
     public Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
     {
@@ -35,53 +30,30 @@ public sealed class EmprestimoServiceRPC : IEmprestimoService
     }
     public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
     {
-        try
-        {
-            var request = new DevolverRequest(idEmprestimo, AtrasoJustificado, ExplicacaoAtraso);
-            await client.PatchAsJsonAsync("api/emprestimos/devolver", request);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
+        var request = new DevolverRequest(idEmprestimo, AtrasoJustificado, ExplicacaoAtraso);
+        await client.PatchAsJsonAsync("api/emprestimos/devolver", request);
+
     }
     public async Task Prorrogar(int idEmprestimo, DateTime novaData)
     {
 
-        try
-        {
-            var request = new ProrrogarRequest(idEmprestimo, novaData); 
-            _ = await client.PatchAsJsonAsync("api/emprestimos/prorrogar",request);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
+        var request = new ProrrogarRequest(idEmprestimo, novaData); 
+        await client.PatchAsJsonAsync("api/emprestimos/prorrogar",request);
+
     }
 
     public async Task RegistrarPerda(int idEmprestimo)
     {
-        try
-        {
-            await client.PatchAsJsonAsync(
-                "api/emprestimos/perda",
-                new PerdaRequest(idEmprestimo)
-            );
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        await client.PatchAsJsonAsync(
+            "api/emprestimos/perda",
+            new PerdaRequest(idEmprestimo)
+        );
+        
     }
     public async Task Excluir(int idEmprestimo)
     {
-        try
-        {
-            await client.DeleteAsync($"api/emprestimos/{idEmprestimo}");
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        await client.DeleteAsync($"api/emprestimos/{idEmprestimo}");
     }
 }

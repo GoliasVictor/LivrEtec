@@ -1,4 +1,3 @@
-using Grpc.Net.Client;
 using LivrEtec.GIB.Services.Cliente;
 using Xunit.Abstractions;
 

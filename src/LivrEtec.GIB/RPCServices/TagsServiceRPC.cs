@@ -14,74 +14,39 @@ public sealed class TagsServiceRPC : ITagsService
     public async Task<int> Registrar(Tag tag)
     {
         Validador.ErroSeInvalido(tag);
-        try
-        {
-            var response = await client.PostAsJsonAsync("/api/tags",tag);
-            response.EnsureSuccessStatusCode();
-            return Int32.Parse(await response.Content.ReadAsStringAsync());
-            
+        var response = await client.PostAsJsonAsync("/api/tags", tag);
+        response.EnsureSuccessStatusCode();
+        return Int32.Parse(await response.Content.ReadAsStringAsync());
 
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
 
     }
 
     public async Task Editar(Tag tag)
     {
         _ = tag ?? throw new ArgumentNullException(nameof(tag));
-        try
-        {
-           _ = await client.PutAsJsonAsync("api/tags",(RPC::Tag)tag);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        _ = await client.PutAsJsonAsync("api/tags", (RPC::Tag)tag);
     }
 
     public async Task<Tag?> Obter(int id)
     {
-        try
-        {
-            return await client.GetFromJsonAsync<RPC::Tag?>($"api/tags/{id}");
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        return await client.GetFromJsonAsync<RPC::Tag?>($"api/tags/{id}");
     }
 
 
     public async Task Remover(int id)
     {
-        try
-        {
-            _ = await client.DeleteAsync($"api/tags/{id}");
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        _ = await client.DeleteAsync($"api/tags/{id}");
     }
 
     public async Task<IEnumerable<Tag>> Buscar(string nome)
     {
         nome ??= "";
-        try
-        {
-            var uri = QueryHelpers.AddQueryString("api/tags", new Dictionary<string, string?> { 
+        var uri = QueryHelpers.AddQueryString("api/tags", new Dictionary<string, string?> {
                 {nameof(nome), nome}
             });
-            return (await client.GetFromJsonAsync<List<RPC::Tag>>(uri))
-                    .Select(l => (Tag)l!);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        return (await client.GetFromJsonAsync<List<RPC::Tag>>(uri))
+                .Select(l => (Tag)l!);
     }
 
-} 
+}

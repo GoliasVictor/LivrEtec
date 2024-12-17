@@ -23,26 +23,16 @@ public sealed class LivrosServiceRPC : ILivrosService
         }
 
         livro.Tags ??= new();
-        try
-        {
-            _ = await client.PutAsJsonAsync("api/livros", (RPC::Livro)livro);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
+        _ = await client.PutAsJsonAsync("api/livros", (RPC::Livro)livro);
+
     }
 
     public async Task<LEM::Livro?> Obter(int id)
     {
-        try
-        {
-            return await client.GetFromJsonAsync<RPC::Livro>($"api/livros/{id}");
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+
+        return await client.GetFromJsonAsync<RPC::Livro>($"api/livros/{id}");
+
     }
 
     public async Task Registrar(LEM::Livro livro)
@@ -57,29 +47,13 @@ public sealed class LivrosServiceRPC : ILivrosService
         {
             throw new InvalidDataException();
         }
-
-        try
-        {
-            _ = await client.PostAsJsonAsync("api/livros", (RPC::Livro)livro);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
-
+        _ = await client.PostAsJsonAsync("api/livros", (RPC::Livro)livro);
     }
 
 
     public async Task Remover(int id)
     {
-        try
-        {
-            _ = await client.DeleteAsync($"api/livros/{id}");
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        _ = await client.DeleteAsync($"api/livros/{id}");
     }
 
     public async Task<IEnumerable<LEM::Livro>> Buscar(string nome, string nomeAutor, IEnumerable<int>? idTags)
@@ -87,27 +61,18 @@ public sealed class LivrosServiceRPC : ILivrosService
         nome ??= "";
         nomeAutor ??= "";
         idTags ??= new List<int>();
-        try
-        {
 
-
-            var uri = "/api/livros";
-            
-            uri = QueryHelpers.AddQueryString(uri, "NomeLivro", nome);
-            uri = QueryHelpers.AddQueryString(uri, "NomeAutor", nomeAutor);
-            foreach(var t in idTags)
-                uri = QueryHelpers.AddQueryString(uri, "IdTags", t.ToString());
-            Console.WriteLine(uri);
-            var response = await client.GetAsync(uri);
-            response.EnsureSuccessStatusCode();
-            Console.WriteLine(response.Content.ReadAsStringAsync());
-            return (await response.Content.ReadFromJsonAsync<IEnumerable<RPC::Livro>>())
-                .Select(l => (LEM::Livro)l!);
-        }
-        catch (RpcException ex)
-        {
-            throw ManipuladorException.RpcExceptionToException(ex);
-        }
+        var uri = "/api/livros";
+        uri = QueryHelpers.AddQueryString(uri, "NomeLivro", nome);
+        uri = QueryHelpers.AddQueryString(uri, "NomeAutor", nomeAutor);
+        foreach (var t in idTags)
+            uri = QueryHelpers.AddQueryString(uri, "IdTags", t.ToString());
+        Console.WriteLine(uri);
+        var response = await client.GetAsync(uri);
+        response.EnsureSuccessStatusCode();
+        Console.WriteLine(response.Content.ReadAsStringAsync());
+        return (await response.Content.ReadFromJsonAsync<IEnumerable<RPC::Livro>>())
+            .Select(l => (LEM::Livro)l!);
     }
 
-} 
+}
