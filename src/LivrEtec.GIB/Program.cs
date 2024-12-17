@@ -109,16 +109,16 @@ builder.Services.AddScoped<IRepEmprestimos, RepEmprestimos>();
 builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 builder.Services.AddScoped<IAutorizacaoService, AutorizacaoService>();
 builder.Services.AddScoped<IIdentidadeService, IdentidadeService>();
-builder.Services.AddScoped<IEmprestimoService, EmprestimoService>();
-builder.Services.AddScoped<ILivrosService, LivrosService>();
-builder.Services.AddScoped<ITagsService, TagsService>();
-builder.Services.AddScoped<IdentidadeInterceptor>();
+builder.Services.AddScoped<IEmprestimoService, LivrEtec.Servidor.Services.EmprestimoService>();
+builder.Services.AddScoped<ILivrosService, LivrEtec.Servidor.Services.LivrosService>();
+builder.Services.AddScoped<ITagsService, LivrEtec.Servidor.Services.TagsService>();
+builder.Services.AddScoped<IdentidadeMiddleware>();
 builder.Services.AddApplicationInsightsTelemetry();
 var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<IdentidadeInterceptor>();
+app.UseMiddleware<IdentidadeMiddleware>();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

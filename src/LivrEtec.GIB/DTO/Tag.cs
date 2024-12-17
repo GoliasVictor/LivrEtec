@@ -1,21 +1,18 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 
-namespace LivrEtec.GIB.RPC;
-public class Tag
+namespace LivrEtec.GIB.DTO;
+public record  Tag (int Id,string Nome)
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
 
-    [return: NotNullIfNotNull("model")]
+    [return: NotNullIfNotNull(nameof(model))]
     public static implicit operator Tag?(LEM::Tag? model)
         => model == null
-         ? null : new()
-         {
-             Id = model.Id,
-             Nome = model.Nome,
-         };
-    [return: NotNullIfNotNull("proto")]
+         ? null : new(
+            Id: model.Id, 
+            Nome: model.Nome
+        );
+    [return: NotNullIfNotNull(nameof(proto))]
     public static implicit operator LEM::Tag?(Tag? proto)
         => proto == null
          ? null : new()

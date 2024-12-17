@@ -1,13 +1,13 @@
-namespace LivrEtec.GIB.Services;
+namespace LivrEtec.GIB.Controllers;
 
 [Route("api/emprestimos")]
 [ApiController]
-public sealed class EmprestimoServiceRPC 
+public sealed class EmprestimoController 
 {
-    private readonly ILogger<EmprestimoServiceRPC> logger;
+    private readonly ILogger<EmprestimoController> logger;
     private readonly IEmprestimoService emprestimoService;
     private readonly IIdentidadeService identidadeService;
-    public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
+    public EmprestimoController(ILogger<EmprestimoController> logger, IEmprestimoService emprestimoService, IIdentidadeService identidadeService)
     {
         this.logger = logger;
         this.emprestimoService = emprestimoService;
@@ -26,14 +26,14 @@ public sealed class EmprestimoServiceRPC
         bool? Atrasado
     );
     [HttpGet("buscar")]
-    public async Task<IEnumerable<RPC::Emprestimo>> Buscar([FromQuery] BuscarRequest request)
+    public async Task<IEnumerable<DTO::Emprestimo>> Buscar([FromQuery] BuscarRequest request)
     {
         return (await emprestimoService.Buscar(new LEM::ParamBuscaEmprestimo(
             IdLivro: request.IdLivro,
             IdPessoa: request.IdPessoa,
             Fechado: request.Fechado,
             Atrasado: request.Atrasado
-        ))).Select(e => (RPC::Emprestimo)e);
+        ))).Select(e => (DTO::Emprestimo)e);
     }
     public record DevolverRequest(
         int IdEmprestimo,

@@ -1,23 +1,26 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 
-namespace LivrEtec.GIB.RPC;
+namespace LivrEtec.GIB.DTO;
 
-public partial class Permissao
+public record Permissao(
+    int Id,
+    string Nome,
+    string Descricao,
+    List<Permissao> PermissoesDependete
+
+)
 {
-    public int Id;
-    public string Nome;
-    public string Descricao;
-    public List<Permissao> PermissoesDependete;
+
     [return: NotNullIfNotNull("model")]
     public static implicit operator Permissao?(LEM::Permissao? model)
         => model == null
-         ? null : new()
-         {
-             Id = model.Id,
-             Nome = model.Nome,
-             PermissoesDependete = model.PermissoesDependete.Select(p => (Permissao)p).ToList(),
-         };
+         ? null : new(
+             Id: model.Id,
+             Nome: model.Nome,
+             Descricao : null,
+             PermissoesDependete: model.PermissoesDependete.Select(p => (Permissao)p).ToList()
+         );
     [return: NotNullIfNotNull("proto")]
     public static implicit operator LEM::Permissao?(Permissao? proto)
         => proto == null

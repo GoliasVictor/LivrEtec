@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.WebUtilities;
 namespace LivrEtec.GIB.Services.Cliente;
 
-public sealed class TagsServiceRPC : ITagsService
+public sealed class TagsService : ITagsService
 {
-    private readonly ILogger<TagsServiceRPC> logger;
+    private readonly ILogger<TagsService> logger;
     private readonly HttpClient client;
-    public TagsServiceRPC(HttpClient client, ILogger<TagsServiceRPC> logger)
+    public TagsService(HttpClient client, ILogger<TagsService> logger)
     {
         this.client = client;
         this.logger = logger;
@@ -25,12 +25,12 @@ public sealed class TagsServiceRPC : ITagsService
     public async Task Editar(Tag tag)
     {
         _ = tag ?? throw new ArgumentNullException(nameof(tag));
-        _ = await client.PutAsJsonAsync("api/tags", (RPC::Tag)tag);
+        _ = await client.PutAsJsonAsync("api/tags", (DTO::Tag)tag);
     }
 
     public async Task<Tag?> Obter(int id)
     {
-        return await client.GetFromJsonAsync<RPC::Tag?>($"api/tags/{id}");
+        return await client.GetFromJsonAsync<DTO::Tag?>($"api/tags/{id}");
     }
 
 
@@ -45,7 +45,7 @@ public sealed class TagsServiceRPC : ITagsService
         var uri = QueryHelpers.AddQueryString("api/tags", new Dictionary<string, string?> {
                 {nameof(nome), nome}
             });
-        return (await client.GetFromJsonAsync<List<RPC::Tag>>(uri))
+        return (await client.GetFromJsonAsync<List<DTO::Tag>>(uri))
                 .Select(l => (Tag)l!);
     }
 

@@ -1,7 +1,7 @@
 ﻿
 using System.Diagnostics.CodeAnalysis;
 
-namespace LivrEtec.GIB.RPC;
+namespace LivrEtec.GIB.DTO;
 
 public partial class Emprestimo
 {

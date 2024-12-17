@@ -1,18 +1,13 @@
 using LivrEtec.Models;
-using Microsoft.Extensions.Logging;
-using static LivrEtec.GIB.Services.EmprestimoServiceRPC;
+using static LivrEtec.GIB.Controllers.EmprestimoController;
 
 namespace LivrEtec.GIB.Services.Cliente;
 
-public sealed class EmprestimoServiceRPC : IEmprestimoService
+public sealed class EmprestimoService(ILogger<EmprestimoService> logger, HttpClient client) : IEmprestimoService
 {
-    private readonly ILogger<EmprestimoServiceRPC> logger;
-    private readonly HttpClient client;
-    public EmprestimoServiceRPC(ILogger<EmprestimoServiceRPC> logger, HttpClient client)
-    {
-        this.client = client;
-        this.logger = logger;
-    }
+    private readonly ILogger<EmprestimoService> logger = logger;
+    private readonly HttpClient client = client;
+
     public async Task<int> Abrir(int idPessoa, int idlivro)
     {
 

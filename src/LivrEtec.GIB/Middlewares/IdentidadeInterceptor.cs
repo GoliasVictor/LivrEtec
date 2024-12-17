@@ -1,12 +1,11 @@
-using Microsoft.Net.Http.Headers;
 using System.Security.Claims;
 
 namespace LivrEtec.GIB.Interceptors;
-public class IdentidadeInterceptor : IMiddleware
+public class IdentidadeMiddleware : IMiddleware
 {
     private readonly IIdentidadeService IdentidadeService;
 
-    public IdentidadeInterceptor(IIdentidadeService identidadeService)
+    public IdentidadeMiddleware(IIdentidadeService identidadeService)
     {
         IdentidadeService = identidadeService;
     }

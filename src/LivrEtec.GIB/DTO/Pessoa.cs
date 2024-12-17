@@ -1,22 +1,22 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 
-namespace LivrEtec.GIB.RPC;
+namespace LivrEtec.GIB.DTO;
 
-public partial class Pessoa
+public record Pessoa(
+    int Id,
+    string Nome,
+    string? Telefone
+)
 {
-    public int Id;
-    public string Nome;
-    public string? Telefone;
     [return: NotNullIfNotNull("model")]
     public static implicit operator Pessoa?(LEM::Pessoa? model)
         => model == null
-         ? null : new()
-         {
-             Id = model.Id,
-             Nome = model.Nome,
-             Telefone = model.Telefone
-         };
+         ? null : new(
+             Id: model.Id,
+             Nome: model.Nome,
+             Telefone: model.Telefone
+         );
     [return: NotNullIfNotNull("proto")]
     public static implicit operator LEM::Pessoa?(Pessoa? proto)
         => proto == null

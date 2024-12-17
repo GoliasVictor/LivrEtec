@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Primitives;
 
 namespace LivrEtec.GIB.Services.Cliente;
 
-public sealed class LivrosServiceRPC : ILivrosService
+public sealed class LivrosService : ILivrosService
 {
-    private readonly ILogger<LivrosServiceRPC> logger;
+    private readonly ILogger<LivrosService> logger;
     private readonly HttpClient client;
-    public LivrosServiceRPC(HttpClient client, ILogger<LivrosServiceRPC> logger)
+    public LivrosService(HttpClient client, ILogger<LivrosService> logger)
     {
         this.client = client;
         this.logger = logger;
@@ -24,14 +22,14 @@ public sealed class LivrosServiceRPC : ILivrosService
 
         livro.Tags ??= new();
 
-        _ = await client.PutAsJsonAsync("api/livros", (RPC::Livro)livro);
+        _ = await client.PutAsJsonAsync("api/livros", (DTO::Livro)livro);
 
     }
 
     public async Task<LEM::Livro?> Obter(int id)
     {
 
-        return await client.GetFromJsonAsync<RPC::Livro>($"api/livros/{id}");
+        return await client.GetFromJsonAsync<DTO::Livro>($"api/livros/{id}");
 
     }
 
@@ -47,7 +45,7 @@ public sealed class LivrosServiceRPC : ILivrosService
         {
             throw new InvalidDataException();
         }
-        _ = await client.PostAsJsonAsync("api/livros", (RPC::Livro)livro);
+        _ = await client.PostAsJsonAsync("api/livros", (DTO::Livro)livro);
     }
 
 
@@ -71,7 +69,7 @@ public sealed class LivrosServiceRPC : ILivrosService
         var response = await client.GetAsync(uri);
         response.EnsureSuccessStatusCode();
         Console.WriteLine(response.Content.ReadAsStringAsync());
-        return (await response.Content.ReadFromJsonAsync<IEnumerable<RPC::Livro>>())
+        return (await response.Content.ReadFromJsonAsync<IEnumerable<DTO::Livro>>())
             .Select(l => (LEM::Livro)l!);
     }
 

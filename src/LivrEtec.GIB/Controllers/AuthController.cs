@@ -1,21 +1,20 @@
 using LivrEtec.Repositorios;
-using LivrEtec.Servidor.Repositorios;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Policy;
-using System.Net;
+using LivrEtec.GIB.Services;
 
 
-namespace LivrEtec.GIB.Services;
+namespace LivrEtec.GIB.Controllers;
+
 [Route("api/sessao")]
 [ApiController]
-public sealed class GerenciamentoSessao: ControllerBase
+public sealed class AuthController: ControllerBase
 {
-    private readonly ILogger<GerenciamentoSessao> logger;
+    private readonly ILogger<AuthController> logger;
     private readonly AuthKeyProvider authKeyProvider;
     private readonly IAutenticacaoService autenticacaoService;
     private readonly IIdentidadeService identidadeService;
     private readonly IRepUsuarios repUsuarios; 
-    public GerenciamentoSessao(ILogger<GerenciamentoSessao> logger, IAutenticacaoService autenticacaoService, AuthKeyProvider authKeyProvider, IIdentidadeService identidadeService, IRepUsuarios repUsuarios)
+    public AuthController(ILogger<AuthController> logger, IAutenticacaoService autenticacaoService, AuthKeyProvider authKeyProvider, IIdentidadeService identidadeService, IRepUsuarios repUsuarios)
     {
         this.logger = logger;
         this.autenticacaoService = autenticacaoService;
