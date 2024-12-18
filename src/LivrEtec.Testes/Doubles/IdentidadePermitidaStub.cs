@@ -1,7 +1,5 @@
 ﻿#pragma warning disable CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
 
-using System.Formats.Asn1;
-
 namespace LivrEtec.Testes.Doubles;
 
 internal class IdentidadePermitidaStub : IIdentidadeService

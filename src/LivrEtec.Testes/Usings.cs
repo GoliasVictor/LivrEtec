@@ -6,3 +6,5 @@ global using LivrEtec.Servidor.Services;
 global using LivrEtec.Testes.Doubles;
 global using LivrEtec.Testes.Utilitarios;
 global using Xunit;
+global using DTO = LivrEtec.GIB.DTO;
+global using LEM = LivrEtec.Models;

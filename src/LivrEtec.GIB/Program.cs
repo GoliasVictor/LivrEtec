@@ -9,23 +9,21 @@ using LivrEtec.Servidor.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Formatting.Json;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpc(options =>
-{
-	options.Interceptors.Add<ExceptionInterceptor>();
-	options.Interceptors.Add<IdentidadeInterceptor>();
-});
+
 builder.WebHost.UseUrls();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-string strAuthKey = builder.Configuration["AuthKey"];
+string strAuthKey = builder.Configuration["AuthKey"] 
+	?? throw new Exception("Chave de autenticação(AuthKey) não definida");
 byte[] authKey = Encoding.ASCII.GetBytes(strAuthKey);
 builder.Services.AddSingleton<AuthKeyProvider>(new AuthKeyProvider(authKey));
 builder.Services.AddAuthorization();
@@ -42,7 +40,32 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 		ValidateAudience = false
 	};
 });
-
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen((c)=>{
+	 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme() 
+	{ 
+		Name = "Authorization", 
+		Type = SecuritySchemeType.ApiKey, 
+		Scheme = "Bearer", 
+		BearerFormat = "JWT", 
+		In = ParameterLocation.Header, 
+		Description = "JWT Authorization header using the Bearer scheme.\r\n\r\n Enter 'Bearer' [space] and then your token in the text input below. \r\n\r\nExample: \"Bearer 12345abcdef\"", 
+	}); 
+	c.AddSecurityRequirement(new OpenApiSecurityRequirement 
+	{ 
+		{ 
+				new OpenApiSecurityScheme 
+				{ 
+					Reference = new OpenApiReference 
+					{ 
+						Type = ReferenceType.SecurityScheme, 
+						Id = "Bearer" 
+					} 
+				}, 
+				new string[] {} 
+		} 
+	});  
+});
 Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.Console()
@@ -68,10 +91,9 @@ builder.Services.AddDbContextFactory<PacaContext>((options) =>
 	var strConexao = builder.Configuration.GetConnectionString("MySql");
 	options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
 });
-// Additional configuration is required to successfully run gRPC on macOS.
-// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
-builder.Services.AddGrpc();
 
+
+builder.Services.AddControllers();
 builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
     var strConexao = builder.Configuration.GetConnectionString("MySql");
     options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
@@ -91,21 +113,23 @@ builder.Services.AddScoped<IIdentidadeService, IdentidadeService>();
 builder.Services.AddScoped<IEmprestimoService, EmprestimoService>();
 builder.Services.AddScoped<ILivrosService, LivrosService>();
 builder.Services.AddScoped<ITagsService, TagsService>();
+builder.Services.AddScoped<IdentidadeMiddleware>();
 builder.Services.AddApplicationInsightsTelemetry();
 var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<IdentidadeMiddleware>();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.MapGrpcService<LivrosServiceRPC>();
-app.MapGrpcService<GerenciamentoSessao>();
-app.MapGrpcService<EmprestimoServiceRPC>();
-app.MapGrpcService<TagsServiceRPC>();
-app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
-	
+app.MapControllers();	
 using (var scope = app.Services.CreateScope()){
 	using var BD = scope.ServiceProvider.GetRequiredService<PacaContext>();
-	var logger = scope.ServiceProvider.GetRequiredService<Microsoft.Extensions.Logging.ILogger<PacaContext>>();
+	var logger = scope.ServiceProvider.GetRequiredService<ILogger<PacaContext>>();
 	logger.LogTrace("Verificando se bando de dados existe...");
 	
 	if(BD.Database.EnsureCreated()) {
@@ -118,12 +142,14 @@ using (var scope = app.Services.CreateScope()){
 			Nome = "Admin",
 			Permissoes = Permissoes.TodasPermissoes.ToList()
 		};
+		string senha = app.Configuration["SenhaPadraoAdmin"]
+			?? throw new Exception("Senha Padrão par ao administrador não definida");   
 		var admin = new Usuario()
 		{
 			Id = 1,
 			Login = "admin",
 			Nome = "admin",
-			Senha = IAutenticacaoService.GerarHahSenha(1, app.Configuration["SenhaPadraoAdmin"]),
+			Senha = IAutenticacaoService.GerarHahSenha(1, senha),
 			Cargo = cargoAdmin
 		};
 		BD.Add(cargoAdmin);

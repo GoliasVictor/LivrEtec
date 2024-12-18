@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ENV APP_SETTINGS_JSON_PATH="batatinha2"
 WORKDIR /src
 COPY LivrEtec.GIB/LivrEtec.GIB.csproj LivrEtec.GIB/

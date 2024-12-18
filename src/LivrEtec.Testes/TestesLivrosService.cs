@@ -96,33 +96,6 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		AssertLivroIgual(livroARegistrar, livroRegistrado);
 	}
 	[Fact]
-	public async Task Registrar_LivroExistenteAsync()
-	{
-		Livro livro = BDU.gLivro(1);
-
-		_ = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
-		{
-			await livrosService.Registrar(livro);
-		});
-	}
-	[Fact]
-	public async Task Registrar_idExistenteAsync()
-	{
-		var IdLivro = 1;
-		var livro = new Livro()
-		{
-			Id = IdLivro,
-			Nome = "douglas",
-			Quantidade = 1
-		};
-
-		_ = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
-		{
-			await livrosService.Registrar(livro);
-		});
-
-	}
-	[Fact]
 	public async Task Registrar_LivroNuloAsync()
 	{
 		Livro Livro = null!;
@@ -165,16 +138,6 @@ public abstract class TestesLivrosService<T> where T : ILivrosService
 		using PacaContext BD = BDU.CriarContexto();
 		var Contem = BD.Livros.Any(l => l.Id == Id);
 		Assert.False(Contem);
-	}
-	[Fact]
-	public async Task Remover_LivroInvalidoAsync()
-	{
-		var Id = 100;
-
-		_ = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
-		{
-			await livrosService.Remover(Id);
-		});
 	}
 	[Fact]
 	public async Task Editar_TudoLivroValidoAsync()

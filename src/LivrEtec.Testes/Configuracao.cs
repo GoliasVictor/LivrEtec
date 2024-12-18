@@ -11,7 +11,7 @@ public static class Configuracao
 
         if (AppSettingsJsonPath is null)
         {
-            Console.WriteLine("Arquvio de configuração appsettings.json não definido, sera usado ./appsettings.json por padrão");
+            Console.WriteLine("Caminho para arquvio de configuração appsettings.json não definido, sera usado ./appsettings.json por padrão");
             AppSettingsJsonPath = "./appsettings.json";
         }
         IConfigurationRoot config = new ConfigurationBuilder()
