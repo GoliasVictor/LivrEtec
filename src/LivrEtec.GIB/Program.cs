@@ -117,6 +117,10 @@ builder.Services.AddScoped<IdentidadeMiddleware>();
 builder.Services.AddApplicationInsightsTelemetry();
 var app = builder.Build();
 
+ app.UseCors(builder => builder
+     .AllowAnyOrigin()
+     .AllowAnyMethod()
+     .AllowAnyHeader());   
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<IdentidadeMiddleware>();
