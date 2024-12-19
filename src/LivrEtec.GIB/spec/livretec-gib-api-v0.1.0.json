@@ -35,17 +35,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/ResponseLogin"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/ResponseLogin"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/ResponseLogin"
                 }
               }
             }
@@ -978,9 +978,9 @@
       "RequestLogin": {
         "type": "object",
         "properties": {
-          "idUsuario": {
-            "type": "integer",
-            "format": "int32"
+          "login": {
+            "type": "string",
+            "nullable": true
           },
           "hashSenha": {
             "type": "string",
@@ -1009,6 +1009,16 @@
           "novaData": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResponseLogin": {
+        "type": "object",
+        "properties": {
+          "jwtToken": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
