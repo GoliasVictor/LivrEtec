@@ -22,13 +22,15 @@ public sealed class AuthController: ControllerBase
         this.authKeyProvider = authKeyProvider;
         this.repUsuarios = repUsuarios;
     }
-    public record RequestLogin(int IdUsuario, string HashSenha);
+    public record RequestLogin(string Login, string HashSenha);
+    public record ResponseLogin(string JwtToken);
     [AllowAnonymous]
     [HttpPost("login")]
-    public  async Task<ActionResult<string>> Login(RequestLogin request)
+    public  async Task<ActionResult<ResponseLogin>> Login(RequestLogin request)
     {
-        if (await autenticacaoService.EhAutentico(request.IdUsuario, request.HashSenha))
-            return TokenService.GerarToken(request.IdUsuario, authKeyProvider.authKey);
+        var id = await repUsuarios.ObterId(request.Login);
+        if (id is not null && await autenticacaoService.EhAutentico(id.Value, request.HashSenha))
+            return new ResponseLogin(TokenService.GerarToken(id.Value, authKeyProvider.authKey));
         return Unauthorized("Usuario não encontrado ou Senha incorreta");
     }
 
