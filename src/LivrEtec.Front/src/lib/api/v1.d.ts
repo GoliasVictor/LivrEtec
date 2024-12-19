@@ -34,9 +34,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": string;
-                        "application/json": string;
-                        "text/json": string;
+                        "text/plain": components["schemas"]["ResponseLogin"];
+                        "application/json": components["schemas"]["ResponseLogin"];
+                        "text/json": components["schemas"]["ResponseLogin"];
                     };
                 };
             };
@@ -746,8 +746,7 @@ export interface components {
             explicacaoAtraso?: string | null;
         };
         RequestLogin: {
-            /** Format: int32 */
-            idUsuario?: number;
+            login?: string | null;
             hashSenha?: string | null;
         };
         RequestPerdaEmprestimo: {
@@ -759,6 +758,9 @@ export interface components {
             idEmprestimo?: number;
             /** Format: date-time */
             novaData?: string;
+        };
+        ResponseLogin: {
+            jwtToken?: string | null;
         };
         Tag: {
             /** Format: int32 */

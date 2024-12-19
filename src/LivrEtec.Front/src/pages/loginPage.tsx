@@ -13,14 +13,16 @@ export const LoginPage = () => {
     e.preventDefault();
     
 
-    axios.post(import.meta.env.VITE_API_URL, {
-      hashSenha: password,
-      idUsuario: parseInt(username)
+    api.POST("/auth/login", {
+      body: {
+        hashSenha: password,
+        login: username
+      }
     })
     .then(async function({ data }) {
       await login({
         user_login: username,
-        jwtToken: data
+        jwtToken: data?.jwtToken!
       });
     })
     .catch(function (error) {
