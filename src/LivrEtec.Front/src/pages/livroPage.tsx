@@ -3,15 +3,32 @@ import '../App.css'
 import React from 'react'
 import type { components } from "./../lib/api/v1"; 
 import { useApi } from './../clientApi';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+import { useModal } from '../hooks/useModal';
+import EditarModal from '../components/editarModal';
+import ConfirmarModal from '../components/confirmarModal';
 type Livro = components["schemas"]["Livro"];
 
 
 function LivrosPage() {
+
   const [livro, setLivro] = useState<Livro | null>()
   const { id } = useParams();
   const client = useApi()
-
+  const navigate = useNavigate();
+  const { setModal } = useModal()!;
+  const handleConfirmDeletar = ()=> {
+    client.DELETE("/livros/{id}",
+      {
+        params: {
+          path: {
+            id: parseInt(id!)
+          }
+        }
+      }
+    )
+    navigate("/livros")
+  }
   useEffect(() => {
     
     client.GET("/livros/{id}", {
@@ -27,13 +44,28 @@ function LivrosPage() {
     });
 
   }, [])
+  console.log(JSON.stringify(livro, null, 4))
+  
+  
   return (
     <>
-      {JSON.stringify(livro, null, 4)} 
+      <p>{JSON.stringify(livro, null, 4)}</p> 
       <br/>
       <button>Emprestar</button>
-      <button>Editar</button>
-      <button>Excluir</button>
+      <button onClick={() => {
+        setModal((onCancel) => (
+          <EditarModal livro={livro!} onClose={onCancel}></EditarModal>)
+        )
+      }}>Editar</button>
+      <button onClick={() => {setModal((handleCancel) => (
+        (<ConfirmarModal
+          mensagem="Vocẽ tem certeza que deseja deletar o livro?"
+          onClose={handleCancel}
+          onConfirm={handleConfirmDeletar} />
+        )
+      ))
+      }}>
+        Excluir</button>
     </>
   )
 }
