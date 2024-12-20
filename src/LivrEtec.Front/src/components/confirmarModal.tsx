@@ -1,23 +1,22 @@
 import "../App.css";
 import { PropsWithChildren } from "react";
+import { useModal } from "../hooks/useModal";
 
 interface ConfirmarModalProps extends PropsWithChildren {
-  onClose: () => void
   onConfirm: () => void
-  mensagem: string
 }
-export default function ConfirmarModal({ mensagem, children, onClose, onConfirm}: ConfirmarModalProps) {
+export default function ConfirmarModal({children, onConfirm}: ConfirmarModalProps) {
+  const { closeModal } = useModal()!;
   const handleCancel = () => {
-    onClose();
+    closeModal();
   }
   const handleConfirm = () => {
     onConfirm()
-    onClose();
+    closeModal();
   }
   return (<> 
-    {children}
     <form className="flex flex-col border-2" onSubmit={handleConfirm}>
-      {mensagem}
+      {children}
       <div className="flex flex-row w-fill justify-between">
         <button className="m-2" type="button" onClick={handleCancel}> Cancelar </button>
         <button className="m-2"> Confirmar </button>

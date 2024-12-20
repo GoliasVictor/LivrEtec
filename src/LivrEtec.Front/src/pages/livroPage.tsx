@@ -53,17 +53,13 @@ function LivrosPage() {
       <br/>
       <button>Emprestar</button>
       <button onClick={() => {
-        setModal((onCancel) => (
-          <EditarModal livro={livro!} onClose={onCancel}></EditarModal>)
-        )
+        setModal((<EditarModal livro={livro!}/>))
       }}>Editar</button>
-      <button onClick={() => {setModal((handleCancel) => (
-        (<ConfirmarModal
-          mensagem="Vocẽ tem certeza que deseja deletar o livro?"
-          onClose={handleCancel}
-          onConfirm={handleConfirmDeletar} />
+      <button onClick={() => {
+        setModal(<ConfirmarModal onConfirm={handleConfirmDeletar} >
+          "Vocẽ tem certeza que deseja deletar o livro?"
+        </ConfirmarModal>
         )
-      ))
       }}>
         Excluir</button>
     </>

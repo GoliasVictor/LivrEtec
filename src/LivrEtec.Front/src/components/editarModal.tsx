@@ -3,16 +3,17 @@ import "../App.css";
 import { PropsWithChildren } from "react";
 import { components } from "../lib/api/v1";
 import { useApi } from "../clientApi";
+import { useModal } from "../hooks/useModal";
 type Livro = components["schemas"]["Livro"];
 
 interface EditarModalProps extends PropsWithChildren {
-  onClose: () => void
   livro: Livro
 }
-export default function EditarModal({ livro, children, onClose}: EditarModalProps) {
+export default function EditarModal({ livro, children}: EditarModalProps) {
   let api = useApi()
+  let { closeModal } = useModal()!;
   const handleCancel = () => {
-    onClose();
+    closeModal();
   }
   const handleConfirm = (e : React.SyntheticEvent) => {
     e.preventDefault();
@@ -36,7 +37,7 @@ export default function EditarModal({ livro, children, onClose}: EditarModalProp
         tags: livro.autores
       }
     })
-    onClose();
+    closeModal();
   }
   return (<> 
     {children}
