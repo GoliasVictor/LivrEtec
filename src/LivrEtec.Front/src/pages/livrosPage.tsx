@@ -3,6 +3,7 @@ import '../App.css'
 import React from 'react'
 import type { components } from "./../lib/api/v1"; 
 import { useApi } from './../clientApi';
+import { Link } from 'react-router';
 type Livro = components["schemas"]["Livro"];
 
 
@@ -24,7 +25,9 @@ function LivrosPage() {
     <>
         {todos.map((t) =>
           <React.Fragment key={t.id}>
-            <p>{ t.nome }</p>
+            <Link to={"/livros/" + t.id}>
+              <p>{ t.nome }</p>
+            </Link>
           </React.Fragment>
         )} 
     </>
