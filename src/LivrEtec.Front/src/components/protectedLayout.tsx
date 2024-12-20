@@ -12,8 +12,6 @@ export const ProtectedLayout = () => {
   }
 
   return (<>
-    login: {user.user_login}<br/>
-    token: {user.jwtToken}
     <Outlet />
   </>)
 };
