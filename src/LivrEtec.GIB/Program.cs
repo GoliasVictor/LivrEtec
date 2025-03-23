@@ -88,16 +88,22 @@ builder.Host.UseSerilog((context, services, configuration) =>
 
 builder.Services.AddDbContextFactory<PacaContext>((options) =>
 {
-	var strConexao = builder.Configuration.GetConnectionString("MySql");
-	options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
+	String strConexao;
+	switch(builder.Configuration["DataBase"]?.ToLower()){
+		case "mysql":
+			strConexao = builder.Configuration.GetConnectionString("MySql");
+			options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
+			break;
+		case "sqlite": 
+		default: 
+			strConexao = builder.Configuration.GetConnectionString("Sqlite");
+			options.UseSqlite(strConexao);
+			break;
+	}
 });
 
 
-builder.Services.AddControllers();
-builder.Services.AddDbContextFactory<PacaContext>(( options )=>{
-    var strConexao = builder.Configuration.GetConnectionString("MySql");
-    options.UseMySql(strConexao, ServerVersion.AutoDetect(strConexao));
-});
+builder.Services.AddControllers(); 
 builder.Services.AddSingleton<IRelogio, RelogioSistema>();
 builder.Services.AddScoped<PacaContext>();
 builder.Services.AddScoped<IRepUsuarios, RepUsuarios>();
@@ -134,6 +140,7 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope()){
 	using var BD = scope.ServiceProvider.GetRequiredService<PacaContext>();
 	var logger = scope.ServiceProvider.GetRequiredService<ILogger<PacaContext>>();
+	logger.LogInformation($"Usando o banco de dados: {builder.Configuration["DataBase"]?.ToLower()}");
 	logger.LogTrace("Verificando se bando de dados existe...");
 	
 	if(BD.Database.EnsureCreated()) {
