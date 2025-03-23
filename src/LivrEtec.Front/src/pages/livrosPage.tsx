@@ -23,6 +23,9 @@ function LivrosPage() {
   }, [])
   return (
     <>
+      <Link to="/livros/criar">
+        <button>Adicionar Livro</button>
+      </Link>
         {todos.map((t) =>
           <React.Fragment key={t.id}>
             <Link to={"/livros/" + t.id}>

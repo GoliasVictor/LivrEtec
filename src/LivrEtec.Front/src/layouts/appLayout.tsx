@@ -1,7 +1,7 @@
 import { Outlet, Link, NavLink, useParams } from "react-router";
 import { useAuth } from "../hooks/useAuth";
 import "../App.css";
-import ModalView from "./modalView";
+import ModalView from "../components/modalView";
 
 export const AppLayout = () => {
   const { user } = useAuth()!;

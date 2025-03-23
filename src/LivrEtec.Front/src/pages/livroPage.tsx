@@ -3,10 +3,11 @@ import '../App.css'
 import React from 'react'
 import type { components } from "./../lib/api/v1"; 
 import { useApi } from './../clientApi';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { useModal } from '../hooks/useModal';
-import EditarModal from '../components/editarModal';
+import EditarModal from '../modals/editarModal';
 import ConfirmarModal from '../components/confirmarModal';
+import EmprestarModal from '../modals/emprestarModal';
 type Livro = components["schemas"]["Livro"];
 
 
@@ -51,10 +52,14 @@ function LivrosPage() {
     <>
       <p>{JSON.stringify(livro, null, 4)}</p> 
       <br/>
-      <button>Emprestar</button>
       <button onClick={() => {
-        setModal((<EditarModal livro={livro!}/>))
-      }}>Editar</button>
+        setModal(<EmprestarModal livro={livro!}/>)
+      }}>
+        Emprestar
+      </button>
+      <Link to={`/livros/${id}/editar`}>
+        <button>Editar</button>
+      </Link>
       <button onClick={() => {
         setModal(<ConfirmarModal onConfirm={handleConfirmDeletar} >
           "Vocẽ tem certeza que deseja deletar o livro?"

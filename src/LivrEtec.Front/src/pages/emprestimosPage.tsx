@@ -13,7 +13,16 @@ export default function EmprestimosPage() {
 
   useEffect(() => {
     
-    client.GET("/emprestimos").then(res => {
+    client.GET("/emprestimos", {
+      params: {
+        query: {
+          Atrasado: true,
+          IdLivro: 1, 
+          IdPessoa: 1, 
+          Fechado: false
+        }
+      }
+    }).then(res => {
       
       if (res.data != null) {
         setEmprestimos(res.data);
@@ -26,7 +35,7 @@ export default function EmprestimosPage() {
     <>
         {emprestimos.map((t) =>
           <React.Fragment key={t.id}>
-            <Link to={"/livros/" + t.id}>
+            <Link to={"/emprestimos/" + t.id}>
               <p>{ t.id } - { t.pessoa?.id }- { t.livro?.nome }</p>
             </Link>
           </React.Fragment>

@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router";
 import { LoginPage } from './pages/loginPage';
 import LivrosPage from './pages/livrosPage';
-import { ProtectedLayout } from "./components/protectedLayout";
-import { AppLayout } from "./components/appLayout";
+import { ProtectedLayout } from "./layouts/protectedLayout";
+import { AppLayout } from "./layouts/appLayout";
 import LivroPage from "./pages/livroPage";
 import EmprestimosPage from "./pages/emprestimosPage";
 import EmprestimoPage from "./pages/emprestimoPage";
+import LivroCriarPage from "./pages/livroCriar";
+import LivroEditarPage from "./pages/livroEditar";
 
 
 function App() {
@@ -18,7 +20,10 @@ function App() {
 
             <Route path="livros">
               <Route index element={<LivrosPage />} />
+              <Route path="criar" element={<LivroCriarPage />} />
+            
               <Route path=":id" element={<LivroPage />} />
+              <Route path=":id/editar" element={<LivroEditarPage />} />
             </Route>
             <Route path="emprestimos">
               <Route index element={<EmprestimosPage />} />
