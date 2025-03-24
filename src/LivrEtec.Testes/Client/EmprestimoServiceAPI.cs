@@ -24,6 +24,11 @@ public sealed class EmprestimoServiceAPI(ILogger<EmprestimoServiceAPI> logger, H
     {
         throw new NotImplementedException();
     }
+
+        public Task<Emprestimo> Obter(int id)
+    {
+        throw new NotImplementedException();
+    }
     public async Task Devolver(int idEmprestimo, bool? AtrasoJustificado = null, string? ExplicacaoAtraso = null)
     {
 

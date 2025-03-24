@@ -35,6 +35,13 @@ public sealed class EmprestimosController
             Atrasado: request.Atrasado
         ))).Select(e => (DTO::Emprestimo)e);
     }
+
+    [HttpGet("{id}")]
+    public async Task<DTO::Emprestimo?> Obter(int id)
+    {
+        return await emprestimoService.Obter(id);
+    }
+
     public record RequestDevolverEmprestimo(
         int IdEmprestimo,
         bool? AtrasoJustificado,

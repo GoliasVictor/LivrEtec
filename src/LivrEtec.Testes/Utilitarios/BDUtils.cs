@@ -77,9 +77,9 @@ public class BDUtil : IDisposable
         return Pessoas.First((c) => c.Id == id);
     }
 
-    public Emprestimo gEmprestimo(int id)
+    public Emprestimo? gEmprestimo(int id)
     {
-        return Emprestimos.First((e) => e.Id == id);
+        return Emprestimos.FirstOrDefault((e) => e.Id == id);
     }
 
     public async Task<Emprestimo?> gEmprestimoBanco(int idEmprestimo)

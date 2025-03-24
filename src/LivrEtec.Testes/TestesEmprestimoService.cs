@@ -127,9 +127,16 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 		BDU.SalvarDados();
 		_ = BDU.CriarContexto();
 	}
-	private void AssertEmprestimoIgual(Emprestimo esperado, Emprestimo atual)
+	private void AssertEmprestimoIgual(Emprestimo? esperado, Emprestimo? atual)
 	{
-		Assert.Equal(esperado.AtrasoJustificado, atual.AtrasoJustificado);
+		if (esperado is null)
+		{
+			Assert.Null(atual);
+			return;
+		}
+		Assert.NotNull(atual);
+		
+		Assert.Equal(esperado.AtrasoJustificado, atual!.AtrasoJustificado);
 		Assert.Equal(esperado.Comentario, atual.Comentario);
 		Assert.Equal(esperado.DataEmprestimo, atual.DataEmprestimo, new TimeSpan(1, 0, 0, 0));
 		if (esperado.DataFechamento is not null && atual.DataFechamento is not null)
@@ -179,6 +186,18 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 	}
 
+	[Theory]
+	[InlineData(1)]
+	[InlineData(2)]
+	[InlineData(325)]
+	public async Task ObterAsnc_Valido(int id)
+	{
+		Emprestimo? emprestimoEsperado = BDU.gEmprestimo(id);
+
+		Emprestimo? emprestimoAtual = await emprestimoService.Obter(id);
+
+		AssertEmprestimoIgual(emprestimoEsperado, emprestimoAtual);
+	}
 	[Fact]
 	public async Task ProrrogarAsnc_Valido()
 	{

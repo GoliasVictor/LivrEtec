@@ -66,6 +66,14 @@ public sealed class EmprestimoService : IEmprestimoService
         return emprestimos;
     }
 
+    public async Task<Emprestimo?> Obter(int id)
+    {
+        await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Visualizar);
+        Emprestimo emprestimo = await repEmprestimos.Obter(id);
+        return emprestimo;
+    }
+
+
     public async Task Prorrogar(int idEmprestimo, DateTime novaData)
     {
         await identidadeService.ErroSeNaoAutorizado(Permissoes.Emprestimo.Editar);

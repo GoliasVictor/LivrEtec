@@ -50,6 +50,8 @@ public class RepEmprestimos : Repositorio, IRepEmprestimos
 
         await BD.Entry(emprestimo).Reference(l => l.Pessoa).LoadAsync();
         await BD.Entry(emprestimo).Reference(l => l.Livro).LoadAsync();
+        await BD.Entry(emprestimo).Reference(l => l.UsuarioCriador).LoadAsync();
+        await BD.Entry(emprestimo).Reference(l => l.UsuarioFechador).LoadAsync();
         return emprestimo;
     }
     public async Task EditarFimData(int idEmprestimo, DateTime NovaData)
