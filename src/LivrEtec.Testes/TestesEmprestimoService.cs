@@ -1,4 +1,5 @@
-﻿using Xunit.Abstractions;
+﻿using System.Collections.Generic;
+using Xunit.Abstractions;
 namespace LivrEtec.Testes;
 
 
@@ -179,6 +180,26 @@ public abstract class TestesEmprestimoService<T> where T : IEmprestimoService
 
 	}
 
+	[Theory]
+	[InlineData(null, null, null, null, new[] { ID_EMPRESTIMO_FECHADO, ID_EMPRESTIMO_ABERTO })]
+	[InlineData(null, true, null, null, new[] { ID_EMPRESTIMO_FECHADO })]
+	[InlineData(null, false, null, null, new[] { ID_EMPRESTIMO_ABERTO })]
+	public async Task BuscarAsnc_Valido(bool? atrasado, bool? fechado, int? idLivro, int? idPessoa, int[] idsEsperados)
+	{
+		var idEmpresitmoEsperado = BDU.gEmprestimo(1);
+
+		var emprestimos = (await emprestimoService.Buscar(new ParamBuscaEmprestimo
+		{
+			Atrasado = atrasado,
+			Fechado = fechado,
+			IdLivro = idLivro,
+			IdPessoa = idPessoa
+		})).ToList();
+
+		Assert.Equal(new HashSet<int>(idsEsperados), new HashSet<int>(emprestimos.Select(e => e.Id)));
+		
+	}
+	
 	[Fact]
 	public async Task ProrrogarAsnc_Valido()
 	{

@@ -29,12 +29,12 @@ public class RepEmprestimos : Repositorio, IRepEmprestimos
     public async Task<IEnumerable<Emprestimo>> Buscar(ParamBuscaEmprestimo parametros)
     {
 		IQueryable<Emprestimo> emprestimos = from emprestimo in BD.Emprestimos
-											 where parametros.Fechado != null || emprestimo.Fechado == parametros.Fechado
-											 where parametros.IdPessoa != null || emprestimo.Pessoa.Id == parametros.IdPessoa
-											 where parametros.IdLivro != null || emprestimo.Livro.Id == parametros.IdLivro
+											 where parametros.Fechado == null || emprestimo.Fechado == parametros.Fechado
+											 where parametros.IdPessoa == null || emprestimo.Pessoa.Id == parametros.IdPessoa
+											 where parametros.IdLivro == null || emprestimo.Livro.Id == parametros.IdLivro
                                              let atrasado = emprestimo.Fechado ? emprestimo.FimDataEmprestimo > _relogio.Agora
                                                                                : emprestimo.Devolvido == true && emprestimo.FimDataEmprestimo > emprestimo.DataFechamento
-											 where parametros.Atrasado != null || parametros.Atrasado == atrasado
+											 where parametros.Atrasado == null || parametros.Atrasado == atrasado
 		select emprestimo;
 		return await emprestimos.ToListAsync();
 	}
